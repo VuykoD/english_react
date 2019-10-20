@@ -6,15 +6,15 @@ export default class Header extends Component {
     return (
         <Container>
           <Row>
-            <Col sm={3}>
+            <Col sm={4}>
               <div>English Is Fun</div>
               <div>Это будет легко</div>
             </Col>
-            <Col sm={1}>User</Col>
-            <Col sm={2}/>
+            <Col sm={1}/>
             <Col sm={2}>Курсы</Col>
             <Col sm={2}>Видео</Col>
             <Col sm={2}>Изучение</Col>
+            <Col sm={1}>U</Col>
           </Row>
         </Container>
     );
