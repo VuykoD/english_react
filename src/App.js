@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
+import Header from './src-core/componets/header/header.js';
+
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Button variant="primary">Primary</Button>
-    </div>
-  );
-}
+export default class App extends Component {
 
-export default App;
+  render(){
+    return (
+      <div className="App">
+        <Header />
+        <Button variant="primary">Primary</Button>
+      </div>
+    );
+  }
+};
