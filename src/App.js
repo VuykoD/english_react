@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Button } from 'react-bootstrap';
 import Header from './src-core/componets/header/header.js';
 
@@ -8,10 +8,10 @@ export default class App extends Component {
 
   render(){
     return (
-      <div className="App">
+      <Fragment>
         <Header />
         <Button variant="primary">Primary</Button>
-      </div>
+      </Fragment>
     );
   }
 };
