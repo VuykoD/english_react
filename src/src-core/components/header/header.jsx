@@ -117,12 +117,12 @@ export default class Header extends Component {
         <Container>
           <Row>
             <Col>
-              <div>English Is Fun</div>
+              <div className="headerButton">English Is Fun</div>
               {logo && <div>{logo}</div> }
             </Col>
-            <Col md="auto">{course}</Col>
-            <Col md="auto">{video}</Col>
-            <Col md="auto">{learning}</Col>
+              <Col md="auto" className="headerButton">{course}</Col>
+            <Col md="auto" className="headerButton">{video}</Col>
+            <Col md="auto" className="headerButton">{learning}</Col>
             <Col md="auto">
                 <DropdownButton
                     id="dropdown-user"

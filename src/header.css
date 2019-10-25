@@ -1,0 +1,9 @@
+.header {
+  background: linear-gradient(to bottom,#40ac62,#369656);
+  height: 100px;
+  padding: 26px;
+}
+
+.headerButton {
+  color: white;
+}
