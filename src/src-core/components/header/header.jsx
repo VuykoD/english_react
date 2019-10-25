@@ -49,6 +49,26 @@ const content = {
         ru: 'Изучение',
         ukr: 'Вивчення'
     },
+    dictionary:{
+        ru: 'Мой словарь',
+        ukr: 'Мій словник'
+    },
+    progress:{
+        ru: 'Прогресс',
+        ukr: 'Прогрес'
+    },
+    myData:{
+        ru: 'Мои данные',
+        ukr: 'Мої данні'
+    },
+    btnSiteLang:{
+        ru: 'Язык сайта',
+        ukr: 'Мова сайту'
+    },
+    btnLearnedLand:{
+        ru: 'Изучаемый язык',
+        ukr: 'Мова, яку вивчаємо'
+    },
 };
 
 export default class Header extends Component {
@@ -87,6 +107,11 @@ export default class Header extends Component {
     const course = get(content, `course[${siteLang}]`);
     const video = get(content, `video[${siteLang}]`);
     const learning = get(content, `learning[${siteLang}]`);
+    const dictionary = get(content, `dictionary[${siteLang}]`);
+    const progress = get(content, `progress[${siteLang}]`);
+    const myData = get(content, `myData[${siteLang}]`);
+    const btnSiteLang = get(content, `btnSiteLang[${siteLang}]`);
+    const btnLearnedLand = get(content, `btnLearnedLand[${siteLang}]`);
 
     return (
         <Container>
@@ -105,9 +130,9 @@ export default class Header extends Component {
                     title={'U'}
                     variant={'success'}
                 >
-                    <Dropdown.Item href="/lolo">Мой словарь</Dropdown.Item>
-                    <Dropdown.Item>Прогресс</Dropdown.Item>
-                    <Dropdown.Item>Мои данные</Dropdown.Item>
+                    <Dropdown.Item href="/lolo">{dictionary}</Dropdown.Item>
+                    <Dropdown.Item>{progress}</Dropdown.Item>
+                    <Dropdown.Item>{myData}</Dropdown.Item>
                 </DropdownButton>
             </Col>
             <Col md="auto">
@@ -120,7 +145,7 @@ export default class Header extends Component {
                     <DropdownButton
                         id="dropdown-site-lang"
                         drop={direction}
-                        title={'Язык сайта'}
+                        title={btnSiteLang}
                         variant={'info'}
                     >
                         {map(langType, (lang, key)=>{
@@ -142,7 +167,7 @@ export default class Header extends Component {
                     <DropdownButton
                         id="dropdown-learned-lang"
                         drop={direction}
-                        title={'Изучаемый язык'}
+                        title={btnLearnedLand}
                         variant={'info'}
                     >
                         {map(langType, (lang, key)=>{
