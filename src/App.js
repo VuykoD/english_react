@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
 // import  get  from 'lodash/get';
 import Header from './src-core/components/header/header.jsx';
+import Footer from './src-core/components/footer/footer.jsx';
 
 import './scc/App.css';
 import './scc/header.css';
@@ -12,16 +13,21 @@ class App extends Component {
     // const {siteLang} = store;
 
     return (
-      <Fragment>
-          <div className="header">
+        <Fragment>
+            <div className="header">
               <Header
                   store={store}
                   onChangeSiteLang={onChangeSiteLang}
                   onChangeLearnedLang={onChangeLearnedLang}
               />
-          </div>
-        <div className="decoration"></div>
-      </Fragment>
+            </div>
+            <div className="decoration"></div>
+            <div className="footer">
+                <Footer
+                    store={store}
+                />
+            </div>
+        </Fragment>
     );
   }
 }
