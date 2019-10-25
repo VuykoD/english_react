@@ -1,36 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import  map  from 'lodash/map';
 import  get  from 'lodash/get';
 import { Container, Row, Col } from 'react-bootstrap';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-
-const langType = {
-    eng:{
-        short: 'Eng',
-        full: 'English',
-        siteLang: false,
-        learnedLang: true,
-    },
-    ru:{
-        short: 'Рус',
-        full: 'Русский',
-        siteLang: true,
-        learnedLang: false,
-    },
-    ukr:{
-        short: 'Укр',
-        full: 'Українська',
-        siteLang: true,
-        learnedLang: false,
-    },
-    pol:{
-        short: 'Pol',
-        full: 'Polska',
-        siteLang: false,
-        learnedLang: true,
-    },
-};
+import langType from '../../../dict/langType';
 
 const content = {
     logo:{
@@ -69,37 +44,37 @@ const content = {
         ru: 'Изучаемый язык',
         ukr: 'Мова, яку вивчаємо'
     },
+    setting:{
+        ru: 'Настройки',
+        ukr: 'Налаштування'
+    },
 };
 
 export default class Header extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-                siteLang: 'ru',
-                learnedLang: 'eng'
-            }
-    }
+    static propTypes = {
+        store: PropTypes.shape({}),
+        onChangeSiteLang: PropTypes.func,
+        onChangeLearnedLang: PropTypes.func,
+    };
 
     changeSiteLang = (e) =>{
-        this.changeLang(e, 'siteLang');
-    };
-
-    changeLearnedLang = (e) =>{
-        this.changeLang(e, 'learnedLang');
-    };
-
-    changeLang(e, type){
         const elem = e.currentTarget;
         if(elem){
             const lang = elem.getAttribute('lang');
-            const newLang= {};
-            newLang[type]=lang;
-            this.setState(newLang)
+            this.props.onChangeSiteLang(lang);
         }
-    }
+    };
+
+    changeLearnedLang = (e) =>{
+        const elem = e.currentTarget;
+        if(elem){
+            const lang = elem.getAttribute('lang');
+            this.props.onChangeLearnedLang(lang);
+        }
+    };
 
   render(){
-    const {siteLang, learnedLang} = this.state;
+    const {siteLang, learnedLang} = this.props.store;
     const currentSiteLang = langType[siteLang];
     const currentLearnedLang = langType[learnedLang];
     const direction = 'left';
@@ -112,6 +87,7 @@ export default class Header extends Component {
     const myData = get(content, `myData[${siteLang}]`);
     const btnSiteLang = get(content, `btnSiteLang[${siteLang}]`);
     const btnLearnedLand = get(content, `btnLearnedLand[${siteLang}]`);
+    const setting = get(content, `setting[${siteLang}]`);
 
     return (
         <Container>
@@ -133,13 +109,14 @@ export default class Header extends Component {
                     <Dropdown.Item href="/lolo">{dictionary}</Dropdown.Item>
                     <Dropdown.Item>{progress}</Dropdown.Item>
                     <Dropdown.Item>{myData}</Dropdown.Item>
+                    <Dropdown.Item>{setting}</Dropdown.Item>
                 </DropdownButton>
             </Col>
             <Col md="auto">
                 <DropdownButton
                     id="dropdown-current-lang"
                     alignRight
-                    title={`${currentSiteLang.short}-${currentLearnedLang.short}`}
+                    title={`${get(currentSiteLang, 'short')}-${get(currentLearnedLang, 'short')}`}
                     variant={'success'}
                 >
                     <DropdownButton
