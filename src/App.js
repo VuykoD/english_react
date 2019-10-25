@@ -1,23 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
-import  get  from 'lodash/get';
+// import  get  from 'lodash/get';
 import Header from './src-core/components/header/header.jsx';
 
 import './scc/App.css';
 import './scc/header.css';
 
-const content = {
-    body: {
-        ru: 'Тело',
-        ukr: 'Тіло',
-    }
-};
-
 class App extends Component {
   render(){
     const {store = {}, onChangeSiteLang, onChangeLearnedLang} = this.props;
-    const {siteLang} = store;
-    const body = get(content, `body[${siteLang}]`);
+    // const {siteLang} = store;
 
     return (
       <Fragment>
