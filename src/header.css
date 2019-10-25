@@ -1,9 +1,47 @@
 .header {
   background: linear-gradient(to bottom,#40ac62,#369656);
   height: 100px;
-  padding: 26px;
+  color: white;
 }
 
 .headerButton {
-  color: white;
+  font-family: Tahoma, sans-serif;
+  font-size: 17px;
+  padding-top: 35px;
+  height: 100px;
+}
+
+.headerButton:hover {
+
+  color: rgb(235, 235, 235);
+  background-color: rgb(64, 172, 98);
+  border-bottom-style: none;
+ }
+
+.engLogo {
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 28px;
+  padding-top: 15px;
+}
+
+.lowerLogo {
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 22px;
+  color: rgb(255, 255, 255);
+  text-shadow: none;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-weight: normal;
+  font-style: normal;
+}
+.decoration {
+  background-image: url(bob-van-aubel-ray-bans.jpg);
+  height: 600px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat no-repeat;
 }

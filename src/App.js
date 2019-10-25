@@ -31,7 +31,7 @@ class App extends Component {
                   onChangeLearnedLang={onChangeLearnedLang}
               />
           </div>
-        <Button variant="primary">{body}</Button>
+        <div className="decoration"></div>
       </Fragment>
     );
   }

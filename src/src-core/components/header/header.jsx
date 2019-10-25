@@ -93,8 +93,8 @@ export default class Header extends Component {
         <Container>
           <Row>
             <Col>
-              <div className="headerButton">English Is Fun</div>
-              {logo && <div>{logo}</div> }
+              <div className="engLogo">ENGLISH IS FUN</div>
+              {logo && <div className="lowerLogo">{logo}</div> }
             </Col>
               <Col md="auto" className="headerButton">{course}</Col>
             <Col md="auto" className="headerButton">{video}</Col>
