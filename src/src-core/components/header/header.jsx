@@ -49,6 +49,10 @@ const content = {
         ru: 'Настройки',
         ukr: 'Налаштування'
     },
+    search:{
+        ru: 'Напишите слово, или фразу',
+        ukr: 'Напишіть слово, або фразу'
+    },
 };
 
 export default class Header extends Component {
@@ -89,6 +93,7 @@ export default class Header extends Component {
     const btnSiteLang = get(content, `btnSiteLang[${siteLang}]`);
     const btnLearnedLand = get(content, `btnLearnedLand[${siteLang}]`);
     const setting = get(content, `setting[${siteLang}]`);
+    const search = get(content, `search[${siteLang}]`);
 
     return (
         <Container>
@@ -98,11 +103,21 @@ export default class Header extends Component {
               {logo && <div className="lowerLogo">{logo}</div> }
             </Col>
               <Col>
-                  <FormControl type="text" placeholder="Search" className="mr-sm-2 search" />
+                  <FormControl type="text" placeholder={search} className="mr-sm-2 search" />
               </Col>
             <Col md="auto" className="headerButton">{course}</Col>
             <Col md="auto" className="headerButton">{video}</Col>
-            <Col md="auto" className="headerButton">{learning}</Col>
+            <Col md="auto" className="headerButton">
+                <DropdownButton
+                    id="dropdown-user"
+                    alignRight
+                    title={learning}
+                    variant='header'
+                >
+                    <Dropdown.Item href="/lolo">{course}</Dropdown.Item>
+                    <Dropdown.Item>{video}</Dropdown.Item>
+                </DropdownButton>
+            </Col>
             <Col md="auto" className="headerButton">
               <DropdownButton
                   id="dropdown-current-lang"
@@ -159,8 +174,8 @@ export default class Header extends Component {
                 <DropdownButton
                     id="dropdown-user"
                     alignRight
-                    title={'U'}
-                    variant='header'
+                    title='D'
+                    variant='header header-user'
                 >
                     <Dropdown.Item href="/lolo">{dictionary}</Dropdown.Item>
                     <Dropdown.Item>{progress}</Dropdown.Item>

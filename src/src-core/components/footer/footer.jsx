@@ -5,8 +5,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const content = {
     premium:{
-        ru: 'Приобрести премиум аккаунт',
-        ukr: 'Придбати преміум акаунт'
+        ru: 'Приобрести премиум',
+        ukr: 'Придбати преміум'
     },
     contacts:{
         ru: 'Контакты',

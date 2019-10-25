@@ -11,13 +11,23 @@
   height: 100px;
 }
 .btn-header{
-  padding: 0px;
+  padding: 0;
 }
 
 .dropdown-toggle {
   font-family: Tahoma, sans-serif;
   font-size: 17px;
   color: white;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  width: 2px;
+  margin-left: 41%;
+}
+
+.header-user::after {
+  margin-left: 0;
 }
 
 .dropdown-toggle:focus{
