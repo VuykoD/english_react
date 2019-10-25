@@ -10,9 +10,21 @@
   padding-top: 35px;
   height: 100px;
 }
+.btn-header{
+  padding: 0px;
+}
 
-.headerButton:hover {
+.dropdown-toggle {
+  font-family: Tahoma, sans-serif;
+  font-size: 17px;
+  color: white;
+}
 
+.dropdown-toggle:focus{
+  box-shadow: none;
+}
+
+.headerButton:hover, .btn-header:hover, .dropdown-toggle:hover {
   color: rgb(235, 235, 235);
   background-color: rgb(64, 172, 98);
   border-bottom-style: none;
@@ -44,4 +56,8 @@
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat no-repeat;
+}
+
+.search {
+  margin-top: 30px;
 }

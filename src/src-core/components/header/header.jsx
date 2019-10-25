@@ -4,6 +4,7 @@ import  map  from 'lodash/map';
 import  get  from 'lodash/get';
 import { Container, Row, Col } from 'react-bootstrap';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import FormControl from 'react-bootstrap/FormControl';
 import Dropdown from 'react-bootstrap/Dropdown';
 import langType from '../../../dict/langType';
 
@@ -92,76 +93,79 @@ export default class Header extends Component {
     return (
         <Container>
           <Row>
-            <Col>
+            <Col md="auto" >
               <div className="engLogo">ENGLISH IS FUN</div>
               {logo && <div className="lowerLogo">{logo}</div> }
             </Col>
-              <Col md="auto" className="headerButton">{course}</Col>
+              <Col>
+                  <FormControl type="text" placeholder="Search" className="mr-sm-2 search" />
+              </Col>
+            <Col md="auto" className="headerButton">{course}</Col>
             <Col md="auto" className="headerButton">{video}</Col>
             <Col md="auto" className="headerButton">{learning}</Col>
-            <Col md="auto">
+            <Col md="auto" className="headerButton">
+              <DropdownButton
+                  id="dropdown-current-lang"
+                  alignRight
+                  title={`${get(currentSiteLang, 'short')}-${get(currentLearnedLang, 'short')}`}
+                  variant={'header'}
+              >
+                  <DropdownButton
+                      id="dropdown-site-lang"
+                      drop={direction}
+                      title={btnSiteLang}
+                      variant={'info'}
+                  >
+                      {map(langType, (lang, key)=>{
+                          if(lang.siteLang){
+                              return(
+                                  <Dropdown.Item
+                                      key={key}
+                                      active={siteLang === key}
+                                      onClick={this.changeSiteLang}
+                                      lang={key}
+                                      as="button"
+                                  >
+                                      {lang.full}
+                                  </Dropdown.Item>
+                              )
+                          }
+                      })}
+                  </DropdownButton>
+                  <DropdownButton
+                      id="dropdown-learned-lang"
+                      drop={direction}
+                      title={btnLearnedLand}
+                      variant={'info'}
+                  >
+                      {map(langType, (lang, key)=>{
+                          if(lang.learnedLang){
+                              return(
+                                  <Dropdown.Item
+                                      key={key}
+                                      active={learnedLang === key}
+                                      onClick={this.changeLearnedLang}
+                                      lang={key}
+                                  >
+                                      {lang.full}
+                                  </Dropdown.Item>
+                              )
+                          }
+                      })}
+                  </DropdownButton>
+              </DropdownButton>
+            </Col>
+            <Col md="auto" className="headerButton">
                 <DropdownButton
                     id="dropdown-user"
                     alignRight
                     title={'U'}
-                    variant={'success'}
+                    variant='header'
                 >
                     <Dropdown.Item href="/lolo">{dictionary}</Dropdown.Item>
                     <Dropdown.Item>{progress}</Dropdown.Item>
                     <Dropdown.Item>{myData}</Dropdown.Item>
                     <Dropdown.Item>{setting}</Dropdown.Item>
-                </DropdownButton>
-            </Col>
-            <Col md="auto">
-                <DropdownButton
-                    id="dropdown-current-lang"
-                    alignRight
-                    title={`${get(currentSiteLang, 'short')}-${get(currentLearnedLang, 'short')}`}
-                    variant={'success'}
-                >
-                    <DropdownButton
-                        id="dropdown-site-lang"
-                        drop={direction}
-                        title={btnSiteLang}
-                        variant={'info'}
-                    >
-                        {map(langType, (lang, key)=>{
-                            if(lang.siteLang){
-                                return(
-                                    <Dropdown.Item
-                                        key={key}
-                                        active={siteLang === key}
-                                        onClick={this.changeSiteLang}
-                                        lang={key}
-                                        as="button"
-                                    >
-                                        {lang.full}
-                                    </Dropdown.Item>
-                                )
-                            }
-                        })}
-                    </DropdownButton>
-                    <DropdownButton
-                        id="dropdown-learned-lang"
-                        drop={direction}
-                        title={btnLearnedLand}
-                        variant={'info'}
-                    >
-                        {map(langType, (lang, key)=>{
-                            if(lang.learnedLang){
-                                return(
-                                    <Dropdown.Item
-                                        key={key}
-                                        active={learnedLang === key}
-                                        onClick={this.changeLearnedLang}
-                                        lang={key}
-                                    >
-                                        {lang.full}
-                                    </Dropdown.Item>
-                                )
-                            }
-                        })}
-                    </DropdownButton>
                 </DropdownButton>
             </Col>
           </Row>

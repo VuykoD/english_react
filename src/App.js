@@ -1,11 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
-import { Button } from 'react-bootstrap';
 import  get  from 'lodash/get';
 import Header from './src-core/components/header/header.jsx';
 
-import './App.css';
-import './header.css';
+import './scc/App.css';
+import './scc/header.css';
 
 const content = {
     body: {
@@ -15,8 +14,6 @@ const content = {
 };
 
 class App extends Component {
-
-
   render(){
     const {store = {}, onChangeSiteLang, onChangeLearnedLang} = this.props;
     const {siteLang} = store;
