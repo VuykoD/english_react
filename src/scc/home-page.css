@@ -1,0 +1,32 @@
+.block-left {
+  margin-left: 15px;
+}
+
+.block-right {
+  margin-right: 15px;
+}
+
+.block {
+  opacity: 0.2;
+  height: 248px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0,0.3);
+  margin-top: 25px;
+  padding: 5px;
+  background-color: rgb(120, 180, 130);
+  box-shadow: 11px 11px 10px rgba(0,0,0,0.7);
+}
+
+.block:hover {
+  opacity: 1;
+}
+
+.decoration {
+  background-image: url(bob-van-aubel-ray-bans.jpg);
+  top: 100px;
+  height: 600px;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat no-repeat;
+}

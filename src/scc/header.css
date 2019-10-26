@@ -63,15 +63,6 @@
   font-style: normal;
 }
 
-.decoration {
-  background-image: url(bob-van-aubel-ray-bans.jpg);
-  height: 600px;
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat no-repeat;
-}
-
 .search {
   margin-top: 30px;
 }

@@ -4,9 +4,6 @@ import Header from './src-core/components/header/header.jsx';
 import Footer from './src-core/components/footer/footer.jsx';
 import HomePage from './src-core/components/home-page/home-page.jsx';
 
-import './scc/App.css';
-import './scc/footer.css';
-
 class App extends Component {
   render(){
     const {store = {}, onChangeSiteLang, onChangeLearnedLang} = this.props;
@@ -21,11 +18,9 @@ class App extends Component {
               />
             </div>
             <HomePage store={store}/>
-            <div className="footer">
                 <Footer
                     store={store}
                 />
-            </div>
         </Fragment>
     );
   }

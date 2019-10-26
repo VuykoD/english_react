@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import  get  from 'lodash/get';
 import { Container, Row, Col } from 'react-bootstrap';
 
+import '../../../scc/home-page.css';
+
 const content = {
     firstBlock:{
         ru:'Изучение с помощью видео',
@@ -48,15 +50,20 @@ export default class HomePage extends Component {
     const firstBlock = get(content, `firstBlock[${siteLang}]`);
 
     return (
-        <Fragment>
-            <div className="decoration" />
+        <div className="decoration">
             <Container>
                 <Row>
-                    <Col sm={7} className="block">{firstBlock}</Col>
-                    <Col sm={4} className="block"></Col>
+                    <Col sm={8}>
+                        <div className="block block-left">
+                            {firstBlock}
+                        </div>
+                    </Col>
+                    <Col sm={4}>
+                        <div className="block block-right" />
+                    </Col>
                 </Row>
             </Container>
-        </Fragment>
+        </div>
 
     );
   }

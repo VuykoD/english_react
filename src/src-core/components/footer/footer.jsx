@@ -27,13 +27,17 @@ export default class Footer extends Component {
     const contacts = get(content, `contacts[${siteLang}]`);
 
     return (
+        <div className="footer">
                 <Container>
-                  <Row>
-                    <Col className="footerButton">{premium}</Col>
-                    <Col/>
-                    <Col md="auto"  className="footerButton">{contacts}: +38 (093) 922-49-49</Col>
-                  </Row>
+
+                        <Row>
+                            <Col className="footerButton">{premium}</Col>
+                            <Col/>
+                            <Col md="auto"  className="footerButton">{contacts}: +38 (093) 922-49-49</Col>
+                        </Row>
+
                 </Container>
+        </div>
     );
   }
 };

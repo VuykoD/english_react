@@ -2,6 +2,9 @@
   background: linear-gradient(to bottom,#40ac62,#369656);
   height: 50px;
   color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .footerButton {
