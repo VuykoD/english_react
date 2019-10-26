@@ -14,6 +14,10 @@ const content = {
         ru: 'Контакты',
         ukr: 'Контакти'
     },
+    hint:{
+        ru: 'На стадии разработки',
+        ukr: 'На стадії розробки'
+    }
 };
 
 export default class Footer extends Component {
@@ -25,13 +29,14 @@ export default class Footer extends Component {
     const {siteLang } = this.props.store;
     const premium = get(content, `premium[${siteLang}]`);
     const contacts = get(content, `contacts[${siteLang}]`);
+    const hint = get(content, `hint[${siteLang}]`);
 
     return (
         <div className="footer">
                 <Container>
 
                         <Row>
-                            <Col className="footerButton">{premium}</Col>
+                            <Col className="footerButton" title={hint}>{premium}</Col>
                             <Col/>
                             <Col md="auto"  className="footerButton">{contacts}: +38 (093) 922-49-49</Col>
                         </Row>
