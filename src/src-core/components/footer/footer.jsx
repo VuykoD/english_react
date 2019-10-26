@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import  get  from 'lodash/get';
 import { Container, Row, Col } from 'react-bootstrap';
 
+import '../../../scc/footer.css';
+
 const content = {
     premium:{
         ru: 'Приобрести премиум',

@@ -1,17 +1,15 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
-// import  get  from 'lodash/get';
 import Header from './src-core/components/header/header.jsx';
 import Footer from './src-core/components/footer/footer.jsx';
+import HomePage from './src-core/components/home-page/home-page.jsx';
 
 import './scc/App.css';
-import './scc/header.css';
 import './scc/footer.css';
 
 class App extends Component {
   render(){
     const {store = {}, onChangeSiteLang, onChangeLearnedLang} = this.props;
-    // const {siteLang} = store;
 
     return (
         <Fragment>
@@ -22,7 +20,7 @@ class App extends Component {
                   onChangeLearnedLang={onChangeLearnedLang}
               />
             </div>
-            <div className="decoration"></div>
+            <HomePage store={store}/>
             <div className="footer">
                 <Footer
                     store={store}

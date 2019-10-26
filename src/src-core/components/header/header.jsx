@@ -8,6 +8,8 @@ import FormControl from 'react-bootstrap/FormControl';
 import Dropdown from 'react-bootstrap/Dropdown';
 import langType from '../../../dict/langType';
 
+import '../../../scc/header.css';
+
 const content = {
     logo:{
         ru: 'Это будет легко',
