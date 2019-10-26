@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const content = {
     firstBlock:{
-        ru:'Изучение с помощю видео',
+        ru:'Изучение с помощью видео',
         ukr:'Вивчення за допомогою вiдео'
     },
     firstText:{
@@ -51,12 +51,10 @@ export default class HomePage extends Component {
         <Fragment>
             <div className="decoration" />
             <Container>
-
-                    <Row>
-                        <Col sm={7} className="block">{firstBlock}</Col>
-                        <Col sm={4} className="block"></Col>
-                    </Row>
-
+                <Row>
+                    <Col sm={7} className="block">{firstBlock}</Col>
+                    <Col sm={4} className="block"></Col>
+                </Row>
             </Container>
         </Fragment>
 
