@@ -12,6 +12,9 @@
 }
 .btn-header{
   padding: 0;
+  height: 35px;
+  width: 100%;
+  border-radius: 0;
 }
 
 .dropdown-toggle {
@@ -59,6 +62,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .decoration {
   background-image: url(bob-van-aubel-ray-bans.jpg);
   height: 600px;
@@ -70,4 +74,23 @@
 
 .search {
   margin-top: 30px;
+}
+
+.dropdown-menu {
+  background-color: #333;
+}
+
+.dropdown-item {
+  color: #fff;
+  background-color: #333;
+  border: none;
+}
+
+.dropdown-item:hover {
+  color: #fff;
+  background-color: rgb(64, 172, 98);
+}
+
+.dropdown-item.active {
+  background-color: rgb(64, 172, 98)
 }

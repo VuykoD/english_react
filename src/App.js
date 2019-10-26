@@ -6,6 +6,7 @@ import Footer from './src-core/components/footer/footer.jsx';
 
 import './scc/App.css';
 import './scc/header.css';
+import './scc/footer.css';
 
 class App extends Component {
   render(){

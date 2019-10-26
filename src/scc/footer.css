@@ -1,0 +1,11 @@
+.footer {
+  background: linear-gradient(to bottom,#40ac62,#369656);
+  height: 50px;
+  color: white;
+}
+
+.footerButton {
+  font-family: Tahoma, sans-serif;
+  font-size: 17px;
+  padding-top: 10px;
+}

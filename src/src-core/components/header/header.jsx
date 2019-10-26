@@ -107,17 +107,7 @@ export default class Header extends Component {
               </Col>
             <Col md="auto" className="headerButton">{course}</Col>
             <Col md="auto" className="headerButton">{video}</Col>
-            <Col md="auto" className="headerButton">
-                <DropdownButton
-                    id="dropdown-user"
-                    alignRight
-                    title={learning}
-                    variant='header'
-                >
-                    <Dropdown.Item href="/lolo">{course}</Dropdown.Item>
-                    <Dropdown.Item>{video}</Dropdown.Item>
-                </DropdownButton>
-            </Col>
+            <Col md="auto" className="headerButton">{learning}</Col>
             <Col md="auto" className="headerButton">
               <DropdownButton
                   id="dropdown-current-lang"
@@ -129,7 +119,7 @@ export default class Header extends Component {
                       id="dropdown-site-lang"
                       drop={direction}
                       title={btnSiteLang}
-                      variant={'info'}
+                      variant={'header'}
                   >
                       {map(langType, (lang, key)=>{
                           if(lang.siteLang){
@@ -151,7 +141,7 @@ export default class Header extends Component {
                       id="dropdown-learned-lang"
                       drop={direction}
                       title={btnLearnedLand}
-                      variant={'info'}
+                      variant={'header'}
                   >
                       {map(langType, (lang, key)=>{
                           if(lang.learnedLang){
