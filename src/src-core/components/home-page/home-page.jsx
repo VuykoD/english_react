@@ -49,7 +49,7 @@ export default class HomePage extends Component {
 
     return (
         <Fragment>
-            <div className="decoration"></div>
+            <div className="decoration" />
             <Container>
 
                     <Row>
