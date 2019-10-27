@@ -33,15 +33,17 @@ export default class Footer extends Component {
 
     return (
         <div className="footer">
-                <Container>
-
-                        <Row>
-                            <Col className="footerButton" title={hint}>{premium}</Col>
-                            <Col/>
-                            <Col md="auto"  className="footerButton">{contacts}: +38 (093) 922-49-49</Col>
-                        </Row>
-
-                </Container>
+            <Container>
+                <Row>
+                    <Col md="auto" title={hint}>
+                        <div className='footer-premium'>
+                            {premium}
+                        </div>
+                    </Col>
+                    <Col/>
+                    <Col md="auto" className="footer-item">{contacts}: +38 (093) 922-49-49</Col>
+                </Row>
+            </Container>
         </div>
     );
   }

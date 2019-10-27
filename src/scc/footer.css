@@ -1,14 +1,23 @@
 .footer {
-  background: linear-gradient(to bottom,#40ac62,#369656);
-  height: 50px;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+    font-family: Tahoma, sans-serif;
+    font-size: 17px;
+    background: linear-gradient(to bottom,#40ac62,#369656);
+    height: 50px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-.footerButton {
-  font-family: Tahoma, sans-serif;
-  font-size: 17px;
-  padding-top: 10px;
+.footer-premium {
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: greenyellow;
+    color: black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.footer-item {
+    padding: 12px;
 }
