@@ -8,8 +8,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const initialState = {
-    siteLang: 'ru',
-    learnedLang: 'eng'
+    siteLang: localStorage.siteLand || 'ru',
+    learnedLang: localStorage.learnedLand || 'eng'
 };
 
 function playlist(state = initialState, action) {

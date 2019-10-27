@@ -68,6 +68,7 @@ export default class Header extends Component {
         const elem = e.currentTarget;
         if(elem){
             const lang = elem.getAttribute('lang');
+            localStorage.siteLand = lang;
             this.props.onChangeSiteLang(lang);
         }
     };
@@ -76,6 +77,7 @@ export default class Header extends Component {
         const elem = e.currentTarget;
         if(elem){
             const lang = elem.getAttribute('lang');
+            localStorage.learnedLand = lang;
             this.props.onChangeLearnedLang(lang);
         }
     };
@@ -167,7 +169,7 @@ export default class Header extends Component {
                     <DropdownButton
                         id="dropdown-user"
                         alignRight
-                        title={<div className="user">D</div>}
+                        title={<div className="user">VD</div>}
                         variant='header header-user'
                     >
                         <Dropdown.Item href="/lolo">{dictionary}</Dropdown.Item>
