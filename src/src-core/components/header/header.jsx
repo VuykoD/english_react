@@ -101,7 +101,7 @@ export default class Header extends Component {
         <Container>
           <Row>
             <Col md="auto" >
-              <div className="engLogo">ENGLISH IS FUN</div>
+              <div className="engLogo">LEARNING IS FUN</div>
               {logo && <div className="lowerLogo">{logo}</div> }
             </Col>
               <Col>
@@ -163,17 +163,19 @@ export default class Header extends Component {
               </DropdownButton>
             </Col>
             <Col md="auto" className="headerButton">
-                <DropdownButton
-                    id="dropdown-user"
-                    alignRight
-                    title='D'
-                    variant='header header-user'
-                >
-                    <Dropdown.Item href="/lolo">{dictionary}</Dropdown.Item>
-                    <Dropdown.Item>{progress}</Dropdown.Item>
-                    <Dropdown.Item>{myData}</Dropdown.Item>
-                    <Dropdown.Item>{setting}</Dropdown.Item>
-                </DropdownButton>
+                <div>
+                    <DropdownButton
+                        id="dropdown-user"
+                        alignRight
+                        title={<div className="user">D</div>}
+                        variant='header header-user'
+                    >
+                        <Dropdown.Item href="/lolo">{dictionary}</Dropdown.Item>
+                        <Dropdown.Item>{progress}</Dropdown.Item>
+                        <Dropdown.Item>{myData}</Dropdown.Item>
+                        <Dropdown.Item>{setting}</Dropdown.Item>
+                    </DropdownButton>
+                </div>
             </Col>
           </Row>
         </Container>

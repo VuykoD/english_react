@@ -7,7 +7,7 @@
 .headerButton {
   font-family: Tahoma, sans-serif;
   font-size: 17px;
-  padding-top: 40px;
+  padding-top: 35px;
   height: 100px;
 }
 .btn-header{
@@ -30,7 +30,8 @@
 }
 
 .header-user::after {
-  margin-left: 0;
+  margin-top: 3px;
+  margin-left: 35%;
 }
 
 .dropdown-toggle:focus{
@@ -46,7 +47,7 @@
 .engLogo {
   font-family: 'Century Gothic', sans-serif;
   font-size: 28px;
-  padding-top: 30px;
+  padding-top: 15px;
 }
 
 .lowerLogo {
@@ -61,7 +62,6 @@
   padding-right: 3px;
   font-weight: normal;
   font-style: normal;
-  padding-top: 15px;
 }
 
 .search {
@@ -85,4 +85,13 @@
 
 .dropdown-item.active {
   background-color: rgb(64, 172, 98)
+}
+
+.user {
+  border-radius: 50%;
+  background-color: rgb(70, 130, 80);
+  width: 35px;
+  height: 35px;
+  padding: 4px;
+  margin-top: -10px;
 }
