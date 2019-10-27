@@ -1,3 +1,10 @@
+.main-head{
+  margin-top: 75px;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+}
+
 .block {
   opacity: 0.2;
   height: 248px;
@@ -21,4 +28,36 @@
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat no-repeat;
+}
+
+.block-head {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.block-text {
+  text-align: center;
+}
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+img.block-img {
+  border: 5px solid white;
+  width: 100%;
+  position: center;
+  height: 155px;
+}
+
+div.block-img {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.small-blocks {
+  padding-top: 30px;
 }
