@@ -6,6 +6,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import FormControl from 'react-bootstrap/FormControl';
 import Dropdown from 'react-bootstrap/Dropdown';
+import {  Link } from 'react-router-dom';
+
 import langType from '../../../dict/langType';
 
 import '../../../scc/header.css';
@@ -102,9 +104,11 @@ export default class Header extends Component {
     return (
         <Container>
           <Row>
-            <Col md="auto" >
-              <div className="engLogo">LEARNING IS FUN</div>
-              {logo && <div className="lowerLogo">{logo}</div> }
+            <Col md="auto">
+                <Link to={'/'}>
+                    <div className="engLogo">LEARNING IS FUN</div>
+                    {logo && <div className="lowerLogo">{logo}</div> }
+                </Link>
             </Col>
               <Col>
                   <FormControl type="text" placeholder={search} className="mr-sm-2 search" />
@@ -172,10 +176,10 @@ export default class Header extends Component {
                         title={<div className="user">VD</div>}
                         variant='header header-user'
                     >
-                        <Dropdown.Item href="/lolo">{dictionary}</Dropdown.Item>
+                        <Dropdown.Item>{dictionary}</Dropdown.Item>
                         <Dropdown.Item>{progress}</Dropdown.Item>
                         <Dropdown.Item>{myData}</Dropdown.Item>
-                        <Dropdown.Item>{setting}</Dropdown.Item>
+                        <Dropdown.Item href="/setting">{setting}</Dropdown.Item>
                     </DropdownButton>
                 </div>
             </Col>

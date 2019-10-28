@@ -27,11 +27,12 @@ function playlist(state = initialState, action) {
 const store = createStore(playlist );
 
 ReactDOM.render(
-    <BrowserRouter>
-        <Provider store={store}>
+    <Provider store={store}>
+        <BrowserRouter>
             <App />
-        </Provider>
-    </BrowserRouter>,
+        </BrowserRouter>
+    </Provider>
+,
     document.getElementById('root')
 );
 

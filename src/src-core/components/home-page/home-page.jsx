@@ -54,7 +54,7 @@ export default class HomePage extends Component {
     };
 
   render(){
-    const {siteLang } = this.props.store;
+    const { siteLang } = this.props.store;
     const firstBlock = get(content, `firstBlock[${siteLang}]`);
     const firstText = get(content, `firstText[${siteLang}]`);
     const secondBlock = get(content, `secondBlock[${siteLang}]`);
