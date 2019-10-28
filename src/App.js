@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Header from './src-core/components/header/header.jsx';
 import Footer from './src-core/components/footer/footer.jsx';
 import HomePage from './src-core/components/home-page/home-page.jsx';
