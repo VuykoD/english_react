@@ -3,8 +3,10 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './src-core/components/header/header.jsx';
 import Footer from './src-core/components/footer/footer.jsx';
-import HomePage from './src-core/components/home-page/home-page.jsx';
-import Setting from './src-core/components/setting/setting.jsx';
+import HomePage from './src-pages/home-page/home-page.jsx';
+import Setting from './src-pages/setting-page/setting.jsx';
+import Video from "./src-pages/video-page/video";
+import Course from "./src-pages/course-page/course";
 
 class App extends Component {
   render(){
@@ -20,12 +22,10 @@ class App extends Component {
                 />
             </div>
             <Switch>
-                <Route exact path='/'>
-                    <HomePage store={store}/>
-                </Route>
-                <Route path='/setting' >
-                    <Setting/>
-                </Route>
+                <Route exact path='/' children={<HomePage store={store}/>} />
+                <Route path='/course' children={<Course/>} />
+                <Route path='/video' children={<Video/>} />
+                <Route path='/setting' children={<Setting store={store}/>} />
             </Switch>
             <Footer
                 store={store}

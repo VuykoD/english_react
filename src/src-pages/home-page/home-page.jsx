@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import  get  from 'lodash/get';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import '../../../scc/home-page.css';
+import '../../scc/home-page.css';
 
 const content = {
     mainHead:{

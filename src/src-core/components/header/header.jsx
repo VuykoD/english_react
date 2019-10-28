@@ -105,7 +105,7 @@ export default class Header extends Component {
         <Container>
           <Row>
             <Col md="auto">
-                <Link to={'/'}>
+                <Link to={'/'} className="logo">
                     <div className="engLogo">LEARNING IS FUN</div>
                     {logo && <div className="lowerLogo">{logo}</div> }
                 </Link>
@@ -113,8 +113,12 @@ export default class Header extends Component {
               <Col>
                   <FormControl type="text" placeholder={search} className="mr-sm-2 search" />
               </Col>
-            <Col md="auto" className="headerButton">{course}</Col>
-            <Col md="auto" className="headerButton">{video}</Col>
+            <Col md="auto" className="headerButton">
+                <Link to={'/course'} children={course}/>
+            </Col>
+            <Col md="auto" className="headerButton">
+                <Link to={'/video'} children={video}/>
+            </Col>
             <Col md="auto" className="headerButton">{learning}</Col>
             <Col md="auto" className="headerButton">
               <DropdownButton
