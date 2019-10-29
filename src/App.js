@@ -9,8 +9,11 @@ import Video from "./src-pages/video-page/video";
 import Course from "./src-pages/course-page/course";
 
 class App extends Component {
-  render(){
-    const {store = {}, onChangeSiteLang, onChangeLearnedLang} = this.props;
+
+    render(){
+    const {store = {}, onChangeSiteLang, onChangeLearnedLang, onChangeFontColor, onChangeBackColor} = this.props;
+    const {backColor} = store;
+    document.body.style.background = backColor;
 
     return (
         <Router>
@@ -23,9 +26,15 @@ class App extends Component {
             </div>
             <Switch>
                 <Route exact path='/' children={<HomePage store={store}/>} />
-                <Route path='/course' children={<Course/>} />
+                <Route path='/course' children={<Course store={store}/>} />
                 <Route path='/video' children={<Video/>} />
-                <Route path='/setting' children={<Setting store={store}/>} />
+                <Route path='/setting' children={
+                    <Setting
+                        store={store}
+                        onChangeFontColor={onChangeFontColor}
+                        onChangeBackColor={onChangeBackColor}
+                    />
+                } />
             </Switch>
             <Footer
                 store={store}
@@ -45,6 +54,12 @@ export default connect(
         },
         onChangeLearnedLang: (lang) => {
             dispatch({ type: 'LEARNED_LANG', payload: lang })
+        },
+        onChangeFontColor: (color) => {
+            dispatch({ type: 'FONT_COLOR', payload: color })
+        },
+        onChangeBackColor: (color) => {
+            dispatch({ type: 'BACK_COLOR', payload: color })
         },
     })
 )(App);

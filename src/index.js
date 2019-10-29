@@ -10,7 +10,9 @@ import * as serviceWorker from './serviceWorker';
 
 const initialState = {
     siteLang: localStorage.siteLand || 'ru',
-    learnedLang: localStorage.learnedLand || 'eng'
+    learnedLang: localStorage.learnedLand || 'eng',
+    fontColor: localStorage.fontColor || 'white',
+    backColor: localStorage.backColor || 'white'
 };
 
 function playlist(state = initialState, action) {
@@ -20,11 +22,17 @@ function playlist(state = initialState, action) {
     if (action.type === 'LEARNED_LANG') {
         return { ...state, learnedLang: action.payload };
     }
+    if (action.type === 'FONT_COLOR') {
+        return { ...state, fontColor: action.payload };
+    }
+    if (action.type === 'BACK_COLOR') {
+        return { ...state, backColor: action.payload };
+    }
     return state;
 }
 
 // const store = createStore(playlist, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__);
-const store = createStore(playlist );
+const store = createStore(playlist);
 
 ReactDOM.render(
     <Provider store={store}>

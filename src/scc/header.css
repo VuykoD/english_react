@@ -21,17 +21,11 @@
   font-family: Tahoma, sans-serif;
   font-size: 17px;
   color: white;
+  margin-top: -4px;
 }
 
 .dropdown-toggle::after {
-  display: block;
-  width: 2px;
-  margin-left: 41%;
-}
-
-.header-user::after {
-  margin-top: 3px;
-  margin-left: 35%;
+  display: none;
 }
 
 .dropdown-toggle:focus{
@@ -50,7 +44,7 @@
   padding-top: 15px;
 }
 
-a {
+a, a:hover {
   text-decoration: none;
   color: white;
 }
@@ -98,5 +92,9 @@ a {
   width: 35px;
   height: 35px;
   padding: 4px;
-  margin-top: -10px;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
 }
