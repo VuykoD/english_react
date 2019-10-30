@@ -26,10 +26,11 @@ export default class Footer extends Component {
     };
 
   render(){
-    const {siteLang } = this.props.store;
+    const {siteLang, fontColor } = this.props.store;
     const premium = get(content, `premium[${siteLang}]`);
     const contacts = get(content, `contacts[${siteLang}]`);
     const hint = get(content, `hint[${siteLang}]`);
+      const style = {color: fontColor};
 
     return (
         <div className="footer">
@@ -41,7 +42,7 @@ export default class Footer extends Component {
                         </div>
                     </Col>
                     <Col/>
-                    <Col md="auto" className="footer-item">{contacts}: +38 (093) 922-49-49</Col>
+                    <Col md="auto" className="footer-item" style={style}>{contacts}: +38 (093) 922-49-49</Col>
                 </Row>
             </Container>
         </div>

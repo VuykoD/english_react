@@ -1,0 +1,16 @@
+.color {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: solid black 1px;
+}
+
+.setting-input {
+  margin-top: 15px;
+}
+
+.bottom-reset {
+  margin-top: 15px;
+}
+
+

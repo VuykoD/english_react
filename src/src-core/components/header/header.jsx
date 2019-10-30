@@ -85,7 +85,7 @@ export default class Header extends Component {
     };
 
   render(){
-    const {siteLang, learnedLang} = this.props.store;
+    const {siteLang, learnedLang, fontColor} = this.props.store;
     const currentSiteLang = langType[siteLang];
     const currentLearnedLang = langType[learnedLang];
     const direction = 'left';
@@ -100,31 +100,34 @@ export default class Header extends Component {
     const btnLearnedLand = get(content, `btnLearnedLand[${siteLang}]`);
     const setting = get(content, `setting[${siteLang}]`);
     const search = get(content, `search[${siteLang}]`);
+    const style = {color: fontColor};
 
     return (
         <Container>
           <Row>
             <Col md="auto">
                 <Link to={'/'} className="logo">
-                    <div className="engLogo">LEARNING IS FUN</div>
-                    {logo && <div className="lowerLogo">{logo}</div> }
+                    <div className="engLogo" style={style}>LEARNING IS FUN</div>
+                </Link>
+                <Link to={'/'} className="logo">
+                    {logo && <div className="lowerLogo" style={style}>{logo}</div> }
                 </Link>
             </Col>
               <Col>
                   <FormControl type="text" placeholder={search} className="mr-sm-2 search" />
               </Col>
             <Col md="auto" className="headerButton">
-                <Link to={'/course'} children={course}/>
+                <Link to={'/course'} children={course}  style={style}/>
             </Col>
             <Col md="auto" className="headerButton">
-                <Link to={'/video'} children={video}/>
+                <Link to={'/video'} children={video}  style={style}/>
             </Col>
-            <Col md="auto" className="headerButton">{learning}</Col>
+            <Col md="auto" className="headerButton" style={style}>{learning}</Col>
             <Col md="auto" className="headerButton">
               <DropdownButton
                   id="dropdown-current-lang"
                   alignRight
-                  title={`${get(currentSiteLang, 'short')}-${get(currentLearnedLang, 'short')}`}
+                  title={<div style={style}>{get(currentSiteLang, 'short')}-{get(currentLearnedLang, 'short')}</div>}
                   variant={'header'}
               >
                   <DropdownButton
@@ -177,7 +180,7 @@ export default class Header extends Component {
                     <DropdownButton
                         id="dropdown-user"
                         alignRight
-                        title={<div className="user">VD</div>}
+                        title={<div className="user"  style={style}>VD</div>}
                         variant='header header-user'
                     >
                         <Dropdown.Item>{dictionary}</Dropdown.Item>
