@@ -85,7 +85,7 @@ export default class Header extends Component {
     };
 
   render(){
-    const {siteLang, learnedLang, fontColor, userData = ''} = this.props.store;
+    const {siteLang, learnedLang, fontColor, firstColor, secondColor, userData = ''} = this.props.store;
     const parsedUserData = userData? JSON.parse(userData): {};
     const {name = '', surname = ''} = parsedUserData;
     const initials = (name || surname)?
@@ -105,98 +105,101 @@ export default class Header extends Component {
     const btnLearnedLand = get(content, `btnLearnedLand[${siteLang}]`);
     const setting = get(content, `setting[${siteLang}]`);
     const search = get(content, `search[${siteLang}]`);
-    const style = {color: fontColor};
+    const fontStyle = {color: fontColor};
+    const gradientStyle = {background: `linear-gradient(to bottom,${firstColor},${secondColor}`};
 
     return (
-        <Container>
-          <Row>
-            <Col md="auto">
-                <Link to={'/'} className="logo">
-                    <div className="engLogo" style={style}>LEARNING IS FUN</div>
-                </Link>
-                <Link to={'/'} className="logo">
-                    {logo && <div className="lowerLogo" style={style}>{logo}</div> }
-                </Link>
-            </Col>
-              <Col>
-                  <FormControl type="text" placeholder={search} className="mr-sm-2 search" />
-              </Col>
-            <Col md="auto" className="headerButton">
-                <Link to={'/course'} children={course}  style={style}/>
-            </Col>
-            <Col md="auto" className="headerButton">
-                <Link to={'/video'} children={video}  style={style}/>
-            </Col>
-            <Col md="auto" className="headerButton" style={style}>{learning}</Col>
-            <Col md="auto" className="headerButton">
-              <DropdownButton
-                  id="dropdown-current-lang"
-                  alignRight
-                  title={<div style={style}>{get(currentSiteLang, 'short')}-{get(currentLearnedLang, 'short')}</div>}
-                  variant={'header'}
-              >
+        <div className="header" style={gradientStyle}>
+            <Container>
+              <Row>
+                <Col md="auto">
+                    <Link to={'/'} className="logo">
+                        <div className="engLogo" style={fontStyle}>LEARNING IS FUN</div>
+                    </Link>
+                    <Link to={'/'} className="logo">
+                        {logo && <div className="lowerLogo" style={fontStyle}>{logo}</div> }
+                    </Link>
+                </Col>
+                  <Col>
+                      <FormControl type="text" placeholder={search} className="mr-sm-2 search" />
+                  </Col>
+                <Col md="auto" className="headerButton">
+                    <Link to={'/course'} children={course}  style={fontStyle}/>
+                </Col>
+                <Col md="auto" className="headerButton">
+                    <Link to={'/video'} children={video}  style={fontStyle}/>
+                </Col>
+                <Col md="auto" className="headerButton" style={fontStyle}>{learning}</Col>
+                <Col md="auto" className="headerButton">
                   <DropdownButton
-                      id="dropdown-site-lang"
-                      drop={direction}
-                      title={btnSiteLang}
+                      id="dropdown-current-lang"
+                      alignRight
+                      title={<div style={fontStyle}>{get(currentSiteLang, 'short')}-{get(currentLearnedLang, 'short')}</div>}
                       variant={'header'}
                   >
-                      {map(langType, (lang, key)=>{
-                          if(lang.siteLang){
-                              return(
-                                  <Dropdown.Item
-                                      key={key}
-                                      active={siteLang === key}
-                                      onClick={this.changeSiteLang}
-                                      lang={key}
-                                      as="button"
-                                  >
-                                      {lang.full}
-                                  </Dropdown.Item>
-                              )
-                          }
-                      })}
+                      <DropdownButton
+                          id="dropdown-site-lang"
+                          drop={direction}
+                          title={btnSiteLang}
+                          variant={'header'}
+                      >
+                          {map(langType, (lang, key)=>{
+                              if(lang.siteLang){
+                                  return(
+                                      <Dropdown.Item
+                                          key={key}
+                                          active={siteLang === key}
+                                          onClick={this.changeSiteLang}
+                                          lang={key}
+                                          as="button"
+                                      >
+                                          {lang.full}
+                                      </Dropdown.Item>
+                                  )
+                              }
+                          })}
+                      </DropdownButton>
+                      <DropdownButton
+                          id="dropdown-learned-lang"
+                          drop={direction}
+                          title={btnLearnedLand}
+                          variant={'header'}
+                      >
+                          {map(langType, (lang, key)=>{
+                              if(lang.learnedLang){
+                                  return(
+                                      <Dropdown.Item
+                                          key={key}
+                                          active={learnedLang === key}
+                                          onClick={this.changeLearnedLang}
+                                          lang={key}
+                                      >
+                                          {lang.full}
+                                      </Dropdown.Item>
+                                  )
+                              }
+                          })}
+                      </DropdownButton>
                   </DropdownButton>
-                  <DropdownButton
-                      id="dropdown-learned-lang"
-                      drop={direction}
-                      title={btnLearnedLand}
-                      variant={'header'}
-                  >
-                      {map(langType, (lang, key)=>{
-                          if(lang.learnedLang){
-                              return(
-                                  <Dropdown.Item
-                                      key={key}
-                                      active={learnedLang === key}
-                                      onClick={this.changeLearnedLang}
-                                      lang={key}
-                                  >
-                                      {lang.full}
-                                  </Dropdown.Item>
-                              )
-                          }
-                      })}
-                  </DropdownButton>
-              </DropdownButton>
-            </Col>
-            <Col md="auto" className="headerButton">
-                <div>
-                    <DropdownButton
-                        id="dropdown-user"
-                        alignRight
-                        title={<div className="user" style={style}>{initials}</div>}
-                        variant='header header-user'
-                    >
-                        <Dropdown.Item>{dictionary}</Dropdown.Item>
-                        <Dropdown.Item>{progress}</Dropdown.Item>
-                        <Dropdown.Item href="/user/data">{myData}</Dropdown.Item>
-                        <Dropdown.Item href="/user/setting">{setting}</Dropdown.Item>
-                    </DropdownButton>
-                </div>
-            </Col>
-          </Row>
-        </Container>
+                </Col>
+                <Col md="auto" className="headerButton">
+                    <div>
+                        <DropdownButton
+                            id="dropdown-user"
+                            alignRight
+                            title={<div className="user" style={fontStyle}>{initials}</div>}
+                            variant='header header-user'
+                        >
+                            <Dropdown.Item>{dictionary}</Dropdown.Item>
+                            <Dropdown.Item>{progress}</Dropdown.Item>
+                            <Dropdown.Item href="/user/data">{myData}</Dropdown.Item>
+                            <Dropdown.Item href="/user/setting">{setting}</Dropdown.Item>
+                        </DropdownButton>
+                    </div>
+                </Col>
+              </Row>
+            </Container>
+        </div>
     );
   }
 };

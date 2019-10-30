@@ -5,6 +5,8 @@ import {Col, Container, Row} from "react-bootstrap";
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
+import {defaultColor} from '../../../index';
+
 
 import '../../../scc/settings.css';
 
@@ -17,6 +19,22 @@ const content = {
         ru:'Напишите цвет',
         ukr:'Напишіть колір'
     },
+    firstColor:{
+        ru:'Первый цвет',
+        ukr:'Перший колір'
+    },
+    secondColor:{
+        ru:'Второй цвет',
+        ukr:'Другий колір'
+    },
+    backColor:{
+        ru:'Цвет фона',
+        ukr:'Колір фону'
+    },
+    recover:{
+        ru:'Востановить',
+        ukr:'Відновити'
+    },
 };
 
 export default class Setting extends Component {
@@ -24,6 +42,8 @@ export default class Setting extends Component {
         store: PropTypes.shape({}),
         onChangeFontColor: PropTypes.func,
         onChangeBackColor: PropTypes.func,
+        onChangeFirstColor: PropTypes.func,
+        onChangeSecondColor: PropTypes.func,
     };
 
     changeFontColor=()=>{
@@ -38,21 +58,46 @@ export default class Setting extends Component {
         this.props.onChangeBackColor(el.value);
     };
 
+    changeFirstColor=()=>{
+        const el = document.getElementById('firstColor');
+        localStorage.firstColor = el.value;
+        this.props.onChangeFirstColor(el.value);
+    };
+
+    changeSecondColor=()=>{
+        const el = document.getElementById('secondColor');
+        localStorage.secondColor = el.value;
+        this.props.onChangeSecondColor(el.value);
+    };
+
+    recover=()=>{
+        localStorage.removeItem("fontColor");
+        localStorage.removeItem("backColor");
+        localStorage.removeItem("firstColor");
+        localStorage.removeItem("secondColor");
+        this.props.onChangeFontColor(defaultColor.fontColor);
+        this.props.onChangeBackColor(defaultColor.backColor);
+        this.props.onChangeFirstColor(defaultColor.firstColor);
+        this.props.onChangeSecondColor(defaultColor.secondColor);
+    };
+
     render(){
-    const { siteLang, fontColor, backColor } = this.props.store;
+    const { siteLang, fontColor, backColor, firstColor, secondColor } = this.props.store;
     const fontColorTxt = get(content, `fontColor[${siteLang}]`);
+    const firstColorTxt = get(content, `firstColor[${siteLang}]`);
+    const secondColorTxt = get(content, `secondColor[${siteLang}]`);
+    const backColorTxt = get(content, `backColor[${siteLang}]`);
     const colorPlaceHolder = get(content, `colorPlaceHolder[${siteLang}]`);
+    const recover = get(content, `recover[${siteLang}]`);
 
     return (
         <Container className="container">
             <Row>
                 <Col>
                     <InputGroup className="mb-3 setting-input">
-                        <InputGroup.Text>{fontColorTxt}</InputGroup.Text>
+                        <InputGroup.Text children={fontColorTxt} />
                         <FormControl
                             id='fontColor'
-                            aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default"
                             onChange={this.changeFontColor}
                             placeholder={colorPlaceHolder}
                             value={fontColor}
@@ -62,35 +107,35 @@ export default class Setting extends Component {
                 </Col>
                 <Col>
                     <InputGroup className="mb-3 setting-input">
-                        <InputGroup.Text>Первый цвет</InputGroup.Text>
+                        <InputGroup.Text children={firstColorTxt} />
                         <FormControl
-                            aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default"
+                            id='firstColor'
                             placeholder={colorPlaceHolder}
+                            onChange={this.changeFirstColor}
+                            value={firstColor}
                         />
                     </InputGroup>
-                    <div className='color' />
+                    <div className='color' style={{backgroundColor: firstColor}}/>
                 </Col>
             </Row>
             <Row>
                 <Col>
                     <InputGroup className="mb-3 setting-input">
-                        <InputGroup.Text>Второй цвет</InputGroup.Text>
+                        <InputGroup.Text children={secondColorTxt} />
                         <FormControl
-                            aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default"
+                            id='secondColor'
+                            onChange={this.changeSecondColor}
                             placeholder={colorPlaceHolder}
+                            value={secondColor}
                         />
                     </InputGroup>
-                    <div className='color' />
+                    <div className='color' style={{backgroundColor: secondColor}}/>
                 </Col>
                 <Col>
                     <InputGroup className="mb-3 setting-input">
-                        <InputGroup.Text>Цвет фона</InputGroup.Text>
+                        <InputGroup.Text children={backColorTxt} />
                         <FormControl
                             id='backColor'
-                            aria-label="Default"
-                            aria-describedby="inputGroup-sizing-default"
                             onChange={this.changeBackColor}
                             placeholder={colorPlaceHolder}
                             value={backColor}
@@ -102,7 +147,7 @@ export default class Setting extends Component {
             <Row>
                 <Col md="auto">
                     <div className='bottom-reset' >
-                        <Button variant="dark">Востановить</Button>
+                        <Button variant="dark" children={recover} onClick={this.recover}/>
                     </div>
                 </Col>
             </Row>

@@ -15,7 +15,7 @@ class App extends Component {
     const {
         store = {},
         onChangeSiteLang, onChangeLearnedLang,
-        onChangeFontColor, onChangeBackColor,
+        onChangeFontColor, onChangeBackColor, onChangeFirstColor, onChangeSecondColor,
         onChangeUserData
     } = this.props;
     const {backColor} = store;
@@ -23,13 +23,11 @@ class App extends Component {
 
     return (
         <Router>
-            <div className="header">
-                <Header
-                    store={store}
-                    onChangeSiteLang={onChangeSiteLang}
-                    onChangeLearnedLang={onChangeLearnedLang}
-                />
-            </div>
+            <Header
+                store={store}
+                onChangeSiteLang={onChangeSiteLang}
+                onChangeLearnedLang={onChangeLearnedLang}
+            />
             <Switch>
                 <Route exact path='/' children={<HomePage store={store}/>} />
                 <Route path='/course' children={<Course store={store}/>} />
@@ -45,6 +43,8 @@ class App extends Component {
                         store={store}
                         onChangeFontColor={onChangeFontColor}
                         onChangeBackColor={onChangeBackColor}
+                        onChangeFirstColor={onChangeFirstColor}
+                        onChangeSecondColor={onChangeSecondColor}
                     />
                 } />
             </Switch>
@@ -61,20 +61,12 @@ export default connect(
         store: state
     }),
     dispatch => ({
-        onChangeSiteLang: (lang) => {
-            dispatch({ type: 'SITE_LANG', payload: lang })
-        },
-        onChangeLearnedLang: (lang) => {
-            dispatch({ type: 'LEARNED_LANG', payload: lang })
-        },
-        onChangeFontColor: (color) => {
-            dispatch({ type: 'FONT_COLOR', payload: color })
-        },
-        onChangeBackColor: (color) => {
-            dispatch({ type: 'BACK_COLOR', payload: color })
-        },
-        onChangeUserData: (userData) => {
-            dispatch({ type: 'USER_DATA', payload: userData })
-        },
+        onChangeSiteLang: (lang) => { dispatch({ type: 'SITE_LANG', payload: lang }) },
+        onChangeLearnedLang: (lang) => { dispatch({ type: 'LEARNED_LANG', payload: lang }) },
+        onChangeFontColor: (color) => { dispatch({ type: 'FONT_COLOR', payload: color }) },
+        onChangeBackColor: (color) => { dispatch({ type: 'BACK_COLOR', payload: color }) },
+        onChangeFirstColor: (color) => { dispatch({ type: 'FIRST_COLOR', payload: color }) },
+        onChangeSecondColor: (color) => { dispatch({ type: 'SECOND_COLOR', payload: color }) },
+        onChangeUserData: (userData) => { dispatch({ type: 'USER_DATA', payload: userData }) },
     })
 )(App);

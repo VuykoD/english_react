@@ -50,10 +50,10 @@ export default class UserData extends Component {
         <Container>
             <Row className='user-row'>
                 <Col>
-                    <FormControl type="text" placeholder={namePlaceholder} id="userName" value={userName}/>
+                    <FormControl type="text" placeholder={namePlaceholder} id="userName" defaultValue={userName}/>
                 </Col>
                 <Col>
-                    <FormControl type="text" placeholder={surnamePlaceholder} id="userSurname" value={userSurname}/>
+                    <FormControl type="text" placeholder={surnamePlaceholder} id="userSurname" defaultValue={userSurname}/>
                 </Col>
             </Row>
             <Row className='user-row'>

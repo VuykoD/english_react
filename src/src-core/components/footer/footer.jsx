@@ -26,14 +26,15 @@ export default class Footer extends Component {
     };
 
   render(){
-    const {siteLang, fontColor } = this.props.store;
+    const {siteLang, fontColor, firstColor, secondColor } = this.props.store;
     const premium = get(content, `premium[${siteLang}]`);
     const contacts = get(content, `contacts[${siteLang}]`);
     const hint = get(content, `hint[${siteLang}]`);
-      const style = {color: fontColor};
+      const fontStyle = {color: fontColor};
+      const gradientStyle = {background: `linear-gradient(to bottom,${secondColor},${firstColor}`};
 
     return (
-        <div className="footer">
+        <div className="footer" style={gradientStyle}>
             <Container>
                 <Row>
                     <Col md="auto" title={hint}>
@@ -42,7 +43,7 @@ export default class Footer extends Component {
                         </div>
                     </Col>
                     <Col/>
-                    <Col md="auto" className="footer-item" style={style}>{contacts}: +38 (093) 922-49-49</Col>
+                    <Col md="auto" className="footer-item" style={fontStyle}>{contacts}: +38 (093) 922-49-49</Col>
                 </Row>
             </Container>
         </div>

@@ -1,5 +1,4 @@
 .header {
-  background: linear-gradient(to bottom,#40ac62,#369656);
   height: 100px;
   color: white;
 }
@@ -76,14 +75,9 @@ a, a:hover {
   background-color: #333;
   border: none;
 }
-
-.dropdown-item:hover {
+ .dropdown-item.active {
   color: #fff;
   background-color: rgb(64, 172, 98);
-}
-
-.dropdown-item.active {
-  background-color: rgb(64, 172, 98)
 }
 
 .user {
