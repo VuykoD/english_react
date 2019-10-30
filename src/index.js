@@ -12,7 +12,8 @@ const initialState = {
     siteLang: localStorage.siteLand || 'ru',
     learnedLang: localStorage.learnedLand || 'eng',
     fontColor: localStorage.fontColor || 'white',
-    backColor: localStorage.backColor || 'white'
+    backColor: localStorage.backColor || 'white',
+    userData: localStorage.userData || '',
 };
 
 function playlist(state = initialState, action) {
@@ -27,6 +28,9 @@ function playlist(state = initialState, action) {
     }
     if (action.type === 'BACK_COLOR') {
         return { ...state, backColor: action.payload };
+    }
+    if (action.type === 'USER_DATA') {
+        return { ...state, userData: action.payload };
     }
     return state;
 }

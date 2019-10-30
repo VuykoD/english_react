@@ -6,7 +6,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 
-import '../../scc/settings.css';
+import '../../../scc/settings.css';
 
 const content = {
     fontColor:{
@@ -44,7 +44,7 @@ export default class Setting extends Component {
     const colorPlaceHolder = get(content, `colorPlaceHolder[${siteLang}]`);
 
     return (
-        <Container>
+        <Container className="container">
             <Row>
                 <Col>
                     <InputGroup className="mb-3 setting-input">

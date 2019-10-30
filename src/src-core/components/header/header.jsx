@@ -85,7 +85,12 @@ export default class Header extends Component {
     };
 
   render(){
-    const {siteLang, learnedLang, fontColor} = this.props.store;
+    const {siteLang, learnedLang, fontColor, userData = ''} = this.props.store;
+    const parsedUserData = userData? JSON.parse(userData): {};
+    const {name = '', surname = ''} = parsedUserData;
+    const initials = (name || surname)?
+        name.charAt(0).toUpperCase() + surname.charAt(0).toUpperCase():
+        'NN';
     const currentSiteLang = langType[siteLang];
     const currentLearnedLang = langType[learnedLang];
     const direction = 'left';
@@ -180,13 +185,13 @@ export default class Header extends Component {
                     <DropdownButton
                         id="dropdown-user"
                         alignRight
-                        title={<div className="user"  style={style}>VD</div>}
+                        title={<div className="user" style={style}>{initials}</div>}
                         variant='header header-user'
                     >
                         <Dropdown.Item>{dictionary}</Dropdown.Item>
                         <Dropdown.Item>{progress}</Dropdown.Item>
-                        <Dropdown.Item>{myData}</Dropdown.Item>
-                        <Dropdown.Item href="/setting">{setting}</Dropdown.Item>
+                        <Dropdown.Item href="/user/data">{myData}</Dropdown.Item>
+                        <Dropdown.Item href="/user/setting">{setting}</Dropdown.Item>
                     </DropdownButton>
                 </div>
             </Col>
