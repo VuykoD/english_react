@@ -7,8 +7,14 @@ export default class Course extends Component {
     return (
         <Container>
           <Row>
-            <Col md="auto" >
-              <div>course</div>
+            <Col sm={3} >
+              <div><img src="images/color_line-151.png" alt=""/></div>
+            </Col>
+            <Col sm={6} >
+              <div>Книги</div>
+            </Col>
+            <Col sm={3} >
+              <div></div>
             </Col>
           </Row>
         </Container>
