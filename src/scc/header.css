@@ -33,8 +33,6 @@
 
 .headerButton:hover, .btn-header:hover, .dropdown-toggle:hover {
   color: rgb(235, 235, 235);
-  background-color: rgb(64, 172, 98);
-  border-bottom-style: none;
  }
 
 .engLogo {

@@ -84,6 +84,18 @@ export default class Header extends Component {
         }
     };
 
+    onMouseOver=(e)=>{
+        const elem = e.currentTarget;
+        elem .style.background = this.props.store.secondColor
+    };
+
+    onMouseOut=(e)=>{
+        const elem = e.currentTarget;
+        const {firstColor, secondColor} = this.props.store;
+        const gradientStyle = `linear-gradient(to bottom,${firstColor},${secondColor}`;
+        elem .style.background = gradientStyle;
+    };
+
   render(){
     const {siteLang, learnedLang, fontColor, firstColor, secondColor, userData = ''} = this.props.store;
     const parsedUserData = userData? JSON.parse(userData): {};
@@ -107,6 +119,7 @@ export default class Header extends Component {
     const search = get(content, `search[${siteLang}]`);
     const fontStyle = {color: fontColor};
     const gradientStyle = {background: `linear-gradient(to bottom,${firstColor},${secondColor}`};
+    const hover = {onMouseOver:this.onMouseOver, onMouseOut:this.onMouseOut};
 
     return (
         <div className="header" style={gradientStyle}>
@@ -123,14 +136,14 @@ export default class Header extends Component {
                   <Col>
                       <FormControl type="text" placeholder={search} className="mr-sm-2 search" />
                   </Col>
-                <Col md="auto" className="headerButton">
+                <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
                     <Link to={'/course'} children={course}  style={fontStyle}/>
                 </Col>
-                <Col md="auto" className="headerButton">
+                <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
                     <Link to={'/video'} children={video}  style={fontStyle}/>
                 </Col>
-                <Col md="auto" className="headerButton" style={fontStyle}>{learning}</Col>
-                <Col md="auto" className="headerButton">
+                <Col md="auto" className="headerButton" style={{...fontStyle,...gradientStyle }} {...hover} >{learning}</Col>
+                <Col md="auto" className="headerButton"  style={gradientStyle} {...hover} >
                   <DropdownButton
                       id="dropdown-current-lang"
                       alignRight
@@ -182,7 +195,7 @@ export default class Header extends Component {
                       </DropdownButton>
                   </DropdownButton>
                 </Col>
-                <Col md="auto" className="headerButton">
+                <Col md="auto" className="headerButton"  style={gradientStyle} {...hover} >
                     <div>
                         <DropdownButton
                             id="dropdown-user"
