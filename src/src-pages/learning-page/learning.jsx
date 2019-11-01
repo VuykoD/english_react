@@ -251,7 +251,7 @@ export default class Learning extends Component {
                                 variant="light"
                                 block onClick={this.exampleLearning}
                             >
-                                Скласти по словам по озвученому
+                                Скласти по словам по озвученому (нове)
                             </Button>
                             <Button
                                 id="phase_2"
@@ -259,7 +259,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Скласти по словам - переклад
+                                Скласти по словам - переклад (повтор)
                             </Button>
                             <Button
                                 id="phase_3"
@@ -267,7 +267,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Написати перші літери по озвученому
+                                Написати перші літери по озвученому (повтор)
                             </Button>
                             <Button
                                 id="phase_4"
@@ -275,7 +275,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Написати перші літери - переклад
+                                Написати перші літери - переклад (екзамен)
                             </Button>
                             <Button
                                 id="phase_5"
@@ -283,7 +283,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Повторити по озвученому
+                                Повторити по озвученому (нове)
                             </Button>
                         </Col>
                     </Fragment>
@@ -417,6 +417,7 @@ function getProgressBar() {
                     <div className="view_port">
                         <ProgressBar animated now={100} className="cylon_eye"/>
                     </div>
+                    <div className="hint">Повторіть скільки встигнете</div>
                 </Col>
                 <Col sm={3}/>
             </Row>
@@ -431,6 +432,7 @@ function speak() {
     const utterance = new SpeechSynthesisUtterance(text);
     const randomVoice = this.filteredVoices ? Math.floor(Math.random() * this.filteredVoices.length) : null;
     utterance.voice = randomVoice ? this.filteredVoices[randomVoice] : null;
+    if(!utterance.voice) utterance.lang = 'en';
     speechSynthesis.speak(utterance);
 }
 

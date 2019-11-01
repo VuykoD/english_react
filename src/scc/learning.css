@@ -50,6 +50,11 @@ button.title_sound {
     overflow: hidden;
 }
 
+.hint {
+    color: #333333;
+    padding-top: 20px;
+}
+
 .cylon_eye {
     background-color: green;
     height: 100%;
