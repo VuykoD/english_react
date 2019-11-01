@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
-import {Button, Col, Container, Form, Row, Badge, FormControl} from "react-bootstrap";
+import {Button, Col, Container, Form, Row, Badge} from "react-bootstrap";
 
 import '../../scc/learning.css';
 
@@ -58,6 +58,15 @@ export default class Learning extends Component {
         this.getVoices();
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        this.focusInput();
+    }
+
+    focusInput(){
+        const elem = document.getElementById("formInput");
+        if (elem) elem.focus();
+    }
+
     getVoices() {
         window.speechSynthesis.onvoiceschanged = () => {
             const voices = window.speechSynthesis.getVoices();
@@ -91,13 +100,14 @@ export default class Learning extends Component {
     };
 
     speakTxt = () => {
+        this.focusInput();
         speak.call(this);
     };
 
     onChangeInput = () => {
         const formInput = document.getElementById('formInput');
         const letter = get(formInput, 'value') ? formInput.value.substr(0, 1) : null;
-        const letterUp= letter.toUpperCase();
+        const letterUp = letter.toUpperCase();
         const rightTxt = get(this, 'englishArr[0]');
         if (rightTxt && letterUp === rightTxt.substr(0, 1).toUpperCase()) {
             this.englishArr.shift();
@@ -307,13 +317,19 @@ function getInput() {
 
     if (exampleLearning === 'phase_3' || exampleLearning === 'phase_4') {
         input = (
-            <FormControl
-                id='formInput'
-                type="text"
-                placeholder={"Треба писати тільки перші літери слів"}
-                className="mr-sm-2 search"
-                onChange={this.onChangeInput}
-            />
+            <Row>
+                <Col sm={3}/>
+                <Col>
+                    <Form.Control
+                        id='formInput'
+                        type="text"
+                        placeholder={"Треба писати тільки перші літери слів"}
+                        className="mr-sm-2 search"
+                        onChange={this.onChangeInput}
+                    />
+                </Col>
+                <Col sm={3}/>
+            </Row>
         )
     }
     return input
