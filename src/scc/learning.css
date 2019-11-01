@@ -30,3 +30,16 @@ select.form-control {
 .words {
     margin: 30px 4px ;
 }
+
+button.title_sound {
+    height: 49px;
+    width: 49px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.title_sound {
+    height: 45px;
+    padding: 0;
+    margin: 0;
+}

@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
+import filter from 'lodash/filter';
 import {Button, Col, Container, Form, Row, Badge, FormControl} from "react-bootstrap";
 
 import '../../scc/learning.css';
@@ -50,11 +51,29 @@ export default class Learning extends Component {
 
         this.state = {exampleLearning: null};
         this.englishArr = [];
+        this.english = '';
+    }
+
+    componentDidMount() {
+        this.getVoices();
+    }
+
+    getVoices() {
+        window.speechSynthesis.onvoiceschanged = () => {
+            const voices = window.speechSynthesis.getVoices();
+            this.filteredVoices = filter(voices, voice => {
+                    return voice.lang.substr(0, 2) === "en"
+                }
+            );
+        };
     }
 
     exampleLearning = (e) => {
         const elem = e.currentTarget;
         const id = elem.getAttribute('id');
+        this.english = id.substr(0, 4) === 'word' ?
+            "inspiration" : 'my name is Dima';
+
         this.setState({exampleLearning: id})
     };
 
@@ -65,10 +84,29 @@ export default class Learning extends Component {
         if (currentTxt === rightTxt) {
             this.englishArr.shift();
             const badge = document.getElementById('translation');
-            const translationTxt = get(badge, 'innerText');
             badge.innerText += ` ${currentTxt}`;
             e.currentTarget.remove();
             if (this.englishArr.length === 0) setTimeout(() => this.setState({exampleLearning: null}), 1000)
+        }
+    };
+
+    speakTxt = () => {
+        speak.call(this);
+    };
+
+    onChangeInput = () => {
+        const formInput = document.getElementById('formInput');
+        const letter = get(formInput, 'value') ? formInput.value.substr(0, 1) : null;
+        const letterUp= letter.toUpperCase();
+        const rightTxt = get(this, 'englishArr[0]');
+        if (rightTxt && letterUp === rightTxt.substr(0, 1).toUpperCase()) {
+            this.englishArr.shift();
+            const badge = document.getElementById('translation');
+            badge.innerText += ` ${rightTxt}`;
+            if (this.englishArr.length === 0) setTimeout(() => this.setState({exampleLearning: null}), 1000)
+            formInput.value = '';
+        } else {
+            formInput.value = '';
         }
     };
 
@@ -91,10 +129,12 @@ export default class Learning extends Component {
                 <option>4</option>
             </Form.Control>
         );
-        const english = exampleLearning && exampleLearning.substr(0, 4) === 'word' ?
-            "inspiration" : 'my name is Dima';
+
         const translation = exampleLearning && exampleLearning.substr(0, 4) === 'word' ?
             'натхнення' : 'Мене звати Дмитро';
+
+        const isSound = checkIsSound.call(this);
+        if (isSound) speak.call(this);
 
         return (
             <Container className='new-container'>
@@ -161,7 +201,9 @@ export default class Learning extends Component {
                             >
                                 Скласти по буквам - переклад
                             </Button>
-                            <Button variant="light" block>Написати слово по озвученому</Button>
+                            <Button variant="light" block>
+                                Написати слово по озвученому
+                            </Button>
                             <Button variant="light" block>Написати слово - переклад</Button>
                             <Button variant="light" block>Повторити по озвученому</Button>
                         </Col>
@@ -182,8 +224,22 @@ export default class Learning extends Component {
                             >
                                 Скласти по словам - переклад
                             </Button>
-                            <Button variant="light" block>Написати перші літери по озвученому</Button>
-                            <Button variant="light" block>Написати перші літери - переклад</Button>
+                            <Button
+                                id="phase_3"
+                                variant="light"
+                                block
+                                onClick={this.exampleLearning}
+                            >
+                                Написати перші літери по озвученому
+                            </Button>
+                            <Button
+                                id="phase_4"
+                                variant="light"
+                                block
+                                onClick={this.exampleLearning}
+                            >
+                                Написати перші літери - переклад
+                            </Button>
                             <Button variant="light" block>Повторити по озвученому</Button>
                         </Col>
                     </Fragment>
@@ -192,9 +248,10 @@ export default class Learning extends Component {
                     <Fragment>
                         <Col>
                             {getBadgeTranslation.call(this, translation)}
+                            {soundButton.call(this)}
                             <h2 className='translation'><Badge variant="dark" id='translation'></Badge></h2>
                             {getInput.call(this)}
-                            {getWordsArr.call(this, english)}
+                            {getWordsArr.call(this)}
                         </Col>
                     </Fragment>
                     }
@@ -204,7 +261,8 @@ export default class Learning extends Component {
     }
 };
 
-function getWordsArr(english) {
+function getWordsArr() {
+    const english = this.english;
     const {exampleLearning} = this.state;
     let wordsArr = null;
 
@@ -243,21 +301,72 @@ function getWordsArr(english) {
 function getInput() {
     const {exampleLearning} = this.state;
     let input = null;
+    const english = this.english;
+    const isWord = english.replace(/ /g, "") === english;
+    this.englishArr = isWord ? english.split('') : english.split(' ');
 
     if (exampleLearning === 'phase_3' || exampleLearning === 'phase_4') {
-        input = (<FormControl type="text" placeholder={"..."} className="mr-sm-2 search"/>)
+        input = (
+            <FormControl
+                id='formInput'
+                type="text"
+                placeholder={"Треба писати тільки перші літери слів"}
+                className="mr-sm-2 search"
+                onChange={this.onChangeInput}
+            />
+        )
     }
     return input
+}
+
+function soundButton() {
+    let btn = null;
+    const isSound = checkIsSound.call(this);
+    if (isSound) {
+        btn = (
+            <Button
+                variant="success"
+                className="title_sound"
+                onClick={this.speakTxt}
+            >
+                <img src="images/Sound.png" className="title_sound" alt=''/>
+            </Button>
+        )
+    }
+    return btn
 }
 
 function getBadgeTranslation(translation) {
     const {exampleLearning} = this.state;
     let badgeTranslation = null;
 
-    if (exampleLearning === 'phase_2' || exampleLearning === 'word_2') {
+    if (
+        exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
+        exampleLearning === 'phase_2' || exampleLearning === 'word_4'
+    ) {
         badgeTranslation = (
             <h3><Badge variant="secondary">{translation}</Badge></h3>
         )
     }
     return badgeTranslation
+}
+
+function speak() {
+    const text = this.english;
+    const utterance = new SpeechSynthesisUtterance(text);
+    const randomVoice = Math.floor(Math.random() * this.filteredVoices.length);
+    utterance.voice = this.filteredVoices[randomVoice];
+    speechSynthesis.speak(utterance);
+}
+
+function checkIsSound(text) {
+    const {exampleLearning} = this.state;
+    if (
+        exampleLearning === 'word_1' || exampleLearning === 'word_3' || exampleLearning === 'word_3' ||
+        exampleLearning === 'phase_1' || exampleLearning === 'phase_3' || exampleLearning === 'phase_5'
+    ) {
+        return true;
+    }
+
+    return false;
 }

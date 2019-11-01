@@ -24,8 +24,12 @@ export default class VideoItem extends Component {
                 <Row>
                     <Col>
                         <div className="border_video">
-                            <iframe id="video" src="http://www.youtube.com/embed/CWzrABouyeE?wmode=transparent"
-                                    className="video-item"/>
+                            <iframe
+                                id="video"
+                                src="http://www.youtube.com/embed/CWzrABouyeE?wmode=transparent"
+                                className="video-item"
+                                title='12'
+                            />
                         </div>
                     </Col>
                 </Row>
