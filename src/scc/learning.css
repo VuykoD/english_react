@@ -18,6 +18,15 @@ select.form-control {
   margin-bottom: 7px ;
 }
 
-.btn-light{
+.translation {
+    display: block;
+    height: 35px;
+}
+
+.btn-light {
     border-color: rgba(133,133,133,0.61);
+}
+
+.words {
+    margin: 30px 4px ;
 }

@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import get from 'lodash/get';
-import {Button, Col, Container, Form, Row, Badge} from "react-bootstrap";
+import map from 'lodash/map';
+import {Button, Col, Container, Form, Row, Badge, FormControl} from "react-bootstrap";
 
 import '../../scc/learning.css';
 
@@ -47,11 +48,28 @@ export default class Learning extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { exampleLearning: null };
+        this.state = {exampleLearning: null};
+        this.englishArr = [];
     }
 
-    exampleLearning=(e)=>{
-        this.setState({exampleLearning: 1})
+    exampleLearning = (e) => {
+        const elem = e.currentTarget;
+        const id = elem.getAttribute('id');
+        this.setState({exampleLearning: id})
+    };
+
+    wordClick = (e) => {
+        const elem = e.currentTarget;
+        const currentTxt = get(elem, 'innerText');
+        const rightTxt = get(this, 'englishArr[0]');
+        if (currentTxt === rightTxt) {
+            this.englishArr.shift();
+            const badge = document.getElementById('translation');
+            const translationTxt = get(badge, 'innerText');
+            badge.innerText += ` ${currentTxt}`;
+            e.currentTarget.remove();
+            if (this.englishArr.length === 0) setTimeout(() => this.setState({exampleLearning: null}), 1000)
+        }
     };
 
     render() {
@@ -73,9 +91,10 @@ export default class Learning extends Component {
                 <option>4</option>
             </Form.Control>
         );
-
-        const english = 'my name is Dima';
-        const translation = 'Мене звати Дмитро';
+        const english = exampleLearning && exampleLearning.substr(0, 4) === 'word' ?
+            "inspiration" : 'my name is Dima';
+        const translation = exampleLearning && exampleLearning.substr(0, 4) === 'word' ?
+            'натхнення' : 'Мене звати Дмитро';
 
         return (
             <Container className='new-container'>
@@ -121,37 +140,124 @@ export default class Learning extends Component {
                     <Col sm={1}/>
                 </Row>
                 <Row>
-                    <h3 className='new-row' children={examples} />
+                    <h3 className='new-row' children={examples}/>
                 </Row>
-                    <Row className="text-center new-row">
-                        {!exampleLearning &&
-                            <Fragment>
-                                <Col>
-                                    <h5 children={forWords} />
-                                    <Button variant="light" block>Скласти по буквам по озвученому</Button>
-                                    <Button variant="light" block>Скласти по буквам - переклад</Button>
-                                    <Button variant="light" block>Написати слово по озвученому</Button>
-                                    <Button variant="light" block>Написати слово - переклад</Button>
-                                    <Button variant="light" block>Повторити по озвученому</Button>
-                                </Col>
-                                <Col>
-                                    <h5  children={forPhrases} />
-                                    <Button variant="light" block onClick={this.exampleLearning}>Скласти по словам по озвученому</Button>
-                                    <Button variant="light" block>Скласти по словам - переклад</Button>
-                                    <Button variant="light" block>Написати перші літери по озвученому</Button>
-                                    <Button variant="light" block>Написати перші літери - переклад</Button>
-                                    <Button variant="light" block>Повторити по озвученому</Button>
-                                </Col>
-                            </Fragment>
-                        }
-                        {exampleLearning &&
-                            <Fragment>
-                                <h3><Badge variant="secondary">{translation}</Badge></h3>
-                                <h3><Badge variant="secondary">{english}</Badge></h3>
-                            </Fragment>
-                        }
-                    </Row>
+                <Row className="text-center new-row">
+                    {!exampleLearning &&
+                    <Fragment>
+                        <Col>
+                            <h5 children={forWords}/>
+                            <Button
+                                id="word_1"
+                                variant="light"
+                                block onClick={this.exampleLearning}
+                            >
+                                Скласти по буквам по озвученому
+                            </Button>
+                            <Button
+                                id="word_2"
+                                variant="light"
+                                block onClick={this.exampleLearning}
+                            >
+                                Скласти по буквам - переклад
+                            </Button>
+                            <Button variant="light" block>Написати слово по озвученому</Button>
+                            <Button variant="light" block>Написати слово - переклад</Button>
+                            <Button variant="light" block>Повторити по озвученому</Button>
+                        </Col>
+                        <Col>
+                            <h5 children={forPhrases}/>
+                            <Button
+                                id="phase_1"
+                                variant="light"
+                                block onClick={this.exampleLearning}
+                            >
+                                Скласти по словам по озвученому
+                            </Button>
+                            <Button
+                                id="phase_2"
+                                variant="light"
+                                block
+                                onClick={this.exampleLearning}
+                            >
+                                Скласти по словам - переклад
+                            </Button>
+                            <Button variant="light" block>Написати перші літери по озвученому</Button>
+                            <Button variant="light" block>Написати перші літери - переклад</Button>
+                            <Button variant="light" block>Повторити по озвученому</Button>
+                        </Col>
+                    </Fragment>
+                    }
+                    {exampleLearning &&
+                    <Fragment>
+                        <Col>
+                            {getBadgeTranslation.call(this, translation)}
+                            <h2 className='translation'><Badge variant="dark" id='translation'></Badge></h2>
+                            {getInput.call(this)}
+                            {getWordsArr.call(this, english)}
+                        </Col>
+                    </Fragment>
+                    }
+                </Row>
             </Container>
         );
     }
 };
+
+function getWordsArr(english) {
+    const {exampleLearning} = this.state;
+    let wordsArr = null;
+
+    if (
+        exampleLearning === 'phase_1' || exampleLearning === 'phase_2' ||
+        exampleLearning === 'word_1' || exampleLearning === 'word_2'
+    ) {
+        const isWord = english.replace(/ /g, "") === english;
+        this.englishArr = isWord ? english.split('') : english.split(' ');
+        const randArr = isWord ? english.split('') : english.split(' ');
+        randArr.sort(() => {
+            return .5 - Math.random();
+        });
+
+        wordsArr = (
+            <div>
+                {map(randArr, (word, index) => {
+                    return (
+                        <Button
+                            variant="info"
+                            key={index}
+                            onClick={this.wordClick}
+                            className="words"
+                            size="lg"
+                        >
+                            {word}
+                        </Button>
+                    )
+                })}
+            </div>
+        )
+    }
+    return wordsArr
+}
+
+function getInput() {
+    const {exampleLearning} = this.state;
+    let input = null;
+
+    if (exampleLearning === 'phase_3' || exampleLearning === 'phase_4') {
+        input = (<FormControl type="text" placeholder={"..."} className="mr-sm-2 search"/>)
+    }
+    return input
+}
+
+function getBadgeTranslation(translation) {
+    const {exampleLearning} = this.state;
+    let badgeTranslation = null;
+
+    if (exampleLearning === 'phase_2' || exampleLearning === 'word_2') {
+        badgeTranslation = (
+            <h3><Badge variant="secondary">{translation}</Badge></h3>
+        )
+    }
+    return badgeTranslation
+}
