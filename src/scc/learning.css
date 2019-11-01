@@ -1,0 +1,23 @@
+.form-check {
+   height: 30px;
+   font-size: 16px;
+   padding-top: 8px;
+ }
+
+select.form-control {
+  width: 60px;
+  margin: 0 0 0 auto;
+}
+
+.new-row {
+  margin: 0 auto ;
+  padding-top: 20px ;
+}
+
+.btn-block {
+  margin-bottom: 7px ;
+}
+
+.btn-light{
+    border-color: rgba(133,133,133,0.61);
+}

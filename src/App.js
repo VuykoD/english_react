@@ -6,7 +6,7 @@ import Footer from './src-core/components/footer/footer.jsx';
 import HomePage from './src-pages/home-page/home-page.jsx';
 import Setting from './src-pages/user-page/setting-page/setting.jsx';
 import UserData from './src-pages/user-page/user-data/user-data';
-import Training from './src-pages/training-page/training';
+import Learning from './src-pages/learning-page/learning';
 import Video from "./src-pages/video-page/video";
 import VideoItem from "./src-pages/video-page/video-item";
 import Course from "./src-pages/course-page/course";
@@ -35,7 +35,7 @@ class App extends Component {
                 <Route path='/course' children={<Course store={store}/>} />
                 <Route path='/video' children={<Video store={store}/>} />
                 <Route path='/video-item' children={<VideoItem store={store}/>} />
-                <Route path='/training' children={<Training store={store}/>} />
+                <Route path='/learning' children={<Learning store={store}/>} />
                 <Route path='/user/data' children={
                     <UserData
                         store={store}
