@@ -7,7 +7,7 @@ import '../../scc/video.css';
 const content = {
     videoCount: {
         ru: "Предложений",
-        ukr: "Реченнь",
+        ukr: "Речень",
     },
     newVideo: {
         ru: "Новие видео",
@@ -15,7 +15,7 @@ const content = {
     },
 };
 
-export default class Video extends Component {
+export default class Training extends Component {
     render() {
         const {siteLang} = this.props.store;
         const newVideo = get(content, `newVideo[${siteLang}]`);

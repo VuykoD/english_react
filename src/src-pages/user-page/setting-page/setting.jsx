@@ -11,29 +11,29 @@ import {defaultColor} from '../../../index';
 import '../../../scc/settings.css';
 
 const content = {
-    fontColor:{
-        ru:'Цвет шрифта',
-        ukr:'Колір шрифту'
+    fontColor: {
+        ru: 'Цвет шрифта',
+        ukr: 'Колір шрифту'
     },
-    colorPlaceHolder:{
-        ru:'Напишите цвет',
-        ukr:'Напишіть колір'
+    colorPlaceHolder: {
+        ru: 'Напишите цвет',
+        ukr: 'Напишіть колір'
     },
-    firstColor:{
-        ru:'Первый цвет',
-        ukr:'Перший колір'
+    firstColor: {
+        ru: 'Первый цвет',
+        ukr: 'Перший колір'
     },
-    secondColor:{
-        ru:'Второй цвет',
-        ukr:'Другий колір'
+    secondColor: {
+        ru: 'Второй цвет',
+        ukr: 'Другий колір'
     },
-    backColor:{
-        ru:'Цвет фона',
-        ukr:'Колір фону'
+    backColor: {
+        ru: 'Цвет фона',
+        ukr: 'Колір фону'
     },
-    recover:{
-        ru:'Востановить',
-        ukr:'Відновити'
+    recover: {
+        ru: 'Востановить',
+        ukr: 'Відновити'
     },
 };
 
@@ -46,31 +46,31 @@ export default class Setting extends Component {
         onChangeSecondColor: PropTypes.func,
     };
 
-    changeFontColor=()=>{
+    changeFontColor = () => {
         const el = document.getElementById('fontColor');
         localStorage.fontColor = el.value;
         this.props.onChangeFontColor(el.value);
     };
 
-    changeBackColor=()=>{
+    changeBackColor = () => {
         const el = document.getElementById('backColor');
         localStorage.backColor = el.value;
         this.props.onChangeBackColor(el.value);
     };
 
-    changeFirstColor=()=>{
+    changeFirstColor = () => {
         const el = document.getElementById('firstColor');
         localStorage.firstColor = el.value;
         this.props.onChangeFirstColor(el.value);
     };
 
-    changeSecondColor=()=>{
+    changeSecondColor = () => {
         const el = document.getElementById('secondColor');
         localStorage.secondColor = el.value;
         this.props.onChangeSecondColor(el.value);
     };
 
-    recover=()=>{
+    recover = () => {
         localStorage.removeItem("fontColor");
         localStorage.removeItem("backColor");
         localStorage.removeItem("firstColor");
@@ -81,77 +81,77 @@ export default class Setting extends Component {
         this.props.onChangeSecondColor(defaultColor.secondColor);
     };
 
-    render(){
-    const { siteLang, fontColor, backColor, firstColor, secondColor } = this.props.store;
-    const fontColorTxt = get(content, `fontColor[${siteLang}]`);
-    const firstColorTxt = get(content, `firstColor[${siteLang}]`);
-    const secondColorTxt = get(content, `secondColor[${siteLang}]`);
-    const backColorTxt = get(content, `backColor[${siteLang}]`);
-    const colorPlaceHolder = get(content, `colorPlaceHolder[${siteLang}]`);
-    const recover = get(content, `recover[${siteLang}]`);
+    render() {
+        const {siteLang, fontColor, backColor, firstColor, secondColor} = this.props.store;
+        const fontColorTxt = get(content, `fontColor[${siteLang}]`);
+        const firstColorTxt = get(content, `firstColor[${siteLang}]`);
+        const secondColorTxt = get(content, `secondColor[${siteLang}]`);
+        const backColorTxt = get(content, `backColor[${siteLang}]`);
+        const colorPlaceHolder = get(content, `colorPlaceHolder[${siteLang}]`);
+        const recover = get(content, `recover[${siteLang}]`);
 
-    return (
-        <Container className="container">
-            <Row>
-                <Col>
-                    <InputGroup className="mb-3 setting-input">
-                        <InputGroup.Text children={fontColorTxt} />
-                        <FormControl
-                            id='fontColor'
-                            onChange={this.changeFontColor}
-                            placeholder={colorPlaceHolder}
-                            value={fontColor}
-                        />
-                    </InputGroup>
-                    <div className='color' style={{backgroundColor: fontColor}}/>
-                </Col>
-                <Col>
-                    <InputGroup className="mb-3 setting-input">
-                        <InputGroup.Text children={firstColorTxt} />
-                        <FormControl
-                            id='firstColor'
-                            placeholder={colorPlaceHolder}
-                            onChange={this.changeFirstColor}
-                            value={firstColor}
-                        />
-                    </InputGroup>
-                    <div className='color' style={{backgroundColor: firstColor}}/>
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <InputGroup className="mb-3 setting-input">
-                        <InputGroup.Text children={secondColorTxt} />
-                        <FormControl
-                            id='secondColor'
-                            onChange={this.changeSecondColor}
-                            placeholder={colorPlaceHolder}
-                            value={secondColor}
-                        />
-                    </InputGroup>
-                    <div className='color' style={{backgroundColor: secondColor}}/>
-                </Col>
-                <Col>
-                    <InputGroup className="mb-3 setting-input">
-                        <InputGroup.Text children={backColorTxt} />
-                        <FormControl
-                            id='backColor'
-                            onChange={this.changeBackColor}
-                            placeholder={colorPlaceHolder}
-                            value={backColor}
-                        />
-                    </InputGroup>
-                    <div className='color' style={{backgroundColor: backColor}}/>
-                </Col>
-            </Row>
-            <Row>
-                <Col md="auto">
-                    <div className='bottom-reset' >
-                        <Button variant="dark" children={recover} onClick={this.recover}/>
-                    </div>
-                </Col>
-            </Row>
-        </Container>
-    );
-  }
+        return (
+            <Container className="container">
+                <Row>
+                    <Col>
+                        <InputGroup className="mb-3 setting-input">
+                            <InputGroup.Text children={fontColorTxt}/>
+                            <FormControl
+                                id='fontColor'
+                                onChange={this.changeFontColor}
+                                placeholder={colorPlaceHolder}
+                                value={fontColor}
+                            />
+                        </InputGroup>
+                        <div className='color' style={{backgroundColor: fontColor}}/>
+                    </Col>
+                    <Col>
+                        <InputGroup className="mb-3 setting-input">
+                            <InputGroup.Text children={firstColorTxt}/>
+                            <FormControl
+                                id='firstColor'
+                                placeholder={colorPlaceHolder}
+                                onChange={this.changeFirstColor}
+                                value={firstColor}
+                            />
+                        </InputGroup>
+                        <div className='color' style={{backgroundColor: firstColor}}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <InputGroup className="mb-3 setting-input">
+                            <InputGroup.Text children={secondColorTxt}/>
+                            <FormControl
+                                id='secondColor'
+                                onChange={this.changeSecondColor}
+                                placeholder={colorPlaceHolder}
+                                value={secondColor}
+                            />
+                        </InputGroup>
+                        <div className='color' style={{backgroundColor: secondColor}}/>
+                    </Col>
+                    <Col>
+                        <InputGroup className="mb-3 setting-input">
+                            <InputGroup.Text children={backColorTxt}/>
+                            <FormControl
+                                id='backColor'
+                                onChange={this.changeBackColor}
+                                placeholder={colorPlaceHolder}
+                                value={backColor}
+                            />
+                        </InputGroup>
+                        <div className='color' style={{backgroundColor: backColor}}/>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md="auto">
+                        <div className='bottom-reset'>
+                            <Button variant="dark" children={recover} onClick={this.recover}/>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+        );
+    }
 };

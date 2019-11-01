@@ -53,77 +53,77 @@ export default class HomePage extends Component {
         store: PropTypes.shape({})
     };
 
-  render(){
-    const { siteLang } = this.props.store;
-    const firstBlock = get(content, `firstBlock[${siteLang}]`);
-    const firstText = get(content, `firstText[${siteLang}]`);
-    const secondBlock = get(content, `secondBlock[${siteLang}]`);
-    const secondText = get(content, `secondText[${siteLang}]`);
-    const thirdBlock = get(content, `thirdBlock[${siteLang}]`);
-    const thirdText = get(content, `thirdText[${siteLang}]`);
-    const fourthBlock = get(content, `fourthBlock[${siteLang}]`);
-    const fourthText = get(content, `fourthText[${siteLang}]`);
-    const mainHead = get(content, `mainHead[${siteLang}]`);
-    const mainText = get(content, `mainText[${siteLang}]`);
+    render(){
+        const { siteLang } = this.props.store;
+        const firstBlock = get(content, `firstBlock[${siteLang}]`);
+        const firstText = get(content, `firstText[${siteLang}]`);
+        const secondBlock = get(content, `secondBlock[${siteLang}]`);
+        const secondText = get(content, `secondText[${siteLang}]`);
+        const thirdBlock = get(content, `thirdBlock[${siteLang}]`);
+        const thirdText = get(content, `thirdText[${siteLang}]`);
+        const fourthBlock = get(content, `fourthBlock[${siteLang}]`);
+        const fourthText = get(content, `fourthText[${siteLang}]`);
+        const mainHead = get(content, `mainHead[${siteLang}]`);
+        const mainText = get(content, `mainText[${siteLang}]`);
 
-    return (
-        <div className="decoration">
-            <Container>
-                <Row>
-                    <Col sm={8}>
-                        <div className="block block-left">
-                            <p className="block-head">
-                                {firstBlock}
-                            </p>
-                            <div className="block-img">
-                                <img src="images/home-page/movie12.png" alt="" className="block-img"/>
+        return (
+            <div className="decoration">
+                <Container>
+                    <Row>
+                        <Col sm={8}>
+                            <div className="block block-left">
+                                <p className="block-head">
+                                    {firstBlock}
+                                </p>
+                                <div className="block-img">
+                                    <img src="images/home-page/movie12.png" alt="" className="block-img"/>
+                                </div>
+                                <p className="block-text">
+                                    {firstText}
+                                </p>
                             </div>
-                            <p className="block-text">
-                                {firstText}
-                            </p>
-                        </div>
-                    </Col>
-                    <Col sm={4}>
-                        <div className="block block-right small-blocks">
-                            <p className="block-head">
-                                {secondBlock}
-                            </p>
-                            <p className="block-text small-block">
-                                {secondText}
-                            </p>
-                        </div>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col sm={4}>
-                        <div className="block block-left small-blocks">
-                            <p className="block-head">
-                                {thirdBlock}
-                            </p>
-                            <p className="block-text small-block">
-                                {thirdText}
-                            </p>
-                        </div>
-                    </Col>
-                    <Col sm={8}>
-                        <div className="block block-right">
-                            <p className="block-head">
-                                {fourthBlock}
-                            </p>
-                            <div className="block-img">
-                                <img src="images/home-page/music.png" alt="" className="block-img"/>
+                        </Col>
+                        <Col sm={4}>
+                            <div className="block block-right small-blocks">
+                                <p className="block-head">
+                                    {secondBlock}
+                                </p>
+                                <p className="block-text small-block">
+                                    {secondText}
+                                </p>
                             </div>
-                            <p className="block-text">
-                                {fourthText}
-                            </p>
-                        </div>
-                    </Col>
-                </Row>
-                <h1 className="main-head">{mainHead}</h1>
-                <p className="main-txt">{mainText}</p>
-            </Container>
-        </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={4}>
+                            <div className="block block-left small-blocks">
+                                <p className="block-head">
+                                    {thirdBlock}
+                                </p>
+                                <p className="block-text small-block">
+                                    {thirdText}
+                                </p>
+                            </div>
+                        </Col>
+                        <Col sm={8}>
+                            <div className="block block-right">
+                                <p className="block-head">
+                                    {fourthBlock}
+                                </p>
+                                <div className="block-img">
+                                    <img src="images/home-page/music.png" alt="" className="block-img"/>
+                                </div>
+                                <p className="block-text">
+                                    {fourthText}
+                                </p>
+                            </div>
+                        </Col>
+                    </Row>
+                    <h1 className="main-head">{mainHead}</h1>
+                    <p className="main-txt">{mainText}</p>
+                </Container>
+            </div>
 
-    );
-  }
+        );
+    }
 };
