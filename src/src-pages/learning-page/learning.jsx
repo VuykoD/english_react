@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
-import {Button, Col, Container, Form, Row, Badge} from "react-bootstrap";
+import {Button, Col, Container, Form, Row, Badge, ProgressBar} from "react-bootstrap";
 
 import '../../scc/learning.css';
 
@@ -49,7 +49,9 @@ export default class Learning extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {exampleLearning: null};
+        this.state = {
+            exampleLearning: null,
+        };
         this.englishArr = [];
         this.english = '';
     }
@@ -62,7 +64,7 @@ export default class Learning extends Component {
         this.focusInput();
     }
 
-    focusInput(){
+    focusInput() {
         const elem = document.getElementById("formInput");
         if (elem) elem.focus();
     }
@@ -80,23 +82,32 @@ export default class Learning extends Component {
     exampleLearning = (e) => {
         const elem = e.currentTarget;
         const id = elem.getAttribute('id');
-        this.english = id.substr(0, 4) === 'word' ?
-            "inspiration" : 'my name is Dima';
-
-        this.setState({exampleLearning: id})
+        this.english = id.substr(0, 4) === 'word' ? "inspiration" : 'my name is Dmitriy';
+        this.setState({exampleLearning: id});
+        if (id === 'word_5' || id === 'phase_5') {
+            setTimeout(this.resetExampleLearning, 5000);
+        }
     };
+
+    resetExampleLearning = () => {
+        this.setState({exampleLearning: null})
+    }
 
     wordClick = (e) => {
         const elem = e.currentTarget;
         const currentTxt = get(elem, 'innerText');
         const rightTxt = get(this, 'englishArr[0]');
         if (currentTxt === rightTxt) {
-            this.englishArr.shift();
-            const badge = document.getElementById('translation');
-            badge.innerText += ` ${currentTxt}`;
+            this.rightClick(rightTxt);
             e.currentTarget.remove();
-            if (this.englishArr.length === 0) setTimeout(() => this.setState({exampleLearning: null}), 1000)
         }
+    };
+
+    rightClick = (rightTxt) => {
+        this.englishArr.shift();
+        const badge = document.getElementById('translation');
+        badge.innerText += ` ${rightTxt}`;
+        if (this.englishArr.length === 0) setTimeout(() => this.setState({exampleLearning: null}), 1000)
     };
 
     speakTxt = () => {
@@ -110,10 +121,7 @@ export default class Learning extends Component {
         const letterUp = letter.toUpperCase();
         const rightTxt = get(this, 'englishArr[0]');
         if (rightTxt && letterUp === rightTxt.substr(0, 1).toUpperCase()) {
-            this.englishArr.shift();
-            const badge = document.getElementById('translation');
-            badge.innerText += ` ${rightTxt}`;
-            if (this.englishArr.length === 0) setTimeout(() => this.setState({exampleLearning: null}), 1000)
+            this.rightClick(rightTxt);
             formInput.value = '';
         } else {
             formInput.value = '';
@@ -227,7 +235,14 @@ export default class Learning extends Component {
                             >
                                 Написати слово - переклад
                             </Button>
-                            <Button variant="light" block>Повторити по озвученому</Button>
+                            <Button
+                                id="word_5"
+                                variant="light"
+                                block
+                                onClick={this.exampleLearning}
+                            >
+                                Повторити по озвученому
+                            </Button>
                         </Col>
                         <Col>
                             <h5 children={forPhrases}/>
@@ -281,6 +296,7 @@ export default class Learning extends Component {
                             <h2 className='translation'><Badge variant="light" id='translation'></Badge></h2>
                             {getInput.call(this)}
                             {getWordsArr.call(this)}
+                            {getProgressBar.call(this)}
                         </Col>
                     </Fragment>
                     }
@@ -345,7 +361,7 @@ function getInput() {
                     <Form.Control
                         id='formInput'
                         type="text"
-                        placeholder={"Треба писати тільки перші літери слів"}
+                        placeholder={"Треба писати тільки перші літери"}
                         className="mr-sm-2 search"
                         onChange={this.onChangeInput}
                     />
@@ -389,11 +405,32 @@ function getBadgeTranslation(translation) {
     return badgeTranslation
 }
 
+function getProgressBar() {
+    const {exampleLearning} = this.state;
+    let progress = null;
+
+    if (exampleLearning === 'phase_5' || exampleLearning === 'word_5') {
+        progress = (
+            <Row>
+                <Col sm={3}/>
+                <Col>
+                    <div className="view_port">
+                        <ProgressBar animated now={100} className="cylon_eye"/>
+                    </div>
+                </Col>
+                <Col sm={3}/>
+            </Row>
+        )
+    }
+    return progress
+}
+
 function speak() {
+    if (!this.filteredVoices || !this.filteredVoices.lenght) this.getVoices();
     const text = this.english;
     const utterance = new SpeechSynthesisUtterance(text);
-    const randomVoice = this.filteredVoices? Math.floor(Math.random() * this.filteredVoices.length): null;
-    utterance.voice = randomVoice? this.filteredVoices[randomVoice]: null;
+    const randomVoice = this.filteredVoices ? Math.floor(Math.random() * this.filteredVoices.length) : null;
+    utterance.voice = randomVoice ? this.filteredVoices[randomVoice] : null;
     speechSynthesis.speak(utterance);
 }
 

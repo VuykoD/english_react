@@ -43,3 +43,20 @@ button.title_sound {
     padding: 0;
     margin: 0;
 }
+
+.view_port {
+    height: 15px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cylon_eye {
+    background-color: green;
+    height: 100%;
+    width: 20%;
+    border-radius: 4px;
+
+    animation: 5s linear 0s infinite alternate move_eye;
+}
+
+@keyframes move_eye { from { width: 5%; } to { width:100%; }  }

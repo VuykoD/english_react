@@ -6,18 +6,17 @@
 }
 
 .block {
-  opacity: 0.2;
-  height: 248px;
+  opacity: 0.15;
+  height: 255px;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0,0.3);
   margin-top: 25px;
   padding: 5px;
-  background-color: rgb(120, 180, 130);
   box-shadow: 11px 11px 10px rgba(0,0,0,0.7);
 }
 
 .block:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .decoration {
@@ -31,18 +30,17 @@
 }
 
 .block-head {
-  color: white;
   font-size: 20px;
   text-align: center;
 }
 
 .block-text {
   text-align: center;
+  font-size: 15px;
 }
 
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
 }
 
 img.block-img {

@@ -43,8 +43,8 @@ const content = {
         ukr:'Навчання за допомогою музики'
     },
     fourthText:{
-        ru:'Вы обучаетесь и развлекаетесь одновременно. Вы развиваете навык восприятия английского языка на слух. Вы учите разговорные формы слов, фразовые глаголы и сленг. Вы учитесь естественной речи.',
-        ukr:'Ви навчаєтеся і розважаєтесь одночасно. Ви розвиваєте навик сприйняття англійської мови на слух. Ви вчите розмовні форми слів, фразові дієслова і сленг. Ви вчитеся природної мови.'
+        ru:'Вы обучаетесь и развлекаетесь одновременно. Вы развиваете навык восприятия английского языка на слух. Вы учите разговорные формы слов, фразовые глаголы и сленг.',
+        ukr:'Ви навчаєтеся і розважаєтесь одночасно. Ви розвиваєте навик сприйняття англійської мови на слух. Ви вчите розмовні форми слів, фразові дієслова і сленг.'
     },
 };
 
@@ -54,7 +54,9 @@ export default class HomePage extends Component {
     };
 
     render(){
-        const { siteLang } = this.props.store;
+        const { siteLang, secondColor, fontColor } = this.props.store;
+        const fontStyle = {color: fontColor};
+        const cardStyle = {background: secondColor};
         const firstBlock = get(content, `firstBlock[${siteLang}]`);
         const firstText = get(content, `firstText[${siteLang}]`);
         const secondBlock = get(content, `secondBlock[${siteLang}]`);
@@ -71,7 +73,7 @@ export default class HomePage extends Component {
                 <Container>
                     <Row>
                         <Col sm={8}>
-                            <div className="block block-left">
+                            <div className="block block-left" style={{...cardStyle,...fontStyle}}>
                                 <p className="block-head">
                                     {firstBlock}
                                 </p>
@@ -84,7 +86,7 @@ export default class HomePage extends Component {
                             </div>
                         </Col>
                         <Col sm={4}>
-                            <div className="block block-right small-blocks">
+                            <div className="block block-right small-blocks" style={{...cardStyle,...fontStyle}}>
                                 <p className="block-head">
                                     {secondBlock}
                                 </p>
@@ -96,7 +98,7 @@ export default class HomePage extends Component {
                     </Row>
                     <Row>
                         <Col sm={4}>
-                            <div className="block block-left small-blocks">
+                            <div className="block block-left small-blocks" style={{...cardStyle,...fontStyle}}>
                                 <p className="block-head">
                                     {thirdBlock}
                                 </p>
@@ -106,7 +108,7 @@ export default class HomePage extends Component {
                             </div>
                         </Col>
                         <Col sm={8}>
-                            <div className="block block-right">
+                            <div className="block block-right" style={{...cardStyle,...fontStyle}}>
                                 <p className="block-head">
                                     {fourthBlock}
                                 </p>
