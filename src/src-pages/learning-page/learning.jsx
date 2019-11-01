@@ -211,10 +211,22 @@ export default class Learning extends Component {
                             >
                                 Скласти по буквам - переклад
                             </Button>
-                            <Button variant="light" block>
+                            <Button
+                                id="word_3"
+                                variant="light"
+                                block
+                                onClick={this.exampleLearning}
+                            >
                                 Написати слово по озвученому
                             </Button>
-                            <Button variant="light" block>Написати слово - переклад</Button>
+                            <Button
+                                id="word_4"
+                                variant="light"
+                                block
+                                onClick={this.exampleLearning}
+                            >
+                                Написати слово - переклад
+                            </Button>
                             <Button variant="light" block>Повторити по озвученому</Button>
                         </Col>
                         <Col>
@@ -250,7 +262,14 @@ export default class Learning extends Component {
                             >
                                 Написати перші літери - переклад
                             </Button>
-                            <Button variant="light" block>Повторити по озвученому</Button>
+                            <Button
+                                id="phase_5"
+                                variant="light"
+                                block
+                                onClick={this.exampleLearning}
+                            >
+                                Повторити по озвученому
+                            </Button>
                         </Col>
                     </Fragment>
                     }
@@ -259,7 +278,7 @@ export default class Learning extends Component {
                         <Col>
                             {getBadgeTranslation.call(this, translation)}
                             {soundButton.call(this)}
-                            <h2 className='translation'><Badge variant="dark" id='translation'></Badge></h2>
+                            <h2 className='translation'><Badge variant="light" id='translation'></Badge></h2>
                             {getInput.call(this)}
                             {getWordsArr.call(this)}
                         </Col>
@@ -315,7 +334,10 @@ function getInput() {
     const isWord = english.replace(/ /g, "") === english;
     this.englishArr = isWord ? english.split('') : english.split(' ');
 
-    if (exampleLearning === 'phase_3' || exampleLearning === 'phase_4') {
+    if (
+        exampleLearning === 'phase_3' || exampleLearning === 'phase_4' ||
+        exampleLearning === 'word_3' || exampleLearning === 'word_4'
+    ) {
         input = (
             <Row>
                 <Col sm={3}/>
@@ -358,7 +380,7 @@ function getBadgeTranslation(translation) {
 
     if (
         exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
-        exampleLearning === 'phase_2' || exampleLearning === 'word_4'
+        exampleLearning === 'word_2' || exampleLearning === 'word_4'
     ) {
         badgeTranslation = (
             <h3><Badge variant="secondary">{translation}</Badge></h3>
@@ -370,15 +392,15 @@ function getBadgeTranslation(translation) {
 function speak() {
     const text = this.english;
     const utterance = new SpeechSynthesisUtterance(text);
-    const randomVoice = Math.floor(Math.random() * this.filteredVoices.length);
-    utterance.voice = this.filteredVoices[randomVoice];
+    const randomVoice = this.filteredVoices? Math.floor(Math.random() * this.filteredVoices.length): null;
+    utterance.voice = randomVoice? this.filteredVoices[randomVoice]: null;
     speechSynthesis.speak(utterance);
 }
 
 function checkIsSound(text) {
     const {exampleLearning} = this.state;
     if (
-        exampleLearning === 'word_1' || exampleLearning === 'word_3' || exampleLearning === 'word_3' ||
+        exampleLearning === 'word_1' || exampleLearning === 'word_3' || exampleLearning === 'word_5' ||
         exampleLearning === 'phase_1' || exampleLearning === 'phase_3' || exampleLearning === 'phase_5'
     ) {
         return true;
