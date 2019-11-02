@@ -7,6 +7,46 @@ import {Button, Col, Container, Form, Row, Badge, ProgressBar} from "react-boots
 import '../../scc/learning.css';
 
 const content = {
+    firstWord: {
+        ru: "Составить по буквам по озвученному",
+        ukr: "Скласти по буквам по озвученому",
+    },
+    secondWord: {
+        ru: "Составить по буквам - перевод",
+        ukr: "Скласти по буквам - переклад",
+    },
+    thirdWord: {
+        ru: "Написать слово по озвученному",
+        ukr: "Написати слово по озвученому",
+    },
+    fourthWord: {
+        ru: "Написать слово - перевод",
+        ukr: "Написати слово - переклад",
+    },
+    fifthWord: {
+        ru: "Повторить по озвученному",
+        ukr: "Повторити по озвученому",
+    },
+    firstPhrase:  {
+        ru: "Составить по словам по озвученному (новое)",
+        ukr: "Скласти по словам по озвученому (нове)",
+    },
+    secondPhrase:  {
+        ru: "Составить по словам - перевод (повтор)",
+        ukr: "Скласти по словам - переклад (повтор)",
+    },
+    thirdPhrase:  {
+        ru: "Написать первые буквы по озвученному (повтор)",
+        ukr: "Написати перші літери по озвученому (повтор)",
+    },
+    fourthPhrase:  {
+        ru: "Написать первые буквы - перевод (экзамен)",
+        ukr: "Написати перші літери - переклад (екзамен)",
+    },
+    fifthPhrase:  {
+        ru: "Повторить по озвученному (новое)",
+        ukr: "Повторити по озвученому (нове)",
+    },
     new: {
         ru: "Новое",
         ukr: "Нове",
@@ -131,6 +171,16 @@ export default class Learning extends Component {
     render() {
         const {exampleLearning} = this.state;
         const {siteLang} = this.props.store;
+        const firstWord = get(content, `firstWord[${siteLang}]`);
+        const secondWord = get(content, `secondWord[${siteLang}]`);
+        const thirdWord = get(content, `thirdWord[${siteLang}]`);
+        const fourthWord = get(content, `fourthWord[${siteLang}]`);
+        const fifthWord = get(content, `fifthWord[${siteLang}]`);
+        const firstPhrase = get(content, `firstPhrase[${siteLang}]`);
+        const secondPhrase = get(content, `secondPhrase[${siteLang}]`);
+        const thirdPhrase = get(content, `thirdPhrase[${siteLang}]`);
+        const fourthPhrase = get(content, `fourthPhrase[${siteLang}]`);
+        const fifthPhrase = get(content, `fifthPhrase[${siteLang}]`);
         const newLearn = get(content, `new[${siteLang}]`);
         const repeat = get(content, `repeat[${siteLang}]`);
         const exam = get(content, `exam[${siteLang}]`);
@@ -210,14 +260,14 @@ export default class Learning extends Component {
                                 variant="light"
                                 block onClick={this.exampleLearning}
                             >
-                                Скласти по буквам по озвученому
+                                {firstWord}
                             </Button>
                             <Button
                                 id="word_2"
                                 variant="light"
                                 block onClick={this.exampleLearning}
                             >
-                                Скласти по буквам - переклад
+                                {secondWord}
                             </Button>
                             <Button
                                 id="word_3"
@@ -225,7 +275,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Написати слово по озвученому
+                                {thirdWord}
                             </Button>
                             <Button
                                 id="word_4"
@@ -233,7 +283,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Написати слово - переклад
+                                {fourthWord}
                             </Button>
                             <Button
                                 id="word_5"
@@ -241,7 +291,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Повторити по озвученому
+                                {fifthWord}
                             </Button>
                         </Col>
                         <Col>
@@ -251,7 +301,7 @@ export default class Learning extends Component {
                                 variant="light"
                                 block onClick={this.exampleLearning}
                             >
-                                Скласти по словам по озвученому (нове)
+                                {firstPhrase}
                             </Button>
                             <Button
                                 id="phase_2"
@@ -259,7 +309,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Скласти по словам - переклад (повтор)
+                                {secondPhrase}
                             </Button>
                             <Button
                                 id="phase_3"
@@ -267,7 +317,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Написати перші літери по озвученому (повтор)
+                                {thirdPhrase}
                             </Button>
                             <Button
                                 id="phase_4"
@@ -275,7 +325,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Написати перші літери - переклад (екзамен)
+                                {fourthPhrase}
                             </Button>
                             <Button
                                 id="phase_5"
@@ -283,7 +333,7 @@ export default class Learning extends Component {
                                 block
                                 onClick={this.exampleLearning}
                             >
-                                Повторити по озвученому (нове)
+                                {fifthPhrase}
                             </Button>
                         </Col>
                     </Fragment>

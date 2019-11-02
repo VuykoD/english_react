@@ -158,6 +158,7 @@ export default class Header extends Component {
                                     id="dropdown-site-lang"
                                     drop={direction}
                                     title={btnSiteLang}
+                                    bsPrefix='dropdown-lang'
                                     variant={'header'}
                                 >
                                     {map(langType, (lang, key) => {
@@ -180,6 +181,7 @@ export default class Header extends Component {
                                     id="dropdown-learned-lang"
                                     drop={direction}
                                     title={btnLearnedLand}
+                                    bsPrefix='dropdown-lang'
                                     variant={'header'}
                                 >
                                     {map(langType, (lang, key) => {
