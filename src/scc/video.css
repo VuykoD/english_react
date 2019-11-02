@@ -1,10 +1,9 @@
+.img-video {
+  width: 100%;
+}
+
 .new-video {
-  background-color: #ffffff;
-  border: 1px solid #dedede;
-  border-radius: 10px;
-  padding: 10px !important;
-  list-style-type: none;
-  margin: 20px 0;
+  padding: 0;
 }
 
 .new-video>.col {
@@ -13,23 +12,13 @@
 }
 
 .new-video-front {
+  margin-bottom: 20px;
   background-color: rgb(230,230,230);
   width: 100%;
 }
 
-.button-video {
-  background-color: #ffffff;
-  border: 1px solid #dedede;
-  border-radius: 10px;
-  padding: 10px !important;
-  list-style-type: none;
-}
-
-.button-video:hover {
-  background-color: #faf2cc;
-}
-
 .img-button-video {
+  margin: 10px;
   width: 30px;
   height: 25px;
 }
@@ -92,15 +81,35 @@
 }
 
 .music {
+  margin-top: 5px;
   float: left;
-  color: #999;
+  color: #333;
   font-size: 10px;
   text-transform: uppercase;
 }
 
 .medium {
+  margin-top: 5px;
   float: right;
-  color: #999;
+  color: #333;
   font-size: 10px;
   text-transform: uppercase;
+}
+
+.card-vertical {
+  padding: 10px;
+  background-color: rgb(230,230,230);
+  border: 1px solid #C4C4C4;
+  border-radius: 10px;
+  list-style-type: none;
+  margin: 5px;
+}
+
+.card-horizontal {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #C4C4C4;
+  border-radius: 10px;
+  list-style-type: none;
+  margin: 15px 5px;
 }

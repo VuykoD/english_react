@@ -23,17 +23,24 @@
   margin-top: -4px;
 }
 
-.dropdown-toggle::after {
+.headerButton:hover, .btn-header:hover, .dropdown-toggle:hover {
+  color: rgb(235, 235, 235);
+
+}
+
+.no-arrow::after {
   display: none;
 }
 
-.dropdown-toggle:focus{
-  box-shadow: none;
+.no-arrow {
+  border: none;
+  background-color: rgba(0,0,0,0);
 }
 
-.headerButton:hover, .btn-header:hover, .dropdown-toggle:hover {
-  color: rgb(235, 235, 235);
- }
+
+.no-arrow:focus, .no-arrow:active {
+  box-shadow: none;
+}
 
 .engLogo {
   font-family: 'Century Gothic', sans-serif;

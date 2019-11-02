@@ -152,6 +152,7 @@ export default class Header extends Component {
                                 title={<div
                                     style={fontStyle}>{get(currentSiteLang, 'short')}-{get(currentLearnedLang, 'short')}</div>}
                                 variant={'header'}
+                                bsPrefix='no-arrow'
                             >
                                 <DropdownButton
                                     id="dropdown-site-lang"
@@ -205,6 +206,7 @@ export default class Header extends Component {
                                     alignRight
                                     title={<div className="user" style={fontStyle}>{initials}</div>}
                                     variant='header header-user'
+                                    bsPrefix='no-arrow'
                                 >
                                     <Dropdown.Item>{dictionary}</Dropdown.Item>
                                     <Dropdown.Item>{progress}</Dropdown.Item>
