@@ -27,23 +27,23 @@ const content = {
         ru: "Повторить по озвученному",
         ukr: "Повторити по озвученому",
     },
-    firstPhrase:  {
+    firstPhrase: {
         ru: "Составить по словам по озвученному (новое)",
         ukr: "Скласти по словам по озвученому (нове)",
     },
-    secondPhrase:  {
+    secondPhrase: {
         ru: "Составить по словам - перевод (повтор)",
         ukr: "Скласти по словам - переклад (повтор)",
     },
-    thirdPhrase:  {
+    thirdPhrase: {
         ru: "Написать первые буквы по озвученному (повтор)",
         ukr: "Написати перші літери по озвученому (повтор)",
     },
-    fourthPhrase:  {
+    fourthPhrase: {
         ru: "Написать первые буквы - перевод (экзамен)",
         ukr: "Написати перші літери - переклад (екзамен)",
     },
-    fifthPhrase:  {
+    fifthPhrase: {
         ru: "Повторить по озвученному (новое)",
         ukr: "Повторити по озвученому (нове)",
     },
@@ -131,23 +131,14 @@ export default class Learning extends Component {
 
     resetExampleLearning = () => {
         this.setState({exampleLearning: null})
-    }
+    };
 
     wordClick = (e) => {
-        const elem = e.currentTarget;
-        const currentTxt = get(elem, 'innerText');
-        const rightTxt = get(this, 'englishArr[0]');
-        if (currentTxt === rightTxt) {
-            this.rightClick(rightTxt);
-            e.currentTarget.remove();
-        }
+        wordClicked.call(this, e);
     };
 
     rightClick = (rightTxt) => {
-        this.englishArr.shift();
-        const badge = document.getElementById('translation');
-        badge.innerText += ` ${rightTxt}`;
-        if (this.englishArr.length === 0) setTimeout(() => this.setState({exampleLearning: null}), 1000)
+        rightClicked.call(this, rightTxt);
     };
 
     speakTxt = () => {
@@ -356,7 +347,7 @@ export default class Learning extends Component {
     }
 };
 
-function getWordsArr() {
+export function getWordsArr() {
     const english = this.english;
     const {exampleLearning} = this.state;
     let wordsArr = null;
@@ -393,7 +384,7 @@ function getWordsArr() {
     return wordsArr
 }
 
-function getInput() {
+export function getInput() {
     const {exampleLearning} = this.state;
     let input = null;
     const english = this.english;
@@ -423,7 +414,7 @@ function getInput() {
     return input
 }
 
-function soundButton() {
+export function soundButton() {
     let btn = null;
     const isSound = checkIsSound.call(this);
     if (isSound) {
@@ -440,7 +431,7 @@ function soundButton() {
     return btn
 }
 
-function getBadgeTranslation(translation) {
+export function getBadgeTranslation(translation) {
     const {exampleLearning} = this.state;
     let badgeTranslation = null;
 
@@ -455,7 +446,7 @@ function getBadgeTranslation(translation) {
     return badgeTranslation
 }
 
-function getProgressBar() {
+export function getProgressBar() {
     const {exampleLearning} = this.state;
     let progress = null;
 
@@ -476,17 +467,17 @@ function getProgressBar() {
     return progress
 }
 
-function speak() {
+export function speak() {
     if (!this.filteredVoices || !this.filteredVoices.lenght) this.getVoices();
     const text = this.english;
     const utterance = new SpeechSynthesisUtterance(text);
     const randomVoice = this.filteredVoices ? Math.floor(Math.random() * this.filteredVoices.length) : null;
     utterance.voice = randomVoice ? this.filteredVoices[randomVoice] : null;
-    if(!utterance.voice) utterance.lang = 'en';
+    if (!utterance.voice) utterance.lang = 'en';
     speechSynthesis.speak(utterance);
 }
 
-function checkIsSound(text) {
+export function checkIsSound(text) {
     const {exampleLearning} = this.state;
     if (
         exampleLearning === 'word_1' || exampleLearning === 'word_3' || exampleLearning === 'word_5' ||
@@ -496,4 +487,24 @@ function checkIsSound(text) {
     }
 
     return false;
+}
+
+export function wordClicked(e) {
+    const elem = e.currentTarget;
+    const currentTxt = get(elem, 'innerText');
+    const rightTxt = get(this, 'englishArr[0]');
+    if (currentTxt === rightTxt) {
+        this.rightClick(rightTxt);
+        e.currentTarget.remove();
+    } else {
+        elem.className += " jello-diagonal-1";
+        setTimeout(() => elem.classList.remove('jello-diagonal-1'), 1000)
+    }
+}
+
+export function rightClicked(rightTxt) {
+    this.englishArr.shift();
+    const badge = document.getElementById('translation');
+    badge.innerText += ` ${rightTxt}`;
+    if (this.englishArr.length === 0) setTimeout(() => this.setState({exampleLearning: null}), 1000)
 }

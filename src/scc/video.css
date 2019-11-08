@@ -23,12 +23,15 @@
   height: 25px;
 }
 
+.video-item:focus {
+  outline: none;
+}
 
 .video-item {
   display: block;
-  margin: 15px auto;
-  height: 415px;
-  width: 80%;
+  margin: 10px auto;
+  height: 60%;
+  width: 60%;
   border: 1px solid lightgrey;
   padding: 15px;
   border-radius: 15px;
@@ -61,6 +64,12 @@
   margin-top: 6px;
   margin-bottom: 6px;
   height: 30px;
+}
+
+.video-item-col>span {
+  padding-top: 10px;
+  padding-left: 3px;
+  display: inline-block;
 }
 
 .video-item-col>button {
@@ -113,3 +122,13 @@
   list-style-type: none;
   margin: 15px 5px;
 }
+
+.bottom-row{
+  margin-bottom: 130px;
+  margin-top: 10px;
+  background: rgba(2, 178, 205, 0.56);
+}
+
+.jello-diagonal-1 {animation:jello-diagonal-1 .8s both}
+
+@keyframes jello-diagonal-1{0%{transform:skew(0deg 0deg)}30%{transform:skew(25deg 25deg)}40%{transform:skew(-15deg,-15deg)}50%{transform:skew(15deg,15deg)}65%{transform:skew(-5deg,-5deg)}75%{transform:skew(5deg,5deg)}100%{transform:skew(0deg 0deg)}}
