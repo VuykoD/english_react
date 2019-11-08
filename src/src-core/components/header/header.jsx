@@ -137,7 +137,24 @@ export default class Header extends Component {
                             <FormControl type="text" placeholder={search} className="mr-sm-2 search"/>
                         </Col>
                         <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
-                            <Link to={'/course'} children={course} style={fontStyle}/>
+                            <div>
+                                <DropdownButton
+                                    id="dropdown-user"
+                                    alignRight
+                                    title={<div style={fontStyle}>{course}</div>}
+                                    variant='header header-user'
+                                    bsPrefix='no-arrow'
+                                >
+                                    <DropdownButton
+                                        drop={direction}
+                                        title="Murphy"
+                                        bsPrefix='dropdown-inner no-arrow'
+                                        variant={'header'}
+                                    >
+                                        <Dropdown.Item href="/murphy1">Murphy 1</Dropdown.Item>
+                                    </DropdownButton>
+                                </DropdownButton>
+                            </div>
                         </Col>
                         <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
                             <Link to={'/video'} children={video} style={fontStyle}/>
@@ -158,7 +175,7 @@ export default class Header extends Component {
                                     id="dropdown-site-lang"
                                     drop={direction}
                                     title={btnSiteLang}
-                                    bsPrefix='dropdown-lang'
+                                    bsPrefix='dropdown-inner no-arrow'
                                     variant={'header'}
                                 >
                                     {map(langType, (lang, key) => {
@@ -181,7 +198,7 @@ export default class Header extends Component {
                                     id="dropdown-learned-lang"
                                     drop={direction}
                                     title={btnLearnedLand}
-                                    bsPrefix='dropdown-lang'
+                                    bsPrefix='dropdown-inner no-arrow'
                                     variant={'header'}
                                 >
                                     {map(langType, (lang, key) => {

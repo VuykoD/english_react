@@ -76,7 +76,7 @@ a, a:hover {
     background-color: #333;
 }
 
-.dropdown-item, .dropdown-lang {
+.dropdown-item, .dropdown-inner {
     height: 37px;
     width: 100%;
     color: #fff;
@@ -84,7 +84,7 @@ a, a:hover {
     border: none;
 }
 
-.dropdown-lang:hover {
+.dropdown-inner:hover {
     background-color: white;
     color: black;
 }
@@ -113,4 +113,20 @@ a, a:hover {
 
 .no-arrow:focus {
     outline: none;
+}
+
+h1 {
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+}
+
+.dropdown-menu.show {
+    margin-top: 15px;
+}
+
+body {
+    background-image: url(https://staticmobly.akamaized.net/p/Arte-Quadro-Papel-de-Parede-3D-CC3ADrculos-EntrelaC3A7ados-Autocolante-6524-782364-1-zoom.jpg);
+    background-size: auto;
 }

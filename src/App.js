@@ -10,6 +10,8 @@ import Learning from './src-pages/learning-page/learning';
 import Video from "./src-pages/video-page/video";
 import VideoItem from "./src-pages/video-page/video-item";
 import Course from "./src-pages/course-page/course";
+import Murphy1 from "./src-pages/murphy-page/Murphy1";
+import M1Unit1 from "./src-pages/murphy-page/m1units/Unit1";
 
 class App extends Component {
 
@@ -36,6 +38,8 @@ class App extends Component {
                 <Route path='/video' children={<Video store={store}/>} />
                 <Route path='/video-item' children={<VideoItem store={store}/>} />
                 <Route path='/learning' children={<Learning store={store}/>} />
+                <Route path='/murphy1' children={<Murphy1 store={store}/>} />
+                <Route path='/m1unit1' children={<M1Unit1 store={store}/>} />
                 <Route path='/user/data' children={
                     <UserData
                         store={store}
