@@ -55,10 +55,12 @@ export default class VideoItem extends Component {
             videoItems: localStorage.video ? JSON.parse(localStorage.video) : {},
             showItems: true,
             exampleLearning: 'phase_1',
-            currentItem: 0
+            currentItem: 0,
+            showTranslation: true,
         };
         this.englishArr = [];
         this.english = '';
+        this.timeoutPauseVideo = null;
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -155,7 +157,6 @@ export default class VideoItem extends Component {
             setTimeout(() => {
                 this.setState({currentItem: currentItem + 1});
                 this.playVideo(get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
-                const progressBar = document.getElementById('progressBar');
                 this.nextVideo();
             }, 7000);
         } else {
@@ -172,13 +173,13 @@ export default class VideoItem extends Component {
     };
 
     playVideo(start, end) {
-        if (end === this.state.end) {
-            this.setState({start, end: +end + 0.1, autoPlay: true});
-        } else {
-            this.setState({start, end, autoPlay: true});
-        }
+        const difference = +end - start;
         const video = document.getElementById('player');
+        clearTimeout(this.timeoutPauseVideo);
+        if (!video) return;
+        video.currentTime = start;
         video.play();
+        this.timeoutPauseVideo = setTimeout(() => video.pause(), difference * 1000);
     }
 
     wordClick = (e) => {
@@ -211,6 +212,10 @@ export default class VideoItem extends Component {
         const type = elem.getAttribute('type');
         clearTranslation();
         this.setState({exampleLearning: type});
+    };
+
+    hideTranslation = () => {
+        this.setState({showTranslation: !this.state.showTranslation})
     };
 
     render() {
@@ -259,11 +264,16 @@ export default class VideoItem extends Component {
                     <Col sm={1}/>
                     <Col sm={2}>
                         <Form.Group controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label={hideTranslate}/>
+                            <Form.Check
+                                type="checkbox"
+                                label={hideTranslate}
+                                onClick={this.hideTranslation}
+                            />
                         </Form.Group>
                     </Col>
                     <Col sm="6">
                         <Button variant="dark" block>{select}</Button>
+                        {showItems &&
                         <Button
                             variant="info"
                             block
@@ -271,6 +281,7 @@ export default class VideoItem extends Component {
                         >
                             {train}
                         </Button>
+                        }
                     </Col>
                     <Col sm={2}>
                         <DropdownButton title={get(learningType, `[${index}].txt`) || ''}>
@@ -408,7 +419,6 @@ export default class VideoItem extends Component {
                         {getInput.call(this)}
                         {getWordsArr.call(this)}
                         {getProgressBar.call(this)}
-                        {console.log(this)}
                     </Col>
                 </Row>
                 }

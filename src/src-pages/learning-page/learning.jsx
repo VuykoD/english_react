@@ -91,6 +91,7 @@ export default class Learning extends Component {
 
         this.state = {
             exampleLearning: null,
+            showTranslation: true
         };
         this.englishArr = [];
         this.english = '';
@@ -319,8 +320,8 @@ export default class Learning extends Component {
                     {exampleLearning &&
                     <Fragment>
                         <Col>
-                            {getBadgeTranslation.call(this, translation)}
                             {soundButton.call(this)}
+                            {getBadgeTranslation.call(this, translation)}
                             <h2 className='translation'><Badge variant="light" id='translation'></Badge></h2>
                             {getInput.call(this)}
                             {getWordsArr.call(this)}
@@ -419,18 +420,9 @@ export function soundButton() {
 }
 
 export function getBadgeTranslation(translation) {
-    const {exampleLearning} = this.state;
-    let badgeTranslation = null;
+    const {showTranslation} = this.state;
 
-    if (
-        exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
-        exampleLearning === 'word_2' || exampleLearning === 'word_4'
-    ) {
-        badgeTranslation = (
-            <h3><Badge variant="secondary">{translation}</Badge></h3>
-        )
-    }
-    return badgeTranslation
+    return showTranslation? (<h3><Badge variant="secondary">{translation}</Badge></h3>): null;
 }
 
 export function getProgressBar() {
@@ -485,7 +477,9 @@ export function wordClicked(e) {
         if (elem) elem.style.display = 'none'
     } else {
         elem.className += " blink-2";
-        setTimeout(() => {if (elem) elem.classList.remove('blink-2')}, 500)
+        setTimeout(() => {
+            if (elem) elem.classList.remove('blink-2')
+        }, 500)
     }
 }
 
@@ -506,7 +500,9 @@ export function changedInput() {
     } else {
         formInput.value = '';
         formInput.className += " blink-2";
-        setTimeout(() => {if (formInput) formInput.classList.remove('blink-2')}, 500)
+        setTimeout(() => {
+            if (formInput) formInput.classList.remove('blink-2')
+        }, 500)
     }
 }
 
