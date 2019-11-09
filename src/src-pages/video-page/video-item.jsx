@@ -6,12 +6,13 @@ import {Col, Container, Row, Form, Button, FormControl, DropdownButton, Dropdown
 
 import '../../scc/video.css';
 import {
+    changedInput, focusInput,
     getBadgeTranslation,
     getInput,
     getProgressBar,
     getWordsArr, rightClicked,
     soundButton,
-    wordClicked
+    wordClicked, clearTranslation
 } from "../learning-page/learning";
 
 const content = {
@@ -53,18 +54,20 @@ export default class VideoItem extends Component {
             autoPlay: false,
             videoItems: localStorage.video ? JSON.parse(localStorage.video) : {},
             showItems: true,
-            exampleLearning: 'phase_1'
+            exampleLearning: 'phase_1',
+            currentItem: 0
         };
+        this.englishArr = [];
+        this.english = '';
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.state.exampleLearning === 'phase_3') focusInput();
     }
 
     play = (e) => {
         const rowData = this.getRowData(e) || {};
-        this.setState({start: rowData.start, end: rowData.end, autoPlay: true});
-        const video = document.getElementById('player');
-        video.play();
-        // const timeOut = rowData.end - rowData.start;
-        // console.log(timeOut);
-        // setTimeout(()=>this.setState({start: 0, autoPlay: false}), timeOut);
+        this.playVideo(rowData.start, +rowData.end);
     };
 
     save = (e) => {
@@ -137,7 +140,46 @@ export default class VideoItem extends Component {
 
     train = () => {
         this.setState({showItems: false});
+        const {videoItems, exampleLearning} = this.state;
+        this.playVideo(videoItems[0].start, +videoItems[0].end);
+        if (exampleLearning === 'phase_5') {
+            this.nextVideo();
+        }
     };
+
+    nextVideo = () => {
+        const {currentItem, videoItems} = this.state;
+        const videoLength = videoItems.length;
+
+        if (currentItem < videoLength - 1) {
+            setTimeout(() => {
+                this.setState({currentItem: currentItem + 1});
+                this.playVideo(get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
+                const progressBar = document.getElementById('progressBar');
+                this.nextVideo();
+            }, 7000);
+        } else {
+            setTimeout(() => {
+                this.setState({showItems: true, currentItem: 0});
+            }, 7000);
+        }
+    };
+
+    speakTxt = () => {
+        const {videoItems, currentItem} = this.state;
+        this.playVideo(get(videoItems, `[${currentItem}].start`), get(videoItems, `[${currentItem}].end`));
+        focusInput();
+    };
+
+    playVideo(start, end) {
+        if (end === this.state.end) {
+            this.setState({start, end: +end + 0.1, autoPlay: true});
+        } else {
+            this.setState({start, end, autoPlay: true});
+        }
+        const video = document.getElementById('player');
+        video.play();
+    }
 
     wordClick = (e) => {
         wordClicked.call(this, e);
@@ -145,11 +187,35 @@ export default class VideoItem extends Component {
 
     rightClick = (rightTxt) => {
         rightClicked.call(this, rightTxt);
+        if (this.englishArr.length === 0) {
+            const {videoItems, currentItem} = this.state;
+            const videoLength = videoItems.length;
+            if (currentItem < videoLength - 1) {
+                this.setState({currentItem: currentItem + 1});
+                this.playVideo(get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
+                clearTranslation();
+            } else {
+                this.setState({showItems: true, currentItem: 0});
+            }
+
+        }
+    };
+
+
+    onChangeInput = () => {
+        changedInput.call(this);
+    };
+
+    changeLearningType = (e) => {
+        const elem = e.currentTarget;
+        const type = elem.getAttribute('type');
+        clearTranslation();
+        this.setState({exampleLearning: type});
     };
 
     render() {
         const {siteLang} = this.props.store;
-        const {start, end, autoPlay, videoItems, showItems} = this.state;
+        const {start, end, autoPlay, videoItems, showItems, exampleLearning, currentItem} = this.state;
         const hideTranslate = get(content, `hideTranslate[${siteLang}]`);
         const firstPhrase = get(content, `firstPhrase[${siteLang}]`);
         const thirdPhrase = get(content, `thirdPhrase[${siteLang}]`);
@@ -157,9 +223,15 @@ export default class VideoItem extends Component {
         const select = get(content, `select[${siteLang}]`);
         const train = get(content, `train[${siteLang}]`);
         const src = "video/videoplayback.mp4#t=" + start + ',' + end;
+        const learningType = [
+            {type: 'phase_1', txt: firstPhrase},
+            {type: 'phase_3', txt: thirdPhrase},
+            {type: 'phase_5', txt: fifthPhrase}
+        ];
+        const index = findIndex(learningType, {'type': exampleLearning});
 
-        const translation = get(videoItems, '[0].transl');
-        this.english = get(videoItems, '[0].eng');
+        const translation = get(videoItems, `[${currentItem}].transl`);
+        this.english = get(videoItems, `[${currentItem}].eng`);
 
         return (
             <Container>
@@ -167,6 +239,7 @@ export default class VideoItem extends Component {
                     <h1 style={{margin: '0 auto'}}>SONG NAME</h1>
                 </Row>
                 <Row>
+                    <Col sm={2}/>
                     <Col>
                         <div className="border_video">
                             <video
@@ -180,6 +253,7 @@ export default class VideoItem extends Component {
                             </video>
                         </div>
                     </Col>
+                    <Col sm={2}/>
                 </Row>
                 <Row>
                     <Col sm={1}/>
@@ -199,10 +273,18 @@ export default class VideoItem extends Component {
                         </Button>
                     </Col>
                     <Col sm={2}>
-                        <DropdownButton id="dropdown-basic-button" title={firstPhrase}>
-                            <Dropdown.Item href="#/action-1">{firstPhrase}</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">{thirdPhrase}</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">{fifthPhrase}</Dropdown.Item>
+                        <DropdownButton title={get(learningType, `[${index}].txt`) || ''}>
+                            {map(learningType, (it, key) => {
+                                return (
+                                    <Dropdown.Item
+                                        key={key}
+                                        type={it.type}
+                                        onClick={this.changeLearningType}
+                                    >
+                                        {it.txt}
+                                    </Dropdown.Item>
+                                )
+                            })}
                         </DropdownButton>
                     </Col>
                     <Col sm={1}/>
@@ -326,6 +408,7 @@ export default class VideoItem extends Component {
                         {getInput.call(this)}
                         {getWordsArr.call(this)}
                         {getProgressBar.call(this)}
+                        {console.log(this)}
                     </Col>
                 </Row>
                 }

@@ -101,12 +101,7 @@ export default class Learning extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        this.focusInput();
-    }
-
-    focusInput() {
-        const elem = document.getElementById("formInput");
-        if (elem) elem.focus();
+        focusInput();
     }
 
     getVoices() {
@@ -125,7 +120,7 @@ export default class Learning extends Component {
         this.english = id.substr(0, 4) === 'word' ? "inspiration" : 'my name is Dmitriy';
         this.setState({exampleLearning: id});
         if (id === 'word_5' || id === 'phase_5') {
-            setTimeout(this.resetExampleLearning, 5000);
+            setTimeout(this.resetExampleLearning, 7000);
         }
     };
 
@@ -139,24 +134,16 @@ export default class Learning extends Component {
 
     rightClick = (rightTxt) => {
         rightClicked.call(this, rightTxt);
+        if (this.englishArr.length === 0) setTimeout(() => this.setState({exampleLearning: null}), 1000)
     };
 
     speakTxt = () => {
-        this.focusInput();
+        focusInput();
         speak.call(this);
     };
 
     onChangeInput = () => {
-        const formInput = document.getElementById('formInput');
-        const letter = get(formInput, 'value') ? formInput.value.substr(0, 1) : null;
-        const letterUp = letter.toUpperCase();
-        const rightTxt = get(this, 'englishArr[0]');
-        if (rightTxt && letterUp === rightTxt.substr(0, 1).toUpperCase()) {
-            this.rightClick(rightTxt);
-            formInput.value = '';
-        } else {
-            formInput.value = '';
-        }
+        changedInput.call(this);
     };
 
     render() {
@@ -369,7 +356,7 @@ export function getWordsArr() {
                     return (
                         <Button
                             variant="info"
-                            key={index}
+                            key={index + word}
                             onClick={this.wordClick}
                             className="words"
                             size="lg"
@@ -456,7 +443,7 @@ export function getProgressBar() {
                 <Col sm={3}/>
                 <Col>
                     <div className="view_port">
-                        <ProgressBar animated now={100} className="cylon_eye"/>
+                        <ProgressBar id='progressBar' animated now={100} className="c_eye"/>
                     </div>
                     <div className="hint">Повторіть скільки встигнете</div>
                 </Col>
@@ -495,16 +482,40 @@ export function wordClicked(e) {
     const rightTxt = get(this, 'englishArr[0]');
     if (currentTxt === rightTxt) {
         this.rightClick(rightTxt);
-        e.currentTarget.remove();
+        if (elem) elem.style.display = 'none'
     } else {
-        elem.className += " jello-diagonal-1";
-        setTimeout(() => elem.classList.remove('jello-diagonal-1'), 1000)
+        elem.className += " blink-2";
+        setTimeout(() => {if (elem) elem.classList.remove('blink-2')}, 500)
     }
 }
 
 export function rightClicked(rightTxt) {
     this.englishArr.shift();
     const badge = document.getElementById('translation');
-    badge.innerText += ` ${rightTxt}`;
-    if (this.englishArr.length === 0) setTimeout(() => this.setState({exampleLearning: null}), 1000)
+    if (badge) badge.innerText += ` ${rightTxt}`;
+}
+
+export function changedInput() {
+    const formInput = document.getElementById('formInput');
+    const letter = get(formInput, 'value') ? formInput.value.substr(0, 1) : null;
+    const letterUp = letter.toUpperCase();
+    const rightTxt = get(this, 'englishArr[0]');
+    if (rightTxt && letterUp === rightTxt.substr(0, 1).toUpperCase()) {
+        this.rightClick(rightTxt);
+        formInput.value = '';
+    } else {
+        formInput.value = '';
+        formInput.className += " blink-2";
+        setTimeout(() => {if (formInput) formInput.classList.remove('blink-2')}, 500)
+    }
+}
+
+export function focusInput() {
+    const elem = document.getElementById("formInput");
+    if (elem) elem.focus();
+}
+
+export function clearTranslation() {
+    const badge = document.getElementById('translation');
+    if (badge) badge.innerText = '';
 }

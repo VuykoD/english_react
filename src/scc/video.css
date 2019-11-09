@@ -30,8 +30,8 @@
 .video-item {
   display: block;
   margin: 10px auto;
-  height: 60%;
-  width: 60%;
+  height: 390px;
+  width: 100%;
   border: 1px solid lightgrey;
   padding: 15px;
   border-radius: 15px;
@@ -132,3 +132,7 @@
 .jello-diagonal-1 {animation:jello-diagonal-1 .8s both}
 
 @keyframes jello-diagonal-1{0%{transform:skew(0deg 0deg)}30%{transform:skew(25deg 25deg)}40%{transform:skew(-15deg,-15deg)}50%{transform:skew(15deg,15deg)}65%{transform:skew(-5deg,-5deg)}75%{transform:skew(5deg,5deg)}100%{transform:skew(0deg 0deg)}}
+
+.blink-2{-webkit-animation:blink-2 .5s both;animation:blink-2 .5s both}
+
+@-webkit-keyframes blink-2{0%{opacity:1}50%{opacity:.2}100%{opacity:1}}@keyframes blink-2{0%{opacity:1}50%{opacity:.2}100%{opacity:1}}

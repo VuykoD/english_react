@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Col, Container, Row, ListGroup} from "react-bootstrap";
-import {Link} from "react-router-dom";
 
 
 export default class Course extends Component {

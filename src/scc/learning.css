@@ -55,13 +55,11 @@ button.title_sound {
     padding-top: 20px;
 }
 
-.cylon_eye {
-    background-color: green;
+.c_eye {
     height: 100%;
-    width: 20%;
     border-radius: 4px;
 
-    animation: 5s linear 0s infinite alternate move_eye;
+    animation: 7.05s linear infinite forwards move_eye;
 }
 
-@keyframes move_eye { from { width: 5%; } to { width:100%; }  }
+@keyframes move_eye { from { width: 1%; } to { width:100%; }  }
