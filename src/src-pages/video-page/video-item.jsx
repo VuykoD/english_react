@@ -263,8 +263,10 @@ export default class VideoItem extends Component {
 
         return (
             <Container>
-                <Row>
-                    <h1 style={{margin: '0 auto'}}>{songName}</h1>
+                <Row className="text-center">
+                    <Col>
+                        <h1>{songName}</h1>
+                    </Col>
                 </Row>
                 <Row>
                     <Col sm={2}/>
