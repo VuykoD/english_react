@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
+import PropTypes from "prop-types";
 import get from 'lodash/get';
+import map from 'lodash/map';
 import {Col, Container, Row, Dropdown, DropdownButton, Form} from "react-bootstrap";
+import {Link} from "react-router-dom";
+import videoNames from '../../dict/videoNames';
 
 import '../../scc/video.css';
 
@@ -85,8 +89,8 @@ export default class Video extends Component {
                     <Col>
                         <Row className="text-center">
                             <Col>
-                                <span className="music">{music}</span>
-                                <span className="medium">{medium}</span>
+                                <span className="type">{music}</span>
+                                <span className="level">{medium}</span>
                             </Col>
                         </Row>
                         <Row className="text-center">
@@ -98,27 +102,6 @@ export default class Video extends Component {
                         <div>Nirvana - The Man Who Sold The World</div>
                     </Col>
                 </Row>
-            </Col>
-        );
-
-        const cardVertical = (
-            <Col sm={3} className='new-video'>
-                <div className="card-vertical">
-                    <img src="images/video/30.png" alt="" className="img-video"/>
-                    <Row className="text-center">
-                        <Col>
-                            <span className="music">{music}</span>
-                            <span className="medium">{medium}</span>
-                        </Col>
-                    </Row>
-                    <Row className="text-center">
-                        <Col>
-                            <img src="images/video/puzzle.png" alt="" className="img-button-video"/>
-                            <span>{videoCount}:20</span>
-                        </Col>
-                    </Row>
-                    <div>Nirvana - The Man Who Sold The World</div>
-                </div>
             </Col>
         );
 
@@ -165,18 +148,83 @@ export default class Video extends Component {
                     </Col>
                 </Row>
                 <Row className="text-center">
-                    {cardVertical}
-                    {cardVertical}
-                    {cardVertical}
-                    {cardVertical}
-                </Row>
-                <Row className="text-center">
-                    {cardVertical}
-                    {cardVertical}
-                    {cardVertical}
-                    {cardVertical}
+                    {
+                        map(videoNames, (item, key) => {
+                            let level = '';
+                            switch (item.level) {
+                                case 'easy':
+                                    level = easy;
+                                    break;
+                                case 'medium':
+                                    level = medium;
+                                    break;
+                                case 'hard':
+                                    level = hard;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            let type = '';
+                            switch (item.type) {
+                                case 'music':
+                                    type = music;
+                                    break;
+                                case 'cartoon':
+                                    type = cartoon;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            return (
+                                <Col sm={3} className='new-video' key={key}>
+                                    <CardVertical
+                                        item={item}
+                                        videoCount={videoCount}
+                                        level={level}
+                                        type={type}
+                                    />
+                                </Col>
+                            )
+                        })
+                    }
                 </Row>
             </Container>
         );
     }
 };
+
+class CardVertical extends Component {
+    static propTypes = {
+        item: PropTypes.shape({}),
+        videoCount: PropTypes.string,
+        level: PropTypes.string,
+        type: PropTypes.string,
+    };
+
+    render() {
+        const {item = {}, videoCount, level, type} = this.props;
+
+        return (
+            <Link to={`/video-item/${item.url}`}>
+                <div className="card-vertical">
+                    <img src={`images/video/${item.imageName}`} alt="" className="img-video"/>
+                    <Row className="text-center">
+                        <Col>
+                            <span className="type">{type}</span>
+                            <span className="level">{level}</span>
+                        </Col>
+                    </Row>
+                    <Row className="text-center">
+                        <Col>
+                            <img src="images/video/puzzle.png" alt="" className="img-button-video"/>
+                            <span>{videoCount}:20</span>
+                        </Col>
+                    </Row>
+                    <div children={item.songName}/>
+                </div>
+            </Link>
+        )
+    }
+}

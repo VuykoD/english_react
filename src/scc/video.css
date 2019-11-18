@@ -1,5 +1,6 @@
 .img-video {
   width: 100%;
+  height: 150px;
 }
 
 .new-video {
@@ -9,6 +10,10 @@
 .new-video>.col {
   margin: 5px 0;
   padding: 5px;
+}
+
+.new-video>a {
+  color: #000000;
 }
 
 .new-video-front {
@@ -89,7 +94,7 @@
   margin: 10px auto;
 }
 
-.music {
+.type {
   margin-top: 5px;
   float: left;
   color: #333;
@@ -97,7 +102,7 @@
   text-transform: uppercase;
 }
 
-.medium {
+.level {
   margin-top: 5px;
   float: right;
   color: #333;
@@ -112,6 +117,7 @@
   border-radius: 10px;
   list-style-type: none;
   margin: 5px;
+  height: 285px;
 }
 
 .card-horizontal {

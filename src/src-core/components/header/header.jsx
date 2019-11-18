@@ -4,7 +4,7 @@ import map from 'lodash/map';
 import get from 'lodash/get';
 import {Container, Row, Col} from 'react-bootstrap';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import FormControl from 'react-bootstrap/FormControl';
+// import FormControl from 'react-bootstrap/FormControl';
 import Dropdown from 'react-bootstrap/Dropdown';
 import {Link} from 'react-router-dom';
 
@@ -116,7 +116,7 @@ export default class Header extends Component {
         const btnSiteLang = get(content, `btnSiteLang[${siteLang}]`);
         const btnLearnedLand = get(content, `btnLearnedLand[${siteLang}]`);
         const setting = get(content, `setting[${siteLang}]`);
-        const search = get(content, `search[${siteLang}]`);
+        // const search = get(content, `search[${siteLang}]`);
         const fontStyle = {color: fontColor};
         const gradientStyle = {background: `linear-gradient(to bottom,${firstColor},${secondColor}`};
         const hover = {onMouseOver: this.onMouseOver, onMouseOut: this.onMouseOut};
@@ -134,7 +134,7 @@ export default class Header extends Component {
                             </Link>
                         </Col>
                         <Col>
-                            <FormControl type="text" placeholder={search} className="mr-sm-2 search"/>
+                            {/* <FormControl type="text" placeholder={search} className="mr-sm-2 search"/> */}
                         </Col>
                         <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
                             <div>

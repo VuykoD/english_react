@@ -14,6 +14,8 @@ import {
     soundButton,
     wordClicked, clearTranslation
 } from "../learning-page/learning";
+import videoItems from '../../dict/videoItems';
+import videoNames from '../../dict/videoNames';
 
 const content = {
     hideTranslate: {
@@ -42,17 +44,17 @@ const content = {
     },
 };
 
-// [{"id":"6","idVideoName":1,"start":"7","end":"10.5","eng":"I see trees of green","transl":"Я вижу зеленые деревья"},{"id":"17","idVideoName":1,"start":"12.5","end":"15","eng":"red roses too","transl":"красные розы"},{"id":"18","idVideoName":1,"start":"15.5","end":"22","eng":"I see them bloom for me and you","transl":"Я вижу, как они цветут для нас"},{"id":"19","idVideoName":1,"start":"22","end":"25","eng":"And I think to myself","transl":"И я думаю про себя"},{"id":"20","idVideoName":1,"start":"27","end":"33.5","eng":"what a wonderful world","transl":"как же всё-таки чудесен мир"},{"id":"21","idVideoName":1,"start":"36","end":"39","eng":"I see skies of blue","transl":"Я вижу голубое небо"}]
-
 export default class VideoItem extends Component {
     constructor(props) {
         super(props);
+
+        let items = videoItems;
 
         this.state = {
             start: 0,
             end: null,
             autoPlay: false,
-            videoItems: localStorage.video ? JSON.parse(localStorage.video) : {},
+            videoItems: items,//localStorage.video ? JSON.parse(localStorage.video) : {},
             showItems: true,
             exampleLearning: 'phase_1',
             currentItem: 0,
@@ -227,7 +229,7 @@ export default class VideoItem extends Component {
         const fifthPhrase = get(content, `fifthPhrase[${siteLang}]`);
         const select = get(content, `select[${siteLang}]`);
         const train = get(content, `train[${siteLang}]`);
-        const src = "video/videoplayback.mp4#t=" + start + ',' + end;
+        const src = "video/wonderfulWorld.mp4#t=" + start + ',' + end;
         const learningType = [
             {type: 'phase_1', txt: firstPhrase},
             {type: 'phase_3', txt: thirdPhrase},
