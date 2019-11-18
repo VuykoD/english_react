@@ -1,6 +1,7 @@
 .header {
     height: 100px;
     color: white;
+    background: linear-gradient(rgb(64, 172, 98), rgb(54, 150, 86));
 }
 
 .headerButton {
@@ -124,9 +125,4 @@ h1 {
 
 .dropdown-menu.show {
     margin-top: 15px;
-}
-
-body {
-    background-image: url(https://staticmobly.akamaized.net/p/Arte-Quadro-Papel-de-Parede-3D-CC3ADrculos-EntrelaC3A7ados-Autocolante-6524-782364-1-zoom.jpg);
-    background-size: auto;
 }
