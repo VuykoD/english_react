@@ -207,7 +207,7 @@ class CardVertical extends Component {
         const {item = {}, videoCount, level, type} = this.props;
 
         return (
-            <Link to={`/video-item/${item.url}`}>
+            <Link to={`${item.url}`}>
                 <div className="card-vertical">
                     <img src={`images/video/${item.imageName}`} alt="" className="img-video"/>
                     <Row className="text-center">

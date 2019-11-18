@@ -157,7 +157,7 @@ export default class Header extends Component {
                             </div>
                         </Col>
                         <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
-                            <Link to={'/video'} children={video} style={fontStyle}/>
+                            <Link to={'/video-page'} children={video} style={fontStyle}/>
                         </Col>
                         <Col md="auto" className="headerButton" style={{...fontStyle, ...gradientStyle}} {...hover} >
                             <Link to={'/learning'} children={learning} style={fontStyle}/>

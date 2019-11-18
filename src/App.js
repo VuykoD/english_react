@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, {Component} from 'react';
+import {connect} from 'react-redux'
+import {BrowserRouter as Router, Switch, Route, withRouter} from 'react-router-dom';
 import Header from './src-core/components/header/header.jsx';
 import Footer from './src-core/components/footer/footer.jsx';
 import HomePage from './src-pages/home-page/home-page.jsx';
@@ -15,53 +15,54 @@ import M1Unit1 from "./src-pages/murphy-page/m1units/Unit1";
 
 class App extends Component {
 
-    render(){
-    const {
-        store = {},
-        onChangeSiteLang, onChangeLearnedLang,
-        onChangeFontColor, onChangeBackColor, onChangeFirstColor, onChangeSecondColor,
-        onChangeUserData
-    } = this.props;
-    const {backColor} = store;
-    document.body.style.background = backColor;
+    render() {
+        const {
+            store = {},
+            onChangeSiteLang, onChangeLearnedLang,
+            onChangeFontColor, onChangeBackColor, onChangeFirstColor, onChangeSecondColor,
+            onChangeUserData
+        } = this.props;
+        const {backColor} = store;
+        document.body.style.background = backColor;
+        const videoItem = withRouter(props => <VideoItem {...props} store={store}/>);
 
-    return (
-        <Router>
-            <Header
-                store={store}
-                onChangeSiteLang={onChangeSiteLang}
-                onChangeLearnedLang={onChangeLearnedLang}
-            />
-            <Switch>
-                <Route exact path='/' children={<HomePage store={store}/>} />
-                <Route path='/course' children={<Course store={store}/>} />
-                <Route path='/video' children={<Video store={store}/>} />
-                <Route path='/video-item' children={<VideoItem store={store}/>} />
-                <Route path='/learning' children={<Learning store={store}/>} />
-                <Route path='/murphy1' children={<Murphy1 store={store}/>} />
-                <Route path='/m1unit1' children={<M1Unit1 store={store}/>} />
-                <Route path='/user/data' children={
-                    <UserData
-                        store={store}
-                        onChangeUserData={onChangeUserData}
-                    />
-                } />
-                <Route path='/user/setting' children={
-                    <Setting
-                        store={store}
-                        onChangeFontColor={onChangeFontColor}
-                        onChangeBackColor={onChangeBackColor}
-                        onChangeFirstColor={onChangeFirstColor}
-                        onChangeSecondColor={onChangeSecondColor}
-                    />
-                } />
-            </Switch>
-            <Footer
-                store={store}
-            />
-        </Router>
-    );
-  }
+        return (
+            <Router>
+                <Header
+                    store={store}
+                    onChangeSiteLang={onChangeSiteLang}
+                    onChangeLearnedLang={onChangeLearnedLang}
+                />
+                <Switch>
+                    <Route exact path='/' children={<HomePage store={store}/>}/>
+                    <Route path='/course' children={<Course store={store}/>}/>
+                    <Route path='/video-page' children={<Video store={store}/>}/>
+                    <Route path='/learning' children={<Learning store={store}/>}/>
+                    <Route path='/murphy1' children={<Murphy1 store={store}/>}/>
+                    <Route path='/m1unit1' children={<M1Unit1 store={store}/>}/>
+                    <Route path='/user/data' children={
+                        <UserData
+                            store={store}
+                            onChangeUserData={onChangeUserData}
+                        />
+                    }/>
+                    <Route path='/user/setting' children={
+                        <Setting
+                            store={store}
+                            onChangeFontColor={onChangeFontColor}
+                            onChangeBackColor={onChangeBackColor}
+                            onChangeFirstColor={onChangeFirstColor}
+                            onChangeSecondColor={onChangeSecondColor}
+                        />
+                    }/>
+                    <Route path='/*' children={videoItem}/>
+                </Switch>
+                <Footer
+                    store={store}
+                />
+            </Router>
+        );
+    }
 }
 
 export default connect(
@@ -69,12 +70,26 @@ export default connect(
         store: state
     }),
     dispatch => ({
-        onChangeSiteLang: (lang) => { dispatch({ type: 'SITE_LANG', payload: lang }) },
-        onChangeLearnedLang: (lang) => { dispatch({ type: 'LEARNED_LANG', payload: lang }) },
-        onChangeFontColor: (color) => { dispatch({ type: 'FONT_COLOR', payload: color }) },
-        onChangeBackColor: (color) => { dispatch({ type: 'BACK_COLOR', payload: color }) },
-        onChangeFirstColor: (color) => { dispatch({ type: 'FIRST_COLOR', payload: color }) },
-        onChangeSecondColor: (color) => { dispatch({ type: 'SECOND_COLOR', payload: color }) },
-        onChangeUserData: (userData) => { dispatch({ type: 'USER_DATA', payload: userData }) },
+        onChangeSiteLang: (lang) => {
+            dispatch({type: 'SITE_LANG', payload: lang})
+        },
+        onChangeLearnedLang: (lang) => {
+            dispatch({type: 'LEARNED_LANG', payload: lang})
+        },
+        onChangeFontColor: (color) => {
+            dispatch({type: 'FONT_COLOR', payload: color})
+        },
+        onChangeBackColor: (color) => {
+            dispatch({type: 'BACK_COLOR', payload: color})
+        },
+        onChangeFirstColor: (color) => {
+            dispatch({type: 'FIRST_COLOR', payload: color})
+        },
+        onChangeSecondColor: (color) => {
+            dispatch({type: 'SECOND_COLOR', payload: color})
+        },
+        onChangeUserData: (userData) => {
+            dispatch({type: 'USER_DATA', payload: userData})
+        },
     })
 )(App);

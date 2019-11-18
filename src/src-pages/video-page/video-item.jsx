@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import get from 'lodash/get';
 import map from 'lodash/map';
 import findIndex from 'lodash/findIndex';
+import filter from 'lodash/filter';
 import {Col, Container, Row, Form, Button, FormControl, DropdownButton, Dropdown, Badge} from "react-bootstrap";
 
 import '../../scc/video.css';
@@ -48,13 +49,22 @@ export default class VideoItem extends Component {
     constructor(props) {
         super(props);
 
-        let items = videoItems;
+        const url = get(props, `match.url`);
+        this.videoIndex = findIndex(videoNames, {'url': url});
+        this.videoId = get(videoNames, `[${this.videoIndex}].id`);
+        console.log(this.videoId);
+
+        const localItems = localStorage.video ? JSON.parse(localStorage.video) : {};
+        const items = filter({...videoItems, ...localItems}, item => {
+                return +item.idVideoName === +this.videoId;
+            }
+        );
 
         this.state = {
             start: 0,
             end: null,
             autoPlay: false,
-            videoItems: items,//localStorage.video ? JSON.parse(localStorage.video) : {},
+            videoItems: items,
             showItems: true,
             exampleLearning: 'phase_1',
             currentItem: 0,
@@ -78,7 +88,7 @@ export default class VideoItem extends Component {
         const rowData = this.getRowData(e) || {};
         const {id, start, end, eng, transl} = rowData;
         if (!start || !end || !eng || !transl) return alert('fill in all data');
-        const newRow = {id, idVideoName: 1, start, end, eng, transl};
+        const newRow = {id, idVideoName: this.videoId, start, end, eng, transl};
         const {videoItems} = this.state;
         const newId = videoItems.length ?
             +videoItems[videoItems.length - 1].id + 1 :
@@ -89,7 +99,14 @@ export default class VideoItem extends Component {
             newVideoItems = videoItems;
             newVideoItems[index] = newRow;
         } else {
-            newVideoItems = [...videoItems, {id: id || String(newId), idVideoName: 1, start, end, eng, transl}];
+            newVideoItems = [...videoItems, {
+                id: id || String(newId),
+                idVideoName: this.videoId,
+                start,
+                end,
+                eng,
+                transl
+            }];
         }
         this.setState({videoItems: newVideoItems});
         localStorage.video = JSON.stringify(newVideoItems);
@@ -223,13 +240,17 @@ export default class VideoItem extends Component {
     render() {
         const {siteLang} = this.props.store;
         const {start, end, autoPlay, videoItems, showItems, exampleLearning, currentItem} = this.state;
+
+        if (this.videoIndex === -1) return null;
+        const fileName = get(videoNames, `[${this.videoIndex}].fileName`);
+        const songName = get(videoNames, `[${this.videoIndex}].songName`);
+        const src = `video/${fileName}#t=${start},${end}`;
         const hideTranslate = get(content, `hideTranslate[${siteLang}]`);
         const firstPhrase = get(content, `firstPhrase[${siteLang}]`);
         const thirdPhrase = get(content, `thirdPhrase[${siteLang}]`);
         const fifthPhrase = get(content, `fifthPhrase[${siteLang}]`);
         const select = get(content, `select[${siteLang}]`);
         const train = get(content, `train[${siteLang}]`);
-        const src = "video/wonderfulWorld.mp4#t=" + start + ',' + end;
         const learningType = [
             {type: 'phase_1', txt: firstPhrase},
             {type: 'phase_3', txt: thirdPhrase},
@@ -243,7 +264,7 @@ export default class VideoItem extends Component {
         return (
             <Container>
                 <Row>
-                    <h1 style={{margin: '0 auto'}}>SONG NAME</h1>
+                    <h1 style={{margin: '0 auto'}}>{songName}</h1>
                 </Row>
                 <Row>
                     <Col sm={2}/>

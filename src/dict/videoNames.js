@@ -1,5 +1,5 @@
-const videoNames = {
-    0: {
+const videoNames = [
+    {
         id: 1,
         songName: 'Louis Armstrong "What A Wonderful World"',
         imageName: 'wonderfulWorld.jpg',
@@ -7,9 +7,9 @@ const videoNames = {
         level: 'easy',
         type: 'music',
         active: true,
-        url: 'wonderful-world'
+        url: '/wonderful-world'
     },
-    1: {
+    {
         id: 2,
         songName: 'Madonna - You\'ll See',
         imageName: 'youllSee.jpg',
@@ -17,9 +17,9 @@ const videoNames = {
         level: 'easy',
         type: 'music',
         active: true,
-        url: 'youll-see'
+        url: '/youll-see'
     },
-};
+];
 
 
 export {videoNames as default};
