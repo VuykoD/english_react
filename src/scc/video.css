@@ -56,7 +56,11 @@
 }
 
 .b-col{
-    width: 40px;
+    width: 50px;
+}
+
+.d-col{
+    width: 35px;
 }
 
 .c-col{

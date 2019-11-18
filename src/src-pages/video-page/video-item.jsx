@@ -10,7 +10,7 @@ import {
     changedInput, focusInput,
     getBadgeTranslation,
     getInput,
-    getProgressBar,
+    getProgressBar, getBadge,
     getWordsArr, rightClicked,
     soundButton,
     wordClicked, clearTranslation
@@ -52,7 +52,6 @@ export default class VideoItem extends Component {
         const url = get(props, `match.url`);
         this.videoIndex = findIndex(videoNames, {'url': url});
         this.videoId = get(videoNames, `[${this.videoIndex}].id`);
-        console.log(this.videoId);
 
         const localItems = localStorage.video ? JSON.parse(localStorage.video) : {};
         const items = filter({...videoItems, ...localItems}, item => {
@@ -192,11 +191,13 @@ export default class VideoItem extends Component {
     };
 
     playVideo(start, end) {
+        if(!(+start) || !(+end)) return alert('start or end is not a number');
         const difference = +end - start;
         const video = document.getElementById('player');
         clearTimeout(this.timeoutPauseVideo);
         if (!video) return;
-        video.currentTime = start;
+
+        video.currentTime = parseFloat(start);
         video.play();
         this.timeoutPauseVideo = setTimeout(() => video.pause(), difference * 1000);
     }
@@ -329,7 +330,7 @@ export default class VideoItem extends Component {
                 <Fragment>
                     <Row>
                         <Col md="auto" className='video-item-col a-col' children={'№'}/>
-                        <Col md="auto" className='video-item-col b-col' children={'id'}/>
+                        <Col md="auto" className='video-item-col d-col' children={'id'}/>
                         <Col md="auto" className='video-item-col b-col' children={'start'}/>
                         <Col md="auto" className='video-item-col b-col' children={'end'}/>
                         <Col children={"Eng"}/>
@@ -346,7 +347,7 @@ export default class VideoItem extends Component {
                                 <Col md="auto" className='video-item-col a-col'>
                                     <span>{key + 1}</span>
                                 </Col>
-                                <Col md="auto" className='video-item-col b-col'>
+                                <Col md="auto" className='video-item-col d-col'>
                                     <FormControl type="text" defaultValue={item.id} disabled id={`row${key + 1}_id`}/>
                                 </Col>
                                 <Col md="auto" className='video-item-col b-col'>
@@ -395,7 +396,7 @@ export default class VideoItem extends Component {
                     })}
                     <Row className='bottom-row'>
                         <Col md="auto" className='video-item-col a-col'/>
-                        <Col md="auto" className='video-item-col b-col'>
+                        <Col md="auto" className='video-item-col d-col'>
                             <FormControl type="text" disabled id='row_new_id'/>
                         </Col>
                         <Col md="auto" className='video-item-col b-col'>
@@ -440,10 +441,11 @@ export default class VideoItem extends Component {
                         <br/>
                         {getBadgeTranslation.call(this, translation)}
                         {soundButton.call(this)}
-                        <h2 className='translation'><Badge variant="light" id='translation'></Badge></h2>
+                        <h2 className='translation'><Badge variant="light" id='translation'/></h2>
                         {getInput.call(this)}
                         {getWordsArr.call(this)}
                         {getProgressBar.call(this)}
+                        {getBadge.call(this)}
                     </Col>
                 </Row>
                 }

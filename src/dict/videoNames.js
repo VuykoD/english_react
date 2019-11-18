@@ -19,6 +19,16 @@ const videoNames = [
         active: true,
         url: '/youll-see'
     },
+    {
+        id: 3,
+        songName: '"Through History" A Minecraft Parody of Fall Out Boy\'s Centuries',
+        imageName: 'throughHistory.jpg',
+        fileName: 'throughHistory.mp4',
+        level: 'medium',
+        type: 'music',
+        active: true,
+        url: '/through-history'
+    },
 ];
 
 

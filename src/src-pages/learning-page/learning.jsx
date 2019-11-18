@@ -83,6 +83,10 @@ const content = {
         ru: "Для слов",
         ukr: "Для слів",
     },
+    justRepeat: {
+        ru: "Повторите сколько успеете",
+        ukr: "Повторіть скільки встигнете",
+    },
 };
 
 export default class Learning extends Component {
@@ -336,7 +340,7 @@ export default class Learning extends Component {
 };
 
 export function getWordsArr() {
-    const english = this.english;
+    const english = this.english.toLowerCase();
     const {exampleLearning} = this.state;
     let wordsArr = null;
 
@@ -425,8 +429,21 @@ export function getBadgeTranslation(translation) {
     return showTranslation? (<h3><Badge variant="secondary">{translation}</Badge></h3>): null;
 }
 
+export function getBadge() {
+    const {exampleLearning} = this.state;
+    let badge = null;
+
+    if (exampleLearning === 'phase_5' || exampleLearning === 'word_5') {
+        badge = (<h3><Badge variant="light">{this.english}</Badge></h3>);
+    }
+
+    return badge;
+}
+
 export function getProgressBar() {
     const {exampleLearning} = this.state;
+    const {siteLang} = this.props.store;
+    const justRepeat = get(content, `justRepeat[${siteLang}]`);
     let progress = null;
 
     if (exampleLearning === 'phase_5' || exampleLearning === 'word_5') {
@@ -434,10 +451,10 @@ export function getProgressBar() {
             <Row>
                 <Col sm={3}/>
                 <Col>
+                    <div className="hint">{justRepeat}</div>
                     <div className="view_port">
                         <ProgressBar id='progressBar' animated now={100} className="c_eye"/>
                     </div>
-                    <div className="hint">Повторіть скільки встигнете</div>
                 </Col>
                 <Col sm={3}/>
             </Row>
