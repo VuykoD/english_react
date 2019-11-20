@@ -1,68 +1,4 @@
 const videoItems = {
-    1000: {
-        end: "12.2",
-        eng: "I see trees of green",
-        id: "6",
-        idVideoName: 1,
-        start: "7",
-        transl: "Я вижу зеленые деревья",
-    },
-    1001: {
-        end: "15.5",
-        eng: "red roses too",
-        id: "17",
-        idVideoName: 1,
-        start: "12.5",
-        transl: "красные розы"
-    },
-    1002: {
-        end: "22",
-        eng: "I see them bloom for me and you",
-        id: "18",
-        idVideoName: 1,
-        start: "15.5",
-        transl: "Я вижу, как они цветут для нас"
-    },
-    1003: {
-        end: "25",
-        eng: "And I think to myself",
-        id: "19",
-        idVideoName: 1,
-        start: "22",
-        transl: "И я думаю про себя"
-    },
-    1004: {
-        end: "33.5",
-        eng: "what a wonderful world",
-        id: "20",
-        idVideoName: 1,
-        start: "27",
-        transl: "как же всё-таки чудесен мир"
-    },
-    1005: {
-        end: "39",
-        eng: "I see skies of blue",
-        id: "21",
-        idVideoName: 1,
-        start: "36",
-        transl: "Я вижу голубое небо"
-    },
-    1006: {
-        end: "44.5",
-        eng: "and clouds of white",
-        id: "22",
-        idVideoName: 1,
-        start: "41.5",
-        transl: "и белые облака"
-    },
-    1007: {
-        end: "48",
-        eng: "The bright blessed day",
-        id: "23",
-        idVideoName: 1,
-        start: "45",
-        transl: "Сияние благословенного дня"
-    },
     1100:{"id":"1","idVideoName":3,"start":"55.5","end":"57.7","eng":"Same stories get old","transl":"Те же истории стареют"},
     1101:{"id":"2","idVideoName":3,"start":"57.7","end":"60.38","eng":"Armor of bones and some gold","transl":"Броня из костей и немного золота"},
     1102:{"id":"3","idVideoName":3,"start":"60.38","end":"63.79","eng":"You will remember me","transl":"Ты будешь помнить меня"},
@@ -109,8 +45,24 @@ const videoItems = {
     1217:{"id":"20","idVideoName":5,"start":"124","end":"127.3","eng":"Through storm and drought I’ll travel far,","transl":"Через шторм и засуху я буду путешествовать далеко,"},
     1218:{"id":"21","idVideoName":5,"start":"127.4","end":"131","eng":"over mountain tops, to guide I’ll use the star.","transl":"над горными вершинами, чтобы вести, я буду использовать звезду."},
     1219:{"id":"22","idVideoName":5,"start":"131.1","end":"134.55","eng":"It lights the way through the darkest night, ","transl":"Он освещает путь самой темной ночью,"},
-    1220:{"id":"23","idVideoName":5,"start":"134.7","end":"138.8","eng":"illuminating our path, the end is in sight.","transl":"освещая наш путь, конец виден"}
+    1220:{"id":"23","idVideoName":5,"start":"134.7","end":"138.8","eng":"illuminating our path, the end is in sight.","transl":"освещая наш путь, конец виден"},
+    1300:{"id":"6","idVideoName":1,"start":"7","end":"12.2","eng":"I see trees of green","transl":"Я вижу зеленые деревья"},
+    1301:{"id":"17","idVideoName":1,"start":"12.5","end":"15.5","eng":"red roses too","transl":"красные розы"},
+    1302:{"id":"18","idVideoName":1,"start":"15.5","end":"22","eng":"I see them bloom for me and you","transl":"Я вижу, как они цветут для нас"},
+    1303:{"id":"20","idVideoName":1,"start":"27","end":"33.5","eng":"what a wonderful world","transl":"как же всё-таки чудесен мир"},
+    1304:{"id":"22","idVideoName":1,"start":"41.5","end":"44.5","eng":"and clouds of white","transl":"и белые облака"},
+    1305:{"id":"23","idVideoName":1,"start":"45","end":"48","eng":"The bright blessed day","transl":"Яркий радостный день"},
+    1306:{"id":"24","idVideoName":1,"start":"48.5","end":"51","eng":"dark sacred nights","transl":"тёмной ночи покров"},
+    1307:{"id":"25","idVideoName":1,"start":"66","end":"69","eng":"The colors of the rainbow","transl":"Всё многоцветье радуг"},
+    1308:{"id":"26","idVideoName":1,"start":"69","end":"72.5","eng":"so pretty in the sky","transl":"что в небесах висят"},
+    1309:{"id":"27","idVideoName":1,"start":"72.5","end":"79","eng":"Are also on the faces of people going by","transl":"Я также вижу в лицах людей вокруг меня"},
+    1310:{"id":"28","idVideoName":1,"start":"79","end":"87","eng":"I see friends shaking hands saying how do you do","transl":"Вижу встречу друзей и пожатие руки"},
+    1311:{"id":"29","idVideoName":1,"start":"87","end":"94","eng":"They're really saying I love you.","transl":"Это всё для меня как признание в любви"},
+    1312:{"id":"30","idVideoName":1,"start":"94","end":"99.7","eng":"I hear babies cry,","transl":"Слышу плач детей"},
+    1313:{"id":"31","idVideoName":1,"start":"99.7","end":"103","eng":"I watch them grow","transl":"я вижу как они растут"},
+    1314:{"id":"32","idVideoName":1,"start":"103","end":"107","eng":"They'll learn much more ","transl":"Знать будут больше, "},
+    1315:{"id":"33","idVideoName":1,"start":"107","end":"110","eng":"than I'll never know","transl":"чем мы сейчас"},
 
 };
-//[
+//[]
 export {videoItems as default};
