@@ -52,7 +52,6 @@ export default class VideoItem extends Component {
         const url = get(props, `match.url`);
         this.videoIndex = findIndex(videoNames, {'url': url});
         this.videoId = get(videoNames, `[${this.videoIndex}].id`);
-        console.log(this.videoId);
 
         const localItems = localStorage.video ? JSON.parse(localStorage.video) : {};
         const items = filter({...videoItems, ...localItems}, item => {
