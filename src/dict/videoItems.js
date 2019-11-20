@@ -89,6 +89,28 @@ const videoItems = {
     1124:{"id":"25","idVideoName":3,"start":"214","end":"219.4","eng":"time will tell the few","transl":"время покажет мало"},
     1125:{"id":"26","idVideoName":3,"start":"219.5","end":"224.7","eng":"I will live forever","transl":"Я буду жить вечно"},
     1126:{"id":"27","idVideoName":3,"start":"224.8","end":"230","eng":"your days are now through","transl":"твои дни уже прошли"},
-};
+    1200:{"id":"1","idVideoName":5,"start":"36.6","end":"40.2","eng":"Awakened by the sun’s rays,","transl":"Проснувшись от солнечных лучей"},
+    1201:{"id":"2","idVideoName":5,"start":"40.2","end":"44","eng":"up I rise for the new day.","transl":"Я поднимаюсь на новый день."},
+    1202:{"id":"3","idVideoName":5,"start":"44.1","end":"47.6","eng":"The same routine but I have changed,","transl":"Та же рутина, но я изменился,"},
+    1203:{"id":"4","idVideoName":5,"start":"47.6","end":"51.3","eng":"no longer will I stay the same.","transl":"Я больше не буду оставаться прежним."},
+    1204:{"id":"5","idVideoName":5,"start":"51.2","end":"54.67","eng":"My doubts and weakness used to reign,","transl":"Мои сомнения и слабости царили,"},
+    1205:{"id":"6","idVideoName":5,"start":"54.67","end":"58.6","eng":"but a new power I have now gained,","transl":"но новая сила, которую я теперь получил,"},
+    1206:{"id":"7","idVideoName":5,"start":"58.6","end":"62","eng":"to face the day with a new light.","transl":"встретить день с новым светом"},
+    1207:{"id":"8","idVideoName":5,"start":"62","end":"66","eng":"Worries fade away, and I’m ready to fight.","transl":"Беспокойство исчезает, и я готов к бою."},
+    1208:{"id":"9","idVideoName":5,"start":"66","end":" 69.35","eng":"Continue on this winding road,","transl":"Продолжайте идти по этой извилистой дороге,"},
+    1209:{"id":"10","idVideoName":5,"start":"70.4","end":"73","eng":" start to show.","transl":" начать показывать."},
+    1210:{"id":"11","idVideoName":5,"start":"76.2","end":"80.4","eng":"gonna power up and it starts today.","transl":"собирается включиться, и это начинается сегодня."},
+    1211:{"id":"12","idVideoName":5,"start":"80.4","end":"87.2","eng":"A change is due, a different view, we must go on.","transl":"Из-за изменений, другого взгляда, мы должны продолжать"},
+    1212:{"id":"13","idVideoName":5,"start":"87.3","end":"95","eng":"I’ll find that key, inside of me, as we try to level up.","transl":"Я найду этот ключ внутри себя, когда мы попытаемся подняться."},
+    1213:{"id":"16","idVideoName":5,"start":"109.5","end":"113","eng":"Beyond my home my journeys told,","transl":"За пределами моего дома мои путешествия рассказали,"},
+    1214:{"id":"17","idVideoName":5,"start":"113.1","end":"116.7","eng":"thats full of life and love to behold.","transl":"это полно жизни и любви, чтобы созерцать."},
+    1215:{"id":"18","idVideoName":5,"start":"116.8","end":"120.1","eng":"The skills I’ve learned shape how I’ve grown,","transl":"Навыки, которые я изучил, формируют то, как я вырос,"},
+    1216:{"id":"19","idVideoName":5,"start":"120.1","end":"124","eng":"still so much of this world is unknown.","transl":"все еще так много в этом мире неизвестно."},
+    1217:{"id":"20","idVideoName":5,"start":"124","end":"127.3","eng":"Through storm and drought I’ll travel far,","transl":"Через шторм и засуху я буду путешествовать далеко,"},
+    1218:{"id":"21","idVideoName":5,"start":"127.4","end":"131","eng":"over mountain tops, to guide I’ll use the star.","transl":"над горными вершинами, чтобы вести, я буду использовать звезду."},
+    1219:{"id":"22","idVideoName":5,"start":"131.1","end":"134.55","eng":"It lights the way through the darkest night, ","transl":"Он освещает путь самой темной ночью,"},
+    1220:{"id":"23","idVideoName":5,"start":"134.7","end":"138.8","eng":"illuminating our path, the end is in sight.","transl":"освещая наш путь, конец виден"}
 
+};
+//[
 export {videoItems as default};
