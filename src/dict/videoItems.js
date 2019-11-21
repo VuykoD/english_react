@@ -72,7 +72,6 @@ const videoItems = {
     1407:{"id":"1407","idVideoName":4,"start":"44.15","end":"47.4","eng":"Shouting in the street, gonna take on the world some day","transl":"Кричишь на улице, однажды завоюешь мир"},
     1408:{"id":"1408","idVideoName":4,"start":"50.6","end":"53.6","eng":"Waving your banner all over the place","transl":"Размахиваешь своим флагом повсюду"},
     1409:{"id":"1409","idVideoName":4,"start":"65","end":"67.8","eng":"Buddy, you're an old man, poor man","transl":"Приятель, ты – старик, бедняк"},
-    1410:{"id":"1410","idVideoName":4,"start":"65","end":"67.8","eng":"Buddy, you're an old man, poor man","transl":"Приятель, ты – старик, бедняк"},
     1411:{"id":"1411","idVideoName":4,"start":"67.8","end":"70","eng":"Pleading with your eyes, gonna make you some peace someday","transl":"Умоляешь взглядом, однажды обретешь покой"},
     1412:{"id":"1412","idVideoName":4,"start":"74","end":"77","eng":"Somebody better put you back into your place","transl":"Лучше кому-нибудь вернуть тебя на место"},
     1413:{"id":"1413","idVideoName":4,"start":"99","end":"101","eng":"Alright","transl":"Хорошо"},
