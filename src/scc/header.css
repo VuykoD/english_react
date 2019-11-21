@@ -126,3 +126,7 @@ h1 {
 .dropdown-menu.show {
     margin-top: 15px;
 }
+
+.display-none {
+    display: none;
+}

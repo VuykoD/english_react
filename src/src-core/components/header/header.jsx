@@ -145,14 +145,7 @@ export default class Header extends Component {
                                     variant='header header-user'
                                     bsPrefix='no-arrow'
                                 >
-                                    <DropdownButton
-                                        drop={direction}
-                                        title="Murphy"
-                                        bsPrefix='dropdown-inner no-arrow'
-                                        variant={'header'}
-                                    >
-                                        <Dropdown.Item href="/murphy1">Murphy 1</Dropdown.Item>
-                                    </DropdownButton>
+                                    <Dropdown.Item href="/murphy1">Murphy 1</Dropdown.Item>
                                 </DropdownButton>
                             </div>
                         </Col>

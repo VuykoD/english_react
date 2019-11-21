@@ -1,47 +1,15 @@
+.unit-row>div {
+    padding: 3px 2px;;
+}
+
 .buttons {
-    margin-right: 10px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+    width: 100%;
+}
+
+.learning {
+    margin-bottom: 10px;
 }
 
 .list-group-item {
-    height: 50px;
-}
-
-.form-control {
-    display: block;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-
-.input-left {
-    width: 40% !important;
-    margin-top: -42px;
-    margin-left: 90px;
-}
-
-.input-right {
-    width: 40% !important;
-    margin-top: -38px;
-    margin-left: 527px;
-}
-
-.save {
-    margin-top: -64px;
-    margin-left: 954px;
-}
-
-.delete {
-    margin-top: -111px;
-    margin-left: 1015px;
+    padding: 2px 16px;
 }
