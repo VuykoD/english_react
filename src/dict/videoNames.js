@@ -49,6 +49,16 @@ const videoNames = [
         active: true,
         url: '/Level up'
     },
+    {
+        id: 6,
+        songname: 'starlessNight',
+        imageName: 'starlessNight.jpg',
+        fileName: 'starlessNight.mp4',
+        level: 'medium',
+        type: 'cartoon',
+        active: true,
+        url: '/starlessNight'
+    },
 
 ];
 
