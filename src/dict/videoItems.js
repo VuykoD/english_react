@@ -98,7 +98,24 @@ const videoItems = {
     1520:{"id":"1520","idVideoName":2,"start":"161.7","end":"170","eng":"It takes more strength to cry, admit defeat.","transl":"Чтобы плакать и признавать поражения, нужно быть сильнее."},
     1521:{"id":"1521","idVideoName":2,"start":"170.7","end":"177","eng":"I have truth on my side,","transl":"На моей стороне правда,"},
     1522:{"id":"1522","idVideoName":2,"start":"177","end":"181.5","eng":"You only have deceit","transl":"На твоей - лишь обман."},
-    1523:{"id":"1523","idVideoName":2,"start":"181.5","end":"190","eng":"You'll see, somehow, someday","transl":"Ты увидишь, как-нибудь, однажды..."}
+    1523:{"id":"1523","idVideoName":2,"start":"181.5","end":"190","eng":"You'll see, somehow, someday","transl":"Ты увидишь, как-нибудь, однажды..."},
+    1600:{"id":"1600","idVideoName":6,"start":"14.5","end":"18.5","eng":"Red alert, hit the dirt, I gotta race there so nobody’s hurt.","transl":"Красный бдительный, ударил грязь, я должен бежать там, чтобы "},
+    1601:{"id":"1601","idVideoName":6,"start":"18.5","end":"22.1","eng":"Danger where, in the air, there’s fire everywhere, I’m gonna","transl":"Опасность, где, в воздухе, везде огонь, я собираюсь"},
+    1602:{"id":"1602","idVideoName":6,"start":"22.1","end":"25.5","eng":"fight the threat, challenge set, gotta get up before my days are met.","transl":"борись с угрозой, бросай вызов, должен встать до того, как мои "},
+    1603:{"id":"1603","idVideoName":6,"start":"29","end":"32.5","eng":"Must fight to protect those that need me.","transl":"Нужно бороться, чтобы защитить тех, кто нуждается во мне."},
+    1604:{"id":"1604","idVideoName":6,"start":"32.5","end":"36","eng":"Gonna do whatever it takes.","transl":"Собираюсь сделать все, что нужно."},
+    1605:{"id":"1605","idVideoName":6,"start":"36","end":"40","eng":"Overcome the foe and set you free.","transl":"Преодолей врага и освободи."},
+    1606:{"id":"1606","idVideoName":6,"start":"40","end":"43.5","eng":"Even though my life is at stake.","transl":"Даже если моя жизнь поставлена ​​на карту."},
+    1607:{"id":"1607","idVideoName":6,"start":"43.5","end":"47.4","eng":"Shattered and broken, I’m feeling hopeless.","transl":"Разбитый и разбитый, я чувствую себя безнадежным."},
+    1608:{"id":"1608","idVideoName":6,"start":"47.4","end":"51","eng":"Within myself, find the strength to harness.","transl":"Во мне найди силы, чтобы использовать."},
+    1609:{"id":"1609","idVideoName":6,"start":"51","end":"54.4","eng":"The glowing light, shining in the darkness.","transl":"Светящийся свет, сияющий в темноте."},
+    1610:{"id":"1610","idVideoName":6,"start":"54.4","end":"58.2","eng":"Like a full moon when the night is starless.","transl":"Как полная луна, когда ночь без звезд."},
+    1611:{"id":"1611","idVideoName":6,"start":"58.2","end":"64.8","eng":"I can’t give up, I can win this, the finish line is in sight.","transl":"Я не могу сдаться, я могу выиграть, финишная черта в поле зрения."},
+    1612:{"id":"1612","idVideoName":6,"start":"64.8","end":"72","eng":"Cause you’re not crushing my spirit, I’ll end your evil tonight.","transl":"Потому что вы не сокрушите мой дух, я покончу с вами сегодня вечером."},
+    1613:{"id":"1613","idVideoName":6,"start":"72","end":"75.9","eng":"Did my best, failed the test, a simple task has turned into a quest.","transl":"Сделал все возможное, провалил тест, простое задание превратилось в квест."},
+    1614:{"id":"1614","idVideoName":6,"start":"75.9","end":"79.5","eng":"Got a trace, there's his base, gonna meet him face-to-face, just","transl":"Есть след, есть его база, встретимся с ним лицом к лицу, просто"},
+    1615:{"id":"1615","idVideoName":6,"start":"79.5","end":"82.8","eng":"Take a sec, stop and check, cause you have much to learn before the trek.","transl":"Take a sec, stop and check, cause you have much to learn before the trek."},
+    1616:{"id":"1616","idVideoName":6,"start":"82.8","end":"86.5","eng":"Trust your sight, through the night, there darkness meets true light.","transl":"Доверяй своему зрению, сквозь ночь тьма встречает истинный свет."},
 
 };
 //

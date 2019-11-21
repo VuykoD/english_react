@@ -41,7 +41,7 @@ const videoNames = [
     },
     {
         id: 5,
-        songName: 'levelUp',
+        songName: '"Level Up" - A Minecraft',
         imageName: 'levelUp.jpg',
         fileName: 'levelUp.mp4',
         level: 'medium',
@@ -51,7 +51,7 @@ const videoNames = [
     },
     {
         id: 6,
-        songName: 'starlessNight',
+        songName: '"Starless Night" - A Minecraft',
         imageName: 'starlessNight.jpg',
         fileName: 'starlessNight.mp4',
         level: 'medium',
