@@ -102,7 +102,6 @@ export default class Course extends Component {
         const {siteLang = ''} = this.props.store;
         const learning = get(content, `learning[${siteLang}]`);
         const {courseItems} = this.state;
-        console.log(courseItems);
         return (
             <Container>
                 <Row className="text-center">
