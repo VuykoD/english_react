@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import PropTypes from "prop-types";
 import get from 'lodash/get';
 import map from 'lodash/map';
+import filter from 'lodash/filter';
 import {Col, Container, Row, Dropdown, DropdownButton, Form} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import videoNames from '../../dict/videoNames';
@@ -64,6 +65,15 @@ const content = {
 };
 
 export default class Video extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            level: 'anyLvl',
+            type: 'allVideo'
+        };
+    }
+
     getLangType = () => {
         const {siteLang} = this.props.store;
         const cartoon = get(content, `cartoon[${siteLang}]`);
@@ -115,6 +125,22 @@ export default class Video extends Component {
         return {level, type};
     };
 
+    setLevel = (e) => {
+        const elem = e.currentTarget;
+        if (elem) {
+            const level = elem.getAttribute('level');
+            this.setState({level})
+        }
+    };
+
+    setType = (e) => {
+        const elem = e.currentTarget;
+        if (elem) {
+            const type = elem.getAttribute('type');
+            this.setState({type});
+        }
+    };
+
     render() {
         const langType = this.getLangType();
         const langLevel = this.getLangLevel();
@@ -126,8 +152,16 @@ export default class Video extends Component {
         const allVideo = get(content, `allVideo[${siteLang}]`);
         const anyLvl = get(content, `anyLvl[${siteLang}]`);
         const videoCount = get(content, `videoCount[${siteLang}]`);
+        const currentLevel = get(content, `${this.state.level}[${siteLang}]`);
+        const currentType = get(content, `${this.state.type}[${siteLang}]`);
 
         const lastTwoVideos = videoNames.slice(-2);
+        let filteredVideo = filter(videoNames, itemVideo => {
+            return itemVideo.level === this.state.level || this.state.level === "anyLvl";
+        });
+        filteredVideo = filter(filteredVideo, itemVideo => {
+            return itemVideo.type === this.state.type || this.state.type === "allVideo";
+        });
 
         return (
             <Fragment>
@@ -169,20 +203,74 @@ export default class Video extends Component {
                     </Row>
                     <Row>
                         <Col sm={2}>
-                            <DropdownButton id="dropdown-basic-button" title={allVideo}>
-                                <Dropdown.Item href="#/action-1">{allVideo}</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">{langType.cartoon}</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">{langType.interesting}</Dropdown.Item>
-                                <Dropdown.Item href="#/action-4">{langType.videoLesson}</Dropdown.Item>
-                                <Dropdown.Item href="#/action-5">{langType.music}</Dropdown.Item>
+                            <DropdownButton id="dropdown-basic-button" title={currentType}>
+                                <Dropdown.Item
+                                    href="#/action-1"
+                                    onClick={this.setType}
+                                    type="allVideo"
+                                >
+                                    {allVideo}
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    href="#/action-2"
+                                    onClick={this.setType}
+                                    type="cartoon"
+                                >
+                                    {langType.cartoon}
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    href="#/action-3"
+                                    onClick={this.setType}
+                                    type="interesting"
+                                >
+                                    {langType.interesting}
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    href="#/action-4"
+                                    onClick={this.setType}
+                                    type="videoLesson"
+                                >
+                                    {langType.videoLesson}
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    href="#/action-5"
+                                    onClick={this.setType}
+                                    type="music"
+                                >
+                                    {langType.music}
+                                </Dropdown.Item>
                             </DropdownButton>
                         </Col>
                         <Col sm={2}>
-                            <DropdownButton id="dropdown-basic-button" title={anyLvl}>
-                                <Dropdown.Item href="#/action-1">{anyLvl}</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">{langLevel.easy}</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">{langLevel.medium}</Dropdown.Item>
-                                <Dropdown.Item href="#/action-4">{langLevel.hard}</Dropdown.Item>
+                            <DropdownButton id="dropdown-basic-button" title={currentLevel}>
+                                <Dropdown.Item
+                                    href="#/action-1"
+                                    onClick={this.setLevel}
+                                    level="anyLvl"
+                                >
+                                    {anyLvl}
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    href="#/action-2"
+                                    onClick={this.setLevel}
+                                    level="easy"
+                                >
+                                    {langLevel.easy}
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    href="#/action-3"
+                                    onClick={this.setLevel}
+                                    level="medium"
+                                >
+                                    {langLevel.medium}
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    href="#/action-4"
+                                    onClick={this.setLevel}
+                                    level="hard"
+                                >
+                                    {langLevel.hard}
+                                </Dropdown.Item>
                             </DropdownButton>
                         </Col>
                         <Col sm={6}>
@@ -195,7 +283,7 @@ export default class Video extends Component {
                     </Row>
                     <Row className="text-center">
                         {
-                            map(videoNames, (item, key) => {
+                            map(filteredVideo, (item, key) => {
                                 const levelAndType = this.getLevelAndType(item);
 
                                 return (
