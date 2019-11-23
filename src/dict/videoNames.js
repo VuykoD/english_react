@@ -41,7 +41,7 @@ const videoNames = [
     },
     {
         id: 5,
-        songName: 'levelUp',
+        songName: '"Level Up" - A Minecraft',
         imageName: 'levelUp.jpg',
         fileName: 'levelUp.mp4',
         level: 'medium',
@@ -51,13 +51,33 @@ const videoNames = [
     },
     {
         id: 6,
-        songName: 'starlessNight',
+        songName: '"Starless Night" - A Minecraft',
         imageName: 'starlessNight.jpg',
         fileName: 'starlessNight.mp4',
         level: 'medium',
         type: 'cartoon',
         active: true,
         url: '/starlessNight'
+    },
+    {
+        id: 7,
+        songName: 'Thunder (Imagine Dragons)',
+        imageName: 'Thunder.jpg',
+        fileName: 'Thunder.mp4',
+        level: 'medium',
+        type: 'music',
+        active: true,
+        url: '/Thunder (Imagine Dragons)'
+    },
+    {
+        id: 8,
+        songName: 'BelieverAssassinsCreed',
+        imageName: 'believer.jpg',
+        fileName: 'believer.mp4',
+        level: 'medium',
+        type: 'music',
+        active: true,
+        url: '/believerAssassinsCreed'
     },
 
 ];
