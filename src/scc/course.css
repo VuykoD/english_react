@@ -1,0 +1,14 @@
+.paint-right {
+    transform: scale(-1, 1);
+    margin-top: 15%;
+    float: right;
+    width: 400%;
+}
+
+.paint-left {
+    margin-top: 15%;
+    width: 400%;
+}
+
+@media only screen
+and (max-device-width : 768px){ .paint-left, .paint-right { display: none; }}

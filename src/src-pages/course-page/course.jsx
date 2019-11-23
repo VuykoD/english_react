@@ -8,7 +8,6 @@ export default class Course extends Component {
             <Container>
                 <Row>
                     <Col sm={3}>
-                        <div><img src="images/color_line-151.png" alt=""/></div>
                     </Col>
                     <Col sm={6}>
                         <div>Книги</div>
