@@ -132,7 +132,7 @@ export default class Course extends Component {
                                             <Col>
                                                 <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_eng`}
                                                              defaultValue={item.eng}/>
-                                            </Col>
+                                            </Col>n
                                             <Col>
                                                 <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_transl`}
                                                              defaultValue={item.transl}/>

@@ -112,11 +112,17 @@ export default class Video extends Component {
 
         let type = '';
         switch (item.type) {
-            case 'music':
-                type = langType.music;
-                break;
             case 'cartoon':
                 type = langType.cartoon;
+                break;
+            case 'interesting':
+                type = langType.interesting;
+                break;
+            case 'videoLesson':
+                type = langType.videoLesson;
+                break;
+            case 'music':
+                type = langType.music;
                 break;
             default:
                 break;
@@ -177,7 +183,6 @@ export default class Video extends Component {
                             {
                                 map(lastTwoVideos, (item, key) => {
                                     const levelAndType = this.getLevelAndType(item);
-
                                     return (
                                         <Col className='new-video' key={key}>
                                             <CardHorizontal

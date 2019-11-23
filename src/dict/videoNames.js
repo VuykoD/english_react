@@ -79,6 +79,16 @@ const videoNames = [
         active: true,
         url: '/believerAssassinsCreed'
     },
+    {
+        id: 9,
+        songName: 'Metallica - Nothing Else Matters',
+        imageName: 'metallica-NothingElseMatters.jpg',
+        fileName: 'metallica-NothingElseMatters.mp4',
+        level: 'easy',
+        type: 'music',
+        active: true,
+        url: '/metallica-NothingElseMatters'
+    },
 
 ];
 

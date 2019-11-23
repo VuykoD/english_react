@@ -133,7 +133,21 @@ const videoItems = {
     1714:{"id":"15","idVideoName":7,"start":"91.5","end":"94.5","eng":"Now I'm smiling from the stage while","transl":" Теперь я улыбаюсь со сцены, пока"},
     1715:{"id":"16","idVideoName":7,"start":"94.5","end":"97","eng":"You were clapping in the nose bleeds.","transl":"Вы хлопаете так, что можно оглохнуть."},
     1716:{"id":"17","idVideoName":7,"start":"56.9","end":"59","eng":"Thunder, feel the thunder,","transl":"Гром, ощути гром,"},
-    1717:{"id":"18","idVideoName":7,"start":"60","end":"62","eng":"Lightning and the thunder","transl":" Молнию и гром."}
+    1717:{"id":"18","idVideoName":7,"start":"60","end":"62","eng":"Lightning and the thunder","transl":" Молнию и гром."},
+    1800:{"id":"1800","idVideoName":9,"start":"60","end":"65","eng":"So close no matter how far","transl":" Мы близко друг к другу независимо от расстояния."},
+    1801:{"id":"1801","idVideoName":9,"start":"66","end":"69.7","eng":"Couldn't be much more from the heart","transl":"Не могло быть больше из сердца"},
+    1802:{"id":"1802","idVideoName":9,"start":"71","end":"75","eng":"Forever trusting who we are","transl":"Вечно верящие в самих себя"},
+    1803:{"id":"1803","idVideoName":9,"start":"75","end":"80.5","eng":"And nothing else matters","transl":" А остальное не важно."},
+    1804:{"id":"1804","idVideoName":9,"start":"82","end":"88","eng":"Never opened myself this way","transl":" Я никогда не открывал себя с этой стороны."},
+    1805:{"id":"1805","idVideoName":9,"start":"88","end":"93","eng":"Life is ours, we live it our way","transl":" Жизнь принадлежит нам, и каждый живёт её по-своему."},
+    1806:{"id":"1806","idVideoName":9,"start":"93","end":"98.5","eng":"All these words I don't just say","transl":"Все эти слова я не просто говорю,"},
+    1807:{"id":"1807","idVideoName":9,"start":"105","end":"111","eng":"Trust I seek and I find in you","transl":"я ищу доверие и нахожу в тебе"},
+    1808:{"id":"1808","idVideoName":9,"start":"111","end":"116","eng":"Every day for us something new","transl":"Каждый день приносит нам что-то новое."},
+    1809:{"id":"1809","idVideoName":9,"start":"116","end":"121","eng":"Open mind for a different view","transl":" Наш разум открыт для нового взгляда,"},
+    1810:{"id":"1810","idVideoName":9,"start":"129","end":"134","eng":"Never cared for what they do","transl":" Меня никогда не заботило, что они делают,"},
+    1811:{"id":"1811","idVideoName":9,"start":"134","end":"139","eng":"Never cared for what they know","transl":" Меня никогда не заботило, что они знают,"},
+    1812:{"id":"1812","idVideoName":9,"start":"139","end":"143","eng":"But I know","transl":"Но я знаю,"},
+    1813:{"id":"1813","idVideoName":9,"start":"275","end":"280","eng":"Never cared for games they play","transl":"Меня никогда не волновали игры, в которые они играют,"}
 };
 //
 export {videoItems as default};

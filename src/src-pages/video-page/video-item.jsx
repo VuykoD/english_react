@@ -55,7 +55,6 @@ export default class VideoItem extends Component {
 
         const localItems = localStorage.video ? JSON.parse(localStorage.video) : {};
         const items = filter({...videoItems, ...localItems}, item => {
-            console.log(+this.videoId,+item.idVideoName);
                 return +item.idVideoName === +this.videoId;
             }
         );
