@@ -116,7 +116,24 @@ const videoItems = {
     1614:{"id":"1614","idVideoName":6,"start":"75.9","end":"79.5","eng":"Got a trace, there's his base, gonna meet him face-to-face, just","transl":"Есть след, есть его база, встретимся с ним лицом к лицу, просто"},
     1615:{"id":"1615","idVideoName":6,"start":"79.5","end":"82.8","eng":"Take a sec, stop and check, cause you have much to learn before the trek.","transl":"Take a sec, stop and check, cause you have much to learn before the trek."},
     1616:{"id":"1616","idVideoName":6,"start":"82.8","end":"86.5","eng":"Trust your sight, through the night, there darkness meets true light.","transl":"Доверяй своему зрению, сквозь ночь тьма встречает истинный свет."},
-
+    1700:{"id":"1","idVideoName":7,"start":"22.7","end":"25.8","eng":"Just a young gun with a quick fuse","transl":"Просто вспыльчивый молодой парень,"},
+    1701:{"id":"2","idVideoName":7,"start":"25.8","end":"28.6","eng":"I was uptight, wanna let loose","transl":" Я был раздражен, хотел обрести свободу."},
+    1702:{"id":"3","idVideoName":7,"start":"28.6","end":"31.3","eng":"I was dreaming of bigger things","transl":" Мечтал о чем-то большем,"},
+    1703:{"id":"4","idVideoName":7,"start":"31.3","end":"34.4","eng":"wanna leave my own life behind.","transl":"хотел оставить свою прежнюю жизнь."},
+    1704:{"id":"5","idVideoName":7,"start":"34.4","end":"37","eng":"Not a yes sir, not a follower","transl":"Не мальчик \"Так точно!\", не конформист."},
+    1705:{"id":"6","idVideoName":7,"start":"37","end":"38.8","eng":"Fit the box, fit the mold","transl":"Быть серой массой, укладываться в стереотип,"},
+    1706:{"id":"7","idVideoName":7,"start":"38.8","end":"42","eng":"Have a seat in the foyer, take a number","transl":"Have a seat in the foyer, take a number"},
+    1707:{"id":"8","idVideoName":7,"start":"42","end":"44.7","eng":"I was lightning before the thunder.","transl":" Я сверкал перед громом."},
+    1708:{"id":"9","idVideoName":7,"start":"74","end":"77.1","eng":"Kids were laughing in my classes,","transl":" Дети смеялись в залах,"},
+    1709:{"id":"10","idVideoName":7,"start":"77.1","end":"79.8","eng":"While I was scheming for the masses.","transl":" Пока я готовился к выступлению,"},
+    1710:{"id":"11","idVideoName":7,"start":"79.8","end":"82","eng":"Who do you think you are?","transl":"Как ты думаешь, кто ты,"},
+    1711:{"id":"12","idVideoName":7,"start":"82.3","end":"85.7","eng":"Dreaming 'bout being a big star.","transl":" Мечтающий стать большой звездой?"},
+    1712:{"id":"13","idVideoName":7,"start":"85.9","end":"88.5","eng":"You say you're basic, you say you're easy,","transl":" Ты говоришь, что ты обычный и спокойный,"},
+    1713:{"id":"14","idVideoName":7,"start":"88.5","end":"91.5","eng":"You're always riding in the back seat,","transl":" Ты всегда занимаешь заднее сидение."},
+    1714:{"id":"15","idVideoName":7,"start":"91.5","end":"94.5","eng":"Now I'm smiling from the stage while","transl":" Теперь я улыбаюсь со сцены, пока"},
+    1715:{"id":"16","idVideoName":7,"start":"94.5","end":"97","eng":"You were clapping in the nose bleeds.","transl":"Вы хлопаете так, что можно оглохнуть."},
+    1716:{"id":"17","idVideoName":7,"start":"56.9","end":"59","eng":"Thunder, feel the thunder,","transl":"Гром, ощути гром,"},
+    1717:{"id":"18","idVideoName":7,"start":"60","end":"62","eng":"Lightning and the thunder","transl":" Молнию и гром."}
 };
 //
 export {videoItems as default};

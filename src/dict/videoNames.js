@@ -59,6 +59,26 @@ const videoNames = [
         active: true,
         url: '/starlessNight'
     },
+    {
+        id: 7,
+        songName: 'Thunder (Imagine Dragons)',
+        imageName: 'Thunder.jpg',
+        fileName: 'Thunder.mp4',
+        level: 'medium',
+        type: 'music',
+        active: true,
+        url: '/Thunder (Imagine Dragons)'
+    },
+    {
+        id: 8,
+        songName: 'BelieverAssassinsCreed',
+        imageName: 'believer.jpg',
+        fileName: 'believer.mp4',
+        level: 'medium',
+        type: 'music',
+        active: true,
+        url: '/believerAssassinsCreed'
+    },
 
 ];
 
