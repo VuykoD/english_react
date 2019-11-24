@@ -4,11 +4,12 @@ import map from 'lodash/map';
 import get from 'lodash/get';
 import {Container, Row, Col} from 'react-bootstrap';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-// import FormControl from 'react-bootstrap/FormControl';
+import FormControl from 'react-bootstrap/FormControl';
 import Dropdown from 'react-bootstrap/Dropdown';
 import {Link} from 'react-router-dom';
 
 import langType from '../../../dict/langType';
+import warn from '../../helper/warn/warn';
 
 import '../../../scc/header.css';
 
@@ -96,6 +97,11 @@ export default class Header extends Component {
         elem.style.background = gradientStyle;
     };
 
+    warn = () => {
+        const {siteLang} = this.props.store;
+        warn(siteLang, 'inProgress')
+    };
+
     render() {
         const {siteLang, learnedLang, fontColor, firstColor, secondColor, userData = ''} = this.props.store;
         const parsedUserData = userData ? JSON.parse(userData) : {};
@@ -116,7 +122,7 @@ export default class Header extends Component {
         const btnSiteLang = get(content, `btnSiteLang[${siteLang}]`);
         const btnLearnedLand = get(content, `btnLearnedLand[${siteLang}]`);
         const setting = get(content, `setting[${siteLang}]`);
-        // const search = get(content, `search[${siteLang}]`);
+        const search = get(content, `search[${siteLang}]`);
         const fontStyle = {color: fontColor};
         const gradientStyle = {background: `linear-gradient(to bottom,${firstColor},${secondColor}`};
         const hover = {onMouseOver: this.onMouseOver, onMouseOut: this.onMouseOut};
@@ -134,7 +140,7 @@ export default class Header extends Component {
                             </Link>
                         </Col>
                         <Col>
-                            {/* <FormControl type="text" placeholder={search} className="mr-sm-2 search"/> */}
+                            <FormControl type="text" placeholder={search} className="mr-sm-2 search" onChange={this.warn}/>
                         </Col>
                         <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
                             <div>
@@ -220,7 +226,7 @@ export default class Header extends Component {
                                     variant='header header-user'
                                     bsPrefix='no-arrow'
                                 >
-                                    <Dropdown.Item>{dictionary}</Dropdown.Item>
+                                    <Dropdown.Item href="/user/dictionary">{dictionary}</Dropdown.Item>
                                     <Dropdown.Item>{progress}</Dropdown.Item>
                                     <Dropdown.Item href="/user/data">{myData}</Dropdown.Item>
                                     <Dropdown.Item href="/user/setting">{setting}</Dropdown.Item>

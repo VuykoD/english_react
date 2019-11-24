@@ -74,7 +74,7 @@ const videoNames = [
         songName: 'Believer Assassins Creed',
         imageName: 'believer.jpg',
         fileName: 'believer.mp4',
-        level: 'medium',
+        level: 'hard',
         type: 'music',
         active: true,
         url: '/believerAssassinsCreed'

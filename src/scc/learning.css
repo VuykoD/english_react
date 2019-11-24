@@ -61,4 +61,8 @@ button.title_sound {
     animation: 7.05s linear infinite forwards move_eye;
 }
 
+.video-hide {
+    display: none;
+}
+
 @keyframes move_eye { from { width: 1%; } to { width:100%; }  }

@@ -62,6 +62,7 @@ const videoItems = {
     1313:{"id":"1313","idVideoName":1,"start":"99.7","end":"103","eng":"I watch them grow","transl":"я вижу как они растут"},
     1314:{"id":"1314","idVideoName":1,"start":"103","end":"107","eng":"They'll learn much more ","transl":"Знать будут больше, "},
     1315:{"id":"1315","idVideoName":1,"start":"107","end":"110","eng":"than I'll never know","transl":"чем мы сейчас"},
+    1316:{"id":"1316","idVideoName":1,"start":"22","end":"25","eng":"And I think to myself","transl":"И я думаю про себя"},
     1400:{"id":"1400","idVideoName":4,"start":"17.9","end":"20.77","eng":"Buddy, you're a boy, make a big noise","transl":"Приятель, ты – мальчик, наделай шума"},
     1401:{"id":"1401","idVideoName":4,"start":"20.77","end":"23.85","eng":"Playing in the street, gonna be a big man someday","transl":"Играешь на улице, однажды станешь большим человеком"},
     1402:{"id":"1402","idVideoName":4,"start":"23.85","end":"25.5","eng":"You got mud on your face","transl":"У тебя на лице грязь,"},

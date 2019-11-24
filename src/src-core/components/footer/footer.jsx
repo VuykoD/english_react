@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import {Container, Row, Col} from 'react-bootstrap';
 
+import warn from '../../helper/warn/warn';
 import '../../../scc/footer.css';
 
 const content = {
@@ -25,6 +26,11 @@ export default class Footer extends Component {
         store: PropTypes.shape({})
     };
 
+    warn = () => {
+        const {siteLang} = this.props.store;
+        warn(siteLang, 'inProgress')
+    };
+
     render() {
         const {siteLang, fontColor, firstColor, secondColor} = this.props.store;
         const premium = get(content, `premium[${siteLang}]`);
@@ -38,7 +44,7 @@ export default class Footer extends Component {
                 <Container>
                     <Row>
                         <Col md="auto" title={hint}>
-                            <div className='footer-premium'>
+                            <div className='footer-premium' onClick={this.warn}>
                                 {premium}
                             </div>
                         </Col>
