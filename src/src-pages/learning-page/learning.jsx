@@ -3,6 +3,7 @@ import get from 'lodash/get';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
 import findIndex from 'lodash/findIndex';
+import forEach from 'lodash/forEach';
 import {Button, Col, Container, Form, Row, Badge, ProgressBar} from "react-bootstrap";
 
 import '../../scc/learning.css';
@@ -200,21 +201,28 @@ export default class Learning extends Component {
     };
 
     rightClick = (rightTxt) => {
+        const {cycleLearning, exampleLearning} = this.state;
         rightClicked.call(this, rightTxt);
         if (this.englishArr.length === 0) {
-            if (this.state.cycleLearning) {
+            if (cycleLearning) {
                 let nextNumber = this.state.learnNumber + 1;
                 if (nextNumber >= this.learnArr.length) {
-                    nextNumber = 0;
-                    this.setState({cycleLearning: null, exampleLearning: null});
-                    return;
+                    if (cycleLearning === 'repeat' && exampleLearning === 'phase_2') {
+                        this.setState({exampleLearning: 'phase_3', learnNumber: 0});
+                        this.setEngAndTransl(0);
+                        clearTranslation();
+                        return;
+                    } else {
+                        this.setState({cycleLearning: null, exampleLearning: null, learnNumber: 0});
+                        return;
+                    }
                 }
                 this.setEngAndTransl(nextNumber);
                 this.setState({learnNumber: nextNumber});
                 clearTranslation();
                 return;
             }
-            setTimeout(() => this.setState({exampleLearning: null}), 7000)
+            setTimeout(() => this.setState({exampleLearning: null, learnNumber: 0}), 1000)
         }
     };
 
@@ -237,6 +245,18 @@ export default class Learning extends Component {
         this.setEngAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'new', exampleLearning: 'phase_5'});
         this.nextItem();
+    };
+
+    repeat = () => {
+        this.learnArr = this.localProgress ? this.localProgress.slice(0, this.state.repeatNumber) : null;
+        this.setEngAndTransl(this.state.learnNumber);
+        this.setState({cycleLearning: 'repeat', exampleLearning: 'phase_2'});
+    };
+
+    exam = () => {
+        this.learnArr = this.localProgress ? this.localProgress.slice(0, this.state.examNumber) : null;
+        this.setEngAndTransl(this.state.learnNumber);
+        this.setState({cycleLearning: 'exam', exampleLearning: 'phase_4'});
     };
 
     nextItem = () => {
@@ -293,8 +313,12 @@ export default class Learning extends Component {
     }
 
     renderVideo() {
-        const {fileName, start, end} = this.state;
-        if (!fileName || !start ||! end) return ;
+        const {fileName, start, end, exampleLearning} = this.state;
+        if (
+            !fileName || !start || !end ||
+            exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
+            exampleLearning === 'word_2' || exampleLearning === 'word_4'
+        ) return;
         const src = `video/${fileName}#t=${start},${end}`;
         return (
             <video
@@ -310,7 +334,7 @@ export default class Learning extends Component {
     render() {
         const {
             newLearnNumber, repeatNumber, examNumber,
-            exampleLearning, cycleLearning, learnNumber,
+            exampleLearning, cycleLearning,
             newCount, newCountFrom, repeatCount, repeatCountFrom, examCount, examCountFrom
         } = this.state;
         const {siteLang} = this.props.store;
@@ -371,7 +395,7 @@ export default class Learning extends Component {
                                     />
                                 </Col>
                                 <Col>
-                                    <Button variant="info" block>
+                                    <Button variant="info" block onClick={this.repeat}>
                                         {repeat} - {repeatCount}/{repeatCountFrom}
                                     </Button>
                                 </Col>
@@ -386,7 +410,7 @@ export default class Learning extends Component {
                                     />
                                 </Col>
                                 <Col>
-                                    <Button variant="success" block>
+                                    <Button variant="success" block onClick={this.exam}>
                                         {exam} - {examCount}/{examCountFrom}
                                     </Button>
                                 </Col>
@@ -521,7 +545,7 @@ export default class Learning extends Component {
                     }
                     {exampleLearning &&
                     <Fragment>
-                        <Col step={learnNumber}>
+                        <Col>
                             {this.renderVideo()}
                             {soundButton.call(this)}
                             {getBadgeTranslation.call(this)}
@@ -541,33 +565,46 @@ export default class Learning extends Component {
 
 export function getWordsArr() {
     const {exampleLearning} = this.state;
-    if (!this.state.english) return null;
-    const english = this.state.english.toLowerCase();
+    if (!this.state.english || !exampleLearning) return null;
+
+    const english = this.state.english.toLowerCase().replace(/\./g, "");
     let wordsArr = null;
+    const isWord = english.replace(/ /g, "") === english;
+    this.englishArr = isWord ? english.split('') : english.split(' ');
 
     if (
         exampleLearning === 'phase_1' || exampleLearning === 'phase_2' ||
+        (exampleLearning === 'phase_3' && !isWord) ||
         exampleLearning === 'word_1' || exampleLearning === 'word_2'
     ) {
-        const isWord = english.replace(/ /g, "") === english;
-        this.englishArr = isWord ? english.split('') : english.split(' ');
+        const disabled = exampleLearning === 'phase_3' || exampleLearning === 'word_3';
+        const variant = disabled ? 'light' : 'info';
         const randArr = isWord ? english.split('') : english.split(' ');
-        randArr.sort(() => {
-            return .5 - Math.random();
-        });
+        if (!disabled) {
+            randArr.sort(() => {
+                return .5 - Math.random();
+            });
+        }
+        const className = disabled? "words-hint": 'words';
 
         wordsArr = (
             <div>
                 {map(randArr, (word, index) => {
+                    const d = Date.now();
+                    let points = word;
+                    if (disabled) {
+                        points = '(' + word.replace(/[a-z]/g, '.') + ')';
+                    }
                     return (
                         <Button
-                            variant="info"
-                            key={index + word}
+                            variant={variant}
+                            key={index + word + d}
                             onClick={this.wordClick}
-                            className="words"
+                            className={className}
                             size="lg"
+                            disabled={disabled}
                         >
-                            {word}
+                            {points}
                         </Button>
                     )
                 })}
@@ -579,7 +616,8 @@ export function getWordsArr() {
 
 export function getInput() {
     const {exampleLearning, english} = this.state;
-    if (!english) return null;
+    if (!english || !exampleLearning) return null;
+
     let input = null;
     const isWord = english.replace(/ /g, "") === english;
     this.englishArr = isWord ? english.split('') : english.split(' ');
@@ -626,17 +664,17 @@ export function soundButton() {
 
 export function getBadgeTranslation() {
     const {showTranslation, translation} = this.state;
-    return showTranslation ? (<h3><Badge variant="secondary">{translation}</Badge></h3>) : null;
+    return showTranslation && translation ? (<h3><Badge variant="secondary">{translation}</Badge></h3>) : null;
 }
 
 export function getBadge() {
     const {exampleLearning, english} = this.state;
+    if (!exampleLearning || !english) return null;
     let badge = null;
 
     if (exampleLearning === 'phase_5' || exampleLearning === 'word_5') {
         badge = (<h3><Badge variant="light">{english}</Badge></h3>);
     }
-
     return badge;
 }
 
@@ -693,7 +731,6 @@ export function wordClicked(e) {
     const currentTxt = get(elem, 'innerText');
     const rightTxt = get(this, 'englishArr[0]');
     if (currentTxt === rightTxt) {
-        console.log(rightTxt);
         this.rightClick(rightTxt);
         if (elem) elem.style.display = 'none'
     } else {

@@ -1,21 +1,21 @@
 .form-check {
-   height: 30px;
-   font-size: 16px;
-   padding-top: 8px;
- }
+    height: 30px;
+    font-size: 16px;
+    padding-top: 8px;
+}
 
 select.form-control {
-  width: 60px;
-  margin: 0 0 0 auto;
+    width: 60px;
+    margin: 0 0 0 auto;
 }
 
 .new-row {
-  margin: 0 auto ;
-  padding-top: 20px ;
+    margin: 0 auto;
+    padding-top: 20px;
 }
 
 .btn-block {
-  margin-bottom: 7px ;
+    margin-bottom: 7px;
 }
 
 .translation {
@@ -24,11 +24,16 @@ select.form-control {
 }
 
 .btn-light {
-    border-color: rgba(133,133,133,0.61);
+    border-color: rgba(133, 133, 133, 0.61);
 }
 
 .words {
-    margin: 30px 4px ;
+    margin: 30px 4px;
+}
+
+.words-hint {
+    padding: 3px;
+    margin: 10px 0 130px 0;
 }
 
 button.title_sound {
@@ -65,4 +70,11 @@ button.title_sound {
     display: none;
 }
 
-@keyframes move_eye { from { width: 1%; } to { width:100%; }  }
+@keyframes move_eye {
+    from {
+        width: 1%;
+    }
+    to {
+        width: 100%;
+    }
+}

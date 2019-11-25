@@ -1,9 +1,11 @@
 .unit-row>div {
-    padding: 3px 2px;;
+    padding: 3px 2px;
+    z-index: 1;
 }
 
 .buttons {
     width: 100%;
+    z-index: 1;
 }
 
 .learning {

@@ -3,7 +3,6 @@ import get from 'lodash/get';
 import map from 'lodash/map';
 import findIndex from 'lodash/findIndex';
 import filter from 'lodash/filter';
-import sortBy from 'lodash/sortBy';
 import {Col, Container, Row, Form, Button, FormControl, DropdownButton, Dropdown, Badge} from "react-bootstrap";
 
 import '../../scc/video.css';
@@ -62,12 +61,12 @@ export default class VideoItem extends Component {
 
         const localItems = localStorage.video ? JSON.parse(localStorage.video) : {};
 
-        const filteredArr = filter({...videoItems, ...localItems}, item => {
+        this.items = filter({...videoItems, ...localItems}, item => {
                 return +item.idVideoName === +this.videoId;
             }
         );
 
-        this.items = sortBy(filteredArr, ['start']);
+        // this.items = sortBy(filteredArr, ['start']);
 
         const translation = get(this.items, `[0].transl`);
         const english = get(this.items, `[0].eng`);
@@ -203,7 +202,7 @@ export default class VideoItem extends Component {
                     entity_id: item.id,
                     videoId: this.videoId,
                     quantity: 0,
-                    date: `${yyyy}-${mm}-${dd}`
+                    date: `${dd}.${mm}.${yyyy}`
                 }
             )
         });
@@ -395,7 +394,6 @@ export default class VideoItem extends Component {
                     </Row>
                     {map(videoItems, (item, key) => {
                         const odd = key & 1 ? 'odd' : null;
-
                         return (
                             <Row key={item.id} className={odd}>
                                 <Col md="auto" className='video-item-col a-col'>

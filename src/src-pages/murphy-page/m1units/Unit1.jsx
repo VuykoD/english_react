@@ -35,6 +35,7 @@ export default class Course extends Component {
             +courseItems[courseItems.length - 1].id + 1 :
             1;
         const index = findIndex(courseItems, {'id': id});
+        console.log(index);
         const courseItem = {
             id: id || String(newId),
             idCourse: "1",
@@ -46,12 +47,7 @@ export default class Course extends Component {
             newCourseItems = courseItems;
             newCourseItems[index] = courseItem;
         } else {
-            newCourseItems = [...courseItems, {
-                id: id || String(newId),
-                idVideoName: "1",
-                eng,
-                transl
-            }];
+            newCourseItems = courseItems.length? [...courseItems, courseItem]: [courseItem];
         }
 
         this.setState({courseItems: newCourseItems});
@@ -132,7 +128,7 @@ export default class Course extends Component {
                                             <Col>
                                                 <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_eng`}
                                                              defaultValue={item.eng}/>
-                                            </Col>n
+                                            </Col>
                                             <Col>
                                                 <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_transl`}
                                                              defaultValue={item.transl}/>

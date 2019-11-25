@@ -3,11 +3,13 @@
     margin-top: 15%;
     float: right;
     width: 400%;
+    z-index: -1;
 }
 
 .paint-left {
     margin-top: 15%;
     width: 400%;
+    z-index: -1;
 }
 
 @media only screen
