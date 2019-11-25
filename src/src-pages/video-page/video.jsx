@@ -6,6 +6,7 @@ import filter from 'lodash/filter';
 import {Col, Container, Row, Dropdown, DropdownButton, Form} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import videoNames from '../../dict/videoNames';
+import videoItems from '../../dict/videoItems';
 
 import '../../scc/video.css';
 
@@ -183,6 +184,9 @@ export default class Video extends Component {
                             {
                                 map(lastTwoVideos, (item, key) => {
                                     const levelAndType = this.getLevelAndType(item);
+                                    const filteredItems = filter(videoItems, videoItem => {
+                                        return videoItem.idVideoName === item.id;
+                                    });
                                     return (
                                         <Col className='new-video' key={key}>
                                             <CardHorizontal
@@ -190,6 +194,7 @@ export default class Video extends Component {
                                                 videoCount={videoCount}
                                                 level={levelAndType.level}
                                                 type={levelAndType.type}
+                                                count={filteredItems.length}
                                             />
                                         </Col>
                                     )
@@ -290,6 +295,9 @@ export default class Video extends Component {
                         {
                             map(filteredVideo, (item, key) => {
                                 const levelAndType = this.getLevelAndType(item);
+                                const filteredItems = filter(videoItems, videoItem => {
+                                    return videoItem.idVideoName === item.id;
+                                });
 
                                 return (
                                     <Col sm={3} className='new-video' key={key}>
@@ -298,6 +306,7 @@ export default class Video extends Component {
                                             videoCount={videoCount}
                                             level={levelAndType.level}
                                             type={levelAndType.type}
+                                            count={filteredItems.length}
                                         />
                                     </Col>
                                 )
@@ -316,10 +325,11 @@ class CardVertical extends Component {
         videoCount: PropTypes.string,
         level: PropTypes.string,
         type: PropTypes.string,
+        count: PropTypes.number
     };
 
     render() {
-        const {item = {}, videoCount, level, type} = this.props;
+        const {item = {}, videoCount, level, type, count} = this.props;
 
         return (
             <Link to={`/english_react${item.url}`}>
@@ -336,7 +346,7 @@ class CardVertical extends Component {
                         <Col>
                             {/*<img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>*/}
                             <img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>
-                            <span>{videoCount}:20</span>
+                            <span>{videoCount}:{count}</span>
                         </Col>
                     </Row>
                     <div children={item.songName}/>
@@ -352,10 +362,11 @@ class CardHorizontal extends Component {
         videoCount: PropTypes.string,
         level: PropTypes.string,
         type: PropTypes.string,
+        count: PropTypes.number
     };
 
     render() {
-        const {item = {}, videoCount, level, type} = this.props;
+        const {item = {}, videoCount, level, type, count} = this.props;
 
         return (
             <Link to={`/english_react${item.url}`}>
@@ -376,7 +387,7 @@ class CardHorizontal extends Component {
                                 <Col>
                                     {/*<img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>*/}
                                     <img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>
-                                    <span>{videoCount}:20</span>
+                                    <span>{videoCount}:{count}</span>
                                 </Col>
                             </Row>
                             <div children={item.songName}/>
