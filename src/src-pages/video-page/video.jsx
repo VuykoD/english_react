@@ -324,7 +324,7 @@ class CardVertical extends Component {
         return (
             <Link to={`/english_react${item.url}`}>
                 <div className="card-vertical">
-                    <img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>
+                    <img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>
                     <Row className="text-center">
                         <Col>
                             <span className="type">{type}</span>
@@ -333,7 +333,7 @@ class CardVertical extends Component {
                     </Row>
                     <Row className="text-center">
                         <Col>
-                            <img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>
+                            <img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>
                             <span>{videoCount}:20</span>
                         </Col>
                     </Row>
@@ -360,7 +360,7 @@ class CardHorizontal extends Component {
                 <Col>
                     <Row className='new-video card-horizontal'>
                         <Col>
-                            <img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>
+                            <img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>
                         </Col>
                         <Col>
                             <Row className="text-center">
@@ -371,7 +371,7 @@ class CardHorizontal extends Component {
                             </Row>
                             <Row className="text-center">
                                 <Col>
-                                    <img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>
+                                    <img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>
                                     <span>{videoCount}:20</span>
                                 </Col>
                             </Row>

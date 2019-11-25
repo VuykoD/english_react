@@ -318,7 +318,7 @@ export default class Learning extends Component {
             exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
             exampleLearning === 'word_2' || exampleLearning === 'word_4'
         ) return;
-        const src = `../../../video/${fileName}#t=${start},${end}`;
+        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -653,7 +653,7 @@ export function soundButton() {
                 className="title_sound"
                 onClick={this.speakTxt}
             >
-                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
+                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
             </Button>
         )
     }
