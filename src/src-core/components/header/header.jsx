@@ -151,7 +151,7 @@ export default class Header extends Component {
                                     variant='header header-user'
                                     bsPrefix='no-arrow'
                                 >
-                                    <Dropdown.Item href="/english_react/murphy1">Murphy 1</Dropdown.Item>
+                                    <Dropdown.Item href="/english_react/murphy_one">Murphy 1</Dropdown.Item>
                                 </DropdownButton>
                             </div>
                         </Col>
@@ -226,10 +226,10 @@ export default class Header extends Component {
                                     variant='header header-user'
                                     bsPrefix='no-arrow'
                                 >
-                                    <Dropdown.Item href="/english_react/user/dictionary">{dictionary}</Dropdown.Item>
+                                    <Dropdown.Item href="/english_react/user_dictionary">{dictionary}</Dropdown.Item>
                                     <Dropdown.Item>{progress}</Dropdown.Item>
-                                    <Dropdown.Item href="/english_react/user/data">{myData}</Dropdown.Item>
-                                    <Dropdown.Item href="/english_react/user/setting">{setting}</Dropdown.Item>
+                                    <Dropdown.Item href="/english_react/user_data">{myData}</Dropdown.Item>
+                                    <Dropdown.Item href="/english_react/user_setting">{setting}</Dropdown.Item>
                                 </DropdownButton>
                             </div>
                         </Col>
