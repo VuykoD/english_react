@@ -132,10 +132,10 @@ export default class Header extends Component {
                 <Container>
                     <Row>
                         <Col md="auto">
-                            <Link to={'/'} className="logo">
+                            <Link to={'/english_react/'} className="logo">
                                 <div className="engLogo" style={fontStyle}>LEARNING IS FUN</div>
                             </Link>
-                            <Link to={'/'} className="logo">
+                            <Link to={'/english_react/'} className="logo">
                                 {logo && <div className="lowerLogo" style={fontStyle}>{logo}</div>}
                             </Link>
                         </Col>
@@ -151,15 +151,15 @@ export default class Header extends Component {
                                     variant='header header-user'
                                     bsPrefix='no-arrow'
                                 >
-                                    <Dropdown.Item href="/murphy1">Murphy 1</Dropdown.Item>
+                                    <Dropdown.Item href="/english_react/murphy1">Murphy 1</Dropdown.Item>
                                 </DropdownButton>
                             </div>
                         </Col>
                         <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
-                            <Link to={'/video-page'} children={video} style={fontStyle}/>
+                            <Link to={'/english_react/video-page'} children={video} style={fontStyle}/>
                         </Col>
                         <Col md="auto" className="headerButton" style={{...fontStyle, ...gradientStyle}} {...hover} >
-                            <Link to={'/learning'} children={learning} style={fontStyle}/>
+                            <Link to={'/english_react/learning'} children={learning} style={fontStyle}/>
                         </Col>
                         <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
                             <DropdownButton
@@ -226,10 +226,10 @@ export default class Header extends Component {
                                     variant='header header-user'
                                     bsPrefix='no-arrow'
                                 >
-                                    <Dropdown.Item href="/user/dictionary">{dictionary}</Dropdown.Item>
+                                    <Dropdown.Item href="/english_react/user/dictionary">{dictionary}</Dropdown.Item>
                                     <Dropdown.Item>{progress}</Dropdown.Item>
-                                    <Dropdown.Item href="/user/data">{myData}</Dropdown.Item>
-                                    <Dropdown.Item href="/user/setting">{setting}</Dropdown.Item>
+                                    <Dropdown.Item href="/english_react/user/data">{myData}</Dropdown.Item>
+                                    <Dropdown.Item href="/english_react/user/setting">{setting}</Dropdown.Item>
                                 </DropdownButton>
                             </div>
                         </Col>

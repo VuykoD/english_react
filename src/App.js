@@ -35,20 +35,20 @@ class App extends Component {
                     onChangeLearnedLang={onChangeLearnedLang}
                 />
                 <Switch>
-                    <Route exact path='/' children={<HomePage store={store}/>}/>
-                    <Route path='/course' children={<Course store={store}/>}/>
-                    <Route path='/video-page' children={<Video store={store}/>}/>
-                    <Route path='/learning' children={<Learning store={store}/>}/>
-                    <Route path='/murphy1' children={<Murphy1 store={store}/>}/>
-                    <Route path='/m1unit1' children={<M1Unit1 store={store}/>}/>
-                    <Route path='/user/dictionary' children={<UserDictionary store={store}/>}/>
-                    <Route path='/user/data' children={
+                    <Route exact path='/english_react/' children={<HomePage store={store}/>}/>
+                    <Route path='/english_react/course' children={<Course store={store}/>}/>
+                    <Route path='/english_react/video-page' children={<Video store={store}/>}/>
+                    <Route path='/english_react/learning' children={<Learning store={store}/>}/>
+                    <Route path='/english_react/murphy1' children={<Murphy1 store={store}/>}/>
+                    <Route path='/english_react/m1unit1' children={<M1Unit1 store={store}/>}/>
+                    <Route path='/english_react/user/dictionary' children={<UserDictionary store={store}/>}/>
+                    <Route path='/english_react/user/data' children={
                         <UserData
                             store={store}
                             onChangeUserData={onChangeUserData}
                         />
                     }/>
-                    <Route path='/user/setting' children={
+                    <Route path='/english_react/user/setting' children={
                         <Setting
                             store={store}
                             onChangeFontColor={onChangeFontColor}
@@ -57,6 +57,7 @@ class App extends Component {
                             onChangeSecondColor={onChangeSecondColor}
                         />
                     }/>
+                    <Route path='/english_react/*' children={videoItem}/>
                     <Route path='/*' children={videoItem}/>
                 </Switch>
                 <Footer

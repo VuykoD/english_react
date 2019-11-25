@@ -53,7 +53,8 @@ export default class VideoItem extends Component {
     constructor(props) {
         super(props);
 
-        const url = get(props, `match.url`);
+        let url = get(props, `match.url`);
+        url = url.replace('/english_react', '');
         this.videoIndex = findIndex(videoNames, {'url': url});
         this.videoId = get(videoNames, `[${this.videoIndex}].id`);
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
@@ -294,7 +295,7 @@ export default class VideoItem extends Component {
         if (this.videoIndex === -1) return null;
         const fileName = get(videoNames, `[${this.videoIndex}].fileName`);
         const songName = get(videoNames, `[${this.videoIndex}].songName`);
-        const src = `video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         const hideTranslate = get(content, `hideTranslate[${siteLang}]`);
         const firstPhrase = get(content, `firstPhrase[${siteLang}]`);
         const thirdPhrase = get(content, `thirdPhrase[${siteLang}]`);

@@ -3,7 +3,6 @@ import get from 'lodash/get';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
 import findIndex from 'lodash/findIndex';
-import forEach from 'lodash/forEach';
 import {Button, Col, Container, Form, Row, Badge, ProgressBar} from "react-bootstrap";
 
 import '../../scc/learning.css';
@@ -319,7 +318,7 @@ export default class Learning extends Component {
             exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
             exampleLearning === 'word_2' || exampleLearning === 'word_4'
         ) return;
-        const src = `video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -329,7 +328,6 @@ export default class Learning extends Component {
             />
         )
     }
-
 
     render() {
         const {
@@ -655,7 +653,7 @@ export function soundButton() {
                 className="title_sound"
                 onClick={this.speakTxt}
             >
-                <img src="images/Sound.png" className="title_sound" alt=''/>
+                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
             </Button>
         )
     }
