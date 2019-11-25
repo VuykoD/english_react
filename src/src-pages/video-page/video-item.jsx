@@ -67,8 +67,6 @@ export default class VideoItem extends Component {
             }
         );
 
-        // this.items = sortBy(filteredArr, ['start']);
-
         const translation = get(this.items, `[0].transl`);
         const english = get(this.items, `[0].eng`);
 
@@ -95,7 +93,7 @@ export default class VideoItem extends Component {
 
     play = (e) => {
         const rowData = this.getRowData(e) || {};
-        this.playVideo(rowData.start, +rowData.end);
+        playVideo.call(this, rowData.start, +rowData.end);
     };
 
     save = (e) => {
@@ -177,7 +175,7 @@ export default class VideoItem extends Component {
         this.setState({showItems: false});
         const {videoItems, exampleLearning} = this.state;
         if (!videoItems.length) return;
-        this.playVideo(videoItems[0].start, +videoItems[0].end);
+        playVideo.call(this,videoItems[0].start, +videoItems[0].end);
         if (exampleLearning === 'phase_5') {
             this.nextVideo();
         }
@@ -190,11 +188,7 @@ export default class VideoItem extends Component {
             return alert(alreadySelected);
         }
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        const d = new Date();
-        const dd = d.getDate();
-        const mm = d.getMonth() + 1;
-        const yyyy = d.getFullYear();
-
+        const currentDate = getCurrentDate();
 
         const addedProgress = map(this.items, item => {
             return (
@@ -203,7 +197,7 @@ export default class VideoItem extends Component {
                     entity_id: item.id,
                     videoId: this.videoId,
                     quantity: 0,
-                    date: `${dd}.${mm}.${yyyy}`
+                    date: currentDate
                 }
             )
         });
@@ -221,7 +215,7 @@ export default class VideoItem extends Component {
         if (currentItem < videoLength - 1) {
             setTimeout(() => {
                 this.setState({currentItem: currentItem + 1});
-                this.playVideo(get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
+                playVideo.call(this,get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
                 this.nextVideo();
             }, 7000);
         } else {
@@ -233,21 +227,10 @@ export default class VideoItem extends Component {
 
     speakTxt = () => {
         const {videoItems, currentItem} = this.state;
-        this.playVideo(get(videoItems, `[${currentItem}].start`), get(videoItems, `[${currentItem}].end`));
+        playVideo.call(this,get(videoItems, `[${currentItem}].start`), get(videoItems, `[${currentItem}].end`));
         focusInput();
     };
 
-    playVideo(start, end) {
-        if (!(+start) || !(+end)) return alert('start or end is not a number');
-        const difference = +end - start;
-        const video = document.getElementById('player');
-        clearTimeout(this.timeoutPauseVideo);
-        if (!video) return;
-
-        video.currentTime = parseFloat(start);
-        video.play();
-        this.timeoutPauseVideo = setTimeout(() => video.pause(), difference * 1000);
-    }
 
     wordClick = (e) => {
         wordClicked.call(this, e);
@@ -264,7 +247,7 @@ export default class VideoItem extends Component {
                 const english = get(videoItems, `[${currentItem + 1}].eng`);
 
                 this.setState({currentItem: currentItem + 1, english, translation});
-                this.playVideo(get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
+                playVideo.call(this, get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
                 clearTranslation();
             } else {
                 this.setState({showItems: true, currentItem: 0});
@@ -508,3 +491,23 @@ export default class VideoItem extends Component {
     }
 }
 ;
+
+export function getCurrentDate() {
+    const d = new Date();
+    const dd = d.getDate();
+    const mm = d.getMonth() + 1;
+    const yyyy = d.getFullYear();
+    return `${dd}.${mm}.${yyyy}`;
+}
+
+export function playVideo(start, end) {
+    if (!(+start) || !(+end)) return alert('start or end is not a number');
+    const difference = +end - start;
+    const video = document.getElementById('player');
+    clearTimeout(this.timeoutPauseVideo);
+    if (!video) return;
+
+    video.currentTime = parseFloat(start);
+    video.play();
+    this.timeoutPauseVideo = setTimeout(() => video.pause(), difference * 1000);
+}

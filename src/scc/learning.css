@@ -70,6 +70,21 @@ button.title_sound {
     display: none;
 }
 
+.mistakes-string {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.mistakes-error {
+    color: red;
+    font-size: 24px;
+}
+
+.mistakes-right {
+    color: green;
+    font-size: 28px;
+}
+
 @keyframes move_eye {
     from {
         width: 1%;

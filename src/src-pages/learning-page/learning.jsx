@@ -4,13 +4,16 @@ import map from 'lodash/map';
 import filter from 'lodash/filter';
 import findIndex from 'lodash/findIndex';
 import {Button, Col, Container, Form, Row, Badge, ProgressBar} from "react-bootstrap";
+import {TiTickOutline, TiTimesOutline} from "react-icons/ti";
 
 import '../../scc/learning.css';
 import warn from '../../src-core/helper/warn/warn';
-import isDateBegin from '../../src-core/helper/isDateBegin/isDateBegin';
+import isDateBegin from '../../src-core/helper/dates/isDateBegin';
+import getNewDate from '../../src-core/helper/dates/getNewDate';
 import videoItems from '../../dict/videoItems';
 import FormControl from "react-bootstrap/FormControl";
 import videoNames from "../../dict/videoNames";
+import {getCurrentDate, playVideo} from "../video-page/video-item";
 
 const content = {
     firstWord: {
@@ -101,41 +104,22 @@ const content = {
         ru: "Рандомный экзамен",
         ukr: "Рандомний екзамен",
     },
+    mistakesOrder: {
+        ru: "Отчёт по ошибкам",
+        ukr: "Звіт по помилкам",
+    },
+    mistakesDesc: {
+        ru: "Предложение/слово считается правильным, если в нём допущено не более 2 ошибок",
+        ukr: "Речення/слово вважається правильним, якщо в ньому допущено не більше 2 помилок",
+    },
 };
-
-
-// const cycle = {
-//     0: ['justRepeat', 'first'],
-//     1: ['second', 'third'],
-//     2: ['justRepeat', 'third'],
-//     3: ['exam'],
-// };
 
 export default class Learning extends Component {
     constructor(props) {
         super(props);
 
-        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        let newCount = 0;
-        let newCountFrom = 0;
-        let repeatCount = 0;
-        let repeatCountFrom = 0;
-        let examCount = 0;
-        let examCountFrom = 0;
-        map(this.localProgress, item => {
-            if (+item.quantity === 0) {
-                if (isDateBegin(item.date)) newCount += 1;
-                newCountFrom += 1;
-            }
-            if (+item.quantity === 1 || +item.quantity === 2) {
-                if (isDateBegin(item.date)) repeatCount += 1;
-                repeatCountFrom += 1;
-            }
-            if (+item.quantity === 3) {
-                if (isDateBegin(item.date)) examCount += 1;
-                examCountFrom += 1;
-            }
-        });
+        this.getLocalProgress();
+
         this.state = {
             exampleLearning: null,
             cycleLearning: null,
@@ -143,12 +127,12 @@ export default class Learning extends Component {
             learnNumber: 0,
             english: '',
             translation: '',
-            newCount,
-            newCountFrom,
-            repeatCount,
-            repeatCountFrom,
-            examCount,
-            examCountFrom,
+            newCount: this.newCount,
+            newCountFrom: this.newCountFrom,
+            repeatCount: this.repeatCount,
+            repeatCountFrom: this.repeatCountFrom,
+            examCount: this.examCount,
+            examCountFrom: this.examCountFrom,
             newLearnNumber: 3,
             repeatNumber: 10,
             examNumber: 10,
@@ -159,6 +143,7 @@ export default class Learning extends Component {
         };
         this.englishArr = [];
         this.learnArr = [];
+        this.mistakesArr = [];
     }
 
     componentDidMount() {
@@ -168,6 +153,30 @@ export default class Learning extends Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
         focusInput();
     }
+
+    getLocalProgress = () => {
+        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        this.newCount = 0;
+        this.newCountFrom = 0;
+        this.repeatCount = 0;
+        this.repeatCountFrom = 0;
+        this.examCount = 0;
+        this.examCountFrom = 0;
+        map(this.localProgress, item => {
+            if (+item.quantity === 0) {
+                if (isDateBegin(item.date)) this.newCount += 1;
+                this.newCountFrom += 1;
+            }
+            if (+item.quantity === 1 || +item.quantity === 2) {
+                if (isDateBegin(item.date)) this.repeatCount += 1;
+                this.repeatCountFrom += 1;
+            }
+            if (+item.quantity === 3) {
+                if (isDateBegin(item.date)) this.examCount += 1;
+                this.examCountFrom += 1;
+            }
+        });
+    };
 
     getVoices() {
         window.speechSynthesis.onvoiceschanged = () => {
@@ -182,9 +191,18 @@ export default class Learning extends Component {
     exampleLearning = (e) => {
         const elem = e.currentTarget;
         const id = elem.getAttribute('id');
-
-        const english = id.substr(0, 4) === 'word' ? "inspiration" : 'my name is Dmitriy';
-        const translation = id.substr(0, 4) === 'word' ? 'натхнення' : 'Мене звати Дмитро';
+        let english = '';
+        let translation = '';
+        if (id.substr(0, 4) === 'word') {
+            english = "inspiration";
+            translation = "вдохновение";
+        } else {
+            this.getLearnArray(1);
+            if (!this.learnArr) return;
+            this.setEngAndTransl(this.state.learnNumber);
+            english = get(this.learnArr, '[0].eng');
+            translation = get(this.learnArr, '[0].transl');
+        }
         this.setState({exampleLearning: id, english, translation});
         if (id === 'word_5' || id === 'phase_5') {
             setTimeout(this.resetExampleLearning, 7000);
@@ -212,7 +230,7 @@ export default class Learning extends Component {
                         clearTranslation();
                         return;
                     } else {
-                        this.setState({cycleLearning: null, exampleLearning: null, learnNumber: 0});
+                        this.setState({exampleLearning: 'mistakesOrder', learnNumber: 0});
                         return;
                     }
                 }
@@ -240,20 +258,77 @@ export default class Learning extends Component {
     };
 
     newLearn = () => {
-        this.learnArr = this.localProgress ? this.localProgress.slice(0, this.state.newLearnNumber) : null;
+        this.getLearnArray(this.state.newLearnNumber, 0);//0 is count for new
+        if (!this.learnArr) return;
         this.setEngAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'new', exampleLearning: 'phase_5'});
         this.nextItem();
     };
 
+    getLearnArray = (sliceNumber, quantity) => {
+        if (quantity){
+            const filteredArr = this.localProgress ?
+                filter(this.localProgress, item => {
+                    if (typeof (quantity) === 'number' && isDateBegin(item.date)) return +item.quantity === quantity;
+                    if (typeof (quantity) === 'object'  && isDateBegin(item.date)) {
+                        return +item.quantity >= quantity[0] && +item.quantity <= quantity[1]
+                    }
+                }) : null;
+
+            this.learnArr = filteredArr ? filteredArr.slice(0, sliceNumber) : null;
+        } else {
+            this.learnArr = this.localProgress ? this.localProgress.slice(0, sliceNumber) : null;
+        }
+
+
+        if (this.learnArr) {
+            this.mistakesArr = [];
+            map(this.learnArr, (item, key) => {
+                this.learnArr[key].eng = get(videoItems, `[${item.entity_id}].eng`);
+                this.learnArr[key].transl = get(videoItems, `[${item.entity_id}].transl`);
+                this.mistakesArr.push({item: key, mistakes: 0});
+            })
+        }
+
+        if (!this.learnArr) {
+            const currentDate = getCurrentDate();
+            const videoItemsKeyArr = Object.keys(videoItems);
+            const videoItemsLength = videoItemsKeyArr.length;
+            let learnArr = [];
+            let mistakesArr = [];
+            let i = sliceNumber;
+            while (i) {
+                const randomNumber = Math.floor(Math.random() * videoItemsLength);
+                const videoItemId = videoItemsKeyArr[randomNumber];
+                learnArr.push(
+                    {
+                        entity: 'video',
+                        entity_id: videoItems[videoItemId].id,
+                        videoId: videoItems[videoItemId].idVideoName,
+                        eng: videoItems[videoItemId].eng,
+                        transl: videoItems[videoItemId].transl,
+                        quantity: 0,
+                        date: currentDate
+                    }
+                );
+                mistakesArr.push({item: i, mistakes: 0});
+                i--;
+            }
+            this.mistakesArr = mistakesArr.length ? mistakesArr.slice(0, sliceNumber) : null;
+            this.learnArr = learnArr.length ? learnArr.slice(0, sliceNumber) : null;
+        }
+    };
+
     repeat = () => {
-        this.learnArr = this.localProgress ? this.localProgress.slice(0, this.state.repeatNumber) : null;
+        this.getLearnArray(this.state.repeatNumber, [1, 2]);//1,2 is count for new
+        if (!this.learnArr) return;
         this.setEngAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'repeat', exampleLearning: 'phase_2'});
     };
 
     exam = () => {
-        this.learnArr = this.localProgress ? this.localProgress.slice(0, this.state.examNumber) : null;
+        this.getLearnArray(this.state.examNumber, 3);//0 is count for exam
+        if (!this.learnArr) return;
         this.setEngAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'exam', exampleLearning: 'phase_4'});
     };
@@ -285,7 +360,6 @@ export default class Learning extends Component {
 
         const videoIndex = findIndex(videoNames, {'id': videoId});
         const fileName = get(videoNames, `[${videoIndex}].fileName`);
-
         this.setState({english, translation, entity, start, end, fileName})
     };
 
@@ -330,6 +404,19 @@ export default class Learning extends Component {
         )
     }
 
+    resetCycle = () => {
+        this.setState({
+            newCount: this.newCount,
+            newCountFrom: this.newCountFrom,
+            repeatCount: this.repeatCount,
+            repeatCountFrom: this.repeatCountFrom,
+            examCount: this.examCount,
+            examCountFrom: this.examCountFrom,
+            exampleLearning: null,
+            cycleLearning: null
+        });
+    };
+
     render() {
         const {
             newLearnNumber, repeatNumber, examNumber,
@@ -361,6 +448,9 @@ export default class Learning extends Component {
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
+        const newCountTxt = newCountFrom ? ` - ${newCount}/${newCountFrom}` : null;
+        const repeatCountTxt = repeatCountFrom ? ` - ${repeatCount}/${repeatCountFrom}` : null;
+        const examCountTxt = examCountFrom ? ` - ${examCount}/${examCountFrom}` : null;
 
         return (
             <Container className='new-container'>
@@ -380,7 +470,7 @@ export default class Learning extends Component {
                                 </Col>
                                 <Col>
                                     <Button variant="info" block onClick={this.newLearn}>
-                                        {newLearn} - {newCount}/{newCountFrom}
+                                        {newLearn}{newCountTxt}
                                     </Button>
                                 </Col>
                             </Row>
@@ -395,7 +485,7 @@ export default class Learning extends Component {
                                 </Col>
                                 <Col>
                                     <Button variant="info" block onClick={this.repeat}>
-                                        {repeat} - {repeatCount}/{repeatCountFrom}
+                                        {repeat}{repeatCountTxt}
                                     </Button>
                                 </Col>
                             </Row>
@@ -410,7 +500,7 @@ export default class Learning extends Component {
                                 </Col>
                                 <Col>
                                     <Button variant="success" block onClick={this.exam}>
-                                        {exam} - {examCount}/{examCountFrom}
+                                        {exam}{examCountTxt}
                                     </Button>
                                 </Col>
                             </Row>
@@ -548,11 +638,12 @@ export default class Learning extends Component {
                             {this.renderVideo()}
                             {soundButton.call(this)}
                             {getBadgeTranslation.call(this)}
-                            <h2 className='translation'><Badge variant="light" id='translation'></Badge></h2>
+                            {getBadgeAnswer.call(this)}
                             {getInput.call(this)}
                             {getWordsArr.call(this)}
                             {getProgressBar.call(this)}
                             {getBadge.call(this)}
+                            {getMistakesOrder.call(this)}
                         </Col>
                     </Fragment>
                     }
@@ -584,7 +675,7 @@ export function getWordsArr() {
                 return .5 - Math.random();
             });
         }
-        const className = disabled? "words-hint": 'words';
+        const className = disabled ? "words-hint" : 'words';
 
         wordsArr = (
             <div>
@@ -663,8 +754,25 @@ export function soundButton() {
 }
 
 export function getBadgeTranslation() {
-    const {showTranslation, translation} = this.state;
-    return showTranslation && translation ? (<h3><Badge variant="secondary">{translation}</Badge></h3>) : null;
+    const {showTranslation, translation, exampleLearning} = this.state;
+    let badgeTranslation = null;
+    if (showTranslation && translation && exampleLearning !== 'mistakesOrder') {
+        badgeTranslation = (
+            <h3><Badge variant="secondary">{translation}</Badge></h3>
+        )
+    }
+    return badgeTranslation;
+}
+
+export function getBadgeAnswer() {
+    const {exampleLearning} = this.state;
+    let badgeAnswer = null;
+    if (exampleLearning !== 'mistakesOrder') {
+        badgeAnswer = (
+            <h2 className='translation'><Badge variant="light" id='translation'></Badge></h2>
+        )
+    }
+    return badgeAnswer;
 }
 
 export function getBadge() {
@@ -701,10 +809,62 @@ export function getProgressBar() {
     return progress
 }
 
+export function getMistakesOrder() {
+    const {exampleLearning} = this.state;
+    const {siteLang} = this.props.store;
+    const mistakesOrderTxt = get(content, `mistakesOrder[${siteLang}]`);
+    const mistakesDesc = get(content, `mistakesDesc[${siteLang}]`);
+
+    let mistakesOrder = null;
+    if (exampleLearning === 'mistakesOrder') {
+        if (this.localProgress) {
+            map(this.learnArr, (item, key) => {
+                const entityId = item.entity_id;
+                const quantity = item.quantity;
+                const isMistake = this.mistakesArr[key].mistakes > 2;
+                const newDateAndQuantity = getNewDate(quantity, isMistake);
+                const index = findIndex(this.localProgress, {'entity_id': entityId});
+                if (index > -1) {
+                    this.localProgress[index].date = newDateAndQuantity.newDate;
+                    this.localProgress[index].quantity = newDateAndQuantity.newQuantity;
+                }
+                localStorage.progress = JSON.stringify(this.localProgress);
+                this.getLocalProgress();
+            });
+        }
+        mistakesOrder = (
+            <Fragment>
+                <h3 children={mistakesOrderTxt}/>
+                {map(this.learnArr, (item, key) => {
+                    const mistakesCount = get(this.mistakesArr, `[${key}].mistakes`);
+                    const icon = mistakesCount > 2 ?
+                        <TiTimesOutline className='mistakes-error'/> :
+                        <TiTickOutline className='mistakes-right'/>;
+                    return (
+                        <p key={key} className='mistakes-string'>
+                            {item.eng} - {item.transl} - {mistakesCount} {icon}
+                        </p>
+                    )
+                })}
+                <p className="hint" children={mistakesDesc}/>
+                <Button
+                    variant='info'
+                    onClick={this.resetCycle}
+                >
+                    Ok
+                </Button>
+            </Fragment>
+        )
+    }
+    ;
+    return mistakesOrder;
+}
+
 export function speak() {
     if (!this.filteredVoices || !this.filteredVoices.lenght) this.getVoices();
-    const {english, entity} = this.state;
-    if (entity === 'video') return;
+    const {english, entity, end, start} = this.state;
+    if (entity === 'video') return playVideo.call(this, start, end);
+    ;
     const text = english;
 
     const utterance = new SpeechSynthesisUtterance(text);
@@ -734,6 +894,7 @@ export function wordClicked(e) {
         this.rightClick(rightTxt);
         if (elem) elem.style.display = 'none'
     } else {
+        this.mistakesArr[this.state.learnNumber].mistakes += 1;
         elem.className += " blink-2";
         setTimeout(() => {
             if (elem) elem.classList.remove('blink-2')
@@ -756,6 +917,7 @@ export function changedInput() {
         this.rightClick(rightTxt);
         formInput.value = '';
     } else {
+        this.mistakesArr[this.state.learnNumber].mistakes += 1;
         formInput.value = '';
         formInput.className += " blink-2";
         setTimeout(() => {
