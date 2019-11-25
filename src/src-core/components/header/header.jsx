@@ -97,8 +97,9 @@ export default class Header extends Component {
         elem.style.background = gradientStyle;
     };
 
-    warn = () => {
+    warn = (e) => {
         const {siteLang} = this.props.store;
+        e.target.value = '';
         warn(siteLang, 'inProgress')
     };
 
