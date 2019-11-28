@@ -13,6 +13,7 @@ import getNewDate from '../../src-core/helper/dates/getNewDate';
 import videoItems from '../../dict/videoItems';
 import FormControl from "react-bootstrap/FormControl";
 import videoNames from "../../dict/videoNames";
+import arrFalseWords from "../../dict/falseWords";
 import {getCurrentDate, playVideo} from "../video-page/video-item";
 
 const content = {
@@ -266,11 +267,11 @@ export default class Learning extends Component {
     };
 
     getLearnArray = (sliceNumber, quantity) => {
-        if (quantity){
+        if (quantity || quantity === 0) {
             const filteredArr = this.localProgress ?
                 filter(this.localProgress, item => {
                     if (typeof (quantity) === 'number' && isDateBegin(item.date)) return +item.quantity === quantity;
-                    if (typeof (quantity) === 'object'  && isDateBegin(item.date)) {
+                    if (typeof (quantity) === 'object' && isDateBegin(item.date)) {
                         return +item.quantity >= quantity[0] && +item.quantity <= quantity[1]
                     }
                 }) : null;
@@ -279,7 +280,6 @@ export default class Learning extends Component {
         } else {
             this.learnArr = this.localProgress ? this.localProgress.slice(0, sliceNumber) : null;
         }
-
 
         if (this.learnArr) {
             this.mistakesArr = [];
@@ -392,8 +392,8 @@ export default class Learning extends Component {
             exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
             exampleLearning === 'word_2' || exampleLearning === 'word_4'
         ) return;
-        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        const src = `../../../video/${fileName}#t=${start},${end}`;
+        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        // const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -671,6 +671,11 @@ export function getWordsArr() {
         const variant = disabled ? 'light' : 'info';
         const randArr = isWord ? english.split('') : english.split(' ');
         if (!disabled) {
+            const randomCountFalseWord = Math.floor(Math.random() * 2);
+            for (let i = randomCountFalseWord; i > 0; i--) {
+                const randomNumber = Math.floor(Math.random() * arrFalseWords.length);
+                randArr.push(arrFalseWords[randomNumber]);
+            }
             randArr.sort(() => {
                 return .5 - Math.random();
             });
@@ -745,8 +750,8 @@ export function soundButton() {
                 className="title_sound"
                 onClick={this.speakTxt}
             >
-                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
-                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
+                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
+                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
             </Button>
         )
     }
