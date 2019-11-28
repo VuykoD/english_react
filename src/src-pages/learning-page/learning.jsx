@@ -671,7 +671,7 @@ export function getWordsArr() {
         const variant = disabled ? 'light' : 'info';
         const randArr = isWord ? english.split('') : english.split(' ');
         if (!disabled) {
-            const randomCountFalseWord = Math.floor(Math.random() * 2);
+            const randomCountFalseWord = Math.floor(Math.random() * 3);
             for (let i = randomCountFalseWord; i > 0; i--) {
                 const randomNumber = Math.floor(Math.random() * arrFalseWords.length);
                 randArr.push(arrFalseWords[randomNumber]);
