@@ -99,6 +99,16 @@ const videoNames = [
         active: true,
         url: '/ImagineDragonsDemons'
     },
+    {
+        id: 11,
+        songName: 'Evanescence - Bring Me To Life',
+        imageName: 'bringMeToLife.jpg',
+        fileName: 'bringMeToLife.mp4',
+        level: 'hard',
+        type: 'music',
+        active: true,
+        url: '/Evanescence - Bring Me To Life'
+    },
 ];
 
 export {videoNames as default};

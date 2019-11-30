@@ -124,7 +124,7 @@ export default class VideoItem extends Component {
     save = (e) => {
         const rowData = this.getRowData(e) || {};
         const {id, start, end, eng, transl} = rowData;
-        if (!start || !end || !eng || !transl) return alert('fill in all data');
+        // if (!start || !end || !eng || !transl) return alert('fill in all data');
         const newRow = {id, idVideoName: this.videoId, start, end, eng, transl};
         const {videoItems} = this.state;
         const newId = videoItems.length ?
@@ -307,8 +307,8 @@ export default class VideoItem extends Component {
         if (this.videoIndex === -1) return null;
         const fileName = get(videoNames, `[${this.videoIndex}].fileName`);
         const songName = get(videoNames, `[${this.videoIndex}].songName`);
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         const hideTranslate = get(content, `hideTranslate[${siteLang}]`);
         const firstPhrase = get(content, `firstPhrase[${siteLang}]`);
         const thirdPhrase = get(content, `thirdPhrase[${siteLang}]`);

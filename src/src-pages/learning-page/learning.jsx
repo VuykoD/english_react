@@ -201,7 +201,8 @@ export default class Learning extends Component {
             this.getLearnArray(1);
             if (!this.learnArr) return;
             this.setEngAndTransl(this.state.learnNumber);
-            english = get(this.learnArr, '[0].eng').replace(/^\s*/, '').replace(/\s*$/, '');
+            english = get(this.learnArr, '[0].eng') || '';
+            english = english.replace(/^\s*/,'').replace(/\s*$/,'');
             translation = get(this.learnArr, '[0].transl');
         }
         this.setState({exampleLearning: id, english, translation});
@@ -353,7 +354,8 @@ export default class Learning extends Component {
         const entity = get(this.learnArr, `${learnNumber}.entity`);
         const entityId = get(this.learnArr, `${learnNumber}.entity_id`);
         const videoId = get(this.learnArr, `${learnNumber}.videoId`);
-        const english = get(videoItems, `[${entityId}].eng`).replace(/^\s*/, '').replace(/\s*$/, '');
+        let english = get(videoItems, `[${entityId}].eng`) ||'';
+        english = english.replace(/^\s*/,'').replace(/\s*$/,'');
         const translation = get(videoItems, `[${entityId}].transl`);
         const start = get(videoItems, `[${entityId}].start`);
         const end = get(videoItems, `[${entityId}].end`);
@@ -393,8 +395,8 @@ export default class Learning extends Component {
             exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
             exampleLearning === 'word_2' || exampleLearning === 'word_4'
         ) return;
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -751,8 +753,8 @@ export function soundButton() {
                 className="title_sound"
                 onClick={this.speakTxt}
             >
-                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
-                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
+                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
+                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
             </Button>
         )
     }
