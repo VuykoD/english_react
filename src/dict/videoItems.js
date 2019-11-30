@@ -115,7 +115,7 @@ const videoItems = {
     1612:{"id":"1612","idVideoName":6,"start":"64.8","end":"72","eng":"Cause you’re not crushing my spirit, I’ll end your evil tonight.","transl":"Потому что вы не сокрушите мой дух, я покончу с вами сегодня вечером."},
     1613:{"id":"1613","idVideoName":6,"start":"72","end":"75.9","eng":"Did my best, failed the test, a simple task has turned into a quest.","transl":"Сделал все возможное, провалил тест, простое задание превратилось в квест."},
     1614:{"id":"1614","idVideoName":6,"start":"75.9","end":"79.5","eng":"Got a trace, there's his base, gonna meet him face-to-face, just","transl":"Есть след, есть его база, встретимся с ним лицом к лицу, просто"},
-    1615:{"id":"1615","idVideoName":6,"start":"79.5","end":"82.8","eng":"Take a sec, stop and check, cause you have much to learn before the trek.","transl":"Take a sec, stop and check, cause you have much to learn before the trek."},
+    1615:{"id":"1615","idVideoName":6,"start":"79.5","end":"82.8","eng":"Take a sec, stop and check, cause you have much to learn before the trek.","transl":"Потратьте секунду, остановитесь и проверьте, потому что вы должны многому научиться перед походом."},
     1616:{"id":"1616","idVideoName":6,"start":"82.8","end":"86.5","eng":"Trust your sight, through the night, there darkness meets true light.","transl":"Доверяй своему зрению, сквозь ночь тьма встречает истинный свет."},
     1700:{"id":"1700","idVideoName":7,"start":"22.7","end":"25.75","eng":"Just a young gun with a quick fuse","transl":"Просто вспыльчивый молодой парень,"},
     1701:{"id":"1701","idVideoName":7,"start":"25.8","end":"28.55","eng":"I was uptight, wanna let loose","transl":" Я был раздражен, хотел обрести свободу."},
