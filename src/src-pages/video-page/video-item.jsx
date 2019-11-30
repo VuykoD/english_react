@@ -56,25 +56,25 @@ export default class VideoItem extends Component {
         super(props);
 
 
-        const axios = require("axios");
-
-        axios({
-            "method":"POST",
-            "url":"https://yandextranslatezakutynskyv1.p.rapidapi.com/detectLanguage",
-            "headers":{
-                "content-type":"application/x-www-form-urlencoded",
-                "x-rapidapi-host":"YandexTranslatezakutynskyV1.p.rapidapi.com",
-                "x-rapidapi-key":"1b9ecc322cmsha24d59d1394c249p171ebejsn864232da8435"
-            },"data":{
-
-            }
-        })
-            .then((response)=>{
-                console.log(response)
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
+        // const axios = require("axios");
+        //
+        // axios({
+        //     "method":"POST",
+        //     "url":"https://yandextranslatezakutynskyv1.p.rapidapi.com/detectLanguage",
+        //     "headers":{
+        //         "content-type":"application/x-www-form-urlencoded",
+        //         "x-rapidapi-host":"YandexTranslatezakutynskyV1.p.rapidapi.com",
+        //         "x-rapidapi-key":"1b9ecc322cmsha24d59d1394c249p171ebejsn864232da8435"
+        //     },"data":{
+        //
+        //     }
+        // })
+        //     .then((response)=>{
+        //         console.log(response)
+        //     })
+        //     .catch((error)=>{
+        //         console.log(error)
+        //     })
 
         let url = get(props, `match.url`);
         url = url.replace('/english_react', '');
