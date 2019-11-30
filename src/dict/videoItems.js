@@ -185,8 +185,33 @@ const videoItems = {
     1933:{"id":"1933","idVideoName":8,"start":"160.5","end":"163.45","eng":"But they never did, ever lived, ebbing and flowing","transl":"Но этого так и не случилось, они выжили среди приливов и отливов,"},
     1934:{"id":"1934","idVideoName":8,"start":"163.45","end":"164.4","eng":"Inhibited, limited","transl":" Подавляемые, сдерживаемые,"},
     1935:{"id":"1935","idVideoName":8,"start":"164.4","end":"166.3","eng":"Till it broke open and it rained down","transl":" Пока небеса не разверзлись и не пролились дождём."},
-    1936:{"id":"1936","idVideoName":8,"start":"166.3","end":"169.5","eng":"You rained down, like...","transl":" Ты пролился дождём, словно..."}
-
+    1936:{"id":"1936","idVideoName":8,"start":"166.3","end":"169.5","eng":"You rained down, like...","transl":" Ты пролился дождём, словно..."},
+    2001:{"id":'2001',"idVideoName":10,"start":11.8,"end":"17.8","eng":"When the days are cold And the cards all fold","transl":"Когда дни становятся холодней  И все карты сданы,"},
+    2002:{"id":'2002',"idVideoName":10,"start":"17.8","end":"23.1","eng":"And the saints we see Are all made of gold","transl":" А святые, которых мы видим,  Все сделаны из золота..."},
+    2003:{"id":'2003',"idVideoName":10,"start":"23.1","end":"28.5","eng":"When your dreams all fail And the ones we hail","transl":" Когда все твои мечты рушатся, А те, кого мы приветствуем -"},
+    2004:{"id":'2004',"idVideoName":10,"start":28.5,"end":"34.2","eng":"Are the worst of all And the blood's run stale","transl":"Худшие из всех, И в жилах стынет кровь..."},
+    2005:{"id":'2005',"idVideoName":10,"start":"40.4","end":"45.7","eng":"But with the beast inside There's nowhere we can hide","transl":"Но с этим зверем внутри  Нам нигде не спрятаться."},
+    2006:{"id":'2006',"idVideoName":10,"start":"45.7","end":"51.2","eng":" No matter what we breed We still are made of greed","transl":" Что бы мы ни сеяли,  Мы всё же сотканы из жадности."},
+    2007:{"id":'2007',"idVideoName":10,"start":51.2,"end":"53.5","eng":"This is my kingdom come","transl":"Это моё Царствие Небесное."},
+    2008:{"id":'2008',"idVideoName":10,"start":56.7,"end":"59.4","eng":"When you feel my heat","transl":" Когда почувствуешь моё тепло,"},
+    2010:{"id":'2010',"idVideoName":10,"start":59.4,"end":"61.7","eng":"Look into my eyes","transl":" Посмотри в мои глаза."},
+    2011:{"id":'2011',"idVideoName":10,"start":"61.7","end":"64.5","eng":"It's where my demons hide","transl":"  Там таятся мои демоны. "},
+    2012:{"id":'2012',"idVideoName":10,"start":70,"end":"72.5","eng":"It's dark inside","transl":"Здесь слишком темно!"},
+    2013:{"id":'2013',"idVideoName":10,"start":77.5,"end":"81.5","eng":"When the curtain's call Is the last of all","transl":" Когда в последний раз  Вызывают актёров на сцену,"},
+    2014:{"id":'2014',"idVideoName":10,"start":81.5,"end":"84.3","eng":"When the lights fade out","transl":" Когда гаснет свет,"},
+    2015:{"id":'2015',"idVideoName":10,"start":84.3,"end":"89.8","eng":"All the sinners crawl So they dug your grave","transl":"Все грешники не спеша расходятся... Тебе вырыли могилу,"},
+    2016:{"id":'2016',"idVideoName":10,"start":89.8,"end":"95.1","eng":"And the masquerade Will come calling out","transl":" И начнётся маскарад  Критики"},
+    2017:{"id":'2017',"idVideoName":10,"start":95.1,"end":"101.7","eng":"At the mess you made Don't want to let you down","transl":"За учинённый тобой хаос. Не хочу расстраивать тебя,"},
+    2018:{"id":'2018',"idVideoName":10,"start":"101.7","end":"107","eng":"But I am hellbound Though this is all for you","transl":" Но я уже обречён. Хотя это всё из-за тебя,"},
+    2019:{"id":'2019',"idVideoName":10,"start":130.5,"end":"134","eng":"Don't get to close","transl":" Не подходи ближе,"},
+    2020:{"id":'2020',"idVideoName":10,"start":107.1,"end":"112","eng":"Don't want to hide the truth No matter what we breed","transl":" Я не хочу скрывать правду.  Что бы мы ни сеяли,"},
+    2021:{"id":'2021',"idVideoName":10,"start":142,"end":"147.5","eng":"They say it's what you make I say it's up to fate","transl":" Говорят, что всё это твоих рук дело. Я говорю, что такова судьба."},
+    2022:{"id":'2022',"idVideoName":10,"start":147.3,"end":"152.5","eng":"It's woven in my soul I need to let you go","transl":" Моя душа срослась с идеей, Что я должен отпустить тебя."},
+    2023:{"id":'2023',"idVideoName":10,"start":147.3,"end":"149.8","eng":"It's woven in my soul","transl":" Моя душа срослась с идеей,"},
+    2024:{"id":'2024',"idVideoName":10,"start":120.2,"end":"125.8","eng":"When you feel my heat Look into my eyes","transl":"Когда почувствуешь моё тепло, Посмотри в мои глаза."},
+    2025:{"id":'2025',"idVideoName":10,"start":152.5,"end":"157.7","eng":"Your eyes they shine so bright I want to save that light","transl":" Твои глаза сияют так ярко... Я хочу спасти этот свет."},
+    2026:{"id":'2026',"idVideoName":10,"start":157.7,"end":"160.5","eng":"I can't escape this now","transl":" Я не могу сбежать от этого сейчас,"},
+    2027:{"id":"2027","idVideoName":10,"start":"160.5","end":"163.3","eng":"Unless you show me how","transl":" Если только ты мне не покажешь, как это сделать."}
 };
 //
 export {videoItems as default};
