@@ -201,7 +201,7 @@ export default class Learning extends Component {
             this.getLearnArray(1);
             if (!this.learnArr) return;
             this.setEngAndTransl(this.state.learnNumber);
-            english = get(this.learnArr, '[0].eng');
+            english = get(this.learnArr, '[0].eng').replace(/^\s*/,'').replace(/\s*$/,'');
             translation = get(this.learnArr, '[0].transl');
         }
         this.setState({exampleLearning: id, english, translation});
@@ -353,7 +353,7 @@ export default class Learning extends Component {
         const entity = get(this.learnArr, `${learnNumber}.entity`);
         const entityId = get(this.learnArr, `${learnNumber}.entity_id`);
         const videoId = get(this.learnArr, `${learnNumber}.videoId`);
-        const english = get(videoItems, `[${entityId}].eng`);
+        const english = get(videoItems, `[${entityId}].eng`).replace(/^\s*/,'').replace(/\s*$/,'');
         const translation = get(videoItems, `[${entityId}].transl`);
         const start = get(videoItems, `[${entityId}].start`);
         const end = get(videoItems, `[${entityId}].end`);
@@ -656,8 +656,8 @@ export default class Learning extends Component {
 export function getWordsArr() {
     const {exampleLearning} = this.state;
     if (!this.state.english || !exampleLearning) return null;
-
-    const english = this.state.english.toLowerCase().replace(/\./g, "");
+    let english = this.state.english || '';
+    english = english.toLowerCase().replace(/^\s*/,'').replace(/\s*$/,'').replace(/\./g, "");
     let wordsArr = null;
     const isWord = english.replace(/ /g, "") === english;
     this.englishArr = isWord ? english.split('') : english.split(' ');

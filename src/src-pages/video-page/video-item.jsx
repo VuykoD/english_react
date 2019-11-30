@@ -54,8 +54,6 @@ const content = {
 export default class VideoItem extends Component {
     constructor(props) {
         super(props);
-
-
         // const axios = require("axios");
         //
         // axios({
@@ -93,7 +91,7 @@ export default class VideoItem extends Component {
         // this.items = sortBy(this.items, ['id']);
 
         const translation = get(this.items, `[0].transl`);
-        const english = get(this.items, `[0].eng`);
+        const english = get(this.items, `[0].eng`).replace(/^\s*/,'').replace(/\s*$/,'');
 
         this.state = {
             start: 0,
@@ -273,7 +271,7 @@ export default class VideoItem extends Component {
             if (currentItem < videoLength - 1) {
 
                 const translation = get(videoItems, `[${currentItem + 1}].transl`);
-                const english = get(videoItems, `[${currentItem + 1}].eng`);
+                const english = get(videoItems, `[${currentItem + 1}].eng`).replace(/^\s*/,'').replace(/\s*$/,'');
 
                 this.setState({currentItem: currentItem + 1, english, translation});
                 playVideo.call(this, get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
