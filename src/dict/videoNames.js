@@ -104,10 +104,10 @@ const videoNames = [
         songName: 'Evanescence - Bring Me To Life',
         imageName: 'bringMeToLife.jpg',
         fileName: 'bringMeToLife.mp4',
-        level: 'hard',
+        level: 'medium',
         type: 'music',
         active: true,
-        url: '/Evanescence - Bring Me To Life'
+        url: '/EvanescenceBringMeToLife'
     },
 ];
 
