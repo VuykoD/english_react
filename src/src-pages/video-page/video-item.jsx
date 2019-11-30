@@ -91,7 +91,9 @@ export default class VideoItem extends Component {
         // this.items = sortBy(this.items, ['id']);
 
         const translation = get(this.items, `[0].transl`);
-        const english = get(this.items, `[0].eng`).replace(/^\s*/,'').replace(/\s*$/,'');
+        const english = get(this.items, `[0].eng`)?
+            get(this.items, `[0].eng`).replace(/^\s*/,'').replace(/\s*$/,''):
+            '';
 
         this.state = {
             start: 0,

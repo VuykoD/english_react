@@ -201,7 +201,7 @@ export default class Learning extends Component {
             this.getLearnArray(1);
             if (!this.learnArr) return;
             this.setEngAndTransl(this.state.learnNumber);
-            english = get(this.learnArr, '[0].eng').replace(/^\s*/,'').replace(/\s*$/,'');
+            english = get(this.learnArr, '[0].eng').replace(/^\s*/, '').replace(/\s*$/, '');
             translation = get(this.learnArr, '[0].transl');
         }
         this.setState({exampleLearning: id, english, translation});
@@ -353,13 +353,14 @@ export default class Learning extends Component {
         const entity = get(this.learnArr, `${learnNumber}.entity`);
         const entityId = get(this.learnArr, `${learnNumber}.entity_id`);
         const videoId = get(this.learnArr, `${learnNumber}.videoId`);
-        const english = get(videoItems, `[${entityId}].eng`).replace(/^\s*/,'').replace(/\s*$/,'');
+        const english = get(videoItems, `[${entityId}].eng`).replace(/^\s*/, '').replace(/\s*$/, '');
         const translation = get(videoItems, `[${entityId}].transl`);
         const start = get(videoItems, `[${entityId}].start`);
         const end = get(videoItems, `[${entityId}].end`);
 
         const videoIndex = findIndex(videoNames, {'id': videoId});
         const fileName = get(videoNames, `[${videoIndex}].fileName`);
+        hideHint();
         this.setState({english, translation, entity, start, end, fileName})
     };
 
@@ -657,7 +658,7 @@ export function getWordsArr() {
     const {exampleLearning} = this.state;
     if (!this.state.english || !exampleLearning) return null;
     let english = this.state.english || '';
-    english = english.toLowerCase().replace(/^\s*/,'').replace(/\s*$/,'').replace(/\./g, "");
+    english = english.toLowerCase().replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "");
     let wordsArr = null;
     const isWord = english.replace(/ /g, "") === english;
     this.englishArr = isWord ? english.split('') : english.split(' ');
@@ -783,11 +784,15 @@ export function getBadgeAnswer() {
 export function getBadge() {
     const {exampleLearning, english} = this.state;
     if (!exampleLearning || !english) return null;
-    let badge = null;
+    let className = 'display-none';
 
-    if (exampleLearning === 'phase_5' || exampleLearning === 'word_5') {
-        badge = (<h3><Badge variant="light">{english}</Badge></h3>);
-    }
+    if (exampleLearning === 'phase_5' || exampleLearning === 'word_5') className = '';
+    const badge = (
+        <h3 className={className} id='errorHint'>
+            <Badge variant="light">{english}</Badge>
+        </h3>
+    );
+
     return badge;
 }
 
@@ -861,7 +866,6 @@ export function getMistakesOrder() {
             </Fragment>
         )
     }
-    ;
     return mistakesOrder;
 }
 
@@ -899,12 +903,27 @@ export function wordClicked(e) {
         this.rightClick(rightTxt);
         if (elem) elem.style.display = 'none'
     } else {
-        this.mistakesArr[this.state.learnNumber].mistakes += 1;
+        if (this.mistakesArr) {
+            this.mistakesArr[this.state.learnNumber].mistakes += 1;
+            showHint.call(this);
+        }
         elem.className += " blink-2";
         setTimeout(() => {
             if (elem) elem.classList.remove('blink-2')
         }, 500)
     }
+}
+
+export function showHint() {
+    if (this.mistakesArr[this.state.learnNumber].mistakes > 2) {
+        const errorHint = document.getElementById('errorHint');
+        if (errorHint) errorHint.className = '';
+    }
+}
+
+export function hideHint() {
+    const errorHint = document.getElementById('errorHint');
+    if (errorHint) errorHint.className = 'display-none';
 }
 
 export function rightClicked(rightTxt) {
@@ -922,7 +941,10 @@ export function changedInput() {
         this.rightClick(rightTxt);
         formInput.value = '';
     } else {
-        this.mistakesArr[this.state.learnNumber].mistakes += 1;
+        if (this.mistakesArr) {
+            this.mistakesArr[this.state.learnNumber].mistakes += 1;
+            showHint.call(this);
+        }
         formInput.value = '';
         formInput.className += " blink-2";
         setTimeout(() => {
