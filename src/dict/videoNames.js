@@ -7,7 +7,7 @@ const videoNames = [
         level: 'easy',
         type: 'music',
         active: true,
-        url: '/wonderful-world'
+        url: '/wonderfulWorld'
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const videoNames = [
         level: 'easy',
         type: 'music',
         active: true,
-        url: '/youll-see'
+        url: '/youllSee'
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const videoNames = [
         level: 'medium',
         type: 'music',
         active: true,
-        url: '/through-history'
+        url: '/throughHistory'
     },
     {
         id: 4,
@@ -47,7 +47,7 @@ const videoNames = [
         level: 'medium',
         type: 'cartoon',
         active: true,
-        url: '/Level up'
+        url: '/LevelUp'
     },
     {
         id: 6,
@@ -67,7 +67,7 @@ const videoNames = [
         level: 'medium',
         type: 'music',
         active: true,
-        url: '/Thunder (Imagine Dragons)'
+        url: '/ThunderImagineDragons'
     },
     {
         id: 8,
@@ -87,10 +87,18 @@ const videoNames = [
         level: 'easy',
         type: 'music',
         active: true,
-        url: '/metallica-NothingElseMatters'
+        url: '/metallicaNothingElseMatters'
     },
-
+    {
+        id: 10,
+        songName: 'Imagine Dragons - Demons',
+        imageName: 'Demons.jpg',
+        fileName: 'Demons.mp4',
+        level: 'hard',
+        type: 'music',
+        active: true,
+        url: '/ImagineDragonsDemons'
+    },
 ];
-
 
 export {videoNames as default};

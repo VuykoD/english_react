@@ -3,6 +3,8 @@ import get from 'lodash/get';
 import map from 'lodash/map';
 import findIndex from 'lodash/findIndex';
 import filter from 'lodash/filter';
+// import forEach from 'lodash/forEach';
+// import sortBy from 'lodash/sortBy';
 import {Col, Container, Row, Form, Button, FormControl, DropdownButton, Dropdown, Badge} from "react-bootstrap";
 
 import '../../scc/video.css';
@@ -66,8 +68,8 @@ export default class VideoItem extends Component {
                 return +item.idVideoName === +this.videoId;
             }
         );
-
-        // this.items = sortBy(filteredArr, ['start']);
+        // forEach(this.items, (item, key) => this.items[key].id = +item.id);
+        // this.items = sortBy(this.items, ['id']);
 
         const translation = get(this.items, `[0].transl`);
         const english = get(this.items, `[0].eng`);
@@ -114,7 +116,7 @@ export default class VideoItem extends Component {
             newVideoItems[index] = newRow;
         } else {
             newVideoItems = [...videoItems, {
-                id: id || String(newId),
+                id: String(id) || String(newId),
                 idVideoName: this.videoId,
                 start,
                 end,
@@ -177,7 +179,7 @@ export default class VideoItem extends Component {
         this.setState({showItems: false});
         const {videoItems, exampleLearning} = this.state;
         if (!videoItems.length) return;
-        playVideo.call(this,videoItems[0].start, +videoItems[0].end);
+        playVideo.call(this, videoItems[0].start, +videoItems[0].end);
         if (exampleLearning === 'phase_5') {
             this.nextVideo();
         }
@@ -216,8 +218,12 @@ export default class VideoItem extends Component {
 
         if (currentItem < videoLength - 1) {
             setTimeout(() => {
-                this.setState({currentItem: currentItem + 1});
-                playVideo.call(this,get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
+                this.setState({
+                    currentItem: currentItem + 1,
+                    translation: get(videoItems, `[${currentItem + 1}].transl`),
+                    english: get(videoItems, `[${currentItem + 1}].eng`),
+                });
+                playVideo.call(this, get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
                 this.nextVideo();
             }, 7000);
         } else {
@@ -229,7 +235,7 @@ export default class VideoItem extends Component {
 
     speakTxt = () => {
         const {videoItems, currentItem} = this.state;
-        playVideo.call(this,get(videoItems, `[${currentItem}].start`), get(videoItems, `[${currentItem}].end`));
+        playVideo.call(this, get(videoItems, `[${currentItem}].start`), get(videoItems, `[${currentItem}].end`));
         focusInput();
     };
 
@@ -245,7 +251,7 @@ export default class VideoItem extends Component {
             const videoLength = videoItems.length;
             if (currentItem < videoLength - 1) {
 
-                const translation = get(videoItems, `[${currentItem +1}].transl`);
+                const translation = get(videoItems, `[${currentItem + 1}].transl`);
                 const english = get(videoItems, `[${currentItem + 1}].eng`);
 
                 this.setState({currentItem: currentItem + 1, english, translation});
@@ -275,13 +281,13 @@ export default class VideoItem extends Component {
 
     render() {
         const {siteLang} = this.props.store;
-        const {start, end, autoPlay, videoItems, showItems, exampleLearning,  isVideoSelected} = this.state;
+        const {start, end, autoPlay, videoItems, showItems, exampleLearning, isVideoSelected} = this.state;
 
         if (this.videoIndex === -1) return null;
         const fileName = get(videoNames, `[${this.videoIndex}].fileName`);
         const songName = get(videoNames, `[${this.videoIndex}].songName`);
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         const hideTranslate = get(content, `hideTranslate[${siteLang}]`);
         const firstPhrase = get(content, `firstPhrase[${siteLang}]`);
         const thirdPhrase = get(content, `thirdPhrase[${siteLang}]`);
@@ -333,7 +339,7 @@ export default class VideoItem extends Component {
                     </Col>
                     <Col sm="6">
                         <Button
-                            variant={isVideoSelected? "success":"dark"}
+                            variant={isVideoSelected ? "success" : "dark"}
                             block
                             onClick={this.select}
                         >
