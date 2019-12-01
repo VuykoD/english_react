@@ -239,7 +239,24 @@ const videoItems = {
     2125:{"id":"2125","idVideoName":11,"start":"176","end":"178.5","eng":"I’ve been sleeping a thousand years it seems","transl":"Кажется, я спала тысячу лет."},
     2126:{"id":"2126","idVideoName":11,"start":"178.5","end":"181.3","eng":"Got to open my eyes to everything","transl":" Мне нужно открыть глаза, чтобы всё увидеть."},
     2127:{"id":"2127","idVideoName":11,"start":"181.3","end":"183.5","eng":"Without a thought without a voice without a soul","transl":" У меня нет мыслей, нет голоса, нет души,"},
-    2128:{"id":"2128","idVideoName":11,"start":"183.5","end":"186","eng":"Don’t let me die here","transl":" Не дай мне умереть здесь,"}
+    2128:{"id":"2128","idVideoName":11,"start":"183.5","end":"186","eng":"Don’t let me die here","transl":" Не дай мне умереть здесь,"},
+    2200:{"id":"2200","idVideoName":12,"start":"11.3","end":"14.6","eng":"You were the shadow to my light","transl":" Ты была тенью для моего света,"},
+    2201:{"id":"2201","idVideoName":12,"start":"14.6","end":"17.3","eng":"Did you feel us?","transl":"Ты нас ощущала?"},
+    2202:{"id":"2202","idVideoName":12,"start":"17.3","end":"22.3","eng":"Another star, you fade away,","transl":"Ещё одна звезда, ты угасаешь,"},
+    2203:{"id":"2203","idVideoName":12,"start":"22.3","end":"25.3","eng":"Afraid our aim is out of sight,","transl":" А нашей цели, боюсь, всё ещё не разглядеть,"},
+    2204:{"id":"2204","idVideoName":12,"start":"25.3","end":"31","eng":"Wanna see us, alive.","transl":" Я хочу видеть нас живыми."},
+    2205:{"id":"2205","idVideoName":12,"start":"31","end":"35","eng":"Where are you now?","transl":" Где ты теперь?"},
+    2206:{"id":"2206","idVideoName":12,"start":"44","end":"47.3","eng":"Was it all in my fantasy?","transl":" Это всё была моя фантазия?"},
+    2207:{"id":"2207","idVideoName":12,"start":"50","end":"53","eng":" Were you only imaginary?","transl":" Разве ты была воображаемой?"},
+    2208:{"id":"2208","idVideoName":12,"start":"57","end":"62","eng":"Atlantis, under the sea","transl":" Атлантида, на дне морском под толщей вод,"},
+    2209:{"id":"2209","idVideoName":12,"start":"67","end":"70.3","eng":"Another dream,","transl":" Ещё одна мечта."},
+    2210:{"id":"2210","idVideoName":12,"start":"70.3","end":"74.6","eng":"The monster's running wild inside of me,","transl":" Во мне неистовствует чудовище,"},
+    2211:{"id":"2211","idVideoName":12,"start":"74.6","end":"77.6","eng":"I'm faded","transl":"я обессилен,"},
+    2212:{"id":"2212","idVideoName":12,"start":"98","end":"103.6","eng":"These shallow waters never met what I needed,","transl":" Эти безжизненные воды никогда не подходили моим нуждам,"},
+    2213:{"id":"2213","idVideoName":12,"start":"104","end":"109","eng":"I'm letting go, a deeper dive,","transl":" Я забываюсь, ныряю глубже,"},
+    2214:{"id":"2214","idVideoName":12,"start":"109","end":"112.2","eng":"Eternal silence of the sea,","transl":"Вечное молчание моря,"},
+    2215:{"id":"2215","idVideoName":12,"start":"112.2","end":"117","eng":"I'm breathing, alive","transl":" Я дышу, я жив."},
+    2216:{"id":"2216","idVideoName":12,"start":"128.8","end":"134","eng":"Under the bright but faded lights You set my heart on fire.","transl":" Под яркими, но потускневшими огнями  Ты разожгла моё сердце,"}
 };
 //
 export {videoItems as default};
