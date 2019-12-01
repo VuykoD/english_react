@@ -256,7 +256,21 @@ const videoItems = {
     2213:{"id":"2213","idVideoName":12,"start":"104","end":"109","eng":"I'm letting go, a deeper dive,","transl":" Я забываюсь, ныряю глубже,"},
     2214:{"id":"2214","idVideoName":12,"start":"109","end":"112.2","eng":"Eternal silence of the sea,","transl":"Вечное молчание моря,"},
     2215:{"id":"2215","idVideoName":12,"start":"112.2","end":"117","eng":"I'm breathing, alive","transl":" Я дышу, я жив."},
-    2216:{"id":"2216","idVideoName":12,"start":"128.8","end":"134","eng":"Under the bright but faded lights You set my heart on fire.","transl":" Под яркими, но потускневшими огнями  Ты разожгла моё сердце,"}
+    2216:{"id":"2216","idVideoName":12,"start":"128.8","end":"134","eng":"Under the bright but faded lights You set my heart on fire.","transl":" Под яркими, но потускневшими огнями  Ты разожгла моё сердце,"},
+    2300:{"id":"2300","idVideoName":13,"start":"4","end":"10.6","eng":"Lost in your mind","transl":" Я растворилась в твоих мыслях."},
+    2301:{"id":"2301","idVideoName":13,"start":"10.6","end":"13.5","eng":"I wanna know","transl":"Я хочу понять,"},
+    2302:{"id":"2302","idVideoName":13,"start":"13.5","end":"20.5","eng":"Am I losing my mind?","transl":" Неужели я схожу с ума?"},
+    2303:{"id":"2303","idVideoName":13,"start":"20.5","end":"22.5","eng":"Never let me go","transl":" Никогда не отпускай меня."},
+    2304:{"id":"2304","idVideoName":13,"start":"22.5","end":"26.6","eng":"If this night is not forever","transl":"Если эта ночь и не продлится вечно,"},
+    2305:{"id":"2305","idVideoName":13,"start":"26.6","end":"29.3","eng":"At least we are together","transl":" По крайней мере, мы вместе."},
+    2306:{"id":"2306","idVideoName":13,"start":"29.3","end":"31.5","eng":"I know I'm not alone","transl":" Я знаю, я не одна."},
+    2307:{"id":"2307","idVideoName":13,"start":"34","end":"36.7","eng":"Anywhere, whenever","transl":" Не важно, когда и где мы окажемся,"},
+    2308:{"id":"2308","idVideoName":13,"start":"36.7","end":"39","eng":"Apart, but still together","transl":" Мы будем вместе даже на расстоянии."},
+    2309:{"id":"2309","idVideoName":13,"start":"66.7","end":"72.7","eng":"Unconscious mind","transl":" Я брежу,"},
+    2310:{"id":"2310","idVideoName":13,"start":"72.7","end":"75.7","eng":"I'm wide awake","transl":" Но я не сплю."},
+    2311:{"id":"2311","idVideoName":13,"start":"75.7","end":"82","eng":"Wanna feel one last time","transl":" Я хочу ощутить это в последний раз."},
+    2312:{"id":"2312","idVideoName":13,"start":"82","end":"84.7","eng":"Take my pain away","transl":"Избавь меня от моей боли."},
+    2313:{"id":"2313","idVideoName":13,"start":"142","end":"146.7","eng":"I'm not alone, I know I'm not alone","transl":"  Я не одна, Я знаю, что я не одна."}
 };
 //
 export {videoItems as default};
