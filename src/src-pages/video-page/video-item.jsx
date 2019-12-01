@@ -53,6 +53,7 @@ const content = {
 
 export default class VideoItem extends Component {
     constructor(props) {
+
         super(props);
         // const axios = require("axios");
         //
@@ -75,7 +76,7 @@ export default class VideoItem extends Component {
         //     })
 
         let url = get(props, `match.url`);
-        url = url.replace('/english_react', '');
+        url = url.replace('/english_react/video', '');
         this.videoIndex = findIndex(videoNames, {'url': url});
         this.videoId = get(videoNames, `[${this.videoIndex}].id`);
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;

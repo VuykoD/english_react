@@ -3,10 +3,13 @@ import {Col, Container, Row, Button, ListGroup} from "react-bootstrap";
 import get from 'lodash/get';
 import map from 'lodash/map';
 import findIndex from 'lodash/findIndex';
-
-import '../../../scc/unit.css';
-import '../../../scc/course.css'
+import filter from 'lodash/filter';
 import FormControl from "react-bootstrap/FormControl";
+
+import '../../scc/unit.css';
+import '../../scc/course.css'
+import courseUnits from "../../dict/courseUnits";
+import courseItems from "../../dict/videoItems";
 
 const content = {
     learning: {
@@ -15,14 +18,22 @@ const content = {
     }
 };
 
-export default class Course extends Component {
+export default class CourseItem extends Component {
     constructor(props) {
         super(props);
 
+        let url = get(props, `match.url`);
+        url = url.replace('/english_react/course', '');
+        this.unitIndex = findIndex(courseUnits, {'url': url});
+        this.unitId = get(courseUnits, `[${this.unitIndex}].id`);
         const localItems = localStorage.course ? JSON.parse(localStorage.course) : {};
+        this.items = filter({...courseItems, ...localItems}, item => {
+                return +item.unitId === +this.unitId;
+            }
+        );
 
         this.state = {
-            courseItems: localItems,
+            courseItems: this.items,
         };
     }
 
@@ -35,10 +46,10 @@ export default class Course extends Component {
             +courseItems[courseItems.length - 1].id + 1 :
             1;
         const index = findIndex(courseItems, {'id': id});
-        console.log(index);
+
         const courseItem = {
-            id: id || String(newId),
-            idCourse: "1",
+            id: +id || +newId,
+            unitId: +this.unitId,
             eng,
             transl
         };

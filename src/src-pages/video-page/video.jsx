@@ -332,7 +332,7 @@ class CardVertical extends Component {
         const {item = {}, videoCount, level, type, count} = this.props;
 
         return (
-            <Link to={`/english_react${item.url}`}>
+            <Link to={`/english_react/video${item.url}`}>
                 <div className="card-vertical">
                     {/*<img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>*/}
                     <img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>
@@ -369,7 +369,7 @@ class CardHorizontal extends Component {
         const {item = {}, videoCount, level, type, count} = this.props;
 
         return (
-            <Link to={`/english_react${item.url}`}>
+            <Link to={`/english_react/video${item.url}`}>
                 <Col>
                     <Row className='new-video card-horizontal'>
                         <Col>

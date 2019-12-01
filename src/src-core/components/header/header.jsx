@@ -144,17 +144,7 @@ export default class Header extends Component {
                             <FormControl type="text" placeholder={search} className="mr-sm-2 search" onChange={this.warn}/>
                         </Col>
                         <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
-                            <div>
-                                <DropdownButton
-                                    id="dropdown-user"
-                                    alignRight
-                                    title={<div style={fontStyle}>{course}</div>}
-                                    variant='header header-user'
-                                    bsPrefix='no-arrow'
-                                >
-                                    <Dropdown.Item href="/english_react/murphy_one">Murphy 1</Dropdown.Item>
-                                </DropdownButton>
-                            </div>
+                            <Link to={'/english_react/course-page'} children={course} style={fontStyle}/>
                         </Col>
                         <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
                             <Link to={'/english_react/video-page'} children={video} style={fontStyle}/>

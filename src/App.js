@@ -11,8 +11,7 @@ import Learning from './src-pages/learning-page/learning';
 import Video from "./src-pages/video-page/video";
 import VideoItem from "./src-pages/video-page/video-item";
 import Course from "./src-pages/course-page/course";
-import Murphy1 from "./src-pages/murphy-page/Murphy1";
-import M1Unit1 from "./src-pages/murphy-page/m1units/Unit1";
+import CourseItem from "./src-pages/course-page/course-item";
 
 class App extends Component {
 
@@ -26,6 +25,7 @@ class App extends Component {
         const {backColor} = store;
         document.body.style.background = backColor;
         const videoItem = withRouter(props => <VideoItem {...props} store={store}/>);
+        const courseItem = withRouter(props => <CourseItem {...props} store={store}/>);
 
         return (
             <Router>
@@ -36,11 +36,9 @@ class App extends Component {
                 />
                 <Switch>
                     <Route exact path='/english_react/' children={<HomePage store={store}/>}/>
-                    <Route path='/english_react/course' children={<Course store={store}/>}/>
+                    <Route path='/english_react/course-page' children={<Course store={store}/>}/>
                     <Route path='/english_react/video-page' children={<Video store={store}/>}/>
                     <Route path='/english_react/learning' children={<Learning store={store}/>}/>
-                    <Route path='/english_react/murphy_one' children={<Murphy1 store={store}/>}/>
-                    <Route path='/english_react/m_unit_one' children={<M1Unit1 store={store}/>}/>
                     <Route path='/english_react/user_dictionary' children={<UserDictionary store={store}/>}/>
                     <Route path='/english_react/user_data' children={
                         <UserData
@@ -57,7 +55,8 @@ class App extends Component {
                             onChangeSecondColor={onChangeSecondColor}
                         />
                     }/>
-                    <Route path='/english_react/*' children={videoItem}/>
+                    <Route path='/english_react/video/*' children={videoItem}/>
+                    <Route path='/english_react/course/*' children={courseItem}/>
                     <Route path='/*' children={videoItem}/>
                 </Switch>
                 <Footer
