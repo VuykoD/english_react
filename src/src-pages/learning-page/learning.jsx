@@ -15,6 +15,7 @@ import FormControl from "react-bootstrap/FormControl";
 import videoNames from "../../dict/videoNames";
 import arrFalseWords from "../../dict/falseWords";
 import {getCurrentDate, playVideo} from "../video-page/video-item";
+import courseItems from "../../dict/courseItems";
 
 const content = {
     firstWord: {
@@ -156,14 +157,14 @@ export default class Learning extends Component {
     }
 
     getLocalProgress = () => {
-        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         this.newCount = 0;
         this.newCountFrom = 0;
         this.repeatCount = 0;
         this.repeatCountFrom = 0;
         this.examCount = 0;
         this.examCountFrom = 0;
-        map(this.localProgress, item => {
+        map(localProgress, item => {
             if (+item.quantity === 0) {
                 if (isDateBegin(item.date)) this.newCount += 1;
                 this.newCountFrom += 1;
@@ -268,9 +269,10 @@ export default class Learning extends Component {
     };
 
     getLearnArray = (sliceNumber, quantity) => {
+        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (quantity || quantity === 0) {
-            const filteredArr = this.localProgress ?
-                filter(this.localProgress, item => {
+            const filteredArr = localProgress ?
+                filter(localProgress, item => {
                     if (typeof (quantity) === 'number' && isDateBegin(item.date)) return +item.quantity === quantity;
                     if (typeof (quantity) === 'object' && isDateBegin(item.date)) {
                         return +item.quantity >= quantity[0] && +item.quantity <= quantity[1]
@@ -279,14 +281,25 @@ export default class Learning extends Component {
 
             this.learnArr = filteredArr ? filteredArr.slice(0, sliceNumber) : null;
         } else {
-            this.learnArr = this.localProgress ? this.localProgress.slice(0, sliceNumber) : null;
+            this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
         }
 
         if (this.learnArr) {
             this.mistakesArr = [];
             map(this.learnArr, (item, key) => {
-                this.learnArr[key].eng = get(videoItems, `[${item.entity_id}].eng`);
-                this.learnArr[key].transl = get(videoItems, `[${item.entity_id}].transl`);
+                if (item.entity === 'video'){
+                    this.learnArr[key].eng = get(videoItems, `[${item.entity_id}].eng`);
+                    this.learnArr[key].transl = get(videoItems, `[${item.entity_id}].transl`);
+                    this.learnArr[key].courseId = get(videoItems, `[${item.entity_id}].idVideoName`);
+                }
+
+                if (item.entity === 'course') {
+                    const index = findIndex(courseItems, {'id': item.entity_id});
+                    this.learnArr[key].eng = get(courseItems, `[${index}].eng`);
+                    this.learnArr[key].transl = get(courseItems, `[${index}].transl`);
+                    this.learnArr[key].courseId = get(courseItems, `[${item.entity_id}].unitId`);
+                }
+
                 this.mistakesArr.push({item: key, mistakes: 0});
             })
         }
@@ -305,9 +318,6 @@ export default class Learning extends Component {
                     {
                         entity: 'video',
                         entity_id: videoItems[videoItemId].id,
-                        videoId: videoItems[videoItemId].idVideoName,
-                        eng: videoItems[videoItemId].eng,
-                        transl: videoItems[videoItemId].transl,
                         quantity: 0,
                         date: currentDate
                     }
@@ -339,31 +349,33 @@ export default class Learning extends Component {
             setTimeout(() => {
                 const nextNumber = this.state.learnNumber + 1;
                 this.setEngAndTransl(nextNumber);
-                this.setState({learnNumber: nextNumber});
                 this.nextItem();
             }, 7000);
         } else {
             setTimeout(() => {
-                this.setEngAndTransl(0);
-                this.setState({exampleLearning: 'phase_1', learnNumber: 0});
+                this.setEngAndTransl(0, 'phase_1');
+                this.setState({});
             }, 7000);
         }
     };
 
-    setEngAndTransl = (learnNumber) => {
+    setEngAndTransl = (learnNumber, changedState) => {
         const entity = get(this.learnArr, `${learnNumber}.entity`);
         const entityId = get(this.learnArr, `${learnNumber}.entity_id`);
-        const videoId = get(this.learnArr, `${learnNumber}.videoId`);
-        let english = get(videoItems, `[${entityId}].eng`) ||'';
+        const courseId = get(this.learnArr, `${learnNumber}.courseId`);
+        let english = get(this.learnArr, `${learnNumber}.eng`, '');
         english = english.replace(/^\s*/,'').replace(/\s*$/,'');
-        const translation = get(videoItems, `[${entityId}].transl`);
+        const translation = get(this.learnArr, `${learnNumber}.transl`);
         const start = get(videoItems, `[${entityId}].start`);
         const end = get(videoItems, `[${entityId}].end`);
 
-        const videoIndex = findIndex(videoNames, {'id': videoId});
-        const fileName = get(videoNames, `[${videoIndex}].fileName`);
+        const index = findIndex(videoNames, {'id': courseId});
+        const fileName = get(videoNames, `[${index}].fileName`);
         hideHint();
-        this.setState({english, translation, entity, start, end, fileName})
+        this.setState({
+            english, translation, entity, start, end, fileName, learnNumber,
+            exampleLearning: changedState || this.state.exampleLearning
+        })
     };
 
     changeNewLearnNumber = (e) => {
@@ -390,6 +402,7 @@ export default class Learning extends Component {
 
     renderVideo() {
         const {fileName, start, end, exampleLearning} = this.state;
+        console.log(fileName, start, end, exampleLearning);
         if (
             !fileName || !start || !end ||
             exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
@@ -828,22 +841,23 @@ export function getMistakesOrder() {
     const mistakesDesc = get(content, `mistakesDesc[${siteLang}]`);
 
     let mistakesOrder = null;
+    const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
     if (exampleLearning === 'mistakesOrder') {
-        if (this.localProgress) {
+        if (localProgress) {
             map(this.learnArr, (item, key) => {
                 const entityId = item.entity_id;
                 const quantity = item.quantity;
                 const isMistake = this.mistakesArr[key].mistakes > 2;
                 const newDateAndQuantity = getNewDate(quantity, isMistake);
-                const index = findIndex(this.localProgress, {'entity_id': entityId});
+                const index = findIndex(localProgress, {'entity_id': entityId});
                 if (index > -1) {
-                    this.localProgress[index].date = newDateAndQuantity.newDate;
-                    this.localProgress[index].quantity = newDateAndQuantity.newQuantity;
+                    localProgress[index].date = newDateAndQuantity.newDate;
+                    localProgress[index].quantity = newDateAndQuantity.newQuantity;
                 }
-                localStorage.progress = JSON.stringify(this.localProgress);
-                this.getLocalProgress();
             });
         }
+        localStorage.progress = JSON.stringify(localProgress);
+        this.getLocalProgress();
         mistakesOrder = (
             <Fragment>
                 <h3 children={mistakesOrderTxt}/>

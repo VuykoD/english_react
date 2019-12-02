@@ -1,5 +1,6 @@
 const courseItems = [
-    {"id": 1, "unitId": 1, "eng": "my name is Dmytry", "transl": "меня зовут Дима"}
+    {"id": 1, "unitId": 1, "eng": "my name is Dima", "transl": "меня зовут Дима"},
+    {"id": 2, "unitId": 1, "eng": "what is your name?", "transl": "как тебя зовут?"}
 ];
 
 //[{"id":1,"unitId":1,"eng":"12","transl":"12"}]

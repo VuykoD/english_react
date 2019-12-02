@@ -20,7 +20,7 @@ import {
 import videoItems from '../../dict/videoItems';
 import videoNames from '../../dict/videoNames';
 
-const content = {
+export const content = {
     hideTranslate: {
         ru: "Скрыть перевод",
         ukr: "Скрити переклад",
@@ -79,8 +79,18 @@ export default class VideoItem extends Component {
         url = url.replace('/english_react/video', '');
         this.videoIndex = findIndex(videoNames, {'url': url});
         this.videoId = get(videoNames, `[${this.videoIndex}].id`);
-        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        const isVideoSelected = findIndex(localProgress, {'videoId': this.videoId}) > -1;
+        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
+        const videoItemsArr = Object.values(videoItems);
+        let isItemSelected = false;
+        for (let i = localProgress.length; i > 0; i--) {
+            const index = get(localProgress, `[${i - 1}].entity`) === 'video' ?
+                findIndex(videoItemsArr, {'id': get(localProgress, `[${i - 1}].entity_id`)}) :
+                -1;
+            if (+get(videoItemsArr, `[${index}].idVideoName`) === +this.videoId) {
+                isItemSelected = true;
+                break;
+            }
+        }
 
         const localItems = localStorage.video ? JSON.parse(localStorage.video) : {};
 
@@ -92,8 +102,8 @@ export default class VideoItem extends Component {
         // this.items = sortBy(this.items, ['id']);
 
         const translation = get(this.items, `[0].transl`);
-        const english = get(this.items, `[0].eng`)?
-            get(this.items, `[0].eng`).replace(/^\s*/,'').replace(/\s*$/,''):
+        const english = get(this.items, `[0].eng`) ?
+            get(this.items, `[0].eng`).replace(/^\s*/, '').replace(/\s*$/, '') :
             '';
 
         this.state = {
@@ -105,7 +115,7 @@ export default class VideoItem extends Component {
             exampleLearning: 'phase_1',
             currentItem: 0,
             showTranslation: true,
-            isVideoSelected,
+            isItemSelected,
             english,
             translation
         };
@@ -208,7 +218,7 @@ export default class VideoItem extends Component {
     };
 
     select = () => {
-        if (this.state.isVideoSelected) {
+        if (this.state.isItemSelected) {
             const {siteLang} = this.props.store;
             const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
             return alert(alreadySelected);
@@ -221,7 +231,6 @@ export default class VideoItem extends Component {
                 {
                     entity: 'video',
                     entity_id: item.id,
-                    videoId: this.videoId,
                     quantity: 0,
                     date: currentDate
                 }
@@ -230,7 +239,7 @@ export default class VideoItem extends Component {
         const newProgress = localProgress ?
             [...localProgress, ...addedProgress] :
             [...addedProgress];
-        this.setState({isVideoSelected: true});
+        this.setState({isItemSelected: true});
         localStorage.progress = JSON.stringify(newProgress);
     };
 
@@ -256,6 +265,7 @@ export default class VideoItem extends Component {
     };
 
     speakTxt = () => {
+        console.log(this.state);
         const {videoItems, currentItem} = this.state;
         playVideo.call(this, get(videoItems, `[${currentItem}].start`), get(videoItems, `[${currentItem}].end`));
         focusInput();
@@ -274,7 +284,7 @@ export default class VideoItem extends Component {
             if (currentItem < videoLength - 1) {
 
                 const translation = get(videoItems, `[${currentItem + 1}].transl`);
-                const english = get(videoItems, `[${currentItem + 1}].eng`).replace(/^\s*/,'').replace(/\s*$/,'');
+                const english = get(videoItems, `[${currentItem + 1}].eng`).replace(/^\s*/, '').replace(/\s*$/, '');
 
                 this.setState({currentItem: currentItem + 1, english, translation});
                 playVideo.call(this, get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
@@ -303,7 +313,7 @@ export default class VideoItem extends Component {
 
     render() {
         const {siteLang} = this.props.store;
-        const {start, end, autoPlay, videoItems, showItems, exampleLearning, isVideoSelected} = this.state;
+        const {start, end, autoPlay, videoItems, showItems, exampleLearning, isItemSelected} = this.state;
 
         if (this.videoIndex === -1) return null;
         const fileName = get(videoNames, `[${this.videoIndex}].fileName`);
@@ -361,11 +371,11 @@ export default class VideoItem extends Component {
                     </Col>
                     <Col sm="6">
                         <Button
-                            variant={isVideoSelected ? "success" : "dark"}
+                            variant={isItemSelected ? "success" : "dark"}
                             block
                             onClick={this.select}
                         >
-                            {isVideoSelected ? alreadySelected : select}
+                            {isItemSelected ? alreadySelected : select}
                         </Button>
                         {showItems &&
                         <Button

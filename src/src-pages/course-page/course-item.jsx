@@ -9,14 +9,9 @@ import FormControl from "react-bootstrap/FormControl";
 import '../../scc/unit.css';
 import '../../scc/course.css'
 import courseUnits from "../../dict/courseUnits";
-import courseItems from "../../dict/videoItems";
+import courseItems from "../../dict/courseItems";
+import { content, getCurrentDate} from '../video-page/video-item'
 
-const content = {
-    learning: {
-        ru: "Отобрать на изучение",
-        ukr: "Відібрати на вивчення",
-    }
-};
 
 export default class CourseItem extends Component {
     constructor(props) {
@@ -26,22 +21,61 @@ export default class CourseItem extends Component {
         url = url.replace('/english_react/course', '');
         this.unitIndex = findIndex(courseUnits, {'url': url});
         this.unitId = get(courseUnits, `[${this.unitIndex}].id`);
-        const localItems = localStorage.course ? JSON.parse(localStorage.course) : {};
-        this.items = filter({...courseItems, ...localItems}, item => {
+        this.localItems = localStorage.course ? JSON.parse(localStorage.course) : [];
+        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
+        let isItemSelected = false;
+        for (let i = localProgress.length; i>0; i--){
+            const index = get(localProgress, `[${i-1}].entity`) === 'course' ?
+                findIndex(courseItems, {'id': get(localProgress, `[${i-1}].entity_id`)}) :
+                -1;
+            if (+get(courseItems, `[${index}].unitId`) === +this.unitId) {
+                isItemSelected = true;
+                break;
+            }
+        }
+
+        this.items = filter([...courseItems, ...this.localItems], item => {
                 return +item.unitId === +this.unitId;
             }
         );
 
         this.state = {
             courseItems: this.items,
+            isItemSelected
         };
     }
+
+    select = () => {
+        if (this.state.isItemSelected) {
+            const {siteLang} = this.props.store;
+            const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
+            return alert(alreadySelected);
+        }
+        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        const currentDate = getCurrentDate();
+
+        const addedProgress = map(this.items, item => {
+            return (
+                {
+                    entity: 'course',
+                    entity_id: item.id,
+                    quantity: 0,
+                    date: currentDate
+                }
+            )
+        });
+        const newProgress = localProgress ?
+            [...localProgress, ...addedProgress] :
+            [...addedProgress];
+        this.setState({isItemSelected: true});
+        localStorage.progress = JSON.stringify(newProgress);
+    };
 
     save = (e) => {
         const rowData = this.getRowData(e) || {};
         const {id, eng, transl} = rowData;
         if (!eng || !transl) return alert('fill in all data');
-        const {courseItems} = this.state;
+        const courseItems = this.localItems;
         const newId = courseItems.length ?
             +courseItems[courseItems.length - 1].id + 1 :
             1;
@@ -60,7 +94,7 @@ export default class CourseItem extends Component {
         } else {
             newCourseItems = courseItems.length? [...courseItems, courseItem]: [courseItem];
         }
-
+        this.localItems = newCourseItems;
         this.setState({courseItems: newCourseItems});
         localStorage.course = JSON.stringify(newCourseItems);
         if (index === -1) this.clearRow(e);
@@ -108,8 +142,9 @@ export default class CourseItem extends Component {
 
     render() {
         const {siteLang = ''} = this.props.store;
-        const learning = get(content, `learning[${siteLang}]`);
-        const {courseItems} = this.state;
+        const select = get(content, `select[${siteLang}]`);
+        const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
+        const {courseItems, isItemSelected} = this.state;
         return (
             <Container>
                 <Row>
@@ -123,7 +158,12 @@ export default class CourseItem extends Component {
                             <Col sm={8}>
                                 <h1>Unit 1: Present continuous (I'm doing)</h1>
 
-                                <Button variant="primary">{learning}</Button>
+                                <Button
+                                    variant={isItemSelected ? "success" : "primary"}
+                                    onClick={this.select}
+                                >
+                                    {isItemSelected? alreadySelected: select}
+                                </Button>
                             </Col>
                             <Col sm={2}/>
                         </Row>
