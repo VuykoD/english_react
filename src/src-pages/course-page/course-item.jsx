@@ -10,7 +10,7 @@ import '../../scc/unit.css';
 import '../../scc/course.css'
 import courseUnits from "../../dict/courseUnits";
 import courseItems from "../../dict/courseItems";
-import { content, getCurrentDate} from '../video-page/video-item'
+import {content, getCurrentDate} from '../video-page/video-item'
 
 
 export default class CourseItem extends Component {
@@ -24,9 +24,9 @@ export default class CourseItem extends Component {
         this.localItems = localStorage.course ? JSON.parse(localStorage.course) : [];
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
         let isItemSelected = false;
-        for (let i = localProgress.length; i>0; i--){
-            const index = get(localProgress, `[${i-1}].entity`) === 'course' ?
-                findIndex(courseItems, {'id': get(localProgress, `[${i-1}].entity_id`)}) :
+        for (let i = localProgress.length; i > 0; i--) {
+            const index = get(localProgress, `[${i - 1}].entity`) === 'course' ?
+                findIndex(courseItems, {'id': get(localProgress, `[${i - 1}].entity_id`)}) :
                 -1;
             if (+get(courseItems, `[${index}].unitId`) === +this.unitId) {
                 isItemSelected = true;
@@ -74,7 +74,7 @@ export default class CourseItem extends Component {
     save = (e) => {
         const rowData = this.getRowData(e) || {};
         const {id, eng, transl} = rowData;
-        if (!eng || !transl) return alert('fill in all data');
+        // if (!eng || !transl) return alert('fill in all data');
         const courseItems = this.localItems;
         const newId = courseItems.length ?
             +courseItems[courseItems.length - 1].id + 1 :
@@ -92,7 +92,7 @@ export default class CourseItem extends Component {
             newCourseItems = courseItems;
             newCourseItems[index] = courseItem;
         } else {
-            newCourseItems = courseItems.length? [...courseItems, courseItem]: [courseItem];
+            newCourseItems = courseItems.length ? [...courseItems, courseItem] : [courseItem];
         }
         this.localItems = newCourseItems;
         this.setState({courseItems: newCourseItems});
@@ -162,20 +162,30 @@ export default class CourseItem extends Component {
                                     variant={isItemSelected ? "success" : "primary"}
                                     onClick={this.select}
                                 >
-                                    {isItemSelected? alreadySelected: select}
+                                    {isItemSelected ? alreadySelected : select}
                                 </Button>
                             </Col>
                             <Col sm={2}/>
                         </Row>
                         <ListGroup>
+                            {/* {map(courseItems, (item, key) => {
+                                return(
+                                    <p>{item.eng}"</p>
+                                )
+                                }
+                            )} */}
                             {map(courseItems, (item, key) => {
                                 const odd = key & 1 ? 'light' : 'primary';
                                 return (
                                     <ListGroup.Item variant={odd} key={item.id}>
                                         <Row className="unit-row">
                                             <Col sm="1" className="display-none">
-                                                <FormControl type="text" defaultValue={item.id} disabled
-                                                             id={`row${key + 1}_id`}/>
+                                                <FormControl
+                                                    wtype="text"
+                                                    defaultValue={item.id}
+                                                    disabled
+                                                    id={`row${key + 1}_id`}
+                                                />
                                             </Col>
                                             <Col>
                                                 <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_eng`}
