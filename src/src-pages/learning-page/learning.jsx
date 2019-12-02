@@ -354,7 +354,6 @@ export default class Learning extends Component {
         } else {
             setTimeout(() => {
                 this.setEngAndTransl(0, 'phase_1');
-                this.setState({});
             }, 7000);
         }
     };
@@ -402,7 +401,7 @@ export default class Learning extends Component {
 
     renderVideo() {
         const {fileName, start, end, exampleLearning} = this.state;
-        console.log(fileName, start, end, exampleLearning);
+
         if (
             !fileName || !start || !end ||
             exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
