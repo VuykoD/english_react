@@ -16,6 +16,7 @@ import videoNames from "../../dict/videoNames";
 import arrFalseWords from "../../dict/falseWords";
 import {getCurrentDate, playVideo} from "../video-page/video-item";
 import courseItems from "../../dict/courseItems";
+import courseNames from "../../dict/courseNames";
 
 const content = {
     firstWord: {
@@ -114,6 +115,10 @@ const content = {
         ru: "Предложение/слово считается правильным, если в нём допущено не более 2 ошибок",
         ukr: "Речення/слово вважається правильним, якщо в ньому допущено не більше 2 помилок",
     },
+    source: {
+        ru: "Источник",
+        ukr: "Джерело",
+    },
 };
 
 export default class Learning extends Component {
@@ -203,7 +208,7 @@ export default class Learning extends Component {
             if (!this.learnArr) return;
             this.setEngAndTransl(this.state.learnNumber);
             english = get(this.learnArr, '[0].eng') || '';
-            english = english.replace(/^\s*/,'').replace(/\s*$/,'');
+            english = english.replace(/^\s*/, '').replace(/\s*$/, '');
             translation = get(this.learnArr, '[0].transl');
         }
         this.setState({exampleLearning: id, english, translation});
@@ -284,50 +289,47 @@ export default class Learning extends Component {
             this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
         }
 
-        if (this.learnArr) {
-            this.mistakesArr = [];
-            map(this.learnArr, (item, key) => {
-                if (item.entity === 'video'){
-                    this.learnArr[key].eng = get(videoItems, `[${item.entity_id}].eng`);
-                    this.learnArr[key].transl = get(videoItems, `[${item.entity_id}].transl`);
-                    this.learnArr[key].courseId = get(videoItems, `[${item.entity_id}].idVideoName`);
-                }
-
-                if (item.entity === 'course') {
-                    const index = findIndex(courseItems, {'id': item.entity_id});
-                    this.learnArr[key].eng = get(courseItems, `[${index}].eng`);
-                    this.learnArr[key].transl = get(courseItems, `[${index}].transl`);
-                    this.learnArr[key].courseId = get(courseItems, `[${item.entity_id}].unitId`);
-                }
-
-                this.mistakesArr.push({item: key, mistakes: 0});
-            })
-        }
-
         if (!this.learnArr) {
             const currentDate = getCurrentDate();
             const videoItemsKeyArr = Object.keys(videoItems);
             const videoItemsLength = videoItemsKeyArr.length;
             let learnArr = [];
-            let mistakesArr = [];
             let i = sliceNumber;
             while (i) {
                 const randomNumber = Math.floor(Math.random() * videoItemsLength);
                 const videoItemId = videoItemsKeyArr[randomNumber];
-                learnArr.push(
-                    {
-                        entity: 'video',
-                        entity_id: videoItems[videoItemId].id,
-                        quantity: 0,
-                        date: currentDate
-                    }
-                );
-                mistakesArr.push({item: i, mistakes: 0});
+                learnArr.push({
+                    entity: 'video',
+                    entity_id: videoItems[videoItemId].id,
+                    quantity: 0,
+                    date: currentDate
+                });
                 i--;
             }
-            this.mistakesArr = mistakesArr.length ? mistakesArr.slice(0, sliceNumber) : null;
             this.learnArr = learnArr.length ? learnArr.slice(0, sliceNumber) : null;
         }
+
+        this.mistakesArr = [];
+        map(this.learnArr, (item, key) => {
+            if (item.entity === 'video') {
+                this.learnArr[key].eng = get(videoItems, `[${item.entity_id}].eng`);
+                this.learnArr[key].transl = get(videoItems, `[${item.entity_id}].transl`);
+                this.learnArr[key].courseId = get(videoItems, `[${item.entity_id}].idVideoName`);
+                const courseIndex = findIndex(videoNames, {'id': this.learnArr[key].courseId});
+                this.learnArr[key].topicName = get(videoNames, `[${courseIndex}].songName`);
+            }
+
+            if (item.entity === 'course') {
+                const index = findIndex(courseItems, {'id': item.entity_id});
+                this.learnArr[key].eng = get(courseItems, `[${index}].eng`);
+                this.learnArr[key].transl = get(courseItems, `[${index}].transl`);
+                this.learnArr[key].courseId = get(courseItems, `[${item.entity_id}].unitId`);
+                const courseIndex = findIndex(courseNames, {'id': this.learnArr[key].courseId});
+                this.learnArr[key].topicName = get(courseNames, `[${courseIndex}].name`);
+            }
+
+            this.mistakesArr.push({item: key, mistakes: 0});
+        })
     };
 
     repeat = () => {
@@ -363,14 +365,13 @@ export default class Learning extends Component {
         const entityId = get(this.learnArr, `${learnNumber}.entity_id`);
         const courseId = get(this.learnArr, `${learnNumber}.courseId`);
         let english = get(this.learnArr, `${learnNumber}.eng`, '');
-        english = english.replace(/^\s*/,'').replace(/\s*$/,'');
+        english = english.replace(/^\s*/, '').replace(/\s*$/, '');
         const translation = get(this.learnArr, `${learnNumber}.transl`);
         const start = get(videoItems, `[${entityId}].start`);
         const end = get(videoItems, `[${entityId}].end`);
 
         const index = findIndex(videoNames, {'id': courseId});
         const fileName = get(videoNames, `[${index}].fileName`);
-        hideHint();
         this.setState({
             english, translation, entity, start, end, fileName, learnNumber,
             exampleLearning: changedState || this.state.exampleLearning
@@ -407,8 +408,8 @@ export default class Learning extends Component {
             exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
             exampleLearning === 'word_2' || exampleLearning === 'word_4'
         ) return;
-        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        const src = `../../../video/${fileName}#t=${start},${end}`;
+        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        // const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -418,6 +419,21 @@ export default class Learning extends Component {
             />
         )
     }
+
+    getTopic = () => {
+        const {siteLang} = this.props.store;
+        const {learnNumber} = this.state;
+        const source = get(content, `source[${siteLang}]`);
+        const topicTxt = get(this.learnArr, `[${learnNumber}].topicName`, '');
+        const topic = (
+            <h5>
+                <Badge variant="light" bsPrefix='source'>
+                    {source}: {topicTxt}
+                </Badge>
+            </h5>
+        );
+        return topic;
+    };
 
     resetCycle = () => {
         this.setState({
@@ -469,7 +485,7 @@ export default class Learning extends Component {
 
         return (
             <Container className='new-container'>
-                {!cycleLearning &&
+                {!exampleLearning && !cycleLearning &&
                 <Fragment>
                     <Row>
                         <Col sm={1}/>
@@ -556,7 +572,6 @@ export default class Learning extends Component {
                     <Row>
                         <h3 className='new-row' children={examples}/>
                     </Row>
-
                 </Fragment>
                 }
                 <Row className="text-center new-row">
@@ -650,6 +665,7 @@ export default class Learning extends Component {
                     {exampleLearning &&
                     <Fragment>
                         <Col>
+                            {this.getTopic()}
                             {this.renderVideo()}
                             {soundButton.call(this)}
                             {getBadgeTranslation.call(this)}
@@ -657,7 +673,7 @@ export default class Learning extends Component {
                             {getInput.call(this)}
                             {getWordsArr.call(this)}
                             {getProgressBar.call(this)}
-                            {getBadge.call(this)}
+                            {getEngBadge.call(this)}
                             {getMistakesOrder.call(this)}
                         </Col>
                     </Fragment>
@@ -765,8 +781,8 @@ export function soundButton() {
                 className="title_sound"
                 onClick={this.speakTxt}
             >
-                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
-                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
+                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
+                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
             </Button>
         )
     }
@@ -795,7 +811,7 @@ export function getBadgeAnswer() {
     return badgeAnswer;
 }
 
-export function getBadge() {
+export function getEngBadge() {
     const {exampleLearning, english} = this.state;
     if (!exampleLearning || !english) return null;
     let className = 'display-none';
@@ -888,10 +904,8 @@ export function speak() {
     if (!this.filteredVoices || !this.filteredVoices.lenght) this.getVoices();
     const {english, entity, end, start} = this.state;
     if (entity === 'video') return playVideo.call(this, start, end);
-    ;
-    const text = english;
 
-    const utterance = new SpeechSynthesisUtterance(text);
+    const utterance = new SpeechSynthesisUtterance(english);
     const randomVoice = this.filteredVoices ? Math.floor(Math.random() * this.filteredVoices.length) : null;
     utterance.voice = randomVoice ? this.filteredVoices[randomVoice] : null;
     if (!utterance.voice) utterance.lang = 'en';
@@ -934,11 +948,6 @@ export function showHint() {
         const errorHint = document.getElementById('errorHint');
         if (errorHint) errorHint.className = '';
     }
-}
-
-export function hideHint() {
-    const errorHint = document.getElementById('errorHint');
-    if (errorHint) errorHint.className = 'display-none';
 }
 
 export function rightClicked(rightTxt) {

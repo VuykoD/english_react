@@ -85,6 +85,10 @@ button.title_sound {
     font-size: 28px;
 }
 
+.source {
+    color: #5a6268;
+}
+
 @keyframes move_eye {
     from {
         width: 1%;

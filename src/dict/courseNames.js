@@ -1,7 +1,7 @@
 const courseNames = [
     {
         id: 1,
-        name: 'Murphy 1',
+        name: 'Murphy blue',
         active: true,
     },
     {
