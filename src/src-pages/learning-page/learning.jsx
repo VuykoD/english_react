@@ -4,7 +4,7 @@ import map from 'lodash/map';
 import filter from 'lodash/filter';
 import findIndex from 'lodash/findIndex';
 import {Button, Col, Container, Form, Row, Badge, ProgressBar} from "react-bootstrap";
-import {TiTickOutline, TiTimesOutline} from "react-icons/ti";
+import {TiTick, TiTimes} from "react-icons/ti";
 
 import '../../scc/learning.css';
 import warn from '../../src-core/helper/warn/warn';
@@ -233,8 +233,7 @@ export default class Learning extends Component {
                 let nextNumber = this.state.learnNumber + 1;
                 if (nextNumber >= this.learnArr.length) {
                     if (cycleLearning === 'repeat' && exampleLearning === 'phase_2') {
-                        this.setState({exampleLearning: 'phase_3', learnNumber: 0});
-                        this.setEngAndTransl(0);
+                        this.setEngAndTransl(0, 'phase_3');
                         clearTranslation();
                         return;
                     } else {
@@ -372,6 +371,8 @@ export default class Learning extends Component {
 
         const index = findIndex(videoNames, {'id': courseId});
         const fileName = get(videoNames, `[${index}].fileName`);
+        const {exampleLearning} = this.state;
+        if (exampleLearning !== 'phase_5') hideHint();
         this.setState({
             english, translation, entity, start, end, fileName, learnNumber,
             exampleLearning: changedState || this.state.exampleLearning
@@ -879,8 +880,8 @@ export function getMistakesOrder() {
                 {map(this.learnArr, (item, key) => {
                     const mistakesCount = get(this.mistakesArr, `[${key}].mistakes`);
                     const icon = mistakesCount > 2 ?
-                        <TiTimesOutline className='mistakes-error'/> :
-                        <TiTickOutline className='mistakes-right'/>;
+                        <TiTimes className='mistakes-error'/> :
+                        <TiTick className='mistakes-right'/>;
                     return (
                         <p key={key} className='mistakes-string'>
                             {item.eng} - {item.transl} - {mistakesCount} {icon}
@@ -948,6 +949,11 @@ export function showHint() {
         const errorHint = document.getElementById('errorHint');
         if (errorHint) errorHint.className = '';
     }
+}
+
+export function hideHint() {
+    const errorHint = document.getElementById('errorHint');
+    if (errorHint) errorHint.className = 'display-none';
 }
 
 export function rightClicked(rightTxt) {

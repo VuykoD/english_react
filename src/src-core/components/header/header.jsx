@@ -217,10 +217,10 @@ export default class Header extends Component {
                                     variant='header header-user'
                                     bsPrefix='no-arrow'
                                 >
-                                    <Dropdown.Item href="/english_react/user_dictionary">{dictionary}</Dropdown.Item>
-                                    <Dropdown.Item>{progress}</Dropdown.Item>
-                                    <Dropdown.Item href="/english_react/user_data">{myData}</Dropdown.Item>
-                                    <Dropdown.Item href="/english_react/user_setting">{setting}</Dropdown.Item>
+                                    <div><Link to={'/english_react/user_dictionary'} children={dictionary} /></div>
+                                    <div>{progress}</div>
+                                    <div><Link to={'/english_react/user_data'} children={myData} /></div>
+                                    <div><Link to={'/english_react/user_setting'} children={setting} /></div>
                                 </DropdownButton>
                             </div>
                         </Col>
