@@ -15,7 +15,7 @@ import {
     getProgressBar, getEngBadge,
     getWordsArr, rightClicked,
     soundButton,
-    wordClicked, clearTranslation
+    wordClicked, clearTranslation, keyListener
 } from "../learning-page/learning";
 import videoItems from '../../dict/videoItems';
 import videoNames from '../../dict/videoNames';
@@ -121,6 +121,10 @@ export default class VideoItem extends Component {
         };
         this.englishArr = [];
         this.timeoutPauseVideo = null;
+    }
+
+    componentDidMount() {
+        keyListener.call(this);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {

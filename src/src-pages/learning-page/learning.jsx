@@ -119,6 +119,10 @@ const content = {
         ru: "Источник",
         ukr: "Джерело",
     },
+    pressButton: {
+        ru: "Для повторения нажмите пробел",
+        ukr: "Для повтору натисніть пробіл",
+    },
 };
 
 export default class Learning extends Component {
@@ -154,21 +158,9 @@ export default class Learning extends Component {
     }
 
     componentDidMount() {
-        this.keyListener();
+        keyListener.call(this);
         this.getVoices();
     }
-
-    keyListener = () => {
-        document.addEventListener('keydown', (event) => {
-            const exampleLearningState = this.state.exampleLearning;
-            const keyCode = event.keyCode;
-
-            if (keyCode === 13 && exampleLearningState === 'mistakesOrder') this.resetCycle();
-
-            if (keyCode === 32) this.speakTxt();
-
-        });
-    };
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         focusInput();
@@ -787,10 +779,13 @@ export function soundButton() {
     let btn = null;
     const isSound = checkIsSound.call(this);
     if (isSound) {
+        const {siteLang} = this.props.store;
+        const pressButton = get(content, `pressButton[${siteLang}]`);
         btn = (
             <Button
                 variant="success"
                 className="title_sound"
+                title={pressButton}
                 onClick={this.speakTxt}
             >
                 {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
@@ -925,10 +920,10 @@ export function getMistakesOrder() {
 }
 
 export function speak() {
-    if (!this.filteredVoices || !this.filteredVoices.lenght) this.getVoices();
     const {english, entity, end, start} = this.state;
     if (entity === 'video' && end && start) return playVideo.call(this, start, end);
     if (entity === 'video' && (!start || !end)) return;
+    if (!this.filteredVoices || !this.filteredVoices.lenght) this.getVoices();
 
     const utterance = new SpeechSynthesisUtterance(english);
     const randomVoice = this.filteredVoices ? Math.floor(Math.random() * this.filteredVoices.length) : null;
@@ -994,6 +989,8 @@ export function changedInput() {
     const rightTxt = get(this, 'englishArr[0]');
     if (rightTxt && letterUp === rightTxt.substr(0, 1).toUpperCase()) {
         this.rightClick(rightTxt);
+        const rightButtons = document.getElementsByName(rightTxt);
+        if (rightButtons && rightButtons.length) rightButtons[0].style.display = 'none';
         formInput.value = '';
     } else {
         if (this.mistakesArr) {
@@ -1017,3 +1014,26 @@ export function clearTranslation() {
     const badge = document.getElementById('translation');
     if (badge) badge.innerText = '';
 }
+
+export function keyListener()  {
+    document.addEventListener('keydown', (event) => {
+        const exampleLearningState = this.state.exampleLearning;
+        const keyCode = event.keyCode;
+        // const key = event.key;
+        // const rightTxt = get(this, 'englishArr[0]');
+        // const letter = rightTxt ? rightTxt.substr(0, 1) : null;
+        //
+        // if ((exampleLearningState === 'phase_2' || exampleLearningState === 'phase_1' ||
+        //     exampleLearningState === 'word_2' || exampleLearningState === 'word_1') &&
+        //     key === letter){
+        //     const rightButtons = document.getElementsByName(rightTxt);
+        //     if (rightButtons && rightButtons.length) rightButtons[0].style.display = 'none';
+        //     this.rightClick(rightTxt);
+        // }
+
+        if (keyCode === 13 && exampleLearningState === 'mistakesOrder') this.resetCycle();
+
+        if (keyCode === 32) this.speakTxt();
+
+    });
+};
