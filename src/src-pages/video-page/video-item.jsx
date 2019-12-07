@@ -256,16 +256,15 @@ export default class VideoItem extends Component {
                 });
                 playVideo.call(this, get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
                 this.nextVideo();
-            }, 7000);
+            }, 10000);
         } else {
             setTimeout(() => {
                 this.setState({showItems: true, currentItem: 0});
-            }, 7000);
+            }, 10000);
         }
     };
 
     speakTxt = () => {
-        console.log(this.state);
         const {videoItems, currentItem} = this.state;
         playVideo.call(this, get(videoItems, `[${currentItem}].start`), get(videoItems, `[${currentItem}].end`));
         focusInput();
@@ -318,8 +317,8 @@ export default class VideoItem extends Component {
         if (this.videoIndex === -1) return null;
         const fileName = get(videoNames, `[${this.videoIndex}].fileName`);
         const songName = get(videoNames, `[${this.videoIndex}].songName`);
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         const hideTranslate = get(content, `hideTranslate[${siteLang}]`);
         const firstPhrase = get(content, `firstPhrase[${siteLang}]`);
         const thirdPhrase = get(content, `thirdPhrase[${siteLang}]`);
