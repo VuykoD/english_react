@@ -8,8 +8,8 @@ const courseUnits = [
     {
         id: 2,
         courseId: 1,
-        url: "/m1unit2",
-        name: "Unit 2",
+        url: "/murphy-one-unit-two-present-simple",
+        name: "Unit 2 - Present simple (I do). Part 1",
     },
     {
         id: 3,

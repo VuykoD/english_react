@@ -270,7 +270,23 @@ const videoItems = {
     2310:{"id":"2310","idVideoName":13,"start":"72.7","end":"75.7","eng":"I'm wide awake","transl":" Но я не сплю."},
     2311:{"id":"2311","idVideoName":13,"start":"75.7","end":"82","eng":"Wanna feel one last time","transl":" Я хочу ощутить это в последний раз."},
     2312:{"id":"2312","idVideoName":13,"start":"82","end":"84.7","eng":"Take my pain away","transl":"Избавь меня от моей боли."},
-    2313:{"id":"2313","idVideoName":13,"start":"142","end":"146.7","eng":"I'm not alone, I know I'm not alone","transl":"  Я не одна, Я знаю, что я не одна."}
+    2313:{"id":"2313","idVideoName":13,"start":"142","end":"146.7","eng":"I'm not alone, I know I'm not alone","transl":"  Я не одна, Я знаю, что я не одна."},
+    2400:{"id":"2400","idVideoName":14,"start":"27","end":"29.3","eng":"I wish that I could fly","transl":" Я бы хотел улететь"},
+    2401:{"id":"2401","idVideoName":14,"start":"29.3","end":"32.6","eng":"Into the sky so very high","transl":"В небо, так высоко."},
+    2402:{"id":"2402","idVideoName":14,"start":"32.6","end":"35.5","eng":"Just like a dragonfly","transl":"Как стрекоза."},
+    2403:{"id":"2403","idVideoName":14,"start":"38","end":"41.5","eng":"I'd fly above the trees","transl":"Я бы взлетел над деревьями,"},
+    2404:{"id":"2404","idVideoName":14,"start":"41.5","end":"44.8","eng":"Over the seas in all degrees","transl":"Над морями, как можно выше,"},
+    2405:{"id":"2405","idVideoName":14,"start":"44.8","end":"48.5","eng":"To anywhere I please","transl":"Куда бы я ни пожелал."},
+    2406:{"id":"2406","idVideoName":14,"start":"48.5","end":"54","eng":"I want to get away","transl":" Я хочу свалить."},
+    2407:{"id":"2407","idVideoName":14,"start":"54","end":"57.7","eng":"I want to fly away","transl":" Я хочу улететь"},
+    2408:{"id":"2408","idVideoName":14,"start":"57.7","end":"63","eng":"Yeah yeah yeah","transl":"Да, да, да"},
+    2409:{"id":"2409","idVideoName":14,"start":"74.7","end":"77.5","eng":"Let's go and see the stars","transl":"Давай пойдём, посмотрим на звёзды,"},
+    2410:{"id":"2410","idVideoName":14,"start":"77.5","end":"81","eng":"The Milky Way or even Mars","transl":"На Млечный Путь или даже Марс,"},
+    2411:{"id":"2411","idVideoName":14,"start":"81","end":"85","eng":"Where it could just be ours","transl":" Где всё могло бы быть наше."},
+    2412:{"id":"2412","idVideoName":14,"start":"87","end":"89.3","eng":"Let's fade into the sun","transl":"Давай взлетим к солнцу."},
+    2413:{"id":"2413","idVideoName":14,"start":"89.3","end":"91","eng":"Let your spirit fly","transl":"Позволь своему духу лететь,"},
+    2414:{"id":"2414","idVideoName":14,"start":"91","end":"93.2","eng":"Where we are one","transl":" туда, где будем мы одни,"},
+    2415:{"id":"2415","idVideoName":14,"start":"93.2","end":"96.1","eng":"Just for a little fun","transl":"Просто ради развлечения."}
 };
 //
 export {videoItems as default};
