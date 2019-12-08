@@ -385,8 +385,8 @@ class CardHorizontal extends Component {
                             </Row>
                             <Row className="text-center">
                                 <Col>
-                                    <img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>
-                                    {/*<img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>*/}
+                                    {/*<img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>*/}
+                                    <img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>
                                     <span>{videoCount}:{count}</span>
                                 </Col>
                             </Row>
