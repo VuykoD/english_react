@@ -53,14 +53,16 @@ export default class CourseItem extends Component {
         }
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         const currentDate = getCurrentDate();
+        const sortOrder = localProgress ?localProgress.length: 0;
 
-        const addedProgress = map(this.items, item => {
+        const addedProgress = map(this.items, (item, key) => {
             return (
                 {
                     entity: 'course',
-                    entity_id: item.id,
+                    entity_id: +item.id,
                     quantity: 0,
-                    date: currentDate
+                    date: currentDate,
+                    sortOrder: sortOrder + key
                 }
             )
         });
@@ -149,8 +151,8 @@ export default class CourseItem extends Component {
             <Container>
                 <Row>
                     <Col sm={1}>
-                        {/*<div><img src="../../../english_react/images/paint.png" alt="" className="paint-left"/></div>*/}
-                        <div><img src="../../../images/paint.png" alt="" className="paint-left"/></div>
+                        <div><img src="../../../english_react/images/paint.png" alt="" className="paint-left"/></div>
+                        {/*<div><img src="../../../images/paint.png" alt="" className="paint-left"/></div>*/}
                     </Col>
                     <Col sm="10">
                         <Row className="text-center learning">
@@ -247,8 +249,8 @@ export default class CourseItem extends Component {
                         </ListGroup>
                     </Col>
                     <Col sm={1}>
-                        {/*<div><img src="../../../english_react/images/paint.png" alt="" className="paint-right"/></div>*/}
-                        <div><img src="../../../images/paint.png" alt="" className="paint-right"/></div>
+                        <div><img src="../../../english_react/images/paint.png" alt="" className="paint-right"/></div>
+                        {/*<div><img src="../../../images/paint.png" alt="" className="paint-right"/></div>*/}
                     </Col>
                 </Row>
             </Container>

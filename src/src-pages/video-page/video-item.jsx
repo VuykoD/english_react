@@ -98,8 +98,6 @@ export default class VideoItem extends Component {
                 return +item.idVideoName === +this.videoId;
             }
         );
-        // forEach(this.items, (item, key) => this.items[key].id = +item.id);
-        // this.items = sortBy(this.items, ['id']);
 
         const translation = get(this.items, `[0].transl`);
         const english = get(this.items, `[0].eng`) ?
@@ -229,14 +227,16 @@ export default class VideoItem extends Component {
         }
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         const currentDate = getCurrentDate();
+        const sortOrder = localProgress ?localProgress.length: 0;
 
-        const addedProgress = map(this.items, item => {
+        const addedProgress = map(this.items, (item, key) => {
             return (
                 {
                     entity: 'video',
-                    entity_id: item.id,
+                    entity_id: +item.id,
                     quantity: 0,
-                    date: currentDate
+                    date: currentDate,
+                    sortOrder: sortOrder + key
                 }
             )
         });
@@ -321,8 +321,8 @@ export default class VideoItem extends Component {
         if (this.videoIndex === -1) return null;
         const fileName = get(videoNames, `[${this.videoIndex}].fileName`);
         const songName = get(videoNames, `[${this.videoIndex}].songName`);
-        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        const src = `../../../video/${fileName}#t=${start},${end}`;
+        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        // const src = `../../../video/${fileName}#t=${start},${end}`;
         const hideTranslate = get(content, `hideTranslate[${siteLang}]`);
         const firstPhrase = get(content, `firstPhrase[${siteLang}]`);
         const thirdPhrase = get(content, `thirdPhrase[${siteLang}]`);
