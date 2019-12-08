@@ -108,8 +108,8 @@ const content = {
         ukr: "Рандомний екзамен",
     },
     mistakesOrder: {
-        ru: "Отчёт по ошибкам",
-        ukr: "Звіт по помилкам",
+        ru: "Отчёт по ошибкам. Правильно: ",
+        ukr: "Звіт по помилкам. Правильно: ",
     },
     mistakesDesc: {
         ru: "Предложение/слово считается правильным, если в нём допущено не более 2 ошибок",
@@ -118,6 +118,10 @@ const content = {
     source: {
         ru: "Источник",
         ukr: "Джерело",
+    },
+    pressButton: {
+        ru: "Для повторения нажмите пробел",
+        ukr: "Для повтору натисніть пробіл",
     },
 };
 
@@ -154,6 +158,7 @@ export default class Learning extends Component {
     }
 
     componentDidMount() {
+        keyListener.call(this);
         this.getVoices();
     }
 
@@ -213,7 +218,7 @@ export default class Learning extends Component {
         }
         this.setState({exampleLearning: id, english, translation});
         if (id === 'word_5' || id === 'phase_5') {
-            setTimeout(this.resetExampleLearning, 7000);
+            setTimeout(this.resetExampleLearning, 10000);
         }
     };
 
@@ -242,7 +247,6 @@ export default class Learning extends Component {
                     }
                 }
                 this.setEngAndTransl(nextNumber);
-                this.setState({learnNumber: nextNumber});
                 clearTranslation();
                 return;
             }
@@ -351,11 +355,11 @@ export default class Learning extends Component {
                 const nextNumber = this.state.learnNumber + 1;
                 this.setEngAndTransl(nextNumber);
                 this.nextItem();
-            }, 7000);
+            }, 10000);
         } else {
             setTimeout(() => {
                 this.setEngAndTransl(0, 'phase_1');
-            }, 7000);
+            }, 10000);
         }
     };
 
@@ -402,15 +406,13 @@ export default class Learning extends Component {
     }
 
     renderVideo() {
-        const {fileName, start, end, exampleLearning} = this.state;
+        const {fileName, start, end} = this.state;
 
         if (
-            !fileName || !start || !end ||
-            exampleLearning === 'phase_2' || exampleLearning === 'phase_4' ||
-            exampleLearning === 'word_2' || exampleLearning === 'word_4'
+            !fileName || !start || !end
         ) return;
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -486,6 +488,7 @@ export default class Learning extends Component {
 
         return (
             <Container className='new-container'>
+                {this.renderVideo()}
                 {!exampleLearning && !cycleLearning &&
                 <Fragment>
                     <Row>
@@ -667,7 +670,6 @@ export default class Learning extends Component {
                     <Fragment>
                         <Col>
                             {this.getTopic()}
-                            {this.renderVideo()}
                             {soundButton.call(this)}
                             {getBadgeTranslation.call(this)}
                             {getBadgeAnswer.call(this)}
@@ -730,6 +732,7 @@ export function getWordsArr() {
                             className={className}
                             size="lg"
                             disabled={disabled}
+                            name={word}
                         >
                             {points}
                         </Button>
@@ -776,14 +779,17 @@ export function soundButton() {
     let btn = null;
     const isSound = checkIsSound.call(this);
     if (isSound) {
+        const {siteLang} = this.props.store;
+        const pressButton = get(content, `pressButton[${siteLang}]`);
         btn = (
             <Button
                 variant="success"
                 className="title_sound"
+                title={pressButton}
                 onClick={this.speakTxt}
             >
-                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
-                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
+                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
+                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
             </Button>
         )
     }
@@ -794,8 +800,20 @@ export function getBadgeTranslation() {
     const {showTranslation, translation, exampleLearning} = this.state;
     let badgeTranslation = null;
     if (showTranslation && translation && exampleLearning !== 'mistakesOrder') {
+        let className = '';
+        let variant = 'secondary';
+
+        if (exampleLearning === 'phase_1' || exampleLearning === 'word_1' ||
+            exampleLearning === 'phase_3' || exampleLearning === 'word_3'
+        ){
+            className = 'bad-visible';
+            variant = 'light';
+        }
+
         badgeTranslation = (
-            <h3><Badge variant="secondary">{translation}</Badge></h3>
+            <h3>
+                <Badge variant={variant} className={className}>{translation}</Badge>
+            </h3>
         )
     }
     return badgeTranslation;
@@ -902,9 +920,10 @@ export function getMistakesOrder() {
 }
 
 export function speak() {
-    if (!this.filteredVoices || !this.filteredVoices.lenght) this.getVoices();
     const {english, entity, end, start} = this.state;
-    if (entity === 'video') return playVideo.call(this, start, end);
+    if (entity === 'video' && end && start) return playVideo.call(this, start, end);
+    if (entity === 'video' && (!start || !end)) return;
+    if (!this.filteredVoices || !this.filteredVoices.lenght) this.getVoices();
 
     const utterance = new SpeechSynthesisUtterance(english);
     const randomVoice = this.filteredVoices ? Math.floor(Math.random() * this.filteredVoices.length) : null;
@@ -965,10 +984,13 @@ export function rightClicked(rightTxt) {
 export function changedInput() {
     const formInput = document.getElementById('formInput');
     const letter = get(formInput, 'value') ? formInput.value.substr(0, 1) : null;
+    if (letter === ' ') return formInput.value = '';
     const letterUp = letter.toUpperCase();
     const rightTxt = get(this, 'englishArr[0]');
     if (rightTxt && letterUp === rightTxt.substr(0, 1).toUpperCase()) {
         this.rightClick(rightTxt);
+        const rightButtons = document.getElementsByName(rightTxt);
+        if (rightButtons && rightButtons.length) rightButtons[0].style.display = 'none';
         formInput.value = '';
     } else {
         if (this.mistakesArr) {
@@ -992,3 +1014,26 @@ export function clearTranslation() {
     const badge = document.getElementById('translation');
     if (badge) badge.innerText = '';
 }
+
+export function keyListener()  {
+    document.addEventListener('keydown', (event) => {
+        const exampleLearningState = this.state.exampleLearning;
+        const keyCode = event.keyCode;
+        // const key = event.key;
+        // const rightTxt = get(this, 'englishArr[0]');
+        // const letter = rightTxt ? rightTxt.substr(0, 1) : null;
+        //
+        // if ((exampleLearningState === 'phase_2' || exampleLearningState === 'phase_1' ||
+        //     exampleLearningState === 'word_2' || exampleLearningState === 'word_1') &&
+        //     key === letter){
+        //     const rightButtons = document.getElementsByName(rightTxt);
+        //     if (rightButtons && rightButtons.length) rightButtons[0].style.display = 'none';
+        //     this.rightClick(rightTxt);
+        // }
+
+        if (keyCode === 13 && exampleLearningState === 'mistakesOrder') this.resetCycle();
+
+        if (keyCode === 32) this.speakTxt();
+
+    });
+};

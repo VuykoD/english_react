@@ -59,11 +59,15 @@ button.title_sound {
     color: #969696;
 }
 
+.bad-visible {
+    opacity: 0.2;
+}
+
 .c_eye {
     height: 100%;
     border-radius: 4px;
 
-    animation: 7.05s linear infinite forwards move_eye;
+    animation: 10.05s linear infinite forwards move_eye;
 }
 
 .video-hide {

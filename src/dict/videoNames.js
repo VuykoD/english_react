@@ -129,6 +129,16 @@ const videoNames = [
         active: true,
         url: '/alone'
     },
+    {
+        id: 14,
+        songName: 'Lenny Kravitz - Fly Away',
+        imageName: 'flyAway.jpg',
+        fileName: 'flyAway.mp4',
+        level: 'easy',
+        type: 'music',
+        active: true,
+        url: '/flyAway'
+    },
 ];
 export {videoNames as default};
 //
