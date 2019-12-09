@@ -57,7 +57,7 @@ export default class UserDictionary extends Component {
         lp = lp? this.setLocalProgress(lp) : null;
 
         this.state = ({
-            sortNumber: 5,
+            sortNumber: 2,
             localProgress: lp
         });
     }
