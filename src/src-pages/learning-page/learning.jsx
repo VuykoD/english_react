@@ -234,6 +234,7 @@ export default class Learning extends Component {
         const {cycleLearning, exampleLearning} = this.state;
         rightClicked.call(this, rightTxt);
         if (this.englishArr.length === 0) {
+            if (exampleLearning === 'word_4' || exampleLearning === 'phase_4') speak.call(this);
             if (cycleLearning) {
                 let nextNumber = this.state.learnNumber + 1;
                 if (nextNumber >= this.learnArr.length) {
@@ -805,7 +806,7 @@ export function getBadgeTranslation() {
 
         if (exampleLearning === 'phase_1' || exampleLearning === 'word_1' ||
             exampleLearning === 'phase_3' || exampleLearning === 'word_3'
-        ){
+        ) {
             className = 'bad-visible';
             variant = 'light';
         }
@@ -920,9 +921,11 @@ export function getMistakesOrder() {
 }
 
 export function speak() {
+    console.log(11);
     const {english, entity, end, start} = this.state;
     if (entity === 'video' && end && start) return playVideo.call(this, start, end);
     if (entity === 'video' && (!start || !end)) return;
+    console.log(12);
     if (!this.filteredVoices || !this.filteredVoices.lenght) this.getVoices();
 
     const utterance = new SpeechSynthesisUtterance(english);
@@ -935,8 +938,9 @@ export function speak() {
 export function checkIsSound(text) {
     const {exampleLearning} = this.state;
     if (
-        exampleLearning === 'word_1' || exampleLearning === 'word_3' || exampleLearning === 'word_5' ||
-        exampleLearning === 'phase_1' || exampleLearning === 'phase_3' || exampleLearning === 'phase_5'
+        exampleLearning === 'word_1' || exampleLearning === 'word_2' || exampleLearning === 'word_3' ||
+        exampleLearning === 'word_4' || exampleLearning === 'phase_1' || exampleLearning === 'phase_2' ||
+        exampleLearning === 'phase_3' || exampleLearning === 'phase_5'
     ) {
         return true;
     }
@@ -1015,7 +1019,7 @@ export function clearTranslation() {
     if (badge) badge.innerText = '';
 }
 
-export function keyListener()  {
+export function keyListener() {
     document.addEventListener('keydown', (event) => {
         const exampleLearningState = this.state.exampleLearning;
         const keyCode = event.keyCode;
