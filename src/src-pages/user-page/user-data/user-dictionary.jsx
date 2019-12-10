@@ -76,6 +76,7 @@ export default class UserDictionary extends Component {
 
             if (item.entity === 'course') {
                 const index = findIndex(courseItems, {'id': item.entity_id});
+                console.log(index, item.entity_id);
                 lp[key].eng = get(courseItems, `[${index}].eng`);
                 lp[key].native = get(courseItems, `[${index}].transl`);
                 lp[key].courseId = get(courseItems, `[${index}].unitId`);
@@ -89,40 +90,59 @@ export default class UserDictionary extends Component {
             if (+item.quantity === 3) lp[key].type = 'exam';
             if (+item.quantity > 3) lp[key].type = 'learned';
         });
-
-        sortBy(lp, 'sortOrder');
         return lp;
     };
 
     sort = () => {
         let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (!lP) return null;
-        lP = sortBy(lP, ['quantity', 'date']);
-        const filteredVideo = filter(lP, item => item.entity === "video");
-        const filteredCourse = filter(lP, item => item.entity === "course");
-        const { sortNumber } = this.state;
 
-        map(filteredVideo, (itemVideo, key) => {
-            filteredVideo[key].sortOrder = key + Math.floor(key/sortNumber)*sortNumber ;
+        const filteredVideoNew = filter(lP, item => item.entity === "video" && +item.quantity === 0 );
+        const filteredCourseNew = filter(lP, item => item.entity === "course" && +item.quantity === 0 );
+
+        const filteredVideoRepeat = filter(lP, item => item.entity === "video" && (+item.quantity === 1 || +item.quantity === 2));
+        const filteredCourseRepeat = filter(lP, item => item.entity === "course" && (+item.quantity === 1 || +item.quantity === 2));
+
+        const filteredVideoExam = filter(lP, item => item.entity === "video" && item.quantity === 3 );
+        const filteredCourseExam = filter(lP, item => item.entity === "course" && item.quantity === 3 );
+
+        this.lP=[];
+        this.sortArr(filteredVideoNew, filteredCourseNew);
+        this.sortArr(filteredVideoRepeat, filteredCourseRepeat);
+        this.sortArr(filteredVideoExam, filteredCourseExam);
+
+
+        map(this.lP, (it, key) => {
+            this.lP[key].sortOrder = key;
+            delete this.lP[key].eng;
+            delete this.lP[key].transl;
+            delete this.lP[key].videoId;
+            delete this.lP[key].native;
+            delete this.lP[key].courseId;
+            delete this.lP[key].sourse;
+            delete this.lP[key].type;
+            this.lP[key].entity_id = +it.entity_id;
         });
 
-        map(filteredCourse, (itemVideo, key) => {
-            filteredCourse[key].sortOrder = key + Math.floor(key/sortNumber)*sortNumber + sortNumber ;
-        });
+        localStorage.progress = JSON.stringify(this.lP);
 
-        lP = [...filteredVideo, ...filteredCourse];
-
-        map(lP, (itemLocalProgress,key) => {
-            delete lP[key].eng;
-            delete lP[key].transl;
-            delete lP[key].videoId;
-            lP[key].entity_id = +itemLocalProgress.entity_id;
-        });
-        lP = sortBy(lP, 'sortOrder');
+        lP = this.lP? this.setLocalProgress(this.lP) : null;
         this.setState({localProgress: lP});
-        lP = lP? this.setLocalProgress(lP) : null;
+    };
 
-        localStorage.progress = JSON.stringify(lP);
+    sortArr = ( filteredVideo, filteredCourse) => {
+        const { sortNumber } = this.state;
+        for (let i=0 ; i<100; i++){
+            if(filteredVideo.length){
+                const removedVideo = filteredVideo.splice(0, sortNumber);
+                this.lP = (this.lP).length? [...this.lP, ...removedVideo]: [...removedVideo];
+            }
+            if(filteredCourse.length){
+                const removedCourse = filteredCourse.splice(0, sortNumber);
+                this.lP = (this.lP).length? [...this.lP, ...removedCourse]: [...removedCourse];
+            }
+            if(!filteredVideo.length && !filteredCourse.length) break;
+        }
     };
 
     changeSortNumber = (e) => {
