@@ -14,8 +14,8 @@ const courseUnits = [
     {
         id: 3,
         courseId: 1,
-        url: "/m1unit3",
-        name: "Unit 3",
+        url: "/murphy-one-unit-three",
+        name: "Unit 3 - Present continuous and present simple 1 (I am doing and I do)",
     },
     {
         id: 4,
