@@ -144,10 +144,20 @@ const videoNames = [
         songName: 'Hozier - Take Me To Church',
         imageName: 'hozierTakeMeToChurch.jpg',
         fileName: 'hozierTakeMeToChurch.mp4',
-        level: 'easy',
+        level: 'medium',
         type: 'music',
         active: true,
         url: '/hozierTakeMeToChurch'
+    },
+    {
+        id: 16,
+        songName: 'Metallica - The Unforgiven',
+        imageName: 'metallicaTheUnforgiven.jpg',
+        fileName: 'metallicaTheUnforgiven.mp4',
+        level: 'hard',
+        type: 'music',
+        active: true,
+        url: '/metallicaTheUnforgiven'
     },
 ];
 export {videoNames as default};
