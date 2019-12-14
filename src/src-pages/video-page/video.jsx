@@ -7,6 +7,7 @@ import {Col, Container, Row, Dropdown, DropdownButton, Form} from "react-bootstr
 import {Link} from "react-router-dom";
 import videoNames from '../../dict/videoNames';
 import videoItems from '../../dict/videoItems';
+import {TiTick} from "react-icons/ti";
 
 import '../../scc/video.css';
 
@@ -335,6 +336,9 @@ class CardVertical extends Component {
             <Link to={`/english_react/video${item.url}`}>
                 <div className="card-vertical">
                     {/*<img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>*/}
+                    <span className='selected'>
+                        <TiTick className='selected'/>
+                    </span>
                     <img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>
                     <Row className="text-center">
                         <Col>
