@@ -241,13 +241,14 @@ export default class Learning extends Component {
     };
 
     rightClick = (rightTxt) => {
-        const {cycleLearning, exampleLearning} = this.state;
+        const {cycleLearning, exampleLearning, start, end} = this.state;
         rightClicked.call(this, rightTxt);
         if (this.englishArr.length === 0) {
-            let timeoutSec = 1;
+            let timeoutSec = .5;
             if (exampleLearning === 'word_4' || exampleLearning === 'phase_4') {
                 speak.call(this);
-                timeoutSec = 10;
+                const difference = +end - start;
+                timeoutSec = difference;
             }
             ;
             if (cycleLearning) {
@@ -427,6 +428,7 @@ export default class Learning extends Component {
 
     renderVideo() {
         const {fileName, start, end} = this.state;
+        const autoPlay = checkIsSound.call(this);
 
         if (
             !fileName || !start || !end
@@ -438,7 +440,7 @@ export default class Learning extends Component {
                 className="video-hide"
                 id='player'
                 src={src}
-                autoPlay={false}
+                autoPlay={autoPlay}
             />
         )
     }
