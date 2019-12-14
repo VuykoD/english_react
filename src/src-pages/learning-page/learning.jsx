@@ -155,6 +155,9 @@ export default class Learning extends Component {
         this.englishArr = [];
         this.learnArr = [];
         this.mistakesArr = [];
+        this.timeoutClearState = null;
+        this.timeoutNextItem = null;
+        this.timeoutResetExampleLearning = null;
     }
 
     componentDidMount() {
@@ -164,6 +167,12 @@ export default class Learning extends Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         focusInput();
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.timeoutClearState);
+        clearTimeout(this.timeoutNextItem);
+        clearTimeout(this.timeoutResetExampleLearning);
     }
 
     getLocalProgress = () => {
@@ -218,7 +227,8 @@ export default class Learning extends Component {
         }
         this.setState({exampleLearning: id, english, translation});
         if (id === 'word_5' || id === 'phase_5') {
-            setTimeout(this.resetExampleLearning, 10000);
+            clearTimeout(this.timeoutResetExampleLearning);
+            this.timeoutResetExampleLearning = setTimeout(this.resetExampleLearning, 10000);
         }
     };
 
@@ -234,7 +244,12 @@ export default class Learning extends Component {
         const {cycleLearning, exampleLearning} = this.state;
         rightClicked.call(this, rightTxt);
         if (this.englishArr.length === 0) {
-            if (exampleLearning === 'word_4' || exampleLearning === 'phase_4') speak.call(this);
+            let timeoutSec = 1;
+            if (exampleLearning === 'word_4' || exampleLearning === 'phase_4') {
+                speak.call(this);
+                timeoutSec = 10;
+            }
+            ;
             if (cycleLearning) {
                 let nextNumber = this.state.learnNumber + 1;
                 if (nextNumber >= this.learnArr.length) {
@@ -247,11 +262,13 @@ export default class Learning extends Component {
                         return;
                     }
                 }
-                this.setEngAndTransl(nextNumber);
+                clearTimeout(this.timeoutSetEngAndTransl);
+                this.timeoutSetEngAndTransl = setTimeout(() => this.setEngAndTransl(nextNumber), timeoutSec * 1000);
                 clearTranslation();
                 return;
             }
-            setTimeout(() => this.setState({exampleLearning: null, learnNumber: 0}), 1000)
+            clearTimeout(this.timeoutClearState);
+            this.timeoutClearState = setTimeout(() => this.setState({exampleLearning: null, learnNumber: 0}), 1000)
         }
     };
 
@@ -352,13 +369,15 @@ export default class Learning extends Component {
 
     nextItem = () => {
         if (this.state.learnNumber < this.learnArr.length - 1) {
-            setTimeout(() => {
+            clearTimeout(this.timeoutNextItem);
+            this.timeoutNextItem = setTimeout(() => {
                 const nextNumber = this.state.learnNumber + 1;
                 this.setEngAndTransl(nextNumber);
                 this.nextItem();
             }, 10000);
         } else {
-            setTimeout(() => {
+            clearTimeout(this.timeoutNextItem);
+            this.timeoutNextItem = setTimeout(() => {
                 this.setEngAndTransl(0, 'phase_1');
             }, 10000);
         }
@@ -412,14 +431,14 @@ export default class Learning extends Component {
         if (
             !fileName || !start || !end
         ) return;
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
                 id='player'
                 src={src}
-                autoPlay
+                autoPlay={false}
             />
         )
     }
@@ -730,7 +749,7 @@ export function getWordsArr() {
                             variant={variant}
                             key={index + word + d}
                             onClick={this.wordClick}
-                            className={className}
+                            className={`${className}`}
                             size="lg"
                             disabled={disabled}
                             name={word}
@@ -789,8 +808,8 @@ export function soundButton() {
                 title={pressButton}
                 onClick={this.speakTxt}
             >
-                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
-                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
+                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
+                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
             </Button>
         )
     }
@@ -921,11 +940,9 @@ export function getMistakesOrder() {
 }
 
 export function speak() {
-    console.log(11);
     const {english, entity, end, start} = this.state;
     if (entity === 'video' && end && start) return playVideo.call(this, start, end);
     if (entity === 'video' && (!start || !end)) return;
-    console.log(12);
     if (!this.filteredVoices || !this.filteredVoices.lenght) this.getVoices();
 
     const utterance = new SpeechSynthesisUtterance(english);
@@ -935,11 +952,11 @@ export function speak() {
     speechSynthesis.speak(utterance);
 }
 
-export function checkIsSound(text) {
+export function checkIsSound() {
     const {exampleLearning} = this.state;
     if (
         exampleLearning === 'word_1' || exampleLearning === 'word_2' || exampleLearning === 'word_3' ||
-        exampleLearning === 'word_4' || exampleLearning === 'phase_1' || exampleLearning === 'phase_2' ||
+        exampleLearning === 'word_5' || exampleLearning === 'phase_1' || exampleLearning === 'phase_2' ||
         exampleLearning === 'phase_3' || exampleLearning === 'phase_5'
     ) {
         return true;
@@ -950,6 +967,7 @@ export function checkIsSound(text) {
 
 export function wordClicked(e) {
     const elem = e.currentTarget;
+    if (elem) elem.blur();
     const currentTxt = get(elem, 'innerText');
     const rightTxt = get(this, 'englishArr[0]');
     if (currentTxt === rightTxt) {

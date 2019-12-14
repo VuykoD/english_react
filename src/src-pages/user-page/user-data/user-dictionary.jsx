@@ -76,7 +76,6 @@ export default class UserDictionary extends Component {
 
             if (item.entity === 'course') {
                 const index = findIndex(courseItems, {'id': item.entity_id});
-                console.log(index, item.entity_id);
                 lp[key].eng = get(courseItems, `[${index}].eng`);
                 lp[key].native = get(courseItems, `[${index}].transl`);
                 lp[key].courseId = get(courseItems, `[${index}].unitId`);
@@ -96,6 +95,7 @@ export default class UserDictionary extends Component {
     sort = () => {
         let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (!lP) return null;
+        lP=sortBy(lP, 'date');
 
         const filteredVideoNew = filter(lP, item => item.entity === "video" && +item.quantity === 0 );
         const filteredCourseNew = filter(lP, item => item.entity === "course" && +item.quantity === 0 );

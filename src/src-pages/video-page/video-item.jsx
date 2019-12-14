@@ -84,7 +84,7 @@ export default class VideoItem extends Component {
         let isItemSelected = false;
         for (let i = localProgress.length; i > 0; i--) {
             const index = get(localProgress, `[${i - 1}].entity`) === 'video' ?
-                findIndex(videoItemsArr, {'id': get(localProgress, `[${i - 1}].entity_id`)}) :
+                findIndex(videoItemsArr, {'id': String(get(localProgress, `[${i - 1}].entity_id`))}) :
                 -1;
             if (+get(videoItemsArr, `[${index}].idVideoName`) === +this.videoId) {
                 isItemSelected = true;
@@ -321,8 +321,8 @@ export default class VideoItem extends Component {
         if (this.videoIndex === -1) return null;
         const fileName = get(videoNames, `[${this.videoIndex}].fileName`);
         const songName = get(videoNames, `[${this.videoIndex}].songName`);
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         const hideTranslate = get(content, `hideTranslate[${siteLang}]`);
         const firstPhrase = get(content, `firstPhrase[${siteLang}]`);
         const thirdPhrase = get(content, `thirdPhrase[${siteLang}]`);

@@ -44,7 +44,7 @@ const videoNames = [
         songName: '"Level Up" - A Minecraft',
         imageName: 'levelUp.jpg',
         fileName: 'levelUp.mp4',
-        level: 'medium',
+        level: 'easy',
         type: 'cartoon',
         active: true,
         url: '/level-up'
@@ -138,6 +138,16 @@ const videoNames = [
         type: 'music',
         active: true,
         url: '/flyAway'
+    },
+    {
+        id: 15,
+        songName: 'Hozier - Take Me To Church',
+        imageName: 'hozierTakeMeToChurch.jpg',
+        fileName: 'hozierTakeMeToChurch.mp4',
+        level: 'easy',
+        type: 'music',
+        active: true,
+        url: '/hozierTakeMeToChurch'
     },
 ];
 export {videoNames as default};
