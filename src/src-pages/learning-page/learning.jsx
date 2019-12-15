@@ -188,11 +188,11 @@ export default class Learning extends Component {
                 if (isDateBegin(item.date)) this.newCount += 1;
                 this.newCountFrom += 1;
             }
-            if (+item.quantity === 1 || +item.quantity === 2) {
+            if (+item.quantity === 1 ) {
                 if (isDateBegin(item.date)) this.repeatCount += 1;
                 this.repeatCountFrom += 1;
             }
-            if (+item.quantity === 3) {
+            if (+item.quantity === 2) {
                 if (isDateBegin(item.date)) this.examCount += 1;
                 this.examCountFrom += 1;
             }
@@ -264,8 +264,10 @@ export default class Learning extends Component {
                     }
                 }
                 clearTimeout(this.timeoutSetEngAndTransl);
-                this.timeoutSetEngAndTransl = setTimeout(() => this.setEngAndTransl(nextNumber), timeoutSec * 1000);
-                clearTranslation();
+                this.timeoutSetEngAndTransl = setTimeout(() => {
+                    this.setEngAndTransl(nextNumber);
+                    clearTranslation();
+                }, timeoutSec * 1000);
                 return;
             }
             clearTimeout(this.timeoutClearState);
@@ -355,14 +357,14 @@ export default class Learning extends Component {
     };
 
     repeat = () => {
-        this.getLearnArray(this.state.repeatNumber, [1, 2]);//1,2 is count for new
+        this.getLearnArray(this.state.repeatNumber, 1);//1 is count for repeat
         if (!this.learnArr) return;
         this.setEngAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'repeat', exampleLearning: 'phase_2'});
     };
 
     exam = () => {
-        this.getLearnArray(this.state.examNumber, 3);//0 is count for exam
+        this.getLearnArray(this.state.examNumber, 2);//2 is count for exam
         if (!this.learnArr) return;
         this.setEngAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'exam', exampleLearning: 'phase_4'});
@@ -433,8 +435,8 @@ export default class Learning extends Component {
         if (
             !fileName || !start || !end
         ) return;
-        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        const src = `../../../video/${fileName}#t=${start},${end}`;
+        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        // const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -810,8 +812,8 @@ export function soundButton() {
                 title={pressButton}
                 onClick={this.speakTxt}
             >
-                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
-                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
+                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
+                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
             </Button>
         )
     }
@@ -906,6 +908,8 @@ export function getMistakesOrder() {
                 const isMistake = this.mistakesArr[key].mistakes > 2;
                 const newDateAndQuantity = getNewDate(quantity, isMistake);
                 const index = findIndex(localProgress, {'entity_id': entityId});
+                const index2 = findIndex(localProgress, {'entity_id': String(entityId)});
+                console.log(index, index2);
                 if (index > -1) {
                     localProgress[index].date = newDateAndQuantity.newDate;
                     localProgress[index].quantity = newDateAndQuantity.newQuantity;

@@ -84,10 +84,10 @@ export default class UserDictionary extends Component {
                 lp[key].level = get(courseUnits, `[${courseIndex}].level`);
             }
             if (+item.quantity === 0) lp[key].type = 'new';
-            if (+item.quantity === 1) lp[key].type = 'repeat 1';
-            if (+item.quantity === 2) lp[key].type = 'repeat 2';
-            if (+item.quantity === 3) lp[key].type = 'exam';
-            if (+item.quantity > 3) lp[key].type = 'learned';
+            if (+item.quantity === 1) lp[key].type = 'repeat';
+            // if (+item.quantity === 2) lp[key].type = 'repeat 2';
+            if (+item.quantity === 2) lp[key].type = 'exam';
+            if (+item.quantity > 2) lp[key].type = 'learned';
         });
         return lp;
     };
@@ -100,16 +100,20 @@ export default class UserDictionary extends Component {
         const filteredVideoNew = filter(lP, item => item.entity === "video" && +item.quantity === 0 );
         const filteredCourseNew = filter(lP, item => item.entity === "course" && +item.quantity === 0 );
 
-        const filteredVideoRepeat = filter(lP, item => item.entity === "video" && (+item.quantity === 1 || +item.quantity === 2));
-        const filteredCourseRepeat = filter(lP, item => item.entity === "course" && (+item.quantity === 1 || +item.quantity === 2));
+        const filteredVideoRepeat = filter(lP, item => item.entity === "video" && +item.quantity === 1 );
+        const filteredCourseRepeat = filter(lP, item => item.entity === "course" && +item.quantity === 1 );
 
-        const filteredVideoExam = filter(lP, item => item.entity === "video" && item.quantity === 3 );
-        const filteredCourseExam = filter(lP, item => item.entity === "course" && item.quantity === 3 );
+        const filteredVideoExam = filter(lP, item => item.entity === "video" && item.quantity === 2 );
+        const filteredCourseExam = filter(lP, item => item.entity === "course" && item.quantity === 2 );
+
+        const filteredLearned = filter(lP, item => item.quantity > 2 );
 
         this.lP=[];
         this.sortArr(filteredVideoNew, filteredCourseNew);
         this.sortArr(filteredVideoRepeat, filteredCourseRepeat);
         this.sortArr(filteredVideoExam, filteredCourseExam);
+
+        this.lP = [...this.lP, ...filteredLearned];
 
 
         map(this.lP, (it, key) => {
@@ -121,6 +125,7 @@ export default class UserDictionary extends Component {
             delete this.lP[key].courseId;
             delete this.lP[key].sourse;
             delete this.lP[key].type;
+            delete this.lP[key].level;
             this.lP[key].entity_id = +it.entity_id;
         });
 
