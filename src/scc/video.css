@@ -144,11 +144,14 @@
 }
 
 .selected {
-  background-color: darkgreen;
+  background-color: green;
   color: white;
   height: 32px;
   font-size: 22px;
   border-radius: 50%;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 .jello-diagonal-1 {animation:jello-diagonal-1 .8s both}
