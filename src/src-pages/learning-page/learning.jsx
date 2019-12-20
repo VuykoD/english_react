@@ -60,16 +60,16 @@ const content = {
         ukr: "Повторити по озвученому (нове)",
     },
     new: {
-        ru: "Новое",
-        ukr: "Нове",
+        ru: "1 Новое",
+        ukr: "1 Нове",
     },
     repeat: {
-        ru: "Повтор",
-        ukr: "Повтор",
+        ru: "2 Повтор",
+        ukr: "2 Повтор",
     },
     exam: {
-        ru: "Экзамен",
-        ukr: "Екзамен",
+        ru: "3 Экзамен",
+        ukr: "3 Екзамен",
     },
     words: {
         ru: "Слова и фразы",
@@ -100,12 +100,12 @@ const content = {
         ukr: "Повторіть скільки встигнете",
     },
     yesNo: {
-        ru: "Да/нет на слух",
-        ukr: "Так/ні на слух",
+        ru: "4 Да/нет на слух",
+        ukr: "4 Так/ні на слух",
     },
     randomExam: {
-        ru: "Рандомный экзамен",
-        ukr: "Рандомний екзамен",
+        ru: "5 Рандомный экзамен",
+        ukr: "5 Рандомний екзамен",
     },
     mistakesOrder: {
         ru: "Отчёт по ошибкам. Правильно: ",
@@ -435,8 +435,8 @@ export default class Learning extends Component {
         if (
             !fileName || !start || !end
         ) return;
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -812,8 +812,8 @@ export function soundButton() {
                 title={pressButton}
                 onClick={this.speakTxt}
             >
-                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
-                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
+                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
+                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
             </Button>
         )
     }
@@ -908,8 +908,6 @@ export function getMistakesOrder() {
                 const isMistake = this.mistakesArr[key].mistakes > 2;
                 const newDateAndQuantity = getNewDate(quantity, isMistake);
                 const index = findIndex(localProgress, {'entity_id': entityId});
-                const index2 = findIndex(localProgress, {'entity_id': String(entityId)});
-                console.log(index, index2);
                 if (index > -1) {
                     localProgress[index].date = newDateAndQuantity.newDate;
                     localProgress[index].quantity = newDateAndQuantity.newQuantity;
@@ -1062,6 +1060,9 @@ export function keyListener() {
         if (keyCode === 13 && exampleLearningState === 'mistakesOrder') this.resetCycle();
 
         if (keyCode === 32) this.speakTxt();
+        if (keyCode === 49 && !exampleLearningState && get(document, 'activeElement.tagName') !== 'INPUT') this.newLearn();
+        if (keyCode === 50 && !exampleLearningState && get(document, 'activeElement.tagName') !== 'INPUT') this.repeat();
+        if (keyCode === 51 && !exampleLearningState && get(document, 'activeElement.tagName') !== 'INPUT') this.exam();
 
     });
 };

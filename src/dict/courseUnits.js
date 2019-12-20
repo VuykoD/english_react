@@ -24,6 +24,18 @@ const courseUnits = [
         name: "Unit 4 - Present continuous and present simple 2 (I am doing and I do)",
     },
     {
+        id: 5,
+        courseId: 1,
+        url: "/murphy-one-unit-five",
+        name: "Unit 5 - Past simple (I did)",
+    },
+    {
+        id: 6,
+        courseId: 1,
+        url: "/murphy-one-unit-six",
+        name: "Unit 6 - Past continuous (I was doing)",
+    },
+    {
         id: 204,
         courseId: 2,
         url: "/m1unit4",

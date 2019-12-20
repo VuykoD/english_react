@@ -287,6 +287,7 @@ const videoItems = {
     2413:{"id":"2413","idVideoName":14,"start":"89.3","end":"91","eng":"Let your spirit fly","transl":"Позволь своему духу лететь,"},
     2414:{"id":"2414","idVideoName":14,"start":"91","end":"93.2","eng":"Where we are one","transl":" туда, где будем мы одни,"},
     2415:{"id":"2415","idVideoName":14,"start":"93.2","end":"96.1","eng":"Just for a little fun","transl":"Просто ради развлечения."},
+    //
     2500:{"id":"1","idVideoName":15,"start":"2","end":"5.5","eng":"My lover's got humour,","transl":"У моей любимой есть чувство юмора,"},
     2501:{"id":"2","idVideoName":15,"start":"5.5","end":"8.7","eng":"She's the giggle at a funeral,","transl":"Она, как смешок на похоронах "},
     2502:{"id":"3","idVideoName":15,"start":"8.7","end":"11.3","eng":"Knows everybody's disapproval,","transl":"Ей знакомо всеобщее неодобрение."},
@@ -325,7 +326,43 @@ const videoItems = {
     2535:{"id":"36","idVideoName":15,"start":"160","end":"167.7","eng":"There is no sweeter innocence than our gentle ,sin","transl":"Нет ничего невиннее нашего милого греха,"},
     2536:{"id":"37","idVideoName":15,"start":"167.7","end":"175","eng":"In the madness and soil of that sad earthly scene,","transl":"В безумии и грязи этой земной сцены "},
     2537:{"id":"38","idVideoName":15,"start":"175","end":"179","eng":"Only then I am human,","transl":"Только тогда я человек,"},
-    2538:{"id":"39","idVideoName":15,"start":"179","end":"183","eng":"Only then I am clean.","transl":"Только тогда я чист."}
+    2538:{"id":"39","idVideoName":15,"start":"179","end":"183","eng":"Only then I am clean.","transl":"Только тогда я чист."},
+    //
+    2601:{"id":"2601","idVideoName":16,"start":"54.1","end":"57.4","eng":"New blood joins this earth","transl":"Новая кровь пришла на землю"},
+    2602:{"id":"2602","idVideoName":16,"start":"57.4","end":"60.8","eng":"And quickly he's subdued","transl":"Он быстро подчинился."},
+    2603:{"id":"2603","idVideoName":16,"start":"60.8","end":"64","eng":"Through constant pain disgrace","transl":"Через постоянную боль и унижения"},
+    2604:{"id":"2604","idVideoName":16,"start":"64","end":"67.7","eng":"The young boy learns their rules","transl":"Молодой человек учит их правила."},
+    2605:{"id":"2605","idVideoName":16,"start":"67.7","end":"71","eng":"With time the child draws in","transl":"Со временем ребенок втянулся"},
+    2606:{"id":"2606","idVideoName":16,"start":"71","end":"74.4","eng":"This whipping boy done wrong","transl":"Этот избитый мальчик сделал ошибку."},
+    2607:{"id":"2607","idVideoName":16,"start":"74.4","end":"78","eng":"Deprived of all his thoughts","transl":"Лишенный всех своих мыслей,"},
+    2608:{"id":"2608","idVideoName":16,"start":"78","end":"82.9","eng":"The young man struggles on and on he's known","transl":"Молодой человек борется снова и снова, он знает,"},
+    2609:{"id":"2609","idVideoName":16,"start":"82.9","end":"86.5","eng":"Avow unto his own","transl":"Дал слово сам себе,"},
+    2610:{"id":"2610","idVideoName":16,"start":"86.5","end":"90","eng":"That never from this day","transl":"Что никогда с этого дня"},
+    2611:{"id":"2611","idVideoName":16,"start":"90","end":"95.5","eng":"His will they'll take away","transl":"Они не заберут его волю."},
+    2612:{"id":"2612","idVideoName":16,"start":"95.5","end":"98","eng":"What I've felt","transl":"Что я чувствовал,"},
+    2613:{"id":"2613","idVideoName":16,"start":"98","end":"99.8","eng":"What I've known","transl":"Что я знал,"},
+    2614:{"id":"2614","idVideoName":16,"start":"99.8","end":"103.3","eng":"Never shined through in what I've shown","transl":"Никогда не просвечивало сквозь то, что я показывал."},
+    2615:{"id":"2615","idVideoName":16,"start":"103.3","end":"105","eng":"Never be","transl":"Не быть,"},
+    2616:{"id":"2616","idVideoName":16,"start":"105","end":"107.2","eng":"Never see","transl":"Не видеть,"},
+    2617:{"id":"2617","idVideoName":16,"start":"107.2","end":"110.3","eng":"Won't see what might have been","transl":"Не увижу, что могло бы быть."},
+    2618:{"id":"2618","idVideoName":16,"start":"110.3","end":"111.7","eng":"What I've felt","transl":"Что я чувствовал,"},
+    2619:{"id":"2619","idVideoName":16,"start":"111.7","end":"114","eng":"What I've known","transl":" Что я знал,"},
+    2620:{"id":"2620","idVideoName":16,"start":"114","end":"117","eng":"Never shined through in what I've shown","transl":"Никогда не просвечивало сквозь то, что я показывал."},
+    2621:{"id":"2621","idVideoName":16,"start":"117","end":"118.5","eng":"Never free","transl":"Не свободный,"},
+    2622:{"id":"2622","idVideoName":16,"start":"118.5","end":"120","eng":"Never me","transl":" Не свой,"},
+    2623:{"id":"2623","idVideoName":16,"start":"120","end":"126","eng":"So I dub thee unforgiven","transl":"Так, я нарекаю тебя непрощенным."},
+    2624:{"id":"2624","idVideoName":16,"start":"129.7","end":"133","eng":"They dedicate their lives","transl":"Они посвятили свою жизнь"},
+    2625:{"id":"2625","idVideoName":16,"start":"133","end":"136.5","eng":"To running all of his","transl":"Тотальному контролю над ним."},
+    2626:{"id":"2626","idVideoName":16,"start":"136.5","end":"139.5","eng":"He tries to please them all","transl":"Он пытается угодить им всем,"},
+    2627:{"id":"2627","idVideoName":16,"start":"139.5","end":"143","eng":"This bitter man he is","transl":"Этот горький человек – он."},
+    2628:{"id":"2628","idVideoName":16,"start":"143","end":"146.5","eng":"Throughout his life the same","transl":"Уже очень долго его жизнь не меняется,"},
+    2629:{"id":"2629","idVideoName":16,"start":"146.5","end":"149.6","eng":"He's battled constantly","transl":"Он сражается не переставая,"},
+    2630:{"id":"2630","idVideoName":16,"start":"149.6","end":"153","eng":"This fight he cannot win","transl":"Он не может победить в этой борьбе."},
+    2631:{"id":"2631","idVideoName":16,"start":"153","end":"159","eng":"A tired man they see no longer cares","transl":"Уставший человек, которого они видят, ко всему безразличен."},
+    2632:{"id":"2632","idVideoName":16,"start":"159","end":"162","eng":"The old man then prepares","transl":"Старик готовится"},
+    2633:{"id":"2633","idVideoName":16,"start":"162","end":"165","eng":"To die regretfully","transl":"Умереть сокрушенным."},
+    2634:{"id":"2634","idVideoName":16,"start":"165.3","end":"172","eng":"That old man here is me","transl":"Этот человек – я."}
+//
 };
 //
 export {videoItems as default};
