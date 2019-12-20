@@ -93,6 +93,10 @@ button.title_sound {
     color: #5a6268;
 }
 
+.randomExam {
+    padding-top: 20px;
+}
+
 @keyframes move_eye {
     from {
         width: 1%;

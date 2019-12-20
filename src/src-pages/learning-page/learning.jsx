@@ -9,6 +9,7 @@ import {TiTick, TiTimes} from "react-icons/ti";
 import '../../scc/learning.css';
 import warn from '../../src-core/helper/warn/warn';
 import isDateBegin from '../../src-core/helper/dates/isDateBegin';
+import Timer from "../../src-core/components/timer/timer";
 import getNewDate from '../../src-core/helper/dates/getNewDate';
 import videoItems from '../../dict/videoItems';
 import FormControl from "react-bootstrap/FormControl";
@@ -123,6 +124,14 @@ const content = {
         ru: "Для повторения нажмите пробел",
         ukr: "Для повтору натисніть пробіл",
     },
+    addedPoint: {
+        ru: "приплюсуется",
+        ukr: "добавиться",
+    },
+    currentRecord: {
+        ru: "Текущий рекорд",
+        ukr: "Поточний рекорд",
+    },
 };
 
 export default class Learning extends Component {
@@ -150,7 +159,9 @@ export default class Learning extends Component {
             entity: null,
             start: null,
             end: null,
-            fileName: ''
+            fileName: '',
+            addedPoint: 1,
+            randomExamPoints: 0
         };
         this.englishArr = [];
         this.learnArr = [];
@@ -158,6 +169,8 @@ export default class Learning extends Component {
         this.timeoutClearState = null;
         this.timeoutNextItem = null;
         this.timeoutResetExampleLearning = null;
+        this.timeoutEndRandomExam = null;
+        this.learnedNumber = 3;
     }
 
     componentDidMount() {
@@ -173,6 +186,7 @@ export default class Learning extends Component {
         clearTimeout(this.timeoutClearState);
         clearTimeout(this.timeoutNextItem);
         clearTimeout(this.timeoutResetExampleLearning);
+        clearTimeout(this.timeoutEndRandomExam);
     }
 
     getLocalProgress = () => {
@@ -250,7 +264,7 @@ export default class Learning extends Component {
                 const difference = +end - start;
                 timeoutSec = difference;
             }
-            ;
+
             if (cycleLearning) {
                 let nextNumber = this.state.learnNumber + 1;
                 if (nextNumber >= this.learnArr.length) {
@@ -302,13 +316,14 @@ export default class Learning extends Component {
         if (quantity || quantity === 0) {
             const filteredArr = localProgress ?
                 filter(localProgress, item => {
-                    if (typeof (quantity) === 'number' && isDateBegin(item.date)) return +item.quantity === quantity;
-                    if (typeof (quantity) === 'object' && isDateBegin(item.date)) {
-                        return +item.quantity >= quantity[0] && +item.quantity <= quantity[1]
-                    }
+                    if (isDateBegin(item.date) && quantity < this.learnedNumber) return +item.quantity === quantity;
+                    if (quantity >= this.learnedNumber) {  return +item.quantity >= quantity; }
                 }) : null;
-
-            this.learnArr = filteredArr ? filteredArr.slice(0, sliceNumber) : null;
+            if (filteredArr){
+                this.learnArr = !sliceNumber ?
+                    filteredArr.sort(() => { return .5 - Math.random(); }) :
+                    filteredArr.slice(0, sliceNumber);
+            }
         } else {
             this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
         }
@@ -368,6 +383,28 @@ export default class Learning extends Component {
         if (!this.learnArr) return;
         this.setEngAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'exam', exampleLearning: 'phase_4'});
+    };
+
+    randomExam =() => {
+        this.getLearnArray(null, 3);//3 is count for learned
+        if (!this.learnArr) return;
+        this.setEngAndTransl(this.state.learnNumber);
+        this.setState({cycleLearning: 'randomExam', exampleLearning: 'phase_4'});
+        clearTimeout(this.timeoutClearState);
+        this.timeoutClearState = setTimeout(() => this.clearRandomExam(), 60000)
+    };
+
+    clearRandomExam = () => {
+        if (!localStorage.maxRandomExam || localStorage.maxRandomExam<this.state.randomExamPoints){
+            localStorage.maxRandomExam = this.state.randomExamPoints
+        }
+        this.setState({
+            exampleLearning: null,
+            learnNumber: 0,
+            cycleLearning: null,
+            addedPoint: 1,
+            randomExamPoints: 0
+        })
     };
 
     nextItem = () => {
@@ -503,6 +540,7 @@ export default class Learning extends Component {
         const forWords = get(content, `forWords[${siteLang}]`);
         const yesNo = get(content, `yesNo[${siteLang}]`);
         const randomExam = get(content, `randomExam[${siteLang}]`);
+        const currentRecord = get(content, `currentRecord[${siteLang}]`);
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
@@ -591,8 +629,8 @@ export default class Learning extends Component {
                             <Button
                                 variant="secondary"
                                 block
-                                onClick={this.warn}
-                                children={randomExam}
+                                onClick={this.randomExam}
+                                children={`${randomExam}. ${currentRecord} - ${localStorage.maxRandomExam || 0}`}
                             />
                         </Col>
                     </Row>
@@ -702,6 +740,7 @@ export default class Learning extends Component {
                             {getProgressBar.call(this)}
                             {getEngBadge.call(this)}
                             {getMistakesOrder.call(this)}
+                            {getRandomExam.call(this)}
                         </Col>
                     </Fragment>
                     }
@@ -717,17 +756,15 @@ export function getWordsArr() {
     let english = this.state.english || '';
     english = english.toLowerCase().replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "");
     let wordsArr = null;
-    const isWord = english.replace(/ /g, "") === english;
-    this.englishArr = isWord ? english.split('') : english.split(' ');
-
+    getEngArr.call(this, english);
     if (
         exampleLearning === 'phase_1' || exampleLearning === 'phase_2' ||
-        (exampleLearning === 'phase_3' && !isWord) ||
+        (exampleLearning === 'phase_3' && !this.isWord) ||
         exampleLearning === 'word_1' || exampleLearning === 'word_2'
     ) {
         const disabled = exampleLearning === 'phase_3' || exampleLearning === 'word_3';
         const variant = disabled ? 'light' : 'info';
-        const randArr = isWord ? english.split('') : english.split(' ');
+        const randArr = this.isWord ? english.split('') : english.split(' ');
         if (!disabled) {
             const randomCountFalseWord = Math.floor(Math.random() * 3);
             for (let i = randomCountFalseWord; i > 0; i--) {
@@ -768,14 +805,20 @@ export function getWordsArr() {
     return wordsArr
 }
 
+function getEngArr(english, isWord) {
+    this.isWord = english.replace(/ /g, "") === english;
+    if (this.english !== english.toLowerCase().replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "")) {
+        this.englishArr = isWord ? english.split('') : english.split(' ');
+    }
+    this.english = english.toLowerCase().replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "");;
+}
+
 export function getInput() {
     const {exampleLearning, english} = this.state;
     if (!english || !exampleLearning) return null;
 
     let input = null;
-    const isWord = english.replace(/ /g, "") === english;
-    this.englishArr = isWord ? english.split('') : english.split(' ');
-
+    getEngArr.call(this, english);
     if (
         exampleLearning === 'phase_3' || exampleLearning === 'phase_4' ||
         exampleLearning === 'word_3' || exampleLearning === 'word_4'
@@ -943,6 +986,27 @@ export function getMistakesOrder() {
     return mistakesOrder;
 }
 
+export function getRandomExam() {
+    const {cycleLearning, addedPoint, randomExamPoints } = this.state;
+    if (cycleLearning !== "randomExam") return null;
+    const {siteLang} = this.props.store;
+    const addedPointTxt = get(content, `addedPoint[${siteLang}]`);
+    const currentRecordTxt = get(content, `currentRecord[${siteLang}]`);
+    const currentRecord = localStorage.maxRandomExam || 0;
+
+    return (
+        <div className='randomExam'>
+            <Timer
+                time={60}
+                siteLang={siteLang}
+            />
+            <span children={`, ${addedPointTxt} - ${addedPoint}`}/>
+            <h4 children={randomExamPoints}/>
+            <span children={`${currentRecordTxt} - ${currentRecord}`}/>
+        </div>
+    );
+}
+
 export function speak() {
     const {english, entity, end, start} = this.state;
     if (entity === 'video' && end && start) return playVideo.call(this, start, end);
@@ -1003,6 +1067,13 @@ export function hideHint() {
 
 export function rightClicked(rightTxt) {
     this.englishArr.shift();
+    const {cycleLearning, addedPoint, randomExamPoints} = this.state;
+    if (cycleLearning === "randomExam") {
+        this.setState({
+            randomExamPoints: randomExamPoints + addedPoint,
+            addedPoint: addedPoint + 1
+        });
+    }
     const badge = document.getElementById('translation');
     if (badge) badge.innerText += ` ${rightTxt}`;
 }
@@ -1019,6 +1090,7 @@ export function changedInput() {
         if (rightButtons && rightButtons.length) rightButtons[0].style.display = 'none';
         formInput.value = '';
     } else {
+        if (this.state.cycleLearning === "randomExam") this.setState({addedPoint: 1});
         if (this.mistakesArr) {
             this.mistakesArr[this.state.learnNumber].mistakes += 1;
             showHint.call(this);
@@ -1063,6 +1135,8 @@ export function keyListener() {
         if (keyCode === 49 && !exampleLearningState && get(document, 'activeElement.tagName') !== 'INPUT') this.newLearn();
         if (keyCode === 50 && !exampleLearningState && get(document, 'activeElement.tagName') !== 'INPUT') this.repeat();
         if (keyCode === 51 && !exampleLearningState && get(document, 'activeElement.tagName') !== 'INPUT') this.exam();
+        // if (keyCode === 52 && !exampleLearningState && get(document, 'activeElement.tagName') !== 'INPUT') this.exam();
+        if (keyCode === 53 && !exampleLearningState && get(document, 'activeElement.tagName') !== 'INPUT') this.randomExam();
 
     });
-};
+}
