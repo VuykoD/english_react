@@ -141,7 +141,24 @@ const courseItems = [
     {"id": 429, "unitId": 5, "eng": "The window was open and a bird flew into the room.", "transl": "Окно было открыто, и в комнату влетела птица."},
     {"id": 430, "unitId": 5, "eng": "I was in a hurry, so I didn't have time to phone you", "transl": "Я спешил, поэтому у меня не было времени позвонить тебе"},
     //
-    {"id": 400, "unitId": 6, "eng": "", "transl": ""},
+    {"id": 500, "unitId": 6, "eng": "So, at 10.30 they were playing tennis. They were in the middle of playing, they had not finished", "transl": "Итак, в 10.30 они играли в теннис. Они были в середине игры, они еще не закончили"},
+    {"id": 501, "unitId": 6, "eng": "I was doing something, I was in the middle of doing it at a certain time.", "transl": "Я что-то делал, я занимался этим в определенное время."},
+    {"id": 502, "unitId": 6, "eng": "This time last year I was living in Hong Kong.", "transl": "На этот раз в прошлом году я жил в Гонконге."},
+    {"id": 503, "unitId": 6, "eng": "What were you doing at 10 o'clock last night?", "transl": "Что ты делал в 10 часов прошлой ночью?"},
+    {"id": 504, "unitId": 6, "eng": "I waved to Helen, but she wasn't looking.", "transl": "Я помахал Хелен, но она не вмдела."},
+    {"id": 505, "unitId": 6, "eng": "We were walking home when I met Dan.", "transl": "Мы шли домой, когда я встретил Дэна."},
+    {"id": 506, "unitId": 6, "eng": "Kate was watching TV when we arrived.", "transl": "Кейт смотрела телевизор, когда мы приехали."},
+    {"id": 507, "unitId": 6, "eng": "Matt phoned while we were having dinner.", "transl": "Мэтт позвонил, пока мы ужинали."},
+    {"id": 508, "unitId": 6, "eng": "It was raining when I got up", "transl": "Когда я встал, шел дождь"},
+    {"id": 509, "unitId": 6, "eng": "I saw you in the park yesterday. You were sitting on the grass and reading a book", "transl": "Я видел тебя в парке вчера. Вы сидели на траве и читали книгу"},
+    {"id": 510, "unitId": 6, "eng": "I hurt my back while I was working in the garden", "transl": "Я повредил спину, когда работал в саду"},
+    {"id": 511, "unitId": 6, "eng": "I was walking along the road when I saw Dan. So I stopped, and we talked for a while", "transl": "Я шел по дороге, когда увидел Дэна. Поэтому я остановился, и мы немного поговорили"},
+    {"id": 512, "unitId": 6, "eng": "When Karen arrived, we were having dinner", "transl": "Когда Карен приехала, мы ужинали"},
+    {"id": 513, "unitId": 6, "eng": "Some verbs are not normally used in continuous forms. For example, know and want", "transl": "Некоторые глаголы обычно не используются в continuous формах. Например, знать и хотеть"},
+    {"id": 514, "unitId": 6, "eng": "We were good friends. We knew each other well.", "transl": "Мы были хорошими друзьями. Мы хорошо знали друг друга."},
+    {"id": 515, "unitId": 6, "eng": "I was enjoying the party, but Chris wanted to go home.", "transl": "Я наслаждался вечеринкой, но Крис хотел пойти домой."},
+    {"id": 516, "unitId": 6, "eng": "Today Helen is wearing a skirt. Yesterday she was wearing trousers", "transl": "Сегодня Елена носит юбку. Вчера на ней были брюки"},
+    {"id": 517, "unitId": 6, "eng": "When I got to the cafe my friends were waiting for me.", "transl": "Когда я добрался до кафе, мои друзья ждали меня"},
 ];
 
 export {courseItems as default};
