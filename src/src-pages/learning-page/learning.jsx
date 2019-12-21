@@ -473,8 +473,8 @@ export default class Learning extends Component {
         if (
             !fileName || !start || !end
         ) return;
-        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        const src = `../../../video/${fileName}#t=${start},${end}`;
+        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        // const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
