@@ -1042,7 +1042,7 @@ export function wordClicked(e) {
     if (elem) elem.blur();
     const currentTxt = get(elem, 'innerText');
     const rightTxt = get(this, 'englishArr[0]');
-    if (currentTxt === rightTxt || currentTxt === rightTxt.toLowerCase()) {
+    if (currentTxt === rightTxt.toLowerCase().replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "")) {
         this.rightClick(rightTxt);
         if (elem) elem.style.display = 'none'
     } else {
