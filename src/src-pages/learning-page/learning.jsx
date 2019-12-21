@@ -18,6 +18,7 @@ import arrFalseWords from "../../dict/falseWords";
 import {getCurrentDate, playVideo} from "../video-page/video-item";
 import courseItems from "../../dict/courseItems";
 import courseNames from "../../dict/courseNames";
+import learnedCount from "../../src-core/helper/learnedCount/learnedCount";
 
 const content = {
     firstWord: {
@@ -510,6 +511,7 @@ export default class Learning extends Component {
             exampleLearning: null,
             cycleLearning: null
         });
+        this.props.onChangeLearnedCount(learnedCount());
     };
 
     render() {
@@ -1131,7 +1133,7 @@ export function keyListener() {
         //     this.rightClick(rightTxt);
         // }
 
-        if (keyCode === 13 && exampleLearningState === 'mistakesOrder') this.resetCycle();
+        if (keyCode === 13 && exampleLearningState === 'mistakesOrder') {this.resetCycle();}
 
         if (keyCode === 32) this.speakTxt();
         if (keyCode === 49 && !exampleLearningState && get(document, 'activeElement.tagName') !== 'INPUT') this.newLearn();

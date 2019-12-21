@@ -19,6 +19,7 @@ import {
 } from "../learning-page/learning";
 import videoItems from '../../dict/videoItems';
 import videoNames from '../../dict/videoNames';
+import learnedCount from "../../src-core/helper/learnedCount/learnedCount";
 
 export const content = {
     hideTranslate: {
@@ -86,7 +87,6 @@ export default class VideoItem extends Component {
             const index = get(localProgress, `[${i - 1}].entity`) === 'video' ?
                 findIndex(videoItemsArr, {'id': String(get(localProgress, `[${i - 1}].entity_id`))}) :
                 -1;
-            console.log()
             if (+get(videoItemsArr, `[${index}].idVideoName`) === +this.videoId) {
                 isItemSelected = true;
                 break;
@@ -246,6 +246,7 @@ export default class VideoItem extends Component {
             [...addedProgress];
         this.setState({isItemSelected: true});
         localStorage.progress = JSON.stringify(newProgress);
+        this.props.onChangeLearnedCount(learnedCount());
     };
 
     nextVideo = () => {
@@ -274,7 +275,6 @@ export default class VideoItem extends Component {
         playVideo.call(this, get(videoItems, `[${currentItem}].start`), get(videoItems, `[${currentItem}].end`));
         focusInput();
     };
-
 
     wordClick = (e) => {
         wordClicked.call(this, e);

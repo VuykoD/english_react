@@ -11,6 +11,7 @@ import '../../scc/course.css'
 import courseUnits from "../../dict/courseUnits";
 import courseItems from "../../dict/courseItems";
 import {content, getCurrentDate} from '../video-page/video-item'
+import learnedCount from "../../src-core/helper/learnedCount/learnedCount";
 
 
 export default class CourseItem extends Component {
@@ -21,6 +22,7 @@ export default class CourseItem extends Component {
         url = url.replace('/english_react/course', '');
         this.unitIndex = findIndex(courseUnits, {'url': url});
         this.unitId = get(courseUnits, `[${this.unitIndex}].id`);
+        this.unitName = get(courseUnits, `[${this.unitIndex}].name`);
         this.localItems = localStorage.course ? JSON.parse(localStorage.course) : [];
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
         let isItemSelected = false;
@@ -71,6 +73,7 @@ export default class CourseItem extends Component {
             [...addedProgress];
         this.setState({isItemSelected: true});
         localStorage.progress = JSON.stringify(newProgress);
+        this.props.onChangeLearnedCount(learnedCount());
     };
 
     save = (e) => {
@@ -158,8 +161,7 @@ export default class CourseItem extends Component {
                         <Row className="text-center learning">
                             <Col sm={2}/>
                             <Col sm={8}>
-                                <h1>Unit 1: Present continuous (I'm doing)</h1>
-
+                                <h1>{this.unitName}</h1>
                                 <Button
                                     variant={isItemSelected ? "success" : "primary"}
                                     onClick={this.select}

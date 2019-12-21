@@ -164,10 +164,10 @@ const videoNames = [
         songName: "No Doubt - Don't Speak",
         imageName: 'Dont Speak.jpg',
         fileName: 'Dont Speak.mp4',
-        level: 'hard',
+        level: 'easy',
         type: 'music',
         active: true,
-        url: '/Dont Speak'
+        url: '/dontSpeak'
     },
 ];
 export {videoNames as default};
