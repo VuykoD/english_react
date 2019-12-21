@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/english_react/static/css/main.2416988f.chunk.css",
-    "main.js": "/english_react/static/js/main.9ff83ee5.chunk.js",
-    "main.js.map": "/english_react/static/js/main.9ff83ee5.chunk.js.map",
+    "main.css": "/english_react/static/css/main.ce955d78.chunk.css",
+    "main.js": "/english_react/static/js/main.35b626a4.chunk.js",
+    "main.js.map": "/english_react/static/js/main.35b626a4.chunk.js.map",
     "runtime-main.js": "/english_react/static/js/runtime-main.cf643162.js",
     "runtime-main.js.map": "/english_react/static/js/runtime-main.cf643162.js.map",
-    "static/css/2.1b8295f7.chunk.css": "/english_react/static/css/2.1b8295f7.chunk.css",
-    "static/js/2.d558e82a.chunk.js": "/english_react/static/js/2.d558e82a.chunk.js",
-    "static/js/2.d558e82a.chunk.js.map": "/english_react/static/js/2.d558e82a.chunk.js.map",
+    "static/css/2.b6c4a9d9.chunk.css": "/english_react/static/css/2.b6c4a9d9.chunk.css",
+    "static/js/2.de951979.chunk.js": "/english_react/static/js/2.de951979.chunk.js",
+    "static/js/2.de951979.chunk.js.map": "/english_react/static/js/2.de951979.chunk.js.map",
     "index.html": "/english_react/index.html",
-    "precache-manifest.221c5f12d5f139618ebb20581b30bdfa.js": "/english_react/precache-manifest.221c5f12d5f139618ebb20581b30bdfa.js",
+    "precache-manifest.cced65dcb7ae1f93770228116ada1643.js": "/english_react/precache-manifest.cced65dcb7ae1f93770228116ada1643.js",
     "service-worker.js": "/english_react/service-worker.js",
-    "static/css/2.1b8295f7.chunk.css.map": "/english_react/static/css/2.1b8295f7.chunk.css.map",
-    "static/css/main.2416988f.chunk.css.map": "/english_react/static/css/main.2416988f.chunk.css.map",
+    "static/css/2.b6c4a9d9.chunk.css.map": "/english_react/static/css/2.b6c4a9d9.chunk.css.map",
+    "static/css/main.ce955d78.chunk.css.map": "/english_react/static/css/main.ce955d78.chunk.css.map",
     "static/media/home-page.css": "/english_react/static/media/bob-van-aubel-ray-bans.315a4544.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.cf643162.js",
-    "static/css/2.1b8295f7.chunk.css",
-    "static/js/2.d558e82a.chunk.js",
-    "static/css/main.2416988f.chunk.css",
-    "static/js/main.9ff83ee5.chunk.js"
+    "static/css/2.b6c4a9d9.chunk.css",
+    "static/js/2.de951979.chunk.js",
+    "static/css/main.ce955d78.chunk.css",
+    "static/js/main.35b626a4.chunk.js"
   ]
 }
