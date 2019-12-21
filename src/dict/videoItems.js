@@ -361,8 +361,28 @@ const videoItems = {
     2631:{"id":"2631","idVideoName":16,"start":"153","end":"159","eng":"A tired man they see no longer cares","transl":"Уставший человек, которого они видят, ко всему безразличен."},
     2632:{"id":"2632","idVideoName":16,"start":"159","end":"162","eng":"The old man then prepares","transl":"Старик готовится"},
     2633:{"id":"2633","idVideoName":16,"start":"162","end":"165","eng":"To die regretfully","transl":"Умереть сокрушенным."},
-    2634:{"id":"2634","idVideoName":16,"start":"165.3","end":"172","eng":"That old man here is me","transl":"Этот человек – я."}
+    2634:{"id":"2634","idVideoName":16,"start":"165.3","end":"172","eng":"That old man here is me","transl":"Этот человек – я."},
 //
+    2700:{"id":"1","idVideoName":17,"start":"36.5","end":"39.5","eng":"You and me","transl":"Ты и я,"},
+    2701:{"id":"2","idVideoName":17,"start":"39.5","end":"43.7","eng":"We used to be together","transl":"Раньше мы были вместе,"},
+    2702:{"id":"3","idVideoName":17,"start":"43.7","end":"49","eng":"Every day together always","transl":"Каждый день вместе, всегда."},
+    2703:{"id":"4","idVideoName":17,"start":"49","end":"52.7","eng":"I really feel","transl":"Я, правда, чувствую,"},
+    2704:{"id":"5","idVideoName":17,"start":"52.7","end":"55.8","eng":"I'm losing my best friend","transl":"Что теряю лучшего друга,"},
+    2705:{"id":"6","idVideoName":17,"start":"55.8","end":"57.7","eng":"I can't believe","transl":"И не верю,"},
+    2706:{"id":"7","idVideoName":17,"start":"57.7","end":"61.5","eng":"This could be the end","transl":"Что это может быть концом."},
+    2707:{"id":"8","idVideoName":17,"start":"61.5","end":"68","eng":"It looks as though you're letting go","transl":"Похоже на то, что ты меня отпускаешь,"},
+    2708:{"id":"9","idVideoName":17,"start":"68","end":"70.5","eng":"And if it's real,","transl":"Правда ли это?"},
+    2709:{"id":"10","idVideoName":17,"start":"70.5","end":"75","eng":"Well I don't want to know","transl":"Я не хочу знать."},
+    2710:{"id":"11","idVideoName":17,"start":"75","end":"76.6","eng":"Don't speak","transl":"Молчи"},
+    2711:{"id":"12","idVideoName":17,"start":"76.6","end":"79.9","eng":"I know just what you're saying","transl":"Я знаю, что ты хочешь сказать."},
+    2712:{"id":"13","idVideoName":17,"start":"79.9","end":"82.8","eng":"So please stop explaining","transl":"Пожалуйста, перестань объяснять,"},
+    2713:{"id":"14","idVideoName":17,"start":"82.8","end":"85.3","eng":"Don't tell me 'cause it hurts","transl":"Не говори мне ничего, ты делаешь мне больно."},
+    2714:{"id":"15","idVideoName":17,"start":"89","end":"92.7","eng":"I know what you're thinking","transl":"Я знаю, о чём ты думаешь,"},
+    2715:{"id":"16","idVideoName":17,"start":"92.7","end":"95.5","eng":"I don't need your reasons","transl":"И мне не нужны твои объяснения,"},
+    2716:{"id":"17","idVideoName":17,"start":"100","end":"102.5","eng":"Our memories","transl":"Наши воспоминания"},
+    2717:{"id":"18","idVideoName":17,"start":"102.5","end":"106","eng":"They can be inviting","transl":"Могут быть приятными,"},
+    2718:{"id":"19","idVideoName":17,"start":"106","end":"108.3","eng":"But some are altogether","transl":"Но некоторые из них"},
+    2719:{"id":"20","idVideoName":17,"start":"108.3","end":"112","eng":"Mighty frightening","transl":"Безумно страшные."}
 };
-//
+//[]
 export {videoItems as default};

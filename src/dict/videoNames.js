@@ -159,6 +159,16 @@ const videoNames = [
         active: true,
         url: '/metallicaTheUnforgiven'
     },
+    {
+        id: 17,
+        songName: "No Doubt - Don't Speak",
+        imageName: 'Dont Speak.jpg',
+        fileName: 'Dont Speak.mp4',
+        level: 'hard',
+        type: 'music',
+        active: true,
+        url: '/Dont Speak'
+    },
 ];
 export {videoNames as default};
 //
