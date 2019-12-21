@@ -473,8 +473,8 @@ export default class Learning extends Component {
         if (
             !fileName || !start || !end
         ) return;
-        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        const src = `../../../video/${fileName}#t=${start},${end}`;
+        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        // const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -857,8 +857,8 @@ export function soundButton() {
                 title={pressButton}
                 onClick={this.speakTxt}
             >
-                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
-                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
+                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
+                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
             </Button>
         )
     }
