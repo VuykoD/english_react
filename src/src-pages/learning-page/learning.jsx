@@ -109,8 +109,8 @@ const content = {
         ukr: "5 Рандомний екзамен",
     },
     mistakesOrder: {
-        ru: "Отчёт по ошибкам. Правильно: ",
-        ukr: "Звіт по помилкам. Правильно: ",
+        ru: "Отчёт по ошибкам. Правильно",
+        ukr: "Звіт по помилкам. Правильно",
     },
     mistakesDesc: {
         ru: "Предложение/слово считается правильным, если в нём допущено не более 2 ошибок",
@@ -472,8 +472,8 @@ export default class Learning extends Component {
         if (
             !fileName || !start || !end
         ) return;
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -855,8 +855,8 @@ export function soundButton() {
                 title={pressButton}
                 onClick={this.speakTxt}
             >
-                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
-                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
+                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
+                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
             </Button>
         )
     }
@@ -959,9 +959,11 @@ export function getMistakesOrder() {
         }
         localStorage.progress = JSON.stringify(localProgress);
         this.getLocalProgress();
+        const trueAnswerCount = filter(this.mistakesArr, item =>  item.mistakes < 3 );
+
         mistakesOrder = (
             <Fragment>
-                <h3 children={mistakesOrderTxt}/>
+                <h3 children={`${mistakesOrderTxt} - ${trueAnswerCount.length}/${this.mistakesArr.length}`}/>
                 {map(this.learnArr, (item, key) => {
                     const mistakesCount = get(this.mistakesArr, `[${key}].mistakes`);
                     const icon = mistakesCount > 2 ?
