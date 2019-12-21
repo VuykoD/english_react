@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import get from 'lodash/get';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
+import findIndex from 'lodash/findIndex';
 import {Col, Container, Row, Dropdown, DropdownButton, Form} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import videoNames from '../../dict/videoNames';
@@ -69,6 +70,14 @@ const content = {
 export default class Video extends Component {
     constructor(props) {
         super(props);
+
+        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        const videoItemsArr = Object.values(videoItems);
+        map(this.localProgress, (item, key) => {
+            const videoItemsIndex = findIndex(videoItemsArr, {'id': String(item.entity_id)});
+            const idVideoName = get(videoItemsArr, `[${videoItemsIndex}].idVideoName`);
+            this.localProgress[key].idVideoName = idVideoName;
+        });
 
         this.state = {
             level: 'anyLvl',
@@ -188,6 +197,9 @@ export default class Video extends Component {
                                     const filteredItems = filter(videoItems, videoItem => {
                                         return videoItem.idVideoName === item.id;
                                     });
+                                    const idVideoName = item.id;
+                                    const index = findIndex(this.localProgress, {'idVideoName': idVideoName});
+
                                     return (
                                         <Col className='new-video' key={key}>
                                             <CardHorizontal
@@ -196,6 +208,7 @@ export default class Video extends Component {
                                                 level={levelAndType.level}
                                                 type={levelAndType.type}
                                                 count={filteredItems.length}
+                                                selected={ index> -1}
                                             />
                                         </Col>
                                     )
@@ -299,6 +312,8 @@ export default class Video extends Component {
                                 const filteredItems = filter(videoItems, videoItem => {
                                     return videoItem.idVideoName === item.id;
                                 });
+                                const idVideoName = item.id;
+                                const index = findIndex(this.localProgress, {'idVideoName': idVideoName});
 
                                 return (
                                     <Col sm={3} className='new-video' key={key}>
@@ -308,6 +323,7 @@ export default class Video extends Component {
                                             level={levelAndType.level}
                                             type={levelAndType.type}
                                             count={filteredItems.length}
+                                            selected={ index> -1}
                                         />
                                     </Col>
                                 )
@@ -326,18 +342,21 @@ class CardVertical extends Component {
         videoCount: PropTypes.string,
         level: PropTypes.string,
         type: PropTypes.string,
-        count: PropTypes.number
+        count: PropTypes.number,
+        selected: PropTypes.bool
     };
 
     render() {
-        const {item = {}, videoCount, level, type, count} = this.props;
+        const {item = {}, videoCount, level, type, count, selected} = this.props;
 
         return (
             <Link to={`/english_react/video${item.url}`}>
                 <div className="card-vertical">
-                    <span className='selected'>
-                        <TiTick className='selected'/>
-                    </span>
+                    {selected &&
+                        <span className='selected'>
+                           <TiTick className='selected'/>
+                        </span>
+                    }
                     <img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>
                     {/*<img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>*/}
                     <Row className="text-center">
@@ -366,16 +385,22 @@ class CardHorizontal extends Component {
         videoCount: PropTypes.string,
         level: PropTypes.string,
         type: PropTypes.string,
-        count: PropTypes.number
+        count: PropTypes.number,
+        selected: PropTypes.bool
     };
 
     render() {
-        const {item = {}, videoCount, level, type, count} = this.props;
+        const {item = {}, videoCount, level, type, count, selected} = this.props;
 
         return (
             <Link to={`/english_react/video${item.url}`}>
                 <Col>
                     <Row className='new-video card-horizontal'>
+                        {selected &&
+                            <span className='selected-left'>
+                                <TiTick className='selected'/>
+                            </span>
+                        }
                         <Col>
                             <img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>
                             {/*<img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>*/}
