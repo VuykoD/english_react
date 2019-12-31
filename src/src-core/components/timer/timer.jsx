@@ -34,11 +34,9 @@ export default class Timer extends Component {
     };
 
     timer = () => {
-        this.setState({timeLeft: this.state.timeLeft-1})
-        if (this.state.timeLeft < 0) {
-            clearInterval(this.intervalTimer);
-            this.setState({timeLeft: this.props.time})
-        }
+        const { timeLeft } = this.state;
+        this.setState({timeLeft: timeLeft - 1});
+        if (timeLeft === 1) clearInterval(this.intervalTimer);
     };
 
     render() {
@@ -46,6 +44,6 @@ export default class Timer extends Component {
         const {siteLang} = this.props;
         const left = get(content, `left[${siteLang}]`);
 
-        return ( <span children={`${left} - ${timeLeft}`} /> );
+        return (<span children={`${left} - ${timeLeft}`}/>);
     }
 };

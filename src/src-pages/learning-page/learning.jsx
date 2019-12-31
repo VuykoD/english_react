@@ -188,6 +188,7 @@ export default class Learning extends Component {
         clearTimeout(this.timeoutNextItem);
         clearTimeout(this.timeoutResetExampleLearning);
         clearTimeout(this.timeoutEndRandomExam);
+        clearTimeout(this.timeoutClearState);
     }
 
     getLocalProgress = () => {
@@ -399,15 +400,16 @@ export default class Learning extends Component {
         if (!localStorage.maxRandomExam || localStorage.maxRandomExam<this.state.randomExamPoints){
             localStorage.maxRandomExam = this.state.randomExamPoints
         }
-        this.learnArr = this.learnArr.slice(0, this.state.learnNumber);
-        this.mistakesArr = this.mistakesArr.slice(0, this.state.learnNumber);
-        this.setState({
-            exampleLearning: 'mistakesOrder',
-            learnNumber: 0,
-            cycleLearning: null,
-            addedPoint: 1,
-            randomExamPoints: 0
-        })
+        this.learnArr = this.learnArr.slice(0, this.state.learnNumber+1);
+        this.mistakesArr = this.mistakesArr.slice(0, this.state.learnNumber+1);
+
+        // this.setState({
+        //     exampleLearning: 'mistakesOrder',
+        //     learnNumber: 0,
+        //     cycleLearning: null,
+        //     addedPoint: 1,
+        //     randomExamPoints: 0
+        // })
     };
 
     nextItem = () => {
@@ -475,8 +477,8 @@ export default class Learning extends Component {
         if (
             !fileName || !start || !end
         ) return;
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        // const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
+        const src = `../../../video/${fileName}#t=${start},${end}`;
         return (
             <video
                 className="video-hide"
@@ -511,7 +513,10 @@ export default class Learning extends Component {
             examCount: this.examCount,
             examCountFrom: this.examCountFrom,
             exampleLearning: null,
-            cycleLearning: null
+            cycleLearning: null,
+            learnNumber: 0,
+            addedPoint: 1,
+            randomExamPoints: 0
         });
         this.props.onChangeLearnedCount(learnedCount());
     };
@@ -859,8 +864,8 @@ export function soundButton() {
                 title={pressButton}
                 onClick={this.speakTxt}
             >
-                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
-                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
+                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
+                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
             </Button>
         )
     }

@@ -95,7 +95,7 @@ export default class UserDictionary extends Component {
     sort = () => {
         let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (!lP) return null;
-        lP=sortBy(lP, 'date');
+        lP = sortBy(lP, 'date');
 
         const filteredVideoNew = filter(lP, item => item.entity === "video" && +item.quantity === 0 );
         const filteredCourseNew = filter(lP, item => item.entity === "course" && +item.quantity === 0 );
