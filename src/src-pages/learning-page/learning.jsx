@@ -864,8 +864,8 @@ export function soundButton() {
                 title={pressButton}
                 onClick={this.speakTxt}
             >
-                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
-                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
+                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
+                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
             </Button>
         )
     }
