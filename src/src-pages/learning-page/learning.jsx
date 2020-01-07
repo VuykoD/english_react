@@ -188,6 +188,7 @@ export default class Learning extends Component {
         clearTimeout(this.timeoutNextItem);
         clearTimeout(this.timeoutResetExampleLearning);
         clearTimeout(this.timeoutEndRandomExam);
+        clearTimeout(this.timeoutClearState);
     }
 
     getLocalProgress = () => {
@@ -399,13 +400,16 @@ export default class Learning extends Component {
         if (!localStorage.maxRandomExam || localStorage.maxRandomExam<this.state.randomExamPoints){
             localStorage.maxRandomExam = this.state.randomExamPoints
         }
-        this.setState({
-            exampleLearning: null,
-            learnNumber: 0,
-            cycleLearning: null,
-            addedPoint: 1,
-            randomExamPoints: 0
-        })
+        this.learnArr = this.learnArr.slice(0, this.state.learnNumber+1);
+        this.mistakesArr = this.mistakesArr.slice(0, this.state.learnNumber+1);
+
+        // this.setState({
+        //     exampleLearning: 'mistakesOrder',
+        //     learnNumber: 0,
+        //     cycleLearning: null,
+        //     addedPoint: 1,
+        //     randomExamPoints: 0
+        // })
     };
 
     nextItem = () => {
@@ -509,7 +513,10 @@ export default class Learning extends Component {
             examCount: this.examCount,
             examCountFrom: this.examCountFrom,
             exampleLearning: null,
-            cycleLearning: null
+            cycleLearning: null,
+            learnNumber: 0,
+            addedPoint: 1,
+            randomExamPoints: 0
         });
         this.props.onChangeLearnedCount(learnedCount());
     };
@@ -756,7 +763,7 @@ export function getWordsArr() {
     const {exampleLearning} = this.state;
     if (!this.state.english || !exampleLearning) return null;
     let english = this.state.english || '';
-    english = english.toLowerCase().replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "");
+    english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "");
     let wordsArr = null;
     getEngArr.call(this, english);
     if (
@@ -785,7 +792,7 @@ export function getWordsArr() {
                     const d = Date.now();
                     let points = word;
                     if (disabled) {
-                        points = '(' + word.replace(/[a-z]/g, '.') + ')';
+                        points = '(' + word.replace(/[A-Za-z]/g, '.') + ')';
                     }
                     return (
                         <Button
@@ -809,10 +816,10 @@ export function getWordsArr() {
 
 function getEngArr(english, isWord) {
     this.isWord = english.replace(/ /g, "") === english;
-    if (this.english !== english.toLowerCase().replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "")) {
+    if (this.english !== english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "")) {
         this.englishArr = isWord ? english.split('') : english.split(' ');
     }
-    this.english = english.toLowerCase().replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "");;
+    this.english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "");;
 }
 
 export function getInput() {
@@ -857,8 +864,8 @@ export function soundButton() {
                 title={pressButton}
                 onClick={this.speakTxt}
             >
-                <img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>
-                {/*<img src="../../../images/Sound.png" className="title_sound" alt=''/>*/}
+                {/*<img src="../../../english_react/images/Sound.png" className="title_sound" alt=''/>*/}
+                <img src="../../../images/Sound.png" className="title_sound" alt=''/>
             </Button>
         )
     }
@@ -1042,7 +1049,7 @@ export function wordClicked(e) {
     if (elem) elem.blur();
     const currentTxt = get(elem, 'innerText');
     const rightTxt = get(this, 'englishArr[0]');
-    if (currentTxt === rightTxt.toLowerCase().replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "")) {
+    if (rightTxt && currentTxt === rightTxt.replace(/\./g, "")) {
         this.rightClick(rightTxt);
         if (elem) elem.style.display = 'none'
     } else {
@@ -1090,7 +1097,7 @@ export function changedInput() {
     const rightTxt = get(this, 'englishArr[0]');
     if (rightTxt && letterUp === rightTxt.substr(0, 1).toUpperCase()) {
         this.rightClick(rightTxt);
-        const rightButtons = document.getElementsByName(rightTxt);
+        const rightButtons = document.getElementsByName(rightTxt.replace(/\./g, ""));
         if (rightButtons && rightButtons.length) rightButtons[0].style.display = 'none';
         formInput.value = '';
     } else {
