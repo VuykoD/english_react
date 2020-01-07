@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/english_react/static/css/main.20e6df22.chunk.css",
-    "main.js": "/english_react/static/js/main.43c4ffb3.chunk.js",
-    "main.js.map": "/english_react/static/js/main.43c4ffb3.chunk.js.map",
+    "main.css": "/english_react/static/css/main.0a57d588.chunk.css",
+    "main.js": "/english_react/static/js/main.ec48b4fa.chunk.js",
+    "main.js.map": "/english_react/static/js/main.ec48b4fa.chunk.js.map",
     "runtime-main.js": "/english_react/static/js/runtime-main.cf643162.js",
     "runtime-main.js.map": "/english_react/static/js/runtime-main.cf643162.js.map",
     "static/css/2.b6c4a9d9.chunk.css": "/english_react/static/css/2.b6c4a9d9.chunk.css",
     "static/js/2.e8856c97.chunk.js": "/english_react/static/js/2.e8856c97.chunk.js",
     "static/js/2.e8856c97.chunk.js.map": "/english_react/static/js/2.e8856c97.chunk.js.map",
     "index.html": "/english_react/index.html",
-    "precache-manifest.32c4352fc6dd596745b56629c48acd70.js": "/english_react/precache-manifest.32c4352fc6dd596745b56629c48acd70.js",
+    "precache-manifest.6bca8e38bf1f22a31f010876ab568f82.js": "/english_react/precache-manifest.6bca8e38bf1f22a31f010876ab568f82.js",
     "service-worker.js": "/english_react/service-worker.js",
     "static/css/2.b6c4a9d9.chunk.css.map": "/english_react/static/css/2.b6c4a9d9.chunk.css.map",
-    "static/css/main.20e6df22.chunk.css.map": "/english_react/static/css/main.20e6df22.chunk.css.map",
+    "static/css/main.0a57d588.chunk.css.map": "/english_react/static/css/main.0a57d588.chunk.css.map",
     "static/media/home-page.css": "/english_react/static/media/bob-van-aubel-ray-bans.315a4544.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.cf643162.js",
     "static/css/2.b6c4a9d9.chunk.css",
     "static/js/2.e8856c97.chunk.js",
-    "static/css/main.20e6df22.chunk.css",
-    "static/js/main.43c4ffb3.chunk.js"
+    "static/css/main.0a57d588.chunk.css",
+    "static/js/main.ec48b4fa.chunk.js"
   ]
 }
