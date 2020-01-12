@@ -814,10 +814,10 @@ export function getWordsArr() {
     return wordsArr
 }
 
-function getEngArr(english, isWord) {
+function getEngArr(english) {
     this.isWord = english.replace(/ /g, "") === english;
     if (this.english !== english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "")) {
-        this.englishArr = isWord ? english.split('') : english.split(' ');
+        this.englishArr = this.isWord ? english.split('') : english.split(' ');
     }
     this.english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "");
 }
@@ -1053,7 +1053,7 @@ export function wordClicked(e) {
         this.rightClick(rightTxt);
         if (elem) elem.style.display = 'none'
     } else {
-        if (this.mistakesArr) {
+        if (get(this.mistakesArr, `[${this.state.learnNumber}].mistakes`)) {
             this.mistakesArr[this.state.learnNumber].mistakes += 1;
             showHint.call(this);
         }
