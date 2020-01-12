@@ -423,9 +423,9 @@ const videoItems = {
     2912:{"id":"2912","idVideoName":19,"start":"166","end":"170","eng":"And when the night is cloudy","transl":"И когда ночь пасмурная"},
     2913:{"id":"2913","idVideoName":19,"start":"170","end":"174","eng":"There is still a light that shines on me","transl":"Есть еще свет, который светит на меня"},
     2914:{"id":"2914","idVideoName":19,"start":"174","end":"179","eng":"Shine on until tomorrow, let it be","transl":"Сияй до завтра, пусть будет"},
-    2915:{"id":"2915","idVideoName":19,"start":"181","end":"185","eng":"I wake up to the sound of music,","transl":"Я просыпаюсь под звуки музыки,"}
+    2915:{"id":"2915","idVideoName":19,"start":"181","end":"185","eng":"I wake up to the sound of music,","transl":"Я просыпаюсь под звуки музыки,"},
 //
 
 };
-//[]
+//
 export {videoItems as default};

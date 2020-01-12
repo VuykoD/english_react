@@ -189,6 +189,17 @@ const videoNames = [
         active: true,
         url: '/letItBe'
     },
+    {
+        id: 20,
+        songName: "Yesterday",
+        imageName: 'Yesterday.jpg',
+        fileName: 'Yesterday.mp4',
+        level: 'easy',
+        type: 'music',
+        active: true,
+        url: '/yesterday'
+    },
+
 ];
 export {videoNames as default};
 //
