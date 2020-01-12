@@ -169,6 +169,16 @@ const videoNames = [
         active: true,
         url: '/dontSpeak'
     },
+    {
+        id: 18,
+        songName: "Alan Walker - Darkside",
+        imageName: 'DarkSide.jpg',
+        fileName: 'DarkSide.mp4',
+        level: 'medium',
+        type: 'music',
+        active: true,
+        url: '/darkside'
+    },
 ];
 export {videoNames as default};
 //

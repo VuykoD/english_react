@@ -382,7 +382,31 @@ const videoItems = {
     2716:{"id":"2716","idVideoName":17,"start":"100","end":"102.5","eng":"Our memories","transl":"Наши воспоминания"},
     2717:{"id":"2717","idVideoName":17,"start":"102.5","end":"106","eng":"They can be inviting","transl":"Могут быть приятными,"},
     2718:{"id":"2718","idVideoName":17,"start":"106","end":"108.3","eng":"But some are altogether","transl":"Но некоторые из них"},
-    2719:{"id":"2719","idVideoName":17,"start":"108.3","end":"112","eng":"Mighty frightening","transl":"Безумно страшные."}
+    2719:{"id":"2719","idVideoName":17,"start":"108.3","end":"112","eng":"Mighty frightening","transl":"Безумно страшные."},
+//
+    2800:{"id":"2800","idVideoName":18,"start":"13","end":"16.5","eng":"We're not in love","transl":" Мы не влюблены,"},
+    2801:{"id":"2801","idVideoName":18,"start":"16","end":"20","eng":"We share no stories","transl":"Мы не делимся историями."},
+    2802:{"id":"2802","idVideoName":18,"start":"19","end":"24","eng":"Just something in your eyes","transl":"Просто в твоих глазах есть что-то особенное."},
+    2803:{"id":"2803","idVideoName":18,"start":"25","end":"28","eng":"Don't be afraid","transl":" Не бойся,"},
+    2804:{"id":"2804","idVideoName":18,"start":"27.5","end":"31","eng":"The shadows know me","transl":" Тени знают меня."},
+    2805:{"id":"2805","idVideoName":18,"start":"30.5","end":"35","eng":"Let's leave the world behind","transl":" Давай забудем об этом мире."},
+    2806:{"id":"2806","idVideoName":18,"start":"35","end":"39.3","eng":"Take me through the night","transl":"Помоги мне пережить эту ночь."},
+    2807:{"id":"2807","idVideoName":18,"start":"38","end":"42.5","eng":"Fall into the dark side","transl":" Окунись в темноту."},
+    2808:{"id":"2808","idVideoName":18,"start":"42","end":"44.2","eng":"We don't need the light","transl":"Нам не нужен свет."},
+    2809:{"id":"2809","idVideoName":18,"start":"44","end":"48.2","eng":"We'll live on the dark side","transl":" Мы будем жить на тёмной стороне."},
+    2810:{"id":"2810","idVideoName":18,"start":"47.7","end":"50.5","eng":"I see it, let's feel it","transl":" Я это вижу, давай ощутим это,"},
+    2811:{"id":"2811","idVideoName":18,"start":"50","end":"52.9","eng":"While we're still young and fearless","transl":" Пока мы ещё молоды и бесстрашны."},
+    2812:{"id":"2812","idVideoName":18,"start":"53","end":"55.6","eng":"Let go of the light","transl":"Забудь о свете."},
+    2813:{"id":"2813","idVideoName":18,"start":"66","end":"71.7","eng":"Give into the dark side","transl":" Поддайся тёмной стороне."},
+    2814:{"id":"2814","idVideoName":18,"start":"81.5","end":"84","eng":"Beneath the sky","transl":"Под небесами,"},
+    2815:{"id":"2815","idVideoName":18,"start":"83.8","end":"87.7","eng":"As black as diamonds","transl":"Такие же чёрные, как бриллианты,"},
+    2816:{"id":"2816","idVideoName":18,"start":"87","end":"91","eng":"We're running out of time","transl":"И у нас мало времени."},
+    2817:{"id":"2817","idVideoName":18,"start":"93","end":"98.5","eng":"Don't wait for truth to come and blind us","transl":" Не жди, когда правда Всплывёт наружу и ослепит нас."},
+    2818:{"id":"2818","idVideoName":18,"start":"98.2","end":"103","eng":"Let's just believe their lies","transl":" Давай просто будем верить в их ложь."},
+    2819:{"id":"2819","idVideoName":18,"start":"103","end":"107.6","eng":"Believe it, I see it","transl":" Поверь в это, я это вижу."},
+    2820:{"id":"2820","idVideoName":18,"start":"107","end":"109.7","eng":"I know that you can feel it","transl":" Я знаю, ты можешь это почувствовать."},
+    2821:{"id":"2821","idVideoName":18,"start":"109","end":"113.45","eng":"No secrets worth keeping","transl":"Не стоит хранить секреты."},
+    2822:{"id":"2822","idVideoName":18,"start":"112.35","end":"115.15","eng":"So fool me like I'm dreaming","transl":" Так что заморочь мне голову, как будто я во сне."}
 };
 //[]
 export {videoItems as default};
