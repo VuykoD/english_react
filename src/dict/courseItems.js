@@ -160,7 +160,7 @@ const courseItems = [
     {"id": 516, "unitId": 6, "eng": "Today Helen is wearing a skirt. Yesterday she was wearing trousers", "transl": "Сегодня Елена носит юбку. Вчера на ней были брюки"},
     {"id": 517, "unitId": 6, "eng": "When I got to the cafe my friends were waiting for me.", "transl": "Когда я добрался до кафе, мои друзья ждали меня"},
 //
-    {"id": 600, "unitId": 7, "eng": "He’s lost his key. He lost it and he doesn’t have it now", "transl": "Он потерял свой ключ. Он потерял это, и у него нет его сейчас"},
+    {"id": 600, "unitId": 7, "eng": "He’s lost his key. He lost it and he doesn’t have it now", "transl": "Он потерял свой ключ. Он потерял их, и у него нет их сейчас"},
     {"id": 601, "unitId": 7, "eng": "The road is closed. There’s been an accident.", "transl": "Дорога закрыта. Там был несчастный случай."},
     {"id": 602, "unitId": 7, "eng": "Police have arrested two men in connection with the robbery", "transl": "Полиция арестовала двух мужчин в связи с ограблением"},
     {"id": 603, "unitId": 7, "eng": "When we use the present perfect, there is a connection with now. The action in the past has a result now", "transl": "Когда мы используем present perfect, есть связь с сейчас. Действие в прошлом имеет результат сейчас"},
@@ -168,7 +168,7 @@ const courseItems = [
     {"id": 605, "unitId": 7, "eng": "He told me his name, but I’ve forgotten it. I can’t remember it now", "transl": "Он сказал мне свое имя, но я забыл его. Я не могу вспомнить это сейчас"},
     {"id": 606, "unitId": 7, "eng": "Sally is still here. She hasn’t gone out. She is here now", "transl": "Салли все еще здесь. Она не вышла. Она сейчас здесь"},
     {"id": 607, "unitId": 7, "eng": "I can’t find my bag. Have you seen it? Do you know where it is now?", "transl": "Я не могу найти свою сумку. Вы видели это? Ты знаешь где это сейчас?"},
-    {"id": 608, "unitId": 7, "eng": "You can use the present perfect with just, already and yet.", "transl": "Вы можете использовать настоящее совершенное с просто, уже и пока."},
+    {"id": 608, "unitId": 7, "eng": "You can use the present perfect with just, already and yet.", "transl": "Вы можете использовать present perfect с просто, уже и пока."},
     {"id": 609, "unitId": 7, "eng": "Are you hungry? No, I’ve just had lunch.", "transl": "Вы голодны? Нет, я только что пообедал."},
     {"id": 610, "unitId": 7, "eng": "Don’t forget to pay the bill. I’ve already paid it.", "transl": "Не забудьте оплатить счет. Я уже заплатил."},
     {"id": 611, "unitId": 7, "eng": "I’ve written the email, but I haven’t sent it yet", "transl": "Я написал письмо, но еще не отправил"},
@@ -198,6 +198,23 @@ const courseItems = [
     {"id": 718, "unitId": 8, "eng": "It’s the third time he’s phoned her this evening", "transl": "Это третий раз, когда он звонил ей сегодня вечером"},
     {"id": 719, "unitId": 8, "eng": "Have you ever ridden a horse?", "transl": "Вы когда-нибудь ездили на лошади?"},
     {"id": 720, "unitId": 8, "eng": "I haven’t used a computer today.", "transl": "Я сегодня не пользовался компьютером."},
+//
+    {"id": 801, "unitId": 9, "eng": "We use the present perfect continuous for an activity that has recently stopped or just stopped", "transl": "Мы используем present perfect continuous для деятельности, которая недавно остановилась или просто остановилась"},
+    {"id": 802, "unitId": 9, "eng": "You can use the present perfect continuous for repeated actions", "transl": "Вы можете использовать present perfect continuous для повторяющихся действий"},
+    {"id": 803, "unitId": 9, "eng": "Why are you out of breath? Have you been running?", "transl": "Почему ты задыхался? Ты бегал?"},
+    {"id": 804, "unitId": 9, "eng": "Paul is very tired. He’s been working hard", "transl": "Пол очень устал. Он много работал"},
+    {"id": 805, "unitId": 9, "eng": "Why are you so tired? What have you been doing? ", "transl": "Почему ты так устал? Что ты делаешь?"},
+    {"id": 806, "unitId": 9, "eng": "I’ve been talking to Amanda and she agrees with me.", "transl": "Я разговаривал с Амандой, и она соглашается со мной."},
+    {"id": 807, "unitId": 9, "eng": "Where have you been? I’ve been looking for you.", "transl": "Где ты была? Я искал тебя."},
+    {"id": 808, "unitId": 9, "eng": "It began raining two hours ago and it is still raining.", "transl": "Шел дождь два часа назад, и все еще идет дождь."},
+    {"id": 809, "unitId": 9, "eng": "He’s been watching TV all day", "transl": "Он смотрел телевизор весь день"},
+    {"id": 810, "unitId": 9, "eng": "I’ve been looking for you for the last half hour.", "transl": "Я искал тебя последние полчаса."},
+    {"id": 811, "unitId": 9, "eng": "How long have you been learning English?", "transl": "Как долго ты изучаешь английский?"},
+    {"id": 812, "unitId": 9, "eng": "She’s been playing since she was eight", "transl": "Она играет с восьми лет"},
+    {"id": 813, "unitId": 9, "eng": "Compare I am doing and I have been doing", "transl": "Сравните я делаю и я делал"},
+    {"id": 814, "unitId": 9, "eng": "Hurry up! We’re waiting. We’ve been waiting for an hour", "transl": "Поторопись! Мы ждем. Мы ждали час"},
+    {"id": 815, "unitId": 9, "eng": "We need an umbrella. It’s raining. The ground is wet. It’s been raining.", "transl": "Нам нужен зонт. Идет дождь. Земля влажная. Шел дождь."},
+    {"id": 816, "unitId": 9, "eng": "Don’t disturb me now. I’m working. I’ve been working hard.", "transl": "Не мешай мне сейчас. Я работаю. Я много работал."},
 ];
 
 export {courseItems as default};

@@ -179,6 +179,16 @@ const videoNames = [
         active: true,
         url: '/darkside'
     },
+    {
+        id: 19,
+        songName: "Let It Be - The Beatles",
+        imageName: 'letItBe.jpg',
+        fileName: 'letItBe.mp4',
+        level: 'medium',
+        type: 'music',
+        active: true,
+        url: '/letItBe'
+    },
 ];
 export {videoNames as default};
 //
