@@ -433,7 +433,7 @@ export default class Learning extends Component {
         const entityId = get(this.learnArr, `${learnNumber}.entity_id`);
         const courseId = get(this.learnArr, `${learnNumber}.courseId`);
         let english = get(this.learnArr, `${learnNumber}.eng`, '');
-        english = english.replace(/^\s*/, '').replace(/\s*$/, '');
+        english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\s+/g, ' ').trim();
         const translation = get(this.learnArr, `${learnNumber}.transl`);
         const start = get(videoItems, `[${entityId}].start`);
         const end = get(videoItems, `[${entityId}].end`);
@@ -819,7 +819,7 @@ function getEngArr(english, isWord) {
     if (this.english !== english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "")) {
         this.englishArr = isWord ? english.split('') : english.split(' ');
     }
-    this.english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "");;
+    this.english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\./g, "");
 }
 
 export function getInput() {
