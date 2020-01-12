@@ -36,6 +36,18 @@ const courseUnits = [
         name: "Unit 6 - Past continuous (I was doing)",
     },
     {
+        id: 7,
+        courseId: 1,
+        url: "/murphy-one-unit-seven",
+        name: "Unit 7 - Present perfect 1 (I have done)",
+    },
+    {
+        id: 8,
+        courseId: 1,
+        url: "/murphy-one-unit-eight",
+        name: "Unit 8 - Present perfect 2 (I have done)",
+    },
+    {
         id: 204,
         courseId: 2,
         url: "/m1unit4",
