@@ -179,6 +179,16 @@ const videoNames = [
         active: true,
         url: '/darkside'
     },
+    {
+        id: 20,
+        songName: "Yesturday",
+        imageName: 'Yesturday.jpg',
+        fileName: 'Yesturday.mp4',
+        level: 'easy',
+        type: 'music',
+        active: true,
+        url: '/yesturday'
+    },
 ];
 export {videoNames as default};
 //

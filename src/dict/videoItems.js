@@ -407,6 +407,21 @@ const videoItems = {
     2820:{"id":"2820","idVideoName":18,"start":"107","end":"109.7","eng":"I know that you can feel it","transl":" Я знаю, ты можешь это почувствовать."},
     2821:{"id":"2821","idVideoName":18,"start":"109","end":"113.45","eng":"No secrets worth keeping","transl":"Не стоит хранить секреты."},
     2822:{"id":"2822","idVideoName":18,"start":"112.35","end":"115.15","eng":"So fool me like I'm dreaming","transl":" Так что заморочь мне голову, как будто я во сне."}
+//
+    3000:{"id":"3000","idVideoName":20,"start":"05","end":"06.7","eng":"Yesterday,","transl":"Вчера,"},
+    3001:{"id":"3001","idVideoName":20,"start":"06.7","end":"12.3","eng":"All my troubles seemed so far away","transl":"Все мои проблемы казались такими далёкими"},
+    3002:{"id":"3002","idVideoName":20,"start":"12.5","end":"17","eng":"Now it looks as though they're here to stay","transl":"А теперь кажется, что они со мной навсегда"},
+    3003:{"id":"3003","idVideoName":20,"start":"17.4","end":"22.8","eng":"Oh, I believe in yesterday","transl":"О, я так верю в то, что было вчера"},
+    3004:{"id":"3004","idVideoName":20,"start":"22.8","end":"25","eng":"Suddenly,","transl":"Вдруг,"},
+    3005:{"id":"3005","idVideoName":20,"start":"25.5","end":"31","eng":"I'm not half the man I used to be","transl":"Я не наполовину такой как был"},
+    3006:{"id":"3006","idVideoName":20,"start":"31","end":"35","eng":"There's a shadow hanging over me","transl":"туча зависла надо мной"},
+    3007:{"id":"3007","idVideoName":20,"start":"35.2","end":"40.7","eng":"Oh, yesterday came suddenly","transl":"ох, вчера пришло внезапно"},
+    3008:{"id":"3008","idVideoName":20,"start":"40.4","end":"46.8","eng":"Why she had to go I don't know,","transl":"почему она ушла, я не знаю"},
+    3019:{"id":"3009","idVideoName":20,"start":"46.8","end":"50.6","eng":"She wouldn't say","transl":"Она бы не сказала"},
+    3010:{"id":"3010","idVideoName":20,"start":"50.6","end":"55.4","eng":"I said something wrong,","transl":"Я сказал что-то не так,"},
+    3011:{"id":"3011","idVideoName":20,"start":"55.4","end":"61","eng":"Now I long for yesterday","transl":"теперь я тоскую по вчерашнему дню"},
+    3012:{"id":"3012","idVideoName":20,"start":"63","end":"69","eng":"Love was such an easy game to play","transl":"Любовь казалась легкой игрой"},
+    3013:{"id":"3013","idVideoName":20,"start":"69","end":"73","eng":"Now I need a place to hide away","transl":"Теперь мне нужно место чтобы спрятаться"}]
 };
-//[]
+//[
 export {videoItems as default};
