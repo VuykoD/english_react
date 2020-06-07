@@ -199,6 +199,26 @@ const videoNames = [
         active: true,
         url: '/yesterday'
     },
+    {
+        id: 21,
+        songName: "Nirvana - The Man Who Sold The World",
+        imageName: 'NirvanaTheManWhoSoldTheWorld.jpg',
+        fileName: 'NirvanaTheManWhoSoldTheWorld.mp4',
+        level: 'medium',
+        type: 'music',
+        active: true,
+        url: '/Nirvana - The Man Who Sold The World'
+    },
+    // {
+    //     id: 22,
+    //     songName: "Imagine - John Lennon & The Plastic Ono Band",
+    //     imageName: 'ImaginejohnLennonThePlasticOnoBand.jpg',
+    //     fileName: 'ImaginejohnLennonThePlasticOnoBand.mp4',
+    //     level: 'easy',
+    //     type: 'music',
+    //     active: true,
+    //     url: '/Imagine - John Lennon & The Plastic Ono Band'
+    // },
 
 ];
 export {videoNames as default};

@@ -154,8 +154,8 @@ export default class CourseItem extends Component {
             <Container>
                 <Row>
                     <Col sm={1}>
-                        <div><img src="../../../english_react/images/paint.png" alt="" className="paint-left"/></div>
-                        {/*<div><img src="../../../images/paint.png" alt="" className="paint-left"/></div>*/}
+                        {/*<div><img src="../../../english_react/images/paint.png" alt="" className="paint-left"/></div>*/}
+                        <div><img src="../../../images/paint.png" alt="" className="paint-left"/></div>
                     </Col>
                     <Col sm="10">
                         <Row className="text-center learning">
@@ -251,8 +251,8 @@ export default class CourseItem extends Component {
                         </ListGroup>
                     </Col>
                     <Col sm={1}>
-                        <div><img src="../../../english_react/images/paint.png" alt="" className="paint-right"/></div>
-                        {/*<div><img src="../../../images/paint.png" alt="" className="paint-right"/></div>*/}
+                        {/*<div><img src="../../../english_react/images/paint.png" alt="" className="paint-right"/></div>*/}
+                        <div><img src="../../../images/paint.png" alt="" className="paint-right"/></div>
                     </Col>
                 </Row>
             </Container>

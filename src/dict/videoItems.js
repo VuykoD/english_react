@@ -439,6 +439,28 @@ const videoItems = {
     3011:{"id":"3011","idVideoName":20,"start":"55.4","end":"61","eng":"Now I long for yesterday","transl":"теперь я тоскую по вчерашнему дню"},
     3012:{"id":"3012","idVideoName":20,"start":"63","end":"69","eng":"Love was such an easy game to play","transl":"Любовь казалась легкой игрой"},
     3013:{"id":"3013","idVideoName":20,"start":"69","end":"73","eng":"Now I need a place to hide away","transl":"Теперь мне нужно место чтобы спрятаться"},
+//
+    3100:{"id":"3100","idVideoName":21,"start":"15","end":"20","eng":"We passed upon the stair","transl":"Мы шли по лестнице,"},
+    3101:{"id":"3101","idVideoName":21,"start":"20","end":"24","eng":"We spoke of was and when","transl":"Разговаривая о разных событиях,"},
+    3102:{"id":"3102","idVideoName":21,"start":"24","end":"28","eng":"Although I wasn't there","transl":"Хотя меня там и не было..."},
+    3103:{"id":"3103","idVideoName":21,"start":"28","end":"32","eng":"He said I was his friend","transl":"Он сказал, что я был его другом,"},
+    3104:{"id":"3104","idVideoName":21,"start":"32","end":"37","eng":"Which came as a surprise","transl":"Что удивило меня."},
+    3105:{"id":"3105","idVideoName":21,"start":"37","end":"40.3","eng":"I spoke into his eyes","transl":"Я ответил ему прямо в глаза,"},
+    3106:{"id":"3106","idVideoName":21,"start":"40.3","end":"44","eng":"I thought you died alone","transl":"Что думал, что он умер в одиночестве"},
+    3107:{"id":"3107","idVideoName":21,"start":"50","end":"55","eng":"Oh no, not me","transl":"О нет, не я!"},
+    3108:{"id":"3108","idVideoName":21,"start":"55","end":"58","eng":"We never lost control","transl":"Мы никогда не теряли самообладание."},
+    3109:{"id":"3109","idVideoName":21,"start":"58","end":"63","eng":"You're face to face","transl":"Ты — лицом к лицу"},
+    3110:{"id":"3110","idVideoName":21,"start":"63","end":"68","eng":"With the man who sold the world","transl":"С человеком, продавшим мир..."},
+    3111:{"id":"3111","idVideoName":21,"start":"80","end":"84.5","eng":"I laughed and shook his hand","transl":"Смеясь, я пожал его руку"},
+    3112:{"id":"3112","idVideoName":21,"start":"84.5","end":"88","eng":"And made my way back home","transl":"И пошёл домой."},
+    3113:{"id":"3113","idVideoName":21,"start":"88","end":"93","eng":"I searched for form and land","transl":"Я хотел найти себя,"},
+    3114:{"id":"3114","idVideoName":21,"start":"93","end":"97","eng":"For years and years I roamed","transl":"В течение многих лет я бродил"},
+    3115:{"id":"3115","idVideoName":21,"start":"97","end":"101","eng":"I gazed a gazeless stare","transl":"И смотрел невидящим взором"},
+    3116:{"id":"3116","idVideoName":21,"start":"101","end":"104.5","eng":"At all the millions here","transl":"На все эти миллионы..."},
+    3117:{"id":"3117","idVideoName":21,"start":"104.5","end":"108.9","eng":"I must have died alone","transl":"Должно быть, я умер в одиночестве"},
+    3118:{"id":"3118","idVideoName":21,"start":"108.9","end":"113","eng":"A long, long time ago","transl":"Уже очень давно..."},
+    3119:{"id":"3119","idVideoName":21,"start":"114","end":"117","eng":"Who knows?","transl":"Кто знает?"},
+    3120:{"id":"3120","idVideoName":21,"start":"117","end":"119","eng":"Not me","transl":"Не я."},
 };
 //
 export {videoItems as default};
