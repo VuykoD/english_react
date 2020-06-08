@@ -209,6 +209,16 @@ const videoNames = [
         active: true,
         url: '/Nirvana - The Man Who Sold The World'
     },
+    {
+        id: 22,
+        songName: "Oasis - Wonderwall",
+        imageName: 'OasisWonderwall.jpg',
+        fileName: 'OasisWonderwall.mp4',
+        level: 'medium',
+        type: 'music',
+        active: true,
+        url: '/Oasis - Wonderwall'
+    },
     // {
     //     id: 22,
     //     songName: "Imagine - John Lennon & The Plastic Ono Band",

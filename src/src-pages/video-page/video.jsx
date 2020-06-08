@@ -357,8 +357,8 @@ class CardVertical extends Component {
                            <TiTick className='selected'/>
                         </span>
                     }
-                    <img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>
-                    {/*<img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>*/}
+                    {/*<img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>*/}
+                    <img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>
                     <Row className="text-center">
                         <Col>
                             <span className="type">{type}</span>
@@ -367,8 +367,8 @@ class CardVertical extends Component {
                     </Row>
                     <Row className="text-center">
                         <Col>
-                            <img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>
-                            {/*<img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>*/}
+                            {/*<img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>*/}
+                            <img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>
                             <span>{videoCount}:{count}</span>
                         </Col>
                     </Row>
@@ -402,8 +402,8 @@ class CardHorizontal extends Component {
                             </span>
                         }
                         <Col>
-                            <img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>
-                            {/*<img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>*/}
+                            {/*<img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>*/}
+                            <img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>
                         </Col>
                         <Col>
                             <Row className="text-center">
@@ -414,8 +414,8 @@ class CardHorizontal extends Component {
                             </Row>
                             <Row className="text-center">
                                 <Col>
-                                    <img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>
-                                    {/*<img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>*/}
+                                    {/*<img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>*/}
+                                    <img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>
                                     <span>{videoCount}:{count}</span>
                                 </Col>
                             </Row>
