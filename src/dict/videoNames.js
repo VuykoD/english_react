@@ -219,6 +219,16 @@ const videoNames = [
         active: true,
         url: '/Oasis - Wonderwall'
     },
+    {
+        id: 23,
+        songName: "Rag'n'Bone Man - Human",
+        imageName: "RagnBoneManHuman.jpg",
+        fileName: "RagnBoneManHuman.mp4",
+        level: 'medium',
+        type: 'music',
+        active: true,
+        url: "/Rag'n'Bone Man - Human"
+    },
     // {
     //     id: 22,
     //     songName: "Imagine - John Lennon & The Plastic Ono Band",
