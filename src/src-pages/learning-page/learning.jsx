@@ -196,8 +196,6 @@ export default class Learning extends Component {
 
     changeNewLearnNumber = (e) => {
         const val = e.target.value;
-        console.log(val);
-        // if (!(+val) || val !== "") return e.target.value = this.state.newLearnNumber;
         localStorage.newLearnNumber = val || 0;
         this.setState({newLearnNumber: +val || 0});
     };
