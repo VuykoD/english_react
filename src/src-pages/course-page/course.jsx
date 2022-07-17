@@ -13,8 +13,7 @@ export default class Course extends Component {
             <Container>
                 <Row>
                     <Col sm={1}>
-                        <div><img src="../../../english_react/images/paint.png" alt=""className="paint-left"/></div>
-                        {/*<div><img src="../../../images/paint.png" alt="" className="paint-left"/></div>*/}
+                        <div><img src={require("../../images/paint.png")} alt=""className="paint-left"/></div>
                     </Col>
                     <Col sm={10}>
                         {map(courseNames, (course, courseKey) => (
@@ -44,8 +43,7 @@ export default class Course extends Component {
                         ))}
                     </Col>
                     <Col sm={1}>
-                        <div><img src="../../../english_react/images/paint.png" alt=""className="paint-right"/></div>
-                        {/*<div><img src="../../../images/paint.png" alt="" className="paint-right"/></div>*/}
+                        <div><img src={require("../../images/paint.png")} alt=""className="paint-right"/></div>
                     </Col>
                 </Row>
             </Container>

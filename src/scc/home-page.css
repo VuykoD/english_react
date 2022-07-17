@@ -55,3 +55,6 @@ div.block-img {
 .small-blocks {
   padding-top: 30px;
 }
+
+@media only screen
+and (max-device-width : 768px){ .decoration { display: none; }}

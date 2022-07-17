@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import get from 'lodash/get';
-// import {Button, Col, Container, Form, Row, Badge, ProgressBar} from "react-bootstrap";
 
 
 const content = {

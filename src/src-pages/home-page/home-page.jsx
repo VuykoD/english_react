@@ -78,8 +78,7 @@ export default class HomePage extends Component {
                                     {firstBlock}
                                 </p>
                                 <div className="block-img">
-                                    <img src="../../../english_react/images/home-page/movie12.png" alt="" className="block-img"/>
-                                    {/*<img src="../../../images/home-page/movie12.png" alt="" className="block-img"/>*/}
+                                    <img src={require("../../images/home-page/movie12.png")} alt="" className="block-img"/>
                                 </div>
                                 <p className="block-text">
                                     {firstText}
@@ -114,8 +113,7 @@ export default class HomePage extends Component {
                                     {fourthBlock}
                                 </p>
                                 <div className="block-img">
-                                    <img src="../../../english_react/images/home-page/music.png" alt="" className="block-img"/>
-                                    {/*<img src="../../../images/home-page/music.png" alt="" className="block-img"/>*/}
+                                    <img src={require("../../images/home-page/music.png")} alt="" className="block-img"/>
                                 </div>
                                 <p className="block-text">
                                     {fourthText}
@@ -127,7 +125,6 @@ export default class HomePage extends Component {
                     <p className="main-txt">{mainText}</p>
                 </Container>
             </div>
-
         );
     }
 };

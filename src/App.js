@@ -20,15 +20,15 @@ class App extends Component {
             store = {},
             onChangeSiteLang, onChangeLearnedLang,
             onChangeFontColor, onChangeBackColor, onChangeFirstColor, onChangeSecondColor,
-            onChangeUserData, onChangeLearnedCount
+            onChangeUserData
         } = this.props;
         const {backColor} = store;
         document.body.style.background = backColor;
         const videoItem = withRouter(props =>
-            <VideoItem {...props} store={store} onChangeLearnedCount={onChangeLearnedCount}/>
+            <VideoItem {...props} store={store}/>
             );
         const courseItem = withRouter(props =>
-            <CourseItem {...props} store={store} onChangeLearnedCount={onChangeLearnedCount}/>
+            <CourseItem {...props} store={store}/>
             );
 
         return (
@@ -42,7 +42,7 @@ class App extends Component {
                     <Route exact path='/english_react/' children={<HomePage store={store}/>}/>
                     <Route path='/english_react/course-page' children={<Course store={store}/>}/>
                     <Route path='/english_react/video-page' children={<Video store={store}/>}/>
-                    <Route path='/english_react/learning' children={<Learning store={store} onChangeLearnedCount={onChangeLearnedCount}/>}/>
+                    <Route path='/english_react/learning' children={<Learning store={store}/>}/>
                     <Route path='/english_react/user_dictionary' children={<UserDictionary store={store}/>}/>
                     <Route path='/english_react/user_data' children={
                         <UserData
@@ -96,9 +96,6 @@ export default connect(
         },
         onChangeUserData: (userData) => {
             dispatch({type: 'USER_DATA', payload: userData})
-        },
-        onChangeLearnedCount: (learnedCount) => {
-            dispatch({type: 'LEARNED_COUNT', payload: learnedCount})
         },
     })
 )(App);

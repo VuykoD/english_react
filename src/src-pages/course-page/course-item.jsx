@@ -10,9 +10,7 @@ import '../../scc/unit.css';
 import '../../scc/course.css'
 import courseUnits from "../../dict/courseUnits";
 import courseItems from "../../dict/courseItems";
-import {content, getCurrentDate} from '../video-page/video-item'
-import learnedCount from "../../src-core/helper/learnedCount/learnedCount";
-
+import {content} from '../video-page/video-item';
 
 export default class CourseItem extends Component {
     constructor(props) {
@@ -54,17 +52,12 @@ export default class CourseItem extends Component {
             return alert(alreadySelected);
         }
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        const currentDate = getCurrentDate();
-        const sortOrder = localProgress ?localProgress.length: 0;
 
-        const addedProgress = map(this.items, (item, key) => {
+        const addedProgress = map(this.items, (item) => {
             return (
                 {
                     entity: 'course',
-                    entity_id: +item.id,
-                    quantity: 0,
-                    date: currentDate,
-                    sortOrder: sortOrder + key
+                    entity_id: +item.id
                 }
             )
         });
@@ -73,13 +66,18 @@ export default class CourseItem extends Component {
             [...addedProgress];
         this.setState({isItemSelected: true});
         localStorage.progress = JSON.stringify(newProgress);
-        this.props.onChangeLearnedCount(learnedCount());
+    };
+
+    clearLocalstorage = () => {
+        if (this.state.isItemSelected) {
+            this.setState({isItemSelected: false});
+            localStorage.progress = '';
+        }
     };
 
     save = (e) => {
         const rowData = this.getRowData(e) || {};
         const {id, eng, transl} = rowData;
-        // if (!eng || !transl) return alert('fill in all data');
         const courseItems = this.localItems;
         const newId = courseItems.length ?
             +courseItems[courseItems.length - 1].id + 1 :
@@ -149,35 +147,43 @@ export default class CourseItem extends Component {
         const {siteLang = ''} = this.props.store;
         const select = get(content, `select[${siteLang}]`);
         const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
+        const clearLocalstorage = get(content, `clearLocalstorage[${siteLang}]`);
         const {courseItems, isItemSelected} = this.state;
         return (
             <Container>
                 <Row>
                     <Col sm={1}>
-                        <div><img src="../../../english_react/images/paint.png" alt="" className="paint-left"/></div>
-                        {/*<div><img src="../../../images/paint.png" alt="" className="paint-left"/></div>*/}
+                        {<div><img src={require("../../images/paint.png")} alt="" className="paint-left"/></div>}
                     </Col>
                     <Col sm="10">
                         <Row className="text-center learning">
                             <Col sm={2}/>
-                            <Col sm={8}>
+                            <Col>
                                 <h1>{this.unitName}</h1>
-                                <Button
-                                    variant={isItemSelected ? "success" : "primary"}
-                                    onClick={this.select}
-                                >
-                                    {isItemSelected ? alreadySelected : select}
-                                </Button>
+                                <Row className="text-center learning">
+                                    <Col>
+                                        <Button
+                                            variant={isItemSelected ? "success" : "primary"}
+                                            onClick={this.select}
+                                        >
+                                            {isItemSelected ? alreadySelected : select}
+                                        </Button>
+                                    </Col>
+                                    {isItemSelected &&
+                                        <Col sm={6}>
+                                            <Button
+                                                variant="primary"
+                                                onClick={this.clearLocalstorage}
+                                            >
+                                                {clearLocalstorage}
+                                            </Button>
+                                        </Col>
+                                    }
+                                </Row>
                             </Col>
                             <Col sm={2}/>
                         </Row>
                         <ListGroup>
-                            {/* {map(courseItems, (item, key) => {
-                                return(
-                                    <p>{item.eng}"</p>
-                                )
-                                }
-                            )} */}
                             {map(courseItems, (item, key) => {
                                 const odd = key & 1 ? 'light' : 'primary';
                                 return (
@@ -251,8 +257,7 @@ export default class CourseItem extends Component {
                         </ListGroup>
                     </Col>
                     <Col sm={1}>
-                        <div><img src="../../../english_react/images/paint.png" alt="" className="paint-right"/></div>
-                        {/*<div><img src="../../../images/paint.png" alt="" className="paint-right"/></div>*/}
+                        <div><img src={require("../../images/paint.png")} alt="" className="paint-right"/></div>
                     </Col>
                 </Row>
             </Container>

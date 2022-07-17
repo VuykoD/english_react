@@ -3,7 +3,6 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import learnedCount from './src-core/helper/learnedCount/learnedCount'
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
@@ -23,8 +22,7 @@ const initialState = {
     firstColor: localStorage.firstColor || defaultColor.firstColor,
     secondColor: localStorage.secondColor || defaultColor.secondColor,
     backColor: localStorage.backColor || defaultColor.backColor,
-    userData: localStorage.userData || '',
-    learnedCount: learnedCount(),
+    userData: localStorage.userData || ''
 };
 
 function playlist(state = initialState, action) {
@@ -35,7 +33,6 @@ function playlist(state = initialState, action) {
     if (action.type === 'FIRST_COLOR') return { ...state, firstColor: action.payload };
     if (action.type === 'SECOND_COLOR') return { ...state, secondColor: action.payload };
     if (action.type === 'USER_DATA') return { ...state, userData: action.payload };
-    if (action.type === 'LEARNED_COUNT') return { ...state, learnedCount: action.payload };
     return state;
 }
 

@@ -6,7 +6,7 @@ import {Container, Row, Col} from 'react-bootstrap';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import FormControl from 'react-bootstrap/FormControl';
 import Dropdown from 'react-bootstrap/Dropdown';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 import langType from '../../../dict/langType';
 import warn from '../../helper/warn/warn';
@@ -60,11 +60,14 @@ const content = {
     },
 };
 
-export default class Header extends Component {
+class HeaderClass extends Component {
     static propTypes = {
         store: PropTypes.shape({}),
         onChangeSiteLang: PropTypes.func,
         onChangeLearnedLang: PropTypes.func,
+        location: PropTypes.object.isRequired,
+        match: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
     };
 
     changeSiteLang = (e) => {
@@ -127,6 +130,9 @@ export default class Header extends Component {
         const fontStyle = {color: fontColor};
         const gradientStyle = {background: `linear-gradient(to bottom,${firstColor},${secondColor}`};
         const hover = {onMouseOver: this.onMouseOver, onMouseOut: this.onMouseOut};
+        const url = get(this.props, 'location.pathname', '').replace('/english_react/', '');
+        const hideHeader = url ? 'hide-header' : null;
+        const btnClassName = `headerButton ${hideHeader}`;
 
         return (
             <div className="header" style={gradientStyle}>
@@ -140,19 +146,19 @@ export default class Header extends Component {
                                 {logo && <div className="lowerLogo" style={fontStyle}>{logo}</div>}
                             </Link>
                         </Col>
-                        <Col>
+                        <Col className={hideHeader}>
                             <FormControl type="text" placeholder={search} className="mr-sm-2 search" onChange={this.warn}/>
                         </Col>
-                        <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
+                            <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
                             <Link to={'/english_react/course-page'} children={course} style={fontStyle}/>
                         </Col>
-                        <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
+                        <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
                             <Link to={'/english_react/video-page'} children={video} style={fontStyle}/>
                         </Col>
-                        <Col md="auto" className="headerButton" style={{...fontStyle, ...gradientStyle}} {...hover} >
+                        <Col md="auto" className={btnClassName} style={{...fontStyle, ...gradientStyle}} {...hover} >
                             <Link to={'/english_react/learning'} children={learning} style={fontStyle}/>
                         </Col>
-                        <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
+                        <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
                             <DropdownButton
                                 id="dropdown-current-lang"
                                 alignRight
@@ -208,7 +214,7 @@ export default class Header extends Component {
                                 </DropdownButton>
                             </DropdownButton>
                         </Col>
-                        <Col md="auto" className="headerButton" style={gradientStyle} {...hover} >
+                        <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
                             <div>
                                 <DropdownButton
                                     id="dropdown-user"
@@ -230,3 +236,7 @@ export default class Header extends Component {
         );
     }
 };
+
+const header = withRouter(HeaderClass);
+
+export default header;

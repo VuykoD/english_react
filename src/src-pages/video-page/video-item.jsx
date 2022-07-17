@@ -9,17 +9,12 @@ import {Col, Container, Row, Form, Button, FormControl, DropdownButton, Dropdown
 
 import '../../scc/video.css';
 import {
-    changedInput, focusInput,
-    getBadgeTranslation,
-    getInput,
-    getProgressBar, getEngBadge,
-    getWordsArr, rightClicked,
+    getProgressBar, getBadge,
     soundButton,
-    wordClicked, clearTranslation, keyListener
-} from "../learning-page/learning";
+    keyListener
+} from '../learning-page/learning';
 import videoItems from '../../dict/videoItems';
 import videoNames from '../../dict/videoNames';
-import learnedCount from "../../src-core/helper/learnedCount/learnedCount";
 
 export const content = {
     hideTranslate: {
@@ -50,31 +45,16 @@ export const content = {
         ru: "Уже отобрано для изучения",
         ukr: "Вже відібрано для вивчення",
     },
+    clearLocalstorage: {
+        ru: "Убрать всё из изучения",
+        ukr: "Видалити все з вивчення",
+    },
 };
 
 export default class VideoItem extends Component {
     constructor(props) {
 
         super(props);
-        // const axios = require("axios");
-        //
-        // axios({
-        //     "method":"POST",
-        //     "url":"https://yandextranslatezakutynskyv1.p.rapidapi.com/detectLanguage",
-        //     "headers":{
-        //         "content-type":"application/x-www-form-urlencoded",
-        //         "x-rapidapi-host":"YandexTranslatezakutynskyV1.p.rapidapi.com",
-        //         "x-rapidapi-key":"1b9ecc322cmsha24d59d1394c249p171ebejsn864232da8435"
-        //     },"data":{
-        //
-        //     }
-        // })
-        //     .then((response)=>{
-        //         console.log(response)
-        //     })
-        //     .catch((error)=>{
-        //         console.log(error)
-        //     })
 
         let url = get(props, `match.url`);
         url = url.replace('/english_react/video', '');
@@ -124,10 +104,6 @@ export default class VideoItem extends Component {
 
     componentDidMount() {
         keyListener.call(this);
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.state.exampleLearning === 'phase_3') focusInput();
     }
 
     play = (e) => {
@@ -227,17 +203,12 @@ export default class VideoItem extends Component {
             return alert(alreadySelected);
         }
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        const currentDate = getCurrentDate();
-        const sortOrder = localProgress ?localProgress.length: 0;
 
         const addedProgress = map(this.items, (item, key) => {
             return (
                 {
                     entity: 'video',
-                    entity_id: +item.id,
-                    quantity: 0,
-                    date: currentDate,
-                    sortOrder: sortOrder + key
+                    entity_id: +item.id
                 }
             )
         });
@@ -246,7 +217,6 @@ export default class VideoItem extends Component {
             [...addedProgress];
         this.setState({isItemSelected: true});
         localStorage.progress = JSON.stringify(newProgress);
-        this.props.onChangeLearnedCount(learnedCount());
     };
 
     nextVideo = () => {
@@ -262,52 +232,22 @@ export default class VideoItem extends Component {
                 });
                 playVideo.call(this, get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
                 this.nextVideo();
-            }, 10000);
+            }, 15000);
         } else {
             setTimeout(() => {
                 this.setState({showItems: true, currentItem: 0});
-            }, 10000);
+            }, 15000);
         }
     };
 
     speakTxt = () => {
         const {videoItems, currentItem} = this.state;
         playVideo.call(this, get(videoItems, `[${currentItem}].start`), get(videoItems, `[${currentItem}].end`));
-        focusInput();
-    };
-
-    wordClick = (e) => {
-        wordClicked.call(this, e);
-    };
-
-    rightClick = (rightTxt) => {
-        rightClicked.call(this, rightTxt);
-        if (this.englishArr.length === 0) {
-            const {videoItems, currentItem} = this.state;
-            const videoLength = videoItems.length;
-            if (currentItem < videoLength - 1) {
-
-                const translation = get(videoItems, `[${currentItem + 1}].transl`);
-                const english = get(videoItems, `[${currentItem + 1}].eng`).replace(/^\s*/, '').replace(/\s*$/, '');
-
-                this.setState({currentItem: currentItem + 1, english, translation});
-                playVideo.call(this, get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
-                clearTranslation();
-            } else {
-                this.setState({showItems: true, currentItem: 0});
-            }
-
-        }
-    };
-
-    onChangeInput = () => {
-        changedInput.call(this);
     };
 
     changeLearningType = (e) => {
         const elem = e.currentTarget;
         const type = elem.getAttribute('type');
-        clearTranslation();
         this.setState({exampleLearning: type});
     };
 
@@ -317,13 +257,12 @@ export default class VideoItem extends Component {
 
     render() {
         const {siteLang} = this.props.store;
-        const {start, end, autoPlay, videoItems, showItems, exampleLearning, isItemSelected} = this.state;
+        const {start, end, autoPlay, videoItems, showItems, exampleLearning, isItemSelected, english, translation} = this.state;
 
         if (this.videoIndex === -1) return null;
         const fileName = get(videoNames, `[${this.videoIndex}].fileName`);
         const songName = get(videoNames, `[${this.videoIndex}].songName`);
-        const src = `../../../english_react/video/${fileName}#t=${start},${end}`;
-        // const src = `../../../video/${fileName}#t=${start},${end}`;
+        const src = `../../video/${fileName}#t=${start},${end}`;
         const hideTranslate = get(content, `hideTranslate[${siteLang}]`);
         const firstPhrase = get(content, `firstPhrase[${siteLang}]`);
         const thirdPhrase = get(content, `thirdPhrase[${siteLang}]`);
@@ -520,29 +459,18 @@ export default class VideoItem extends Component {
                 <Row className="text-center">
                     <Col>
                         <br/>
-                        {getBadgeTranslation.call(this)}
+                        {getBadge(translation, "secondary")}
                         {soundButton.call(this)}
                         <h2 className='translation'><Badge variant="light" id='translation'/></h2>
-                        {getInput.call(this)}
-                        {getWordsArr.call(this)}
                         {getProgressBar.call(this)}
-                        {getEngBadge.call(this)}
+                        {getBadge(english, "light")}
                     </Col>
                 </Row>
                 }
             </Container>
         );
     }
-}
-;
-
-export function getCurrentDate() {
-    const d = new Date();
-    const dd = d.getDate();
-    const mm = d.getMonth() + 1;
-    const yyyy = d.getFullYear();
-    return `${dd}.${mm}.${yyyy}`;
-}
+};
 
 export function playVideo(start, end) {
     if (!(+start) || !(+end)) return alert('start or end is not a number');

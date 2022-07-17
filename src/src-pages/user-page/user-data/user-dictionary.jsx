@@ -5,7 +5,6 @@ import {AllCommunityModules} from '@ag-grid-community/all-modules';
 import map from "lodash/map";
 import findIndex from "lodash/findIndex";
 import get from "lodash/get";
-import sortBy from 'lodash/sortBy'
 import filter from 'lodash/filter';
 import {Container, Row, Col, Button} from "react-bootstrap";
 
@@ -18,30 +17,12 @@ import FormControl from "react-bootstrap/FormControl";
 import courseItems from "../../../dict/courseItems";
 import courseUnits from "../../../dict/courseUnits";
 
-
-// const content = {
-// name: {
-//     ru: 'Имя',
-//     ukr: "Ім'я"
-// },
-// surname: {
-//     ru: 'Фамилия',
-//     ukr: 'Прізвище'
-// },
-// save: {
-//     ru: 'Сохранить',
-//     ukr: 'Зберегти'
-// },
-// };
-
 const columnDefs = [
     {headerName: "type", field: "entity", width: 80},
-    {headerName: "foreign", field: "eng", width: 320},
-    {headerName: "native", field: "native", width: 320},
-    {headerName: "type", field: "type", width: 80},
-    {headerName: "level", field: "level", width: 80},
-    {headerName: "date", field: "date", width: 100},
-    {headerName: "sourse", field: "sourse", width: 190}
+    {headerName: "eng", field: "eng", width: 280},
+    {headerName: "pol", field: "pol", width: 280},
+    {headerName: "ru", field: "native", width: 280},
+    {headerName: "source", field: "source", width: 190}
 ];
 
 export default class UserDictionary extends Component {
@@ -67,27 +48,22 @@ export default class UserDictionary extends Component {
 
             if (item.entity === 'video') {
                 lp[key].eng = get(videoItems, `[${item.entity_id}].eng`);
+                lp[key].pol = get(videoItems, `[${item.entity_id}].pol`);
                 lp[key].native = get(videoItems, `[${item.entity_id}].transl`);
                 lp[key].courseId = get(videoItems, `[${item.entity_id}].idVideoName`);
                 const courseIndex = findIndex(videoNames, {'id': lp[key].courseId});
-                lp[key].sourse = get(videoNames, `[${courseIndex}].songName`);
-                lp[key].level = get(videoNames, `[${courseIndex}].level`);
+                lp[key].source = get(videoNames, `[${courseIndex}].songName`);
             }
 
             if (item.entity === 'course') {
                 const index = findIndex(courseItems, {'id': item.entity_id});
                 lp[key].eng = get(courseItems, `[${index}].eng`);
+                lp[key].pol = get(courseItems, `[${index}].pol`);
                 lp[key].native = get(courseItems, `[${index}].transl`);
                 lp[key].courseId = get(courseItems, `[${index}].unitId`);
                 const courseIndex = findIndex(courseUnits, {'id': lp[key].courseId});
-                lp[key].sourse = get(courseUnits, `[${courseIndex}].name`);
-                lp[key].level = get(courseUnits, `[${courseIndex}].level`);
+                lp[key].source = get(courseUnits, `[${courseIndex}].name`);
             }
-            if (+item.quantity === 0) lp[key].type = 'new';
-            if (+item.quantity === 1) lp[key].type = 'repeat';
-            // if (+item.quantity === 2) lp[key].type = 'repeat 2';
-            if (+item.quantity === 2) lp[key].type = 'exam';
-            if (+item.quantity > 2) lp[key].type = 'learned';
         });
         return lp;
     };
@@ -95,7 +71,6 @@ export default class UserDictionary extends Component {
     sort = () => {
         let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (!lP) return null;
-        lP = sortBy(lP, 'date');
 
         const filteredVideoNew = filter(lP, item => item.entity === "video" && +item.quantity === 0 );
         const filteredCourseNew = filter(lP, item => item.entity === "course" && +item.quantity === 0 );
@@ -119,13 +94,12 @@ export default class UserDictionary extends Component {
         map(this.lP, (it, key) => {
             this.lP[key].sortOrder = key;
             delete this.lP[key].eng;
+            delete this.lP[key].pol;
             delete this.lP[key].transl;
             delete this.lP[key].videoId;
             delete this.lP[key].native;
             delete this.lP[key].courseId;
-            delete this.lP[key].sourse;
-            delete this.lP[key].type;
-            delete this.lP[key].level;
+            delete this.lP[key].source;
             this.lP[key].entity_id = +it.entity_id;
         });
 

@@ -53,6 +53,7 @@ button.title_sound {
     height: 15px;
     width: 100%;
     overflow: hidden;
+    margin-bottom: 30px;
 }
 
 .hint {
@@ -67,7 +68,7 @@ button.title_sound {
     height: 100%;
     border-radius: 4px;
 
-    animation: 10.05s linear infinite forwards move_eye;
+    animation: 15.05s linear infinite forwards move_eye;
 }
 
 .video-hide {
@@ -79,22 +80,16 @@ button.title_sound {
     font-size: 20px;
 }
 
-.mistakes-error {
-    color: red;
-    font-size: 24px;
-}
-
-.mistakes-right {
-    color: green;
-    font-size: 28px;
-}
-
 .source {
     color: #5a6268;
 }
 
 .randomExam {
     padding-top: 20px;
+}
+
+.white-space {
+    white-space: normal;
 }
 
 @keyframes move_eye {

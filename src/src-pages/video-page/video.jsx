@@ -1,14 +1,14 @@
 import React, {Component, Fragment} from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
 import findIndex from 'lodash/findIndex';
-import {Col, Container, Row, Dropdown, DropdownButton, Form} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Col, Container, Row, Dropdown, DropdownButton, Form} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import {TiTick} from 'react-icons/ti';
 import videoNames from '../../dict/videoNames';
 import videoItems from '../../dict/videoItems';
-import {TiTick} from "react-icons/ti";
 
 import '../../scc/video.css';
 
@@ -357,8 +357,7 @@ class CardVertical extends Component {
                            <TiTick className='selected'/>
                         </span>
                     }
-                    <img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>
-                    {/*<img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>*/}
+                    <img src={require(`../../images/video/${item.imageName}`)} alt="" className="img-video"/>
                     <Row className="text-center">
                         <Col>
                             <span className="type">{type}</span>
@@ -367,8 +366,7 @@ class CardVertical extends Component {
                     </Row>
                     <Row className="text-center">
                         <Col>
-                            <img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>
-                            {/*<img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>*/}
+                            <img src={require("../../images/video/puzzle.png")} alt="" className="img-button-video"/>
                             <span>{videoCount}:{count}</span>
                         </Col>
                     </Row>
@@ -402,8 +400,7 @@ class CardHorizontal extends Component {
                             </span>
                         }
                         <Col>
-                            <img src={`../../../english_react/images/video/${item.imageName}`} alt="" className="img-video"/>
-                            {/*<img src={`../../../images/video/${item.imageName}`} alt="" className="img-video"/>*/}
+                            <img src={require(`../../images/video/${item.imageName}`)} alt="" className="img-video"/>
                         </Col>
                         <Col>
                             <Row className="text-center">
@@ -414,8 +411,7 @@ class CardHorizontal extends Component {
                             </Row>
                             <Row className="text-center">
                                 <Col>
-                                    <img src="../../../english_react/images/video/puzzle.png" alt="" className="img-button-video"/>
-                                    {/*<img src="../../../images/video/puzzle.png" alt="" className="img-button-video"/>*/}
+                                    <img src={require("../../images/video/puzzle.png")} alt="" className="img-button-video"/>
                                     <span>{videoCount}:{count}</span>
                                 </Col>
                             </Row>

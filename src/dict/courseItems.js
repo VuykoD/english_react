@@ -1,10 +1,10 @@
 const courseItems = [
     //unit 1
-    {"id": 1, "unitId": 1, "eng": "She is driving now, at the moment of speaking", "transl": "Она едет сейчас, в момент разговора"},
-    {"id": 2, "unitId": 1, "eng": "The action is not finished", "transl": "Действие не закончено"},
-    {"id": 3, "unitId": 1, "eng": "She's driving to work", "transl": "Она едет на работу"},
-    {"id": 4, "unitId": 1, "eng": "I am doing something", "transl": "Я делаю что-то"},
-    {"id": 5, "unitId": 1, "eng": "I'm in the middle of doing it", "transl": "Я в процессе делания"},
+    {"id": 1, "unitId": 1, "eng": "She is driving now, at the moment of speaking", "pol": "Ona jedzie teraz, w chwili mówienia", "transl": "Она едет сейчас, в момент разговора"},
+    {"id": 2, "unitId": 1, "eng": "The action is not finished", "pol": "Akcja nie jest zakończona", "transl": "Действие не закончено"},
+    {"id": 3, "unitId": 1, "eng": "She's driving to work", "pol": "Jedzie do pracy", "transl": "Она едет на работу"},
+    {"id": 4, "unitId": 1, "eng": "I am doing something", "pol": "robię coś", "transl": "Я делаю что-то"},
+    {"id": 5, "unitId": 1, "eng": "I'm in the middle of doing it", "pol": "jestem w trakcie robienia tego",  "transl": "Я в процессе делания"},
     {"id": 6, "unitId": 1, "eng": "I've started doing it and I haven't finished", "transl": "Я начал делать это, и я еще не закончил"},
     {"id": 7, "unitId": 1, "eng": "Please don't make so much noise, I'm working", "transl": "Пожалуйста, не шумите, я работаю"},
     {"id": 8, "unitId": 1, "eng": "She's taking a bath.", "transl": "Она принимает ванну"},
