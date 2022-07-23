@@ -90,7 +90,7 @@ export default class CourseItem extends Component {
             eng,
             transl
         };
-        let newCourseItems = null;
+        let newCourseItems;
         if (index > -1) {
             newCourseItems = courseItems;
             newCourseItems[index] = courseItem;
@@ -200,6 +200,10 @@ export default class CourseItem extends Component {
                                             <Col>
                                                 <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_eng`}
                                                              defaultValue={item.eng}/>
+                                            </Col>
+                                            <Col>
+                                                <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_pol`}
+                                                             defaultValue={item.pol}/>
                                             </Col>
                                             <Col>
                                                 <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_transl`}

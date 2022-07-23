@@ -45,28 +45,30 @@ const content = {
     },
 };
 
+const initialState = {
+    exampleLearning: null,
+    cycleLearning: null,
+    showTranslation: true,
+    learnNumber: 0,
+    english: '',
+    polish: '',
+    translation: '',
+    newLearnNumber: +localStorage.newLearnNumber || 5,
+    entity: null,
+    start: null,
+    end: null,
+    fileName: '',
+    learnEng: true,
+    learnPol: true,
+    isRepeatAll: false
+}
+
 export default class Learning extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            exampleLearning: null,
-            cycleLearning: null,
-            showTranslation: true,
-            learnNumber: 0,
-            english: '',
-            polish: '',
-            translation: '',
-            newCount: this.newCount,
-            newCountFrom: this.newCountFrom,
-            newLearnNumber: +localStorage.newLearnNumber || 5,
-            entity: null,
-            start: null,
-            end: null,
-            fileName: '',
-            learnEng: true,
-            learnPol: true,
-            isRepeatAll: false
+            ...initialState
         };
         this.englishArr = [];
         this.learnArr = [];
@@ -81,6 +83,10 @@ export default class Learning extends Component {
     }
 
     componentWillUnmount() {
+        this.clearTimeOut();
+    }
+
+    clearTimeOut = () => {
         clearTimeout(this.timeoutClearState);
         clearTimeout(this.timeoutNextItem);
         clearTimeout(this.timeoutResetExampleLearning);
@@ -103,6 +109,16 @@ export default class Learning extends Component {
     resetExampleLearning = () => {
         this.setState({exampleLearning: null})
     };
+
+    setInitialData = () => {
+        this.englishArr = [];
+        this.learnArr = [];
+        this.timeoutClearState = null;
+        this.timeoutNextItem = null;
+        this.timeoutResetExampleLearning = null;
+        this.clearTimeOut();
+        this.setState({...initialState});
+    }
 
     speakTxt = () => {
         speak.call(this);
@@ -158,19 +174,30 @@ export default class Learning extends Component {
         })
     };
 
+    setTimeoutTime =(learnNumber)=>{
+        const word = get(this.learnArr, `[${learnNumber}].eng`, '');
+        const wordLength = Math.round(word.length / 1.1);
+        let timeoutTime = wordLength > 10 ? wordLength : 10;
+        if(timeoutTime > 45) timeoutTime = 45;
+        return timeoutTime;
+    }
+
+
     nextItem = () => {
-        if (this.state.learnNumber < this.learnArr.length - 1) {
-            clearTimeout(this.timeoutNextItem);
+        const { learnNumber } = this.state;
+        const timeoutTime = this.setTimeoutTime(learnNumber);
+
+        clearTimeout(this.timeoutNextItem);
+        if (learnNumber < this.learnArr.length - 1) {
             this.timeoutNextItem = setTimeout(() => {
-                const nextNumber = this.state.learnNumber + 1;
+                const nextNumber = learnNumber + 1;
                 this.setEngAndTransl(nextNumber);
                 this.nextItem();
-            }, 15000);
+            }, timeoutTime * 1000);
         } else {
-            clearTimeout(this.timeoutNextItem);
             this.timeoutNextItem = setTimeout(() => {
-                this.setEngAndTransl(0, 'phase_1');
-            }, 15000);
+                this.setInitialData();
+            }, timeoutTime * 1000);
         }
     };
 
@@ -244,14 +271,13 @@ export default class Learning extends Component {
         const {learnNumber} = this.state;
         const source = get(content, `source[${siteLang}]`);
         const topicTxt = get(this.learnArr, `[${learnNumber}].topicName`, '');
-        const topic = (
+        return (
             <h5>
                 <Badge variant="light" bsPrefix='source'>
                     {source}: {topicTxt}
                 </Badge>
             </h5>
         );
-        return topic;
     };
 
     render() {
@@ -362,14 +388,17 @@ export function getBadge(txt, variant) {
 }
 
 export function getProgressBar() {
-    const {exampleLearning} = this.state;
+    const { exampleLearning, learnNumber } = this.state;
+
     let progress = null;
+    const timeoutTime = this.setTimeoutTime(learnNumber);
 
     if (exampleLearning === 'phase_5' || exampleLearning === 'word_5') {
         progress = (
             <Row>
                 <Col sm={3}/>
                 <Col>
+                    {`${learnNumber + 1}/${timeoutTime}`}
                     <div className="view_port">
                         <ProgressBar id='progressBar' animated now={100} className="c_eye"/>
                     </div>
@@ -383,17 +412,19 @@ export function getProgressBar() {
 
 export function speak() {
     //video
-    const {english, polish, entity, end, start, learnPol} = this.state;
+    const {english, polish, entity, end, start, learnPol, learnEng} = this.state;
     if (entity === 'video' && end && start) return playVideo.call(this, start, end);
     if (entity === 'video' && (!start || !end)) return;
 
     //comp eng
-    if (!this.filteredEngVoices || !this.filteredEngVoices.length) this.getVoices();
-    const utterance = new SpeechSynthesisUtterance(english);
-    const randomVoice = this.filteredEngVoices ? Math.floor(Math.random() * this.filteredEngVoices.length) : null;
-    utterance.voice = randomVoice ? this.filteredEngVoices[randomVoice] : null;
-    if (!utterance.voice) utterance.lang = 'en';
-    speechSynthesis.speak(utterance);
+    if (english && learnEng){
+        if (!this.filteredEngVoices || !this.filteredEngVoices.length) this.getVoices();
+        const utterance = new SpeechSynthesisUtterance(english);
+        const randomVoice = this.filteredEngVoices ? Math.floor(Math.random() * this.filteredEngVoices.length) : null;
+        utterance.voice = randomVoice ? this.filteredEngVoices[randomVoice] : null;
+        if (!utterance.voice) utterance.lang = 'en';
+        speechSynthesis.speak(utterance);
+    }
 
     //comp pol
     if (polish && learnPol){
@@ -407,13 +438,8 @@ export function speak() {
 
 export function checkIsSound() {
     const {exampleLearning} = this.state;
-    if (
-        exampleLearning === 'word_5' || exampleLearning === 'phase_5'
-    ) {
-        return true;
-    }
 
-    return false;
+    return exampleLearning === 'word_5' || exampleLearning === 'phase_5';
 }
 
 export function keyListener() {

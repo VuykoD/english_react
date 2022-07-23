@@ -13,7 +13,7 @@ const courseItems = [
     {"id": 8, "unitId": 1, "eng": "She's taking a bath", "pol": "Ona bierze kąpiel",  "transl": "Она принимает ванну"},
     {"id": 9, "unitId": 1, "eng": "Let's go out now, It isn't raining any more", "pol": "Wyjdźmy teraz, już nie pada",  "transl": "Давай выйдем сейчас, дождя больше нет"},
     {"id": 10, "unitId": 1, "eng": "Steve is talking to a friend on the phone", "pol": "Steve rozmawia przez telefon z przyjacielem",  "transl": "Стив разговаривает с другом по телефону"},
-    {"id": 11, "unitId": 1, "eng": " I'm reading a really good book at the moment", "pol": "",  "transl": "Я сейчас читаю действительно хорошую книгу"},
+    {"id": 11, "unitId": 1, "eng": "I'm reading a really good book at the moment", "pol": "W tej chwili czytam naprawdę dobrą książkę",  "transl": "Я сейчас читаю действительно хорошую книгу"},
     {"id": 12, "unitId": 1, "eng": "Steve is not reading the book at the time of speaking", "pol": "Steve nie czyta książki w czasie przemawiania",  "transl": "Стив не читает книгу во время разговора"},
     {"id": 13, "unitId": 1, "eng": "He means that he has started it, but has not finished it yet", "pol": "To znaczy, że zaczął, ale jeszcze nie skończył",  "transl": "Он имеет в виду, что он начал это, но еще не закончил"},
     {"id": 14, "unitId": 1, "eng": "Some friends of mine are building their own house", "pol": "Niektórzy moi przyjaciele budują własny dom",  "transl": "Некоторые мои друзья строят свой собственный дом"},

@@ -121,7 +121,7 @@ export default class VideoItem extends Component {
             +videoItems[videoItems.length - 1].id + 1 :
             1;
         const index = findIndex(videoItems, {'id': id});
-        let newVideoItems = null;
+        let newVideoItems;
         if (index > -1) {
             newVideoItems = videoItems;
             newVideoItems[index] = newRow;
@@ -204,7 +204,7 @@ export default class VideoItem extends Component {
         }
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
 
-        const addedProgress = map(this.items, (item, key) => {
+        const addedProgress = map(this.items, (item) => {
             return (
                 {
                     entity: 'video',
@@ -232,11 +232,11 @@ export default class VideoItem extends Component {
                 });
                 playVideo.call(this, get(videoItems, `[${currentItem + 1}].start`), get(videoItems, `[${currentItem + 1}].end`));
                 this.nextVideo();
-            }, 15000);
+            }, 25000);
         } else {
             setTimeout(() => {
                 this.setState({showItems: true, currentItem: 0});
-            }, 15000);
+            }, 25000);
         }
     };
 
@@ -331,7 +331,7 @@ export default class VideoItem extends Component {
                         }
                     </Col>
                     <Col sm={2}>
-                        <DropdownButton title={get(learningType, `[${index}].txt`) || ''}>
+                        <DropdownButton title={get(learningType, `[${index}].txt`) || ''} id={index}>
                             {map(learningType, (it, key) => {
                                 return (
                                     <Dropdown.Item
