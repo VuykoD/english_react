@@ -5,7 +5,6 @@ import {AllCommunityModules} from '@ag-grid-community/all-modules';
 import map from "lodash/map";
 import findIndex from "lodash/findIndex";
 import get from "lodash/get";
-import filter from 'lodash/filter';
 import {Container, Row, Col, Button} from "react-bootstrap";
 
 import videoItems from '../../../dict/videoItems';
@@ -13,15 +12,14 @@ import videoNames from '../../../dict/videoNames';
 import '@ag-grid-community/all-modules/dist/styles/ag-grid.css';
 import '@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css';
 import '../../../scc/user-data.css';
-import FormControl from "react-bootstrap/FormControl";
 import courseItems from "../../../dict/courseItems";
 import courseUnits from "../../../dict/courseUnits";
 
 const columnDefs = [
     {headerName: "type", field: "entity", width: 80},
-    {headerName: "eng", field: "eng", width: 280},
-    {headerName: "pol", field: "pol", width: 280},
-    {headerName: "ru", field: "native", width: 280},
+    {headerName: "eng", field: "eng", width: 260},
+    {headerName: "pol", field: "pol", width: 260},
+    {headerName: "ru", field: "native", width: 260},
     {headerName: "source", field: "source", width: 190}
 ];
 
@@ -38,8 +36,8 @@ export default class UserDictionary extends Component {
         lp = lp? this.setLocalProgress(lp) : null;
 
         this.state = ({
-            sortNumber: 2,
-            localProgress: lp
+            localProgress: lp,
+            entityId: null
         });
     }
 
@@ -68,71 +66,21 @@ export default class UserDictionary extends Component {
         return lp;
     };
 
-    sort = () => {
+    deleteRow = () => {
         let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (!lP) return null;
-
-        const filteredVideoNew = filter(lP, item => item.entity === "video" && +item.quantity === 0 );
-        const filteredCourseNew = filter(lP, item => item.entity === "course" && +item.quantity === 0 );
-
-        const filteredVideoRepeat = filter(lP, item => item.entity === "video" && +item.quantity === 1 );
-        const filteredCourseRepeat = filter(lP, item => item.entity === "course" && +item.quantity === 1 );
-
-        const filteredVideoExam = filter(lP, item => item.entity === "video" && item.quantity === 2 );
-        const filteredCourseExam = filter(lP, item => item.entity === "course" && item.quantity === 2 );
-
-        const filteredLearned = filter(lP, item => item.quantity > 2 );
-
-        this.lP=[];
-        this.sortArr(filteredVideoNew, filteredCourseNew);
-        this.sortArr(filteredVideoRepeat, filteredCourseRepeat);
-        this.sortArr(filteredVideoExam, filteredCourseExam);
-
-        this.lP = [...this.lP, ...filteredLearned];
-
-
-        map(this.lP, (it, key) => {
-            this.lP[key].sortOrder = key;
-            delete this.lP[key].eng;
-            delete this.lP[key].pol;
-            delete this.lP[key].transl;
-            delete this.lP[key].videoId;
-            delete this.lP[key].native;
-            delete this.lP[key].courseId;
-            delete this.lP[key].source;
-            this.lP[key].entity_id = +it.entity_id;
-        });
-
-        localStorage.progress = JSON.stringify(this.lP);
-
-        lP = this.lP? this.setLocalProgress(this.lP) : null;
+        const { entityId } = this.state;
+        const index = findIndex(lP, {'entity_id': entityId});
+        lP.splice(index,1);
+        localStorage.progress = JSON.stringify(lP);
+        lP = this.setLocalProgress(lP);
         this.setState({localProgress: lP});
     };
 
-    sortArr = ( filteredVideo, filteredCourse) => {
-        const { sortNumber } = this.state;
-        for (let i=0 ; i<100; i++){
-            if(filteredVideo.length){
-                const removedVideo = filteredVideo.splice(0, sortNumber);
-                this.lP = (this.lP).length? [...this.lP, ...removedVideo]: [...removedVideo];
-            }
-            if(filteredCourse.length){
-                const removedCourse = filteredCourse.splice(0, sortNumber);
-                this.lP = (this.lP).length? [...this.lP, ...removedCourse]: [...removedCourse];
-            }
-            if(!filteredVideo.length && !filteredCourse.length) break;
-        }
-    };
-
-    changeSortNumber = (e) => {
-        const val = e.target.value;
-        if (!(+val)) return e.target.value = this.state.repeatNumber;
-        this.setState({sortNumber: +val});
-    };
-
-    // onGridReady = params => {
-    //     this.gridApi = params.api;
-    // };
+    selectRow =(data)=> {
+        const entityId = get(data, 'data.entity_id')
+        if (entityId && this.state.entityId !== entityId) this.setState({entityId})
+    }
 
     render() {
 
@@ -140,16 +88,9 @@ export default class UserDictionary extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <Button variant="info" block onClick={this.sort}>
-                            sort
+                        <Button variant="info" block onClick={this.deleteRow}>
+                            delete {this.state.entityId}
                         </Button>
-                    </Col>
-                    <Col>
-                        <FormControl
-                            type="text"
-                            defaultValue={this.state.sortNumber}
-                            onChange={this.changeSortNumber}
-                        />
                     </Col>
                     <Col>
                         <Button variant="info" block >
@@ -173,6 +114,7 @@ export default class UserDictionary extends Component {
                         }}
                         rowData={this.state.localProgress}
                         modules={AllCommunityModules}
+                        onRowClicked={this.selectRow}
                         // onGridReady={this.onGridReady}
                         pagination={true}
                     />
