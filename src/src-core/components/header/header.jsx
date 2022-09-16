@@ -22,10 +22,6 @@ const content = {
         ru: 'Курсы',
         ukr: 'Курси'
     },
-    video: {
-        ru: 'Видео',
-        ukr: 'Відео'
-    },
     learning: {
         ru: 'Изучение',
         ukr: 'Вивчення'
@@ -96,8 +92,7 @@ class HeaderClass extends Component {
     onMouseOut = (e) => {
         const elem = e.currentTarget;
         const {firstColor, secondColor} = this.props.store;
-        const gradientStyle = `linear-gradient(to bottom,${firstColor},${secondColor}`;
-        elem.style.background = gradientStyle;
+        elem.style.background =  `linear-gradient(to bottom,${firstColor},${secondColor}`;
     };
 
     warn = (e) => {
@@ -118,7 +113,6 @@ class HeaderClass extends Component {
         const direction = 'left';
         const logo = get(content, `logo[${siteLang}]`);
         const course = get(content, `course[${siteLang}]`);
-        const video = get(content, `video[${siteLang}]`);
         const learning = get(content, `learning[${siteLang}]`);
         const dictionary = get(content, `dictionary[${siteLang}]`);
         const progress = get(content, `progress[${siteLang}]`);
@@ -151,9 +145,6 @@ class HeaderClass extends Component {
                         </Col>
                             <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
                             <Link to={'/english_react/course-page'} children={course} style={fontStyle}/>
-                        </Col>
-                        <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
-                            <Link to={'/english_react/video-page'} children={video} style={fontStyle}/>
                         </Col>
                         <Col md="auto" className={btnClassName} style={{...fontStyle, ...gradientStyle}} {...hover} >
                             <Link to={'/english_react/learning'} children={learning} style={fontStyle}/>
@@ -235,7 +226,7 @@ class HeaderClass extends Component {
             </div>
         );
     }
-};
+}
 
 const header = withRouter(HeaderClass);
 

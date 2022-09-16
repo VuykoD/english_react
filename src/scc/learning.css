@@ -71,10 +71,6 @@ button.title_sound {
     animation: 25.05s linear infinite forwards move_eye;
 }
 
-.video-hide {
-    display: none;
-}
-
 .mistakes-string {
     font-weight: 600;
     font-size: 20px;

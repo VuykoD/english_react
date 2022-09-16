@@ -7,8 +7,6 @@ import findIndex from "lodash/findIndex";
 import get from "lodash/get";
 import {Container, Row, Col, Button} from "react-bootstrap";
 
-import videoItems from '../../../dict/videoItems';
-import videoNames from '../../../dict/videoNames';
 import '@ag-grid-community/all-modules/dist/styles/ag-grid.css';
 import '@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css';
 import '../../../scc/user-data.css';
@@ -43,15 +41,6 @@ export default class UserDictionary extends Component {
 
     setLocalProgress = (lp) =>{
         map(lp, (item, key) => {
-
-            if (item.entity === 'video') {
-                lp[key].eng = get(videoItems, `[${item.entity_id}].eng`);
-                lp[key].pol = get(videoItems, `[${item.entity_id}].pol`);
-                lp[key].native = get(videoItems, `[${item.entity_id}].transl`);
-                lp[key].courseId = get(videoItems, `[${item.entity_id}].idVideoName`);
-                const courseIndex = findIndex(videoNames, {'id': lp[key].courseId});
-                lp[key].source = get(videoNames, `[${courseIndex}].songName`);
-            }
 
             if (item.entity === 'course') {
                 const index = findIndex(courseItems, {'id': item.entity_id});

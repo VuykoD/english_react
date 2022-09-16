@@ -10,7 +10,41 @@ import '../../scc/unit.css';
 import '../../scc/course.css'
 import courseUnits from "../../dict/courseUnits";
 import courseItems from "../../dict/courseItems";
-import {content} from '../video-page/video-item';
+
+export const content = {
+    hideTranslate: {
+        ru: "Скрыть перевод",
+        ukr: "Скрити переклад",
+    },
+    firstPhrase: {
+        ru: "Составить по словам",
+        ukr: "Скласти по словам",
+    },
+    thirdPhrase: {
+        ru: "Написать первые буквы",
+        ukr: "Написати перші літери",
+    },
+    fifthPhrase: {
+        ru: "Повторить по озвученному",
+        ukr: "Повторити по озвученому",
+    },
+    train: {
+        ru: "Тренировать",
+        ukr: "Тренувати",
+    },
+    select: {
+        ru: "Отобрать для изучения",
+        ukr: "Відібрати для вивчення",
+    },
+    alreadySelected: {
+        ru: "Уже отобрано для изучения",
+        ukr: "Вже відібрано для вивчення",
+    },
+    clearLocalstorage: {
+        ru: "Убрать всё из изучения",
+        ukr: "Видалити все з вивчення",
+    },
+};
 
 export default class CourseItem extends Component {
     constructor(props) {

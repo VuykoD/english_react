@@ -8,9 +8,6 @@ import FormControl from 'react-bootstrap/FormControl';
 
 import '../../scc/learning.css';
 
-import videoItems from '../../dict/videoItems';
-import videoNames from '../../dict/videoNames';
-import {playVideo} from '../video-page/video-item';
 import courseItems from '../../dict/courseItems';
 import courseUnits from '../../dict/courseUnits';
 
@@ -34,10 +31,6 @@ const content = {
     repeatAll: {
         ru: "Повторять всё",
         ukr: "Повторювати все",
-    },
-    video: {
-        ru: "Видео",
-        ukr: "Відео",
     },
     source: {
         ru: "Источник",
@@ -136,32 +129,7 @@ export default class Learning extends Component {
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
 
-        if (!this.learnArr) {
-            const videoItemsKeyArr = Object.keys(videoItems);
-            const videoItemsLength = videoItemsKeyArr.length;
-            let learnArr = [];
-            let i = sliceNumber;
-            while (i) {
-                const randomNumber = Math.floor(Math.random() * videoItemsLength);
-                const videoItemId = videoItemsKeyArr[randomNumber];
-                learnArr.push({
-                    entity: 'video',
-                    entity_id: videoItems[videoItemId].id
-                });
-                i--;
-            }
-            this.learnArr = learnArr.length ? learnArr.slice(0, sliceNumber) : null;
-        }
-
         map(this.learnArr, (item, key) => {
-            if (item.entity === 'video') {
-                this.learnArr[key].eng = get(videoItems, `[${item.entity_id}].eng`);
-                this.learnArr[key].transl = get(videoItems, `[${item.entity_id}].transl`);
-                this.learnArr[key].courseId = get(videoItems, `[${item.entity_id}].idVideoName`);
-                const courseIndex = findIndex(videoNames, {'id': this.learnArr[key].courseId});
-                this.learnArr[key].topicName = get(videoNames, `[${courseIndex}].songName`);
-            }
-
             if (item.entity === 'course') {
                 const index = findIndex(courseItems, {'id': item.entity_id});
                 this.learnArr[key].eng = get(courseItems, `[${index}].eng`);
@@ -205,20 +173,14 @@ export default class Learning extends Component {
 
     setEngAndTransl = (learnNumber, changedState) => {
         const entity = get(this.learnArr, `${learnNumber}.entity`);
-        const entityId = get(this.learnArr, `${learnNumber}.entity_id`);
-        const courseId = get(this.learnArr, `${learnNumber}.courseId`);
         let english = get(this.learnArr, `${learnNumber}.eng`, '');
         english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\s+/g, ' ').trim();
         let polish = get(this.learnArr, `${learnNumber}.pol`, '');
         polish = polish.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\s+/g, ' ').trim();
         const translation = get(this.learnArr, `${learnNumber}.transl`);
-        const start = get(videoItems, `[${entityId}].start`);
-        const end = get(videoItems, `[${entityId}].end`);
 
-        const index = findIndex(videoNames, {'id': courseId});
-        const fileName = get(videoNames, `[${index}].fileName`);
         this.setState({
-            english, polish, translation, entity, start, end, fileName, learnNumber,
+            english, polish, translation, entity, learnNumber,
             exampleLearning: changedState || this.state.exampleLearning
         })
     };
@@ -248,24 +210,6 @@ export default class Learning extends Component {
         } else {
             this.setState({isRepeatAll: false});
         }
-    }
-
-    renderVideo() {
-        const {fileName, start, end} = this.state;
-        const autoPlay = checkIsSound.call(this);
-
-        if (
-            !fileName || !start || !end
-        ) return;
-        const src = `../../video/${fileName}#t=${start},${end}`;
-        return (
-            <video
-                className="video-hide"
-                id='player'
-                src={src}
-                autoPlay={autoPlay}
-            />
-        )
     }
 
     getTopic = () => {
@@ -301,7 +245,6 @@ export default class Learning extends Component {
 
         return (
             <Container className='new-container'>
-                {this.renderVideo()}
                 {!exampleLearning && !cycleLearning &&
                 <Fragment>
                     <Row>
@@ -413,10 +356,7 @@ export function getProgressBar() {
 }
 
 export function speak() {
-    //video
-    const {english, polish, entity, end, start, learnPol, learnEng} = this.state;
-    if (entity === 'video' && end && start) return playVideo.call(this, start, end);
-    if (entity === 'video' && (!start || !end)) return;
+    const {english, polish, learnPol, learnEng} = this.state;
 
     //comp eng
     if (english && learnEng){
