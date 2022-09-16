@@ -9,6 +9,11 @@ const courseNames = [
         name: 'Murphy 2',
         active: true,
     },
+    {
+        id: 3,
+        name: 'School 8 class',
+        active: true,
+    },
 ];
 export {courseNames as default};
 //

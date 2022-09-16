@@ -65,6 +65,31 @@ const courseUnits = [
         url: "/m1unit5",
         name: "Unit 5",
     },
+    //school 8
+    {
+        id: 300,
+        courseId: 3,
+        url: "/school-8/welcome",
+        name: "Welcome unit",
+    },
+    {
+        id: 301,
+        courseId: 3,
+        url: "/school-8/unit-1",
+        name: "Unit 1"
+    },
+    {
+        id: 302,
+        courseId: 3,
+        url: "/school-8/unit-2",
+        name: "Unit 2"
+    },
+    {
+        id: 303,
+        courseId: 3,
+        url: "/school-8/unit-3",
+        name: "Unit 2"
+    },
 ];
 
 
