@@ -11,6 +11,7 @@ import '../../scc/course.css'
 import courseUnits from "../../dict/courseUnits";
 import courseItems from "../../dict/courseItems";
 
+
 export const content = {
     hideTranslate: {
         ru: "Скрыть перевод",
