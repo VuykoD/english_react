@@ -5,7 +5,7 @@ import filter from 'lodash/filter';
 import findIndex from 'lodash/findIndex';
 import {Badge, Button, Col, Container, Form, ProgressBar, Row} from 'react-bootstrap';
 import FormControl from 'react-bootstrap/FormControl';
-//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
+//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
 import '../../scc/learning.css';
 
 import courseItems from '../../dict/courseItems';
