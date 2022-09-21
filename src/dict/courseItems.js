@@ -300,19 +300,6 @@ const courseItems = [
     {"id": 3066, "unitId": 304, "eng": "","pol": "", "transl": ""},
     {"id": 3067, "unitId": 304, "eng": "","pol": "", "transl": ""},
     {"id": 3068, "unitId": 304, "eng": "","pol": "", "transl": ""},
-
-    {"id": 3069, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 3070, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 3071, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 3072, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 3073, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 3074, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 3075, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 3076, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 3077, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 3078, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 3079, "unitId": 303, "eng": "","pol": "", "transl": ""},
-    {"id": 308, "unitId": 303, "eng": "","pol": "", "transl": ""},
 ];
 
 export {courseItems as default};

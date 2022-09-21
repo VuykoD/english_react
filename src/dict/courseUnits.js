@@ -88,7 +88,7 @@ const courseUnits = [
         id: 303,
         courseId: 3,
         url: "/school-8/unit-3",
-        name: "Unit 2"
+        name: "Unit 3"
     },
 ];
 
