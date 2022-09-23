@@ -70,25 +70,25 @@ const courseUnits = [
         id: 300,
         courseId: 3,
         url: "/school-8/welcome",
-        name: "Welcome unit",
+        name: "Welcome unit 1",
     },
     {
         id: 301,
         courseId: 3,
         url: "/school-8/unit-1",
-        name: "Unit 1"
+        name: "item 1 lesson 4"
     },
     {
         id: 302,
         courseId: 3,
         url: "/school-8/unit-2",
-        name: "Unit 2"
+        name: "item 1 lesson 4"
     },
     {
         id: 303,
         courseId: 3,
         url: "/school-8/unit-3",
-        name: "Unit 3"
+        name: "item lesson 1 lesson 5"
     },
 ];
 
