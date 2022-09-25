@@ -285,7 +285,7 @@ const courseItems = [
     {"id": 3053, "unitId": 302, "eng": "shop assistant","pol": "sprzedawca", "transl": "продавец"},
     //
     {"id": 3054, "unitId": 303, "eng": "hear and match them","pol": "posłuchaj i dopasuj je", "transl": "услышать и сопоставить их"},
-    {"id": 3055, "unitId": 303, "eng": "to have the parcel taken insert money","pol": "aby paczka została zabrana, włóż pieniądze?", "transl": "забрать посылку вложите деньги"},
+    {"id": 3055, "unitId": 303, "eng": "to have the parcel taken insert money","pol": "aby paczka została zabrana, włóż pieniądze?", "transl": "чтобы забрать посылку вложите деньги"},
     {"id": 3056, "unitId": 303, "eng": "I went to the post office for purpose","pol": "Celowo poszedłem na pocztę", "transl": "Я пошел на почту специально"},
     {"id": 3057, "unitId": 303, "eng": "a booth is the odd one out","pol": "budka dodatkowa", "transl": "стенд лишний"},
     {"id": 3058, "unitId": 303, "eng": "hire place for letter","pol": "wynająć miejsce na list", "transl": "арендовать место для письма"},
