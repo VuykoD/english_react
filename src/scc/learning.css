@@ -56,6 +56,10 @@ button.title_sound {
     margin-bottom: 30px;
 }
 
+.rows {
+    margin-bottom: 7px;
+}
+
 .hint {
     color: #969696;
 }

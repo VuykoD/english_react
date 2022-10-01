@@ -75,19 +75,19 @@ const courseUnits = [
     {
         id: 301,
         courseId: 3,
-        url: "/school-8/unit-1",
-        name: "item 1 lesson 4"
+        url: "/school-8/unit-1/lesson-1",
+        name: "item 1 lesson 1"
     },
     {
         id: 302,
         courseId: 3,
-        url: "/school-8/unit-2",
+        url: "/school-8/unit-1/lesson-4",
         name: "item 1 lesson 4"
     },
     {
         id: 303,
         courseId: 3,
-        url: "/school-8/unit-3",
+        url: "/school-8/unit-1/lesson-5",
         name: "item 1 lesson 5"
     },
 ];

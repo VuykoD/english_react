@@ -12,9 +12,13 @@ import courseItems from '../../dict/courseItems';
 import courseUnits from '../../dict/courseUnits';
 
 const content = {
-    new: {
-        ru: "Поехали",
-        ukr: "Поїхали",
+    repeat: {
+        ru: "Слушать и повторять",
+        ukr: "Слухати і повторювати",
+    },
+    write: {
+        ru: "Писать",
+        ukr: "Писати",
     },
     eng: {
         ru: "Озвучивать английскую",
@@ -27,10 +31,6 @@ const content = {
     countRepeat: {
         ru: "Фраз слов повторять",
         ukr: "Фраз слів повторювати",
-    },
-    repeatAll: {
-        ru: "Повторять всё",
-        ukr: "Повторювати все",
     },
     source: {
         ru: "Источник",
@@ -47,14 +47,17 @@ const initialState = {
     polish: '',
     translation: '',
     newLearnNumber: +localStorage.newLearnNumber || 5,
-    entity: null,
     start: null,
     end: null,
     fileName: '',
     learnEng: true,
-    learnPol: true,
-    isRepeatAll: false
+    learnPol: false,
+    isRepeatAll: false,
+    mistake: 0,
+    mistakeRewrite: 0
 }
+
+const MAX_WORD_LENGTH = 13;
 
 export default class Learning extends Component {
     constructor(props) {
@@ -63,16 +66,12 @@ export default class Learning extends Component {
         this.state = {
             ...initialState
         };
-        this.englishArr = [];
-        this.learnArr = [];
-        this.timeoutClearState = null;
-        this.timeoutNextItem = null;
-        this.timeoutResetExampleLearning = null;
     }
 
     componentDidMount() {
-        keyListener.call(this);
         this.getVoices();
+        this.repeatAll();
+        this.setInitialData();
     }
 
     componentWillUnmount() {
@@ -99,16 +98,18 @@ export default class Learning extends Component {
         };
     }
 
-    resetExampleLearning = () => {
-        this.setState({exampleLearning: null})
+    onChangeInput = () => {
+        changedInput.call(this);
     };
 
     setInitialData = () => {
-        this.englishArr = [];
+        this.mistakeArr = [];
         this.learnArr = [];
         this.timeoutClearState = null;
         this.timeoutNextItem = null;
         this.timeoutResetExampleLearning = null;
+        this.repeatMistakes = false;
+        this.changeState = true;
         this.clearTimeOut();
         this.setState({...initialState});
     }
@@ -117,12 +118,20 @@ export default class Learning extends Component {
         speak.call(this);
     };
 
-    newLearn = () => {
+    soundAndRepeat = () => {
+        this.getVoices();
         this.getLearnArray(this.state.newLearnNumber);
         if (!this.learnArr) return;
         this.setEngAndTransl(this.state.learnNumber);
-        this.setState({cycleLearning: 'new', exampleLearning: 'phase_5'});
-        this.nextItem();
+        this.setState({cycleLearning: 'new', exampleLearning: 'example_sound_repeat'});
+        this.nextSoundAndRepeatItem();
+    };
+
+    write = () => {
+        this.getLearnArray(this.state.newLearnNumber);
+        if (!this.learnArr) return;
+        this.setState({cycleLearning: 'new', exampleLearning: 'write'});
+        this.setEngAndTransl(this.state.learnNumber, MAX_WORD_LENGTH);
     };
 
     getLearnArray = (sliceNumber) => {
@@ -130,15 +139,13 @@ export default class Learning extends Component {
         this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
 
         map(this.learnArr, (item, key) => {
-            if (item.entity === 'course') {
-                const index = findIndex(courseItems, {'id': item.entity_id});
-                this.learnArr[key].eng = get(courseItems, `[${index}].eng`);
-                this.learnArr[key].pol = get(courseItems, `[${index}].pol`);
-                this.learnArr[key].transl = get(courseItems, `[${index}].transl`);
-                this.learnArr[key].courseId = get(courseItems, `[${index}].unitId`);
-                const courseIndex = findIndex(courseUnits, {'id': this.learnArr[key].courseId});
-                this.learnArr[key].topicName = get(courseUnits, `[${courseIndex}].name`);
-            }
+            const index = findIndex(courseItems, {'id': item.entity_id});
+            this.learnArr[key].eng = get(courseItems, `[${index}].eng`);
+            this.learnArr[key].pol = get(courseItems, `[${index}].pol`);
+            this.learnArr[key].transl = get(courseItems, `[${index}].transl`);
+            this.learnArr[key].courseId = get(courseItems, `[${index}].unitId`);
+            const courseIndex = findIndex(courseUnits, {'id': this.learnArr[key].courseId});
+            this.learnArr[key].topicName = get(courseUnits, `[${courseIndex}].name`);
         })
     };
 
@@ -150,7 +157,7 @@ export default class Learning extends Component {
     }
 
 
-    nextItem = () => {
+    nextSoundAndRepeatItem = () => {
         const { learnNumber } = this.state;
         const timeoutTime = this.setTimeoutTime(learnNumber);
 
@@ -159,7 +166,7 @@ export default class Learning extends Component {
             this.timeoutNextItem = setTimeout(() => {
                 const nextNumber = learnNumber + 1;
                 this.setEngAndTransl(nextNumber);
-                this.nextItem();
+                this.nextSoundAndRepeatItem();
             }, timeoutTime * 1000);
         } else {
             this.timeoutNextItem = setTimeout(() => {
@@ -168,18 +175,35 @@ export default class Learning extends Component {
         }
     };
 
-    setEngAndTransl = (learnNumber, changedState) => {
-        const entity = get(this.learnArr, `${learnNumber}.entity`);
+    setEngAndTransl = (learnNumber, maxLength) => {
+        const {learnPol} = this.state;
         let english = get(this.learnArr, `${learnNumber}.eng`, '');
         english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\s+/g, ' ').trim();
         let polish = get(this.learnArr, `${learnNumber}.pol`, '');
         polish = polish.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\s+/g, ' ').trim();
         const translation = get(this.learnArr, `${learnNumber}.transl`);
+        if (!translation){
+            this.repeatMistakes = true;
+        }
+        if (maxLength){
+            let wordToLearn = english;
+            if (learnPol) wordToLearn = polish;
+            wordToLearn = wordToLearn.toUpperCase();
+
+            if (wordToLearn.length > maxLength){
+                const nextNumber = learnNumber + 1;
+                this.setEngAndTransl(nextNumber, MAX_WORD_LENGTH);
+                return;
+            }
+        }
 
         this.setState({
-            english, polish, translation, entity, learnNumber,
-            exampleLearning: changedState || this.state.exampleLearning
-        })
+            english,
+            polish,
+            translation,
+            learnNumber,
+            mistake: 0
+        });
     };
 
     changeNewLearnNumber = (e) => {
@@ -189,23 +213,18 @@ export default class Learning extends Component {
     };
 
     changeEngCheck = () =>{
-        this.setState({learnEng: !this.state.learnEng});
+        this.setState({learnEng: true, learnPol: false});
     }
 
     changePolCheck = () =>{
-        this.setState({learnPol: !this.state.learnPol});
+        this.setState({learnEng: false, learnPol: true});
     }
 
     repeatAll = () =>{
-        const { isRepeatAll } = this.state;
-        if (!isRepeatAll) {
-            const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-            if (localProgress && localProgress.length){
-                localStorage.newLearnNumber = localProgress.length;
-                this.setState({newLearnNumber: localProgress.length, isRepeatAll: true});
-            }
-        } else {
-            this.setState({isRepeatAll: false});
+        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        if (localProgress && localProgress.length){
+            localStorage.newLearnNumber = localProgress.length || 0;
+            this.setState({newLearnNumber: localProgress.length || 0});
         }
     }
 
@@ -226,16 +245,21 @@ export default class Learning extends Component {
     render() {
         const {
             newLearnNumber,
-            exampleLearning, cycleLearning,
-            english, polish, translation,
-            learnEng, learnPol, isRepeatAll
+            exampleLearning,
+            cycleLearning,
+            english,
+            polish,
+            translation,
+            learnEng,
+            learnPol,
+            mistake
         } = this.state;
         const {siteLang} = this.props.store;
-        const newLearn = get(content, `new[${siteLang}]`);
+        const repeat = get(content, `repeat[${siteLang}]`);
+        const write = get(content, `write[${siteLang}]`);
         const eng = get(content, `eng[${siteLang}]`);
         const pol = get(content, `pol[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
-        const repeatAll = get(content, `repeatAll[${siteLang}]`);
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
@@ -244,28 +268,17 @@ export default class Learning extends Component {
             <Container className='new-container'>
                 {!exampleLearning && !cycleLearning &&
                 <Fragment>
-                    <Row>
+                    <Row className="rows">
                         <Col>
                             <Form.Group controlId="learnEng">
-                                <Form.Check type="checkbox" label={eng} checked={learnEng} onChange={this.changeEngCheck}/>
+                                <Form.Check type="radio" label={eng} checked={learnEng} onChange={this.changeEngCheck}/>
                             </Form.Group>
                         </Col>
-                    </Row>
-                    <Row>
                         <Col>
                             <Form.Group controlId="learnPol">
-                                <Form.Check type="checkbox" label={pol} checked={learnPol} onChange={this.changePolCheck}/>
+                                <Form.Check type="radio" label={pol} checked={learnPol} onChange={this.changePolCheck}/>
                             </Form.Group>
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Button variant="info" block onClick={this.newLearn}>
-                                {newLearn}
-                            </Button>
-                        </Col>
-                    </Row>
-                    <Row>
                         <Col>
                             <span children={countRepeat} />
                             <FormControl
@@ -274,23 +287,35 @@ export default class Learning extends Component {
                                 onChange={this.changeNewLearnNumber}
                             />
                         </Col>
+                    </Row>
+                    <Row>
                         <Col>
-                            <Form.Group controlId="isRepeatAll">
-                                <Form.Check type="checkbox" label={repeatAll} checked={isRepeatAll} onChange={this.repeatAll}/>
-                            </Form.Group>
+                            <Button variant="info" block onClick={this.soundAndRepeat}>
+                                {repeat}
+                            </Button>
+                        </Col>
+                        <Col>
+                            <Button variant="info" block onClick={this.write}>
+                                {write}
+                            </Button>
                         </Col>
                     </Row>
                 </Fragment>
                 }
-                <Row className="text-center new-row">
+                <Row className="text-center new-row rows">
                     {exampleLearning &&
                         <Col>
                             {this.getTopic()}
                             {soundButton.call(this)}
                             {getBadge(translation, "secondary")}
                             {getProgressBar.call(this)}
-                            {getBadge(english, "light")}
-                            {learnPol && getBadge(polish, "light")}
+                            {(exampleLearning === 'example_sound_repeat' || mistake > 2) &&
+                                <>
+                                    {learnEng && getBadge(english, "light")}
+                                    {learnPol && getBadge(polish, "light")}
+                                </>
+                            }
+                            {exampleLearning === 'write' && getInput.call(this)}
                         </Col>
                     }
                 </Row>
@@ -335,7 +360,7 @@ export function getProgressBar() {
     let progress = null;
     const timeoutTime = this.setTimeoutTime(learnNumber);
 
-    if (exampleLearning === 'phase_5' || exampleLearning === 'word_5') {
+    if (exampleLearning === 'example_sound_repeat') {
         progress = (
             <Row>
                 <Col sm={3}/>
@@ -378,16 +403,67 @@ export function speak() {
 export function checkIsSound() {
     const {exampleLearning} = this.state;
 
-    return exampleLearning === 'word_5' || exampleLearning === 'phase_5';
+    return exampleLearning === 'example_sound_repeat';
 }
 
-export function keyListener() {
-    document.addEventListener('keydown', (event) => {
-        const exampleLearningState = this.state.exampleLearning;
-        const keyCode = event.keyCode;
-
-        if (keyCode === 32) this.speakTxt();
-        if (keyCode === 49 && !exampleLearningState && get(document, 'activeElement.tagName') !== 'INPUT') this.newLearn();
-
-    });
+export function getInput() {
+    return (
+        <Row>
+            <Col sm={3}/>
+            <Col>
+                <Form.Control
+                    id='formInput'
+                    type="text"
+                    className="mr-sm-2 search"
+                    onChange={this.onChangeInput}
+                />
+            </Col>
+            <Col sm={3}/>
+        </Row>
+    );
 }
+
+export function changedInput() {
+    const {english, polish, learnPol, mistake, learnNumber, mistakeRewrite} = this.state;
+    const formInput = document.getElementById('formInput');
+    let word = get(formInput, 'value');
+    word = word.toUpperCase();
+    let wordToLearn = english;
+    if (learnPol) wordToLearn = polish;
+    wordToLearn = wordToLearn.toUpperCase();
+    if (!wordToLearn) this.repeatMistakes = true;
+
+    if (wordToLearn === word || wordToLearn.length > MAX_WORD_LENGTH || !wordToLearn) {
+        document.getElementById("formInput").value = '';
+        this.setEngAndTransl(learnNumber + 1, MAX_WORD_LENGTH);
+        if (learnNumber >= this.learnArr.length || this.repeatMistakes) {
+            this.repeatMistakes = true;
+            console.log(mistakeRewrite, this.mistakeArr, 2);
+            if(mistakeRewrite < this.mistakeArr.length) {
+                const nextNumber = this.mistakeArr[mistakeRewrite];
+                this.setState({mistakeRewrite: mistakeRewrite + 1});
+                this.setEngAndTransl(nextNumber);
+            }
+
+            if (mistakeRewrite >= this.mistakeArr.length) {
+                this.setInitialData();
+            }
+        }
+
+    }
+
+    if (wordToLearn.slice(0, word.length) !== word){
+        word = (word.slice(0, word.length - 1));
+        document.getElementById("formInput").value = word;
+        this.setState({mistake: mistake + 1});
+        if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
+            this.mistakeArr.push(learnNumber);
+            console.log(this.mistakeArr);
+        }
+        // this.mistakeArr = this.mistakeArr.filter(onlyUnique);
+    }
+}
+
+// function onlyUnique(value, index, self) {
+//     return self.indexOf(value) === index;
+// }

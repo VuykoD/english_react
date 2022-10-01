@@ -272,7 +272,7 @@ const courseItems = [
     {"id": 3041, "unitId": 301, "eng": "lend bike","pol": "pożyczyć rower", "transl": "одолжить велосипед"},
     //
     {"id": 3042, "unitId": 302, "eng": "taking things back to the shop","pol": "zabieranie rzeczy z powrotem do sklepu", "transl": "вернуть вещи в магазин"},
-    {"id": 3043, "unitId": 302, "eng": "dear","pol": "droga", "transl": "уважаемый"},
+    {"id": 3043, "unitId": 302, "eng": "dear","pol": "drogi", "transl": "уважаемый"},
     {"id": 3044, "unitId": 302, "eng": "I am afraid","pol": "obawiam się", "transl": "я боюсь"},
     {"id": 3045, "unitId": 302, "eng": "goods","pol": "towary", "transl": "товары"},
     {"id": 3046, "unitId": 302, "eng": "get a refund","pol": "uzyskać zwrot pieniędzy", "transl": "получить возмещение"},

@@ -110,74 +110,6 @@ export default class CourseItem extends Component {
         }
     };
 
-    save = (e) => {
-        const rowData = this.getRowData(e) || {};
-        const {id, eng, transl} = rowData;
-        const courseItems = this.localItems;
-        const newId = courseItems.length ?
-            +courseItems[courseItems.length - 1].id + 1 :
-            1;
-        const index = findIndex(courseItems, {'id': id});
-
-        const courseItem = {
-            id: +id || +newId,
-            unitId: +this.unitId,
-            eng,
-            transl
-        };
-        let newCourseItems;
-        if (index > -1) {
-            newCourseItems = courseItems;
-            newCourseItems[index] = courseItem;
-        } else {
-            newCourseItems = courseItems.length ? [...courseItems, courseItem] : [courseItem];
-        }
-        this.localItems = newCourseItems;
-        this.setState({courseItems: newCourseItems});
-        localStorage.course = JSON.stringify(newCourseItems);
-        if (index === -1) this.clearRow(e);
-    };
-
-    delete = (e) => {
-        const rowData = this.getRowData(e) || {};
-        const {id} = rowData;
-        const {courseItems} = this.state;
-        let index = findIndex(courseItems, {'id': +id});
-        if (index === -1) index = findIndex(courseItems, {'id': id});
-        let newCourseItems = null;
-        if (index > -1) {
-            newCourseItems = courseItems;
-            newCourseItems.splice(index, 1);
-            this.setState({courseItems: newCourseItems});
-            localStorage.course = JSON.stringify(newCourseItems);
-        }
-    };
-
-    clearRow = (e) => {
-        const rowElem = this.getRowElem(e);
-        const {eEng, eTransl} = rowElem;
-        eEng.value = null;
-        eTransl.value = null;
-    };
-
-    getRowData = (e) => {
-        const rowElem = this.getRowElem(e);
-        const {eId, eEng, eTransl} = rowElem;
-        const id = eId ? eId.value : null;
-        const eng = eEng ? eEng.value : null;
-        const transl = eTransl ? eTransl.value : null;
-        return {id, eng, transl};
-    };
-
-    getRowElem(e) {
-        const elem = e.currentTarget;
-        const row = elem.getAttribute('row');
-        const eId = document.getElementById(`row${row}_id`);
-        const eEng = document.getElementById(`row${row}_eng`);
-        const eTransl = document.getElementById(`row${row}_transl`);
-        return {eId, eEng, eTransl};
-    }
-
     render() {
         const {siteLang = ''} = this.props.store;
         const select = get(content, `select[${siteLang}]`);
@@ -244,55 +176,10 @@ export default class CourseItem extends Component {
                                                 <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_transl`}
                                                              defaultValue={item.transl}/>
                                             </Col>
-                                            <Col sm="1">
-                                                <Button
-                                                    row={key + 1}
-                                                    className="buttons"
-                                                    variant="primary"
-                                                    onClick={this.save}
-                                                >
-                                                    save
-                                                </Button>
-                                            </Col>
-                                            <Col sm="1">
-                                                <Button
-                                                    row={key + 1}
-                                                    className="buttons"
-                                                    variant="dark"
-                                                    onClick={this.delete}
-                                                >
-                                                    Delete
-                                                </Button>
-                                            </Col>
                                         </Row>
-
                                     </ListGroup.Item>
                                 )
                             })}
-                            <ListGroup.Item variant="light">
-                                <Row className="unit-row">
-                                    <Col sm="1" className="display-none">
-                                        <FormControl type="text" disabled id='row_new_id' className="display-none"/>
-                                    </Col>
-                                    <Col>
-                                        <FormControl type="text" className="mr-sm-2" id={`row_new_eng`}/>
-                                    </Col>
-                                    <Col>
-                                        <FormControl type="text" className="mr-sm-2" id={`row_new_transl`}/>
-                                    </Col>
-                                    <Col sm="1">
-                                        <Button
-                                            variant="primary"
-                                            className="buttons"
-                                            onClick={this.save}
-                                            row="_new"
-                                        >
-                                            save
-                                        </Button>
-                                    </Col>
-                                    <Col sm="1"/>
-                                </Row>
-                            </ListGroup.Item>
                         </ListGroup>
                     </Col>
                     <Col sm={1}>
