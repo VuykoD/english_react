@@ -90,6 +90,12 @@ const courseUnits = [
         url: "/school-8/unit-1/lesson-5",
         name: "item 1 lesson 5"
     },
+    {
+        id: 304,
+        courseId: 3,
+        url: "/school-8/unit-1/lesson-6",
+        name: "item 1 lesson 6"
+    },
 ];
 
 
