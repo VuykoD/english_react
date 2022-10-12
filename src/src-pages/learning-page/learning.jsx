@@ -438,7 +438,6 @@ export function changedInput() {
         this.setEngAndTransl(learnNumber + 1, MAX_WORD_LENGTH);
         if (learnNumber >= this.learnArr.length || this.repeatMistakes) {
             this.repeatMistakes = true;
-            console.log(mistakeRewrite, this.mistakeArr, 2);
             if(mistakeRewrite < this.mistakeArr.length) {
                 const nextNumber = this.mistakeArr[mistakeRewrite];
                 this.setState({mistakeRewrite: mistakeRewrite + 1});
@@ -453,7 +452,6 @@ export function changedInput() {
     }
 
     if (wordToLearn.slice(0, word.length) !== word){
-        console.log(wordToLearn.slice(0, word.length), word.length, word, wordToLearn !== word);
         word = (word.slice(0, word.length - 1));
         document.getElementById("formInput").value = word;
         this.setState({mistake: mistake + 1});
@@ -461,10 +459,10 @@ export function changedInput() {
             this.mistakeArr.push(learnNumber);
             console.log(this.mistakeArr);
         }
-        // this.mistakeArr = this.mistakeArr.filter(onlyUnique);
+        this.mistakeArr = this.mistakeArr.filter(onlyUnique);
     }
 }
 
-// function onlyUnique(value, index, self) {
-//     return self.indexOf(value) === index;
-// }
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
