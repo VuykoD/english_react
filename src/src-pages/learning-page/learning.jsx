@@ -453,6 +453,7 @@ export function changedInput() {
     }
 
     if (wordToLearn.slice(0, word.length) !== word){
+        console.log(wordToLearn.slice(0, word.length), word.length, word, wordToLearn !== word);
         word = (word.slice(0, word.length - 1));
         document.getElementById("formInput").value = word;
         this.setState({mistake: mistake + 1});
