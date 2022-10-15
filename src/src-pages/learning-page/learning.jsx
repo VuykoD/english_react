@@ -308,7 +308,7 @@ export default class Learning extends Component {
                             {this.getTopic()}
                             {soundButton.call(this)}
                             {learnEng && getBadge(translation, "secondary")}
-                            {polish && getBadge(english, "secondary")}
+                            {learnPol && getBadge(english, "secondary")}
                             {getProgressBar.call(this)}
                             {(exampleLearning === 'example_sound_repeat' || mistake > 2) &&
                                 <>
