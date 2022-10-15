@@ -36,6 +36,10 @@ const content = {
         ru: "Источник",
         ukr: "Джерело",
     },
+    selectAll: {
+        ru: "Выбрать все",
+        ukr: "Вибрати все",
+    },
 };
 
 const initialState = {
@@ -260,6 +264,7 @@ export default class Learning extends Component {
         const eng = get(content, `eng[${siteLang}]`);
         const pol = get(content, `pol[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
+        const selectAll = get(content, `countRepeat[${siteLang}]`);
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
@@ -286,6 +291,11 @@ export default class Learning extends Component {
                                 value={newLearnNumber}
                                 onChange={this.changeNewLearnNumber}
                             />
+                        </Col>
+                        <Col>
+                            <Button variant="info" block onClick={this.repeatAll}>
+                                {selectAll}
+                            </Button>
                         </Col>
                     </Row>
                     <Row>
