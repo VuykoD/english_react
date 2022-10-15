@@ -307,7 +307,8 @@ export default class Learning extends Component {
                         <Col>
                             {this.getTopic()}
                             {soundButton.call(this)}
-                            {getBadge(translation, "secondary")}
+                            {learnEng && getBadge(translation, "secondary")}
+                            {polish && getBadge(english, "secondary")}
                             {getProgressBar.call(this)}
                             {(exampleLearning === 'example_sound_repeat' || mistake > 2) &&
                                 <>
