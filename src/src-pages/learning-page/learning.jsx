@@ -261,7 +261,7 @@ export default class Learning extends Component {
         const {siteLang} = this.props.store;
         const repeat = get(content, `repeat[${siteLang}]`);
         const write = get(content, `write[${siteLang}]`);
-        const eng = get(content, `eng[${siteLang}]`);
+        // const eng = get(content, `eng[${siteLang}]`);
         const pol = get(content, `pol[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
         const selectAll = get(content, `countRepeat[${siteLang}]`);
@@ -274,11 +274,13 @@ export default class Learning extends Component {
                 {!exampleLearning && !cycleLearning &&
                 <Fragment>
                     <Row className="rows">
+                        {/*
                         <Col>
                             <Form.Group controlId="learnEng">
                                 <Form.Check type="radio" label={eng} checked={learnEng} onChange={this.changeEngCheck}/>
                             </Form.Group>
                         </Col>
+                        */}
                         <Col>
                             <Form.Group controlId="learnPol">
                                 <Form.Check type="radio" label={pol} checked={learnPol} onChange={this.changePolCheck}/>
