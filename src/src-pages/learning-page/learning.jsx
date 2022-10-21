@@ -54,8 +54,8 @@ const initialState = {
     start: null,
     end: null,
     fileName: '',
-    learnEng: true,
-    learnPol: false,
+    learnEng: false,
+    learnPol: true,
     isRepeatAll: false,
     mistake: 0,
     mistakeRewrite: 0
