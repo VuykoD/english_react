@@ -61,7 +61,7 @@ const initialState = {
     mistakeRewrite: 0
 }
 
-const MAX_WORD_LENGTH = 14;
+const MAX_WORD_LENGTH = 17;
 
 export default class Learning extends Component {
     constructor(props) {
