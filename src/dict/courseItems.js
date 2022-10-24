@@ -829,7 +829,6 @@ const courseItems = [
 //
     {"id":10525, "unitId":1029, "eng": "Not possible","pol": "Niemożliwe", "transl": "Невозможно"},
     {"id":10526, "unitId":1029, "eng": "By no means","pol": "W żaden sposób", "transl": "Ни в коем случае"},
-    {"id":10527, "unitId":1029, "eng": "I’m slammed","pol": "Zatrzasnąłem się", "transl": "Я захлопнул"},
     {"id":10528, "unitId":1029, "eng": "Not for me, thanks","pol": "Nie dla mnie, dzięki", "transl": "Не для меня, спасибо"},
     {"id":10529, "unitId":1029, "eng": "Unfortunately, that’s not something I can do at this time","pol": "Niestety w tej chwili nie mogę tego zrobić", "transl": "К сожалению, это не то, что я могу сделать в настоящее время"},
     {"id":10530, "unitId":1029, "eng": "I’m really booked","pol": "Naprawdę mam rezerwację", "transl": "Я действительно занят"},
