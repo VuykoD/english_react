@@ -155,7 +155,8 @@ export default class Learning extends Component {
 
     setTimeoutTime =(learnNumber)=>{
         const word = get(this.learnArr, `[${learnNumber}].eng`, '');
-        let timeoutTime = word.length > 10 ? word.length : 10;
+        const wordLength = Math.round(word.length / 1.4);
+        let timeoutTime = wordLength > 10 ? wordLength : 10;
         if(timeoutTime > 45) timeoutTime = 45;
         return timeoutTime;
     }
