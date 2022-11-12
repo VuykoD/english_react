@@ -401,7 +401,7 @@ const courseItems = [
     {"id":10095, "unitId":1005, "eng": "That's not fair","pol": "To niesprawiedliwe", "transl": "Это не честно"},
     {"id":10096, "unitId":1005, "eng": "That's fine","pol": "W porządku", "transl": "Это нормально"},
     {"id":10097, "unitId":1005, "eng": "This is very important","pol": "To jest bardzo ważne", "transl": "Это очень важно"},
-    {"id":10098, "unitId":1005, "eng": "That's too bad","pol": "Szkoda", "transl": "Это очень плохо"},
+    {"id":10098, "unitId":1005, "eng": "That's too bad","pol": "to jest za żle", "transl": "Это очень плохо"},
     {"id":10099, "unitId":1005, "eng": "This is very difficult","pol": "To jest bardzo trudne", "transl": "Это очень сложно"},
     {"id":10100, "unitId":1005, "eng": "That smells bad","pol": "To brzydko pachnie", "transl": "Это плохо пахнет"},
     {"id":10101, "unitId":1005, "eng": "That's too many","pol": "To za dużo", "transl": "Это слишком много"},
