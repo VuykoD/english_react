@@ -386,7 +386,7 @@ const courseItems = [
     {"id":10080, "unitId":1004, "eng": "Thank you","pol": "Dziękuję Ci", "transl": "Спасибо"},
     {"id":10081, "unitId":1004, "eng": "Hurry","pol": "Spieszyć się", "transl": "Торопиться"},
     {"id":10082, "unitId":1004, "eng": "You're very smart","pol": "Jesteś bardzo mądry", "transl": "Ты очень умный"},
-    {"id":10083, "unitId":1004, "eng": "You're beautiful","pol": "Ty jesteś piękny", "transl": "Ты прекрасна"},
+    {"id":10083, "unitId":1004, "eng": "You're beautiful","pol": "Jesteś piękny", "transl": "Ты прекрасна"},
     {"id":10084, "unitId":1004, "eng": "I have a headache","pol": "Boli mnie głowa", "transl": "У меня болит голова"},
     {"id":10085, "unitId":1004, "eng": "See you tonight","pol": "Do zobaczenia wieczorem", "transl": "Увидимся вечером"},
 //
@@ -421,7 +421,7 @@ const courseItems = [
     {"id":10115, "unitId":1006, "eng": "I'll pay","pol": "Zapłacę", "transl": "Я заплачу"},
     {"id":10116, "unitId":1006, "eng": "I've been here for two days","pol": "Jestem tu od dwóch dni", "transl": "Я здесь уже два дня"},
     {"id":10117, "unitId":1006, "eng": "I know","pol": "Wiem", "transl": "Я знаю"},
-    {"id":10118, "unitId":1006, "eng": "I'm thirsty","pol": "Jestem spragniona", "transl": "Я испытываю жажду"},
+    {"id":10118, "unitId":1006, "eng": "I'm thirsty","pol": "Jestem spragniony", "transl": "Я испытываю жажду"},
     {"id":10119, "unitId":1006, "eng": "I hope you and your wife have a nice trip","pol": "Życzę miłej podróży z żoną", "transl": "Я надеюсь, что вы и ваша жена приятного путешествия"},
     {"id":10120, "unitId":1006, "eng": "I'm not married","pol": "Nie jestem żonaty", "transl": "Я не женат"},
     {"id":10121, "unitId":1006, "eng": "I'm not busy","pol": "Nie jestem zajęty", "transl": "Я не занят"},
