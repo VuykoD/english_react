@@ -275,7 +275,6 @@ const courseItems = [
     {"id":10127, "unitId":1006, "eng": "I don't want to bother you","pol": "Nie chcę ci przeszkadzać", "transl": "Я не хочу вас беспокоить"},
 //
     {"id":10129, "unitId":1007, "eng": "I don't want it","pol": "Nie chcę tego", "transl": "Я не хочу этого"},
-    {"id":10130, "unitId":1007, "eng": "I don't want that","pol": "Nie chcę tego", "transl": "Я не хочу этого"},
     {"id":10131, "unitId":1007, "eng": "I've never seen that before","pol": "Nigdy wcześniej tego nie widziałem", "transl": "Я никогда не видел этого раньше"},
     {"id":10132, "unitId":1007, "eng": "I'll take you to the bus stop","pol": "Zabiorę cię na przystanek autobusowy", "transl": "Я отвезу тебя на автобусную остановку"},
     {"id":10133, "unitId":1007, "eng": "I don't have time now","pol": "Nie mam teraz czasu", "transl": "У меня сейчас нет времени"},

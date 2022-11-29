@@ -28,6 +28,18 @@ const content = {
         ru: "Озвучивать польску",
         ukr: "Озвучувати польську",
     },
+    translEng: {
+        ru: "Показать английский",
+        ukr: "Показати англійську",
+    },
+    translRus: {
+        ru: "Показать русский",
+        ukr: "Показати російську",
+    },
+    translPol: {
+        ru: "Показать польский",
+        ukr: "Показати польську",
+    },
     countRepeat: {
         ru: "Фраз слов повторять",
         ukr: "Фраз слів повторювати",
@@ -45,11 +57,13 @@ const content = {
 const initialState = {
     exampleLearning: null,
     cycleLearning: null,
-    showTranslation: true,
+    showRus: false,
+    showEng: true,
+    showPol: false,
     learnNumber: 0,
     english: '',
     polish: '',
-    translation: '',
+    rus: '',
     newLearnNumber: +localStorage.newLearnNumber || 5,
     start: null,
     end: null,
@@ -113,7 +127,6 @@ export default class Learning extends Component {
         this.timeoutNextItem = null;
         this.timeoutResetExampleLearning = null;
         this.repeatMistakes = false;
-        this.changeState = true;
         this.clearTimeOut();
         this.setState({...initialState});
     }
@@ -186,8 +199,8 @@ export default class Learning extends Component {
         english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\s+/g, ' ').trim();
         let polish = get(this.learnArr, `${learnNumber}.pol`, '');
         polish = polish.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\s+/g, ' ').trim();
-        const translation = get(this.learnArr, `${learnNumber}.transl`);
-        if (!translation){
+        const rus = get(this.learnArr, `${learnNumber}.transl`);
+        if (!rus){
             this.repeatMistakes = true;
         }
         if (maxLength){
@@ -205,7 +218,7 @@ export default class Learning extends Component {
         this.setState({
             english,
             polish,
-            translation,
+            rus,
             learnNumber,
             mistake: 0
         });
@@ -247,6 +260,18 @@ export default class Learning extends Component {
         );
     };
 
+    showEng = () => {
+        this.setState({showEng: true, showPol: false, showRus: false});
+    }
+
+    showPol = () => {
+        this.setState({showEng: false, showPol: true, showRus: false});
+    }
+
+    showRus = () => {
+        this.setState({showEng: false, showPol: false, showRus: true});
+    }
+
     render() {
         const {
             newLearnNumber,
@@ -254,18 +279,28 @@ export default class Learning extends Component {
             cycleLearning,
             english,
             polish,
-            translation,
+            rus,
             learnEng,
             learnPol,
-            mistake
+            mistake,
+            showRus,
+            showEng,
+            showPol
         } = this.state;
         const {siteLang} = this.props.store;
         const repeat = get(content, `repeat[${siteLang}]`);
         const write = get(content, `write[${siteLang}]`);
         const eng = get(content, `eng[${siteLang}]`);
         const pol = get(content, `pol[${siteLang}]`);
+        const translEng = get(content, `translEng[${siteLang}]`);
+        const translRus = get(content, `translRus[${siteLang}]`);
+        const translPol = get(content, `translPol[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
         const selectAll = get(content, `countRepeat[${siteLang}]`);
+        let badge = '';
+        if (showRus) badge = rus;
+        if (showEng) badge = english;
+        if (showPol) badge = polish;
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
@@ -311,6 +346,23 @@ export default class Learning extends Component {
                             </Button>
                         </Col>
                     </Row>
+                    <Row>
+                        <Col>
+                            <Form.Group controlId="translEng">
+                                <Form.Check type="radio" label={translEng} checked={showEng} onChange={this.showEng}/>
+                            </Form.Group>
+                        </Col>
+                        <Col>
+                            <Form.Group controlId="translRus">
+                                <Form.Check type="radio" label={translRus} checked={showRus} onChange={this.showRus}/>
+                            </Form.Group>
+                        </Col>
+                        <Col>
+                            <Form.Group controlId="translPol">
+                                <Form.Check type="radio" label={translPol} checked={showPol} onChange={this.showPol}/>
+                            </Form.Group>
+                        </Col>
+                    </Row>
                 </Fragment>
                 }
                 <Row className="text-center new-row rows">
@@ -318,8 +370,7 @@ export default class Learning extends Component {
                         <Col>
                             {this.getTopic()}
                             {soundButton.call(this)}
-                            {learnEng && getBadge(translation, "secondary")}
-                            {learnPol && getBadge(english, "secondary")}
+                            {getBadge(badge, "secondary")}
                             {getProgressBar.call(this)}
                             {(exampleLearning === 'example_sound_repeat' || mistake > 2) &&
                                 <>
