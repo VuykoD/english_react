@@ -323,7 +323,7 @@ const courseItems = [
     {"id":10178, "unitId":1009, "eng": "Turn right at the crossroads","pol": "Skręć w prawo na skrzyżowaniu", "transl": "Поверните направо на перекрестке"},
     {"id":10179, "unitId":1009, "eng": "It’s on your left","pol": "Jest po twojej lewej", "transl": "Оно слева от тебя"},
     {"id":10180, "unitId":1009, "eng": "It’s on your right","pol": "To jest po twojej prawej", "transl": "Это справа"},
-    {"id":10181, "unitId":1009, "eng": "It’s about 100 meters from here","pol": "To około 100 metrów stąd?", "transl": "Это примерно в 100 метрах отсюда"},
+    {"id":10181, "unitId":1009, "eng": "It’s about 100 meters from here","pol": "To około 100 metrów stąd", "transl": "Это примерно в 100 метрах отсюда"},
     {"id":10182, "unitId":1009, "eng": "Take the first road on the right","pol": "Skręć w pierwszą drogę w prawo", "transl": "Возьмите первую дорогу справа"},
     {"id":10183, "unitId":1009, "eng": "Take the second road on the left","pol": "Skręć w drugą drogę w lewo", "transl": "Возьмите вторую дорогу слева"},
     {"id":10184, "unitId":1009, "eng": "It’s next to","pol": "To jest obok", "transl": "Это рядом с"},
