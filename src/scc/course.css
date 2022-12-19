@@ -17,5 +17,16 @@
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    margin-left: 1px;
+}
+
 @media only screen
 and (max-device-width : 768px){ .paint-left, .paint-right { display: none; }}

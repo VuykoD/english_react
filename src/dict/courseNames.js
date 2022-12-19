@@ -1,5 +1,10 @@
 const courseNames = [
     {
+        id: 4,
+        name: 'Common phrases',
+        active: true,
+    },
+    {
         id: 1,
         name: 'Murphy blue',
         active: true,
@@ -12,11 +17,6 @@ const courseNames = [
     {
         id: 3,
         name: 'School 8 class',
-        active: true,
-    },
-    {
-        id: 4,
-        name: 'Common phrases',
         active: true,
     },
 ];
