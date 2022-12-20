@@ -4,7 +4,6 @@ import map from 'lodash/map';
 import filter from 'lodash/filter';
 import findIndex from 'lodash/findIndex';
 import {Badge, Button, Col, Container, Form, ProgressBar, Row} from 'react-bootstrap';
-import FormControl from 'react-bootstrap/FormControl';
 //
 import '../../scc/learning.css';
 
@@ -64,7 +63,6 @@ const initialState = {
     english: '',
     polish: '',
     rus: '',
-    newLearnNumber: +localStorage.newLearnNumber || 5,
     start: null,
     end: null,
     fileName: '',
@@ -224,12 +222,6 @@ export default class Learning extends Component {
         });
     };
 
-    changeNewLearnNumber = (e) => {
-        const val = e.target.value;
-        localStorage.newLearnNumber = val || 0;
-        this.setState({newLearnNumber: +val || 0});
-    };
-
     changeEngCheck = () =>{
         this.setState({learnEng: true, learnPol: false});
     }
@@ -241,8 +233,10 @@ export default class Learning extends Component {
     repeatAll = () =>{
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (localProgress && localProgress.length){
-            localStorage.newLearnNumber = localProgress.length || 0;
-            this.setState({newLearnNumber: localProgress.length || 0});
+            this.setState({
+                newLearnNumber: localProgress.length || 0,
+                learnNumber: localProgress.length || 0,
+            });
         }
     }
 
@@ -296,7 +290,6 @@ export default class Learning extends Component {
         const translRus = get(content, `translRus[${siteLang}]`);
         const translPol = get(content, `translPol[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
-        const selectAll = get(content, `countRepeat[${siteLang}]`);
         let badge = '';
         if (showRus) badge = rus;
         if (showEng) badge = english;
@@ -321,17 +314,7 @@ export default class Learning extends Component {
                             </Form.Group>
                         </Col>
                         <Col>
-                            <span children={countRepeat} />
-                            <FormControl
-                                type="number"
-                                value={newLearnNumber}
-                                onChange={this.changeNewLearnNumber}
-                            />
-                        </Col>
-                        <Col>
-                            <Button variant="info" block onClick={this.repeatAll}>
-                                {selectAll}
-                            </Button>
+                            <span children={`${countRepeat} ${newLearnNumber}`} />
                         </Col>
                     </Row>
                     <Row>
