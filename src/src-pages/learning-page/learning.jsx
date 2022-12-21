@@ -56,7 +56,7 @@ const content = {
 const initialState = {
     exampleLearning: null,
     cycleLearning: null,
-    showRus: false,
+    showRus: true,
     showEng: true,
     showPol: false,
     learnNumber: 0,
@@ -255,15 +255,15 @@ export default class Learning extends Component {
     };
 
     showEng = () => {
-        this.setState({showEng: true, showPol: false, showRus: false});
+        this.setState({showEng: !this.state.showEng});
     }
 
     showPol = () => {
-        this.setState({showEng: false, showPol: true, showRus: false});
+        this.setState({showPol: !this.state.showPol});
     }
 
     showRus = () => {
-        this.setState({showEng: false, showPol: false, showRus: true});
+        this.setState({showRus: !this.state.showRus});
     }
 
     render() {
@@ -290,10 +290,6 @@ export default class Learning extends Component {
         const translRus = get(content, `translRus[${siteLang}]`);
         const translPol = get(content, `translPol[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
-        let badge = '';
-        if (showRus) badge = rus;
-        if (showEng) badge = english;
-        if (showPol) badge = polish;
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
@@ -331,19 +327,13 @@ export default class Learning extends Component {
                     </Row>
                     <Row>
                         <Col>
-                            <Form.Group controlId="translEng">
-                                <Form.Check type="radio" label={translEng} checked={showEng} onChange={this.showEng}/>
-                            </Form.Group>
+                            <Form.Check type="checkbox" label={translEng} checked={showEng} onChange={this.showEng}/>
                         </Col>
                         <Col>
-                            <Form.Group controlId="translRus">
-                                <Form.Check type="radio" label={translRus} checked={showRus} onChange={this.showRus}/>
-                            </Form.Group>
+                            <Form.Check type="checkbox" label={translRus} checked={showRus} onChange={this.showRus}/>
                         </Col>
                         <Col>
-                            <Form.Group controlId="translPol">
-                                <Form.Check type="radio" label={translPol} checked={showPol} onChange={this.showPol}/>
-                            </Form.Group>
+                            <Form.Check type="checkbox" label={translPol} checked={showPol} onChange={this.showPol}/>
                         </Col>
                     </Row>
                 </Fragment>
@@ -353,12 +343,14 @@ export default class Learning extends Component {
                         <Col>
                             {this.getTopic()}
                             {soundButton.call(this)}
-                            {getBadge(badge, "secondary")}
+                            {showRus && getBadge(rus, "light")}
+                            {showEng && getBadge(english, "secondary")}
+                            {showPol && getBadge(polish, "secondary")}
                             {getProgressBar.call(this)}
                             {(exampleLearning === 'example_sound_repeat' || mistake > 2) &&
                                 <>
-                                    {learnEng && getBadge(english, "light")}
-                                    {learnPol && getBadge(polish, "light")}
+                                    {learnEng && getBadge(english, "info")}
+                                    {learnPol && getBadge(polish, "info")}
                                 </>
                             }
                             {exampleLearning === 'write' && getInput.call(this)}

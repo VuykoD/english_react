@@ -41,16 +41,13 @@ export default class UserDictionary extends Component {
 
     setLocalProgress = (lp) =>{
         map(lp, (item, key) => {
-
-            if (item.entity === 'course') {
-                const index = findIndex(courseItems, {'id': item.entity_id});
-                lp[key].eng = get(courseItems, `[${index}].eng`);
-                lp[key].pol = get(courseItems, `[${index}].pol`);
-                lp[key].native = get(courseItems, `[${index}].transl`);
-                lp[key].courseId = get(courseItems, `[${index}].unitId`);
-                const courseIndex = findIndex(courseUnits, {'id': lp[key].courseId});
-                lp[key].source = get(courseUnits, `[${courseIndex}].name`);
-            }
+            const index = findIndex(courseItems, {'id': item.entity_id});
+            lp[key].eng = get(courseItems, `[${index}].eng`);
+            lp[key].pol = get(courseItems, `[${index}].pol`);
+            lp[key].native = get(courseItems, `[${index}].transl`);
+            lp[key].courseId = get(courseItems, `[${index}].unitId`);
+            const courseIndex = findIndex(courseUnits, {'id': lp[key].courseId});
+            lp[key].source = get(courseUnits, `[${courseIndex}].name`);
         });
         return lp;
     };

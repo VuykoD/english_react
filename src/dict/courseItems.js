@@ -375,7 +375,6 @@ const courseItems = [
     {"id":10232, "unitId":1012, "eng": "When I can check-in?","pol": "Kiedy mogę się odprawić?", "transl": "Когда я смогу зарегистрироваться?"},
     {"id":10233, "unitId":1012, "eng": "Do you need a wake-up call?","pol": "Potrzebujesz pobudki?", "transl": "Вам нужен звонок для пробуждения?"},
     {"id":10235, "unitId":1012, "eng": "In other words, she must give up singing","pol": "Innymi słowy, musi zrezygnować ze śpiewania", "transl": "Другими словами, она должна бросить петь"},
-    {"id":10236, "unitId":1012, "eng": "By way of illustration, I’ll refer to the behavior of rabbits","pol": "Tytułem ilustracji odniosę się do zachowania królików", "transl": "В качестве иллюстрации я сошлюсь на поведение кроликов"},
     {"id":10237, "unitId":1012, "eng": "The film was held up as an example of good cinema","pol": "Film został uznany za przykład dobrego kina", "transl": "Фильм преподносился как образец хорошего кино"},
 //
     {"id":10239, "unitId":1013, "eng": "Can you help me, please?","pol": "Czy możesz mi pomóc?", "transl": "Не могли бы вы мне помочь?"},
