@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/english_react/static/css/main.76c595f7.chunk.css",
-    "main.js": "/english_react/static/js/main.0bfbd6db.chunk.js",
-    "main.js.map": "/english_react/static/js/main.0bfbd6db.chunk.js.map",
+    "main.css": "/english_react/static/css/main.b2309f22.chunk.css",
+    "main.js": "/english_react/static/js/main.64c1b15f.chunk.js",
+    "main.js.map": "/english_react/static/js/main.64c1b15f.chunk.js.map",
     "runtime-main.js": "/english_react/static/js/runtime-main.cf643162.js",
     "runtime-main.js.map": "/english_react/static/js/runtime-main.cf643162.js.map",
     "static/css/2.2f506f9a.chunk.css": "/english_react/static/css/2.2f506f9a.chunk.css",
     "static/js/2.2b469a47.chunk.js": "/english_react/static/js/2.2b469a47.chunk.js",
     "static/js/2.2b469a47.chunk.js.map": "/english_react/static/js/2.2b469a47.chunk.js.map",
     "index.html": "/english_react/index.html",
-    "precache-manifest.f0e642f570e52f118966b21cada86507.js": "/english_react/precache-manifest.f0e642f570e52f118966b21cada86507.js",
+    "precache-manifest.6b97ae288989fbaa12a172d8e790096a.js": "/english_react/precache-manifest.6b97ae288989fbaa12a172d8e790096a.js",
     "service-worker.js": "/english_react/service-worker.js",
     "static/css/2.2f506f9a.chunk.css.map": "/english_react/static/css/2.2f506f9a.chunk.css.map",
-    "static/css/main.76c595f7.chunk.css.map": "/english_react/static/css/main.76c595f7.chunk.css.map",
+    "static/css/main.b2309f22.chunk.css.map": "/english_react/static/css/main.b2309f22.chunk.css.map",
     "static/media/Sound.png": "/english_react/static/media/Sound.049ed9b7.png",
     "static/media/home-page.css": "/english_react/static/media/bob-van-aubel-ray-bans.315a4544.jpg",
     "static/media/movie12.png": "/english_react/static/media/movie12.d9d9c789.png",
@@ -23,7 +23,7 @@
     "static/js/runtime-main.cf643162.js",
     "static/css/2.2f506f9a.chunk.css",
     "static/js/2.2b469a47.chunk.js",
-    "static/css/main.76c595f7.chunk.css",
-    "static/js/main.0bfbd6db.chunk.js"
+    "static/css/main.b2309f22.chunk.css",
+    "static/js/main.64c1b15f.chunk.js"
   ]
 }
