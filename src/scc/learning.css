@@ -92,6 +92,11 @@ button.title_sound {
     white-space: normal;
 }
 
+.record {
+    margin-top: 20px;
+    color: #5a6268;
+}
+
 @keyframes move_eye {
     from {
         width: 1%;

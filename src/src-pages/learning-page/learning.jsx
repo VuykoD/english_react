@@ -51,6 +51,10 @@ const content = {
         ru: "Выбрать все",
         ukr: "Вибрати все",
     },
+    recordWithoutError: {
+        ru: "рекорд без ошибок",
+        ukr: "рекорд без помилок",
+    },
 };
 
 const initialState = {
@@ -70,7 +74,8 @@ const initialState = {
     learnPol: true,
     isRepeatAll: false,
     mistake: 0,
-    mistakeRewrite: 0
+    mistakeRewrite: 0,
+    record: 0
 }
 
 const MAX_WORD_LENGTH = 20;
@@ -254,6 +259,17 @@ export default class Learning extends Component {
         );
     };
 
+    record = () => {
+        const {siteLang} = this.props.store;
+        const recordWithoutError = get(content, `recordWithoutError[${siteLang}]`);
+        const {record} = this.state;
+        if (localStorage.record < record) {
+            localStorage.record = record;
+        }
+
+        return <div children={`${recordWithoutError} - ${record}/${localStorage.record}`} className="record"/>
+    }
+
     showEng = () => {
         this.setState({showEng: !this.state.showEng});
     }
@@ -354,6 +370,7 @@ export default class Learning extends Component {
                                 </>
                             }
                             {exampleLearning === 'write' && getInput.call(this)}
+                            {this.record()}
                         </Col>
                     }
                 </Row>
@@ -462,7 +479,7 @@ export function getInput() {
 }
 
 export function changedInput() {
-    const {english, polish, learnPol, mistake, learnNumber, mistakeRewrite} = this.state;
+    const {english, polish, learnPol, mistake, learnNumber, mistakeRewrite, record} = this.state;
     const formInput = document.getElementById('formInput');
     let word = get(formInput, 'value');
     word = word.toUpperCase();
@@ -492,12 +509,14 @@ export function changedInput() {
     if (wordToLearn.slice(0, word.length) !== word){
         word = (word.slice(0, word.length - 1));
         document.getElementById("formInput").value = word;
-        this.setState({mistake: mistake + 1});
+        this.setState({mistake: mistake + 1, record: 0});
         if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
             this.mistakeArr.push(learnNumber);
             console.log(this.mistakeArr);
         }
         this.mistakeArr = this.mistakeArr.filter(onlyUnique);
+    }else{
+        this.setState({record: record + 1});
     }
 }
 
