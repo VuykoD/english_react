@@ -263,11 +263,11 @@ export default class Learning extends Component {
         const {siteLang} = this.props.store;
         const recordWithoutError = get(content, `recordWithoutError[${siteLang}]`);
         const {record} = this.state;
-        if (localStorage.record < record) {
+        if (localStorage.record < record || !localStorage.record) {
             localStorage.record = record;
         }
 
-        return <div children={`${recordWithoutError} - ${record}/${localStorage.record}`} className="record"/>
+        return <div children={`${recordWithoutError} - ${record}/${localStorage.record || 0}`} className="record"/>
     }
 
     showEng = () => {
