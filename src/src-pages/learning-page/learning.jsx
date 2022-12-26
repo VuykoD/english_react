@@ -55,6 +55,10 @@ const content = {
         ru: "рекорд без ошибок",
         ukr: "рекорд без помилок",
     },
+    speedRepeat: {
+        ru: "Ускоренное повторение",
+        ukr: "Прискорене повторення",
+    },
 };
 
 const initialState = {
@@ -78,7 +82,7 @@ const initialState = {
     record: 0
 }
 
-const MAX_WORD_LENGTH = 20;
+const MAX_WORD_LENGTH = 25;
 
 export default class Learning extends Component {
     constructor(props) {
@@ -130,6 +134,7 @@ export default class Learning extends Component {
         this.timeoutNextItem = null;
         this.timeoutResetExampleLearning = null;
         this.repeatMistakes = false;
+        this.soundAndRepeatCoef = 1.3;
         this.clearTimeOut();
         this.setState({...initialState});
     }
@@ -146,6 +151,11 @@ export default class Learning extends Component {
         this.setState({cycleLearning: 'new', exampleLearning: 'example_sound_repeat'});
         this.nextSoundAndRepeatItem();
     };
+
+    speedRepeat = () => {
+        this.soundAndRepeatCoef = 1.8;
+        this.soundAndRepeat();
+    }
 
     write = () => {
         this.getLearnArray(this.state.newLearnNumber);
@@ -171,7 +181,7 @@ export default class Learning extends Component {
 
     setTimeoutTime =(learnNumber)=>{
         const word = get(this.learnArr, `[${learnNumber}].eng`, '');
-        const wordLength = Math.round(word.length / 1.3);
+        const wordLength = Math.round(word.length / this.soundAndRepeatCoef);
         let timeoutTime = wordLength > 10 ? wordLength : 10;
         if(timeoutTime > 45) timeoutTime = 45;
         return timeoutTime;
@@ -306,6 +316,7 @@ export default class Learning extends Component {
         const translRus = get(content, `translRus[${siteLang}]`);
         const translPol = get(content, `translPol[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
+        const speedRepeat = get(content, `speedRepeat[${siteLang}]`);
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
@@ -330,6 +341,11 @@ export default class Learning extends Component {
                         </Col>
                     </Row>
                     <Row>
+                        <Col>
+                            <Button variant="info" block onClick={this.speedRepeat}>
+                                {speedRepeat}
+                            </Button>
+                        </Col>
                         <Col>
                             <Button variant="info" block onClick={this.soundAndRepeat}>
                                 {repeat}
