@@ -492,7 +492,6 @@ const courseItems = [
     {"id":10314, "unitId":1016, "eng": "I wish you luck","pol": "Życzę szczęścia", "transl": "Желаю тебе удачи"},
     {"id":10315, "unitId":1016, "eng": "Best wishes","pol": "Wszystkiego najlepszego", "transl": "С наилучшими пожеланиями"},
     {"id":10316, "unitId":1016, "eng": "I hope things will turn out fine","pol": "Mam nadzieję, że wszystko pójdzie dobrze", "transl": "Я надеюсь, что все будет хорошо"},
-    {"id":10317, "unitId":1016, "eng": "Blow them away","pol": "Zdmuchnij je", "transl": "Сдуй их"},
     {"id":10318, "unitId":1016, "eng": "You’ll do great","pol": "Poradzisz sobie świetnie", "transl": "У тебя все получится"},
     {"id":10319, "unitId":1016, "eng": "Wishing you lots of luck","pol": "Życzę powodzenia", "transl": "Желаю вам удачи"},
     {"id":10320, "unitId":1016, "eng": "Fingers crossed","pol": "trzymam kciuki", "transl": "ни пуха ни пера"},
