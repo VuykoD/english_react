@@ -481,7 +481,7 @@ const courseItems = [
     {"id":10303, "unitId":1015, "eng": "Does it come with a guarantee?","pol": "Czy jest objęty gwarancją?", "transl": "Есть ли гарантия?"},
     {"id":10304, "unitId":1015, "eng": "I’m looking for a leather handbag","pol": "Szukam skórzanej torebki", "transl": "Я ищу кожаную сумку"},
     {"id":10305, "unitId":1015, "eng": "Would you have this in another color?","pol": "Czy miałbyś to w innym kolorze?", "transl": "У вас есть это в другом цвете?"},
-    {"id":10306, "unitId":1015, "eng": "Do you have something less pricey (expensive)?","pol": "Masz coś tańszego (drogiego)?", "transl": "У вас есть что-то менее дорогое (дорогое)?"},
+    {"id":10306, "unitId":1015, "eng": "Do you have something less pricey?","pol": "Masz coś tańszego?", "transl": "У вас есть что-то менее дорогое?"},
     {"id":10307, "unitId":1015, "eng": "Where is the fitting room?","pol": "Gdzie jest przymierzalnia", "transl": "Где находится примерочная"},
 //
     {"id":10309, "unitId":1016, "eng": "You’ll do great","pol": "Poradzisz sobie świetnie", "transl": "Вы отлично справитесь"},
@@ -495,7 +495,7 @@ const courseItems = [
     {"id":10317, "unitId":1016, "eng": "Blow them away","pol": "Zdmuchnij je", "transl": "Сдуй их"},
     {"id":10318, "unitId":1016, "eng": "You’ll do great","pol": "Poradzisz sobie świetnie", "transl": "У тебя все получится"},
     {"id":10319, "unitId":1016, "eng": "Wishing you lots of luck","pol": "Życzę powodzenia", "transl": "Желаю вам удачи"},
-    {"id":10320, "unitId":1016, "eng": "Fingers crossed","pol": "Skrzyżowane palce", "transl": "Скрещенные пальцы"},
+    {"id":10320, "unitId":1016, "eng": "Fingers crossed","pol": "trzymam kciuki", "transl": "ни пуха ни пера"},
     {"id":10321, "unitId":1016, "eng": "Wishing you a lot of luck","pol": "Życzę dużo szczęścia", "transl": "Желаю вам удачи"},
     {"id":10322, "unitId":1016, "eng": "You were made for this","pol": "Zostałeś do tego stworzony", "transl": "Вы созданы для этого"},
     {"id":10323, "unitId":1016, "eng": "I hope things will work out all right","pol": "Mam nadzieję, że wszystko się ułoży", "transl": "Я надеюсь, что все будет хорошо"},
