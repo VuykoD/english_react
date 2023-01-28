@@ -82,7 +82,7 @@ const initialState = {
     record: 0
 }
 
-const MAX_WORD_LENGTH = 25;
+const MAX_WORD_LENGTH = 26;
 
 export default class Learning extends Component {
     constructor(props) {

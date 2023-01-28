@@ -466,7 +466,7 @@ const courseItems = [
 //     {"id":10739, "unitId":1037, "eng": "We will have done it slow","pol": "Zrobimy to powoli", "transl": "Мы сделаем это медленно"},
 //     {"id":10740, "unitId":1037, "eng": "They will have done it well","pol": "Zrobią to dobrze", "transl": "Они сделают это хорошо"},
 //
-    {"id":10291, "unitId":1015, "eng": "Do you have a smaller size?","pol": "Masz mniejszy rozmiar?", "transl": "У вас есть меньший размер?"},
+    {"id":10291, "unitId":1015, "eng": "Do you have a smaller size?","pol": "Czy masz mniejszy rozmiar?", "transl": "У вас есть меньший размер?"},
     {"id":10292, "unitId":1015, "eng": "Where is the changing room?","pol": "Gdzie jest szatnia?", "transl": "Где находится раздевалка?"},
     {"id":10293, "unitId":1015, "eng": "Do you know where else I could try?","pol": "Czy wiesz, gdzie jeszcze mógłbym spróbować?", "transl": "Вы знаете, где еще я мог бы попробовать?"},
     {"id":10294, "unitId":1015, "eng": "Do you have this item in stock?","pol": "Czy masz ten przedmiot w magazynie?", "transl": "У вас есть этот товар в наличии?"},
@@ -481,7 +481,7 @@ const courseItems = [
     {"id":10303, "unitId":1015, "eng": "Does it come with a guarantee?","pol": "Czy jest objęty gwarancją?", "transl": "Есть ли гарантия?"},
     {"id":10304, "unitId":1015, "eng": "I’m looking for a leather handbag","pol": "Szukam skórzanej torebki", "transl": "Я ищу кожаную сумку"},
     {"id":10305, "unitId":1015, "eng": "Would you have this in another color?","pol": "Czy miałbyś to w innym kolorze?", "transl": "У вас есть это в другом цвете?"},
-    {"id":10306, "unitId":1015, "eng": "Do you have something less pricey?","pol": "Masz coś tańszego?", "transl": "У вас есть что-то менее дорогое?"},
+    {"id":10306, "unitId":1015, "eng": "Do you have something less pricey?","pol": "Czy masz coś tańszego?", "transl": "У вас есть что-то менее дорогое?"},
     {"id":10307, "unitId":1015, "eng": "Where is the fitting room?","pol": "Gdzie jest przymierzalnia", "transl": "Где находится примерочная"},
 //
     {"id":10309, "unitId":1016, "eng": "You’ll do great","pol": "Poradzisz sobie świetnie", "transl": "Вы отлично справитесь"},
