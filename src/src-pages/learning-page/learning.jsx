@@ -539,10 +539,9 @@ export function speak() {
 }
 
 export function checkIsSound() {
-    // const {exampleLearning} = this.state;
+    const {exampleLearning} = this.state;
 
-    // return exampleLearning === 'example_sound_repeat';
-    return true;
+    return exampleLearning === 'example_sound_repeat';
 }
 
 export function getInput() {
