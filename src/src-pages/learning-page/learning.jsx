@@ -59,6 +59,10 @@ const content = {
         ru: "Ускоренное повторение",
         ukr: "Прискорене повторення",
     },
+    resetRecord: {
+        ru: "Обнулить рекорд",
+        ukr: "Обнулити рекорд",
+    },
 };
 
 const initialState = {
@@ -150,6 +154,13 @@ export default class Learning extends Component {
         this.setEngAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'new', exampleLearning: 'example_sound_repeat'});
         this.nextSoundAndRepeatItem();
+    };
+
+    resetRecord = () => {
+        const { record } = this.state;
+        this.setState({ record: 0 });
+        this.setState({ record });
+        localStorage.record = 0;
     };
 
     speedRepeat = () => {
@@ -271,13 +282,27 @@ export default class Learning extends Component {
 
     record = () => {
         const {siteLang} = this.props.store;
+        const resetRecord = get(content, `resetRecord[${siteLang}]`);
         const recordWithoutError = get(content, `recordWithoutError[${siteLang}]`);
         const {record} = this.state;
         if (localStorage.record < record || !localStorage.record) {
             localStorage.record = record;
         }
 
-        return <div children={`${recordWithoutError} - ${record}/${localStorage.record || 0}`} className="record"/>
+        return (
+            <Row className="new-row">
+                <Col sm={3}/>
+                <Col>
+                    <div children={`${recordWithoutError} - ${record}/${localStorage.record || 0}`} className="record"/>
+                </Col>
+                <Col sm={3}>
+                    <Button variant="info" block onClick={this.resetRecord}>
+                        {resetRecord}
+                    </Button>
+                </Col>
+                <Col sm={3}/>
+            </Row>
+        );
     }
 
     showEng = () => {
