@@ -40,8 +40,8 @@ const content = {
         ukr: "Показати польську",
     },
     countRepeat: {
-        ru: "Фраз слов повторять",
-        ukr: "Фраз слів повторювати",
+        ru: "На изучении",
+        ukr: "На вивченні",
     },
     source: {
         ru: "Источник",
@@ -426,7 +426,7 @@ export function getBadge(txt, variant) {
 }
 
 export function getProgressBar() {
-    const { exampleLearning, learnNumber } = this.state;
+    const { exampleLearning, learnNumber, newLearnNumber } = this.state;
 
     let progress = null;
     const timeoutTime = this.setTimeoutTime(learnNumber);
@@ -436,7 +436,7 @@ export function getProgressBar() {
             <Row>
                 <Col sm={3}/>
                 <Col>
-                    {`${learnNumber + 1}/${timeoutTime}`}
+                    {`${learnNumber + 1}(${newLearnNumber})/${timeoutTime}`}
                     <div className="view_port">
                         <ProgressBar id='progressBar' animated now={100} className="c_eye"/>
                     </div>
