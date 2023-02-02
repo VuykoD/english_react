@@ -478,10 +478,13 @@ export function checkIsSound() {
 }
 
 export function getInput() {
+    const { learnNumber, newLearnNumber } = this.state;
+
     return (
         <Row>
             <Col sm={3}/>
             <Col>
+                {`${learnNumber + 1}(${newLearnNumber})`}
                 <Form.Control
                     id='formInput'
                     type="text"
