@@ -1,4 +1,6 @@
 import React, {Component, Fragment} from 'react';
+import {withRouter} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import map from 'lodash/map';
 import filter from 'lodash/filter';
@@ -88,7 +90,13 @@ const initialState = {
 
 const MAX_WORD_LENGTH = 26;
 
-export default class Learning extends Component {
+class LearningClass extends Component {
+    static propTypes = {
+        location: PropTypes.object.isRequired,
+        match: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
+    };
+
     constructor(props) {
         super(props);
 
@@ -101,6 +109,25 @@ export default class Learning extends Component {
         this.getVoices();
         this.repeatAll();
         this.setInitialData();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const {showRus, showEng, showPol, learnEng, learnPol} = this.state;
+        if (
+            showRus !== !!localStorage.showRus ||
+            showEng !== !!localStorage.showEng ||
+            showPol !== !!localStorage.showPol ||
+            learnEng !== !!localStorage.learnEng ||
+            learnPol !== !!localStorage.learnPol
+        ){
+            this.setState({
+                showRus: !!localStorage.showRus,
+                showEng: !!localStorage.showEng,
+                showPol: !!localStorage.showPol,
+                learnEng: !!localStorage.learnEng,
+                learnPol: !!localStorage.learnPol
+            });
+        }
     }
 
     componentWillUnmount() {
@@ -431,6 +458,10 @@ export default class Learning extends Component {
     }
 }
 
+const Learning = withRouter(LearningClass);
+
+export default Learning;
+
 export function soundButton() {
     let btn = null;
     const isSound = checkIsSound.call(this);
@@ -508,9 +539,10 @@ export function speak() {
 }
 
 export function checkIsSound() {
-    const {exampleLearning} = this.state;
+    // const {exampleLearning} = this.state;
 
-    return exampleLearning === 'example_sound_repeat';
+    // return exampleLearning === 'example_sound_repeat';
+    return true;
 }
 
 export function getInput() {
