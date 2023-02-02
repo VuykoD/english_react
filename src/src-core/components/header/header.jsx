@@ -124,7 +124,7 @@ class HeaderClass extends Component {
         const fontStyle = {color: fontColor};
         const gradientStyle = {background: `linear-gradient(to bottom,${firstColor},${secondColor}`};
         const hover = {onMouseOver: this.onMouseOver, onMouseOut: this.onMouseOut};
-        const url = get(this.props, 'location.pathname', '').replace('/english_react/', '');
+        const url = get(this.props, 'location.pathname', '');
         const hideHeader = url ? 'hide-header' : null;
         const btnClassName = `headerButton ${hideHeader}`;
 
@@ -133,10 +133,10 @@ class HeaderClass extends Component {
                 <Container>
                     <Row>
                         <Col md="auto">
-                            <Link to={'/english_react/'} className="logo">
+                            <Link to={'/'} className="logo">
                                 <div className="engLogo" style={fontStyle}>LEARNING IS FUN</div>
                             </Link>
-                            <Link to={'/english_react/'} className="logo">
+                            <Link to={'/'} className="logo">
                                 {logo && <div className="lowerLogo" style={fontStyle}>{logo}</div>}
                             </Link>
                         </Col>
@@ -144,10 +144,10 @@ class HeaderClass extends Component {
                             <FormControl type="text" placeholder={search} className="mr-sm-2 search" onChange={this.warn}/>
                         </Col>
                             <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
-                            <Link to={'/english_react/course-page'} children={course} style={fontStyle}/>
+                            <Link to={'/course-page'} children={course} style={fontStyle}/>
                         </Col>
                         <Col md="auto" className={btnClassName} style={{...fontStyle, ...gradientStyle}} {...hover} >
-                            <Link to={'/english_react/learning'} children={learning} style={fontStyle}/>
+                            <Link to={'/learning'} children={learning} style={fontStyle}/>
                         </Col>
                         <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
                             <DropdownButton
@@ -214,10 +214,10 @@ class HeaderClass extends Component {
                                     variant='header header-user'
                                     bsPrefix='no-arrow'
                                 >
-                                    <div><Link to={'/english_react/user_dictionary'} children={dictionary} /></div>
+                                    <div><Link to={'/user_dictionary'} children={dictionary} /></div>
                                     <div>{progress}</div>
-                                    <div><Link to={'/english_react/user_data'} children={myData} /></div>
-                                    <div><Link to={'/english_react/user_setting'} children={setting} /></div>
+                                    <div><Link to={'/user_data'} children={myData} /></div>
+                                    <div><Link to={'/user_setting'} children={setting} /></div>
                                 </DropdownButton>
                             </div>
                         </Col>

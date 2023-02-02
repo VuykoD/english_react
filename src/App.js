@@ -34,17 +34,17 @@ class App extends Component {
                     onChangeLearnedLang={onChangeLearnedLang}
                 />
                 <Switch>
-                    <Route exact path='/english_react/' children={<HomePage store={store}/>}/>
-                    <Route path='/english_react/course-page' children={<Course store={store}/>}/>
-                    <Route path='/english_react/learning' children={<Learning store={store}/>}/>
-                    <Route path='/english_react/user_dictionary' children={<UserDictionary store={store}/>}/>
-                    <Route path='/english_react/user_data' children={
+                    <Route exact path='/' children={<HomePage store={store}/>}/>
+                    <Route path='/course-page' children={<Course store={store}/>}/>
+                    <Route path='/learning' children={<Learning store={store}/>}/>
+                    <Route path='/user_dictionary' children={<UserDictionary store={store}/>}/>
+                    <Route path='/user_data' children={
                         <UserData
                             store={store}
                             onChangeUserData={onChangeUserData}
                         />
                     }/>
-                    <Route path='/english_react/user_setting' children={
+                    <Route path='/user_setting' children={
                         <Setting
                             store={store}
                             onChangeFontColor={onChangeFontColor}
@@ -53,7 +53,7 @@ class App extends Component {
                             onChangeSecondColor={onChangeSecondColor}
                         />
                     }/>
-                    <Route path='/english_react/course/*' children={courseItem}/>
+                    <Route path='/course/*' children={courseItem}/>
                 </Switch>
                 <Footer
                     store={store}

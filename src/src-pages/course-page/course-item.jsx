@@ -52,7 +52,7 @@ export default class CourseItem extends Component {
         super(props);
 
         let url = get(props, `match.url`);
-        url = url.replace('/english_react/course', '');
+        url = url.replace('/course', '');
         this.unitIndex = findIndex(courseUnits, {'url': url});
         this.unitId = get(courseUnits, `[${this.unitIndex}].id`);
         this.unitName = get(courseUnits, `[${this.unitIndex}].name`);

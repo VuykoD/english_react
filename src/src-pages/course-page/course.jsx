@@ -85,7 +85,7 @@ export default class Course extends Component {
                                                     onChange={() => this.onChangeCheck(item.id)}
                                                     checked={checked}
                                                 />
-                                                <Link to={`/english_react/course${item.url}`}>
+                                                <Link to={`/course${item.url}`}>
                                                     <Card.Body children={item.name}/>
                                                 </Link>
                                             </div>
