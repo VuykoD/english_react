@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {BrowserRouter as Router, Switch, Route, withRouter} from 'react-router-dom';
+import {HashRouter as Router, Switch, Route, withRouter} from 'react-router-dom';
 import Header from './src-core/components/header/header.jsx';
 import Footer from './src-core/components/footer/footer.jsx';
 import HomePage from './src-pages/home-page/home-page.jsx';
