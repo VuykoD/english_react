@@ -97,6 +97,11 @@ button.title_sound {
     color: #5a6268;
 }
 
+.mainInput {
+    font-size: 24px;
+    font-weight: 500;
+}
+
 @keyframes move_eye {
     from {
         width: 1%;

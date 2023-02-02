@@ -485,7 +485,7 @@ export function getInput() {
                 <Form.Control
                     id='formInput'
                     type="text"
-                    className="mr-sm-2 search"
+                    className="mainInput"
                     onChange={this.onChangeInput}
                 />
             </Col>
