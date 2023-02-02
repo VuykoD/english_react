@@ -506,7 +506,7 @@ const courseItems = [
     {"id":10329, "unitId":1017, "eng": "Way to go","pol": "Tak trzymać", "transl": "Способ пойти"},
     {"id":10330, "unitId":1017, "eng": "That’s it","pol": "Otóż to", "transl": "Вот и все"},
     {"id":10331, "unitId":1017, "eng": "Marvelous","pol": "Cudowny", "transl": "Чудесный"},
-    {"id":10332, "unitId":1017, "eng": "Cool","pol": "Chłodny", "transl": "Прохладный"},
+    {"id":10332, "unitId":1017, "eng": "Cool","pol": "Fajny", "transl": "Прохладный"},
     {"id":10333, "unitId":1017, "eng": "Tremendous","pol": "Ogromny", "transl": "Огромный"},
     {"id":10334, "unitId":1017, "eng": "Fantastic","pol": "Fantastyczny", "transl": "Фантастика"},
     {"id":10335, "unitId":1017, "eng": "Excellent","pol": "Doskonały", "transl": "Превосходно"},
@@ -534,7 +534,7 @@ const courseItems = [
     {"id":10357, "unitId":1018, "eng": "You can say that again","pol": "Możesz powtórzyć", "transl": "Ты можешь сказать это снова"},
     {"id":10358, "unitId":1018, "eng": "I could not agree with you more my friend","pol": "Nie mogłem się z tobą bardziej zgodzić mój przyjacielu", "transl": "Не могу не согласиться с тобой, мой друг"},
     {"id":10359, "unitId":1018, "eng": "You’ve hit the nail on the head","pol": "Trafiłeś w sedno", "transl": "Вы попали в самую точку"},
-    {"id":10360, "unitId":1018, "eng": "You got it dude","pol": "Masz to stary", "transl": "Ты понял, чувак"},
+    {"id":10360, "unitId":1018, "eng": "You got it dude","pol": "Masz to koleś", "transl": "Ты понял, чувак"},
     {"id":10361, "unitId":1018, "eng": "Our thoughts are absolutely parallel","pol": "Nasze myśli są absolutnie równoległe", "transl": "Наши мысли абсолютно параллельны"},
     {"id":10362, "unitId":1018, "eng": "You are so right","pol": "Masz rację", "transl": "Ты так прав"},
 //
