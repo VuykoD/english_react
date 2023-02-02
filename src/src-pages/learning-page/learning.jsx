@@ -68,9 +68,9 @@ const content = {
 const initialState = {
     exampleLearning: null,
     cycleLearning: null,
-    showRus: true,
-    showEng: true,
-    showPol: false,
+    showRus: !!localStorage.showRus,
+    showEng: !!localStorage.showEng,
+    showPol: !!localStorage.showPol,
     learnNumber: 0,
     english: '',
     polish: '',
@@ -78,8 +78,8 @@ const initialState = {
     start: null,
     end: null,
     fileName: '',
-    learnEng: false,
-    learnPol: true,
+    learnEng: !!localStorage.learnEng,
+    learnPol: !!localStorage.learnPol,
     isRepeatAll: false,
     mistake: 0,
     mistakeRewrite: 0,
@@ -250,10 +250,14 @@ export default class Learning extends Component {
 
     changeEngCheck = () =>{
         this.setState({learnEng: true, learnPol: false});
+        localStorage.learnEng = '1' ;
+        localStorage.learnPol = '' ;
     }
 
     changePolCheck = () =>{
         this.setState({learnEng: false, learnPol: true});
+        localStorage.learnEng = '' ;
+        localStorage.learnPol = '1' ;
     }
 
     repeatAll = () =>{
@@ -306,14 +310,17 @@ export default class Learning extends Component {
     }
 
     showEng = () => {
+        localStorage.showEng = this.state.showEng ? '' : '1';
         this.setState({showEng: !this.state.showEng});
     }
 
     showPol = () => {
+        localStorage.showPol = this.state.showPol ? '' : '1';
         this.setState({showPol: !this.state.showPol});
     }
 
     showRus = () => {
+        localStorage.showRus = this.state.showRus ? '' : '1';
         this.setState({showRus: !this.state.showRus});
     }
 
@@ -362,7 +369,7 @@ export default class Learning extends Component {
                             </Form.Group>
                         </Col>
                         <Col>
-                            <span children={`${countRepeat} ${newLearnNumber}`} />
+                            <span children={`${countRepeat} ${newLearnNumber || 0}`} />
                         </Col>
                     </Row>
                     <Row>
@@ -410,8 +417,12 @@ export default class Learning extends Component {
                                     {learnPol && getBadge(polish, "info")}
                                 </>
                             }
-                            {exampleLearning === 'write' && getInput.call(this)}
-                            {this.record()}
+                            {exampleLearning === 'write' &&
+                                <>
+                                    {getInput.call(this)}
+                                    {this.record()}
+                                </>
+                            }
                         </Col>
                     }
                 </Row>
