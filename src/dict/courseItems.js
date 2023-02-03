@@ -503,7 +503,7 @@ const courseItems = [
     {"id":10326, "unitId":1017, "eng": "Much better","pol": "Dużo lepiej", "transl": "Намного лучше"},
     {"id":10327, "unitId":1017, "eng": "You certainly did well today","pol": "Z pewnością dobrze sobie dzisiaj poradziłeś", "transl": "Вы, конечно, хорошо сегодня поработали"},
     {"id":10328, "unitId":1017, "eng": "That kind of work makes me happy","pol": "Taka praca mnie cieszy", "transl": "Такая работа доставляет мне удовольствие"},
-    {"id":10329, "unitId":1017, "eng": "Way to go","pol": "Tak trzymać", "transl": "Способ пойти"},
+    {"id":10329, "unitId":1017, "eng": "Keep it up","pol": "Tak trzymać", "transl": "Так держать"},
     {"id":10330, "unitId":1017, "eng": "That’s it","pol": "Otóż to", "transl": "Вот и все"},
     {"id":10331, "unitId":1017, "eng": "Marvelous","pol": "Cudowny", "transl": "Чудесный"},
     {"id":10332, "unitId":1017, "eng": "Cool","pol": "Fajny", "transl": "Прохладный"},
