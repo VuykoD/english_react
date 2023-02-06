@@ -53,9 +53,9 @@ const content = {
         ru: "Выбрать все",
         ukr: "Вибрати все",
     },
-    recordWithoutError: {
-        ru: "рекорд без ошибок",
-        ukr: "рекорд без помилок",
+    recordWithoutHints: {
+        ru: "рекорд без подсказок",
+        ukr: "рекорд без підказок",
     },
     speedRepeat: {
         ru: "Ускоренное повторение",
@@ -314,7 +314,7 @@ class LearningClass extends Component {
     record = () => {
         const {siteLang} = this.props.store;
         const resetRecord = get(content, `resetRecord[${siteLang}]`);
-        const recordWithoutError = get(content, `recordWithoutError[${siteLang}]`);
+        const recordWithoutHints = get(content, `recordWithoutHints[${siteLang}]`);
         const {record} = this.state;
         if (localStorage.record < record || !localStorage.record) {
             localStorage.record = record;
@@ -324,7 +324,7 @@ class LearningClass extends Component {
             <Row className="new-row">
                 <Col sm={3}/>
                 <Col>
-                    <div children={`${recordWithoutError} - ${record}/${localStorage.record || 0}`} className="record"/>
+                    <div children={`${recordWithoutHints} - ${record}/${localStorage.record || 0}`} className="record"/>
                 </Col>
                 <Col sm={3}>
                     <Button variant="info" block onClick={this.resetRecord}>
@@ -592,13 +592,15 @@ export function changedInput() {
 
     }
 
-    if (wordToLearn.slice(0, word.length) !== word){
+    if (wordToLearn.slice(0, word.length) !== word) {
         word = (word.slice(0, word.length - 1));
         document.getElementById("formInput").value = word;
-        this.setState({mistake: mistake + 1, record: 0});
+        if (mistake >= 2) {
+            this.setState({record: 0});
+        };
+        this.setState({mistake: mistake + 1});
         if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
             this.mistakeArr.push(learnNumber);
-            console.log(this.mistakeArr);
         }
         this.mistakeArr = this.mistakeArr.filter(onlyUnique);
     }else{
