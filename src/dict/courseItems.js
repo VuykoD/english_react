@@ -545,7 +545,7 @@ const courseItems = [
     {"id":10368, "unitId":1019, "eng": "I apologize for","pol": "Przepraszam za", "transl": "Прошу прощения за"},
     {"id":10369, "unitId":1019, "eng": "Please, forgive me for my","pol": "Proszę, wybacz mi moje", "transl": "Пожалуйста, прости меня за мою"},
     {"id":10370, "unitId":1019, "eng": "I must apologize for","pol": "Muszę przeprosić za", "transl": "Я должен извиниться за"},
-    {"id":10371, "unitId":1019, "eng": "Ever so sory","pol": "Kiedykolwiek tak bardzo", "transl": "Очень жаль"},
+    {"id":10371, "unitId":1019, "eng": "Ever so sory","pol": "Tak bardzo przepraszam", "transl": "Очень жаль"},
     {"id":10372, "unitId":1019, "eng": "That’s my fault","pol": "To moja wina", "transl": "Это моя ошибка"},
     {"id":10373, "unitId":1019, "eng": "Please don’t be mad at me","pol": "Proszę, nie złość się na mnie", "transl": "Пожалуйста, не сердитесь на меня"},
     {"id":10374, "unitId":1019, "eng": "How stupid thoughtless of me","pol": "Jak głupio bezmyślnie z mojej strony", "transl": "Как глупо легкомысленно с моей стороны"},
