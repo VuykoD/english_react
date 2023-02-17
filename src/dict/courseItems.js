@@ -557,7 +557,6 @@ const courseItems = [
     {"id":10380, "unitId":1019, "eng": "I do apologize for","pol": "Przepraszam za", "transl": "Я извиняюсь за"},
 //
     {"id":10382, "unitId":1020, "eng": "Sleep with angels","pol": "Śpij z aniołami", "transl": "Спать с ангелами"},
-    {"id":10383, "unitId":1020, "eng": "Sleep tight, don’t let the bed bugs bite","pol": "Śpij spokojnie, nie daj się ugryźć pluskwom", "transl": "Спи спокойно, не дай клопам укусить"},
     {"id":10384, "unitId":1020, "eng": "Let’s start counting the sheeps","pol": "Zacznijmy liczyć owce", "transl": "Начнем считать овец"},
     {"id":10385, "unitId":1020, "eng": "Tomorrow is not soon enough. Lets prepare","pol": "Jutro nie jest wystarczająco szybko. Przygotujmy się", "transl": "Завтра еще не скоро. Давай подготовимся"},
     {"id":10386, "unitId":1020, "eng": "Time to dream","pol": "Czas na sen", "transl": "Время мечтать"},
@@ -567,7 +566,6 @@ const courseItems = [
     {"id":10390, "unitId":1020, "eng": "Dream of me","pol": "Marzenie o mnie", "transl": "Мечтаешь обо мне"},
     {"id":10391, "unitId":1020, "eng": "Until tomorrow","pol": "Do jutra", "transl": "До завтра"},
     {"id":10392, "unitId":1020, "eng": "Rest time for blossoms","pol": "Czas odpoczynku dla kwiatów", "transl": "Время отдыха для цветов"},
-    {"id":10393, "unitId":1020, "eng": "Don’t let the bed bugs bite","pol": "Nie daj się ugryźć pluskwom", "transl": "Не позволяйте постельным клопам кусаться"},
     {"id":10394, "unitId":1020, "eng": "I’ll see you in dreamland","pol": "Do zobaczenia w krainie snów", "transl": "увидимся в стране грез"},
     {"id":10395, "unitId":1020, "eng": "Have sea dreams","pol": "Miej morskie sny", "transl": "Есть морские мечты"},
 //
