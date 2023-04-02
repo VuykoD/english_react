@@ -516,26 +516,26 @@ export function getProgressBar() {
 }
 
 export function speak() {
-    const {english, polish, learnPol, learnEng} = this.state;
+    const { english, polish } = this.state;
 
     //comp eng
-    if (english && learnEng){
-        if (!this.filteredEngVoices || !this.filteredEngVoices.length) this.getVoices();
-        const utterance = new SpeechSynthesisUtterance(english);
-        const randomVoice = this.filteredEngVoices ? Math.floor(Math.random() * this.filteredEngVoices.length) : null;
-        utterance.voice = randomVoice ? this.filteredEngVoices[randomVoice] : null;
-        if (!utterance.voice) utterance.lang = 'en';
-        speechSynthesis.speak(utterance);
-    }
+    // if (english && learnEng){
+    if (!this.filteredEngVoices || !this.filteredEngVoices.length) this.getVoices();
+    const utteranceEng = new SpeechSynthesisUtterance(english);
+    const randomVoice = this.filteredEngVoices ? Math.floor(Math.random() * this.filteredEngVoices.length) : null;
+    utteranceEng.voice = randomVoice ? this.filteredEngVoices[randomVoice] : null;
+    if (!utteranceEng.voice) utteranceEng.lang = 'en';
+    speechSynthesis.speak(utteranceEng);
+    // }
 
     //comp pol
-    if (polish && learnPol){
-        if (!this.filteredPolVoices || !this.filteredPolVoices.length) this.getVoices();
-        const utterance = new SpeechSynthesisUtterance(polish);
-        utterance.voice = get(this.filteredPolVoices, '[0]');
-        if (!utterance.voice) utterance.lang = 'en';
-        speechSynthesis.speak(utterance);
-    }
+    // if (polish && learnPol){
+    if (!this.filteredPolVoices || !this.filteredPolVoices.length) this.getVoices();
+    const utterancePol = new SpeechSynthesisUtterance(polish);
+    utterancePol.voice = get(this.filteredPolVoices, '[0]');
+    if (!utterancePol.voice) utterancePol.lang = 'en';
+    speechSynthesis.speak(utterancePol);
+    // }
 }
 
 export function checkIsSound() {
@@ -597,7 +597,7 @@ export function changedInput() {
         document.getElementById("formInput").value = word;
         if (mistake >= 2) {
             this.setState({record: 0});
-        };
+        }
         this.setState({mistake: mistake + 1});
         if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
             this.mistakeArr.push(learnNumber);
