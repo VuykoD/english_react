@@ -276,15 +276,13 @@ class LearningClass extends Component {
     };
 
     changeEngCheck = () =>{
-        this.setState({learnEng: true, learnPol: false});
-        localStorage.learnEng = '1' ;
-        localStorage.learnPol = '' ;
+        localStorage.learnEng = this.state.learnEng ? '': '1' ;
+        this.setState({ learnEng: !this.state.learnEng });
     }
 
     changePolCheck = () =>{
-        this.setState({learnEng: false, learnPol: true});
-        localStorage.learnEng = '' ;
-        localStorage.learnPol = '1' ;
+        localStorage.learnPol = this.state.learnPol ? '': '1' ;
+        this.setState({ learnPol: !this.state.learnPol });
     }
 
     repeatAll = () =>{
@@ -361,7 +359,7 @@ class LearningClass extends Component {
             rus,
             learnEng,
             learnPol,
-            mistake,
+            // mistake,
             showRus,
             showEng,
             showPol
@@ -387,12 +385,12 @@ class LearningClass extends Component {
                     <Row className="rows">
                         <Col>
                             <Form.Group controlId="learnEng">
-                                <Form.Check type="radio" label={eng} checked={learnEng} onChange={this.changeEngCheck}/>
+                                <Form.Check label={eng} checked={learnEng} onChange={this.changeEngCheck}/>
                             </Form.Group>
                         </Col>
                         <Col>
                             <Form.Group controlId="learnPol">
-                                <Form.Check type="radio" label={pol} checked={learnPol} onChange={this.changePolCheck}/>
+                                <Form.Check label={pol} checked={learnPol} onChange={this.changePolCheck}/>
                             </Form.Group>
                         </Col>
                         <Col>
@@ -435,15 +433,15 @@ class LearningClass extends Component {
                             {this.getTopic()}
                             {soundButton.call(this)}
                             {showRus && getBadge(rus, "light")}
+                            {getProgressBar.call(this)}
                             {showEng && getBadge(english, "secondary")}
                             {showPol && getBadge(polish, "secondary")}
-                            {getProgressBar.call(this)}
-                            {(exampleLearning === 'example_sound_repeat' || mistake > 2) &&
+                            {/*(exampleLearning === 'example_sound_repeat' || mistake > 2) &&
                                 <>
                                     {learnEng && getBadge(english, "info")}
                                     {learnPol && getBadge(polish, "info")}
                                 </>
-                            }
+                            */}
                             {exampleLearning === 'write' &&
                                 <>
                                     {getInput.call(this)}
@@ -516,26 +514,26 @@ export function getProgressBar() {
 }
 
 export function speak() {
-    const { english, polish } = this.state;
+    const {english, polish, learnPol, learnEng} = this.state;
 
     //comp eng
-    // if (english && learnEng){
-    if (!this.filteredEngVoices || !this.filteredEngVoices.length) this.getVoices();
-    const utteranceEng = new SpeechSynthesisUtterance(english);
-    const randomVoice = this.filteredEngVoices ? Math.floor(Math.random() * this.filteredEngVoices.length) : null;
-    utteranceEng.voice = randomVoice ? this.filteredEngVoices[randomVoice] : null;
-    if (!utteranceEng.voice) utteranceEng.lang = 'en';
-    speechSynthesis.speak(utteranceEng);
-    // }
+    if (english && learnEng){
+        if (!this.filteredEngVoices || !this.filteredEngVoices.length) this.getVoices();
+        const utterance = new SpeechSynthesisUtterance(english);
+        const randomVoice = this.filteredEngVoices ? Math.floor(Math.random() * this.filteredEngVoices.length) : null;
+        utterance.voice = randomVoice ? this.filteredEngVoices[randomVoice] : null;
+        if (!utterance.voice) utterance.lang = 'en';
+        speechSynthesis.speak(utterance);
+    }
 
     //comp pol
-    // if (polish && learnPol){
-    if (!this.filteredPolVoices || !this.filteredPolVoices.length) this.getVoices();
-    const utterancePol = new SpeechSynthesisUtterance(polish);
-    utterancePol.voice = get(this.filteredPolVoices, '[0]');
-    if (!utterancePol.voice) utterancePol.lang = 'en';
-    speechSynthesis.speak(utterancePol);
-    // }
+    if (polish && learnPol){
+        if (!this.filteredPolVoices || !this.filteredPolVoices.length) this.getVoices();
+        const utterance = new SpeechSynthesisUtterance(polish);
+        utterance.voice = get(this.filteredPolVoices, '[0]');
+        if (!utterance.voice) utterance.lang = 'en';
+        speechSynthesis.speak(utterance);
+    }
 }
 
 export function checkIsSound() {
