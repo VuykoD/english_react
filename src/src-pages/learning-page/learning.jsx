@@ -29,6 +29,10 @@ const content = {
         ru: "Озвучивать польску",
         ukr: "Озвучувати польську",
     },
+    soundRus: {
+        ru: "Озвучивать русский",
+        ukr: "Озвучувати російську",
+    },
     translEng: {
         ru: "Показать английский",
         ukr: "Показати англійську",
@@ -82,6 +86,7 @@ const initialState = {
     fileName: '',
     learnEng: !!localStorage.learnEng,
     learnPol: !!localStorage.learnPol,
+    soundRus: !!localStorage.soundRus,
     isRepeatAll: false,
     mistake: 0,
     mistakeRewrite: 0,
@@ -112,20 +117,22 @@ class LearningClass extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        const {showRus, showEng, showPol, learnEng, learnPol} = this.state;
+        const {showRus, showEng, showPol, learnEng, learnPol, soundRus} = this.state;
         if (
             showRus !== !!localStorage.showRus ||
             showEng !== !!localStorage.showEng ||
             showPol !== !!localStorage.showPol ||
             learnEng !== !!localStorage.learnEng ||
-            learnPol !== !!localStorage.learnPol
+            learnPol !== !!localStorage.learnPol ||
+            soundRus !== !!localStorage.soundRus
         ){
             this.setState({
                 showRus: !!localStorage.showRus,
                 showEng: !!localStorage.showEng,
                 showPol: !!localStorage.showPol,
                 learnEng: !!localStorage.learnEng,
-                learnPol: !!localStorage.learnPol
+                learnPol: !!localStorage.learnPol,
+                soundRus: !!localStorage.soundRus
             });
         }
     }
@@ -149,6 +156,10 @@ class LearningClass extends Component {
             );
             this.filteredPolVoices = filter(voices, voice => {
                     return voice.lang.substr(0, 2) === "pl"
+                }
+            );
+            this.filteredRusVoices = filter(voices, voice => {
+                    return voice.lang.substr(0, 2) === "ru"
                 }
             );
         };
@@ -285,6 +296,11 @@ class LearningClass extends Component {
         this.setState({ learnPol: !this.state.learnPol });
     }
 
+    changeRusCheck = () =>{
+        localStorage.soundRus = this.state.soundRus ? '': '1' ;
+        this.setState({ soundRus: !this.state.soundRus });
+    }
+
     repeatAll = () =>{
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (localProgress && localProgress.length){
@@ -359,6 +375,7 @@ class LearningClass extends Component {
             rus,
             learnEng,
             learnPol,
+            soundRus,
             // mistake,
             showRus,
             showEng,
@@ -369,6 +386,7 @@ class LearningClass extends Component {
         const write = get(content, `write[${siteLang}]`);
         const eng = get(content, `eng[${siteLang}]`);
         const pol = get(content, `pol[${siteLang}]`);
+        const speakRus = get(content, `soundRus[${siteLang}]`);
         const translEng = get(content, `translEng[${siteLang}]`);
         const translRus = get(content, `translRus[${siteLang}]`);
         const translPol = get(content, `translPol[${siteLang}]`);
@@ -391,6 +409,11 @@ class LearningClass extends Component {
                         <Col>
                             <Form.Group controlId="learnPol">
                                 <Form.Check label={pol} checked={learnPol} onChange={this.changePolCheck}/>
+                            </Form.Group>
+                        </Col>
+                        <Col>
+                            <Form.Group controlId="soundRus">
+                                <Form.Check label={speakRus} checked={soundRus} onChange={this.changeRusCheck}/>
                             </Form.Group>
                         </Col>
                         <Col>
@@ -514,7 +537,7 @@ export function getProgressBar() {
 }
 
 export function speak() {
-    const {english, polish, learnPol, learnEng} = this.state;
+    const {english, polish, rus, learnPol, learnEng, soundRus} = this.state;
 
     //comp eng
     if (english && learnEng){
@@ -532,6 +555,14 @@ export function speak() {
         const utterance = new SpeechSynthesisUtterance(polish);
         utterance.voice = get(this.filteredPolVoices, '[0]');
         if (!utterance.voice) utterance.lang = 'en';
+        speechSynthesis.speak(utterance);
+    }
+
+    if (soundRus){
+        if (!this.filteredRusVoices || !this.filteredRusVoices.length) this.getVoices();
+        const utterance = new SpeechSynthesisUtterance(rus);
+        utterance.voice = get(this.filteredRusVoices, '[0]');
+        if (!utterance.voice) utterance.lang = 'ru';
         speechSynthesis.speak(utterance);
     }
 }
