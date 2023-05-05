@@ -783,11 +783,7 @@ const courseItems = [
     {"id":10665, "unitId":1036, "eng": "I’m knockered","pol": "jestem bardzo zmęczony", "transl": "я в шоке"},
     {"id":10667, "unitId":1036, "eng": "I’m exhausted","pol": "Jestem wykończony", "transl": "Я изможден"},
     {"id":10668, "unitId":1036, "eng": "I’m worn out","pol": "Jestem wyczerpany", "transl": "я устал"},
-    {"id":10669, "unitId":1036, "eng": "I’m dead on my feet","pol": "Jestem martwy na nogach", "transl": "Я мертв на ногах"},
-
-
-
-
+    {"id":10669, "unitId":1036, "eng": "I’m dead on my feet","pol": "Jestem martwy na nogach", "transl": "Я мертв на ногах"}
 ];
 
 export {courseItems as default};
