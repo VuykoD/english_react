@@ -1,29 +1,18 @@
 {
   "files": {
-    "main.css": "/english_react/static/css/main.1be298c7.chunk.css",
-    "main.js": "/english_react/static/js/main.8800ce24.chunk.js",
-    "main.js.map": "/english_react/static/js/main.8800ce24.chunk.js.map",
-    "runtime-main.js": "/english_react/static/js/runtime-main.cf643162.js",
-    "runtime-main.js.map": "/english_react/static/js/runtime-main.cf643162.js.map",
-    "static/css/2.2f506f9a.chunk.css": "/english_react/static/css/2.2f506f9a.chunk.css",
-    "static/js/2.8e82c2ed.chunk.js": "/english_react/static/js/2.8e82c2ed.chunk.js",
-    "static/js/2.8e82c2ed.chunk.js.map": "/english_react/static/js/2.8e82c2ed.chunk.js.map",
+    "main.css": "/english_react/static/css/main.0e495712.css",
+    "main.js": "/english_react/static/js/main.b0858dd5.js",
+    "static/media/Sound.png": "/english_react/static/media/Sound.2456ab73d4deb1c0814d.png",
+    "static/media/music.png": "/english_react/static/media/music.5ed2f57185a197e1d645.png",
+    "static/media/bob-van-aubel-ray-bans.jpg": "/english_react/static/media/bob-van-aubel-ray-bans.48a22409176c0b7c6ff7.jpg",
+    "static/media/movie12.png": "/english_react/static/media/movie12.b5a4af61493359027c38.png",
+    "static/media/paint.png": "/english_react/static/media/paint.27c6e57b22a2fc920148.png",
     "index.html": "/english_react/index.html",
-    "precache-manifest.6a185d5c70546713bb28b45e2c100010.js": "/english_react/precache-manifest.6a185d5c70546713bb28b45e2c100010.js",
-    "service-worker.js": "/english_react/service-worker.js",
-    "static/css/2.2f506f9a.chunk.css.map": "/english_react/static/css/2.2f506f9a.chunk.css.map",
-    "static/css/main.1be298c7.chunk.css.map": "/english_react/static/css/main.1be298c7.chunk.css.map",
-    "static/media/Sound.png": "/english_react/static/media/Sound.049ed9b7.png",
-    "static/media/home-page.css": "/english_react/static/media/bob-van-aubel-ray-bans.315a4544.jpg",
-    "static/media/movie12.png": "/english_react/static/media/movie12.d9d9c789.png",
-    "static/media/music.png": "/english_react/static/media/music.2cedb470.png",
-    "static/media/paint.png": "/english_react/static/media/paint.fe331566.png"
+    "main.0e495712.css.map": "/english_react/static/css/main.0e495712.css.map",
+    "main.b0858dd5.js.map": "/english_react/static/js/main.b0858dd5.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.cf643162.js",
-    "static/css/2.2f506f9a.chunk.css",
-    "static/js/2.8e82c2ed.chunk.js",
-    "static/css/main.1be298c7.chunk.css",
-    "static/js/main.8800ce24.chunk.js"
+    "static/css/main.0e495712.css",
+    "static/js/main.b0858dd5.js"
   ]
 }
