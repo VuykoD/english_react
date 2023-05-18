@@ -311,9 +311,9 @@ const courseItems = [
     {"id":10165, "unitId":1008, "eng": "Is it far?","pol": "Czy to daleko?", "transl": "Это далеко?"},
 //
     {"id":10167, "unitId":1009, "eng": "Go up","pol": "Wchodzić", "transl": "Подниматься"},
-    {"id":10168, "unitId":1009, "eng": "It’s on the corner","pol": "To jest na rogu", "transl": "Это в углу"},
+    {"id":10168, "unitId":1009, "eng": "It’s on the corner","pol": "To jest na rogu", "transl": "Это за углом"},
     {"id":10169, "unitId":1009, "eng": "Go straight ahead","pol": "Idź prosto", "transl": "Идите прямо"},
-    {"id":10171, "unitId":1009, "eng": "Go along","pol": "Przejść wzdłuż", "transl": "Иди вместе"},
+    {"id":10171, "unitId":1009, "eng": "Go along","pol": "Przejść wzdłuż", "transl": "Иди вдоль"},
     {"id":10172, "unitId":1009, "eng": "Turn left","pol": "Skręć w lewo", "transl": "Повернуть налево"},
     {"id":10173, "unitId":1009, "eng": "Turn right","pol": "Skręć w prawo", "transl": "Поверни направо"},
     {"id":10175, "unitId":1009, "eng": "It’s in the middle of the block","pol": "To jest w środku bloku", "transl": "Это в середине квартала"},
@@ -339,7 +339,7 @@ const courseItems = [
     {"id":10197, "unitId":1010, "eng": "I just don’t have that to give right now","pol": "Po prostu nie mam teraz tego do dania", "transl": "Мне просто сейчас нечего дать"},
     {"id":10198, "unitId":1010, "eng": "I’m not able to commit to that right now","pol": "W tej chwili nie jestem w stanie się do tego zobowiązać", "transl": "Я не могу взять на себя обязательство прямо сейчас"},
     {"id":10199, "unitId":1010, "eng": "It is not a good idea for me","pol": "To nie jest dla mnie dobry pomysł", "transl": "Это не очень хорошая идея для меня"},
-    {"id":10200, "unitId":1010, "eng": "Apologies, but I can’t make it","pol": "Przepraszamy, ale nie dam rady", "transl": "Извиняюсь, но не успеваю"},
+    {"id":10200, "unitId":1010, "eng": "Apologies, but I can’t make it","pol": "Przepraszamy, ale nie dam rady", "transl": "Извините, но я не смогу."},
 //
     {"id":10202, "unitId":1011, "eng": "You bring joy to my life","pol": "Wnosisz radość do mojego życia", "transl": "Ты приносишь радость в мою жизнь"},
     {"id":10203, "unitId":1011, "eng": "All I do is think of you","pol": "Wszystko, co robię, to myślę o tobie", "transl": "Все, что я делаю, это думаю о тебе"},
