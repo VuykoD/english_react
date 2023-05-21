@@ -355,8 +355,8 @@ const courseItems = [
     {"id":10213, "unitId":1011, "eng": "I adore you","pol": "Uwielbiam Cię", "transl": "Я тебя обожаю"},
     {"id":10214, "unitId":1011, "eng": "You’re everything to me","pol": "Jesteś dla mnie wszystkim", "transl": "Ты для меня все"},
     {"id":10215, "unitId":1011, "eng": "You’re the light of my life","pol": "Jesteś światłem mojego życia", "transl": "Ты свет моей жизни"},
-    {"id":10216, "unitId":1011, "eng": "I’m head over heels for you","pol": "Jestem dla ciebie po uszy", "transl": "Я без ума от тебя"},
-    {"id":10217, "unitId":1011, "eng": "I want a lifetime with you","pol": "Chcę spędzić z tobą całe życie", "transl": "Я хочу всю жизнь с тобой"},
+    {"id":10216, "unitId":1011, "eng": "I’m head over heels for you","pol": "Szaleje za tobą", "transl": "Я без ума от тебя"},
+    {"id":10217, "unitId":1011, "eng": "I want a lifetime with you","pol": "Chcę spędzić z tobą całe życie", "transl": "Я хочу провести всю жизнь с тобой"},
 //
     {"id":10219, "unitId":1012, "eng": "Do you have a reservation?","pol": "Czy masz rezerwacje?", "transl": "Вы бронировали?"},
     {"id":10220, "unitId":1012, "eng": "Do you need help with your bags?","pol": "Potrzebujesz pomocy z torbami?", "transl": "Вам нужна помощь с сумками?"},
@@ -371,7 +371,7 @@ const courseItems = [
     {"id":10229, "unitId":1012, "eng": "Please sign your name here","pol": "Proszę podpisać się tutaj", "transl": "Пожалуйста, подпишите свое имя здесь"},
     {"id":10230, "unitId":1012, "eng": "I’d like a single room, please","pol": "Poproszę o pokój jednoosobowy", "transl": "Я бы хотел одноместный номер, пожалуйста"},
     {"id":10231, "unitId":1012, "eng": "Can someone help me with my bags?","pol": "Czy ktoś może mi pomóc z moimi torbami?", "transl": "Может ли кто-нибудь помочь мне с моими сумками?"},
-    {"id":10232, "unitId":1012, "eng": "When I can check-in?","pol": "Kiedy mogę się odprawić?", "transl": "Когда я смогу зарегистрироваться?"},
+    {"id":10232, "unitId":1012, "eng": "When I can check-in?","pol": "Kiedy mogę się zameldować?", "transl": "Когда я смогу зарегистрироваться?"},
     {"id":10233, "unitId":1012, "eng": "Do you need a wake-up call?","pol": "Potrzebujesz pobudki?", "transl": "Вам нужен звонок для пробуждения?"},
     {"id":10235, "unitId":1012, "eng": "In other words, she must give up singing","pol": "Innymi słowy, musi zrezygnować ze śpiewania", "transl": "Другими словами, она должна бросить петь"},
     {"id":10237, "unitId":1012, "eng": "The film was held up as an example of good cinema","pol": "Film został uznany za przykład dobrego kina", "transl": "Фильм преподносился как образец хорошего кино"},
@@ -423,7 +423,7 @@ const courseItems = [
     {"id":10286, "unitId":1014, "eng": "What’s up?","pol": "Co tam?", "transl": "Как дела?"},
     {"id":10287, "unitId":1014, "eng": "Greeting","pol": "Powitanie", "transl": "Приветствие"},
     {"id":10288, "unitId":1014, "eng": "Stay safe","pol": "Bądź bezpieczny", "transl": "Оставайтесь в безопасности"},
-    {"id":10289, "unitId":1014, "eng": "Welcome","pol": "Powitanie", "transl": "Добро пожаловать"},
+    {"id":10289, "unitId":1014, "eng": "Welcome","pol": "Zapraszamy!", "transl": "Добро пожаловать"},
 //
 //     {"id":10701, "unitId":1037, "eng": "I was doing the cleaning","pol": "robiłem sprzątanie", "transl": "Я делал уборку"},
 //     {"id":10702, "unitId":1037, "eng": "I was doing meatballs","pol": "robiłam klopsiki", "transl": "Я делала котлеты"},
@@ -699,7 +699,7 @@ const courseItems = [
 //
     {"id":10591, "unitId":1032, "eng": "Have a fabulous birthday","pol": "Wspaniałych urodzin", "transl": "Сказочного дня рождения"},
     {"id":10592, "unitId":1032, "eng": "I hope you have a fantastic day","pol": "Mam nadzieję, że masz fantastyczny dzień", "transl": "Я надеюсь, что у вас есть фантастический день"},
-    {"id":10594, "unitId":1032, "eng": "Wishing you many more candles to blow","pol": "Życzę dużo więcej świec do zdmuchnięcia", "transl": "Желаю вам задуть еще много свечей"},
+    {"id":10594, "unitId":1032, "eng": "Wishing you many more candles to blow","pol": "Życzę Ci jeszcze wielu świeczek do zdmuchnięcia", "transl": "Желаю вам задуть еще много свечей"},
     {"id":10596, "unitId":1032, "eng": "All the best on your special day","pol": "Wszystkiego najlepszego w ten wyjątkowy dzień", "transl": "Всего наилучшего в ваш особенный день"},
     {"id":10598, "unitId":1032, "eng": "I wish you a wonderful birthday","pol": "Życzę wspaniałych urodzin", "transl": "Желаю тебе прекрасного дня рождения"},
     {"id":10599, "unitId":1032, "eng": "Have a good one","pol": "Miłego", "transl": "Удачи"},
