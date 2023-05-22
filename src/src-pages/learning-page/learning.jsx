@@ -376,7 +376,7 @@ class LearningClass extends Component {
             learnEng,
             learnPol,
             soundRus,
-            // mistake,
+            mistake,
             showRus,
             showEng,
             showPol
@@ -459,12 +459,12 @@ class LearningClass extends Component {
                             {getProgressBar.call(this)}
                             {showEng && getBadge(english, "secondary")}
                             {showPol && getBadge(polish, "secondary")}
-                            {/*(exampleLearning === 'example_sound_repeat' || mistake > 2) &&
+                            {(exampleLearning === 'example_sound_repeat' || mistake > 2) &&
                                 <>
                                     {learnEng && getBadge(english, "info")}
                                     {learnPol && getBadge(polish, "info")}
                                 </>
-                            */}
+                            }
                             {exampleLearning === 'write' &&
                                 <>
                                     {getInput.call(this)}
@@ -548,8 +548,6 @@ export function speak() {
         if (!utterance.voice) utterance.lang = 'en';
         speechSynthesis.speak(utterance);
     }
-
-    //comp pol
     if (polish && learnPol){
         if (!this.filteredPolVoices || !this.filteredPolVoices.length) this.getVoices();
         const utterance = new SpeechSynthesisUtterance(polish);
@@ -558,6 +556,7 @@ export function speak() {
         speechSynthesis.speak(utterance);
     }
 
+    //comp rus
     if (soundRus){
         if (!this.filteredRusVoices || !this.filteredRusVoices.length) this.getVoices();
         const utterance = new SpeechSynthesisUtterance(rus);
