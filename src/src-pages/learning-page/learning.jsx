@@ -459,7 +459,7 @@ class LearningClass extends Component {
                             {getProgressBar.call(this)}
                             {showEng && getBadge(english, "secondary")}
                             {showPol && getBadge(polish, "secondary")}
-                            {(exampleLearning === 'example_sound_repeat' || mistake > 2) &&
+                            {(mistake > 2) &&
                                 <>
                                     {learnEng && getBadge(english, "info")}
                                     {learnPol && getBadge(polish, "info")}
