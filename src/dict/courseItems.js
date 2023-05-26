@@ -711,7 +711,7 @@ const courseItems = [
     {"id":10605, "unitId":1032, "eng": "Hope you have an enjoyable birthday. You deserve it","pol": "Mam nadzieję, że masz udane urodziny. Zasługujesz na to", "transl": "Желаем вам приятного дня рождения Ты заслуживаешь это"},
 //
     {"id":10607, "unitId":1033, "eng": "What’s new?","pol": "Co nowego?", "transl": "Какие новости?"},
-    {"id":10608, "unitId":1033, "eng": "How’s it going?","pol": "Jak leci?", "transl": "Как это работает?"},
+    {"id":10608, "unitId":1033, "eng": "How’s it going?","pol": "Jak leci?", "transl": "Как дела?"},
     {"id":10609, "unitId":1033, "eng": "How’s everything?","pol": "Jak wszystko?", "transl": "Как все?"},
     {"id":10610, "unitId":1033, "eng": "How’s life?","pol": "Jak życie?", "transl": "Как жизнь?"},
     {"id":10611, "unitId":1033, "eng": "What’s going on?","pol": "Co się dzieje?", "transl": "В чем дело?"},
@@ -733,7 +733,7 @@ const courseItems = [
     {"id":10628, "unitId":1034, "eng": "I am sick of it","pol": "Mam tego dość", "transl": "Я устал от этого"},
     {"id":10629, "unitId":1034, "eng": "I don’t appreciate it","pol": "Nie doceniam tego", "transl": "Я этого не ценю"},
     {"id":10630, "unitId":1034, "eng": "I’m not really fond of it","pol": "Nie przepadam za tym", "transl": "Мне это не очень нравится"},
-    {"id":10631, "unitId":1034, "eng": "I'll pass","pol": "Przejdę", "transl": "Я прохожу"},
+    {"id":10631, "unitId":1034, "eng": "I'll pass","pol": "Mijam", "transl": "Я пас"},
     {"id":10632, "unitId":1034, "eng": "I am not passionate about it","pol": "Nie pasjonuję się tym", "transl": "Я не в восторге от этого"},
     {"id":10633, "unitId":1034, "eng": "I am not keen on it","pol": "Nie podoba mi się to", "transl": "Я не в восторге от этого"},
     {"id":10634, "unitId":1034, "eng": "That’s not for me","pol": "To nie dla mnie", "transl": "Это не для меня"},
