@@ -1,4 +1,26 @@
 const courseItems = [
+//
+    {"id":10700, "unitId":1037, "eng": "","pol": "lepiej późno niż wcale", "transl": "лучше поздно, чем никогда"},
+    {"id":10701, "unitId":1037, "eng": "","pol": "wcale", "transl": "совсем"},
+    {"id":10702, "unitId":1037, "eng": "","pol": "wcale nie", "transl": "нисколько"},
+    {"id":10703, "unitId":1037, "eng": "","pol": "wcale się nie dziwię", "transl": "я даже не удивлен"},
+    {"id":10704, "unitId":1037, "eng": "","pol": "wcale tak nie myślę", "transl": "я так не думаю"},
+    {"id":10705, "unitId":1037, "eng": "","pol": "proszę doliczyć reklamówkę", "transl": "пожалуйста, добавьте пакет"},
+    {"id":10706, "unitId":1037, "eng": "","pol": "czy ty to widzisz?", "transl": "Вы видите это?"},
+    {"id":10707, "unitId":1037, "eng": "","pol": "czy wiesz gdzie to jest?", "transl": "ты знаешь где это?"},
+    {"id":10708, "unitId":1037, "eng": "","pol": "widzieć albo wiedzieć", "transl": "видеть или знать"},
+    {"id":10709, "unitId":1037, "eng": "","pol": "w pokoju nie ma dywanu", "transl": "в комнате нет ковра"},
+    {"id":10710, "unitId":1037, "eng": "","pol": "lubię leżeć na kanapie", "transl": "я люблю лежать на диване"},
+    {"id":10711, "unitId":1037, "eng": "","pol": "zakaz palenia", "transl": "Курение запрещено"},
+    {"id":10712, "unitId":1037, "eng": "","pol": "jestem dumny z ciebie", "transl": "я горжусь вами"},
+    {"id":10713, "unitId":1037, "eng": "","pol": "taka myśl przyszla do mnie", "transl": "эта мысль пришла ко мне"},
+    {"id":10714, "unitId":1037, "eng": "","pol": "co masz na myśli", "transl": "Что ты имеешь в виду"},
+    {"id":10715, "unitId":1037, "eng": "","pol": "nadchodzi burza", "transl": "приближается буря"},
+    {"id":10716, "unitId":1037, "eng": "","pol": "zobaczyłem ślicznie kozaki", "transl": "Я видел симпатичные сапоги"},
+    {"id":10717, "unitId":1037, "eng": "","pol": "polacy albo kozacy", "transl": "поляки или казаки"},
+    {"id":10718, "unitId":1037, "eng": "","pol": "Jestem dumny z Kozaków", "transl": "Я горжусь казаками"},
+    {"id":10719, "unitId":1037, "eng": "","pol": "pies ma ogon", "transl": "у собаки есть хвост"},
+    {"id":10720, "unitId":1037, "eng": "","pol": "umiem rozpalić ogien", "transl": "Я умею распаливать огонь"},
     //unit 1
     {"id": 1, "unitId": 1, "eng": "She is driving now, at the moment of speaking", "pol": "Ona jedzie teraz, w chwili mówienia", "transl": "Она едет сейчас, в момент разговора"},
     {"id": 2, "unitId": 1, "eng": "The action is not finished", "pol": "Akcja nie jest zakończona", "transl": "Действие не закончено"},
@@ -763,7 +785,7 @@ const courseItems = [
     {"id":10665, "unitId":1036, "eng": "I’m knockered","pol": "jestem bardzo zmęczony", "transl": "я в шоке"},
     {"id":10667, "unitId":1036, "eng": "I’m exhausted","pol": "Jestem wykończony", "transl": "Я изможден"},
     {"id":10668, "unitId":1036, "eng": "I’m worn out","pol": "Jestem wyczerpany", "transl": "я устал"},
-    {"id":10669, "unitId":1036, "eng": "I’m dead on my feet","pol": "Jestem martwy na nogach", "transl": "Я мертв на ногах"}
+    {"id":10669, "unitId":1036, "eng": "I’m dead on my feet","pol": "Jestem martwy na nogach", "transl": "Я мертв на ногах"},
 ];
 
 export {courseItems as default};
