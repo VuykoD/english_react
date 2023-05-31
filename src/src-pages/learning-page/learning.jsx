@@ -229,7 +229,7 @@ class LearningClass extends Component {
     };
 
     setTimeoutTime =(learnNumber)=>{
-        const word = get(this.learnArr, `[${learnNumber}].eng`, '');
+        const word = get(this.learnArr, `[${learnNumber}].pol`, '');
         const wordLength = Math.round(word.length / this.soundAndRepeatCoef);
         let timeoutTime = wordLength > 10 ? wordLength : 10;
         if(timeoutTime > 45) timeoutTime = 45;
