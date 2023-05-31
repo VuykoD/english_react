@@ -93,7 +93,7 @@ const initialState = {
     record: 0
 }
 
-const MAX_WORD_LENGTH = 26;
+const MAX_WORD_LENGTH = 100;
 
 class LearningClass extends Component {
     static propTypes = {
