@@ -84,6 +84,7 @@ const courseItems = [
     {"id":1778, "unitId":1040, "eng": "","pol": "dwa razy dziennie biorę prysznic", "transl": "я принимаю душ два раза в день"},
     {"id":1779, "unitId":1040, "eng": "","pol": "żel pod prysznic", "transl": "гель для душа"},
     {"id":1780, "unitId":1040, "eng": "","pol": "nie wziął pieniędzy", "transl": "он не взял деньги"},
+    {"id":1781, "unitId":1040, "eng": "Look what the cat dragged in","pol": "Patrz co przyciągnął kot", "transl": "Смотри, что притащил кот"},
     //common 1
     {"id":10002, "unitId":1001, "eng": "More than that","pol": "Więcej niż to", "transl": "Больше чем это"},
     {"id":10003, "unitId":1001, "eng": "Thank you very much","pol": "Dziękuję Ci bardzo", "transl": "Большое спасибо"},
@@ -103,6 +104,7 @@ const courseItems = [
     {"id":10019, "unitId":1001, "eng": "Let's practice English","pol": "Poćwiczmy angielski", "transl": "Давайте попрактикуемся в английском"},
     {"id":10020, "unitId":1001, "eng": "Let me think about it","pol": "Daj mi o tym pomyśleć", "transl": "Дай мне подумать об этом"},
     {"id":10021, "unitId":1001, "eng": "Let me check","pol": "Niech sprawdzę", "transl": "Дай мне проверить"},
+    {"id":10022, "unitId":1001, "eng": "Stay safe","pol": "Bądź bezpieczny", "transl": "Оставайтесь в безопасности"},
 //common 2
     {"id":10023, "unitId":1002, "eng": "Really?","pol": "Naprawdę?", "transl": "Действительно?"},
     {"id":10024, "unitId":1002, "eng": "See you later","pol": "Do zobaczenia później", "transl": "До скорого"},
@@ -326,7 +328,7 @@ const courseItems = [
     {"id":10266, "unitId":1013, "eng": "When is the homework for?","pol": "Na kiedy jest praca domowa?", "transl": "На когда домашнее задание?"},
     {"id":10267, "unitId":1013, "eng": "I have done this","pol": "Zrobiłem to", "transl": "Я сделал это"},
     {"id":10268, "unitId":1013, "eng": "Can I go to the toilet?","pol": "Czy mogę iść do toalety?", "transl": "Могу я пойти в туалет?"},
-//
+//Ways to Say HELLO
     {"id":10270, "unitId":1014, "eng": "Good to see you","pol": "Dobrze cię widzieć", "transl": "Рад тебя видеть"},
     {"id":10272, "unitId":1014, "eng": "Good evening","pol": "Dobry wieczór", "transl": "Добрый вечер"},
     {"id":10273, "unitId":1014, "eng": "Good morning","pol": "Dzień dobry", "transl": "Доброе утро"},
@@ -334,15 +336,12 @@ const courseItems = [
     {"id":10276, "unitId":1014, "eng": "How are you feeling today?","pol": "Jak się dzisiaj czujesz?", "transl": "Как самочувствие сегодня?"},
     {"id":10278, "unitId":1014, "eng": "Howdy","pol": "Cześć", "transl": "Привет"},
     {"id":10279, "unitId":1014, "eng": "How are things?","pol": "Jak leci?", "transl": "Как дела?"},
-    {"id":10280, "unitId":1014, "eng": "What have you been up to?","pol": "Co porabiałeś?", "transl": "Что ты делал все это время?"},
-    {"id":10281, "unitId":1014, "eng": "Look what the cat dragged in","pol": "Patrz co przyciągnął kot", "transl": "Смотри, что притащил кот"},
+    {"id":10280, "unitId":1014, "eng": "What have you been up to?","pol": "Co porabiałeś?", "transl": "Что делаешь?"},
     {"id":10282, "unitId":1014, "eng": "It is nice to meet you","pol": "Miło cię spotkać", "transl": "Приятно познакомиться"},
     {"id":10283, "unitId":1014, "eng": "What’s going on?","pol": "Co się dzieje?", "transl": "В чем дело?"},
-    {"id":10284, "unitId":1014, "eng": "Good afternoon","pol": "Dzień dobry", "transl": "Добрый день"},
     {"id":10285, "unitId":1014, "eng": "How have you been?","pol": "Jak się miewasz?", "transl": "Как твои дела?"},
-    {"id":10286, "unitId":1014, "eng": "What’s up?","pol": "Co tam?", "transl": "Как дела?"},
+    {"id":10286, "unitId":1014, "eng": "What’s up?","pol": "Co tam?", "transl": "Что там?"},
     {"id":10287, "unitId":1014, "eng": "Greeting","pol": "Powitanie", "transl": "Приветствие"},
-    {"id":10288, "unitId":1014, "eng": "Stay safe","pol": "Bądź bezpieczny", "transl": "Оставайтесь в безопасности"},
     {"id":10289, "unitId":1014, "eng": "Welcome","pol": "Zapraszamy!", "transl": "Добро пожаловать"},
 //
 //     {"id":10701, "unitId":1037, "eng": "I was doing the cleaning","pol": "robiłem sprzątanie", "transl": "Я делал уборку"},
