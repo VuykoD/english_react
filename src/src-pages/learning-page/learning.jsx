@@ -172,10 +172,12 @@ class LearningClass extends Component {
 
     onChangeLengthArray = (event) => {
         const arrLength = event.target.value;
-        const localLength = this.localProgress.length;
+        const localLength = this.localProgress?.length || 0;
 
         if (arrLength) {
-            this.setState({ newLearnNumber: +arrLength < this.localProgress.length ? +arrLength : localLength })
+            const newLength = +arrLength < localLength ? +arrLength : localLength
+            localStorage.newLearnNumber = newLength;
+            this.setState({ newLearnNumber: newLength })
         }
     };
 
@@ -315,7 +317,7 @@ class LearningClass extends Component {
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (localProgress && localProgress.length){
             this.setState({
-                newLearnNumber: localProgress.length || 0,
+                newLearnNumber: +localStorage.newLearnNumber || localProgress.length || 0,
                 learnNumber: localProgress.length || 0,
             });
         }
@@ -427,7 +429,7 @@ class LearningClass extends Component {
                             </Form.Group>
                         </Col>
                         <Col>
-                            <span children={`${countRepeat} ${this.localProgress.length}`} />
+                            <span children={`${countRepeat} ${this.localProgress?.length || 0}`} />
                             <Form.Control
                                 id='lengthAray'
                                 type="number"

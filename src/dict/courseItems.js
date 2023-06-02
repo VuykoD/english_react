@@ -38,7 +38,7 @@ const courseItems = [
     {"id":1734, "unitId":1038, "eng": "","pol": "wejść i wyjść", "transl": "войти и выйти"},
     {"id":1735, "unitId":1038, "eng": "","pol": "proszę wejść", "transl": "Пожалуйста, войдите"},
     {"id":1736, "unitId":1038, "eng": "","pol": "czy mogę wyjść?", "transl": "могу я выйти?"},
-    {"id":1737, "unitId":1038, "eng": "","pol": "cała przyjemność po mojej stronie", "transl": "будь ласка."},
+    {"id":1737, "unitId":1038, "eng": "","pol": "cała przyjemność po mojej stronie", "transl": "ответ на спасибо"},
     {"id":1738, "unitId":1038, "eng": "","pol": "proszę o tym zapomnieć", "transl": "попрошу забыть об этом"},
     {"id":1739, "unitId":1038, "eng": "","pol": "zapamiętaj to sobie raz na zawsze", "transl": "запомни это навсегда"},
     {"id":1740, "unitId":1038, "eng": "","pol": "zapomnieć i zapamiętać", "transl": "забыть и вспомнить"},
