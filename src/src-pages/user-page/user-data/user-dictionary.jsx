@@ -21,6 +21,24 @@ const columnDefs = [
     {headerName: "source", field: "source", width: 190}
 ];
 
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex !== 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
+
 export default class UserDictionary extends Component {
     static propTypes = {
         store: PropTypes.shape({}),
@@ -63,6 +81,16 @@ export default class UserDictionary extends Component {
         this.setState({localProgress: lP});
     };
 
+    sort = () => {
+        let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        if (!lP) return null;
+        lP = shuffle(lP);
+
+        localStorage.progress = JSON.stringify(lP);
+        lP = this.setLocalProgress(lP);
+        this.setState({localProgress: lP});
+    };
+
     selectRow =(data)=> {
         const entityId = get(data, 'data.entity_id')
         if (entityId && this.state.entityId !== entityId) this.setState({entityId})
@@ -79,8 +107,8 @@ export default class UserDictionary extends Component {
                         </Button>
                     </Col>
                     <Col>
-                        <Button variant="info" block >
-                            restore
+                        <Button variant="info" block onClick={this.sort}>
+                            Sort
                         </Button>
                     </Col>
                 </Row>

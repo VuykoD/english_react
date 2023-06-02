@@ -46,8 +46,8 @@ const content = {
         ukr: "Показати польську",
     },
     countRepeat: {
-        ru: "На изучении",
-        ukr: "На вивченні",
+        ru: "На изучении max",
+        ukr: "На вивченні max",
     },
     source: {
         ru: "Источник",
@@ -104,6 +104,7 @@ class LearningClass extends Component {
 
     constructor(props) {
         super(props);
+        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
 
         this.state = {
             ...initialState
@@ -167,6 +168,15 @@ class LearningClass extends Component {
 
     onChangeInput = () => {
         changedInput.call(this);
+    };
+
+    onChangeLengthArray = (event) => {
+        const arrLength = event.target.value;
+        const localLength = this.localProgress.length;
+
+        if (arrLength) {
+            this.setState({ newLearnNumber: +arrLength < this.localProgress.length ? +arrLength : localLength })
+        }
     };
 
     setInitialData = () => {
@@ -417,7 +427,13 @@ class LearningClass extends Component {
                             </Form.Group>
                         </Col>
                         <Col>
-                            <span children={`${countRepeat} ${newLearnNumber || 0}`} />
+                            <span children={`${countRepeat} ${this.localProgress.length}`} />
+                            <Form.Control
+                                id='lengthAray'
+                                type="number"
+                                onChange={this.onChangeLengthArray}
+                                value={newLearnNumber}
+                            />
                         </Col>
                     </Row>
                     <Row>
