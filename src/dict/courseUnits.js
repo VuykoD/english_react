@@ -190,13 +190,13 @@ const courseUnits = [
         id: 1012,
         courseId: 4,
         url: "/common-phrases-12",
-        name: "Phrases for Staying at a Hotel and to Say FOR EXAMPLE"
+        name: "Phrases for Staying at a Hotel"
     },
     {
         id: 1013,
         courseId: 4,
         url: "/common-phrases-13",
-        name: "English Classroom Phrases "
+        name: "English Classroom Phrases"
     },
     {
         id: 1014,
