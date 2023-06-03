@@ -104,7 +104,6 @@ class LearningClass extends Component {
 
     constructor(props) {
         super(props);
-        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
 
         this.state = {
             ...initialState
@@ -112,8 +111,7 @@ class LearningClass extends Component {
     }
 
     componentDidMount() {
-        this.getVoices();
-        this.repeatAll();
+        this.updateLP();
         this.setInitialData();
     }
 
@@ -146,6 +144,10 @@ class LearningClass extends Component {
         clearTimeout(this.timeoutClearState);
         clearTimeout(this.timeoutNextItem);
         clearTimeout(this.timeoutResetExampleLearning);
+    }
+    updateLP = () => {
+        this.getVoices();
+        this.repeatAll();
     }
 
     getVoices() {
@@ -314,11 +316,12 @@ class LearningClass extends Component {
     }
 
     repeatAll = () =>{
-        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        if (localProgress && localProgress.length){
+        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+
+        if (this.localProgress && this.localProgress.length){
             this.setState({
-                newLearnNumber: +localStorage.newLearnNumber || localProgress.length || 0,
-                learnNumber: localProgress.length || 0,
+                newLearnNumber: +localStorage.newLearnNumber || this.localProgress.length || 0,
+                learnNumber: this.localProgress.length || 0,
             });
         }
     }
@@ -621,6 +624,22 @@ export function changedInput() {
     if (!wordToLearn) this.repeatMistakes = true;
 
     if (wordToLearn === word || wordToLearn.length > MAX_WORD_LENGTH || !wordToLearn) {
+        const isInMistake = this.mistakeArr.indexOf(learnNumber) > -1
+        if (!mistake && !isInMistake){
+            const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+            map(localProgress, (item, key) => {
+                const index = findIndex(courseItems, {'id': item.entity_id});
+                localProgress[key].pol = get(courseItems, `[${index}].pol`);
+            })
+            const index = findIndex(localProgress, {'pol': polish});
+            if (index > -1) {
+                localProgress.splice(index, 1);
+                map(localProgress, (item, key) => {
+                    localProgress[key] = { entity_id: localProgress[key].entity_id };
+                })
+                localStorage.progress = JSON.stringify(localProgress);
+            }
+        }
         document.getElementById("formInput").value = '';
         this.setEngAndTransl(learnNumber + 1, MAX_WORD_LENGTH);
         if (learnNumber >= this.learnArr.length || this.repeatMistakes) {
