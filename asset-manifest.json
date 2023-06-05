@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/english_react/static/css/main.0e495712.css",
-    "main.js": "/english_react/static/js/main.d33d5b17.js",
+    "main.js": "/english_react/static/js/main.57f2e877.js",
     "static/media/Sound.png": "/english_react/static/media/Sound.2456ab73d4deb1c0814d.png",
     "static/media/music.png": "/english_react/static/media/music.5ed2f57185a197e1d645.png",
     "static/media/bob-van-aubel-ray-bans.jpg": "/english_react/static/media/bob-van-aubel-ray-bans.48a22409176c0b7c6ff7.jpg",
@@ -9,10 +9,10 @@
     "static/media/paint.png": "/english_react/static/media/paint.27c6e57b22a2fc920148.png",
     "index.html": "/english_react/index.html",
     "main.0e495712.css.map": "/english_react/static/css/main.0e495712.css.map",
-    "main.d33d5b17.js.map": "/english_react/static/js/main.d33d5b17.js.map"
+    "main.57f2e877.js.map": "/english_react/static/js/main.57f2e877.js.map"
   },
   "entrypoints": [
     "static/css/main.0e495712.css",
-    "static/js/main.d33d5b17.js"
+    "static/js/main.57f2e877.js"
   ]
 }
