@@ -54,6 +54,7 @@ export default class Course extends Component {
                     progress.push({ entity_id: localProgress[key].entity_id });
                 }
             })
+            this.localProgress = progress;
             localStorage.progress = JSON.stringify(progress);
         }
     };
