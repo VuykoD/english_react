@@ -1,7 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import map from 'lodash/map';
-import findIndex from "lodash/findIndex";
-import filter from "lodash/filter";
+import { map, findIndex, filter, get } from 'lodash';
 import {Col, Container, Row, Accordion, Card, Form} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import courseUnits from "../../dict/courseUnits";
@@ -35,27 +33,33 @@ export default class Course extends Component {
         const selectedCoursesIndex = findIndex(selectedCourses, course => course === unitId);
         if (selectedCoursesIndex === -1) {
             this.setState({selectedCourses: [...selectedCourses, unitId]});
+
+            const items = filter(courseItems, { 'unitId': unitId });
+            map(items, it => {
+                this.localProgress.push({"entity_id": it.id})
+            });
+            localStorage.progress = JSON.stringify(this.localProgress);
         } else {
             const courses = [];
             map(selectedCourses, course => {
                 if (course !== unitId) courses.push(course)
             })
             this.setState({selectedCourses: courses});
+
+            const progress = [];
+            const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+            map(localProgress, (item, key) => {
+                const index = findIndex(courseItems, {'id': item.entity_id});
+                if (get(courseItems, `[${index}].unitId`) !== unitId) {
+                    progress.push({ entity_id: localProgress[key].entity_id });
+                }
+            })
+            localStorage.progress = JSON.stringify(progress);
         }
     };
 
     render() {
         const { selectedCourses } = this.state;
-        let progress = [];
-        map(selectedCourses, unitId => {
-            const items = filter(courseItems, {'unitId': unitId });
-            progress = [...progress, ...items];
-        });
-        const localProgress = [];
-        map(progress, it => {
-            localProgress.push({"entity_id": it.id})
-        });
-        localStorage.progress = JSON.stringify(localProgress);
 
         return (
             <Container>

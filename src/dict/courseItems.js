@@ -102,7 +102,7 @@ const courseItems = [
     {"id":10017, "unitId":1001, "eng": "You're very nice","pol": "Jesteś bardzo miły", "transl": "Вы очень милы"},
     {"id":10018, "unitId":1001, "eng": "Yes, really","pol": "Tak, naprawdę", "transl": "Да, действительно"},
     {"id":10019, "unitId":1001, "eng": "Let's practice English","pol": "Poćwiczmy angielski", "transl": "Давайте попрактикуемся в английском"},
-    {"id":10020, "unitId":1001, "eng": "Let me think about it","pol": "Daj mi o tym pomyśleć", "transl": "Дай мне подумать об этом"},
+    {"id":10020, "unitId":1001, "eng": "Let me think about it","pol": "Daj mi o tym pomyśleć", "transl": "Дай мне об этом подумать"},
     {"id":10021, "unitId":1001, "eng": "Let me check","pol": "Niech sprawdzę", "transl": "Дай мне проверить"},
     {"id":10022, "unitId":1001, "eng": "Stay safe","pol": "Bądź bezpieczny", "transl": "Оставайтесь в безопасности"},
 //common 2
