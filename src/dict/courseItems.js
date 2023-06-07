@@ -26,7 +26,7 @@ const courseItems = [
     {"id":1722, "unitId":1038, "eng": "","pol": "bramka", "transl": "цель"},
     {"id":1723, "unitId":1038, "eng": "","pol": "bramkarz", "transl": "вратарь"},
     {"id":1724, "unitId":1038, "eng": "","pol": "bramka piłkarska", "transl": "Футбольные ворота"},
-    {"id":1725, "unitId":1038, "eng": "","pol": "celować się lub całować się", "transl": "целиться или целоваться"},
+    {"id":1725, "unitId":1038, "eng": "","pol": "celować się albo całować się", "transl": "целиться или целоваться"},
     {"id":1726, "unitId":1038, "eng": "","pol": "nie zapomnij pocałować ode mnie babcię", "transl": "не забудь поцеловать бабушку за меня"},
     {"id":1727, "unitId":1038, "eng": "","pol": "największa fara w Poznaniu", "transl": "самая большая церковь в Познани"},
     {"id":1728, "unitId":1038, "eng": "","pol": "ja was zaskoczę", "transl": "я вас удивлю"},
@@ -39,7 +39,7 @@ const courseItems = [
     {"id":1735, "unitId":1038, "eng": "","pol": "proszę wejść", "transl": "Пожалуйста войдите"},
     {"id":1736, "unitId":1038, "eng": "","pol": "czy mogę wyjść?", "transl": "могу я выйти?"},
     {"id":1737, "unitId":1038, "eng": "","pol": "cała przyjemność po mojej stronie", "transl": "ответ на спасибо"},
-    {"id":1738, "unitId":1038, "eng": "","pol": "proszę o tym zapomnieć", "transl": "попрошу забыть об этом"},
+    {"id":1738, "unitId":1038, "eng": "","pol": "proszę o tym zapomnieć", "transl": "попрошу об этом забыть"},
     {"id":1739, "unitId":1038, "eng": "","pol": "zapamiętaj to sobie raz na zawsze", "transl": "запомни это навсегда"},
     {"id":1740, "unitId":1038, "eng": "","pol": "zapomnieć i zapamiętać", "transl": "забыть и вспомнить"},
     //youtube 3
