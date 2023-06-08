@@ -5,6 +5,11 @@ const courseNames = [
         active: true,
     },
     {
+        id: 6,
+        name: 'Lukasz Ruczyński',
+        active: true,
+    },
+    {
         id: 4,
         name: 'Common phrases',
         active: true,

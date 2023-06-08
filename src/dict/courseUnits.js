@@ -338,6 +338,12 @@ const courseUnits = [
         url: "/common-phrases-36",
         name: "Ways to Say I’M TIRED"
     },
+    {
+        id: 2000,
+        courseId: 6,
+        url: "/polish-1",
+        name: "polish-1"
+    },
 ];
 
 

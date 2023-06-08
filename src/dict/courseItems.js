@@ -296,7 +296,7 @@ const courseItems = [
     {"id":10228, "unitId":1012, "eng": "Can I see the room, please?","pol": "Czy mogę zobaczyć pokój?", "transl": "Могу я посмотреть комнату?"},
     {"id":10229, "unitId":1012, "eng": "Please sign your name here","pol": "Proszę podpisać się tutaj", "transl": "Пожалуйста подпишите свое имя здесь"},
     {"id":10230, "unitId":1012, "eng": "I’d like a single room, please","pol": "Poproszę o pokój jednoosobowy", "transl": "Я бы хотел одноместный номер"},
-    {"id":10231, "unitId":1012, "eng": "Can someone help me with my bags?","pol": "Czy ktoś może mi pomóc z moimi torbami?", "transl": "Может ли кто-нибудь помочь мне с моими сумками?"},
+    {"id":10231, "unitId":1012, "eng": "Can someone help me with my bags?","pol": "Czy ktoś może mi pomóc z moimi torbami?", "transl": "Кто-нибудь может мне помочь с моими сумками?"},
     {"id":10232, "unitId":1012, "eng": "When I can check-in?","pol": "Kiedy mogę się zameldować?", "transl": "Когда я смогу зарегистрироваться?"},
     {"id":10233, "unitId":1012, "eng": "Do you need a wake-up call?","pol": "Potrzebujesz pobudki?", "transl": "Вам нужен звонок для пробуждения?"},
     //English Classroom Phrases
@@ -397,7 +397,7 @@ const courseItems = [
     {"id":10302, "unitId":1015, "eng": "Where can I weight my groceries?","pol": "Gdzie mogę zważyć moje artykuły spożywcze?", "transl": "Где я могу взвесить продукты?"},
     {"id":10303, "unitId":1015, "eng": "Does it come with a guarantee?","pol": "Czy jest objęty gwarancją?", "transl": "Есть ли гарантия?"},
     {"id":10304, "unitId":1015, "eng": "I’m looking for a leather handbag","pol": "Szukam skórzanej torebki", "transl": "Я ищу кожаную сумку"},
-    {"id":10305, "unitId":1015, "eng": "Would you have this in another color?","pol": "Czy miałbyś to w innym kolorze?", "transl": "У вас есть это в другом цвете?"},
+    {"id":10305, "unitId":1015, "eng": "Would you have this in another color?","pol": "Czy masz to w innym kolorze?", "transl": "У вас есть это в другом цвете?"},
     {"id":10306, "unitId":1015, "eng": "Do you have something less pricey?","pol": "Czy masz coś tańszego?", "transl": "У вас есть что-то дещевле?"},
     {"id":10307, "unitId":1015, "eng": "Where is the fitting room?","pol": "Gdzie jest przymierzalnia", "transl": "Где находится примерочная"},
 //Ways to Say GOOD LUCK
@@ -825,6 +825,22 @@ const courseItems = [
     {"id": 3071, "unitId": 304, "eng": "have you ever subscribed to an England magazine?","pol": "czy kiedykolwiek prenumerowałeś angielskie czasopismo?", "transl": "Вы когда-нибудь подписывались на английский журнал?"},
     {"id": 3072, "unitId": 304, "eng": "never","pol": "nigdy", "transl": "никогда"},
     {"id": 3073, "unitId": 304, "eng": "we have never sent letters to British pen-friends","pol": "nigdy nie wysłaliśmy listów do brytyjskich przyjaciół z pióra", "transl": "мы никогда не посылали письма британским друзьям по переписке"},
+//polish 
+    {"id":2000, "unitId":2000, "eng": "","pol": "Miło mi", "transl": "Мне приятно"},
+    {"id":2001, "unitId":2000, "eng": "","pol": "Mnie również", "transl": "Мне также"},
+    {"id":2002, "unitId":2000, "eng": "","pol": "Nikt nie jest tam, gdzie ja", "transl": "Никого нет там, где я"},
+    {"id":2003, "unitId":2000, "eng": "","pol": "Już tam jesteście?", "transl": "Вы уже там?"},
+    {"id":2004, "unitId":2000, "eng": "","pol": "Przepraszam, gdzie są dzieci?", "transl": "Простите, где дети?"},
+    {"id":2005, "unitId":2000, "eng": "","pol": "Gdzie państwo są?", "transl": "Где господа?"},
+    {"id":2006, "unitId":2000, "eng": "","pol": "To jest klamstwo", "transl": "Это ложь"},
+    {"id":2007, "unitId":2000, "eng": "","pol": "Alina to też człowiek", "transl": "Алина тоже человек"},
+    {"id":2008, "unitId":2000, "eng": "","pol": "Nie, nieprawda, oni są tam", "transl": "Нет, неправда, они там"},
+    {"id":2009, "unitId":2000, "eng": "","pol": "Na szczęście jestem tutaj", "transl": "К счастью, я здесь"},
+    {"id":2010, "unitId":2000, "eng": "","pol": "Niestety, to jest kłamstwo", "transl": "К сожалению, это ложь"},
+    {"id":2011, "unitId":2000, "eng": "","pol": "Nikt, tylko oni", "transl": "Никто, только они (есть мужчина)"},
+    {"id":2012, "unitId":2000, "eng": "","pol": "Ten koktajl jest tutaj", "transl": "Этот коктейль здесь"},
+    {"id":2013, "unitId":2000, "eng": "","pol": "Ta herbata jest tutaj", "transl": "Этот чай здесь"},
+    {"id":2014, "unitId":2000, "eng": "","pol": "To piwo jest tutaj", "transl": "Это пиво здесь"},
 
 ];
 
