@@ -61,7 +61,7 @@ const courseItems = [
     {"id":1756, "unitId":1039, "eng": "","pol": "często oglądam telewizję", "transl": "я часто смотрю телевизор"},
     {"id":1757, "unitId":1039, "eng": "","pol": "pilot od telewizora", "transl": "пульт от телевизора"},
     {"id":1758, "unitId":1039, "eng": "","pol": "telewizor i telewizję", "transl": "телевизор и телевидение"},
-    {"id":1759, "unitId":1039, "eng": "","pol": "wiadomośći, wiadomość", "transl": "Новости, сообщение"},
+    {"id":1759, "unitId":1039, "eng": "","pol": "wiadomości, wiadomość", "transl": "Новости, сообщение"},
     {"id":1760, "unitId":1039, "eng": "","pol": "wiadomość została wysłana", "transl": "Сообщение отправлено"},
     //youtube 4
     {"id":1761, "unitId":1040, "eng": "","pol": "surówka z marchewki", "transl": "морковный салат"},
