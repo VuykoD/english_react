@@ -131,7 +131,7 @@ const courseItems = [
     {"id":10045, "unitId":1003, "eng": "Would you take a message please?","pol": "Czy mógłbyś przekazać wiadomość?", "transl": "Не могли бы вы принять сообщение?"},
     {"id":10046, "unitId":1003, "eng": "Not recently","pol": "Ostatnio nie", "transl": "в последнее время не"},
     {"id":10047, "unitId":1003, "eng": "Never mind","pol": "Bez znaczenia", "transl": "Неважно"},
-    {"id":10048, "unitId":1003, "eng": "Just a little","pol": "Tylko trochę", "transl": "Немного"},
+    {"id":10048, "unitId":1003, "eng": "Just a little","pol": "Tylko trochę", "transl": "только немного"},
     {"id":10049, "unitId":1003, "eng": "No, thank you","pol": "Nie, dziękuję", "transl": "Нет, спасибо"},
     {"id":10050, "unitId":1003, "eng": "","pol": "marudzić się", "transl": "задерживаться"},
     {"id":10051, "unitId":1003, "eng": "Nothing else","pol": "Nic więcej", "transl": "Ничего больше"},
