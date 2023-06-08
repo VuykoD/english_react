@@ -432,20 +432,17 @@ const courseItems = [
     {"id":10342, "unitId":1017, "eng": "You work like that","pol": "Tak pracujesz", "transl": "Вы так работаете"},
     {"id":10343, "unitId":1017, "eng": "I think you’re doing the right thing","pol": "Myślę, że postępujesz właściwie", "transl": "Я думаю, ты поступаешь правильно"},
     {"id":10344, "unitId":1017, "eng": "Terrific","pol": "Przerażający", "transl": "Потрясающий"},
-//
-    {"id":10346, "unitId":1018, "eng": "I see what you mean","pol": "Rozumiem, co masz na myśli", "transl": "Я понимаю что ты имеешь ввиду"},
+//Ways to Say I AGREE
+    {"id":10346, "unitId":1018, "eng": "I see what you mean","pol": "Rozumiem, co masz na myśli", "transl": "Я понимаю, что ты имеешь ввиду"},
     {"id":10347, "unitId":1018, "eng": "So do I","pol": "Ja też", "transl": "Я тоже"},
     {"id":10348, "unitId":1018, "eng": "I fee that way too","pol": "Ja też tak płacę", "transl": "Я тоже так плачу"},
     {"id":10349, "unitId":1018, "eng": "Definitely","pol": "Zdecydowanie", "transl": "Определенно"},
     {"id":10350, "unitId":1018, "eng": "I agree with you","pol": "Zgadzam się z Tobą", "transl": "Я с тобой согласен"},
-    {"id":10351, "unitId":1018, "eng": "Yup","pol": "tak", "transl": "Ага"},
-    {"id":10352, "unitId":1018, "eng": "Yep","pol": "tak", "transl": "Ага"},
     {"id":10353, "unitId":1018, "eng": "Absolutely","pol": "Absolutnie", "transl": "Абсолютно"},
     {"id":10354, "unitId":1018, "eng": "You’re absolutely right","pol": "Masz całkowitą rację", "transl": "Ты совершенно прав"},
     {"id":10355, "unitId":1018, "eng": "Exactly","pol": "Dokładnie", "transl": "В яблочко"},
     {"id":10356, "unitId":1018, "eng": "We are of one mind","pol": "Jesteśmy tego samego zdania", "transl": "Мы одного мнения"},
-    {"id":10357, "unitId":1018, "eng": "You can say that again","pol": "Możesz powtórzyć", "transl": "Ты можешь сказать это снова"},
-    {"id":10358, "unitId":1018, "eng": "I could not agree with you more my friend","pol": "Nie mogłem się z tobą bardziej zgodzić mój przyjacielu", "transl": "Не могу не согласиться с тобой, мой друг"},
+    {"id":10357, "unitId":1018, "eng": "You can say that again","pol": "Możesz powtórzyć", "transl": "Ты можешь повторить"},
     {"id":10359, "unitId":1018, "eng": "You’ve hit the nail on the head","pol": "Trafiłeś w sedno", "transl": "Вы попали в самую точку"},
     {"id":10360, "unitId":1018, "eng": "You got it dude","pol": "Masz to koleś", "transl": "Ты понял, чувак"},
     {"id":10361, "unitId":1018, "eng": "Our thoughts are absolutely parallel","pol": "Nasze myśli są absolutnie równoległe", "transl": "Наши мысли абсолютно параллельны"},
@@ -825,7 +822,7 @@ const courseItems = [
     {"id": 3071, "unitId": 304, "eng": "have you ever subscribed to an England magazine?","pol": "czy kiedykolwiek prenumerowałeś angielskie czasopismo?", "transl": "Вы когда-нибудь подписывались на английский журнал?"},
     {"id": 3072, "unitId": 304, "eng": "never","pol": "nigdy", "transl": "никогда"},
     {"id": 3073, "unitId": 304, "eng": "we have never sent letters to British pen-friends","pol": "nigdy nie wysłaliśmy listów do brytyjskich przyjaciół z pióra", "transl": "мы никогда не посылали письма британским друзьям по переписке"},
-//polish 
+//polish
     {"id":2000, "unitId":2000, "eng": "","pol": "Miło mi", "transl": "Мне приятно"},
     {"id":2001, "unitId":2000, "eng": "","pol": "Mnie również", "transl": "Мне также"},
     {"id":2002, "unitId":2000, "eng": "","pol": "Nikt nie jest tam, gdzie ja", "transl": "Никого нет там, где я"},
