@@ -838,7 +838,7 @@ const courseItems = [
     {"id": 3071, "unitId": 304, "eng": "have you ever subscribed to an England magazine?","pol": "czy kiedykolwiek prenumerowałeś angielskie czasopismo?", "transl": "Вы когда-нибудь подписывались на английский журнал?"},
     {"id": 3072, "unitId": 304, "eng": "never","pol": "nigdy", "transl": "никогда"},
     {"id": 3073, "unitId": 304, "eng": "we have never sent letters to British pen-friends","pol": "nigdy nie wysłaliśmy listów do brytyjskich przyjaciół z pióra", "transl": "мы никогда не посылали письма британским друзьям по переписке"},
-//polish
+//polish 1
     {"id":2000, "unitId":2000, "eng": "","pol": "Miło mi", "transl": "Мне приятно"},
     {"id":2001, "unitId":2000, "eng": "","pol": "Mnie również", "transl": "Мне также"},
     {"id":2002, "unitId":2000, "eng": "","pol": "Nikt nie jest tam, gdzie ja", "transl": "Никого нет там, где я"},
@@ -854,6 +854,33 @@ const courseItems = [
     {"id":2012, "unitId":2000, "eng": "","pol": "Ten koktajl jest tutaj", "transl": "Этот коктейль здесь"},
     {"id":2013, "unitId":2000, "eng": "","pol": "Ta herbata jest tutaj", "transl": "Этот чай здесь"},
     {"id":2014, "unitId":2000, "eng": "","pol": "To piwo jest tutaj", "transl": "Это пиво здесь"},
+//polish 2
+    {"id":2015, "unitId":2001, "eng": "","pol": "pojutrze będzie pensja", "transl": "послезавтра будет зарплата"},
+    {"id":2016, "unitId":2001, "eng": "","pol": "Jesteś taki sam jak twój ojciec", "transl": "Ты такой же, как твой отец"},
+    {"id":2017, "unitId":2001, "eng": "","pol": "Ta kawa jest ciepła, ale na pewno nie jest gorąca", "transl": "Этот кофе теплый, но определенно не горячий"},
+    {"id":2018, "unitId":2001, "eng": "","pol": "Prawie nic nie jest łatwe", "transl": "Почти ничего не бывает легко"},
+    {"id":2019, "unitId":2001, "eng": "","pol": "Dlaczego tak myślę?", "transl": "Почему я так думаю?d"},
+    {"id":2020, "unitId":2001, "eng": "","pol": "Czemu nic nie rozumiem?", "transl": "Почему я ничего не понимаю?c"},
+    {"id":2021, "unitId":2001, "eng": "","pol": "Czas to pieniądz, ponieważ życie jest krótkie", "transl": "Время - деньги, потому что жизнь коротка"},
+    {"id":2022, "unitId":2001, "eng": "","pol": "Słyszę, ale nie widzę", "transl": "слышу но не вижу"},
+    {"id":2023, "unitId":2001, "eng": "","pol": "Widzę, slyszę, ale i tak nie rozumiem", "transl": "Я вижу, я слышу, но я все еще не понимаю"},
+    {"id":2024, "unitId":2001, "eng": "","pol": "ale chyba nie", "transl": "но наверное нет"},
+    {"id":2025, "unitId":2001, "eng": "","pol": "Czy naprawdę tak myślę?", "transl": "Я действительно так думаю?"},
+    {"id":2026, "unitId":2001, "eng": "","pol": "nawet nie wiem co powiedzieć", "transl": "я даже не знаю что сказать"},
+    {"id":2027, "unitId":2001, "eng": "","pol": "Jakaś dziewczyna na pewno jest wolna", "transl": "Какая-то девушка точно свободна"},
+    {"id":2028, "unitId":2001, "eng": "","pol": "Kogoś słyszę, ale nie wiem kogo", "transl": "Я слышу кого-то, но я не знаю кого"},
+    {"id":2029, "unitId":2001, "eng": "","pol": "Coś rozumiem, ale nie wszystko", "transl": "Я понимаю что-то, но не всё"},
+    {"id":2030, "unitId":2001, "eng": "","pol": "Moja babcia jest teraz ze mną", "transl": "Моя бабушка сейчас со мной"},
+    {"id":2031, "unitId":2001, "eng": "","pol": "Z kim pojadę do pracy?", "transl": "С кем я пойду работать?"},
+    {"id":2032, "unitId":2001, "eng": "","pol": "Co ze mną, dlaczego nic nie rozumiem?", "transl": "Что со мной, почему я ничего не понимаю?"},
+    {"id":2033, "unitId":2001, "eng": "","pol": "Kasia i jej mama są teraz u siebie", "transl": "Кася с мамой сейчас дома"},
+    {"id":2034, "unitId":2001, "eng": "","pol": "Jestem sobą i zawsze będę", "transl": "Я являюсь собой и всегда буду"},
+    {"id":2035, "unitId":2001, "eng": "","pol": "już jadę do ciebie", "transl": "уже еду к тебе"},
+    {"id":2036, "unitId":2001, "eng": "","pol": "Idę pieszo, bo jestem biedny", "transl": "Я иду пешком, потому что я беден"},
+    {"id":2037, "unitId":2001, "eng": "","pol": "Dlaczego nie jesteś jeszcze w pracy?", "transl": "Почему ты еще не на работе?"},
+    {"id":2038, "unitId":2001, "eng": "","pol": "Idę pieszo do pracy", "transl": "я иду пешком на работу"},
+    {"id":2039, "unitId":2001, "eng": "","pol": "Przed chwilą bylem w pracy", "transl": "некоторое время назад я был на работе"},
+    {"id":2040, "unitId":2001, "eng": "","pol": "Za chwilę będę u ciebie", "transl": "через мгновение я буду с тобой "},
 
 ];
 
