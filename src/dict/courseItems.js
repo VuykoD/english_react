@@ -447,24 +447,21 @@ const courseItems = [
     {"id":10360, "unitId":1018, "eng": "You got it dude","pol": "Masz to koleś", "transl": "Ты понял, чувак"},
     {"id":10361, "unitId":1018, "eng": "Our thoughts are absolutely parallel","pol": "Nasze myśli są absolutnie równoległe", "transl": "Наши мысли абсолютно параллельны"},
     {"id":10362, "unitId":1018, "eng": "You are so right","pol": "Masz rację", "transl": "Ты так прав"},
-//
+//Ways to Say I’M SORRY
     {"id":10366, "unitId":1019, "eng": "It’s all my fault","pol": "To wszystko moja wina", "transl": "Это все моя вина"},
     {"id":10371, "unitId":1019, "eng": "Ever so sory","pol": "Tak bardzo przepraszam", "transl": "Очень жаль"},
     {"id":10373, "unitId":1019, "eng": "Please don’t be mad at me","pol": "Proszę, nie złość się na mnie", "transl": "Пожалуйста, не сердитесь на меня"},
     {"id":10374, "unitId":1019, "eng": "How stupid thoughtless of me","pol": "Jak głupio i bezmyślnie z mojej strony", "transl": "Как глупо и легкомысленно с моей стороны"},
-//
+//Ways to Say GOOD NIGHT
     {"id":10382, "unitId":1020, "eng": "Sleep with angels","pol": "Śpij z aniołami", "transl": "Спать с ангелами"},
     {"id":10384, "unitId":1020, "eng": "Let’s start counting the sheeps","pol": "Zacznijmy liczyć owce", "transl": "Начнем считать овец"},
-    {"id":10385, "unitId":1020, "eng": "Tomorrow is not soon enough. Lets prepare","pol": "Jutro nie jest wystarczająco szybko. Przygotujmy się", "transl": "Завтра еще не скоро. Давай подготовимся"},
-    {"id":10386, "unitId":1020, "eng": "Time to dream","pol": "Czas na sen", "transl": "Время мечтать"},
-    {"id":10387, "unitId":1020, "eng": "Night night","pol": "Dobranoc", "transl": "Ночь ночь"},
-    {"id":10388, "unitId":1020, "eng": "Nite-nite","pol": "Noc-noc", "transl": "Ночь-ночь"},
-    {"id":10389, "unitId":1020, "eng": "Have a good sleep","pol": "Śpij dobrze", "transl": "Хорошего сна"},
-    {"id":10390, "unitId":1020, "eng": "Dream of me","pol": "Marzenie o mnie", "transl": "Мечтаешь обо мне"},
+    {"id":10386, "unitId":1020, "eng": "Time to dream","pol": "Czas na sen", "transl": "Время спать"},
+    {"id":10387, "unitId":1020, "eng": "Night night","pol": "Dobranoc", "transl": "спокойной ночи"},
+    {"id":10389, "unitId":1020, "eng": "Have a good sleep","pol": "Śpij dobrze", "transl": "Спи хорошо"},
+    {"id":10390, "unitId":1020, "eng": "Dream of me","pol": "Marzenie o Ciebie", "transl": "Сон обо тебе"},
     {"id":10391, "unitId":1020, "eng": "Until tomorrow","pol": "Do jutra", "transl": "До завтра"},
-    {"id":10392, "unitId":1020, "eng": "Rest time for blossoms","pol": "Czas odpoczynku dla kwiatów", "transl": "Время отдыха для цветов"},
-    {"id":10394, "unitId":1020, "eng": "I’ll see you in dreamland","pol": "Do zobaczenia w krainie snów", "transl": "увидимся в стране грез"},
-    {"id":10395, "unitId":1020, "eng": "Have sea dreams","pol": "Miej morskie sny", "transl": "Есть морские мечты"},
+    {"id":10392, "unitId":1020, "eng": "Rest time","pol": "Czas odpoczynku", "transl": "Время отдыха"},
+    {"id":10394, "unitId":1020, "eng": "I’ll see you in dreamland","pol": "Do zobaczenia w krainie snów", "transl": "увидимся в стране снов"},
 //
     {"id":10397, "unitId":1021, "eng": "I respect you","pol": "Szanuję Cię", "transl": "Я уважаю тебя"},
     {"id":10399, "unitId":1021, "eng": "You are precious","pol": "Jesteś cenny", "transl": "Вы драгоценны"},
