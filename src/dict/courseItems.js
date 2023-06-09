@@ -881,6 +881,7 @@ const courseItems = [
     {"id":2038, "unitId":2001, "eng": "","pol": "Idę pieszo do pracy", "transl": "я иду пешком на работу"},
     {"id":2039, "unitId":2001, "eng": "","pol": "Przed chwilą bylem w pracy", "transl": "некоторое время назад я был на работе"},
     {"id":2040, "unitId":2001, "eng": "","pol": "Za chwilę będę u ciebie", "transl": "через мгновение я буду с тобой "},
+    {"id":2041, "unitId":2001, "eng": "","pol": "Sama kawa czy coś jeszcze?", "transl": "Просто кофе или что-то еще?"},
 
 ];
 
