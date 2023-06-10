@@ -61,6 +61,16 @@ export default class Course extends Component {
 
     render() {
         const { selectedCourses } = this.state;
+        const courseItemsIds = [];
+        map(courseItems, it => {
+            const found = courseItemsIds.find(element => element === it.id);
+            console.log(found);
+            if (!found) {
+                courseItemsIds.push(it.id)
+            } else {
+                alert('there is duplicate id' + it.id)
+            }
+        })
 
         return (
             <Container>
