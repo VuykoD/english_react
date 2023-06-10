@@ -64,7 +64,8 @@ export default class Course extends Component {
         const courseItemsIds = [];
         const uniqueWords = [];
         const phraseWithUniqueWords = [];
-        const arr = [];
+        const arrWithNewWords = [];
+        const arrWithoutNewWords = [];
         map(courseItems, it => {
             const isIdExist = courseItemsIds.find(element => element === it.id);
             if (!isIdExist) {
@@ -73,18 +74,21 @@ export default class Course extends Component {
                 alert('there is duplicate id' + it.id)
             }
             const words = it.pol.split(' ');
+            let noOneNewWords = true;
             map(words, word => {
                 let wordCleared = word.replace(/[\s.,%?!]/g, '').toLowerCase();
                 const isWordExist = uniqueWords.find(element => element === wordCleared);
                 if (!isWordExist) {
+                    noOneNewWords = false;
                     uniqueWords.push(wordCleared);
-                    arr.push({id: it.id, word: wordCleared});
+                    arrWithNewWords.push({id: it.id, word: wordCleared});
                 }
                 const ispPhraseWithUniqueWordsExist = phraseWithUniqueWords.find(element => element === it.id);
                 if (!ispPhraseWithUniqueWordsExist) phraseWithUniqueWords.push(it.id)
-            })
+            });
+            if (noOneNewWords) arrWithoutNewWords.push(it.id)
         })
-        console.log(arr);
+        console.log(arrWithNewWords, arrWithoutNewWords);
 
         return (
             <Container>
