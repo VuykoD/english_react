@@ -64,7 +64,6 @@ export default class Course extends Component {
         const courseItemsIds = [];
         map(courseItems, it => {
             const found = courseItemsIds.find(element => element === it.id);
-            console.log(found);
             if (!found) {
                 courseItemsIds.push(it.id)
             } else {
