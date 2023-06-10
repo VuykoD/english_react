@@ -62,14 +62,29 @@ export default class Course extends Component {
     render() {
         const { selectedCourses } = this.state;
         const courseItemsIds = [];
+        const uniqueWords = [];
+        const phraseWithUniqueWords = [];
+        const arr = [];
         map(courseItems, it => {
-            const found = courseItemsIds.find(element => element === it.id);
-            if (!found) {
+            const isIdExist = courseItemsIds.find(element => element === it.id);
+            if (!isIdExist) {
                 courseItemsIds.push(it.id)
             } else {
                 alert('there is duplicate id' + it.id)
             }
+            const words = it.pol.split(' ');
+            map(words, word => {
+                let wordCleared = word.replace(/[\s.,%?!]/g, '').toLowerCase();
+                const isWordExist = uniqueWords.find(element => element === wordCleared);
+                if (!isWordExist) {
+                    uniqueWords.push(wordCleared);
+                    arr.push({id: it.id, word: wordCleared});
+                }
+                const ispPhraseWithUniqueWordsExist = phraseWithUniqueWords.find(element => element === it.id);
+                if (!ispPhraseWithUniqueWordsExist) phraseWithUniqueWords.push(it.id)
+            })
         })
+        console.log(arr);
 
         return (
             <Container>
