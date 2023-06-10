@@ -481,7 +481,7 @@ const courseItems = [
     {"id":10391, "unitId":1020, "eng": "Until tomorrow","pol": "Do jutra", "transl": "До завтра"},
     {"id":10392, "unitId":1020, "eng": "Rest time","pol": "Czas odpoczynku", "transl": "Время отдыха"},
     {"id":10394, "unitId":1020, "eng": "I’ll see you in dreamland","pol": "Do zobaczenia w krainie snów", "transl": "увидимся в стране снов"},
-//
+//Ways to Say I LOVE YOU
     {"id":10397, "unitId":1021, "eng": "I respect you","pol": "Szanuję Cię", "transl": "Я уважаю тебя"},
     {"id":10399, "unitId":1021, "eng": "You are precious","pol": "Jesteś cenny", "transl": "Вы драгоценны"},
     {"id":10400, "unitId":1021, "eng": "You complete me","pol": "Dopełniasz mnie", "transl": "Ты дополняешь меня"},
@@ -489,12 +489,12 @@ const courseItems = [
     {"id":10402, "unitId":1021, "eng": "I can’t stop thinking about you","pol": "Nie mogę przestać o tobie myśleć", "transl": "Я не могу перестать думать о тебе"},
     {"id":10403, "unitId":1021, "eng": "I lost my heart on you","pol": "Straciłem dla ciebie serce", "transl": "Я потерял свое сердце из-за тебя"},
     // {"id":10404, "unitId":1021, "eng": "You inspire me","pol": "Inspirujesz mnie", "transl": "Ты вдохновляешь меня"},
-    {"id":10405, "unitId":1021, "eng": "I worship you","pol": "Ubóstwiam Cię", "transl": "Я поклоняюсь тебе"},
+    {"id":10405, "unitId":1021, "eng": "I worship you","pol": "Ubóstwiam Cię", "transl": "Я обожаю тебя"},
     // {"id":10406, "unitId":1021, "eng": "You are my everything","pol": "Jesteś dla mnie wszystkim", "transl": "Ты для меня все"},
     {"id":10407, "unitId":1021, "eng": "I need you","pol": "Potrzebuję cię", "transl": "Ты мне нужен"},
     {"id":10408, "unitId":1021, "eng": "I dreamt about you last night","pol": "Śniłem o tobie zeszłej nocy", "transl": "Я мечтал о тебе прошлой ночью"},
     {"id":10409, "unitId":1021, "eng": "You bring happiness to rainly days","pol": "Przynosisz szczęście deszczowym dniom", "transl": "Ты приносишь счастье в дождливые дни"},
-    {"id":10411, "unitId":1021, "eng": "You are the reason I’m alive","pol": "Jesteś powodem, dla którego żyję", "transl": "Ты причина, по которой я жив"},
+    {"id":10411, "unitId":1021, "eng": "You are the reason I’m alive","pol": "Jesteś powodem, dla którego żyję", "transl": "Ты причина, по которой я живу"},
     {"id":10412, "unitId":1021, "eng": "You are my dear","pol": "Jesteś moja droga", "transl": "Ты моя дорогая"},
     {"id":10413, "unitId":1021, "eng": "I’m affectionate for you","pol": "Jestem dla ciebie czuły", "transl": "Я ласков к тебе"},
     // {"id":10414, "unitId":1021, "eng": "I’m wild about you","pol": "Dziwię się za tobą", "transl": "Я без ума от тебя"},
@@ -837,7 +837,6 @@ const courseItems = [
     {"id": 3070, "unitId": 304, "eng": "ever","pol": "Kiedykolwiek", "transl": "Когда-либо"},
     {"id": 3071, "unitId": 304, "eng": "have you ever subscribed to an England magazine?","pol": "czy kiedykolwiek prenumerowałeś angielskie czasopismo?", "transl": "Вы когда-нибудь подписывались на английский журнал?"},
     // {"id": 3072, "unitId": 304, "eng": "never","pol": "nigdy", "transl": "никогда"},
-    {"id": 3073, "unitId": 304, "eng": "we have never sent letters to British pen-friends","pol": "nigdy nie wysłaliśmy listów do brytyjskich przyjaciół z pióra", "transl": "мы никогда не посылали письма британским друзьям по переписке"},
 //polish 1
     {"id":2000, "unitId":2000, "eng": "","pol": "Miło mi", "transl": "Мне приятно"},
     {"id":2001, "unitId":2000, "eng": "","pol": "Mnie również", "transl": "Мне также"},
