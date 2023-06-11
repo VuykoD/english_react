@@ -824,7 +824,7 @@ const courseItems = [
     // {"id": 3064, "unitId": 304, "eng": "since","pol": "od czasu kiedy", "transl": "с"},
     {"id": 3065, "unitId": 304, "eng": "she has been at the hairdresser's since 11 o'clock","pol": "jest u fryzjera od godziny 11", "transl": "она была в парикмахерской с 11 часов"},
     // {"id": 3066, "unitId": 304, "eng": "already","pol": "już", "transl": "уже"},
-    {"id": 3067, "unitId": 304, "eng": "she has already had her hair cut","pol": "już obcięła włosy", "transl": "она уже постриглась"},
+    {"id": 3067, "unitId": 304, "eng": "she has already had her hair cut","pol": "już obcięła włosy", "transl": "она уже обрезала волосы"},
     // {"id": 3068, "unitId": 304, "eng": "yet","pol": "już", "transl": "уже, еще"},
     {"id": 3069, "unitId": 304, "eng": "have you made the photocopies yet?","pol": "zrobiłeś już kserokopie?", "transl": "вы уже сделали ксерокопии?"},
     {"id": 3070, "unitId": 304, "eng": "ever","pol": "Kiedykolwiek", "transl": "Когда-либо"},
