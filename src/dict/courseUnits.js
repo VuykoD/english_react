@@ -285,18 +285,6 @@ const courseUnits = [
         name: "Ways to Say Good Morning"
     },
     {
-        id: 1027,
-        courseId: 4,
-        url: "/common-phrases-27",
-        name: "Making Apologies"
-    },
-    {
-        id: 1028,
-        courseId: 4,
-        url: "/common-phrases-28",
-        name: "Accepting Apologies"
-    },
-    {
         id: 1029,
         courseId: 4,
         url: "/common-phrases-29",
