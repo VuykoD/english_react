@@ -586,7 +586,7 @@ const courseItems = [
     // {"id":10548, "unitId":1029, "eng": "That doesn’t work for me","pol": "To nie działa dla mnie", "transl": "Это не работает для меня"},
     {"id":10549, "unitId":1029, "eng": "I wish I could make it work","pol": "Chciałbym, żeby to zadziałało", "transl": "Хотел бы я, чтобы это сработало"},
     {"id":10550, "unitId":1029, "eng": "Sounds tempting, but I'll have to pass","pol": "Brzmi kusząco, ale muszę odmówić", "transl": "Звучит заманчиво, но я должен отказаться"},
-//
+//Ways to Say GOODBYE
     {"id":10552, "unitId":1030, "eng": "Adios","pol": "Adios", "transl": "Адиос"},
     {"id":10553, "unitId":1030, "eng": "Bye now","pol": "Na razie", "transl": "пока"},
     {"id":10554, "unitId":1030, "eng": "Bye-bye","pol": "PA pa", "transl": "Пока-пока"},
@@ -600,9 +600,9 @@ const courseItems = [
     {"id":10564, "unitId":1030, "eng": "Lovely to meet you","pol": "Miło mi cię poznać", "transl": "Приятно познакомиться"},
     // {"id":10565, "unitId":1030, "eng": "Peace","pol": "Pokój", "transl": "Мир"},
     // {"id":10566, "unitId":1030, "eng": "See ya","pol": "Do zobaczenia", "transl": "До встречи"},
-    {"id":10567, "unitId":1030, "eng": "Catch you later","pol": "Złapię cię później", "transl": "Увидимся"},
+    {"id":10567, "unitId":1030, "eng": "Catch you later","pol": "Złapię cię później", "transl": "я поймаю тебя позже"},
     // {"id":10569, "unitId":1030, "eng": "Be seeing you","pol": "Do zobaczenia", "transl": "До встречи"},
-//
+//Ways To Say YES
     {"id":10571, "unitId":1031, "eng": "Why not?","pol": "Dlaczego nie?", "transl": "Почему бы и нет?"},
     {"id":10572, "unitId":1031, "eng": "Brilliant","pol": "Znakomity", "transl": "Великолепно"},
     {"id":10574, "unitId":1031, "eng": "Willingly","pol": "Chętnie", "transl": "Охотно"},
@@ -618,8 +618,8 @@ const courseItems = [
     {"id":10587, "unitId":1031, "eng": "Permission granted","pol": "Pozwolenie udzielone", "transl": "Разрешение получено"},
     // {"id":10588, "unitId":1031, "eng": "Yes, what can I do for you?","pol": "Tak, co mogę dla ciebie zrobić?", "transl": "Да, чем я могу Вам помочь?"},
     // {"id":10589, "unitId":1031, "eng": "Precisely","pol": "Dokładnie", "transl": "Именно так"},
-//
-    {"id":10591, "unitId":1032, "eng": "Have a fabulous birthday","pol": "Wspaniałych urodzin", "transl": "Сказочного дня рождения"},
+//Ways to Say HAPPY BIRTHDAY
+//     {"id":10591, "unitId":1032, "eng": "Have a fabulous birthday","pol": "Wspaniałych urodzin", "transl": "Сказочного дня рождения"},
     {"id":10592, "unitId":1032, "eng": "I hope you have a fantastic day","pol": "Mam nadzieję, że masz fantastyczny dzień", "transl": "Я надеюсь, что у вас есть фантастический день"},
     {"id":10594, "unitId":1032, "eng": "Wishing you many more candles to blow","pol": "Życzę Ci jeszcze wielu świeczek do zdmuchnięcia", "transl": "Желаю вам задуть еще много свечей"},
     {"id":10596, "unitId":1032, "eng": "All the best on your special day","pol": "Wszystkiego najlepszego w ten wyjątkowy dzień", "transl": "Всего наилучшего в ваш особенный день"},
@@ -629,23 +629,23 @@ const courseItems = [
     {"id":10601, "unitId":1032, "eng": "I wish you all the best on your special day","pol": "Życzę wszystkiego najlepszego w tym wyjątkowym dniu", "transl": "Желаю тебе всего наилучшего в твой особенный день"},
     {"id":10602, "unitId":1032, "eng": "I wish you a wonderful day","pol": "Życzę Ci wspaniałego dnia", "transl": "Желаю тебе замечательного дня"},
     {"id":10603, "unitId":1032, "eng": "Wishing you a day that is as special as you are","pol": "Życzę Ci dnia tak wyjątkowego jak Ty", "transl": "Желаю вам такого же особенного дня, как и вы"},
-    {"id":10604, "unitId":1032, "eng": "Congratulations on another year of skillful death evasion","pol": "Gratulujemy kolejnego roku umiejętnego unikania śmierci", "transl": "Поздравляем с еще одним годом умелого уклонения от смерти"},
-    {"id":10605, "unitId":1032, "eng": "Hope you have an enjoyable birthday. You deserve it","pol": "Mam nadzieję, że masz udane urodziny. Zasługujesz na to", "transl": "Желаем вам приятного дня рождения Ты заслуживаешь это"},
-//
-    {"id":10607, "unitId":1033, "eng": "What’s new?","pol": "Co nowego?", "transl": "Какие новости?"},
+    // {"id":10604, "unitId":1032, "eng": "Congratulations on another year of skillful death evasion","pol": "Gratulujemy kolejnego roku umiejętnego unikania śmierci", "transl": "Поздравляем с еще одним годом умелого уклонения от смерти"},
+    // {"id":10605, "unitId":1032, "eng": "Hope you have an enjoyable birthday. You deserve it","pol": "Mam nadzieję, że masz udane urodziny. Zasługujesz na to", "transl": "Желаем вам приятного дня рождения Ты заслуживаешь это"},
+//Ways to Say HOW ARE YOU?
+    {"id":10607, "unitId":1033, "eng": "What’s new?","pol": "Co nowego?", "transl": "Что нового?"},
     // {"id":10608, "unitId":1033, "eng": "How’s it going?","pol": "Jak leci?", "transl": "Как дела?"},
     // {"id":10609, "unitId":1033, "eng": "How’s everything?","pol": "Jak wszystko?", "transl": "Как все?"},
     // {"id":10610, "unitId":1033, "eng": "How’s life?","pol": "Jak życie?", "transl": "Как жизнь?"},
     // {"id":10611, "unitId":1033, "eng": "What’s going on?","pol": "Co się dzieje?", "transl": "Что происходит?"},
     {"id":10612, "unitId":1033, "eng": "What’s happening?","pol": "Co się dzieje?", "transl": "Что творится?"},
-    {"id":10613, "unitId":1033, "eng": "How do you do?","pol": "Jak się masz?", "transl": "Как ns?"},
+    {"id":10613, "unitId":1033, "eng": "How do you do?","pol": "Jak się masz?", "transl": "Как ты?"},
     {"id":10614, "unitId":1033, "eng": "What are you up to?","pol": "Co porabiasz?", "transl": "Что ты делаешь?"},
     // {"id":10615, "unitId":1033, "eng": "How are you doing?","pol": "Jak się masz?", "transl": "Как поживаешь?"},
     // {"id":10616, "unitId":1033, "eng": "How are you holding up?","pol": "Jak się trzymasz?", "transl": "Как ты держишься?"},
     {"id":10617, "unitId":1033, "eng": "What's up?","pol": "Co tam?", "transl": "Что там?"},
     // {"id":10618, "unitId":1033, "eng": "How are things going?","pol": "Jak się sprawy mają?", "transl": "Как дела?"},
     {"id":10619, "unitId":1033, "eng": "How are you been?","pol": "Jak ci było?", "transl": "Как тебе было?"},
-//
+//Ways to Say I DON’T LIKE IT
     {"id":10621, "unitId":1034, "eng": "I’m not into it","pol": "Nie interesuje mnie to", "transl": "Мне это не интересно" },
     {"id":10622, "unitId":1034, "eng": "I can’t stand it","pol": "Nie mogę tego znieść", "transl": "Я не могу этого вынести"},
     {"id":10623, "unitId":1034, "eng": "I hate it","pol": "Nienawidzę tego", "transl": "Я ненавижу это"},
@@ -662,7 +662,7 @@ const courseItems = [
     {"id":10635, "unitId":1034, "eng": "I am not a big fan of it","pol": "Nie jestem tego wielkim fanem", "transl": "Я не большой поклонник этого"},
     {"id":10636, "unitId":1034, "eng": "That’s not my thing","pol": "To nie moja sprawa", "transl": "Это не мое дело"},
     {"id":10637, "unitId":1034, "eng": "I’m disinterested in that","pol": "Nie jestem tym zainteresowany", "transl": "Я незаинтересован в этом"},
-//
+//Ways to Say OH MY GOD!
     {"id":10639, "unitId":1035, "eng": "Goodness gracious me","pol": "Boże, łaskawy dla mnie", "transl": "Боже, милостивый мой"},
     {"id":10642, "unitId":1035, "eng": "For heaven’s sake","pol": "Na miłość boską", "transl": "Ради Бога"},
     {"id":10643, "unitId":1035, "eng": "Oh Jesus","pol": "O Jezu", "transl": "О Иисус"},
@@ -670,21 +670,21 @@ const courseItems = [
     // {"id":10645, "unitId":1035, "eng": "For the love of God","pol": "Na miłość boską", "transl": "Во имя любви Господа"},
     {"id":10646, "unitId":1035, "eng": "Gosh almighty","pol": "Boże wszechmogący", "transl": "Боже всемогущий"},
     {"id":10647, "unitId":1035, "eng": "Shitting Hell","pol": "Cholerne piekło", "transl": "Чертов ад"},
-    {"id":10648, "unitId":1035, "eng": "That is bare sick","pol": "To jest chore", "transl": "Это просто больно"},
+    {"id":10648, "unitId":1035, "eng": "This is sick","pol": "To jest chore", "transl": "Это фигово"},
     // {"id":10650, "unitId":1035, "eng": "Holy crap","pol": "o kurczę", "transl": "Святое дерьмо"},
     // {"id":10651, "unitId":1035, "eng": "Oh my goodness","pol": "O mój Boże", "transl": "О Боже мой"},
-//
+//Ways to Say I’M TIRED
 //     {"id":10654, "unitId":1036, "eng": "I’m weary","pol": "jestem zmęczony", "transl": "я устал"},
-    {"id":10655, "unitId":1036, "eng": "I’m bushed","pol": "jestem wkurzony", "transl": "я в растерянности"},
-    {"id":10657, "unitId":1036, "eng": "I’m done","pol": "Skończyłem", "transl": "Я задолбался"},
+    {"id":10655, "unitId":1036, "eng": "I’m bushed","pol": "jestem wkurzony", "transl": "я обозленный"},
+    // {"id":10657, "unitId":1036, "eng": "I’m done","pol": "Skończyłem", "transl": "Я задолбался"},
     {"id":10658, "unitId":1036, "eng": "I’m sleepy","pol": "Jestem śpiący", "transl": "Я сонный"},
     // {"id":10660, "unitId":1036, "eng": "I’m flat out tired","pol": "jestem zmęczony", "transl": "я совсем устал"},
     {"id":10661, "unitId":1036, "eng": "I’m dead-tired","pol": "jestem śmiertelnie zmęczony", "transl": "я смертельно устал"},
     {"id":10663, "unitId":1036, "eng": "I’m dog tired","pol": "jestem zmęczony jak pies", "transl": "я устал как собака"},
-    {"id":10664, "unitId":1036, "eng": "I’m tired to the bone","pol": "jestem zmęczona do szpiku kości", "transl": "Я устал до костей"},
+    {"id":10664, "unitId":1036, "eng": "I’m tired to the bone","pol": "jestem zmęczony do szpiku kości", "transl": "Я устал до костей"},
     // {"id":10665, "unitId":1036, "eng": "I’m knockered","pol": "jestem bardzo zmęczony", "transl": "я в шоке"},
     {"id":10667, "unitId":1036, "eng": "I’m exhausted","pol": "Jestem wykończony", "transl": "Я изможден"},
-    {"id":10668, "unitId":1036, "eng": "I’m worn out","pol": "Jestem wyczerpany", "transl": "я устал"},
+    {"id":10668, "unitId":1036, "eng": "I’m worn out","pol": "Jestem wyczerpany", "transl": "Я изнурен"},
     {"id":10669, "unitId":1036, "eng": "I’m dead on my feet","pol": "Jestem martwy na nogach", "transl": "Я мертв на ногах"},
     //unit 1
     // {"id": 1, "unitId": 1, "eng": "She is driving now, at the moment of speaking", "pol": "Ona jedzie teraz, w chwili mówienia", "transl": "Она едет сейчас, в момент разговора"},
