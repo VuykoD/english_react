@@ -562,7 +562,7 @@ const courseItems = [
     {"id":10480, "unitId":1026, "eng": "good looking","pol": "dobrze wyglądasz", "transl": "ты выглядишь хорошо"},
     {"id":10483, "unitId":1026, "eng": "Wakey-wakey","pol": "Wstawaj", "transl": "Вставай"},
     {"id":10484, "unitId":1026, "eng": "Good day to you","pol": "Miłego dnia", "transl": "Хорошего дня"},
-//
+//Creative Ways to Say NO
     {"id":10525, "unitId":1029, "eng": "Not possible","pol": "Niemożliwe", "transl": "Невозможно"},
     {"id":10526, "unitId":1029, "eng": "By no means","pol": "W żaden sposób", "transl": "Ни в коем случае"},
     // {"id":10528, "unitId":1029, "eng": "Not for me, thanks","pol": "Nie dla mnie, dzięki", "transl": "Не для меня, спасибо"},
@@ -571,7 +571,7 @@ const courseItems = [
     {"id":10531, "unitId":1029, "eng": "That’s not an option","pol": "To nie jest opcja", "transl": "Это не вариант"},
     {"id":10532, "unitId":1029, "eng": "This is not negotiable","pol": "To nie podlega negocjacjom", "transl": "Это не подлежит обсуждению"},
     // {"id":10533, "unitId":1029, "eng": "I think not","pol": "Myślę, że nie", "transl": "Думаю, нет"},
-    {"id":10534, "unitId":1029, "eng": "If only it worked, but","pol": "Gdyby tylko zadziałało, ale", "transl": "Лишь бы работало, но"},
+    // {"id":10534, "unitId":1029, "eng": "If only it worked, but","pol": "Gdyby tylko zadziałało, ale", "transl": "Лишь бы работало, но"},
     {"id":10535, "unitId":1029, "eng": "Not for me my friend, thanks","pol": "Nie dla mnie mój przyjacielu, dzięki", "transl": "Не для меня, мой друг, спасибо"},
     // {"id":10536, "unitId":1029, "eng": "I have something else","pol": "Mam coś jeszcze", "transl": "У меня есть кое-что еще"},
     {"id":10537, "unitId":1029, "eng": "I’d like to, but I know I’ll regret it","pol": "Chciałbym, ale wiem, że tego pożałuję", "transl": "Я бы хотел, но знаю, что пожалею об этом"},
@@ -582,10 +582,10 @@ const courseItems = [
     // {"id":10543, "unitId":1029, "eng": "I’m sorry I’m busy","pol": "Przepraszam, jestem zajęty", "transl": "Извини, что я занят"},
     // {"id":10544, "unitId":1029, "eng": "That’s not going to work for me","pol": "To nie zadziała dla mnie", "transl": "Это не сработает для меня"},
     // {"id":10545, "unitId":1029, "eng": "Maybe next time","pol": "Może następnym razem", "transl": "Может в следующий раз"},
-    {"id":10546, "unitId":1029, "eng": "I’d love to – but can’t","pol": "Bardzo bym chciał – ale nie mogę", "transl": "Я бы с удовольствием - но не могу"},
+    {"id":10546, "unitId":1029, "eng": "I’d love to – but can’t","pol": "Bardzo bym chciał, ale nie mogę", "transl": "Я бы с удовольствием, но не могу"},
     // {"id":10548, "unitId":1029, "eng": "That doesn’t work for me","pol": "To nie działa dla mnie", "transl": "Это не работает для меня"},
     {"id":10549, "unitId":1029, "eng": "I wish I could make it work","pol": "Chciałbym, żeby to zadziałało", "transl": "Хотел бы я, чтобы это сработало"},
-    {"id":10550, "unitId":1029, "eng": "Sounds tempting, but I'll have to pass","pol": "Brzmi kusząco, ale muszę zdać", "transl": "Звучит заманчиво, но я должен пройти"},
+    {"id":10550, "unitId":1029, "eng": "Sounds tempting, but I'll have to pass","pol": "Brzmi kusząco, ale muszę odmówić", "transl": "Звучит заманчиво, но я должен отказаться"},
 //
     {"id":10552, "unitId":1030, "eng": "Adios","pol": "Adios", "transl": "Адиос"},
     {"id":10553, "unitId":1030, "eng": "Bye now","pol": "Na razie", "transl": "пока"},
