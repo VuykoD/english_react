@@ -73,10 +73,11 @@ export default class Course extends Component {
             } else {
                 alert('there is duplicate id' + it.id)
             }
-            const words = it.pol.split(' ');
+            const polCleared = it.pol.replace(/[.,%?!1-9"]/g, '').trim().toLowerCase();
+            const words = polCleared.split(' ');
             let noOneNewWords = true;
             map(words, word => {
-                let wordCleared = word.replace(/[\s.,%?!]/g, '').toLowerCase();
+                let wordCleared = word.replace(/[\s.,%?!1-9"]/g, '').toLowerCase();
                 const isWordExist = uniqueWords.find(element => element === wordCleared);
                 if (!isWordExist) {
                     noOneNewWords = false;

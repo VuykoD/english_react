@@ -1192,10 +1192,9 @@ const courseItems = [
     {"id":2439, "unitId":2005, "eng": "","pol": "Dla kogo jest ten prezent?", "transl": "Для кого этот подарок?"},
     {"id":2440, "unitId":2005, "eng": "","pol": "Kiedyś sprzedam to mieszkanie i kupię inne", "transl": "Однажды я продам эту квартиру и куплю другую"},
     {"id":2441, "unitId":2005, "eng": "","pol": "Kupię to mieszkanie na raty, bo jest za drogie", "transl": "Я куплю эту квартиру в рассрочку, потому что она слишком дорога"},
-    {"id":2442, "unitId":2005, "eng": "","pol": "Umiem tylko powiedzieć ”dziękuję” po ukraińsku", "transl": "Я умею только сказать «dzie˛kuje˛» на украинском"},
     {"id":2444, "unitId":2005, "eng": "","pol": "Miłość jest w życiu ważna?", "transl": "Важна ли любовь в жизни?"},
     {"id":2445, "unitId":2005, "eng": "","pol": "w przyszłym miesiącu będę na Ukrainie.", "transl": "Пока я еще в Польше, будущего месяца буду в Украине"},
-    {"id":2446, "unitId":2005, "eng": "","pol": "Widzę mojego męża, widzę go", "transl": "Я вижу своего мужчину, я вижу его"},
+    {"id":2446, "unitId":2005, "eng": "","pol": "Widzę mojego męża, widzę go 133", "transl": "Я вижу своего мужчину, я вижу его"},
 ];
 
 export {courseItems as default};
