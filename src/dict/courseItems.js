@@ -950,7 +950,7 @@ const courseItems = [
     {"id":2137, "unitId":2002, "eng": "","pol": "Jest zimno i pada śnieg", "transl": "Холодно и падает снег"},
     {"id":2141, "unitId":2002, "eng": "","pol": "Gdzie jest mój telefon?", "transl": "Где мой телефон?"},
     {"id":2143, "unitId":2002, "eng": "","pol": "Czy twoja mysz ma jakoś na imię?", "transl": "У твоей мышки есть какое-нибудь имя?"},
-    {"id":2144, "unitId":2002, "eng": "","pol": "Tak, ma na imię Putinka Wiem, prawie jak człowiek", "transl": "Да, ее зовут Путинка Знаю почти как человека"},
+    // {"id":2144, "unitId":2002, "eng": "","pol": "Tak, ma na imię Putinka Wiem, prawie jak człowiek", "transl": "Да, ее зовут Путинка Знаю почти как человека"},
     {"id":2145, "unitId":2002, "eng": "","pol": "Fajnie, że jestem podobny do ciebie", "transl": "Классно, что я похож на тебя"},
     {"id":2146, "unitId":2002, "eng": "","pol": "Ale niefajnie, że jesteś gruby", "transl": "Но это не круто, что ты толстый"},
     {"id":2147, "unitId":2002, "eng": "","pol": "To nie jest prawda, nie masz racji", "transl": "Это неправда, ты не прав"},
