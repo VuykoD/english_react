@@ -368,6 +368,12 @@ const courseUnits = [
         url: "/polish-6",
         name: "polish-6"
     },
+    {
+        id: 2006,
+        courseId: 6,
+        url: "/polish-7",
+        name: "polish-7"
+    },
 ];
 
 
