@@ -196,6 +196,24 @@ class LearningClass extends Component {
         });
     };
 
+    onSavePol = () => {
+        const formInput = document.getElementById('formInput');
+        let newPol = get(formInput, 'value');
+        const { polish } = this.state;
+
+        const index = findIndex(courseItems, {'pol': polish});
+        if (index > -1) {
+            courseItems[index].pol = newPol;
+            localStorage.courseItems = JSON.stringify(courseItems);
+            document.getElementById("formInput").value = '';
+        }
+
+        this.setState({
+            changeToInput: false,
+            polish: newPol
+        });
+    };
+
     onChangeLengthArray = (event) => {
         const arrLength = event.target.value;
         const localLength = this.localProgress?.length || 0;
@@ -422,7 +440,8 @@ class LearningClass extends Component {
             mistake,
             showRus,
             showEng,
-            showPol
+            showPol,
+            changeToInput
         } = this.state;
         const {siteLang} = this.props.store;
         const repeat = get(content, `repeat[${siteLang}]`);
@@ -508,7 +527,7 @@ class LearningClass extends Component {
                             {getProgressBar.call(this)}
                             {showEng && getBadge(english, "secondary")}
                             {showPol && getBadge(polish, "secondary")}
-                            {(mistake > 2) &&
+                            {(mistake > 2 || changeToInput) &&
                                 <>
                                     {learnEng && getBadge(english, "info")}
                                     {learnPol && getBadge(polish, "info")}
@@ -672,27 +691,60 @@ export function checkIsSound() {
 }
 
 export function getInput() {
-    const { learnNumber, newLearnNumber } = this.state;
+    const { learnNumber, newLearnNumber, changeToInput } = this.state;
+    const {siteLang} = this.props.store;
+    const saveTranslation = get(content, `saveTranslation[${siteLang}]`);
+    const saveButton = (
+        <Row>
+            <Col sm={4}/>
+            <Col>
+                <Button
+                    variant="info"
+                    block
+                    onClick={this.onSavePol}
+                    className="record"
+                >
+                    {saveTranslation}
+                </Button>
+            </Col>
+            <Col sm={4}/>
+        </Row>
+    );
 
     return (
-        <Row>
-            <Col sm={3}/>
-            <Col>
-                {`${learnNumber + 1}(${newLearnNumber})`}
-                <Form.Control
-                    id='formInput'
-                    type="text"
-                    className="mainInput"
-                    onChange={this.onChangeInput}
-                />
-            </Col>
-            <Col sm={3}/>
-        </Row>
+        <>
+            <Row>
+                <Col sm={3}/>
+                <Col>
+                    {`${learnNumber + 1}(${newLearnNumber})`}
+                    <Form.Control
+                        id='formInput'
+                        type="text"
+                        className="mainInput"
+                        onChange={this.onChangeInput}
+                    />
+                </Col>
+                <Col sm={3}/>
+            </Row>
+            {!!changeToInput &&
+                saveButton
+            }
+        </>
     );
 }
 
 export function changedInput() {
-    const {english, polish, learnPol, mistake, learnNumber, mistakeRewrite, record} = this.state;
+    const {
+        english,
+        polish,
+        learnPol,
+        mistake,
+        learnNumber,
+        mistakeRewrite,
+        record,
+        changeToInput
+    } = this.state;
+    if (changeToInput) return;
     const formInput = document.getElementById('formInput');
     let word = get(formInput, 'value');
     word = word.toUpperCase();
