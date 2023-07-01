@@ -71,6 +71,10 @@ const content = {
         ru: "Обнулить рекорд",
         ukr: "Обнулити рекорд",
     },
+    saveTranslation: {
+        ru: "Сохранить перевод",
+        ukr: "Зберегти переклад",
+    },
 };
 
 const initialState = {
@@ -564,6 +568,8 @@ export function getBadge(txt, variant) {
 
     if (!this) return badge;
 
+    const {siteLang} = this.props.store;
+    const saveTranslation = get(content, `saveTranslation[${siteLang}]`);
     const { changeToInput } = this.state;
     const input = (
         <Row>
@@ -583,7 +589,7 @@ export function getBadge(txt, variant) {
             <Col sm={4}/>
             <Col>
                 <Button variant="info" block onClick={this.onSaveRus}>
-                    save translation
+                    {saveTranslation}
                 </Button>
             </Col>
             <Col sm={4}/>
