@@ -92,7 +92,8 @@ const initialState = {
     isRepeatAll: false,
     mistake: 0,
     mistakeRewrite: 0,
-    record: 0
+    record: 0,
+    changeToInput: false
 }
 
 const MAX_WORD_LENGTH = 100;
@@ -172,6 +173,17 @@ class LearningClass extends Component {
 
     onChangeInput = () => {
         changedInput.call(this);
+    };
+
+    onSaveRus = () => {
+        const changeRus = document.getElementById('changeRus');
+        let newRus = get(changeRus, 'value');
+        console.log(newRus, this.state, 'lolo');
+
+        this.setState({
+            changeToInput: false,
+            rus: newRus
+        });
     };
 
     onChangeLengthArray = (event) => {
@@ -382,6 +394,10 @@ class LearningClass extends Component {
         this.setState({showRus: !this.state.showRus});
     }
 
+    changeToInput = () => {
+        this.setState({changeToInput: true});
+    }
+
     render() {
         const {
             newLearnNumber,
@@ -478,7 +494,7 @@ class LearningClass extends Component {
                         <Col>
                             {this.getTopic()}
                             {soundButton.call(this)}
-                            {showRus && getBadge(rus, "light")}
+                            {showRus && getBadge.call(this, rus, "light")}
                             {getProgressBar.call(this)}
                             {showEng && getBadge(english, "secondary")}
                             {showPol && getBadge(polish, "secondary")}
@@ -528,12 +544,55 @@ export function soundButton() {
 
 export function getBadge(txt, variant) {
     if (!txt) return null;
-
-    return (
+    const badge = (
         <h3>
-            <Badge variant={variant} className="white-space">{txt}</Badge>
+            <Badge
+                variant={variant}
+                className="white-space"
+                onDoubleClick={this ? this.changeToInput : null}
+            >
+                {txt}
+            </Badge>
         </h3>
     );
+
+    if (!this) return badge;
+
+    const { changeToInput } = this.state;
+    const input = (
+        <Row>
+            <Col sm={1}/>
+            <Col>
+                <Form.Control
+                    id='changeRus'
+                    type="text"
+                    className="mainInput"
+                />
+            </Col>
+            <Col sm={1}/>
+        </Row>
+    );
+    const saveButton = (
+        <Row>
+            <Col sm={4}/>
+            <Col>
+                <Button variant="info" block onClick={this.onSaveRus}>
+                    save translation
+                </Button>
+            </Col>
+            <Col sm={4}/>
+        </Row>
+    );
+
+    return changeToInput
+        ? (
+            <>
+                {badge}
+                {input}
+                {saveButton}
+            </>
+        )
+        : badge;
 }
 
 export function getProgressBar() {
