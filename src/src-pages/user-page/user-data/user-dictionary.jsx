@@ -10,8 +10,10 @@ import {Container, Row, Col, Button} from "react-bootstrap";
 import '@ag-grid-community/all-modules/dist/styles/ag-grid.css';
 import '@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css';
 import '../../../scc/user-data.css';
-import courseItems from "../../../dict/courseItems";
-import courseUnits from "../../../dict/courseUnits";
+import courseUnits from '../../../dict/courseUnits';
+import getCourseItems from '../../../dict/getCourseItems';
+
+let courseItems = getCourseItems();
 
 const columnDefs = [
     {headerName: "type", field: "entity", width: 80},

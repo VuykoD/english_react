@@ -1,12 +1,14 @@
 import React, {Component, Fragment} from 'react';
 import { map, findIndex, filter, get } from 'lodash';
 import {Col, Container, Row, Accordion, Card, Form} from "react-bootstrap";
-import {Link} from "react-router-dom";
-import courseUnits from "../../dict/courseUnits";
-import courseNames from "../../dict/courseNames";
-import courseItems from "../../dict/courseItems";
+import {Link} from 'react-router-dom';
+import courseUnits from '../../dict/courseUnits';
+import courseNames from '../../dict/courseNames';
+import getCourseItems from '../../dict/getCourseItems';
 
 import '../../scc/course.css';
+
+let courseItems = getCourseItems();
 
 export default class Course extends Component {
     constructor(props) {

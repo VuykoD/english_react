@@ -9,8 +9,10 @@ import {Badge, Button, Col, Container, Form, ProgressBar, Row} from 'react-boots
 //
 import '../../scc/learning.css';
 
-import courseItems from '../../dict/courseItems';
 import courseUnits from '../../dict/courseUnits';
+import getCourseItems from '../../dict/getCourseItems';
+
+let courseItems = getCourseItems();
 
 const content = {
     repeat: {

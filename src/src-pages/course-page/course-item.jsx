@@ -8,9 +8,10 @@ import FormControl from "react-bootstrap/FormControl";
 
 import '../../scc/unit.css';
 import '../../scc/course.css'
-import courseUnits from "../../dict/courseUnits";
-import courseItems from "../../dict/courseItems";
+import courseUnits from '../../dict/courseUnits';
+import getCourseItems from '../../dict/getCourseItems';
 
+let courseItems = getCourseItems();
 
 export const content = {
     hideTranslate: {
