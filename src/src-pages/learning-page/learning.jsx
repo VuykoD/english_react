@@ -588,7 +588,12 @@ export function getBadge(txt, variant) {
         <Row>
             <Col sm={4}/>
             <Col>
-                <Button variant="info" block onClick={this.onSaveRus}>
+                <Button
+                    variant="info"
+                    block
+                    onClick={this.onSaveRus}
+                    className="record"
+                >
                     {saveTranslation}
                 </Button>
             </Col>
