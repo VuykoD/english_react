@@ -79,6 +79,7 @@ export default class UserDictionary extends Component {
         const index = findIndex(lP, {'entity_id': entityId});
         lP.splice(index,1);
         localStorage.progress = JSON.stringify(lP);
+        localStorage.courseItems = JSON.stringify(courseItems);
         lP = this.setLocalProgress(lP);
         this.setState({localProgress: lP});
     };
