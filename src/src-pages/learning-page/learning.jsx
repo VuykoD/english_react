@@ -183,7 +183,7 @@ class LearningClass extends Component {
         const index = findIndex(courseItems, {'transl': rus});
         if (index > -1) {
             courseItems[index].transl = newRus;
-            localStorage.courseItems = JSON.stringify(localStorage);
+            localStorage.courseItems = JSON.stringify(courseItems);
         }
 
         this.setState({
