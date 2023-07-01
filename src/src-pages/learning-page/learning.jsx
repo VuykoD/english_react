@@ -178,7 +178,13 @@ class LearningClass extends Component {
     onSaveRus = () => {
         const changeRus = document.getElementById('changeRus');
         let newRus = get(changeRus, 'value');
-        console.log(newRus, this.state, 'lolo');
+        const { rus } = this.state;
+
+        const index = findIndex(courseItems, {'transl': rus});
+        if (index > -1) {
+            courseItems[index].transl = newRus;
+            localStorage.courseItems = JSON.stringify(localStorage);
+        }
 
         this.setState({
             changeToInput: false,
