@@ -258,7 +258,7 @@ class LearningClass extends Component {
     };
 
     speedRepeat = () => {
-        this.soundAndRepeatCoef = 1.8;
+        this.soundAndRepeatCoef = 2.3;
         this.soundAndRepeat();
     }
 
@@ -287,8 +287,8 @@ class LearningClass extends Component {
     setTimeoutTime =(learnNumber)=>{
         const word = get(this.learnArr, `[${learnNumber}].pol`, '');
         const wordLength = Math.round(word.length / this.soundAndRepeatCoef);
-        let timeoutTime = wordLength > 10 ? wordLength : 10;
-        if(timeoutTime > 45) timeoutTime = 45;
+        let timeoutTime = wordLength > 8 ? wordLength : 8;
+        if(timeoutTime > 40) timeoutTime = 40;
         return timeoutTime;
     }
 
