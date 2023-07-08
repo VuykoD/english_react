@@ -23,7 +23,7 @@ const columnDefs = [
     {headerName: "source", field: "source", width: 190}
 ];
 
-function shuffle(array) {
+export function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
 
     // While there remain elements to shuffle.

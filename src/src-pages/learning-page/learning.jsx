@@ -12,6 +12,7 @@ import '../../scc/learning.css';
 import courseUnits from '../../dict/courseUnits';
 import courseItemsJson from '../../dict/courseItems';
 import getCourseItems from '../../dict/getCourseItems';
+import { shuffle } from '../user-page/user-data/user-dictionary';
 
 let courseItems = getCourseItems();
 
@@ -23,6 +24,10 @@ const content = {
     write: {
         ru: "Писать",
         ukr: "Писати",
+    },
+    sort: {
+        ru: "Сортировать",
+        ukr: "Сортувати",
     },
     eng: {
         ru: "Озвучивать английскую",
@@ -280,6 +285,14 @@ class LearningClass extends Component {
         this.setEngAndTransl(this.state.learnNumber, MAX_WORD_LENGTH);
     };
 
+    sort = () => {
+        let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        if (!lP) return null;
+        lP = shuffle(lP);
+
+        localStorage.progress = JSON.stringify(lP);
+    };
+
     getLearnArray = (sliceNumber) => {
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
@@ -458,6 +471,7 @@ class LearningClass extends Component {
         const {siteLang} = this.props.store;
         const repeat = get(content, `repeat[${siteLang}]`);
         const write = get(content, `write[${siteLang}]`);
+        const sort = get(content, `sort[${siteLang}]`);
         const eng = get(content, `eng[${siteLang}]`);
         const pol = get(content, `pol[${siteLang}]`);
         const speakRus = get(content, `soundRus[${siteLang}]`);
@@ -515,6 +529,11 @@ class LearningClass extends Component {
                         <Col>
                             <Button variant="info" block onClick={this.write}>
                                 {write}
+                            </Button>
+                        </Col>
+                        <Col>
+                            <Button variant="info" block onClick={this.sort}>
+                                {sort}
                             </Button>
                         </Col>
                     </Row>
