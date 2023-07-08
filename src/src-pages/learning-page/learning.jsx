@@ -190,6 +190,11 @@ class LearningClass extends Component {
             localStorage.courseItems = JSON.stringify(courseItems);
         }
 
+        const indexLearnArray = findIndex(this.learnArr, {'transl': rus});
+        if (indexLearnArray > -1 && this.learnArr[indexLearnArray]) {
+            this.learnArr[indexLearnArray].transl = newRus;
+        }
+
         this.setState({
             changeToInput: false,
             rus: newRus
@@ -206,6 +211,11 @@ class LearningClass extends Component {
             courseItems[index].pol = newPol;
             localStorage.courseItems = JSON.stringify(courseItems);
             document.getElementById("formInput").value = '';
+        }
+
+        const indexLearnArray = findIndex(this.learnArr, {'pol': polish});
+        if (indexLearnArray > -1 && this.learnArr[indexLearnArray]) {
+            this.learnArr[indexLearnArray].pol = newPol;
         }
 
         this.setState({
