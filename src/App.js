@@ -6,6 +6,7 @@ import Footer from './src-core/components/footer/footer.jsx';
 import HomePage from './src-pages/home-page/home-page.jsx';
 import Setting from './src-pages/user-page/setting-page/setting.jsx';
 import UserData from './src-pages/user-page/user-data/user-data';
+import UserStatistic from "./src-pages/user-page/user-data/user-statistic";
 import UserDictionary from './src-pages/user-page/user-data/user-dictionary';
 import Learning from './src-pages/learning-page/learning';
 import Course from "./src-pages/course-page/course";
@@ -51,6 +52,11 @@ class App extends Component {
                             onChangeBackColor={onChangeBackColor}
                             onChangeFirstColor={onChangeFirstColor}
                             onChangeSecondColor={onChangeSecondColor}
+                        />
+                    }/>
+                    <Route path='/user_statistic' children={
+                        <UserStatistic
+                            store={store}
                         />
                     }/>
                     <Route path='/course/*' children={courseItem}/>

@@ -54,6 +54,10 @@ const content = {
         ru: 'Напишите слово, или фразу',
         ukr: 'Напишіть слово, або фразу'
     },
+    statistic: {
+        ru: 'Статистика',
+        ukr: 'Статистика'
+    },
 };
 
 class HeaderClass extends Component {
@@ -121,6 +125,7 @@ class HeaderClass extends Component {
         const btnLearnedLand = get(content, `btnLearnedLand[${siteLang}]`);
         const setting = get(content, `setting[${siteLang}]`);
         const search = get(content, `search[${siteLang}]`);
+        const statistic = get(content, `statistic[${siteLang}]`);
         const fontStyle = {color: fontColor};
         const gradientStyle = {background: `linear-gradient(to bottom,${firstColor},${secondColor}`};
         const hover = {onMouseOver: this.onMouseOver, onMouseOut: this.onMouseOut};
@@ -218,6 +223,7 @@ class HeaderClass extends Component {
                                     <div>{progress}</div>
                                     <div><Link to={'/user_data'} children={myData} /></div>
                                     <div><Link to={'/user_setting'} children={setting} /></div>
+                                    <div><Link to={'/user_statistic'} children={statistic} /></div>
                                 </DropdownButton>
                             </div>
                         </Col>

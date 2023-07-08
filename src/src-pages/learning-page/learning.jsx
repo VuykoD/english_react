@@ -10,6 +10,7 @@ import {Badge, Button, Col, Container, Form, ProgressBar, Row} from 'react-boots
 import '../../scc/learning.css';
 
 import courseUnits from '../../dict/courseUnits';
+import courseItemsJson from '../../dict/courseItems';
 import getCourseItems from '../../dict/getCourseItems';
 
 let courseItems = getCourseItems();
@@ -48,8 +49,8 @@ const content = {
         ukr: "Показати польську",
     },
     countRepeat: {
-        ru: "На изучении max",
-        ukr: "На вивченні max",
+        ru: "На изучении",
+        ukr: "На вивченні",
     },
     source: {
         ru: "Источник",
@@ -465,6 +466,7 @@ class LearningClass extends Component {
         const translPol = get(content, `translPol[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
         const speedRepeat = get(content, `speedRepeat[${siteLang}]`);
+        const difference = courseItemsJson.length - (this.localProgress?.length || 0);
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
@@ -490,7 +492,7 @@ class LearningClass extends Component {
                             </Form.Group>
                         </Col>
                         <Col>
-                            <span children={`${countRepeat} ${this.localProgress?.length || 0}`} />
+                            <span children={`${countRepeat} ${this.localProgress?.length || 0}/${courseItemsJson.length} (${difference})`} />
                             <Form.Control
                                 id='lengthAray'
                                 type="number"
