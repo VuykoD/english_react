@@ -278,6 +278,44 @@ class LearningClass extends Component {
         this.soundAndRepeat();
     }
 
+    setSpeedRepeat = () => {
+        this.sort();
+        localStorage.showPol = '1';
+        localStorage.showEng = '';
+        localStorage.showRus = '1';
+        localStorage.learnPol = '1';
+        localStorage.learnEng = '';
+        localStorage.soundRus = '';
+        this.setState({
+            showPol: true,
+            showEng: false,
+            showRus: true,
+            learnPol: true,
+            learnEng: false,
+            soundRus: false
+        });
+        document.getElementById("lengthArray").value = '50';
+    }
+
+    setWrite = () => {
+        this.sort();
+        localStorage.showPol = '';
+        localStorage.showEng = '';
+        localStorage.showRus = '1';
+        localStorage.learnPol = '1';
+        localStorage.learnEng = '';
+        localStorage.soundRus = '';
+        this.setState({
+            showPol: false,
+            showEng: false,
+            showRus: true,
+            learnPol: true,
+            learnEng: false,
+            soundRus: false
+        });
+        document.getElementById("lengthArray").value = '20';
+    }
+
     write = () => {
         this.getLearnArray(this.state.newLearnNumber);
         if (!this.learnArr) return;
@@ -453,7 +491,6 @@ class LearningClass extends Component {
 
     render() {
         const {
-            newLearnNumber,
             exampleLearning,
             cycleLearning,
             english,
@@ -469,7 +506,7 @@ class LearningClass extends Component {
             changeToInput
         } = this.state;
         const {siteLang} = this.props.store;
-        const repeat = get(content, `repeat[${siteLang}]`);
+        // const repeat = get(content, `repeat[${siteLang}]`);
         const write = get(content, `write[${siteLang}]`);
         const sort = get(content, `sort[${siteLang}]`);
         const eng = get(content, `eng[${siteLang}]`);
@@ -508,10 +545,10 @@ class LearningClass extends Component {
                         <Col>
                             <span children={`${countRepeat} ${this.localProgress?.length || 0}/${courseItemsJson.length} (${difference})`} />
                             <Form.Control
-                                id='lengthAray'
+                                id='lengthArray'
                                 type="number"
                                 onChange={this.onChangeLengthArray}
-                                value={newLearnNumber}
+                                // value={newLearnNumber}
                             />
                         </Col>
                     </Row>
@@ -521,14 +558,24 @@ class LearningClass extends Component {
                                 {speedRepeat}
                             </Button>
                         </Col>
-                        <Col>
-                            <Button variant="info" block onClick={this.soundAndRepeat}>
-                                {repeat}
+                        <Col sm={1} >
+                            <Button variant="info" block onClick={this.setSpeedRepeat}>
+                                {50}
                             </Button>
                         </Col>
+                        {/*<Col>*/}
+                        {/*    <Button variant="info" block onClick={this.soundAndRepeat}>*/}
+                        {/*        {repeat}*/}
+                        {/*    </Button>*/}
+                        {/*</Col>*/}
                         <Col>
                             <Button variant="info" block onClick={this.write}>
                                 {write}
+                            </Button>
+                        </Col>
+                        <Col sm={1} >
+                            <Button variant="info" block onClick={this.setWrite}>
+                                {20}
                             </Button>
                         </Col>
                         <Col>
@@ -584,23 +631,19 @@ const Learning = withRouter(LearningClass);
 export default Learning;
 
 export function soundButton() {
-    let btn = null;
-    const isSound = checkIsSound.call(this);
-    if (isSound) {
-        const {siteLang} = this.props.store;
-        const pressButton = get(content, `pressButton[${siteLang}]`);
-        btn = (
-            <Button
-                variant="success"
-                className="title_sound"
-                title={pressButton}
-                onClick={this.speakTxt}
-            >
-                <img src={require("../../images/Sound.png")} className="title_sound" alt=''/>
-            </Button>
-        )
-    }
-    return btn
+    const {siteLang} = this.props.store;
+    const pressButton = get(content, `pressButton[${siteLang}]`);
+
+    return (
+        <Button
+            variant="success"
+            className="title_sound"
+            title={pressButton}
+            onClick={this.speakTxt}
+        >
+            <img src={require("../../images/Sound.png")} className="title_sound" alt=''/>
+        </Button>
+    )
 }
 
 export function getBadge(txt, variant) {

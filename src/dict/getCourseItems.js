@@ -1,7 +1,7 @@
 import courseItemsJson from "../dict/courseItems";
 
 function getCourseItems(){
-    return JSON.parse(localStorage.courseItems) || courseItemsJson;
+    return localStorage.courseItems ? JSON.parse(localStorage.courseItems) : courseItemsJson;
 }
 
 export {getCourseItems as default};
