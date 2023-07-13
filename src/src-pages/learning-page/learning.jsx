@@ -295,7 +295,7 @@ class LearningClass extends Component {
             learnPol: true,
             learnEng: false,
             soundRus: false,
-            newLearnNumber: 20
+            newLearnNumber: 50
         });
     }
 
