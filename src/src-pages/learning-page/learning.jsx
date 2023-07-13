@@ -158,6 +158,11 @@ class LearningClass extends Component {
         clearTimeout(this.timeoutNextItem);
         clearTimeout(this.timeoutResetExampleLearning);
     }
+
+    handleKeyDown = (e) => {
+        if (e.keyCode === 17) speak.call(this)
+    }
+
     updateLP = () => {
         this.getVoices();
         this.repeatAll();
@@ -803,6 +808,8 @@ export function getInput() {
                         type="text"
                         className="mainInput"
                         onChange={this.onChangeInput}
+                        onKeyDown={this.handleKeyDown}
+                        autoFocus
                     />
                 </Col>
                 <Col sm={3}/>
