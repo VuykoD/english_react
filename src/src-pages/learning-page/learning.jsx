@@ -169,21 +169,19 @@ class LearningClass extends Component {
     }
 
     getVoices() {
-        window.speechSynthesis.onvoiceschanged = () => {
-            const voices = window.speechSynthesis.getVoices();
-            this.filteredEngVoices = filter(voices, voice => {
-                    return voice.lang.substr(0, 2) === "en"
-                }
-            );
-            this.filteredPolVoices = filter(voices, voice => {
-                    return voice.lang.substr(0, 2) === "pl"
-                }
-            );
-            this.filteredRusVoices = filter(voices, voice => {
-                    return voice.lang.substr(0, 2) === "ru"
-                }
-            );
-        };
+        const voices = window.speechSynthesis.getVoices();
+        this.filteredEngVoices = filter(voices, voice => {
+                return voice.lang.substr(0, 2) === "en"
+            }
+        );
+        this.filteredPolVoices = filter(voices, voice => {
+                return voice.lang.substr(0, 2) === "pl"
+            }
+        );
+        this.filteredRusVoices = filter(voices, voice => {
+                return voice.lang.substr(0, 2) === "ru"
+            }
+        );
     }
 
     onChangeInput = () => {
@@ -884,7 +882,7 @@ export function changedInput() {
         if (mistake >= 2) {
             this.setState({record: 0});
         }
-        if (mistake <= 2) speak.call(this)
+        if (!mistake) speak.call(this)
         this.setState({mistake: mistake + 1});
         if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
             this.mistakeArr.push(learnNumber);
