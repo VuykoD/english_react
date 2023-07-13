@@ -297,6 +297,7 @@ class LearningClass extends Component {
             soundRus: false,
             newLearnNumber: 50
         });
+        this.speedRepeat();
     }
 
     setWrite = () => {
@@ -318,6 +319,7 @@ class LearningClass extends Component {
             soundRus: false,
             newLearnNumber: 20
         });
+        this.write();
     }
 
     write = () => {
