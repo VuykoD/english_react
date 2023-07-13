@@ -286,15 +286,17 @@ class LearningClass extends Component {
         localStorage.learnPol = '1';
         localStorage.learnEng = '';
         localStorage.soundRus = '';
+        localStorage.newLearnNumber = '50';
+        document.getElementById("lengthArray").value = '50';
         this.setState({
             showPol: true,
             showEng: false,
             showRus: true,
             learnPol: true,
             learnEng: false,
-            soundRus: false
+            soundRus: false,
+            newLearnNumber: 20
         });
-        document.getElementById("lengthArray").value = '50';
     }
 
     setWrite = () => {
@@ -305,15 +307,17 @@ class LearningClass extends Component {
         localStorage.learnPol = '1';
         localStorage.learnEng = '';
         localStorage.soundRus = '';
+        localStorage.newLearnNumber = '20';
+        document.getElementById("lengthArray").value = '20';
         this.setState({
             showPol: false,
             showEng: false,
             showRus: true,
             learnPol: true,
             learnEng: false,
-            soundRus: false
+            soundRus: false,
+            newLearnNumber: 20
         });
-        document.getElementById("lengthArray").value = '20';
     }
 
     write = () => {
