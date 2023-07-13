@@ -313,8 +313,8 @@ class LearningClass extends Component {
         localStorage.learnPol = '1';
         localStorage.learnEng = '';
         localStorage.soundRus = '';
-        localStorage.newLearnNumber = '20';
-        document.getElementById("lengthArray").value = '20';
+        localStorage.newLearnNumber = '10';
+        document.getElementById("lengthArray").value = '10';
         this.setState({
             showPol: false,
             showEng: false,
@@ -322,7 +322,7 @@ class LearningClass extends Component {
             learnPol: true,
             learnEng: false,
             soundRus: false,
-            newLearnNumber: 20
+            newLearnNumber: 10
         });
         this.write();
     }
@@ -586,7 +586,7 @@ class LearningClass extends Component {
                         </Col>
                         <Col sm={1} >
                             <Button variant="info" block onClick={this.setWrite}>
-                                {20}
+                                {10}
                             </Button>
                         </Col>
                         <Col>
@@ -836,11 +836,13 @@ export function changedInput() {
     const formInput = document.getElementById('formInput');
     let word = get(formInput, 'value');
     word = word.toUpperCase();
-    if (word.length === 1) speak.call(this);
     let wordToLearn = english;
     if (learnPol) wordToLearn = polish;
     wordToLearn = wordToLearn.toUpperCase();
     if (!wordToLearn) this.repeatMistakes = true;
+    if (word.length === 1 && !mistake && wordToLearn.slice(0, word.length) === word) {
+        speak.call(this);
+    }
 
     if (wordToLearn === word || wordToLearn.length > MAX_WORD_LENGTH || !wordToLearn) {
         const isInMistake = this.mistakeArr.indexOf(learnNumber) > -1
@@ -882,6 +884,7 @@ export function changedInput() {
         if (mistake >= 2) {
             this.setState({record: 0});
         }
+        if (mistake <= 2) speak.call(this)
         this.setState({mistake: mistake + 1});
         if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
             this.mistakeArr.push(learnNumber);
