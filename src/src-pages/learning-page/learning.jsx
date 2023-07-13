@@ -829,6 +829,7 @@ export function changedInput() {
     const formInput = document.getElementById('formInput');
     let word = get(formInput, 'value');
     word = word.toUpperCase();
+    if (word.length === 1) speak.call(this);
     let wordToLearn = english;
     if (learnPol) wordToLearn = polish;
     wordToLearn = wordToLearn.toUpperCase();
