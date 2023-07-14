@@ -260,9 +260,9 @@ class LearningClass extends Component {
         speak.call(this);
     };
 
-    soundAndRepeat = () => {
+    soundAndRepeat = (arrayLength = this.state.newLearnNumber) => {
         this.getVoices();
-        this.getLearnArray(this.state.newLearnNumber);
+        this.getLearnArray(arrayLength);
         if (!this.learnArr) return;
         this.setEngAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'new', exampleLearning: 'example_sound_repeat'});
@@ -276,9 +276,9 @@ class LearningClass extends Component {
         localStorage.record = 0;
     };
 
-    speedRepeat = () => {
+    speedRepeat = (arrayLength  = this.state.newLearnNumber) => {
         this.soundAndRepeatCoef = 2.6;
-        this.soundAndRepeat();
+        this.soundAndRepeat(arrayLength);
     }
 
     setSpeedRepeat = () => {
@@ -300,7 +300,7 @@ class LearningClass extends Component {
             soundRus: false,
             newLearnNumber: 50
         });
-        this.speedRepeat();
+        this.speedRepeat(50);
     }
 
     setWrite = () => {
@@ -322,11 +322,11 @@ class LearningClass extends Component {
             soundRus: false,
             newLearnNumber: 10
         });
-        this.write();
+        this.write(10);
     }
 
-    write = () => {
-        this.getLearnArray(this.state.newLearnNumber);
+    write = (arrayLength = this.state.newLearnNumber) => {
+        this.getLearnArray(arrayLength);
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'write'});
         this.setEngAndTransl(this.state.learnNumber, MAX_WORD_LENGTH);
