@@ -160,7 +160,7 @@ class LearningClass extends Component {
     }
 
     handleKeyDown = (e) => {
-        if (e.keyCode === 17) speak.call(this)
+        if (e.keyCode === 18) speak.call(this)
     }
 
     updateLP = () => {
