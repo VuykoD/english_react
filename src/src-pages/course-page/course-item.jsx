@@ -122,7 +122,7 @@ export default class CourseItem extends Component {
 
     add = () => {
         const lastId = courseItems[courseItems.length-1].id;
-        const item = this.setItem(lastId, '_new');
+        const item = this.setItem(lastId + 1, '_new');
         courseItems.push(item);
         localStorage.courseItems = JSON.stringify(courseItems);
         this.items.push(item);
@@ -153,23 +153,23 @@ export default class CourseItem extends Component {
         const clearLocalstorage = get(content, `clearLocalstorage[${siteLang}]`);
         const {courseItems, isItemSelected} = this.state;
 
-        const row = (odd, item, key) => (
-            <ListGroup.Item variant={odd} key={item.id || key}>
+        const row = (odd, item) => (
+            <ListGroup.Item variant={odd} key={item.id}>
                 <Row className="unit-row">
                     <Col sm="1">
                         <Button
                             variant="info"
                             block
-                            onClick={item.id ? () => this.edit(item.id) : this.add}
+                            onClick={item.id !== '_new' ? () => this.edit(item.id) : this.add}
                         >
-                            {item.id ? item.id : '+'}
+                            {item.id !== '_new' ? item.id : '+'}
                         </Button>
                     </Col>
                     <Col>
                         <FormControl
                             type="text"
                             className="mr-sm-2"
-                            id={`row${item.id || ''}_eng`}
+                            id={`row${item.id}_eng`}
                             defaultValue={item.eng}
                         />
                     </Col>
@@ -177,7 +177,7 @@ export default class CourseItem extends Component {
                         <FormControl
                             type="text"
                             className="mr-sm-2"
-                            id={`row${item.id || ''}_pol`}
+                            id={`row${item.id}_pol`}
                             defaultValue={item.pol}
                         />
                     </Col>
@@ -185,7 +185,7 @@ export default class CourseItem extends Component {
                         <FormControl
                             type="text"
                             className="mr-sm-2"
-                            id={`row${item.id || ''}_transl`}
+                            id={`row${item.id}_transl`}
                             defaultValue={item.transl}
                         />
                     </Col>
@@ -230,9 +230,9 @@ export default class CourseItem extends Component {
                         <ListGroup>
                             {map(courseItems, (item, key) => {
                                 const odd = key & 1 ? 'light' : 'primary';
-                                return row(odd, item, key);
+                                return row(odd, item);
                             })}
-                            {row('light', {}, '_new')}
+                            {row('light', {id: '_new'})}
                         </ListGroup>
                     </Col>
                     <Col sm={1}>
