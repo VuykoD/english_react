@@ -98,7 +98,7 @@ export default class CourseItem extends Component {
 
     clearLocalstorage = () => {
         if (this.state.isItemSelected) {
-            this.items.map(item => {
+            map(this.items, item => {
                 const index = findIndex(this.localProgress, {'entity_id': item.id});
                 this.localProgress.splice(index,1);
             });
