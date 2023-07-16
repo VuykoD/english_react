@@ -58,12 +58,10 @@ export default class CourseItem extends Component {
         this.unitId = get(courseUnits, `[${this.unitIndex}].id`);
         this.unitName = get(courseUnits, `[${this.unitIndex}].name`);
         this.localItems = localStorage.course ? JSON.parse(localStorage.course) : [];
-        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
+        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
         let isItemSelected = false;
-        for (let i = localProgress.length; i > 0; i--) {
-            const index = get(localProgress, `[${i - 1}].entity`) === 'course' ?
-                findIndex(courseItems, {'id': get(localProgress, `[${i - 1}].entity_id`)}) :
-                -1;
+        for (let i = this.localProgress.length; i > 0; i--) {
+            const index = findIndex(courseItems, {'id': get(this.localProgress, `[${i - 1}].entity_id`)});
             if (+get(courseItems, `[${index}].unitId`) === +this.unitId) {
                 isItemSelected = true;
                 break;
@@ -87,27 +85,25 @@ export default class CourseItem extends Component {
             const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
             return alert(alreadySelected);
         }
-        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
 
         const addedProgress = map(this.items, (item) => {
-            return (
-                {
-                    entity: 'course',
-                    entity_id: +item.id
-                }
-            )
+            return { entity_id: +item.id }
         });
-        const newProgress = localProgress ?
-            [...localProgress, ...addedProgress] :
+        this.localProgress = this.localProgress ?
+            [...this.localProgress, ...addedProgress] :
             [...addedProgress];
         this.setState({isItemSelected: true});
-        localStorage.progress = JSON.stringify(newProgress);
+        localStorage.progress = JSON.stringify(this.localProgress);
     };
 
     clearLocalstorage = () => {
         if (this.state.isItemSelected) {
+            this.items.map(item => {
+                const index = findIndex(this.localProgress, {'entity_id': item.id});
+                this.localProgress.splice(index,1);
+            });
+            localStorage.progress = JSON.stringify(this.localProgress);
             this.setState({isItemSelected: false});
-            // localStorage.progress = ''; TODO remove only current course but not all
         }
     };
 
