@@ -943,7 +943,7 @@ const courseItems =
             "unitId": 1002,
             "eng": "Just a moment",
             "pol": "Chwileczkę",
-            "transl": "Момент"
+            "transl": "хвилинку"
         },
         {
             "id": 10043,
@@ -1937,7 +1937,7 @@ const courseItems =
             "unitId": 1012,
             "eng": "I’d like a single room, please",
             "pol": "Poproszę o pokój jednoosobowy",
-            "transl": "Я бы хотел одноместный номер"
+            "transl": "Я би попросив одномісну кімнату"
         },
         {
             "id": 10231,
@@ -4933,7 +4933,7 @@ const courseItems =
             "unitId": 2003,
             "eng": "",
             "pol": "Pani córki są już naprawdę duże",
-            "transl": "Ваши дочери уж очень велики"
+            "transl": "Ваши дочери уж очень велики (офіційно до жінки)"
         },
         {
             "id": 2170,
@@ -5955,7 +5955,7 @@ const courseItems =
             "unitId": 2005,
             "eng": "",
             "pol": "Co robisz zazwyczaj latem?",
-            "transl": "Что ты обычно делаешь летом?"
+            "transl": "Що ти робиш зазвичай влітку?"
         },
         {
             "id": 2356,
@@ -6599,7 +6599,7 @@ const courseItems =
             "unitId": 2006,
             "eng": "",
             "pol": "Gdzie polecimy w tym roku na wakacje?",
-            "transl": "Куди ми поїдемо у вiдпустку цього року?"
+            "transl": "Куди ми поїдемо цього року на відпочинок?"
         },
         {
             "id": 2474,
@@ -6773,8 +6773,8 @@ const courseItems =
             "id": 2501,
             "unitId": 2006,
             "eng": "",
-            "pol": "Już jestem mniej więcej gotowy.",
-            "transl": "Я вже бiльш-менш готовий."
+            "pol": "Już jestem mniej więcej gotowy",
+            "transl": "Я вже менш бiльш готовий"
         },
         {
             "id": 2503,
@@ -6857,7 +6857,7 @@ const courseItems =
             "id": 2519,
             "unitId": 2006,
             "eng": "",
-            "pol": "Myślę, że to zadanie jest dla nich bardzo łatwo.",
+            "pol": "myślę, że to zadanie jest dla nich bardzo łatwo",
             "transl": "Я думаю, що це завдання для них дуже легке."
         },
         {
@@ -7851,7 +7851,7 @@ const courseItems =
             "id": 2688,
             "unitId": 2008,
             "eng": "",
-            "pol": "Zarezerwuję pokój dla trzech osób.",
+            "pol": "zarezerwuję pokój dla trzech osób",
             "transl": "Забронюю номер для трьох осiб"
         },
         {
@@ -8173,7 +8173,7 @@ const courseItems =
             "id": 2740,
             "unitId": 2008,
             "eng": "",
-            "pol": "Jedna butelka wina dla czterech osób? Żartujesz?",
+            "pol": "Jedna butelka wina dla czterech osób?",
             "transl": "Одна пляшка вина на чотирьох осiб?"
         },
         {
