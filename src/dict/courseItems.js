@@ -8231,6 +8231,27 @@ const courseItems =
             "eng": "",
             "pol": "Obudziłam się, wstałam z łóżka, umyłam zęby i zadzwoniłam do mojego chłopaka",
             "transl": "Я прокинулася, встала з ліжка, почистила зуби і подзвонила своєму хлопцю"
+        },
+        {
+            "id": 2749,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "więc zaczynamy",
+            "transl": "Отже, починаємо"
+        },
+        {
+            "id": 2750,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "dziś zaspałem do pracy, więc nie zjadłem śniadania",
+            "transl": "Сьогодні я проспав до роботи, тому не снідав"
+        },
+        {
+            "id": 2751,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "więc",
+            "transl": "тому, ітак, значить, таким чином"
         }
     ]
 

@@ -138,7 +138,6 @@ export default class CourseItem extends Component {
 
     edit = (id) => {
         const item = this.setItem(id, id);
-        console.log(item);
         const courseItemsIndex = findIndex(courseItems, {'id': id});
         const thisItemsIndex = findIndex(this.items, {'id': id});
         if (courseItemsIndex > -1) {
