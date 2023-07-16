@@ -107,12 +107,48 @@ export default class CourseItem extends Component {
     clearLocalstorage = () => {
         if (this.state.isItemSelected) {
             this.setState({isItemSelected: false});
-            localStorage.progress = '';
+            // localStorage.progress = ''; TODO remove only current course but not all
         }
     };
 
-    add() {
+    setItem(id, elementId){
+        const eng = get(document.getElementById(`row${elementId}_eng`), 'value');
+        const pol = get(document.getElementById(`row${elementId}_pol`), 'value');
+        const transl = get(document.getElementById(`row${elementId}_transl`), 'value');
+        return {
+            id,
+            unitId: 1042,
+            eng,
+            pol,
+            transl
+        };
+    }
 
+    add = () => {
+        const lastId = courseItems[courseItems.length-1].id;
+        const item = this.setItem(lastId, '_new');
+        courseItems.push(item);
+        localStorage.courseItems = JSON.stringify(courseItems);
+        this.items.push(item);
+        this.setState({ courseItems: this.items });
+        document.getElementById("row_new_eng").value = '';
+        document.getElementById("row_new_pol").value = '';
+        document.getElementById("row_new_transl").value = '';
+    }
+
+    edit = (id) => {
+        const item = this.setItem(id, id);
+        console.log(item);
+        const courseItemsIndex = findIndex(courseItems, {'id': id});
+        const thisItemsIndex = findIndex(this.items, {'id': id});
+        if (courseItemsIndex > -1) {
+            courseItems[courseItemsIndex] = item;
+            localStorage.courseItems = JSON.stringify(courseItems);
+        }
+        if (thisItemsIndex > -1) {
+            this.items[thisItemsIndex] = item;
+            this.setState({ courseItems: this.items });
+        }
     }
 
     render() {
@@ -126,25 +162,19 @@ export default class CourseItem extends Component {
             <ListGroup.Item variant={odd} key={item.id || key}>
                 <Row className="unit-row">
                     <Col sm="1">
-                        {item.id ? (
-                            <FormControl
-                                type="text"
-                                defaultValue={item.id}
-                                disabled
-                                id={`row${key + 1}_id`}
-                            />
-                        ) : (
-                            <Button variant="info" block onClick={this.add}>
-                                +
-                            </Button>
-
-                        )}
+                        <Button
+                            variant="info"
+                            block
+                            onClick={item.id ? () => this.edit(item.id) : this.add}
+                        >
+                            {item.id ? item.id : '+'}
+                        </Button>
                     </Col>
                     <Col>
                         <FormControl
                             type="text"
                             className="mr-sm-2"
-                            id={`row${key + 1}_eng`}
+                            id={`row${item.id || ''}_eng`}
                             defaultValue={item.eng}
                         />
                     </Col>
@@ -152,7 +182,7 @@ export default class CourseItem extends Component {
                         <FormControl
                             type="text"
                             className="mr-sm-2"
-                            id={`row${key + 1}_pol`}
+                            id={`row${item.id || ''}_pol`}
                             defaultValue={item.pol}
                         />
                     </Col>
@@ -160,7 +190,7 @@ export default class CourseItem extends Component {
                         <FormControl
                             type="text"
                             className="mr-sm-2"
-                            id={`row${key + 1}_transl`}
+                            id={`row${item.id || ''}_transl`}
                             defaultValue={item.transl}
                         />
                     </Col>
@@ -207,7 +237,7 @@ export default class CourseItem extends Component {
                                 const odd = key & 1 ? 'light' : 'primary';
                                 return row(odd, item, key);
                             })}
-                            {row('light', {}, 'new')}
+                            {row('light', {}, '_new')}
                         </ListGroup>
                     </Col>
                     <Col sm={1}>
