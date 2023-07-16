@@ -29,6 +29,12 @@ const courseUnits = [
         url: "/youtube-5",
         name: "youtube-5"
     },
+    {
+        id: 1042,
+        courseId: 5,
+        url: "/own",
+        name: "own"
+    },
     // murphy
     // {
     //     id: 1,

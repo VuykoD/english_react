@@ -1,7 +1,7 @@
 const courseNames = [
     {
         id: 5,
-        name: 'Youtube',
+        name: 'Youtube + own',
         active: true,
     },
     {

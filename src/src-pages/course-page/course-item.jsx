@@ -111,15 +111,66 @@ export default class CourseItem extends Component {
         }
     };
 
+    add() {
+
+    }
+
     render() {
         const {siteLang = ''} = this.props.store;
         const select = get(content, `select[${siteLang}]`);
         const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
         const clearLocalstorage = get(content, `clearLocalstorage[${siteLang}]`);
         const {courseItems, isItemSelected} = this.state;
+
+        const row = (odd, item, key) => (
+            <ListGroup.Item variant={odd} key={item.id || key}>
+                <Row className="unit-row">
+                    <Col sm="1">
+                        {item.id ? (
+                            <FormControl
+                                type="text"
+                                defaultValue={item.id}
+                                disabled
+                                id={`row${key + 1}_id`}
+                            />
+                        ) : (
+                            <Button variant="info" block onClick={this.add}>
+                                +
+                            </Button>
+
+                        )}
+                    </Col>
+                    <Col>
+                        <FormControl
+                            type="text"
+                            className="mr-sm-2"
+                            id={`row${key + 1}_eng`}
+                            defaultValue={item.eng}
+                        />
+                    </Col>
+                    <Col>
+                        <FormControl
+                            type="text"
+                            className="mr-sm-2"
+                            id={`row${key + 1}_pol`}
+                            defaultValue={item.pol}
+                        />
+                    </Col>
+                    <Col>
+                        <FormControl
+                            type="text"
+                            className="mr-sm-2"
+                            id={`row${key + 1}_transl`}
+                            defaultValue={item.transl}
+                        />
+                    </Col>
+                </Row>
+            </ListGroup.Item>
+        );
+
         return (
             <Container>
-                <Row>
+                <Row className="unit-block">
                     <Col sm={1}>
                         {<div><img src={require("../../images/paint.png")} alt="" className="paint-left"/></div>}
                     </Col>
@@ -154,33 +205,9 @@ export default class CourseItem extends Component {
                         <ListGroup>
                             {map(courseItems, (item, key) => {
                                 const odd = key & 1 ? 'light' : 'primary';
-                                return (
-                                    <ListGroup.Item variant={odd} key={item.id}>
-                                        <Row className="unit-row">
-                                            <Col sm="1" className="display-none">
-                                                <FormControl
-                                                    wtype="text"
-                                                    defaultValue={item.id}
-                                                    disabled
-                                                    id={`row${key + 1}_id`}
-                                                />
-                                            </Col>
-                                            <Col>
-                                                <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_eng`}
-                                                             defaultValue={item.eng}/>
-                                            </Col>
-                                            <Col>
-                                                <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_pol`}
-                                                             defaultValue={item.pol}/>
-                                            </Col>
-                                            <Col>
-                                                <FormControl type="text" className="mr-sm-2" id={`row${key + 1}_transl`}
-                                                             defaultValue={item.transl}/>
-                                            </Col>
-                                        </Row>
-                                    </ListGroup.Item>
-                                )
+                                return row(odd, item, key);
                             })}
+                            {row('light', {}, 'new')}
                         </ListGroup>
                     </Col>
                     <Col sm={1}>

@@ -6,6 +6,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 1;
     background: linear-gradient(rgb(54, 150, 86), rgb(64, 172, 98));
 }
 
