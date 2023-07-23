@@ -9,6 +9,7 @@ import FormControl from "react-bootstrap/FormControl";
 import '../../scc/unit.css';
 import '../../scc/course.css'
 import courseUnits from '../../dict/courseUnits';
+import { uniqWords } from './uniqWords';
 import getCourseItems from '../../dict/getCourseItems';
 
 let courseItems = getCourseItems();
@@ -45,6 +46,14 @@ export const content = {
     clearLocalstorage: {
         ru: "Убрать всё из изучения",
         ukr: "Видалити все з вивчення",
+    },
+    uniqPol: {
+        ru: "Уникальность в польськом",
+        ukr: "Унікальність в польському",
+    },
+    uniqEng: {
+        ru: "Уникальность в английском",
+        ukr: "Унікальність на англійському",
     },
 };
 
@@ -130,6 +139,7 @@ export default class CourseItem extends Component {
         document.getElementById("row_new_eng").value = '';
         document.getElementById("row_new_pol").value = '';
         document.getElementById("row_new_transl").value = '';
+        this.clearUniq();
     }
 
     edit = (id) => {
@@ -146,11 +156,38 @@ export default class CourseItem extends Component {
         }
     }
 
+    clearUniq() {
+        const div = document.getElementById('uniqueArr');
+        div.innerHTML = '';
+        return div
+    }
+
+    uniqPol = () => {
+        const pol = get(document.getElementById(`row_new_pol`), 'value');
+        const uniqArr = uniqWords(courseItems, pol, 'pol');
+        console.log(uniqArr);
+        const div = this.clearUniq();
+        map(uniqArr, it => {
+            const p = document.createElement('p');
+            if (it.source === 'unique') {
+                p.style.background = '#4696c7';
+            }
+            p.textContent = `${it.word} => ${it.source}`;
+            div.appendChild(p);
+        })
+    }
+
+    uniqEng = () => {
+        console.log(courseItems);
+    }
+
     render() {
         const {siteLang = ''} = this.props.store;
         const select = get(content, `select[${siteLang}]`);
         const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
         const clearLocalstorage = get(content, `clearLocalstorage[${siteLang}]`);
+        const uniqPol = get(content, `uniqPol[${siteLang}]`);
+        const uniqEng = get(content, `uniqEng[${siteLang}]`);
         const {courseItems, isItemSelected} = this.state;
 
         const row = (odd, item) => (
@@ -189,6 +226,32 @@ export default class CourseItem extends Component {
                             defaultValue={item.transl}
                         />
                     </Col>
+                </Row>
+            </ListGroup.Item>
+        );
+        const rowWithButtons = (
+            <ListGroup.Item variant='primary' key='rowWithButtons'>
+                <Row className="unit-row">
+                    <Col sm="1"/>
+                    <Col>
+                        <Button
+                            variant="light"
+                            block
+                            onClick={this.uniqEng}
+                        >
+                            {uniqEng}
+                        </Button>
+                    </Col>
+                    <Col>
+                        <Button
+                            variant="light"
+                            block
+                            onClick={this.uniqPol}
+                        >
+                            {uniqPol}
+                        </Button>
+                    </Col>
+                    <Col/>
                 </Row>
             </ListGroup.Item>
         );
@@ -233,6 +296,8 @@ export default class CourseItem extends Component {
                                 return row(odd, item);
                             })}
                             {row('light', {id: '_new'})}
+                            {rowWithButtons}
+                            <div id='uniqueArr'/>
                         </ListGroup>
                     </Col>
                     <Col sm={1}>

@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import courseUnits from '../../dict/courseUnits';
 import courseNames from '../../dict/courseNames';
 import getCourseItems from '../../dict/getCourseItems';
+import uniqWordsStatistic from './uniqWords';
 
 import '../../scc/course.css';
 
@@ -63,34 +64,8 @@ export default class Course extends Component {
 
     render() {
         const { selectedCourses } = this.state;
-        const courseItemsIds = [];
-        const uniqueWords = [];
-        const phraseWithUniqueWords = [];
-        const arrWithNewWords = [];
-        const arrWithoutNewWords = [];
-        map(courseItems, it => {
-            const isIdExist = courseItemsIds.find(element => element === it.id);
-            if (!isIdExist) {
-                courseItemsIds.push(it.id)
-            } else {
-                alert('there is duplicate id' + it.id)
-            }
-            const polCleared = it.pol.replace(/[.,%?!1-9"]/g, '').trim().toLowerCase();
-            const words = polCleared.split(' ');
-            let noOneNewWords = true;
-            map(words, word => {
-                let wordCleared = word.replace(/[\s.,%?!1-9"]/g, '').toLowerCase();
-                const isWordExist = uniqueWords.find(element => element === wordCleared);
-                if (!isWordExist) {
-                    noOneNewWords = false;
-                    uniqueWords.push(wordCleared);
-                    arrWithNewWords.push({id: it.id, word: wordCleared});
-                }
-                const ispPhraseWithUniqueWordsExist = phraseWithUniqueWords.find(element => element === it.id);
-                if (!ispPhraseWithUniqueWordsExist) phraseWithUniqueWords.push(it.id)
-            });
-            if (noOneNewWords) arrWithoutNewWords.push(it.id)
-        })
+        const arrWithNewWords = uniqWordsStatistic(courseItems).arrWithNewWords;
+        const arrWithoutNewWords = uniqWordsStatistic(courseItems).arrWithoutNewWords;
         console.log(arrWithNewWords, arrWithoutNewWords);
 
         return (
