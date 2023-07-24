@@ -131,8 +131,10 @@ export default class CourseItem extends Component {
     }
 
     add = () => {
-        const lastId = courseItems[courseItems.length-1].id;
-        const item = this.setItem(lastId + 1, '_new');
+        const idsArr= [];
+        map(courseItems, it => idsArr.push(it.id))
+        const maxId = Math.max(...idsArr);
+        const item = this.setItem(maxId + 1, '_new');
         courseItems.push(item);
         localStorage.courseItems = JSON.stringify(courseItems);
         this.items.push(item);
