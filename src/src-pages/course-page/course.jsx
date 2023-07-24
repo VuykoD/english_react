@@ -76,6 +76,10 @@ export default class Course extends Component {
         }
     };
 
+    collapse (courseKey) {
+        console.log(courseKey);
+    }
+
     render() {
         const { siteLang } = this.props.store;
         const expandContent = get(content, `expandContent[${siteLang}]`);
@@ -92,11 +96,12 @@ export default class Course extends Component {
                             <Fragment key={courseKey}>
                                 <h1>{course.name}</h1>
                                 <Accordion
-                                    defaultActiveKey={courseKey}
+                                    defaultActiveKey={courseKey === 0 ? courseKey : null}
                                 >
                                     <Card>
                                         <Accordion.Toggle
                                             as={Button}
+                                            onClick={() => this.collapse(courseKey)}
                                             variant="info"
                                             eventKey={courseKey}
                                         >
