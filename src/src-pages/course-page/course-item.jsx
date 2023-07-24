@@ -116,13 +116,14 @@ export default class CourseItem extends Component {
         }
     };
 
-    setItem(id, elementId){
+    setItem = (id, elementId)=> {
+        const unitId = get(this.items, '[0].unitId');
         const eng = get(document.getElementById(`row${elementId}_eng`), 'value');
         const pol = get(document.getElementById(`row${elementId}_pol`), 'value');
         const transl = get(document.getElementById(`row${elementId}_transl`), 'value');
         return {
             id,
-            unitId: 1042,
+            unitId,
             eng,
             pol,
             transl
