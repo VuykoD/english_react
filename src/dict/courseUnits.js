@@ -32,8 +32,26 @@ const courseUnits = [
     {
         id: 1042,
         courseId: 5,
-        url: "/own",
-        name: "own"
+        url: "/youtube-6",
+        name: "youtube-6"
+    },
+    {
+        id: 700,
+        courseId: 7,
+        url: "/grammar-1",
+        name: "Родовий відмінок"
+    },
+    {
+        id: 701,
+        courseId: 7,
+        url: "/grammar-2",
+        name: "Давальний відмінок"
+    },
+    {
+        id: 702,
+        courseId: 7,
+        url: "/grammar-3",
+        name: "Орудний відмінок"
     },
     // murphy
     // {

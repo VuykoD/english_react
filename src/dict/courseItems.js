@@ -8255,14 +8255,14 @@ const courseItems =
         },
         {
             "id": 2752,
-            "unitId": 1042,
+            "unitId": 702,
             "eng": "",
             "pol": "Pojadę na wakacje statkiem",
             "transl": "Орудний вiдмiнок (nadrzędnik) жiночий закiнчення - ą, чоловiчий та середній -em. Я їду у відпустку на кораблі"
         },
         {
             "id": 2753,
-            "unitId": 1042,
+            "unitId": 702,
             "eng": "",
             "pol": "Pojadę metrem do pracy",
             "transl": "Орудний вiдмiнок (nadrzędnik) жiночий закiнчення - ą, чоловiчий та середній -em. Я поїду на роботу на метро"
