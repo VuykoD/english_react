@@ -12,7 +12,7 @@ const courseItems =
             "unitId": 1037,
             "eng": "",
             "pol": "wcale nie",
-            "transl": "нисколько"
+            "transl": "зовсім ні"
         },
         {
             "id": 10703,
@@ -40,7 +40,7 @@ const courseItems =
             "unitId": 1037,
             "eng": "",
             "pol": "czy ty to widzisz?",
-            "transl": "Вы видите это?"
+            "transl": "чи ти бачиш це?"
         },
         {
             "id": 10707,
@@ -214,8 +214,8 @@ const courseItems =
             "id": 1731,
             "unitId": 1038,
             "eng": "",
-            "pol": "mandaty albo kary albo grzywny",
-            "transl": "штрафы"
+            "pol": "mandaty, kary, grzywny",
+            "transl": "штрафи, штрафи, штрафи"
         },
         {
             "id": 1732,
@@ -264,7 +264,7 @@ const courseItems =
             "unitId": 1038,
             "eng": "",
             "pol": "zapamiętaj to sobie raz na zawsze",
-            "transl": "запомни это навсегда"
+            "transl": "запам'ятай це собі раз і назавжди"
         },
         {
             "id": 1740,
@@ -494,8 +494,8 @@ const courseItems =
             "id": 1772,
             "unitId": 1040,
             "eng": "",
-            "pol": "oni nie mieli czasu",
-            "transl": "у них не было времени"
+            "pol": "nie mieli czasu",
+            "transl": "вони не мали часу"
         },
         {
             "id": 1773,
@@ -964,7 +964,7 @@ const courseItems =
             "unitId": 1003,
             "eng": "Would you take a message please?",
             "pol": "Czy mógłbyś przekazać wiadomość?",
-            "transl": "Не могли бы вы принять сообщение?"
+            "transl": "Чи не могли б ви передати повідомлення?"
         },
         {
             "id": 10047,
@@ -1720,7 +1720,7 @@ const courseItems =
             "unitId": 1010,
             "eng": "I’m not really into it, but thanks for asking",
             "pol": "Nie bardzo mi się to podoba, ale dzięki za pytanie",
-            "transl": "мне это не очень нравится, но спасибо за вопрос"
+            "transl": "Мені це не дуже подобається, але дякую, що запитали"
         },
         {
             "id": 10192,
@@ -1993,7 +1993,7 @@ const courseItems =
             "unitId": 1013,
             "eng": "Can we pack our things now?",
             "pol": "Czy możemy już spakować nasze rzeczy?",
-            "transl": "Можем ли мы уже упаковать наши вещи?"
+            "transl": "Чи можемо вже пакувати наші речі?"
         },
         {
             "id": 10246,
@@ -2091,7 +2091,7 @@ const courseItems =
             "unitId": 1013,
             "eng": "Can you speak louder, please?",
             "pol": "Czy możesz mówić głośniej, proszę?",
-            "transl": "Можешь говорить громче, пожалуйста?"
+            "transl": "чи можете говорити голосніше, будь ласка?"
         },
         {
             "id": 10263,
@@ -2154,7 +2154,7 @@ const courseItems =
             "unitId": 1014,
             "eng": "Howdy",
             "pol": "Cześć",
-            "transl": "Привет"
+            "transl": "Привіт"
         },
         {
             "id": 10279,
@@ -2294,7 +2294,7 @@ const courseItems =
             "unitId": 1015,
             "eng": "I’m looking for a leather handbag",
             "pol": "Szukam skórzanej torebki",
-            "transl": "Я ищу кожаную сумку"
+            "transl": "Шукаю шкіряну сумочку"
         },
         {
             "id": 10305,
@@ -3127,7 +3127,7 @@ const courseItems =
             "unitId": 1029,
             "eng": "I’d love to – but can’t",
             "pol": "Bardzo bym chciał, ale nie mogę",
-            "transl": "Я бы с удовольствием, но не могу"
+            "transl": "дуже б хотів, але не можу"
         },
         {
             "id": 10549,
@@ -3743,7 +3743,7 @@ const courseItems =
             "unitId": 300,
             "eng": "future tenses",
             "pol": "czasy przyszłe",
-            "transl": "будущее время"
+            "transl": "часи майбутні"
         },
         {
             "id": 3029,
@@ -3771,7 +3771,7 @@ const courseItems =
             "unitId": 301,
             "eng": "the students swap roles",
             "pol": "uczniowie zamieniają się rolami",
-            "transl": "студенты меняются ролями"
+            "transl": "учні міняються ролями"
         },
         {
             "id": 3033,
@@ -3827,7 +3827,7 @@ const courseItems =
             "unitId": 302,
             "eng": "taking things back to the shop",
             "pol": "zabieranie rzeczy z powrotem do sklepu",
-            "transl": "вернуть вещи в магазин"
+            "transl": "Повернення речей у магазин"
         },
         {
             "id": 3043,
@@ -3897,7 +3897,7 @@ const courseItems =
             "unitId": 302,
             "eng": "be polite",
             "pol": "bądź uprzejmy",
-            "transl": "быть вежливым"
+            "transl": "бути ввічливим"
         },
         {
             "id": 3053,
@@ -3911,7 +3911,7 @@ const courseItems =
             "unitId": 303,
             "eng": "hear and match them",
             "pol": "posłuchaj i dopasuj je",
-            "transl": "услышать и сопоставить их"
+            "transl": "послухайте та зіставте їх"
         },
         {
             "id": 3055,
@@ -4317,7 +4317,7 @@ const courseItems =
             "unitId": 2002,
             "eng": "",
             "pol": "Jest ciepło, są już wakacje, może urlop to dobry pomysł",
-            "transl": "Тепло, каникулы, может, отпуск – это хорошая идея"
+            "transl": "тепло, наставали вже канікули, може відпустка - гарна ідея"
         },
         {
             "id": 2058,
@@ -4429,7 +4429,7 @@ const courseItems =
             "unitId": 2002,
             "eng": "",
             "pol": "Tutaj jest bardzo wąska droga",
-            "transl": "Здесь очень узкая дорога"
+            "transl": "Тут дуже вузька дорога"
         },
         {
             "id": 2074,
@@ -4478,7 +4478,7 @@ const courseItems =
             "unitId": 2002,
             "eng": "",
             "pol": "Już wracam, niedługo tam będę",
-            "transl": "Уже возвращаюсь, скоро буду"
+            "transl": "Уже возвращаюсь, скоро там буду"
         },
         {
             "id": 2082,
@@ -4722,8 +4722,8 @@ const courseItems =
             "id": 2128,
             "unitId": 2002,
             "eng": "",
-            "pol": "Z czym jest ten ryż? Z jogurtem?",
-            "transl": "С чем этот черт? С йогуртом?"
+            "pol": "Z czym jest ten ryż?",
+            "transl": "З чим цей рис?"
         },
         {
             "id": 2129,
@@ -4737,7 +4737,7 @@ const courseItems =
             "unitId": 2002,
             "eng": "",
             "pol": "Tym razem jest dość chłodno",
-            "transl": "На этот раз достаточно холодно"
+            "transl": "Цього разу досить прохолодно"
         },
         {
             "id": 2132,
@@ -5010,7 +5010,7 @@ const courseItems =
             "unitId": 2003,
             "eng": "",
             "pol": "Cały dzień patrzę na tego kota",
-            "transl": "Целый день смотрю на кота"
+            "transl": "Я цілий день дивлюся на цього кота"
         },
         {
             "id": 2182,
@@ -5059,7 +5059,7 @@ const courseItems =
             "unitId": 2003,
             "eng": "",
             "pol": "Nie wiem co robić",
-            "transl": "Я не знаю, что делать"
+            "transl": "я не знаю що робити"
         },
         {
             "id": 2190,
@@ -5157,7 +5157,7 @@ const courseItems =
             "unitId": 2003,
             "eng": "",
             "pol": "Na kogo czekasz na przystanku?",
-            "transl": "Кого ты ждешь остановки?"
+            "transl": "на кого ти чекаєш на зупинці?"
         },
         {
             "id": 2213,
@@ -5206,7 +5206,7 @@ const courseItems =
             "unitId": 2003,
             "eng": "",
             "pol": "Wie pani, gdzie jest jakieś centrum handlowe?",
-            "transl": "Вы знаете, где есть торговый центр? (Официально к женщине)"
+            "transl": "знаєте, де є торговий центр? (Офіційно для жінки)"
         },
         {
             "id": 2224,
@@ -5465,7 +5465,7 @@ const courseItems =
             "unitId": 2004,
             "eng": "",
             "pol": "Nawiasem mówiąc, mówisz po rosyjsku?",
-            "transl": "Кстати, ты говоришь по-русски?"
+            "transl": "До речі, ти розмовляєш російською?"
         },
         {
             "id": 2272,
@@ -5864,7 +5864,7 @@ const courseItems =
             "unitId": 2004,
             "eng": "",
             "pol": "Dzień dobry, znowu tutaj jestem",
-            "transl": "Доброе утро, я снова здесь"
+            "transl": "Добрий день, я знову тут"
         },
         {
             "id": 2330,
@@ -5906,7 +5906,7 @@ const courseItems =
             "unitId": 2004,
             "eng": "",
             "pol": "Ale dziwnie smakuje to piwo",
-            "transl": "Но это пиво удивительно вкусно!"
+            "transl": "Але це пиво має дивний смак"
         },
         {
             "id": 2344,
@@ -5920,7 +5920,7 @@ const courseItems =
             "unitId": 2005,
             "eng": "",
             "pol": "Chyba tam nie pójdę",
-            "transl": "Наверное, туда не пойду"
+            "transl": "Мабуть, я туди піду"
         },
         {
             "id": 2351,
@@ -5962,7 +5962,7 @@ const courseItems =
             "unitId": 2005,
             "eng": "",
             "pol": "Na wsi zazwyczaj jest mało ludzi",
-            "transl": "Обычно в деревне мало людей"
+            "transl": "на селі зазвичай мало людей"
         },
         {
             "id": 2357,
@@ -6067,7 +6067,7 @@ const courseItems =
             "unitId": 2005,
             "eng": "",
             "pol": "We wtorek tam idę",
-            "transl": "Еду туда во вторник"
+            "transl": "у вівторок їду туди"
         },
         {
             "id": 2374,
@@ -6130,7 +6130,7 @@ const courseItems =
             "unitId": 2005,
             "eng": "",
             "pol": "Jesienią nasze miasto jest bardzo piękne",
-            "transl": "Наш город очень хорош осенью"
+            "transl": "восени наше місто дуже гарне"
         },
         {
             "id": 2384,
@@ -6249,7 +6249,7 @@ const courseItems =
             "unitId": 2005,
             "eng": "",
             "pol": "To zabawne, że ten ser smakuje jak truskawka",
-            "transl": "Интересно, что этот сыр подходит как клубника"
+            "transl": "це дивно, що цей сир на смак нагадує полуницю"
         },
         {
             "id": 2405,
@@ -6550,13 +6550,13 @@ const courseItems =
             "unitId": 2006,
             "eng": "",
             "pol": "Wydaje mi się, że Marek mnie nie lubi",
-            "transl": "Менi здається, що я не подобаюся Марковi"
+            "transl": "здається менi, що я не подобаюся Марковi"
         },
         {
             "id": 2464,
             "unitId": 2006,
             "eng": "",
-            "pol": "Wydaje m się, że jutro będzie padać deszcz",
+            "pol": "Wydaje mi się, że jutro będzie padać deszcz",
             "transl": "Менi здається, завтра буде йти дощ"
         },
         {
@@ -6571,7 +6571,7 @@ const courseItems =
             "unitId": 2006,
             "eng": "",
             "pol": "W nocy rzadko chodzę po mieście",
-            "transl": "Я рiдко гуляю вночi мiстом"
+            "transl": "вночi я рiдко гуляю мiстом"
         },
         {
             "id": 2468,
@@ -6682,7 +6682,7 @@ const courseItems =
             "id": 2487,
             "unitId": 2006,
             "eng": "",
-            "pol": "Moje dzieci chodzą jeszcze do szkoły.",
+            "pol": "Moje dzieci chodzą jeszcze do szkoły",
             "transl": "Мої дiти ще ходять до школи."
         },
         {
@@ -6717,7 +6717,7 @@ const courseItems =
             "id": 2493,
             "unitId": 2006,
             "eng": "",
-            "pol": "Nożyczki czasami przydają się w domu.",
+            "pol": "Nożyczki czasami przydają się w domu",
             "transl": "Ножицi iнодi знадобляться вдома."
         },
         {
@@ -7313,7 +7313,7 @@ const courseItems =
             "unitId": 2007,
             "eng": "",
             "pol": "Ja ci dam tę książkę a ty mi pożyczysz swoją",
-            "transl": "Я дам тобi цю книгу, а ти позичиш менi свою"
+            "transl": "Я тобi дам цю книгу, а ти позичиш менi свою"
         },
         {
             "id": 2598,
@@ -7452,8 +7452,8 @@ const courseItems =
             "id": 2623,
             "unitId": 2007,
             "eng": "",
-            "pol": "Pierwsze miejsce!? Jestem z ciebie dumna",
-            "transl": "Перше мiсце!? Я пишаюся тобою"
+            "pol": "Jestem z ciebie dumna",
+            "transl": "Я пишаюся тобою"
         },
         {
             "id": 2624,
@@ -7579,7 +7579,7 @@ const courseItems =
             "unitId": 2007,
             "eng": "",
             "pol": "Już dawno nie czułam się tak dobrze",
-            "transl": "Менi давно не було так добре"
+            "transl": "вже давно не почувалася так добре"
         },
         {
             "id": 2647,
@@ -7796,7 +7796,7 @@ const courseItems =
             "unitId": 2008,
             "eng": "",
             "pol": "Wysłałam CV, ale niestety bez zdjęcia",
-            "transl": "Я вiдправив своє резюме, але на жаль без фото"
+            "transl": "Я вiдправила своє резюме, але на жаль без фото"
         },
         {
             "id": 2680,
@@ -7865,7 +7865,7 @@ const courseItems =
             "id": 2691,
             "unitId": 2008,
             "eng": "",
-            "pol": "Nie przeczytam tej książki dzisiaj.",
+            "pol": "Nie przeczytam tej książki dzisiaj",
             "transl": "Я не прочитаю цю книгу сьогоднi"
         },
         {
@@ -8012,7 +8012,7 @@ const courseItems =
             "id": 2714,
             "unitId": 2008,
             "eng": "",
-            "pol": "Sprzedałem swój samochód. Już był stary.",
+            "pol": "Sprzedałem swój samochód",
             "transl": "Я продав свою машину"
         },
         {
@@ -8117,8 +8117,8 @@ const courseItems =
             "id": 2732,
             "unitId": 2008,
             "eng": "",
-            "pol": "Mój telefon wczoraj nie działał, ale dzisiaj już działa",
-            "transl": "Вчора мiй телефон не працював, а сьогоднi вже працює"
+            "pol": "Mój telefon wczoraj nie działał, a dzisiaj już działa",
+            "transl": "мiй телефон вчора не працював, а сьогоднi вже працює"
         },
         {
             "id": 2733,
@@ -8252,6 +8252,20 @@ const courseItems =
             "eng": "",
             "pol": "więc",
             "transl": "тому, ітак, значить, таким чином"
+        },
+        {
+            "id": 2752,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "Pojadę na wakacje statkiem",
+            "transl": "Орудний вiдмiнок (nadrzędnik) жiночий закiнчення - ą, чоловiчий та середній -em. Я їду у відпустку на кораблі"
+        },
+        {
+            "id": 2753,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "Pojadę metrem do pracy",
+            "transl": "Орудний вiдмiнок (nadrzędnik) жiночий закiнчення - ą, чоловiчий та середній -em. Я поїду на роботу на метро"
         }
     ]
 
