@@ -81,12 +81,13 @@ export default class Course extends Component {
             localStorage.progress = JSON.stringify(progress);
         }
     };
+
     addCourse =()=> {
         const idsArr= [];
         map(courseNames, it => idsArr.push(it.id))
         const courseId = Math.max(...idsArr);
         const courseName = get(document.getElementById("course_name"), 'value');
-        if (!courseId || !courseId){
+        if (!courseId || !courseName){
             const { siteLang } = this.props.store;
             const notAllFieldsAreFilled = get(content, `expandContent[${siteLang}]`);
             alert(notAllFieldsAreFilled);
@@ -98,7 +99,30 @@ export default class Course extends Component {
         localStorage.courseNames = JSON.stringify(courseNames);
         document.getElementById("course_name").value = '';
         this.setState({courseNames});
-    }
+    };
+
+    addUnit =(courseId)=> {
+        const idsArr= [];
+        map(courseUnits, it => idsArr.push(it.id))
+        const unitId = Math.max(...idsArr);
+        const unitName = get(document.getElementById("unit_name"), 'value');
+        const unitUrl = get(document.getElementById("unit_url"), 'value');
+        if (!courseId || !unitId || !unitName || !unitUrl){
+            const { siteLang } = this.props.store;
+            const notAllFieldsAreFilled = get(content, `expandContent[${siteLang}]`);
+            alert(notAllFieldsAreFilled);
+        }
+        courseUnits.push({
+            id: unitId + 1,
+            courseId,
+            url: unitUrl,
+            name: unitName
+        });
+        localStorage.courseUnits = JSON.stringify(courseUnits);
+        document.getElementById("unit_name").value = '';
+        document.getElementById("unit_url").value = '';
+        this.setState({courseUnits});
+    };
 
     collapse (courseKey) {
         console.log(courseKey);
@@ -155,6 +179,29 @@ export default class Course extends Component {
                                                         </div>
                                                     )
                                                 })}
+                                                <Row>
+                                                    <Col sm={1}>
+                                                        <Button
+                                                            variant="info"
+                                                            block
+                                                            onClick={() => this.addUnit(course.id)}
+                                                        >
+                                                            +
+                                                        </Button>
+                                                    </Col>
+                                                    <Col>
+                                                        <FormControl
+                                                            type="text"
+                                                            id="unit_name"
+                                                        />
+                                                    </Col>
+                                                    <Col>
+                                                        <FormControl
+                                                            type="text"
+                                                            id="unit_url"
+                                                        />
+                                                    </Col>
+                                                </Row>
                                             </Card.Body>
                                         </Accordion.Collapse>
                                     </Card>
