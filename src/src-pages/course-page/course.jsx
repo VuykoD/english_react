@@ -142,6 +142,20 @@ export default class Course extends Component {
                         <div><img src={require("../../images/paint.png")} alt="" className="paint-right"/></div>
                     </Col>
                 </Row>
+                <Row>
+                    <Col sm={1}/>
+                    <Col>
+                        <Button
+                            className="addButton"
+                            variant="info"
+                            block
+                            onClick={this.addUnit}
+                        >
+                            +
+                        </Button>
+                    </Col>
+                    <Col sm={1}/>
+                </Row>
             </Container>
         );
     }
