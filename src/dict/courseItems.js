@@ -8266,6 +8266,139 @@ const courseItems =
             "eng": "",
             "pol": "Pojadę metrem do pracy",
             "transl": "Орудний вiдмiнок (nadrzędnik) жiночий закiнчення - ą, чоловiчий та середній -em. Я поїду на роботу на метро"
+        },
+        {
+            "id": 10721,
+            "unitId": 2009,
+            "eng": "",
+            "pol": "Soczewica, koło, miele młyn",
+            "transl": "Сочевиця, колесо, меле млин"
+        },
+        {
+            "id": 10722,
+            "unitId": 2009,
+            "eng": "",
+            "pol": "Pójdźże, kiń tę chmurność w głąb flaszy",
+            "transl": "Ну піди ж, кинь цю похмурість в глибину фляги"
+        },
+        {
+            "id": 10723,
+            "unitId": 2009,
+            "eng": "",
+            "pol": "Stół z powyłamywanymi nogami",
+            "transl": "Стіл з переламаними ногами"
+        },
+        {
+            "id": 10724,
+            "unitId": 2009,
+            "eng": "",
+            "pol": "Szła pchła koło wody, pchła pchłę pchła do wody, potem pchła się popłakała, że ją tamta popchała",
+            "transl": "Йшла блоха біля води, блоха блоху штовхала в воду, потім блоха поплакала, що її та штовхнула"
+        },
+        {
+            "id": 10725,
+            "unitId": 2009,
+            "eng": "",
+            "pol": "Król Karol kupił królowej Karolinie korale koloru koralowego",
+            "transl": "Король Кароль купив королеві Кароліні намиста коралового кольору"
+        },
+        {
+            "id": 10726,
+            "unitId": 2009,
+            "eng": "",
+            "pol": "Lojalna Jola i nielojalna Jola",
+            "transl": "Вірна Йоля і невірна Йоля"
+        },
+        {
+            "id": 10727,
+            "unitId": 2009,
+            "eng": "",
+            "pol": "W czasie suszy szosa sucha",
+            "transl": "Під час посухи дорога суха"
+        },
+        {
+            "id": 10728,
+            "unitId": 2009,
+            "eng": "",
+            "pol": "I cóż, że cesarz ze Szwecji?",
+            "transl": "Ну і що, що імператор зі Швеції?"
+        },
+        {
+            "id": 10729,
+            "unitId": 2009,
+            "eng": "",
+            "pol": "W Szczebrzeszynie chrząszcz brzmi w trzcinie",
+            "transl": "W Szczebrzeszynie chrząszcz brzmi w trzcinie"
+        },
+        {
+            "id": 10730,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Nie znalazłam w domu lalki",
+            "transl": "я не знайшла вдома ляльки (МЖ закінчення «-а» - міняється на «-у» або «-і» (після м’яких приголосних та букв  «k» і «g»))"
+        },
+        {
+            "id": 10731,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Maria kupuje niebieski płaszcz",
+            "transl": "Марія купує блакитний плащ"
+        },
+        {
+            "id": 10732,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Barbara i Jerzy widzą małe dziecko",
+            "transl": "Барбара и Єжи бачать маленьку дитину"
+        },
+        {
+            "id": 10733,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Widzimy pięknego, dużego kota",
+            "transl": "Ми бачимо красивого великого кота"
+        },
+        {
+            "id": 10734,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Marek pije mocną herbatę",
+            "transl": "Марек п’є міцний чай"
+        },
+        {
+            "id": 10735,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Bardzo często jesz rybę",
+            "transl": "Ти часто їсиш рибу"
+        },
+        {
+            "id": 10736,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Matki myją brudnych synów",
+            "transl": "Мами миють своїх брудних синів"
+        },
+        {
+            "id": 10737,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Jozef widzi wielkie konie",
+            "transl": "Йозеф бачить великих коней"
+        },
+        {
+            "id": 10738,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Kasia lubi nowe suknie",
+            "transl": "Кася любить нові плаття"
+        },
+        {
+            "id": 10739,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Jan czeka na nią",
+            "transl": "Ян чекає її"
         }
     ]
 
