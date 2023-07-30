@@ -10,13 +10,13 @@ import {
     Button
 } from "react-bootstrap";
 import {Link} from 'react-router-dom';
-import courseUnits from '../../dict/courseUnits';
-import courseNames from '../../dict/courseNames';
-import getCourseItems from '../../dict/getCourseItems';
+import getCourseItems, { getCourseUnits, getCourseNames } from '../../dict/getCourseItems';
 
 import '../../scc/course.css';
 
 let courseItems = getCourseItems();
+let courseUnits = getCourseUnits();
+let courseNames = getCourseNames();
 
 const content = {
     expandContent: {
