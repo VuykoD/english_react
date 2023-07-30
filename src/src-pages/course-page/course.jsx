@@ -7,7 +7,8 @@ import {
     Accordion,
     Card,
     Form,
-    Button
+    Button,
+    FormControl
 } from "react-bootstrap";
 import {Link} from 'react-router-dom';
 import getCourseItems, { getCourseUnits, getCourseNames } from '../../dict/getCourseItems';
@@ -22,6 +23,10 @@ const content = {
     expandContent: {
         ru: "Развернуть содержание",
         ukr: "Розгорнути зміст",
+    },
+    notAllFieldsAreFilled: {
+        ru: "Заполнены не все поля",
+        ukr: "Заповнені не всі поля",
     },
 };
 
@@ -41,7 +46,8 @@ export default class Course extends Component {
         });
 
         this.state = {
-            selectedCourses
+            selectedCourses,
+            courseNames
         };
     }
 
@@ -75,6 +81,24 @@ export default class Course extends Component {
             localStorage.progress = JSON.stringify(progress);
         }
     };
+    addCourse =()=> {
+        const idsArr= [];
+        map(courseNames, it => idsArr.push(it.id))
+        const courseId = Math.max(...idsArr);
+        const courseName = get(document.getElementById("course_name"), 'value');
+        if (!courseId || !courseId){
+            const { siteLang } = this.props.store;
+            const notAllFieldsAreFilled = get(content, `expandContent[${siteLang}]`);
+            alert(notAllFieldsAreFilled);
+        }
+        courseNames.push({
+            id: courseId + 1,
+            name: courseName
+        });
+        localStorage.courseNames = JSON.stringify(courseNames);
+        document.getElementById("course_name").value = '';
+        this.setState({courseNames});
+    }
 
     collapse (courseKey) {
         console.log(courseKey);
@@ -142,17 +166,24 @@ export default class Course extends Component {
                         <div><img src={require("../../images/paint.png")} alt="" className="paint-right"/></div>
                     </Col>
                 </Row>
-                <Row>
+                <Row
+                    className="add-button"
+                >
                     <Col sm={1}/>
-                    <Col>
+                    <Col sm={1}>
                         <Button
-                            className="addButton"
                             variant="info"
                             block
-                            onClick={this.addUnit}
+                            onClick={this.addCourse}
                         >
                             +
                         </Button>
+                    </Col>
+                    <Col>
+                        <FormControl
+                            type="text"
+                            id="course_name"
+                        />
                     </Col>
                     <Col sm={1}/>
                 </Row>

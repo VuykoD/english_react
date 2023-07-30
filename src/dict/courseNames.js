@@ -1,23 +1,19 @@
 const courseNames = [
     {
         id: 5,
-        name: 'Youtube',
-        active: true,
+        name: 'Youtube'
     },
     {
         id: 7,
-        name: 'Grammar',
-        active: true,
+        name: 'Grammar'
     },
     {
         id: 6,
-        name: 'Lukasz Ruczyński',
-        active: true,
+        name: 'Lukasz Ruczyński'
     },
     {
         id: 4,
-        name: 'Common phrases',
-        active: true,
+        name: 'Common phrases'
     },
     // {
     //     id: 1,
@@ -31,8 +27,7 @@ const courseNames = [
     // },
     {
         id: 3,
-        name: 'Polish school 8 class',
-        active: true,
+        name: 'Polish school 8 class'
     },
 ];
 export {courseNames as default};

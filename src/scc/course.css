@@ -23,8 +23,9 @@
     padding-left: 10px;
 }
 
-.addButton {
+.add-button {
     margin-top: 10px;
+    margin-bottom: 70px;
 }
 
 input[type="checkbox"]{
