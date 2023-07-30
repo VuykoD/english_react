@@ -84,7 +84,7 @@ export default class Course extends Component {
 
     addCourse =()=> {
         const idsArr= [];
-        map(courseNames, it => idsArr.push(it.id))
+        map(courseNames, it => idsArr.push(+it.id))
         const courseId = Math.max(...idsArr);
         const courseName = get(document.getElementById("course_name"), 'value');
         if (!courseId || !courseName){
@@ -103,7 +103,7 @@ export default class Course extends Component {
 
     addUnit =(courseId)=> {
         const idsArr= [];
-        map(courseUnits, it => idsArr.push(it.id))
+        map(courseUnits, it => idsArr.push(+it.id))
         const unitId = Math.max(...idsArr);
         const unitName = get(document.getElementById(`unit_name_${courseId}`), 'value');
         const unitUrl = get(document.getElementById(`unit_url_${courseId}`), 'value');

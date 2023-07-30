@@ -55,6 +55,10 @@ export const content = {
         ru: "Уникальность в английском",
         ukr: "Унікальність на англійському",
     },
+    notAllFieldsAreFilled: {
+        ru: "Заполнены не все поля",
+        ukr: "Заповнені не всі поля",
+    },
 };
 
 export default class CourseItem extends Component {
@@ -117,7 +121,12 @@ export default class CourseItem extends Component {
     };
 
     setItem = (id, elementId)=> {
-        const unitId = get(this.items, '[0].unitId');
+        const route = get(this.props, 'match.params.0');
+        const unitIndex = findIndex(courseUnits, { 'url': `/${route}` });
+        let unitId = get(this.items, '[0].unitId');
+        if (unitIndex > -1) {
+            unitId = courseUnits[unitIndex].id;
+        }
         const eng = get(document.getElementById(`row${elementId}_eng`), 'value');
         const pol = get(document.getElementById(`row${elementId}_pol`), 'value');
         const transl = get(document.getElementById(`row${elementId}_transl`), 'value');
@@ -132,7 +141,7 @@ export default class CourseItem extends Component {
 
     add = () => {
         const idsArr= [];
-        map(courseItems, it => idsArr.push(it.id))
+        map(courseItems, it => idsArr.push(+it.id))
         const maxId = Math.max(...idsArr);
         const item = this.setItem(maxId + 1, '_new');
         courseItems.push(item);
