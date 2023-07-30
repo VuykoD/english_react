@@ -8,13 +8,12 @@ import findIndex from 'lodash/findIndex';
 import {Badge, Button, Col, Container, Form, ProgressBar, Row} from 'react-bootstrap';
 //
 import '../../scc/learning.css';
-
-import courseUnits from '../../dict/courseUnits';
 import courseItemsJson from '../../dict/courseItems';
-import getCourseItems from '../../dict/getCourseItems';
+import getCourseItems, { getCourseUnits } from '../../dict/getCourseItems';
 import { shuffle } from '../user-page/user-data/user-dictionary';
 
 let courseItems = getCourseItems();
+let courseUnits = getCourseUnits();
 
 const content = {
     repeat: {
