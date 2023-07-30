@@ -89,8 +89,8 @@ export default class Course extends Component {
         const courseName = get(document.getElementById("course_name"), 'value');
         if (!courseId || !courseName){
             const { siteLang } = this.props.store;
-            const notAllFieldsAreFilled = get(content, `expandContent[${siteLang}]`);
-            alert(notAllFieldsAreFilled);
+            const notAllFieldsAreFilled = get(content, `notAllFieldsAreFilled[${siteLang}]`);
+            return alert(notAllFieldsAreFilled);
         }
         courseNames.push({
             id: courseId + 1,
@@ -105,12 +105,12 @@ export default class Course extends Component {
         const idsArr= [];
         map(courseUnits, it => idsArr.push(it.id))
         const unitId = Math.max(...idsArr);
-        const unitName = get(document.getElementById("unit_name"), 'value');
-        const unitUrl = get(document.getElementById("unit_url"), 'value');
+        const unitName = get(document.getElementById(`unit_name_${courseId}`), 'value');
+        const unitUrl = get(document.getElementById(`unit_url_${courseId}`), 'value');
         if (!courseId || !unitId || !unitName || !unitUrl){
             const { siteLang } = this.props.store;
-            const notAllFieldsAreFilled = get(content, `expandContent[${siteLang}]`);
-            alert(notAllFieldsAreFilled);
+            const notAllFieldsAreFilled = get(content, `notAllFieldsAreFilled[${siteLang}]`);
+            return  alert(notAllFieldsAreFilled);
         }
         courseUnits.push({
             id: unitId + 1,
@@ -119,8 +119,8 @@ export default class Course extends Component {
             name: unitName
         });
         localStorage.courseUnits = JSON.stringify(courseUnits);
-        document.getElementById("unit_name").value = '';
-        document.getElementById("unit_url").value = '';
+        document.getElementById(`unit_name_${courseId}`).value = '';
+        document.getElementById(`unit_url_${courseId}`).value = '';
         this.setState({courseUnits});
     };
 
@@ -179,7 +179,9 @@ export default class Course extends Component {
                                                         </div>
                                                     )
                                                 })}
-                                                <Row>
+                                                <Row
+                                                    className="add-unit"
+                                                >
                                                     <Col sm={1}>
                                                         <Button
                                                             variant="info"
@@ -192,13 +194,15 @@ export default class Course extends Component {
                                                     <Col>
                                                         <FormControl
                                                             type="text"
-                                                            id="unit_name"
+                                                            id={`unit_name_${course.id}`}
+                                                            placeholder="name"
                                                         />
                                                     </Col>
                                                     <Col>
                                                         <FormControl
                                                             type="text"
-                                                            id="unit_url"
+                                                            id={`unit_url_${course.id}`}
+                                                            placeholder="url"
                                                         />
                                                     </Col>
                                                 </Row>
@@ -214,7 +218,7 @@ export default class Course extends Component {
                     </Col>
                 </Row>
                 <Row
-                    className="add-button"
+                    className="add-course"
                 >
                     <Col sm={1}/>
                     <Col sm={1}>

@@ -23,9 +23,13 @@
     padding-left: 10px;
 }
 
-.add-button {
+.add-course {
     margin-top: 10px;
     margin-bottom: 70px;
+}
+
+.add-unit {
+    margin-top: 10px;
 }
 
 input[type="checkbox"]{
