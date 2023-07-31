@@ -353,6 +353,30 @@ const courseUnits =
             "courseId": 7,
             "url": "/znahіdny-vіdminok",
             "name": "Знахідний відмінок"
+        },
+        {
+            "id": 2011,
+            "courseId": 9,
+            "url": "/ojcze-nasz",
+            "name": "Ojcze nasz"
+        },
+        {
+            "id": 2012,
+            "courseId": 9,
+            "url": "/pozdrowienie-anielskie",
+            "name": "Pozdrowienie Anielskie"
+        },
+        {
+            "id": 2013,
+            "courseId": 7,
+            "url": "/grammar-5",
+            "name": "Місцевий відмінок"
+        },
+        {
+            "id": 2014,
+            "courseId": 8,
+            "url": "/interesting-words",
+            "name": "цікаві слова"
         }
     ]
 ;

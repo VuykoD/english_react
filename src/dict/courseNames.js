@@ -23,6 +23,10 @@ const courseNames =
         {
             "id": 8,
             "name": "Interesting"
+        },
+        {
+            "id": 9,
+            "name": "Молитви Modlitwy"
         }
     ]
 ;

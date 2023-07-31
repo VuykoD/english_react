@@ -8335,7 +8335,7 @@ const courseItems =
             "unitId": 700,
             "eng": "",
             "pol": "Nie znalazłam w domu lalki",
-            "transl": "я не знайшла вдома ляльки (МЖ закінчення «-а» - міняється на «-у» або «-і» (після м’яких приголосних та букв  «k» і «g»))"
+            "transl": "я не знайшла вдома (чого?) ляльки"
         },
         {
             "id": 10731,
@@ -8399,6 +8399,712 @@ const courseItems =
             "eng": "",
             "pol": "Jan czeka na nią",
             "transl": "Ян чекає її"
+        },
+        {
+            "id": 10740,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Monika pyta się о godzinę",
+            "transl": "Моніка питає котра година"
+        },
+        {
+            "id": 10741,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Przechodzę przez ulicę",
+            "transl": "Я переходжу вулицю"
+        },
+        {
+            "id": 10742,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Jan przeprasza za spóźnienie",
+            "transl": "Ян перепрошує за запізнення"
+        },
+        {
+            "id": 10743,
+            "unitId": 2010,
+            "eng": "",
+            "pol": "Czy maja państwo czas na herbatę?",
+            "transl": "Чи є у вас час випити чаю?"
+        },
+        {
+            "id": 10744,
+            "unitId": 700,
+            "eng": "",
+            "pol": "To jest plecak mojego dziecka",
+            "transl": "це рюкзак моєї (кого?) дитини"
+        },
+        {
+            "id": 10745,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Zostaw mi kawałek sera",
+            "transl": "залиши мені шматочок (чого?) сира"
+        },
+        {
+            "id": 10746,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Łukasz wypił litr soku",
+            "transl": "Лукаш випив літр (чого?) соку"
+        },
+        {
+            "id": 10747,
+            "unitId": 700,
+            "eng": "",
+            "pol": "То jest kapelusz mojego brata",
+            "transl": "Це капелюх мого брата"
+        },
+        {
+            "id": 10748,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Monika nosi płaszcz matki",
+            "transl": "Моніка носить плащ своєї мами"
+        },
+        {
+            "id": 10749,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Nie znam dziesiejszej daty",
+            "transl": "Я не знаю, котре сьогодні число"
+        },
+        {
+            "id": 10750,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Andrzej nie je dojrzałych jabłek",
+            "transl": "Анджей не їсть стиглі яблука"
+        },
+        {
+            "id": 10751,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Maria nie lubi koni",
+            "transl": "Марія не любить коней"
+        },
+        {
+            "id": 10752,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Wiktor uczy się angielskiego",
+            "transl": "Віктор вчить англійську мову"
+        },
+        {
+            "id": 10753,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Jan zawsze słucha ojca",
+            "transl": "Ян завжди слухається свого батька"
+        },
+        {
+            "id": 10754,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Mała Monika boi się kotów",
+            "transl": "Маленька Моніка боїться котів"
+        },
+        {
+            "id": 10755,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Proszę dużą filiżankę kawy",
+            "transl": "Велику чашку кави, будь ласка"
+        },
+        {
+            "id": 10756,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Jan mieszka blisko biura, ale daleko od biblioteki",
+            "transl": "Ян живе біля офісу, але далеко від бібліотеки"
+        },
+        {
+            "id": 10757,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Andrzej siedzi naprzeciwko Jerzego i obok Barbary",
+            "transl": "Анджей сидить навпроти Єжі і поруч із Барбарою"
+        },
+        {
+            "id": 10758,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Jerzy wychodzi z restauracji koło galerii",
+            "transl": "Єжі виходить із ресторану біля галереї"
+        },
+        {
+            "id": 10759,
+            "unitId": 700,
+            "eng": "",
+            "pol": "Spotykamy się u koleżanki i idziemy kupić prezent dla profesora",
+            "transl": "Ми зустрічаємось у подруги і йдемо купувати"
+        },
+        {
+            "id": 10760,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "Ojcze nasz, który jesteś w niebie, niech się święci imię Twoje!",
+            "transl": "Отче наш, що єси на небесах, нехай святиться ім'я Твоє,"
+        },
+        {
+            "id": 10761,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "Niech przyjdzie królestwo Twoje; niech Twoja wola spełnia się na ziemi, tak jak i w niebie.",
+            "transl": "нехай прийде Царство Твоє, нехай буде воля Твоя, як на небі, так і на землі."
+        },
+        {
+            "id": 10762,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "Chleba naszego powszedniego daj nam dzisiaj",
+            "transl": "Хліб наш насущний дай нам сьогодні"
+        },
+        {
+            "id": 10763,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "i przebacz nam nasze winy, jak i my przebaczamy tym, którzy przeciw nam zawinili",
+            "transl": "і прости нам провини наші, як і ми прощаємо винуватцям нашим"
+        },
+        {
+            "id": 10764,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "i nie dopuść, abyśmy ulegli pokusie, ale nas zachowaj od złego!",
+            "transl": "і не введи нас у спокусу, але визволи нас від лукавого"
+        },
+        {
+            "id": 10765,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "Albowiem Twoje jest Królestwo i moc, i chwała na wieki wieków",
+            "transl": "Бо Твоє є Царство, і сила, і слава на віки вічні"
+        },
+        {
+            "id": 10766,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "Amen",
+            "transl": "Амінь"
+        },
+        {
+            "id": 10767,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "Zdrowaś Maryjo, łaski pełna, Pan z Tobą",
+            "transl": "Радуйся, Маріє, благодаті повна! Господь з Тобою!"
+        },
+        {
+            "id": 10768,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "Błogosławionaś Ty między niewiastami",
+            "transl": "Благословенна Ти між жінками"
+        },
+        {
+            "id": 10769,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "i błogosławiony owoc żywota Twojego, Jezus",
+            "transl": "і благословенний плід лона Твого, Ісус"
+        },
+        {
+            "id": 10770,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "Święta Maryjo, Matko Boża",
+            "transl": "Свята Маріє, Мати Божа"
+        },
+        {
+            "id": 10771,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "módl się za nami grzesznymi",
+            "transl": "молися за нас, грішних"
+        },
+        {
+            "id": 10772,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "teraz i w godzinę śmierci naszej",
+            "transl": "нині і в годину смерті нашої"
+        },
+        {
+            "id": 10773,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "Amen",
+            "transl": "Амінь"
+        },
+        {
+            "id": 10774,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Zawsze ufam Łukaszowi ",
+            "transl": "завжди довіряю (кому?) Лукашу"
+        },
+        {
+            "id": 10775,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Mama prosiła kupić babci okulary",
+            "transl": "мама просила купити (кому?) бабусі окуляри"
+        },
+        {
+            "id": 10776,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Daję temu kinu drugą szansę",
+            "transl": "аю цьому фільму другий шанс"
+        },
+        {
+            "id": 10777,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Jak przywrócić smak pomidorom?",
+            "transl": "к повернути смак (чому?) помідорам?"
+        },
+        {
+            "id": 10778,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Ojciec dał młodemu synowi wiele dobrych rad",
+            "transl": "Батько дав сину багато хороших порад"
+        },
+        {
+            "id": 10779,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Matka dała małemu dziecku zabawkę",
+            "transl": "Мати дала маленькій дитині іграшку"
+        },
+        {
+            "id": 10780,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Maria oddała płaszcz swojej matce",
+            "transl": "Марія віддала плащ своїй матері"
+        },
+        {
+            "id": 10781,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Grecy składali ofiary starym bogom",
+            "transl": "Греки приносили жертви старим богам"
+        },
+        {
+            "id": 10782,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Maria dała jeść dzikim zwierzętom",
+            "transl": "Марія годувала диких тварин"
+        },
+        {
+            "id": 10783,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Ambasador dał celnikowi paszport",
+            "transl": "Посол дав митнику паспорт"
+        },
+        {
+            "id": 10784,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Marta pokazała mężowi swoją nową sukienkę",
+            "transl": "Марта показала чоловіку своє нове плаття"
+        },
+        {
+            "id": 10785,
+            "unitId": 701,
+            "eng": "",
+            "pol": "On powiedział nauczycielowi, że nie miał czasu na wypracowanie",
+            "transl": "Він сказав учителю, що у нього не було часу писати твір"
+        },
+        {
+            "id": 10786,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Dzięki twojemu przyjacielowi pojechaliśmy do Anglii",
+            "transl": "Дякуючи твоєму другу, ми поїхали до Англії"
+        },
+        {
+            "id": 10787,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Wbrew pozorom on się bardzo ucieszył żeście przyszli",
+            "transl": "Незважаючи на сердитий вигляд, він був дуже задоволений, що ви прийшли"
+        },
+        {
+            "id": 10788,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Nie mam nic przeciwko twojemu przyjściu",
+            "transl": "У мене нема заперечень проти того, щоб ти прийшов"
+        },
+        {
+            "id": 10789,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Wstyd mi, że rozlałem kawę",
+            "transl": "Мені соромно, що я розлив каву"
+        },
+        {
+            "id": 10790,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Żal mi ciebie, że cię boli głowa",
+            "transl": "Мені шкода, що у тебе болить голова"
+        },
+        {
+            "id": 10791,
+            "unitId": 701,
+            "eng": "",
+            "pol": "Zdaje mi się, że Maria wraca do Londynu za dwa dni, ale może się mylę",
+            "transl": "Я думаю, що Марія повертається з Лондону через два дні, але, можливо, я помиляюсь"
+        },
+        {
+            "id": 10792,
+            "unitId": 2013,
+            "eng": "",
+            "pol": "Kot łeży na łóżku",
+            "transl": "Кіт лежить на ліжку"
+        },
+        {
+            "id": 10793,
+            "unitId": 2013,
+            "eng": "",
+            "pol": "Okropnie się nudziłem na początku",
+            "transl": "Мені було страшенно нудно на початку"
+        },
+        {
+            "id": 10794,
+            "unitId": 2013,
+            "eng": "",
+            "pol": "Program rozpoczyna się о godzinie szóstej",
+            "transl": "Програма починається о шостій годині"
+        },
+        {
+            "id": 10795,
+            "unitId": 2013,
+            "eng": "",
+            "pol": "О czym żeście dyskutowali?",
+            "transl": "Що ви обговорювали?"
+        },
+        {
+            "id": 10796,
+            "unitId": 2013,
+            "eng": "",
+            "pol": "Ро zebraniu pójdziemy nа kawę",
+            "transl": "Після зустрічі підемо на каву"
+        },
+        {
+            "id": 10797,
+            "unitId": 2013,
+            "eng": "",
+            "pol": "Jabłko potoczyło się ро podłodze",
+            "transl": "Яблуко покотилось по підлозі"
+        },
+        {
+            "id": 10798,
+            "unitId": 2013,
+            "eng": "",
+            "pol": "Jurek siedzi przy biurku i pisze wypracowanie",
+            "transl": "Юрек сидить за письмовим столом і пише лист"
+        },
+        {
+            "id": 10799,
+            "unitId": 2013,
+            "eng": "",
+            "pol": "We wrześniu jedziemy do Stanów",
+            "transl": "У вересні ми їдемо до Штатів"
+        },
+        {
+            "id": 10800,
+            "unitId": 702,
+            "eng": "",
+            "pol": "Jesteście inteligentnymi studentami",
+            "transl": "Ви розумні учні"
+        },
+        {
+            "id": 10801,
+            "unitId": 702,
+            "eng": "",
+            "pol": "One są nowymi studentkami",
+            "transl": "Вони нові студентки"
+        },
+        {
+            "id": 10802,
+            "unitId": 702,
+            "eng": "",
+            "pol": "Ona gotuje ciasto ze słodkimi jabłkami",
+            "transl": "Вона готує пиріг із солодкими яблуками"
+        },
+        {
+            "id": 10803,
+            "eng": "",
+            "pol": "Chyba ktoś puka",
+            "transl": "Здається, хтось стукає"
+        },
+        {
+            "id": 10804,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Chyba ktoś puka",
+            "transl": "Здається, хтось стукає"
+        },
+        {
+            "id": 10805,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Proszę pukać przed wejściem",
+            "transl": "Будь ласка, стукайте перед тим, як увійти"
+        },
+        {
+            "id": 10806,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Czy słyszysz to pukanie? ",
+            "transl": "Чи ти чуєш цей стукіт?"
+        },
+        {
+            "id": 10807,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Zapukał do drzwi",
+            "transl": "Він постукав у двері"
+        },
+        {
+            "id": 10808,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "W magazynach wielkich fabryk zalegają towary",
+            "transl": "На складах великих фабрик залежуються товари"
+        },
+        {
+            "id": 10809,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Proszę, daj mi ten magazyn",
+            "transl": "Будь ласка, дай мені той журнал"
+        },
+        {
+            "id": 10810,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "magazyn",
+            "transl": "склад або журнал"
+        },
+        {
+            "id": 10811,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Sklepy są zamknięte w niedziele",
+            "transl": "Магазини закриті в неділю"
+        },
+        {
+            "id": 10812,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Jest tu szaro i ponuro jak w krypcie",
+            "transl": "Тут сіро та похмуро як у склепі."
+        },
+        {
+            "id": 10813,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Zakaz palenia w miejscach publicznych",
+            "transl": "Заборонено палити в громадських місцях"
+        },
+        {
+            "id": 10814,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Zadzwoniłam i poprosiłam o anulowanie zamówienia",
+            "transl": " подзвонила та попросила анулювати замовлення"
+        },
+        {
+            "id": 10815,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "To jest zły przykład",
+            "transl": "Це поганий приклад"
+        },
+        {
+            "id": 10816,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "W sumie nie jest tak źle",
+            "transl": "Загалом, не все так погано"
+        },
+        {
+            "id": 10817,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "awans zawodowy nauczyciela",
+            "transl": "професійне зростання вчителя"
+        },
+        {
+            "id": 10818,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "awans w pracy",
+            "transl": "підвищення на роботі"
+        },
+        {
+            "id": 10819,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Zaliczka na podatek z umowy o pracę",
+            "transl": "Авансовий внесок податку з трудового договору"
+        },
+        {
+            "id": 10820,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Zespół pojazdów",
+            "transl": "Команда транспортних засобів"
+        },
+        {
+            "id": 10821,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Woń zwierzyny w łowieckiej gwarze",
+            "transl": "Запах дичини на мисливському діалекті"
+        },
+        {
+            "id": 10822,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Magazyn, sklep",
+            "transl": "склад,  магазин"
+        },
+        {
+            "id": 10823,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Awans, zaliczka",
+            "transl": "підвищення, аванс"
+        },
+        {
+            "id": 10824,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Pensja, emerytura",
+            "transl": "заробітна плата, пенсія"
+        },
+        {
+            "id": 10825,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Pojazd, pociąg",
+            "transl": "транспортний засіб, потяг"
+        },
+        {
+            "id": 10826,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Skoro",
+            "transl": "якщо"
+        },
+        {
+            "id": 10827,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "niedługo, niebawem, wkrótce",
+            "transl": "скоро"
+        },
+        {
+            "id": 10828,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Woń, smród",
+            "transl": "запах, сморід"
+        },
+        {
+            "id": 10829,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Urok, lekcja",
+            "transl": "чарівність, шарм, урок"
+        },
+        {
+            "id": 10830,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Duma, myśl",
+            "transl": "гордість, думка"
+        },
+        {
+            "id": 10831,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Zakon",
+            "transl": "чернечий орден"
+        },
+        {
+            "id": 10832,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "prawo, ustawa",
+            "transl": "закон"
+        },
+        {
+            "id": 10833,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Naszyjnik, obroża",
+            "transl": "намисто або ж кулон, нашийник"
+        },
+        {
+            "id": 10834,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Winda",
+            "transl": "ліфт"
+        },
+        {
+            "id": 10835,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Zapomnieć",
+            "transl": "забути"
+        },
+        {
+            "id": 10836,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Czaszka, kubek",
+            "transl": "череп, чашка"
+        },
+        {
+            "id": 10837,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "Portfel, aktówka",
+            "transl": "гаманець, портфель"
+        },
+        {
+            "id": 10838,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "owoce, warzywa",
+            "transl": "фрукти, овочі"
+        },
+        {
+            "id": 10839,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "dywan, kanapa",
+            "transl": "килим, диван"
+        },
+        {
+            "id": 10840,
+            "unitId": 2014,
+            "eng": "",
+            "pol": "szyna, opona",
+            "transl": "рейка, шина"
         }
     ]
 
