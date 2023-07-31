@@ -144,7 +144,7 @@ export default class Course extends Component {
                             <Fragment key={courseKey}>
                                 <h1>{course.name}</h1>
                                 <Accordion
-                                    defaultActiveKey={courseKey === 1 ? courseKey : null}
+                                    // defaultActiveKey={courseKey === 1 ? courseKey : null}
                                 >
                                     <Card>
                                         <Accordion.Toggle

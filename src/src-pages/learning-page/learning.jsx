@@ -82,6 +82,9 @@ const content = {
     },
 };
 
+const MAX_WORD_LENGTH = 100;
+const NEW_LEARN_NUMBER = 14;
+
 const initialState = {
     exampleLearning: null,
     cycleLearning: null,
@@ -89,6 +92,7 @@ const initialState = {
     showEng: !!localStorage.showEng,
     showPol: !!localStorage.showPol,
     learnNumber: 0,
+    newLearnNumber: NEW_LEARN_NUMBER,
     english: '',
     polish: '',
     rus: '',
@@ -104,8 +108,6 @@ const initialState = {
     record: 0,
     changeToInput: false
 }
-
-const MAX_WORD_LENGTH = 100;
 
 class LearningClass extends Component {
     static propTypes = {
@@ -275,7 +277,7 @@ class LearningClass extends Component {
         localStorage.record = 0;
     };
 
-    speedRepeat = (arrayLength  = this.state.newLearnNumber) => {
+    speedRepeat = (arrayLength) => {
         this.soundAndRepeatCoef = 2.6;
         this.soundAndRepeat(arrayLength);
     }
@@ -511,7 +513,8 @@ class LearningClass extends Component {
             showRus,
             showEng,
             showPol,
-            changeToInput
+            changeToInput,
+            newLearnNumber
         } = this.state;
         const {siteLang} = this.props.store;
         // const repeat = get(content, `repeat[${siteLang}]`);
@@ -556,13 +559,14 @@ class LearningClass extends Component {
                                 id='lengthArray'
                                 type="number"
                                 onChange={this.onChangeLengthArray}
+                                defaultValue={14}
                                 // value={newLearnNumber}
                             />
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <Button variant="info" block onClick={this.speedRepeat}>
+                            <Button variant="info" block onClick={()=>this.speedRepeat(newLearnNumber)}>
                                 {speedRepeat}
                             </Button>
                         </Col>
