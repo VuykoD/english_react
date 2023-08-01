@@ -278,8 +278,12 @@ class LearningClass extends Component {
     };
 
     speedRepeat = (arrayLength) => {
+        const length = typeof arrayLength === 'number' ?
+            arrayLength :
+            this.state.newLearnNumber;
+        console.log(length);
         this.soundAndRepeatCoef = 2.6;
-        this.soundAndRepeat(arrayLength);
+        this.soundAndRepeat(length);
     }
 
     setSpeedRepeat = () => {
@@ -326,8 +330,11 @@ class LearningClass extends Component {
         this.write(10);
     }
 
-    write = (arrayLength = this.state.newLearnNumber) => {
-        this.getLearnArray(arrayLength);
+    write = (arrayLength) => {
+        const length = typeof arrayLength === 'number' ?
+            arrayLength :
+            this.state.newLearnNumber;
+        this.getLearnArray(length);
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'write'});
         this.setEngAndTransl(this.state.learnNumber, MAX_WORD_LENGTH);
@@ -513,8 +520,7 @@ class LearningClass extends Component {
             showRus,
             showEng,
             showPol,
-            changeToInput,
-            newLearnNumber
+            changeToInput
         } = this.state;
         const {siteLang} = this.props.store;
         // const repeat = get(content, `repeat[${siteLang}]`);
@@ -566,7 +572,7 @@ class LearningClass extends Component {
                     </Row>
                     <Row>
                         <Col>
-                            <Button variant="info" block onClick={()=>this.speedRepeat(newLearnNumber)}>
+                            <Button variant="info" block onClick={this.speedRepeat}>
                                 {speedRepeat}
                             </Button>
                         </Col>
@@ -849,17 +855,22 @@ export function changedInput() {
         const isInMistake = this.mistakeArr.indexOf(learnNumber) > -1
         if (!mistake && !isInMistake){
             const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+            const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
             map(localProgress, (item, key) => {
                 const index = findIndex(courseItems, {'id': item.entity_id});
                 localProgress[key].pol = get(courseItems, `[${index}].pol`);
             })
             const index = findIndex(localProgress, {'pol': polish});
             if (index > -1) {
+                statistic.push({
+                    id: localProgress[index].entity_id
+                })
                 localProgress.splice(index, 1);
                 map(localProgress, (item, key) => {
                     localProgress[key] = { entity_id: localProgress[key].entity_id };
                 })
                 localStorage.progress = JSON.stringify(localProgress);
+                localStorage.statistic = JSON.stringify(statistic);
             }
         }
         document.getElementById("formInput").value = '';
@@ -873,6 +884,15 @@ export function changedInput() {
             }
 
             if (mistakeRewrite >= this.mistakeArr.length) {
+                const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
+                const options = {
+                    year: 'numeric', month: 'numeric', day: 'numeric',
+                    hour: 'numeric', minute: 'numeric',
+                    hour12: false
+                };
+                const date = new Date().toLocaleDateString("en-IN", options);
+                statistic.push(date);
+                localStorage.statistic = JSON.stringify(statistic);
                 this.setInitialData();
             }
         }

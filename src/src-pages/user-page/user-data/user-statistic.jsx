@@ -1,24 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import get from "lodash/get";
-import {Col, Container, Row} from "react-bootstrap";
+import map from "lodash/map";
+import { Container } from "react-bootstrap";
 
 import '../../../scc/user-data.css';
-
-const content = {
-    name: {
-        ru: 'Имя',
-        ukr: "Ім'я"
-    },
-    surname: {
-        ru: 'Фамилия',
-        ukr: 'Прізвище'
-    },
-    save: {
-        ru: 'Сохранить',
-        ukr: 'Зберегти'
-    },
-};
 
 export default class UserStatistic extends Component {
     static propTypes = {
@@ -26,16 +11,18 @@ export default class UserStatistic extends Component {
     };
 
     render() {
-        const { siteLang } = this.props.store;
-        const namePlaceholder = get(content, `name[${siteLang}]`);
+        const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
 
         return (
             <Container>
-                <Row className='user-row'>
-                    <Col>
-                        {namePlaceholder}
-                    </Col>
-                </Row>
+                {map(statistic, (item, key) => {
+                        if (item?.id) {
+                            return <div key={key} children={item?.id}/>
+                        } else {
+                            return <div key={key} children={item}/>
+                        }
+                    }
+                )}
             </Container>
         );
     }
