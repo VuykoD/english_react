@@ -59,7 +59,7 @@ export default class UserDictionary extends Component {
         });
     }
 
-    setLocalProgress = (lp) =>{
+    setLocalProgress = (lp) => {
         map(lp, (item, key) => {
             const index = findIndex(courseItems, {'id': item.entity_id});
             lp[key].eng = get(courseItems, `[${index}].eng`);
@@ -94,6 +94,24 @@ export default class UserDictionary extends Component {
         this.setState({localProgress: lP});
     };
 
+    clear = () => {
+        let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        if (!lP) return null;
+        let newLP = [];
+
+        map(lP, item => {
+            const index = findIndex(courseItems, {'id': item.entity_id});
+            if (index > -1) {
+                newLP.push(item);
+            }
+        });
+
+        localStorage.progress = JSON.stringify(newLP);
+        newLP = this.setLocalProgress(newLP);
+        this.setState({localProgress: newLP});
+        return newLP;
+    };
+
     selectRow =(data)=> {
         const entityId = get(data, 'data.entity_id')
         if (entityId && this.state.entityId !== entityId) this.setState({entityId})
@@ -112,6 +130,11 @@ export default class UserDictionary extends Component {
                     <Col>
                         <Button variant="info" block onClick={this.sort}>
                             Sort
+                        </Button>
+                    </Col>
+                    <Col>
+                        <Button variant="info" block onClick={this.clear}>
+                            Clear
                         </Button>
                     </Col>
                 </Row>
