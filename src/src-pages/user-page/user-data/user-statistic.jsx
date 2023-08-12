@@ -62,7 +62,11 @@ export default class UserStatistic extends Component {
                             const phrase = unitIndex > -1 ? courseItems[unitIndex].pol : '';
                             return <div key={key} children={phrase}/>
                         } else {
-                            return <div key={key} children={item}/>
+                            return <div
+                                className='underline'
+                                key={key}
+                                children={item}
+                            />
                         }
                     }
                 )}
