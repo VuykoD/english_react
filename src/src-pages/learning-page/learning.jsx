@@ -281,7 +281,6 @@ class LearningClass extends Component {
         const length = typeof arrayLength === 'number' ?
             arrayLength :
             this.state.newLearnNumber;
-        console.log(length);
         this.soundAndRepeatCoef = 2.6;
         this.soundAndRepeat(length);
     }
@@ -847,7 +846,7 @@ export function changedInput() {
     if (learnPol) wordToLearn = polish;
     wordToLearn = wordToLearn.toUpperCase();
     if (!wordToLearn) this.repeatMistakes = true;
-    if (word.length === 1 && !mistake && wordToLearn.slice(0, word.length) === word) {
+    if (word.length === 1 && !mistake && wordToLearn.slice(0, word.length) === word && !mistakeRewrite) {
         speak.call(this);
     }
 
@@ -905,7 +904,9 @@ export function changedInput() {
         if (mistake >= 2) {
             this.setState({record: 0});
         }
-        if (!mistake) speak.call(this)
+        if (!mistake && !mistakeRewrite) {
+            speak.call(this);
+        }
         this.setState({mistake: mistake + 1});
         if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
             this.mistakeArr.push(learnNumber);
