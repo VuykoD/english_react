@@ -6175,13 +6175,6 @@ const courseItems =
             "transl": "Я встретлю босса завтра"
         },
         {
-            "id": 2393,
-            "unitId": 2005,
-            "eng": "",
-            "pol": "Jesteście moimi ulubionymi koleżankami",
-            "transl": "Вы мои любимые коллеги"
-        },
-        {
             "id": 2394,
             "unitId": 2005,
             "eng": "",
@@ -8840,12 +8833,6 @@ const courseItems =
             "eng": "",
             "pol": "Ona gotuje ciasto ze słodkimi jabłkami",
             "transl": "Вона готує пиріг із солодкими яблуками"
-        },
-        {
-            "id": 10803,
-            "eng": "",
-            "pol": "Chyba ktoś puka",
-            "transl": "Здається, хтось стукає"
         },
         {
             "id": 10804,
