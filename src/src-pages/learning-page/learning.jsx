@@ -534,6 +534,17 @@ class LearningClass extends Component {
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
         const speedRepeat = get(content, `speedRepeat[${siteLang}]`);
         const difference = courseItemsJson.length - (this.localProgress?.length || 0);
+        // let ukrKey = 0;
+        // let startChange = false;
+        // map(courseItems, (item, key) => {
+        //     if (item.id === 10132) startChange = true;
+        //     if (ukr[ukrKey] && startChange) {
+        //         courseItems[key].transl = ukr[ukrKey];
+        //         ukrKey++;
+        //     }
+        // });
+        // localStorage.courseItems = JSON.stringify(courseItems);
+        // console.log(courseItems);
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
