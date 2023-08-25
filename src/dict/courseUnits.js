@@ -393,7 +393,7 @@ const courseUnits =
         {
             "id": 2017,
             "courseId": 10,
-            "url": "/znani-pisarze-naukowcy-artyści",
+            "url": "/znani-pisarze-naukowcy-artysci",
             "name": "Znani pisarze, naukowcy i artyści Polski"
         },
         {
@@ -411,7 +411,7 @@ const courseUnits =
         {
             "id": 2020,
             "courseId": 10,
-            "url": "/pytania-ogólne-о-polsce",
+            "url": "/pytania-ogolne-о-polsce",
             "name": "pytania ogólne о Polsce"
         }
     ]
