@@ -367,7 +367,7 @@ class LearningClass extends Component {
         const wordLength = Math.round(word.length / this.soundAndRepeatCoef);
         const minTime = 13 / this.soundAndRepeatCoef;
         let timeoutTime = wordLength > minTime ? wordLength : minTime;
-        if(timeoutTime > 40) timeoutTime = 40;
+        if(timeoutTime > 60) timeoutTime = 60;
         return timeoutTime;
     }
 
