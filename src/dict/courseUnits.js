@@ -377,6 +377,42 @@ const courseUnits =
             "courseId": 8,
             "url": "/interesting-words",
             "name": "цікаві слова"
+        },
+        {
+            "id": 2015,
+            "courseId": 10,
+            "url": "/pytania-z-historii-polski",
+            "name": "Pytania z historii Polski"
+        },
+        {
+            "id": 2016,
+            "courseId": 10,
+            "url": "/geografia-polski",
+            "name": "Geografia Polski"
+        },
+        {
+            "id": 2017,
+            "courseId": 10,
+            "url": "/znani-pisarze-naukowcy-artyści",
+            "name": "Znani pisarze, naukowcy i artyści Polski"
+        },
+        {
+            "id": 2018,
+            "courseId": 10,
+            "url": "tradycje",
+            "name": "Tradycje"
+        },
+        {
+            "id": 2019,
+            "courseId": 10,
+            "url": "/polskie-symbole-narodowе",
+            "name": "Polskie symbole narodowе"
+        },
+        {
+            "id": 2020,
+            "courseId": 10,
+            "url": "/pytania-ogólne-о-polsce",
+            "name": "pytania ogólne о Polsce"
         }
     ]
 ;

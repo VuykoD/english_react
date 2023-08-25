@@ -4470,7 +4470,7 @@ const courseItems =
             "id": 2079,
             "unitId": 2002,
             "eng": "",
-            "pol": "woja kanapka z serem jest bardzo smaczna",
+            "pol": "twoja kanapka z serem jest bardzo smaczna",
             "transl": "Ваш бутерброд із сиром дуже смачний"
         },
         {
@@ -4947,7 +4947,7 @@ const courseItems =
             "unitId": 2003,
             "eng": "",
             "pol": "Po co pani jedzie do centrum?",
-            "transl": "Що ви їдете до центру? (Офіційно до жінки)"
+            "transl": "По що ви їдете до центру? (Офіційно до жінки)"
         },
         {
             "id": 2172,
@@ -5338,7 +5338,7 @@ const courseItems =
             "id": 2247,
             "unitId": 2003,
             "eng": "",
-            "pol": "Niestety nie jestem jeszcze gotowy na tę lekcję",
+            "pol": "Niestety, nie jestem jeszcze gotowy na tę lekcję",
             "transl": "На жаль, я ще не готовий до цього уроку"
         },
         {
@@ -5723,8 +5723,8 @@ const courseItems =
             "id": 2309,
             "unitId": 2004,
             "eng": "",
-            "pol": "Ten samochód kosztuje 15 000 złotych",
-            "transl": "Ця машина коштує 15 000 злотих"
+            "pol": "Ten samochód kosztuje 15000 złotych",
+            "transl": "Ця машина коштує 15000 злотих"
         },
         {
             "id": 2310,
@@ -5842,8 +5842,8 @@ const courseItems =
             "id": 2326,
             "unitId": 2004,
             "eng": "",
-            "pol": "Wygodne jest dla ciebie to łóżko wygodny?",
-            "transl": "Це ліжко для тебе комфортне"
+            "pol": "Czy to łóżko jest dla ciebie wygodne?",
+            "transl": "чи це ліжко для тебе комфортне?"
         },
         {
             "id": 2327,
@@ -6858,7 +6858,7 @@ const courseItems =
             "unitId": 2006,
             "eng": "",
             "pol": "Od poniedziałku będę już na wakacjach",
-            "transl": "З понедiлка буду у вiдпустцi"
+            "transl": "З понедiлка вже буду у вiдпустцi"
         },
         {
             "id": 2521,
@@ -6942,7 +6942,7 @@ const courseItems =
             "unitId": 2006,
             "eng": "",
             "pol": "Rzadko oglądam telewizję, wolę spacerować po parku",
-            "transl": "Дивлюся рiдко телевiзор, бiльше люблю гуляти по парку"
+            "transl": "рiдко дивлюся телевiзор, бiльше люблю гуляти по парку"
         },
         {
             "id": 2537,
@@ -7067,8 +7067,8 @@ const courseItems =
             "id": 2559,
             "unitId": 2007,
             "eng": "",
-            "pol": "Moja siostra? Wiem, że proponują jej dużo pieniędzy",
-            "transl": "Моя сестра? Я знаю, що вони пропонують їй багато грошей"
+            "pol": "Wiem, że proponują jej dużo pieniędzy",
+            "transl": "Я знаю, що вони пропонують їй багато грошей"
         },
         {
             "id": 2561,
@@ -8272,7 +8272,7 @@ const courseItems =
             "unitId": 2009,
             "eng": "",
             "pol": "Pójdźże, kiń tę chmurność w głąb flaszy",
-            "transl": "Ну піди ж, кинь цю похмурість в глибину фляги"
+            "transl": "піди ж, кинь цю похмурість в глибину фляги"
         },
         {
             "id": 10723,
@@ -8363,7 +8363,7 @@ const courseItems =
             "unitId": 2010,
             "eng": "",
             "pol": "Bardzo często jesz rybę",
-            "transl": "Ти часто їсиш рибу"
+            "transl": "Ти дуже часто їсиш рибу"
         },
         {
             "id": 10736,
