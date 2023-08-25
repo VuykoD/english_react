@@ -9092,6 +9092,356 @@ const courseItems =
             "eng": "",
             "pol": "szyna, opona",
             "transl": "рейка, шина"
+        },
+        {
+            "id": 10841,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "W jakim wieku powstała Polska? Polska powstała w Х wieku",
+            "transl": "В якому році повстала Польща?"
+        },
+        {
+            "id": 10842,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy odbyła się Unia Krewska? Unia Krewska odbyła się w 1385r. w Krewie",
+            "transl": "Коли відбулась Унія Кревська?"
+        },
+        {
+            "id": 10843,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Unia w Krewie wyznacza nowy kierunek polityki polskiej",
+            "transl": "Унія в Крево встановлює нову напрям польської політики"
+        },
+        {
+            "id": 10844,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Królestwo Polskie i Wielkie Księstwo Litewskie jednoczą się przeciw wspólnemu wrogowi - Zakonowi Krzyżackiemu",
+            "transl": "Королівство Польщі та Великого князівства Литовського вони об'єднуються проти спільного ворог - Тевтонський орден"
+        },
+        {
+            "id": 10845,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy odbyła się Unia Lubelska? Unia Lubelska odbyła się w 1569r",
+            "transl": "Коли відбулась Унія Любельська?"
+        },
+        {
+            "id": 10846,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy odbyła się I Rzeczpospolita Polska? W 1569 – 1795r",
+            "transl": "Коли повстала І Річ Посполита Польська?"
+        },
+        {
+            "id": 10847,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy odbyła się II Rzeczpospolita Polska? W 1918 – 1939 (między I a II wojną światową)",
+            "transl": "Коли повстала ІІ Річ Посполита Польська?"
+        },
+        {
+            "id": 10848,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy odbyła się III Rzeczpospolita Polska? Od 1989 – po dzisiaj",
+            "transl": "Коли повстала ІІІ Річ Посполита Польська?"
+        },
+        {
+            "id": 10849,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Miasta – stolice Polski? Gniezno 966 – 1041r. Kraków 1041 – 1596r. Kraków 1041 – 1596r.",
+            "transl": "Міста – столиці Польщі?"
+        },
+        {
+            "id": 10850,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kim był Piast Kołodziej? Piast Kołodziej był legendarnym protoplastą, założycielem dynastii Piastów - pierwszej dynastii Królów Polski",
+            "transl": "Ким був Пяст Колоджєй?"
+        },
+        {
+            "id": 10851,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Co się stało z Popielem? Króla Popiela zjadły myszy za jego zbrodnie i udrękę ludu",
+            "transl": "Що сталось з Попєлєм?"
+        },
+        {
+            "id": 10852,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kto był ostatnim królem Polski? August Poniatowski (1764-1795)",
+            "transl": "Хто був останнім королем Польщі?"
+        },
+        {
+            "id": 10853,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kim była Jadwiga? Królową Polski od 1384-1399r",
+            "transl": "Ким була Ядвіга?"
+        },
+        {
+            "id": 10854,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Co to jest Miecz Szczerbiec? Miecz koronacyjny Królów Polski",
+            "transl": "Що таке Меч Щербєц?"
+        },
+        {
+            "id": 10855,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kto był pierwszym królem z dynastii Jagellonów? Władysław Jagełło. Wstąpił na tron po ślubie z Królową Jadwigą",
+            "transl": "Хто був першим королем династії Ягелонів?"
+        },
+        {
+            "id": 10856,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kto był ostatnim królem z dynastii Jagellonów? Zygmunt August II. Zrealizował Unię Lubelską 1569r",
+            "transl": "Хто був останнім королем династії Ягелонів?"
+        },
+        {
+            "id": 10857,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kto był pierwszym królem Polski? Bolesław Chrobry, koronowany w 1025r",
+            "transl": "Хто був першим королем Польщі?"
+        },
+        {
+            "id": 10858,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kto był pierwszym władcą Polski? Mieszko I (922-992) – pierwszy historycznie udokumentowany władca Polski z dynastii Piastów",
+            "transl": "Хто був першим правителем Польщі?"
+        },
+        {
+            "id": 10859,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kto wygrał bitwę pod Płowcami? W 1331r wojsko Władysława Łokietka zwyciężyło Krzyżaków",
+            "transl": "Хто виграв битву під Пловцами"
+        },
+        {
+            "id": 10860,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "to i kiedy założyw pierwszy uniwersytet w Polsce? Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364r. pierwszy w Polsce uniwersytet – Akademię Krakowską (Uniwersytet Jagelloński)",
+            "transl": "Хто і коли заснував перший університет в Польщі (Університет Ягєлонський)"
+        },
+        {
+            "id": 10861,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy odbyła się bitwa pod Grunwaldem? Kto był zwycięzcą? W 1410r. wojsko polskie i litewskie pod dowództwem Króla Władysława Jagiełły pokonało pod Grunwaldem wojsko Krzyżaków. Potęga Krzyżaków zostaje ostatecznie złamana.",
+            "transl": "Коли відбулась битва під Грунвальдом? Хто переміг?"
+        },
+        {
+            "id": 10862,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Gdzie i kiedy zginął Król Władysław Warneńczyk? Zginął w bitwie przeciw Turkow pod Warną w 1444",
+            "transl": "Де коли загинув Король Владислав Варненьчик"
+        },
+        {
+            "id": 10863,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy miał miejsce Potop szwedzki? W ХVII wieku królowie z dynastii Wazów pretendowali do tronu Szwecji co prowadziło do konfliktów między Rzeczpospolitą a Szwecją. W 1655-1660 w okres panowania Jana - Rzeczpospolitą ogłoszono monarchią Kazimierza przypadają najazd konstytucyjną. szwedzki – „potop”.",
+            "transl": "Коли відбувся Потом шведській?"
+        },
+        {
+            "id": 10864,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Postać Króla Jana III Sobieskiego? an III Sobieski - wybrany król (1629- 1696). W 1683r. rozgromił wojska tureckie i zahamował ekspansję Turków Otomańskich w Europie ",
+            "transl": "Хто такий король ІІІ Собєский?"
+        },
+        {
+            "id": 10865,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Okres rozbiorów? 123 lata, aż do odzyskania niepodległości w 1918r. okres rozbiorów charakteryzował się podziałem Polski między Rosją, Austriją a Prusją, coraz głębszą rusyfikacją czy germanizacją",
+            "transl": "Період поділів Польщі?"
+        },
+        {
+            "id": 10866,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy odbył się I rozbiór Polski? W 1772r. W tym rozbiórze brały udział Rosja, Prusy i Austria",
+            "transl": "Коли відбувся І поділ Польщі?"
+        },
+        {
+            "id": 10867,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Konstytucja 3 Maja? 3 maja 1791r. sejm przyjął na Zamku Warszawskim Konstytucje 3 Maja. Była to pierwza w Europie, a druga w świecie Konstytucja. Postanowienia Konstytucji 3 Maja: - religia katolicka została utwierdzona jako panująca; - zagwarantowano prawa własności; - zapewniono nietykalność osobistą; - Rzeczpospolitą ogłoszono monarchią konstytucyjną",
+            "transl": "Конституція 3 травня?"
+        },
+        {
+            "id": 10868,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy odbył się II rozbiór Polski? W 1793r. Brały udział Rosja i Prusy. Bezpośrednim pretekstem do II rozbióru Polski była Konfederacja Targowicka",
+            "transl": "Коли відбувся ІІ поділ Польщі?"
+        },
+        {
+            "id": 10869,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Powstanie Kościuszkowskie? Tadeusz Kościuszko był wybitnym przywódcą. Powstanie Kościuszkowskie odbyło się w 1794r. i było pierwszym powstaniem narodowym przeciwko zaborcom przed III rozbiórem Polski",
+            "transl": "Постання Костюшка?"
+        },
+        {
+            "id": 10870,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy odbył się III rozbiór General Jan Henryk Dąbrowski (twórca Polski? W 1795r. Brały udział Rosja, Prusy i Lombardii Legionów Polskich. Austria",
+            "transl": "Коли відбувся ІІІ поділ Польщі?"
+        },
+        {
+            "id": 10871,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy nie było Polski jako się w 1797 pieśń napisana przez państwa? Od 1795-1918r",
+            "transl": "Коли не було Польщі як держави?"
+        },
+        {
+            "id": 10872,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Dlaczego doszło do rozbiorów i upadku Rzeczpospolitej? Rzeczpospolita upadła, bo w sąsiedztwie agresywnie nastawionych państw militarnych, z władzą absolutną (Prusy, Rosja i Austria) obywatele Rzeczpospolitej do końca bardziej cenili sobie wolność obywatelską niż przymus",
+            "transl": "Чому дійшло до поділів та занепаду Речі Посполитої?"
+        },
+        {
+            "id": 10873,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy wybuchło Powstanie Listopadowe? Powstanie wybuchło w noc 29 listopada 1830r. w Warszawie. W 1831r. wojska rosyjski rozbiły wojska powstańców. Powstańcy musieli udać się na emigracje. Fala emigracji była taka duża, że w historii Polski nazywana się Wielką Emigracją",
+            "transl": "Коли вибухнуло Повстаня Листопадове?"
+        },
+        {
+            "id": 10874,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy wybuchło Powstanie Styczniowe? Powstanie Styczniowe wybuchło 22 stycznia 1863r., trwało do 1864r. Drugi narodowy zryw przeciwko zaborcy Rosji. Powstańcom nie udało się przejąc władzy w Warszawie",
+            "transl": "Коли вибухнуло повстання Січневе?"
+        },
+        {
+            "id": 10875,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy wybuchła I Wojna Światowa? 1 sierpnia 1914 – 11 listopada 1918. Brały w niej udział 33 państwa; w czasie jej trwania zmobilizowano 70 milionów ludzi, 10 milionów poniosło śmierć, a prawie 20 milionów zostało rannych. Upadły: Cesarstwo Niemieckie, Austro-Węgerskie, Imperium osmańskie, Imperium Rosyjskie",
+            "transl": "Коли почалась ІІ Світова Війна?"
+        },
+        {
+            "id": 10876,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy Polska otrzymała niepodległość? 11 listopada 1918r. zakończyła się I Wojna Światowa. Józef Piłsudski zostaje Naczelnikiem Państwa. 11 listopada został ogłoszony Dniem Niepodległości Polski",
+            "transl": "Коли Польща отримала незалежність?"
+        },
+        {
+            "id": 10877,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Cud nad Wisłą? W sierpniu 1920 odbyła się zwycięska bitwa wojsk polskich z armią bolszewicką. 15 sierpnia w Polsce jest dniem zwycięstwa Wojska Polskiego.",
+            "transl": "Чудо над Віслою"
+        },
+        {
+            "id": 10878,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kto był pierwszym Prezydentem II Rzeczpospolitej? Profesor Gabriel Narutowicz w 1922r.",
+            "transl": "Хто був першим президентом ІІ Речі Посполитої?"
+        },
+        {
+            "id": 10879,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kto był ostatnim Prezydentem II Rzeczpospolitej? Ignacy Mościcki w 1926r",
+            "transl": "Хто був останнім президентом ІІ Речі Посполитої"
+        },
+        {
+            "id": 10880,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy wybuchła II Wojna Światowa? 1 września 1939r. wojska niemieckie zaatakowały Polskę. Dnia 17 września 1939 wojska sowieckie wkroczyły na teren wschodniej II Rzeczpospolitej na mocy Paktu Ribbentrop-Mołotow. Teren II Rzeczpospolitej został podzielony: 49% Związek Sowiecki, 51% Niemcy",
+            "transl": "Коли почалась ІІ Світова Війна?"
+        },
+        {
+            "id": 10881,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Głowne bitwy II Wojny Światowej w których uczestniczyli żołnierze Wojska Polskiego? Bitwa o Anglię - 1940 rok; Bitwa o Monte Cassino - 1944 rok Włochy (Armia Polska pod dowództwem Generała Władysława Andersa); Walki w północnych Włoszech - 1945 rok; Wyzwolenie miasta Bredy w Holandii - 1944 rok.",
+            "transl": "Головні битви ІІ Світової війни в яких приймали участь солдати Війська Польського?"
+        },
+        {
+            "id": 10882,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Kiedy wybuchło Powstanie Warszawskie? Warszawie wybuchło powstanie zorganizowane przez Armię Krajową. Jego głównym celem jest wyzwolenie stolicy spod władzy Niemców i zdobycie suwerenności. Powstanie trwało 63 dni i zostało pokonane",
+            "transl": "Коли вибухнуло повстання Варшавське?"
+        },
+        {
+            "id": 10883,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Data końcu II Wojny Światowej? 8 maja 1945r. - bezwarunkowa kapitulacja III Rzeszy",
+            "transl": "Дата закінчення ІІ Світової війни?"
+        },
+        {
+            "id": 10884,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Polska po 1944 roku. Jałta 1945r. W Jałcie w lutym 1945 roku, Wielka Brytania i Stany Zjednoczone były zmuszone uznać roszczenia sowietów do terytorium na wschód od rzeki Bug. Armia Czerwona zajęłą już w tym czasie te tereny w pogoni za Niemcami. \"Jałta\" w Polsce jest synonimem zdrady aliantów i prawie pięćdziesięcioletniego podziału Europy na strefę wpływów sowieckich i wolny świat zachodni.",
+            "transl": "Польща після 1944 року. Ялта 1945"
+        },
+        {
+            "id": 10885,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Rok założenia Związku Zawodowego \"Solidarność\" lub z czym kojarzy się Sierpień 1980? Związek Zawodowy \"Solidarność\" został założony na podstawie Porozumień w Gdańsku kończących 14 dni strajku w sierpniu 1980 roku w Stoczni Gdańskiej. Strajkujący wystąpili za uzyskania swobód politycznych i ekonomicznych. Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983 Pokojową Nagrodę Nobla.",
+            "transl": "Рік заснування Союзу «Солідарність» або з чим асоціюється серпень 1980 року"
+        },
+        {
+            "id": 10886,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Z jakim wydarzeniem kojarzy się 13 grudzień?  13 grudzień 1981r. - wprowadzenie Stanu Wojennego przez generała Wojciecha Jaruzelskiego. Delegalizacja pierwszej Solidarności.",
+            "transl": "Яка подія пов’язана з 13 грудня?"
+        },
+        {
+            "id": 10887,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Koniec rządów komunistycznych? W 1989 Partia komunistyczna zezwala na wolne wybory, które wygrywają kandydaci bloku solidarnościowego. Tadeusz Mazowiecki zostaje pierwszym niekomunistycznym premierem Polski. Rok później Lech Wałęsa wygrywa wybory prezydenckie. ",
+            "transl": "Кінець комуністичної влади?"
+        },
+        {
+            "id": 10888,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Wymień nazwiska prezudentów Rzeczpospolitej Polski po 1989r.? 1989-1990r. – Wojciech Jaruzelski; 1990-1995r. – Lech Wałęsa; 1995-2005r. – Aleksander Kwaśniewski (był Prezydentem 2 kadencje); 2005-2010r. – Lech Kaczyński (10 kwietnia 2010r. wyleciał z Warszawy rządowym samolotem w Smoleńsk by udać się na obchody 70-rocznicy zbrodni katyńskiej. Zginął wraz z żoną i wszystkimi członkami delegacji); 2010r. – po 2015r – Bronisław Maria Komorowski. 2015r. – po dzisiaj – Andrzej Duda.",
+            "transl": "Назвіть президентів Речі Посполитої Польщі після 1989 року"
+        },
+        {
+            "id": 10889,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Data wstąpienia Polski do NATO? 12 marca 1999r. Polska stała członkiem NATO",
+            "transl": "Дата вступу Польщі до НАТО?"
+        },
+        {
+            "id": 10890,
+            "unitId": 2015,
+            "eng": "",
+            "pol": "Data wstąpienia Polski do Unii Europejskiej? Od 1 maja 2004 r. Polska jest pełnoprawnym członkiem Unii Europejskiej",
+            "transl": "Дата вступу Польщі в Євросоюз?"
         }
     ]
 
