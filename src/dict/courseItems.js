@@ -8537,99 +8537,15 @@ const courseItems =
             "id": 10760,
             "unitId": 2011,
             "eng": "",
-            "pol": "Ojcze nasz, który jesteś w niebie, niech się święci imię Twoje!",
-            "transl": "Отче наш, що єси на небесах, нехай святиться ім'я Твоє,"
-        },
-        {
-            "id": 10761,
-            "unitId": 2011,
-            "eng": "",
-            "pol": "Niech przyjdzie królestwo Twoje, niech Twoja wola spełnia się na ziemi, tak jak i w niebie",
-            "transl": "нехай прийде Царство Твоє, нехай буде воля Твоя, як на небі, так і на землі"
-        },
-        {
-            "id": 10762,
-            "unitId": 2011,
-            "eng": "",
-            "pol": "Chleba naszego powszedniego daj nam dzisiaj",
-            "transl": "Хліб наш насущний дай нам сьогодні"
-        },
-        {
-            "id": 10763,
-            "unitId": 2011,
-            "eng": "",
-            "pol": "i przebacz nam nasze winy, jak i my przebaczamy tym, którzy przeciw nam zawinili",
-            "transl": "і прости нам провини наші, як і ми прощаємо винуватцям нашим"
-        },
-        {
-            "id": 10764,
-            "unitId": 2011,
-            "eng": "",
-            "pol": "i nie dopuść, abyśmy ulegli pokusie, ale nas zachowaj od złego!",
-            "transl": "і не введи нас у спокусу, але визволи нас від лукавого"
-        },
-        {
-            "id": 10765,
-            "unitId": 2011,
-            "eng": "",
-            "pol": "Albowiem Twoje jest Królestwo i moc, i chwała na wieki wieków",
-            "transl": "Бо Твоє є Царство, і сила, і слава на віки вічні"
-        },
-        {
-            "id": 10766,
-            "unitId": 2011,
-            "eng": "",
-            "pol": "Amen",
-            "transl": "Амінь"
+            "pol": "Ojcze nasz, który jesteś w niebie, niech się święci imię Twoje! Niech przyjdzie królestwo Twoje, niech Twoja wola spełnia się na ziemi, tak jak i w niebie. Chleba naszego powszedniego daj nam dzisiaj. i przebacz nam nasze winy, jak i my przebaczamy tym, którzy przeciw nam zawinili. I nie dopuść, abyśmy ulegli pokusie, ale nas zachowaj od złego! Albowiem Twoje jest Królestwo i moc, i chwała na wieki wieków. Amen",
+            "transl": "Отче наш, що єси на небесах, нехай святиться ім'я Твоє, нехай прийде Царство Твоє, нехай буде воля Твоя, як на небі, так і на землі. Хліб наш насущний дай нам сьогодні. І прости нам провини наші, як і ми прощаємо винуватцям нашим. І не введи нас у спокусу, але визволи нас від лукавого. Бо Твоє є Царство, і сила, і слава на віки вічні. Амінь"
         },
         {
             "id": 10767,
             "unitId": 2012,
             "eng": "",
-            "pol": "Zdrowaś Maryjo, łaski pełna, Pan z Tobą",
-            "transl": "Радуйся, Маріє, благодаті повна! Господь з Тобою!"
-        },
-        {
-            "id": 10768,
-            "unitId": 2012,
-            "eng": "",
-            "pol": "Błogosławionaś Ty między niewiastami",
-            "transl": "Благословенна Ти між жінками"
-        },
-        {
-            "id": 10769,
-            "unitId": 2012,
-            "eng": "",
-            "pol": "i błogosławiony owoc żywota Twojego, Jezus",
-            "transl": "і благословенний плід лона Твого, Ісус"
-        },
-        {
-            "id": 10770,
-            "unitId": 2012,
-            "eng": "",
-            "pol": "Święta Maryjo, Matko Boża",
-            "transl": "Свята Маріє, Мати Божа"
-        },
-        {
-            "id": 10771,
-            "unitId": 2012,
-            "eng": "",
-            "pol": "módl się za nami grzesznymi",
-            "transl": "молися за нас, грішних"
-        },
-        {
-            "id": 10772,
-            "unitId": 2012,
-            "eng": "",
-            "pol": "teraz i w godzinę śmierci naszej",
-            "transl": "нині і в годину смерті нашої"
-        },
-        {
-            "id": 10773,
-            "unitId": 2012,
-            "eng": "",
-            "pol": "Amen",
-            "transl": "Амінь"
+            "pol": "Zdrowaś Maryjo, łaski pełna, Pan z Tobą. Błogosławionaś Ty między niewiastami. I błogosławiony owoc żywota Twojego, Jezus. Święta Maryjo, Matko Boża, módl się za nami grzesznymi, teraz i w godzinę śmierci naszej. ",
+            "transl": "Радуйся, Маріє, благодаті повна! Господь з Тобою! Благословенна Ти між жінками і благословенний плід лона Твого, Ісус. Свята Маріє, Мати Божа, молися за нас, грішних, нині і в годину смерті нашої. Амінь"
         },
         {
             "id": 10774,
