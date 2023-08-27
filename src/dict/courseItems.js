@@ -1566,7 +1566,7 @@ const courseItems =
             "unitId": 1008,
             "eng": "Are you from around here?",
             "pol": "Czy jesteś z tąd?",
-            "transl": "Ви звідси?"
+            "transl": "чи ти звідси?"
         },
         {
             "id": 10160,
@@ -5437,7 +5437,7 @@ const courseItems =
             "unitId": 2004,
             "eng": "",
             "pol": "W ciągu tygodnia zarobię tysiąc złotych",
-            "transl": "За тиждень зароблю тисячу злотих"
+            "transl": "протягом тижня зароблю тисячу злотих"
         },
         {
             "id": 2268,
@@ -5513,7 +5513,7 @@ const courseItems =
             "id": 2278,
             "unitId": 2004,
             "eng": "",
-            "pol": "zadko noszę szpilki, częściej noszę normalne buty",
+            "pol": "rzadko noszę szpilki, częściej noszę normalne buty",
             "transl": "Я рідко ношу високі підбори, частіше ношу звичайне взуття"
         },
         {
@@ -8537,7 +8537,7 @@ const courseItems =
             "id": 10760,
             "unitId": 2011,
             "eng": "",
-            "pol": "Ojcze nasz, który jesteś w niebie, niech się święci imię Twoje!",
+            "pol": "Ojcze nasz, któryś jest w niebie, święć się imię Twoje,",
             "transl": "Отче наш, що єси на небесах,  нехай святиться ім'я Твоє!"
         },
         {
@@ -9363,7 +9363,7 @@ const courseItems =
             "id": 10891,
             "unitId": 2011,
             "eng": "",
-            "pol": "Niech przyjdzie królestwo Twoje, niech Twoja wola spełnia się na ziemi, tak jak i w niebie",
+            "pol": "przyjdź Królestwo Twoje, bądź wola Twoja jako w niebie, tak i na ziemi,",
             "transl": "нехай прийде Царство Твоє, нехай буде воля Твоя, як на небі, так і на землі"
         },
         {
@@ -9377,22 +9377,22 @@ const courseItems =
             "id": 10893,
             "unitId": 2011,
             "eng": "",
-            "pol": "I przebacz nam nasze winy, jak i my przebaczamy tym, którzy przeciw nam zawinili",
+            "pol": "I odpuść nam nasze winy, jako i my odpuszczamy naszym winowajcom",
             "transl": "І прости нам провини наші, як і ми прощаємо винуватцям нашим"
         },
         {
             "id": 10894,
             "unitId": 2011,
             "eng": "",
-            "pol": "I nie dopuść, abyśmy ulegli pokusie, ale nas zachowaj od złego!",
+            "pol": "I nie wódź nas na pokuszenie, ale nas zbaw ode złego.",
             "transl": "І не введи нас у спокусу, але визволи нас від лукавого"
         },
         {
             "id": 10895,
             "unitId": 2011,
             "eng": "",
-            "pol": "Albowiem Twoje jest Królestwo i moc, i chwała na wieki wieków",
-            "transl": "Бо Твоє є Царство, і сила, і слава на віки вічні"
+            "pol": "Amen",
+            "transl": " Амінь"
         },
         {
             "id": 10896,
@@ -9428,13 +9428,6 @@ const courseItems =
             "eng": "",
             "pol": "teraz i w godzinę śmierci naszej",
             "transl": "нині і в годину смерті нашої"
-        },
-        {
-            "id": 10901,
-            "unitId": 2011,
-            "eng": "",
-            "pol": "Amen",
-            "transl": " Амінь"
         },
         {
             "id": 10902,
