@@ -83,6 +83,7 @@ const content = {
 };
 
 const MAX_WORD_LENGTH = 100;
+const MAX_SOUND_LENGTH = 91;
 const NEW_LEARN_NUMBER = 14;
 
 const initialState = {
@@ -367,7 +368,7 @@ class LearningClass extends Component {
         const wordLength = Math.round(word.length / this.soundAndRepeatCoef);
         const minTime = 13 / this.soundAndRepeatCoef;
         let timeoutTime = wordLength > minTime ? wordLength : minTime;
-        if(timeoutTime > 90) timeoutTime = 90;
+        if(timeoutTime > 60) timeoutTime = 60;
         return timeoutTime;
     }
 
@@ -761,7 +762,7 @@ export function speak() {
     const {english, polish, rus, learnPol, learnEng, soundRus} = this.state;
 
     //comp eng
-    if (english && learnEng){
+    if (english && learnEng && english.length < MAX_SOUND_LENGTH){
         if (!this.filteredEngVoices || !this.filteredEngVoices.length) this.getVoices();
         const utterance = new SpeechSynthesisUtterance(english);
         const randomVoice = this.filteredEngVoices ? Math.floor(Math.random() * this.filteredEngVoices.length) : null;
@@ -769,7 +770,7 @@ export function speak() {
         if (!utterance.voice) utterance.lang = 'en';
         speechSynthesis.speak(utterance);
     }
-    if (polish && learnPol){
+    if (polish && learnPol && polish.length < MAX_SOUND_LENGTH){
         if (!this.filteredPolVoices || !this.filteredPolVoices.length) this.getVoices();
         const utterance = new SpeechSynthesisUtterance(polish);
         utterance.voice = get(this.filteredPolVoices, '[0]');
@@ -778,7 +779,7 @@ export function speak() {
     }
 
     //comp rus
-    if (soundRus){
+    if (soundRus && rus.length < MAX_SOUND_LENGTH){
         if (!this.filteredRusVoices || !this.filteredRusVoices.length) this.getVoices();
         const utterance = new SpeechSynthesisUtterance(rus);
         utterance.voice = get(this.filteredRusVoices, '[0]');
