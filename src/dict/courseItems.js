@@ -1573,7 +1573,7 @@ const courseItems =
             "unitId": 1008,
             "eng": "Pardon me, I’m lost, how do I get to?",
             "pol": "Wybacz mi, jestem zgubiony, jak mam dojść do?",
-            "transl": "Вибачте, я заблукав, як мені добратися?"
+            "transl": "Вибач мені, я заблукав, як мені добратися?"
         },
         {
             "id": 10162,
@@ -3827,7 +3827,7 @@ const courseItems =
             "unitId": 302,
             "eng": "taking things back to the shop",
             "pol": "zabieranie rzeczy z powrotem do sklepu",
-            "transl": "Повернення промов у магазин"
+            "transl": "Повернення товару у магазин"
         },
         {
             "id": 3043,
@@ -5262,7 +5262,7 @@ const courseItems =
             "unitId": 2003,
             "eng": "",
             "pol": "Bardzo lubię spędzać swój wolny czas z tobą",
-            "transl": "Мені дуже подобається проводити з тобою вільний час"
+            "transl": "дуже мені подобається проводити з тобою вільний час"
         },
         {
             "id": 2232,
@@ -8537,15 +8537,15 @@ const courseItems =
             "id": 10760,
             "unitId": 2011,
             "eng": "",
-            "pol": "Ojcze nasz, który jesteś w niebie, niech się święci imię Twoje! Niech przyjdzie królestwo Twoje, niech Twoja wola spełnia się na ziemi, tak jak i w niebie. Chleba naszego powszedniego daj nam dzisiaj. i przebacz nam nasze winy, jak i my przebaczamy tym, którzy przeciw nam zawinili. I nie dopuść, abyśmy ulegli pokusie, ale nas zachowaj od złego! Albowiem Twoje jest Królestwo i moc, i chwała na wieki wieków. Amen",
-            "transl": "Отче наш, що єси на небесах, нехай святиться ім'я Твоє, нехай прийде Царство Твоє, нехай буде воля Твоя, як на небі, так і на землі. Хліб наш насущний дай нам сьогодні. І прости нам провини наші, як і ми прощаємо винуватцям нашим. І не введи нас у спокусу, але визволи нас від лукавого. Бо Твоє є Царство, і сила, і слава на віки вічні. Амінь"
+            "pol": "Ojcze nasz, który jesteś w niebie, niech się święci imię Twoje!",
+            "transl": "Отче наш, що єси на небесах,  нехай святиться ім'я Твоє!"
         },
         {
             "id": 10767,
             "unitId": 2012,
             "eng": "",
-            "pol": "Zdrowaś Maryjo, łaski pełna, Pan z Tobą. Błogosławionaś Ty między niewiastami. I błogosławiony owoc żywota Twojego, Jezus. Święta Maryjo, Matko Boża, módl się za nami grzesznymi, teraz i w godzinę śmierci naszej. ",
-            "transl": "Радуйся, Маріє, благодаті повна! Господь з Тобою! Благословенна Ти між жінками і благословенний плід лона Твого, Ісус. Свята Маріє, Мати Божа, молися за нас, грішних, нині і в годину смерті нашої. Амінь"
+            "pol": "Zdrowaś Maryjo, łaski pełna, Pan z Tobą",
+            "transl": "Радуйся, Маріє, благодаті повна! Господь з Тобою!"
         },
         {
             "id": 10774,
@@ -9358,6 +9358,76 @@ const courseItems =
             "eng": "",
             "pol": "Data wstąpienia Polski do Unii Europejskiej? Od 1 maja 2004 r. Polska jest pełnoprawnym członkiem Unii Europejskiej",
             "transl": "Дата вступу Польщі в Євросоюз?"
+        },
+        {
+            "id": 10891,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "Niech przyjdzie królestwo Twoje, niech Twoja wola spełnia się na ziemi, tak jak i w niebie",
+            "transl": "нехай прийде Царство Твоє, нехай буде воля Твоя, як на небі, так і на землі"
+        },
+        {
+            "id": 10892,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "Chleba naszego powszedniego daj nam dzisiaj",
+            "transl": "Хліб наш насущний дай нам сьогодні"
+        },
+        {
+            "id": 10893,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "I przebacz nam nasze winy, jak i my przebaczamy tym, którzy przeciw nam zawinili",
+            "transl": "І прости нам провини наші, як і ми прощаємо винуватцям нашим"
+        },
+        {
+            "id": 10894,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "I nie dopuść, abyśmy ulegli pokusie, ale nas zachowaj od złego!",
+            "transl": "І не введи нас у спокусу, але визволи нас від лукавого"
+        },
+        {
+            "id": 10895,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "Albowiem Twoje jest Królestwo i moc, i chwała na wieki wieków. Amen",
+            "transl": "Бо Твоє є Царство, і сила, і слава на віки вічні. Амінь"
+        },
+        {
+            "id": 10896,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "Błogosławionaś Ty między niewiastami",
+            "transl": "Благословенна Ти між жінками"
+        },
+        {
+            "id": 10897,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "I błogosławiony owoc żywota Twojego, Jezus. Święta Maryjo, Matko Boża, módl się za nami grzesznymi, teraz i w godzinę śmierci naszej. Amen",
+            "transl": "і благословенний плід лона Твого, Ісус. Свята Маріє, Мати Божа, молися за нас, грішних, нині і в годину смерті нашої. Амінь"
+        },
+        {
+            "id": 10898,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "Święta Maryjo, Matko Boża, módl się za nami grzesznymi, teraz i w godzinę śmierci naszej. Amen",
+            "transl": "Свята Маріє, Мати Божа, молися за нас, грішних, нині і в годину смерті нашої. Амінь"
+        },
+        {
+            "id": 10899,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "módl się za nami grzesznymi",
+            "transl": "молися за нас, грішних"
+        },
+        {
+            "id": 10900,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "teraz i w godzinę śmierci naszej. Amen",
+            "transl": "нині і в годину смерті нашої. Амінь"
         }
     ]
 
