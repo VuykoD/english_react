@@ -9391,8 +9391,8 @@ const courseItems =
             "id": 10895,
             "unitId": 2011,
             "eng": "",
-            "pol": "Albowiem Twoje jest Królestwo i moc, i chwała na wieki wieków. Amen",
-            "transl": "Бо Твоє є Царство, і сила, і слава на віки вічні. Амінь"
+            "pol": "Albowiem Twoje jest Królestwo i moc, i chwała na wieki wieków",
+            "transl": "Бо Твоє є Царство, і сила, і слава на віки вічні"
         },
         {
             "id": 10896,
@@ -9405,15 +9405,15 @@ const courseItems =
             "id": 10897,
             "unitId": 2012,
             "eng": "",
-            "pol": "I błogosławiony owoc żywota Twojego, Jezus. Święta Maryjo, Matko Boża, módl się za nami grzesznymi, teraz i w godzinę śmierci naszej. Amen",
-            "transl": "і благословенний плід лона Твого, Ісус. Свята Маріє, Мати Божа, молися за нас, грішних, нині і в годину смерті нашої. Амінь"
+            "pol": "I błogosławiony owoc żywota Twojego, Jezus",
+            "transl": "і благословенний плід лона Твого, Ісус"
         },
         {
             "id": 10898,
             "unitId": 2012,
             "eng": "",
-            "pol": "Święta Maryjo, Matko Boża, módl się za nami grzesznymi, teraz i w godzinę śmierci naszej. Amen",
-            "transl": "Свята Маріє, Мати Божа, молися за нас, грішних, нині і в годину смерті нашої. Амінь"
+            "pol": "Święta Maryjo, Matko Boża",
+            "transl": "Свята Маріє, Мати Божа"
         },
         {
             "id": 10899,
@@ -9426,8 +9426,22 @@ const courseItems =
             "id": 10900,
             "unitId": 2012,
             "eng": "",
-            "pol": "teraz i w godzinę śmierci naszej. Amen",
-            "transl": "нині і в годину смерті нашої. Амінь"
+            "pol": "teraz i w godzinę śmierci naszej",
+            "transl": "нині і в годину смерті нашої"
+        },
+        {
+            "id": 10901,
+            "unitId": 2011,
+            "eng": "",
+            "pol": "Amen",
+            "transl": " Амінь"
+        },
+        {
+            "id": 10902,
+            "unitId": 2012,
+            "eng": "",
+            "pol": "Amen",
+            "transl": "Амінь"
         }
     ]
 
