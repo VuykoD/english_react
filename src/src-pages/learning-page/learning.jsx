@@ -547,6 +547,20 @@ class LearningClass extends Component {
         // localStorage.courseItems = JSON.stringify(courseItems);
         // console.log(courseItems);
 
+        // const newCourseItems = [];
+        // map(courseItems, (item, key) => {
+        //     const newItem = {
+        //         id: item.id,
+        //         unitId: item.unitId
+        //     }
+        //     if (item.eng) newItem.eng = item.eng;
+        //     if (item.pol) newItem.pol = item.pol;
+        //     if (item.transl) newItem.transl = item.transl;
+        //     newCourseItems.push(newItem);
+        // });
+        // localStorage.courseItems = JSON.stringify(newCourseItems);
+        // console.log(courseItems, JSON.stringify(courseItems).length, JSON.stringify(newCourseItems).length,);
+
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
 
@@ -633,14 +647,8 @@ class LearningClass extends Component {
                             {soundButton.call(this)}
                             {showRus && getBadge.call(this, rus, "light")}
                             {getProgressBar.call(this)}
-                            {showEng && getBadge(english, "secondary")}
-                            {showPol && getBadge(polish, "secondary")}
-                            {(mistake > 2 || changeToInput) &&
-                                <>
-                                    {learnEng && getBadge(english, "info")}
-                                    {learnPol && getBadge(polish, "info")}
-                                </>
-                            }
+                            {(showEng || (mistake > 2 || changeToInput)) && getBadge.call(this, english, "secondary")}
+                            {(showPol || (mistake > 2 || changeToInput)) && getBadge.call(this, polish, "secondary")}
                             {exampleLearning === 'write' &&
                                 <>
                                     {getInput.call(this)}

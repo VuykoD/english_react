@@ -413,6 +413,12 @@ const courseUnits =
             "courseId": 10,
             "url": "/pytania-ogolne-о-polsce",
             "name": "pytania ogólne о Polsce"
+        },
+        {
+            "id": 2021,
+            "courseId": 11,
+            "url": "/hymn-polski",
+            "name": "hymn polski"
         }
     ]
 ;
