@@ -213,15 +213,15 @@ class LearningClass extends Component {
     };
 
     onSavePol = () => {
-        const formInput = document.getElementById('formInput');
-        let newPol = get(formInput, 'value');
+        const changePol = document.getElementById('changePol');
+        let newPol = get(changePol, 'value');
         const { polish } = this.state;
 
         const index = findIndex(courseItems, {'pol': polish});
         if (index > -1) {
             courseItems[index].pol = newPol;
             localStorage.courseItems = JSON.stringify(courseItems);
-            document.getElementById("formInput").value = '';
+            document.getElementById("changePol").value = '';
         }
 
         const indexLearnArray = findIndex(this.learnArr, {'pol': polish});
@@ -645,10 +645,22 @@ class LearningClass extends Component {
                         <Col>
                             {this.getTopic()}
                             {soundButton.call(this)}
-                            {showRus && getBadge.call(this, rus, "light")}
+                            {showRus && getBadge.call(
+                                this,
+                                rus,
+                                "light",
+                                this.onSaveRus,
+                                'changeRus'
+                            )}
                             {getProgressBar.call(this)}
                             {(showEng || (mistake > 2 || changeToInput)) && getBadge.call(this, english, "secondary")}
-                            {(showPol || (mistake > 2 || changeToInput)) && getBadge.call(this, polish, "secondary")}
+                            {(showPol || (mistake > 2 || changeToInput)) && getBadge.call(
+                                this,
+                                polish,
+                                "secondary",
+                                this.onSavePol,
+                                'changePol'
+                            )}
                             {exampleLearning === 'write' &&
                                 <>
                                     {getInput.call(this)}
@@ -683,7 +695,7 @@ export function soundButton() {
     )
 }
 
-export function getBadge(txt, variant) {
+export function getBadge(txt, variant, saveFunc, inputId) {
     if (!txt) return null;
     const badge = (
         <h3>
@@ -707,7 +719,7 @@ export function getBadge(txt, variant) {
             <Col sm={1}/>
             <Col>
                 <Form.Control
-                    id='changeRus'
+                    id={inputId}
                     type="text"
                     className="mainInput"
                 />
@@ -722,7 +734,7 @@ export function getBadge(txt, variant) {
                 <Button
                     variant="info"
                     block
-                    onClick={this.onSaveRus}
+                    onClick={saveFunc}
                     className="record"
                 >
                     {saveTranslation}
