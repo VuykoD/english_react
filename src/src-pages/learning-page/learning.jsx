@@ -810,7 +810,7 @@ export function getBadge(txt, variant, saveFunc, inputId) {
 export function getDotBadge(variant) {
     const { english, polish, learnPol } = this.state;
     let wordToLearn = getWordToLearn(english, polish, learnPol);
-    wordToLearn = wordToLearn.replace(/[a-zA-Z0-9]/gi, ".");
+    wordToLearn = wordToLearn.replace(/[a-zA-ZŚĄŻŹÓŁĆ0-9]/gi, ".");
 
     return (
         <h3>
