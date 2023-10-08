@@ -72,6 +72,14 @@ const content = {
         ru: "Ускоренное повторение",
         ukr: "Прискорене повторення",
     },
+    firstLettersByText: {
+        ru: "Первые буквы по тексту",
+        ukr: "Перші букви по тексту",
+    },
+    firstLettersBySound: {
+        ru: "Первые буквы по звуку",
+        ukr: "Перші букви по звуку",
+    },
     resetRecord: {
         ru: "Обнулить рекорд",
         ukr: "Обнулити рекорд",
@@ -79,6 +87,10 @@ const content = {
     saveTranslation: {
         ru: "Сохранить перевод",
         ukr: "Зберегти переклад",
+    },
+    games: {
+        ru: "Игры",
+        ukr: "Ігри",
     },
 };
 
@@ -348,6 +360,25 @@ class LearningClass extends Component {
         localStorage.progress = JSON.stringify(lP);
     };
 
+    firstLettersBySound = () => {
+        const { newLearnNumber } = this.state;
+        this.getLearnArray(newLearnNumber);
+        if (!this.learnArr) return;
+        this.setState({
+            cycleLearning: 'new',
+            exampleLearning: 'first_letters_by_sound'
+        });
+        this.setEngAndTransl(this.state.learnNumber);
+    }
+
+    firstLettersByText = () => {
+        const { newLearnNumber } = this.state;
+        this.getLearnArray(newLearnNumber);
+        if (!this.learnArr) return;
+        this.setState({cycleLearning: 'new', exampleLearning: 'first_letters_by_text'});
+        this.setEngAndTransl(this.state.learnNumber);
+    }
+
     getLearnArray = (sliceNumber) => {
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
@@ -534,6 +565,9 @@ class LearningClass extends Component {
         const translPol = get(content, `translPol[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
         const speedRepeat = get(content, `speedRepeat[${siteLang}]`);
+        const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`);
+        const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`);
+        const games = get(content, `games[${siteLang}]`);
         const difference = courseItemsJson.length - (this.localProgress?.length || 0);
         // let ukrKey = 0;
         // let startChange = false;
@@ -638,13 +672,28 @@ class LearningClass extends Component {
                             <Form.Check type="checkbox" label={translPol} checked={showPol} onChange={this.showPol}/>
                         </Col>
                     </Row>
+                    <Row>
+                        <h3 className="text-center new-row" children={games}/>
+                    </Row>
+                    <Row>
+                        <Col sm={3}>
+                            <Button variant="info" block onClick={this.firstLettersByText}>
+                                {firstLettersByText}
+                            </Button>
+                        </Col>
+                        <Col sm={3}>
+                            <Button variant="info" block onClick={this.firstLettersBySound}>
+                                {firstLettersBySound}
+                            </Button>
+                        </Col>
+                    </Row>
                 </Fragment>
                 }
                 <Row className="text-center new-row rows">
                     {exampleLearning &&
                         <Col>
                             {this.getTopic()}
-                            {soundButton.call(this)}
+                            {exampleLearning !== 'first_letters_by_text' && soundButton.call(this)}
                             {showRus && getBadge.call(
                                 this,
                                 rus,
@@ -661,12 +710,16 @@ class LearningClass extends Component {
                                 this.onSavePol,
                                 'changePol'
                             )}
-                            {exampleLearning === 'write' &&
+                            {(
+                                exampleLearning === 'write'
+                                || exampleLearning === 'first_letters_by_text'
+                                || exampleLearning === 'first_letters_by_sound'
+                            ) && (
                                 <>
                                     {getInput.call(this)}
                                     {this.record()}
                                 </>
-                            }
+                            )}
                         </Col>
                     }
                 </Row>
