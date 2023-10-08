@@ -921,7 +921,8 @@ export function changedInput() {
         learnNumber,
         mistakeRewrite,
         record,
-        changeToInput
+        changeToInput,
+        exampleLearning
     } = this.state;
     if (changeToInput) return;
     const formInput = document.getElementById('formInput');
@@ -931,74 +932,82 @@ export function changedInput() {
     if (learnPol) wordToLearn = polish;
     wordToLearn = wordToLearn.toUpperCase();
     if (!wordToLearn) this.repeatMistakes = true;
-    if (word.length === 1 && !mistake && wordToLearn.slice(0, word.length) === word && !mistakeRewrite) {
+    if (
+        word.length === 1
+        && !mistake
+        && wordToLearn.slice(0, word.length) === word
+        && !mistakeRewrite
+        && exampleLearning === 'write'
+    ) {
         speak.call(this);
     }
 
-    if (wordToLearn === word || wordToLearn.length > MAX_WORD_LENGTH || !wordToLearn) {
-        const isInMistake = this.mistakeArr.indexOf(learnNumber) > -1
-        if (!mistake && !isInMistake){
-            const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-            const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
-            map(localProgress, (item, key) => {
-                const index = findIndex(courseItems, {'id': item.entity_id});
-                localProgress[key].pol = get(courseItems, `[${index}].pol`);
-            })
-            const index = findIndex(localProgress, {'pol': polish});
-            if (index > -1) {
-                statistic.push({
-                    id: localProgress[index].entity_id
-                })
-                localProgress.splice(index, 1);
-                map(localProgress, (item, key) => {
-                    localProgress[key] = { entity_id: localProgress[key].entity_id };
-                })
-                localStorage.progress = JSON.stringify(localProgress);
-                localStorage.statistic = JSON.stringify(statistic);
-            }
-        }
-        document.getElementById("formInput").value = '';
-        this.setEngAndTransl(learnNumber + 1, MAX_WORD_LENGTH);
-        if (learnNumber >= this.learnArr.length || this.repeatMistakes) {
-            this.repeatMistakes = true;
-            if(mistakeRewrite < this.mistakeArr.length) {
-                const nextNumber = this.mistakeArr[mistakeRewrite];
-                this.setState({mistakeRewrite: mistakeRewrite + 1});
-                this.setEngAndTransl(nextNumber);
-            }
-
-            if (mistakeRewrite >= this.mistakeArr.length) {
+    if (exampleLearning === 'write') {
+        if (wordToLearn === word || wordToLearn.length > MAX_WORD_LENGTH || !wordToLearn) {
+            const isInMistake = this.mistakeArr.indexOf(learnNumber) > -1
+            if (!mistake && !isInMistake){
+                const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
                 const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
-                const options = {
-                    year: 'numeric', month: 'numeric', day: 'numeric',
-                    hour: 'numeric', minute: 'numeric',
-                    hour12: false
-                };
-                const date = new Date().toLocaleDateString("en-IN", options);
-                statistic.push(date);
-                localStorage.statistic = JSON.stringify(statistic);
-                this.setInitialData();
+                map(localProgress, (item, key) => {
+                    const index = findIndex(courseItems, {'id': item.entity_id});
+                    localProgress[key].pol = get(courseItems, `[${index}].pol`);
+                })
+                const index = findIndex(localProgress, {'pol': polish});
+                if (index > -1) {
+                    statistic.push({
+                        id: localProgress[index].entity_id
+                    })
+                    localProgress.splice(index, 1);
+                    map(localProgress, (item, key) => {
+                        localProgress[key] = { entity_id: localProgress[key].entity_id };
+                    })
+                    localStorage.progress = JSON.stringify(localProgress);
+                    localStorage.statistic = JSON.stringify(statistic);
+                }
             }
+            document.getElementById("formInput").value = '';
+            this.setEngAndTransl(learnNumber + 1, MAX_WORD_LENGTH);
+            if (learnNumber >= this.learnArr.length || this.repeatMistakes) {
+                this.repeatMistakes = true;
+                if(mistakeRewrite < this.mistakeArr.length) {
+                    const nextNumber = this.mistakeArr[mistakeRewrite];
+                    this.setState({mistakeRewrite: mistakeRewrite + 1});
+                    this.setEngAndTransl(nextNumber);
+                }
+
+                if (mistakeRewrite >= this.mistakeArr.length) {
+                    const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
+                    const options = {
+                        year: 'numeric', month: 'numeric', day: 'numeric',
+                        hour: 'numeric', minute: 'numeric',
+                        hour12: false
+                    };
+                    const date = new Date().toLocaleDateString("en-IN", options);
+                    statistic.push(date);
+                    localStorage.statistic = JSON.stringify(statistic);
+                    this.setInitialData();
+                }
+            }
+
         }
 
-    }
-
-    if (wordToLearn.slice(0, word.length) !== word) {
-        word = (word.slice(0, word.length - 1));
-        document.getElementById("formInput").value = word;
-        if (mistake >= 2) {
-            this.setState({record: 0});
+        if (wordToLearn.slice(0, word.length) !== word) {
+            word = (word.slice(0, word.length - 1));
+            document.getElementById("formInput").value = word;
+            if (mistake >= 2) {
+                this.setState({record: 0});
+            }
+            if (!mistake && !mistakeRewrite) {
+                speak.call(this);
+            }
+            this.setState({mistake: mistake + 1});
+            if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
+                this.mistakeArr.push(learnNumber);
+            }
+            this.mistakeArr = this.mistakeArr.filter(onlyUnique);
+        }else{
+            this.setState({record: record + 1});
         }
-        if (!mistake && !mistakeRewrite) {
-            speak.call(this);
-        }
-        this.setState({mistake: mistake + 1});
-        if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
-            this.mistakeArr.push(learnNumber);
-        }
-        this.mistakeArr = this.mistakeArr.filter(onlyUnique);
-    }else{
-        this.setState({record: record + 1});
     }
 }
 
