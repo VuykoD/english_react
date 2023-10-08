@@ -692,7 +692,7 @@ class LearningClass extends Component {
                         <Col>
                             {this.getTopic()}
                             {exampleLearning !== 'first_letters_by_text' && soundButton.call(this)}
-                            {showRus && getBadge.call(
+                            {showRus && exampleLearning !== 'first_letters_by_sound' &&  getBadge.call(
                                 this,
                                 rus,
                                 "light",
@@ -810,7 +810,7 @@ export function getBadge(txt, variant, saveFunc, inputId) {
 export function getDotBadge(variant) {
     const { english, polish, learnPol } = this.state;
     let wordToLearn = getWordToLearn(english, polish, learnPol);
-    wordToLearn = wordToLearn.replace(/[a-zA-ZŚĄŻŹÓŁĆ0-9]/gi, ".");
+    wordToLearn = wordToLearn.replace(/[A-ZŚĄŻŹÓŁĆĘ0-9]/gi, ".");
 
     return (
         <h3>
@@ -879,8 +879,11 @@ export function speak() {
 
 export function checkIsSound() {
     const {exampleLearning} = this.state;
+    const formInput = document.getElementById('formInput');
+    const word = get(formInput, 'value');
 
-    return exampleLearning === 'example_sound_repeat';
+    return exampleLearning === 'example_sound_repeat'
+        || (exampleLearning === 'first_letters_by_sound' && !word);
 }
 
 export function getInput() {
@@ -1039,11 +1042,12 @@ function allIsCorrect() {
     const {
         polish,
         mistake,
-        learnNumber
+        learnNumber,
+        exampleLearning
     } = this.state;
     const isInMistake = this.mistakeArr.indexOf(learnNumber) > -1
 
-    if (!mistake && !isInMistake){
+    if (!mistake && !isInMistake && exampleLearning === 'write'){
         const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
         map(localProgress, (item, key) => {
