@@ -1025,6 +1025,9 @@ export function changedInput() {
             })
             document.getElementById("formInput").value = wordToLearn.slice(0, slicedLength);
             if (slicedLength >= wordToLearn.length){
+                if (learnNumber === this.learnArr.length - 1) {
+                    this.setInitialData();
+                }
                 allIsCorrect.call(this);
             }
         }
