@@ -276,13 +276,13 @@ class LearningClass extends Component {
         localStorage.record = 0;
     };
 
-    speedRepeat = (arrayLength) => {
+    speedRepeat = () => {
         this.soundAndRepeatCoef = 2.6;
         this.soundAndRepeat(50);
     }
 
     write = () => {
-        this.setLearnArr(50);
+        this.setLearnArr(10);
         this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'write'});
@@ -787,7 +787,7 @@ export function checkIsSound() {
 }
 
 export function getInput() {
-    const { learnNumber, newLearnNumber, changeToInput } = this.state;
+    const { learnNumber, changeToInput } = this.state;
     const {siteLang} = this.props.store;
     const saveTranslation = get(content, `saveTranslation[${siteLang}]`);
     const saveButton = (
@@ -812,7 +812,7 @@ export function getInput() {
             <Row>
                 <Col sm={3}/>
                 <Col>
-                    {`${learnNumber + 1}(${newLearnNumber})`}
+                    {`${learnNumber + 1}(${this.learnArr?.length})`}
                     <Form.Control
                         id='formInput'
                         type="text"
