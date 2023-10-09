@@ -32,7 +32,9 @@ const content = {
 
 export default class Footer extends Component {
     static propTypes = {
-        store: PropTypes.shape({})
+        store: PropTypes.shape({}),
+        onChangeItemCount: PropTypes.func,
+        onChangeToLearnCount: PropTypes.func
     };
 
     warn = () => {
@@ -41,14 +43,19 @@ export default class Footer extends Component {
     };
 
     render() {
-        const {siteLang, fontColor, firstColor, secondColor} = this.props.store;
+        const {
+            siteLang,
+            fontColor,
+            firstColor,
+            secondColor,
+            toLearnCount
+        } = this.props.store;
         const premium = get(content, `premium[${siteLang}]`);
         const contacts = get(content, `contacts[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
         const hint = get(content, `hint[${siteLang}]`);
         const fontStyle = {color: fontColor};
         const gradientStyle = {background: `linear-gradient(to bottom,${secondColor},${firstColor}`};
-        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
 
         return (
             <div className="footer" style={gradientStyle}>
@@ -63,7 +70,7 @@ export default class Footer extends Component {
                             md="auto"
                             className="footer-item"
                             style={fontStyle}
-                            children={`${countRepeat} ${localProgress.length}/${courseItemsJson.length}`}
+                            children={`${countRepeat} ${toLearnCount}/${courseItemsJson.length}`}
                         />
                         <Col/>
                         <Col md="auto" className="footer-item" style={fontStyle} children={`${contacts}: +38 (093) 922-49-49`} />

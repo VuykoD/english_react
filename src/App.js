@@ -17,9 +17,15 @@ class App extends Component {
     render() {
         const {
             store = {},
-            onChangeSiteLang, onChangeLearnedLang,
-            onChangeFontColor, onChangeBackColor, onChangeFirstColor, onChangeSecondColor,
-            onChangeUserData
+            onChangeSiteLang,
+            onChangeLearnedLang,
+            onChangeFontColor,
+            onChangeBackColor,
+            onChangeFirstColor,
+            onChangeSecondColor,
+            onChangeUserData,
+            onChangeItemCount,
+            onChangeToLearnCount
         } = this.props;
         const {backColor} = store;
         document.body.style.background = backColor;
@@ -36,8 +42,20 @@ class App extends Component {
                 />
                 <Switch>
                     <Route exact path='/' children={<HomePage store={store}/>}/>
-                    <Route path='/course-page' children={<Course store={store}/>}/>
-                    <Route path='/learning' children={<Learning store={store}/>}/>
+                    <Route path='/course-page' children={
+                        <Course
+                            store={store}
+                            onChangeItemCount={onChangeItemCount}
+                            onChangeToLearnCount={onChangeToLearnCount}
+                        />
+                    }/>
+                    <Route path='/learning' children={
+                        <Learning
+                            store={store}
+                            onChangeItemCount={onChangeItemCount}
+                            onChangeToLearnCount={onChangeToLearnCount}
+                        />
+                    }/>
                     <Route path='/user_dictionary' children={<UserDictionary store={store}/>}/>
                     <Route path='/user_data' children={
                         <UserData
@@ -94,6 +112,12 @@ export default connect(
         },
         onChangeUserData: (userData) => {
             dispatch({type: 'USER_DATA', payload: userData})
+        },
+        onChangeItemCount: (itemCount) => {
+            dispatch({type: 'ITEM_COUNT', payload: itemCount})
+        },
+        onChangeToLearnCount: (toLearnCount) => {
+            dispatch({type: 'TO_LEARN_COUNT', payload: toLearnCount})
         },
     })
 )(App);

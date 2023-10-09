@@ -124,9 +124,12 @@ const initialState = {
 
 class LearningClass extends Component {
     static propTypes = {
+        store: PropTypes.shape({}),
         location: PropTypes.object.isRequired,
         match: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired
+        history: PropTypes.object.isRequired,
+        onChangeItemCount: PropTypes.func,
+        onChangeToLearnCount: PropTypes.func
     };
 
     constructor(props) {
@@ -1059,6 +1062,7 @@ function allIsCorrect() {
         learnNumber,
         exampleLearning
     } = this.state;
+    const { onChangeToLearnCount } = this.props;
     const isInMistake = this.mistakeArr.indexOf(learnNumber) > -1
 
     if (!mistake && !isInMistake && exampleLearning === 'write'){
@@ -1077,6 +1081,7 @@ function allIsCorrect() {
             map(localProgress, (item, key) => {
                 localProgress[key] = { entity_id: localProgress[key].entity_id };
             })
+            onChangeToLearnCount(localProgress.length);
             localStorage.progress = JSON.stringify(localProgress);
             localStorage.statistic = JSON.stringify(statistic);
         }

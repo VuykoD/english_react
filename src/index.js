@@ -22,7 +22,8 @@ const initialState = {
     firstColor: localStorage.firstColor || defaultColor.firstColor,
     secondColor: localStorage.secondColor || defaultColor.secondColor,
     backColor: localStorage.backColor || defaultColor.backColor,
-    userData: localStorage.userData || ''
+    itemCount: localStorage.userData || '',
+    toLearnCount: localStorage.progress ? JSON.parse(localStorage.progress)?.length : 0,
 };
 
 function playlist(state = initialState, action) {
@@ -33,6 +34,8 @@ function playlist(state = initialState, action) {
     if (action.type === 'FIRST_COLOR') return { ...state, firstColor: action.payload };
     if (action.type === 'SECOND_COLOR') return { ...state, secondColor: action.payload };
     if (action.type === 'USER_DATA') return { ...state, userData: action.payload };
+    if (action.type === 'ITEM_COUNT') return { ...state, itemCount: action.payload };
+    if (action.type === 'TO_LEARN_COUNT') return { ...state, toLearnCount: action.payload };
     return state;
 }
 

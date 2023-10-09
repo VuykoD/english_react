@@ -14,6 +14,7 @@ import {Link} from 'react-router-dom';
 import getCourseItems, { getCourseUnits, getCourseNames } from '../../dict/getCourseItems';
 
 import '../../scc/course.css';
+import PropTypes from 'prop-types';
 
 let courseItems = getCourseItems();
 let courseUnits = getCourseUnits();
@@ -31,6 +32,12 @@ const content = {
 };
 
 export default class Course extends Component {
+    static propTypes = {
+        store: PropTypes.shape({}),
+        onChangeItemCount: PropTypes.func,
+        onChangeToLearnCount: PropTypes.func
+    };
+
     constructor(props) {
         super(props);
         this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
@@ -53,6 +60,7 @@ export default class Course extends Component {
 
     onChangeCheck = (unitId) => {
         const { selectedCourses } = this.state;
+        const { onChangeToLearnCount } = this.props;
         const selectedCoursesIndex = findIndex(selectedCourses, course => course === unitId);
         if (selectedCoursesIndex === -1) {
             this.setState({selectedCourses: [...selectedCourses, unitId]});
@@ -61,6 +69,7 @@ export default class Course extends Component {
             map(items, it => {
                 this.localProgress.push({"entity_id": it.id})
             });
+            onChangeToLearnCount(this.localProgress.length);
             localStorage.progress = JSON.stringify(this.localProgress);
         } else {
             const courses = [];
@@ -78,6 +87,7 @@ export default class Course extends Component {
                 }
             })
             this.localProgress = progress;
+            onChangeToLearnCount(progress.length);
             localStorage.progress = JSON.stringify(progress);
         }
     };
