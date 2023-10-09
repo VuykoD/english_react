@@ -348,10 +348,9 @@ class LearningClass extends Component {
     };
 
     firstLettersBySound = () => {
-        const { newLearnNumber } = this.state;
         let learnArr = getCourseItems();
         learnArr = shuffle(learnArr);
-        this.learnArr = learnArr.slice(0, newLearnNumber);
+        this.learnArr = learnArr.slice(0, 50);
         this.setCourseNameInLearnArray();
         if (!this.learnArr) return;
         this.setState({
@@ -362,8 +361,7 @@ class LearningClass extends Component {
     }
 
     firstLettersByText = () => {
-        const { newLearnNumber } = this.state;
-        this.setLearnArr(newLearnNumber);
+        this.setLearnArr(50);
         this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'first_letters_by_text'});
@@ -663,12 +661,12 @@ class LearningClass extends Component {
                     <Row>
                         <Col sm={3}>
                             <Button variant="info" block onClick={this.firstLettersByText}>
-                                {firstLettersByText}
+                                {`${firstLettersByText} (50)`}
                             </Button>
                         </Col>
                         <Col sm={3}>
                             <Button variant="info" block onClick={this.firstLettersBySound}>
-                                {firstLettersBySound}
+                                {`${firstLettersBySound} (50)`}
                             </Button>
                         </Col>
                     </Row>
