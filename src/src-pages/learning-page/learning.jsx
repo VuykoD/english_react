@@ -284,50 +284,6 @@ class LearningClass extends Component {
         this.soundAndRepeat(length);
     }
 
-    setSpeedRepeat = () => {
-        this.sort();
-        localStorage.showPol = '1';
-        localStorage.showEng = '';
-        localStorage.showRus = '1';
-        localStorage.learnPol = '1';
-        localStorage.learnEng = '';
-        localStorage.soundRus = '';
-        localStorage.newLearnNumber = '50';
-        document.getElementById("lengthArray").value = '50';
-        this.setState({
-            showPol: true,
-            showEng: false,
-            showRus: true,
-            learnPol: true,
-            learnEng: false,
-            soundRus: false,
-            newLearnNumber: 50
-        });
-        this.speedRepeat(50);
-    }
-
-    setWrite = () => {
-        this.sort();
-        localStorage.showPol = '';
-        localStorage.showEng = '';
-        localStorage.showRus = '1';
-        localStorage.learnPol = '1';
-        localStorage.learnEng = '';
-        localStorage.soundRus = '';
-        localStorage.newLearnNumber = '10';
-        document.getElementById("lengthArray").value = '10';
-        this.setState({
-            showPol: false,
-            showEng: false,
-            showRus: true,
-            learnPol: true,
-            learnEng: false,
-            soundRus: false,
-            newLearnNumber: 10
-        });
-        this.write(10);
-    }
-
     write = (arrayLength) => {
         const length = typeof arrayLength === 'number' ?
             arrayLength :
@@ -564,31 +520,6 @@ class LearningClass extends Component {
         const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`);
         const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`);
         const games = get(content, `games[${siteLang}]`);
-        // let ukrKey = 0;
-        // let startChange = false;
-        // map(courseItems, (item, key) => {
-        //     if (item.id === 10132) startChange = true;
-        //     if (ukr[ukrKey] && startChange) {
-        //         courseItems[key].transl = ukr[ukrKey];
-        //         ukrKey++;
-        //     }
-        // });
-        // localStorage.courseItems = JSON.stringify(courseItems);
-        // console.log(courseItems);
-
-        // const newCourseItems = [];
-        // map(courseItems, (item, key) => {
-        //     const newItem = {
-        //         id: item.id,
-        //         unitId: item.unitId
-        //     }
-        //     if (item.eng) newItem.eng = item.eng;
-        //     if (item.pol) newItem.pol = item.pol;
-        //     if (item.transl) newItem.transl = item.transl;
-        //     newCourseItems.push(newItem);
-        // });
-        // localStorage.courseItems = JSON.stringify(newCourseItems);
-        // console.log(courseItems, JSON.stringify(courseItems).length, JSON.stringify(newCourseItems).length,);
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
@@ -619,26 +550,6 @@ class LearningClass extends Component {
                     </Row>
                     <Row>
                         <Col>
-                            <Button variant="info" block onClick={this.speedRepeat}>
-                                {speedRepeat}
-                            </Button>
-                        </Col>
-                        <Col sm={1} >
-                            <Button variant="info" block onClick={this.setSpeedRepeat}>
-                                {50}
-                            </Button>
-                        </Col>
-                        <Col>
-                            <Button variant="info" block onClick={this.write}>
-                                {write}
-                            </Button>
-                        </Col>
-                        <Col sm={1} >
-                            <Button variant="info" block onClick={this.setWrite}>
-                                {10}
-                            </Button>
-                        </Col>
-                        <Col>
                             <Button variant="info" block onClick={this.sort}>
                                 {sort}
                             </Button>
@@ -659,14 +570,24 @@ class LearningClass extends Component {
                         <h3 className="text-center new-row" children={games}/>
                     </Row>
                     <Row>
-                        <Col sm={3}>
+                        <Col>
+                            <Button variant="info" block onClick={this.speedRepeat}>
+                                {`${speedRepeat} (50)`}
+                            </Button>
+                        </Col>
+                        <Col>
+                            <Button variant="info" block onClick={this.write}>
+                                {`${write} (max 10)`}
+                            </Button>
+                        </Col>
+                        <Col>
                             <Button variant="info" block onClick={this.firstLettersByText}>
                                 {`${firstLettersByText} (50)`}
                             </Button>
                         </Col>
-                        <Col sm={3}>
+                        <Col>
                             <Button variant="info" block onClick={this.firstLettersBySound}>
-                                {`${firstLettersBySound} (50)`}
+                                {`${firstLettersBySound} (max 50)`}
                             </Button>
                         </Col>
                     </Row>
