@@ -277,18 +277,12 @@ class LearningClass extends Component {
     };
 
     speedRepeat = (arrayLength) => {
-        const length = typeof arrayLength === 'number' ?
-            arrayLength :
-            this.state.newLearnNumber;
         this.soundAndRepeatCoef = 2.6;
-        this.soundAndRepeat(length);
+        this.soundAndRepeat(50);
     }
 
-    write = (arrayLength) => {
-        const length = typeof arrayLength === 'number' ?
-            arrayLength :
-            this.state.newLearnNumber;
-        this.setLearnArr(length);
+    write = () => {
+        this.setLearnArr(50);
         this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'write'});
@@ -731,7 +725,7 @@ export function getDotBadge(variant) {
 }
 
 export function getProgressBar() {
-    const { exampleLearning, learnNumber, newLearnNumber } = this.state;
+    const { exampleLearning, learnNumber } = this.state;
 
     let progress = null;
     const timeoutTime = this.setTimeoutTime(learnNumber);
@@ -741,7 +735,7 @@ export function getProgressBar() {
             <Row>
                 <Col sm={3}/>
                 <Col>
-                    {`${learnNumber + 1}(${newLearnNumber})/${timeoutTime}`}
+                    {`${learnNumber + 1}(${this.learnArr?.length})/${timeoutTime}`}
                     <div className="view_port">
                         <ProgressBar id='progressBar' animated now={100} className="c_eye"/>
                     </div>
