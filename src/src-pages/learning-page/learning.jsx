@@ -8,7 +8,6 @@ import findIndex from 'lodash/findIndex';
 import {Badge, Button, Col, Container, Form, ProgressBar, Row} from 'react-bootstrap';
 //
 import '../../scc/learning.css';
-import courseItemsJson from '../../dict/courseItems';
 import getCourseItems, { getCourseUnits } from '../../dict/getCourseItems';
 import { shuffle } from '../user-page/user-data/user-dictionary';
 
@@ -52,10 +51,6 @@ const content = {
         ru: "Показать польский",
         ukr: "Показати польську",
     },
-    countRepeat: {
-        ru: "На изучении",
-        ukr: "На вивченні",
-    },
     source: {
         ru: "Источник",
         ukr: "Джерело",
@@ -96,7 +91,6 @@ const content = {
 
 const MAX_WORD_LENGTH = 100;
 const MAX_SOUND_LENGTH = 121;
-const NEW_LEARN_NUMBER = 14;
 
 const initialState = {
     exampleLearning: null,
@@ -105,7 +99,6 @@ const initialState = {
     showEng: !!localStorage.showEng,
     showPol: !!localStorage.showPol,
     learnNumber: 0,
-    newLearnNumber: NEW_LEARN_NUMBER,
     english: '',
     polish: '',
     rus: '',
@@ -248,17 +241,6 @@ class LearningClass extends Component {
             changeToInput: false,
             polish: newPol
         });
-    };
-
-    onChangeLengthArray = (event) => {
-        const arrLength = event.target.value;
-        const localLength = this.localProgress?.length || 0;
-
-        if (arrLength) {
-            const newLength = +arrLength < localLength ? +arrLength : localLength
-            localStorage.newLearnNumber = newLength;
-            this.setState({ newLearnNumber: newLength })
-        }
     };
 
     setInitialData = () => {
@@ -580,12 +562,10 @@ class LearningClass extends Component {
         const translEng = get(content, `translEng[${siteLang}]`);
         const translRus = get(content, `translRus[${siteLang}]`);
         const translPol = get(content, `translPol[${siteLang}]`);
-        const countRepeat = get(content, `countRepeat[${siteLang}]`);
         const speedRepeat = get(content, `speedRepeat[${siteLang}]`);
         const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`);
         const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`);
         const games = get(content, `games[${siteLang}]`);
-        const difference = courseItemsJson.length - (this.localProgress?.length || 0);
         // let ukrKey = 0;
         // let startChange = false;
         // map(courseItems, (item, key) => {
@@ -637,16 +617,6 @@ class LearningClass extends Component {
                             <Form.Group controlId="soundRus">
                                 <Form.Check label={speakRus} checked={soundRus} onChange={this.changeRusCheck}/>
                             </Form.Group>
-                        </Col>
-                        <Col>
-                            <span children={`${countRepeat} ${this.localProgress?.length || 0}/${courseItemsJson.length} (${difference})`} />
-                            <Form.Control
-                                id='lengthArray'
-                                type="number"
-                                onChange={this.onChangeLengthArray}
-                                defaultValue={14}
-                                // value={newLearnNumber}
-                            />
                         </Col>
                     </Row>
                     <Row>

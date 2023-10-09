@@ -10,6 +10,7 @@ import '../../scc/unit.css';
 import '../../scc/course.css'
 import { uniqWords } from './uniqWords';
 import getCourseItems, { getCourseUnits } from '../../dict/getCourseItems';
+import PropTypes from "prop-types";
 
 let courseItems = getCourseItems();
 let courseUnits = getCourseUnits();
@@ -62,6 +63,11 @@ export const content = {
 };
 
 export default class CourseItem extends Component {
+    static propTypes = {
+        store: PropTypes.shape({}),
+        onChangeItemCount: PropTypes.func,
+        onChangeToLearnCount: PropTypes.func
+    };
     constructor(props) {
         super(props);
 
@@ -93,6 +99,7 @@ export default class CourseItem extends Component {
     }
 
     select = () => {
+        const { onChangeToLearnCount } = this.props;
         if (this.state.isItemSelected) {
             const {siteLang} = this.props.store;
             const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
@@ -106,15 +113,18 @@ export default class CourseItem extends Component {
             [...this.localProgress, ...addedProgress] :
             [...addedProgress];
         this.setState({isItemSelected: true});
+        onChangeToLearnCount(this.localProgress.length);
         localStorage.progress = JSON.stringify(this.localProgress);
     };
 
     clearLocalstorage = () => {
+        const { onChangeToLearnCount } = this.props;
         if (this.state.isItemSelected) {
             map(this.items, item => {
                 const index = findIndex(this.localProgress, {'entity_id': item.id});
                 this.localProgress.splice(index,1);
             });
+            onChangeToLearnCount(this.localProgress.length);
             localStorage.progress = JSON.stringify(this.localProgress);
             this.setState({isItemSelected: false});
         }

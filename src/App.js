@@ -30,8 +30,13 @@ class App extends Component {
         const {backColor} = store;
         document.body.style.background = backColor;
         const courseItem = withRouter(props =>
-            <CourseItem {...props} store={store}/>
-            );
+            <CourseItem
+                {...props}
+                store={store}
+                onChangeItemCount={onChangeItemCount}
+                onChangeToLearnCount={onChangeToLearnCount}
+            />
+        );
 
         return (
             <Router>
