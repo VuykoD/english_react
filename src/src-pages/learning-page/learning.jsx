@@ -399,7 +399,7 @@ class LearningClass extends Component {
 
     setCourseNameInLearnArray = () => {
         map(this.learnArr, (item, key) => {
-            const courseIndex = findIndex(courseUnits, {'id': this.learnArr[key].courseId});
+            const courseIndex = findIndex(courseUnits, {'id': this.learnArr[key].unitId});
             this.learnArr[key].topicName = get(courseUnits, `[${courseIndex}].name`);
         })
     };
@@ -825,7 +825,7 @@ export function getBadge(txt, variant, saveFunc, inputId) {
 export function getDotBadge(variant) {
     const { english, polish, learnPol } = this.state;
     let wordToLearn = getWordToLearn(english, polish, learnPol);
-    wordToLearn = wordToLearn.replace(/[A-ZŚĄŻŹÓŁĆĘ0-9]/gi, ".");
+    wordToLearn = wordToLearn.replace(/[A-ZŚĄŻŹÓŁĆĘŃ0-9]/gi, ".");
 
     return (
         <h3>
