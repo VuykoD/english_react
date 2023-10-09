@@ -569,7 +569,6 @@ class LearningClass extends Component {
             changeToInput
         } = this.state;
         const {siteLang} = this.props.store;
-        // const repeat = get(content, `repeat[${siteLang}]`);
         const write = get(content, `write[${siteLang}]`);
         const sort = get(content, `sort[${siteLang}]`);
         const eng = get(content, `eng[${siteLang}]`);

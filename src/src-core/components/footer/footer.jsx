@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import {Container, Row, Col} from 'react-bootstrap';
 
+import courseItemsJson from '../../../dict/courseItems';
 import warn from '../../helper/warn/warn';
 import '../../../scc/footer.css';
 
@@ -23,6 +24,10 @@ const content = {
         ru: 'Изучено',
         ukr: 'Вивчено'
     },
+    countRepeat: {
+        ru: "На изучении",
+        ukr: "На вивченні",
+    },
 };
 
 export default class Footer extends Component {
@@ -39,9 +44,11 @@ export default class Footer extends Component {
         const {siteLang, fontColor, firstColor, secondColor} = this.props.store;
         const premium = get(content, `premium[${siteLang}]`);
         const contacts = get(content, `contacts[${siteLang}]`);
+        const countRepeat = get(content, `countRepeat[${siteLang}]`);
         const hint = get(content, `hint[${siteLang}]`);
         const fontStyle = {color: fontColor};
         const gradientStyle = {background: `linear-gradient(to bottom,${secondColor},${firstColor}`};
+        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
 
         return (
             <div className="footer" style={gradientStyle}>
@@ -52,6 +59,12 @@ export default class Footer extends Component {
                                 {premium}
                             </div>
                         </Col>
+                        <Col
+                            md="auto"
+                            className="footer-item"
+                            style={fontStyle}
+                            children={`${countRepeat} ${localProgress.length}/${courseItemsJson.length}`}
+                        />
                         <Col/>
                         <Col md="auto" className="footer-item" style={fontStyle} children={`${contacts}: +38 (093) 922-49-49`} />
                     </Row>
