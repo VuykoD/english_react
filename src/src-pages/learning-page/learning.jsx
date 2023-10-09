@@ -27,30 +27,6 @@ const content = {
         ru: "Сортировать",
         ukr: "Сортувати",
     },
-    eng: {
-        ru: "Озвучивать английскую",
-        ukr: "Озвучувати англійську",
-    },
-    pol: {
-        ru: "Озвучивать польску",
-        ukr: "Озвучувати польську",
-    },
-    soundRus: {
-        ru: "Озвучивать русский",
-        ukr: "Озвучувати російську",
-    },
-    translEng: {
-        ru: "Показать английский",
-        ukr: "Показати англійську",
-    },
-    translRus: {
-        ru: "Показать русский",
-        ukr: "Показати російську",
-    },
-    translPol: {
-        ru: "Показать польский",
-        ukr: "Показати польську",
-    },
     source: {
         ru: "Источник",
         ukr: "Джерело",
@@ -95,9 +71,6 @@ const MAX_SOUND_LENGTH = 121;
 const initialState = {
     exampleLearning: null,
     cycleLearning: null,
-    showRus: !!localStorage.showRus,
-    showEng: !!localStorage.showEng,
-    showPol: !!localStorage.showPol,
     learnNumber: 0,
     english: '',
     polish: '',
@@ -105,9 +78,6 @@ const initialState = {
     start: null,
     end: null,
     fileName: '',
-    learnEng: !!localStorage.learnEng,
-    learnPol: !!localStorage.learnPol,
-    soundRus: !!localStorage.soundRus,
     isRepeatAll: false,
     mistake: 0,
     mistakeRewrite: 0,
@@ -136,27 +106,6 @@ class LearningClass extends Component {
     componentDidMount() {
         this.updateLP();
         this.setInitialData();
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        const {showRus, showEng, showPol, learnEng, learnPol, soundRus} = this.state;
-        if (
-            showRus !== !!localStorage.showRus ||
-            showEng !== !!localStorage.showEng ||
-            showPol !== !!localStorage.showPol ||
-            learnEng !== !!localStorage.learnEng ||
-            learnPol !== !!localStorage.learnPol ||
-            soundRus !== !!localStorage.soundRus
-        ){
-            this.setState({
-                showRus: !!localStorage.showRus,
-                showEng: !!localStorage.showEng,
-                showPol: !!localStorage.showPol,
-                learnEng: !!localStorage.learnEng,
-                learnPol: !!localStorage.learnPol,
-                soundRus: !!localStorage.soundRus
-            });
-        }
     }
 
     componentWillUnmount() {
@@ -401,21 +350,6 @@ class LearningClass extends Component {
         });
     };
 
-    changeEngCheck = () =>{
-        localStorage.learnEng = this.state.learnEng ? '': '1' ;
-        this.setState({ learnEng: !this.state.learnEng });
-    }
-
-    changePolCheck = () =>{
-        localStorage.learnPol = this.state.learnPol ? '': '1' ;
-        this.setState({ learnPol: !this.state.learnPol });
-    }
-
-    changeRusCheck = () =>{
-        localStorage.soundRus = this.state.soundRus ? '': '1' ;
-        this.setState({ soundRus: !this.state.soundRus });
-    }
-
     repeatAll = () =>{
         this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
 
@@ -466,21 +400,6 @@ class LearningClass extends Component {
         );
     }
 
-    showEng = () => {
-        localStorage.showEng = this.state.showEng ? '' : '1';
-        this.setState({showEng: !this.state.showEng});
-    }
-
-    showPol = () => {
-        localStorage.showPol = this.state.showPol ? '' : '1';
-        this.setState({showPol: !this.state.showPol});
-    }
-
-    showRus = () => {
-        localStorage.showRus = this.state.showRus ? '' : '1';
-        this.setState({showRus: !this.state.showRus});
-    }
-
     changeToInput = () => {
         this.setState({changeToInput: true});
     }
@@ -492,24 +411,12 @@ class LearningClass extends Component {
             english,
             polish,
             rus,
-            learnEng,
-            learnPol,
-            soundRus,
             mistake,
-            showRus,
-            showEng,
-            showPol,
             changeToInput
         } = this.state;
-        const {siteLang} = this.props.store;
+        const { siteLang, learnedLang } = this.props.store;
         const write = get(content, `write[${siteLang}]`);
         const sort = get(content, `sort[${siteLang}]`);
-        const eng = get(content, `eng[${siteLang}]`);
-        const pol = get(content, `pol[${siteLang}]`);
-        const speakRus = get(content, `soundRus[${siteLang}]`);
-        const translEng = get(content, `translEng[${siteLang}]`);
-        const translRus = get(content, `translRus[${siteLang}]`);
-        const translPol = get(content, `translPol[${siteLang}]`);
         const speedRepeat = get(content, `speedRepeat[${siteLang}]`);
         const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`);
         const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`);
@@ -525,39 +432,11 @@ class LearningClass extends Component {
             <Container className='new-container'>
                 {!exampleLearning && !cycleLearning &&
                 <Fragment>
-                    <Row className="rows">
-                        <Col>
-                            <Form.Group controlId="learnEng">
-                                <Form.Check label={eng} checked={learnEng} onChange={this.changeEngCheck}/>
-                            </Form.Group>
-                        </Col>
-                        <Col>
-                            <Form.Group controlId="learnPol">
-                                <Form.Check label={pol} checked={learnPol} onChange={this.changePolCheck}/>
-                            </Form.Group>
-                        </Col>
-                        <Col>
-                            <Form.Group controlId="soundRus">
-                                <Form.Check label={speakRus} checked={soundRus} onChange={this.changeRusCheck}/>
-                            </Form.Group>
-                        </Col>
-                    </Row>
                     <Row>
                         <Col>
                             <Button variant="info" block onClick={this.sort}>
                                 {sort}
                             </Button>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Form.Check type="checkbox" label={translEng} checked={showEng} onChange={this.showEng}/>
-                        </Col>
-                        <Col>
-                            <Form.Check type="checkbox" label={translRus} checked={showRus} onChange={this.showRus}/>
-                        </Col>
-                        <Col>
-                            <Form.Check type="checkbox" label={translPol} checked={showPol} onChange={this.showPol}/>
                         </Col>
                     </Row>
                     <Row>
@@ -592,7 +471,7 @@ class LearningClass extends Component {
                         <Col>
                             {this.getTopic()}
                             {exampleLearning !== 'first_letters_by_text' && soundButton.call(this)}
-                            {showRus && exampleLearning !== 'first_letters_by_sound' &&  getBadge.call(
+                            {exampleLearning !== 'first_letters_by_sound' &&  getBadge.call(
                                 this,
                                 rus,
                                 "light",
@@ -600,13 +479,12 @@ class LearningClass extends Component {
                                 'changeRus'
                             )}
                             {getProgressBar.call(this)}
-                            {(showEng || (mistake > 2 || changeToInput)) && getBadge.call(this, english, "secondary")}
-                            {(showPol || (mistake > 2 || changeToInput)) && getBadge.call(
+                            {(exampleLearning === 'example_sound_repeat' || (mistake > 2 || changeToInput)) && getBadge.call(
                                 this,
-                                polish,
+                                learnedLang === 'pol' ? polish : english,
                                 "secondary",
-                                this.onSavePol,
-                                'changePol'
+                                learnedLang === 'pol' ? this.onSavePol : null,
+                                learnedLang === 'pol' ? 'changePol' : null
                             )}
                             {isFirstLetters && getDotBadge.call(this,"secondary")}
                             {(
@@ -748,10 +626,11 @@ export function getProgressBar() {
 }
 
 export function speak() {
-    const {english, polish, rus, learnPol, learnEng, soundRus} = this.state;
+    const { english, polish, rus } = this.state;
+    const { learnedLang } = this.props.store;
 
     //comp eng
-    if (english && learnEng && english.length < MAX_SOUND_LENGTH){
+    if (english && learnedLang === 'eng' && english.length < MAX_SOUND_LENGTH){
         if (!this.filteredEngVoices || !this.filteredEngVoices.length) this.getVoices();
         const utterance = new SpeechSynthesisUtterance(english);
         const randomVoice = this.filteredEngVoices ? Math.floor(Math.random() * this.filteredEngVoices.length) : null;
@@ -759,7 +638,7 @@ export function speak() {
         if (!utterance.voice) utterance.lang = 'en';
         speechSynthesis.speak(utterance);
     }
-    if (polish && learnPol && polish.length < MAX_SOUND_LENGTH){
+    if (polish && learnedLang === 'pol' && polish.length < MAX_SOUND_LENGTH){
         if (!this.filteredPolVoices || !this.filteredPolVoices.length) this.getVoices();
         const utterance = new SpeechSynthesisUtterance(polish);
         utterance.voice = get(this.filteredPolVoices, '[0]');
@@ -768,7 +647,7 @@ export function speak() {
     }
 
     //comp rus
-    if (soundRus && rus.length < MAX_SOUND_LENGTH){
+    if (rus && learnedLang === 'rus' && rus.length < MAX_SOUND_LENGTH){
         if (!this.filteredRusVoices || !this.filteredRusVoices.length) this.getVoices();
         const utterance = new SpeechSynthesisUtterance(rus);
         utterance.voice = get(this.filteredRusVoices, '[0]');
