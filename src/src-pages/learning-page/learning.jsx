@@ -276,7 +276,8 @@ class LearningClass extends Component {
 
     soundAndRepeat = (arrayLength = this.state.newLearnNumber) => {
         this.getVoices();
-        this.getLearnArray(arrayLength);
+        this.setLearnArr(arrayLength);
+        this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setEngAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'new', exampleLearning: 'example_sound_repeat'});
@@ -346,7 +347,8 @@ class LearningClass extends Component {
         const length = typeof arrayLength === 'number' ?
             arrayLength :
             this.state.newLearnNumber;
-        this.getLearnArray(length);
+        this.setLearnArr(length);
+        this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'write'});
         this.setEngAndTransl(this.state.learnNumber, MAX_WORD_LENGTH);
@@ -362,7 +364,10 @@ class LearningClass extends Component {
 
     firstLettersBySound = () => {
         const { newLearnNumber } = this.state;
-        this.getLearnArray(newLearnNumber);
+        let learnArr = getCourseItems();
+        learnArr = shuffle(learnArr);
+        this.learnArr = learnArr.slice(0, newLearnNumber);
+        this.setCourseNameInLearnArray();
         if (!this.learnArr) return;
         this.setState({
             cycleLearning: 'new',
@@ -373,16 +378,14 @@ class LearningClass extends Component {
 
     firstLettersByText = () => {
         const { newLearnNumber } = this.state;
-        this.getLearnArray(newLearnNumber);
+        this.setLearnArr(newLearnNumber);
+        this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'first_letters_by_text'});
         this.setEngAndTransl(this.state.learnNumber);
     }
 
-    getLearnArray = (sliceNumber) => {
-        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
-
+    setTranslInLearnArray = () => {
         map(this.learnArr, (item, key) => {
             const index = findIndex(courseItems, {'id': item.entity_id});
             this.learnArr[key].eng = get(courseItems, `[${index}].eng`);
@@ -393,6 +396,18 @@ class LearningClass extends Component {
             this.learnArr[key].topicName = get(courseUnits, `[${courseIndex}].name`);
         })
     };
+
+    setCourseNameInLearnArray = () => {
+        map(this.learnArr, (item, key) => {
+            const courseIndex = findIndex(courseUnits, {'id': this.learnArr[key].courseId});
+            this.learnArr[key].topicName = get(courseUnits, `[${courseIndex}].name`);
+        })
+    };
+
+    setLearnArr = (sliceNumber) => {
+        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
+    }
 
     setTimeoutTime =(learnNumber)=>{
         const word = get(this.learnArr, `[${learnNumber}].pol`, '');
