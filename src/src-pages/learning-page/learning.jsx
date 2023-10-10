@@ -586,8 +586,9 @@ export function getBadge(txt, variant, saveFunc, inputId) {
 }
 
 export function getDotBadge(variant) {
-    const { english, polish, learnPol } = this.state;
-    let wordToLearn = getWordToLearn(english, polish, learnPol);
+    const { english, polish } = this.state;
+    const { learnedLang } = this.props.store;
+    let wordToLearn = getWordToLearn(english, polish, learnedLang === 'pol');
     wordToLearn = wordToLearn.replace(/[A-ZŚĄŻŹÓŁĆĘŃ0-9]/gi, ".");
 
     return (
@@ -724,7 +725,6 @@ export function changedInput() {
     const {
         english,
         polish,
-        learnPol,
         mistake,
         learnNumber,
         mistakeRewrite,
@@ -732,13 +732,14 @@ export function changedInput() {
         changeToInput,
         exampleLearning
     } = this.state;
+    const { learnedLang } = this.props.store;
     if (changeToInput) return;
     const isFirstLetters = exampleLearning === 'first_letters_by_text'
         || exampleLearning === 'first_letters_by_sound';
     const formInput = document.getElementById('formInput');
     let word = get(formInput, 'value');
     word = word.toUpperCase();
-    const wordToLearn = getWordToLearn(english, polish, learnPol);
+    const wordToLearn = getWordToLearn(english, polish, learnedLang === 'pol');
     if (!wordToLearn) this.repeatMistakes = true;
     if (
         word.length === 1
@@ -774,7 +775,6 @@ export function changedInput() {
             }
         }
     }
-
     if (wordToLearn.slice(0, word.length) !== word) {
         word = (word.slice(0, word.length - 1));
         document.getElementById("formInput").value = word;
