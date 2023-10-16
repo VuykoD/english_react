@@ -12,6 +12,7 @@ select.form-control {
 .new-row {
     margin: 0 auto;
     padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .btn-block {

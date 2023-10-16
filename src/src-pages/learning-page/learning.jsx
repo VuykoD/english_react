@@ -60,8 +60,8 @@ const content = {
         ukr: "Зберегти переклад",
     },
     games: {
-        ru: "Игры",
-        ukr: "Ігри",
+        ru: "Тренажеры",
+        ukr: "Тренажери",
     },
 };
 
@@ -249,7 +249,7 @@ class LearningClass extends Component {
     firstLettersBySound = () => {
         let learnArr = getCourseItems();
         learnArr = shuffle(learnArr);
-        this.learnArr = learnArr.slice(0, 50);
+        this.learnArr = learnArr.slice(0, 70);
         this.setCourseNameInLearnArray();
         if (!this.learnArr) return;
         this.setState({
@@ -440,7 +440,7 @@ class LearningClass extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <h3 className="text-center new-row" children={games}/>
+                        <h3 className="new-row rows" children={games}/>
                     </Row>
                     <Row>
                         <Col>
@@ -460,7 +460,7 @@ class LearningClass extends Component {
                         </Col>
                         <Col>
                             <Button variant="info" block onClick={this.firstLettersBySound}>
-                                {`${firstLettersBySound} (max 50)`}
+                                {`${firstLettersBySound} (70)`}
                             </Button>
                         </Col>
                     </Row>

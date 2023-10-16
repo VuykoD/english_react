@@ -61,7 +61,12 @@ class App extends Component {
                             onChangeToLearnCount={onChangeToLearnCount}
                         />
                     }/>
-                    <Route path='/user_dictionary' children={<UserDictionary store={store}/>}/>
+                    <Route path='/user_dictionary' children={
+                        <UserDictionary
+                            store={store}
+                            onChangeToLearnCount={onChangeToLearnCount}
+                        />
+                    }/>
                     <Route path='/user_data' children={
                         <UserData
                             store={store}

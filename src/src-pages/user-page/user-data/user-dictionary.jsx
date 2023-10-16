@@ -44,6 +44,7 @@ export function shuffle(array) {
 export default class UserDictionary extends Component {
     static propTypes = {
         store: PropTypes.shape({}),
+        onChangeToLearnCount: PropTypes.func,
     };
 
 
@@ -73,6 +74,7 @@ export default class UserDictionary extends Component {
     };
 
     deleteRow = () => {
+        const { onChangeToLearnCount } = this.props;
         let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (!lP) return null;
         const { entityId } = this.state;
@@ -82,6 +84,7 @@ export default class UserDictionary extends Component {
         localStorage.courseItems = JSON.stringify(courseItems);
         lP = this.setLocalProgress(lP);
         this.setState({localProgress: lP});
+        onChangeToLearnCount(lP.length);
     };
 
     sort = () => {

@@ -12,6 +12,10 @@ const content = {
         ru: 'Приобрести премиум',
         ukr: 'Придбати преміум'
     },
+    beta: {
+        ru: 'beta версия',
+        ukr: 'beta версія'
+    },
     contacts: {
         ru: 'Контакты',
         ukr: 'Контакти'
@@ -50,7 +54,8 @@ export default class Footer extends Component {
             secondColor,
             toLearnCount
         } = this.props.store;
-        const premium = get(content, `premium[${siteLang}]`);
+        // const premium = get(content, `premium[${siteLang}]`);
+        const beta = get(content, `beta[${siteLang}]`);
         const contacts = get(content, `contacts[${siteLang}]`);
         const countRepeat = get(content, `countRepeat[${siteLang}]`);
         const hint = get(content, `hint[${siteLang}]`);
@@ -63,7 +68,7 @@ export default class Footer extends Component {
                     <Row>
                         <Col md="auto" title={hint}>
                             <div className='footer-premium' onClick={this.warn}>
-                                {premium}
+                                {beta}
                             </div>
                         </Col>
                         <Col
