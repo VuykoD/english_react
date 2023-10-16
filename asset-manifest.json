@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/english_react/static/css/main.cf6ec503.css",
-    "main.js": "/english_react/static/js/main.05ad4fa4.js",
+    "main.css": "/english_react/static/css/main.7ac63e56.css",
+    "main.js": "/english_react/static/js/main.56955338.js",
     "static/media/Sound.png": "/english_react/static/media/Sound.2456ab73d4deb1c0814d.png",
     "static/media/music.png": "/english_react/static/media/music.5ed2f57185a197e1d645.png",
     "static/media/bob-van-aubel-ray-bans.jpg": "/english_react/static/media/bob-van-aubel-ray-bans.48a22409176c0b7c6ff7.jpg",
     "static/media/movie12.png": "/english_react/static/media/movie12.b5a4af61493359027c38.png",
     "static/media/paint.png": "/english_react/static/media/paint.27c6e57b22a2fc920148.png",
     "index.html": "/english_react/index.html",
-    "main.cf6ec503.css.map": "/english_react/static/css/main.cf6ec503.css.map",
-    "main.05ad4fa4.js.map": "/english_react/static/js/main.05ad4fa4.js.map"
+    "main.7ac63e56.css.map": "/english_react/static/css/main.7ac63e56.css.map",
+    "main.56955338.js.map": "/english_react/static/js/main.56955338.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf6ec503.css",
-    "static/js/main.05ad4fa4.js"
+    "static/css/main.7ac63e56.css",
+    "static/js/main.56955338.js"
   ]
 }
