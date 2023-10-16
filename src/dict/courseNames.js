@@ -35,6 +35,10 @@ const courseNames =
         {
             "id": 11,
             "name": "Hymn polski"
+        },
+        {
+            "id": 12,
+            "name": "From life"
         }
     ]
 ;

@@ -3997,7 +3997,7 @@ const courseItems =
         {
             "id": 2016,
             "unitId": 2001,
-            "pol": "Jesteś taki sam jak twój ojciec",
+            "pol": "Jesteś taki samy, jak twój ojciec",
             "transl": "Ти такий самий, як твій батько"
         },
         {
@@ -5090,7 +5090,7 @@ const courseItems =
             "id": 2258,
             "unitId": 2004,
             "pol": "Może wypijemy czerwone wino, dzisiaj są moje urodziny",
-            "transl": "Може, вип'ємо червоне вино, сьогодні в мене день народження"
+            "transl": "Може вип'ємо червоне вино, сьогодні в мене день народження"
         },
         {
             "id": 2259,
@@ -5996,7 +5996,7 @@ const courseItems =
             "id": 2441,
             "unitId": 2005,
             "pol": "Kupię to mieszkanie na raty, bo jest za drogie",
-            "transl": "Я куплю цю квартиру на виплат, тому що вона занадто дорога"
+            "transl": "Я куплю цю квартиру в розстрочку, бо вона занадто дорога"
         },
         {
             "id": 2444,
@@ -7256,7 +7256,7 @@ const courseItems =
             "id": 2700,
             "unitId": 2008,
             "pol": "Stałem na dworcu cały dzień, ale pociąg nie przyjechał",
-            "transl": "Цiлий день стояв на вокзалi, але потяг не приїхав"
+            "transl": "Я стояв на вокзалi цiлий день, але потяг не приїхав"
         },
         {
             "id": 2701,
@@ -8259,6 +8259,167 @@ const courseItems =
             "unitId": 2014,
             "pol": "szyna, opona",
             "transl": "рейка, шина"
+        },
+        {
+            "id": 10903,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "nic się nie stało",
+            "transl": "нічого не сталося"
+        },
+        {
+            "id": 10904,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "nic nie shkodzi",
+            "transl": "нічого, не шкодуйте"
+        },
+        {
+            "id": 10905,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "spoko",
+            "transl": "спокійно"
+        },
+        {
+            "id": 10906,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "uwielbiam lody z bakaliamy",
+            "transl": "я обожнюю морозиво з горішками"
+        },
+        {
+            "id": 10907,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "główny bohater tej książki jest zbyt nudny",
+            "transl": "головний герой цієї книги занадто нудний"
+        },
+        {
+            "id": 10908,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "mój tata zawsze był dla mnie bohaterem",
+            "transl": "мій батько завжди був для мене героєм"
+        },
+        {
+            "id": 10909,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "w tym lesie nie ma borsuków",
+            "transl": "у цьому лісі немає борсуків"
+        },
+        {
+            "id": 10910,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "wcześniej chaty budowano wprost na ziemi",
+            "transl": "раніше хати будували прямо на землі"
+        },
+        {
+            "id": 10911,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "mam w domu chomika",
+            "transl": "у мене вдома є хом'як"
+        },
+        {
+            "id": 10912,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "uwielbiam czereśnie",
+            "transl": "я обожнюю чурешні"
+        },
+        {
+            "id": 10913,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "zawsze możesz z tego zrezygnować i hodować kury",
+            "transl": "завжди можеш відмовитися від цього і тримати курей"
+        },
+        {
+            "id": 10914,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "może ugotujemy kukurydzę?",
+            "transl": "може ми приготуємо кукурудзу?"
+        },
+        {
+            "id": 10915,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "ale ma mordę!",
+            "transl": "але в нього і пика!"
+        },
+        {
+            "id": 10916,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "umieram z nudów",
+            "transl": "я вмираю від нудьги"
+        },
+        {
+            "id": 10917,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "zwykle kupuję bawełnianą odzież",
+            "transl": "зазвичай я купую бавовняний одяг"
+        },
+        {
+            "id": 10918,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "marzę o większej przestrzeni w domu",
+            "transl": "я мрію про більше простору вдома"
+        },
+        {
+            "id": 10919,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "szypszyna tu nie rośnie",
+            "transl": "тут не росте шипшина"
+        },
+        {
+            "id": 10920,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "ogień zabija upiory",
+            "transl": "вогонь вбиває вампірів"
+        },
+        {
+            "id": 10921,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "nigdy jeszcze nie widziałam żubrów",
+            "transl": "ніколи ще я не бачила зубрів"
+        },
+        {
+            "id": 10922,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "słowo potoczne",
+            "transl": "повсякденне слово"
+        },
+        {
+            "id": 10923,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "nie stać mnie na to mieszkanie",
+            "transl": "я не можу собі дозволити цю квартиру"
+        },
+        {
+            "id": 10924,
+            "unitId": 1042,
+            "eng": "",
+            "pol": "nie możesz sobie pozwolić na tę podróż",
+            "transl": "ви не можете дозволити собі цю подорож"
+        },
+        {
+            "id": 10925,
+            "unitId": 2022,
+            "eng": "",
+            "pol": "Nie mogę odtworzyć tego błędu",
+            "transl": "Я не можу відтворити цю помилку"
         },
         {
             "id": 10991,

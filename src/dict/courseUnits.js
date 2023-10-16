@@ -419,6 +419,12 @@ const courseUnits =
             "courseId": 11,
             "url": "/hymn-polski",
             "name": "hymn polski"
+        },
+        {
+            "id": 2022,
+            "courseId": 12,
+            "url": "/from-life-1",
+            "name": "from life 1"
         }
     ]
 ;

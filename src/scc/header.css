@@ -130,5 +130,9 @@ h1 {
 .display-none {
     display: none;
 }
+
+.hidden {
+    visibility: hidden;
+}
 @media only screen
 and (max-device-width : 768px){ .hide-header { display: none; }}

@@ -130,7 +130,7 @@ class HeaderClass extends Component {
         const gradientStyle = {background: `linear-gradient(to bottom,${firstColor},${secondColor}`};
         const hover = {onMouseOver: this.onMouseOver, onMouseOut: this.onMouseOut};
         const url = get(this.props, 'location.pathname', '');
-        const hideHeader = url ? 'hide-header' : null;
+        const hideHeader = url ? 'hide-header' : 'hide-header';
         const btnClassName = `headerButton ${hideHeader}`;
 
         return (
@@ -145,7 +145,7 @@ class HeaderClass extends Component {
                                 {logo && <div className="lowerLogo" style={fontStyle}>{logo}</div>}
                             </Link>
                         </Col>
-                        <Col className={hideHeader}>
+                        <Col className="hidden">
                             <FormControl type="text" placeholder={search} className="mr-sm-2 search" onChange={this.warn}/>
                         </Col>
                             <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
