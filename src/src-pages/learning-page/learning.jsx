@@ -55,6 +55,10 @@ const content = {
         ru: "Обнулить рекорд",
         ukr: "Обнулити рекорд",
     },
+    stop: {
+        ru: "Прекратить тренировку",
+        ukr: "Припинити тренування",
+    },
     saveTranslation: {
         ru: "Сохранить перевод",
         ukr: "Зберегти переклад",
@@ -400,6 +404,30 @@ class LearningClass extends Component {
         );
     }
 
+    stopButton = () => {
+        const {siteLang} = this.props.store;
+        const stop = get(content, `stop[${siteLang}]`) || '';
+
+        return (
+            <Row className="new-row">
+                <Col sm={4}/>
+                <Col>
+                    <Button
+                        variant="outline-info"
+                        block
+                        onClick={this.stop}
+                        children={stop}
+                    />
+                </Col>
+                <Col sm={4}/>
+            </Row>
+        );
+    }
+
+    stop = () => {
+        this.setState({...initialState})
+    }
+
     changeToInput = () => {
         this.setState({changeToInput: true});
     }
@@ -497,6 +525,7 @@ class LearningClass extends Component {
                                     {this.record()}
                                 </>
                             )}
+                            {this.stopButton()}
                         </Col>
                     }
                 </Row>
