@@ -55,10 +55,6 @@ const content = {
         ru: "Обнулить рекорд",
         ukr: "Обнулити рекорд",
     },
-    stop: {
-        ru: "Прекратить тренировку",
-        ukr: "Припинити тренування",
-    },
     saveTranslation: {
         ru: "Сохранить перевод",
         ukr: "Зберегти переклад",
@@ -66,6 +62,10 @@ const content = {
     games: {
         ru: "Тренажеры",
         ukr: "Тренажери",
+    },
+    automaticSort: {
+        ru: "Сортировать автоматически",
+        ukr: "Сортувати автоматично",
     },
 };
 
@@ -86,7 +86,8 @@ const initialState = {
     mistake: 0,
     mistakeRewrite: 0,
     record: 0,
-    changeToInput: false
+    changeToInput: false,
+    automaticChange: localStorage.automaticChange ? JSON.parse(localStorage.automaticChange) : false
 }
 
 class LearningClass extends Component {
@@ -230,11 +231,19 @@ class LearningClass extends Component {
     };
 
     speedRepeat = () => {
+        const { automaticChange } = this.state;
+        if (automaticChange) {
+            this.sort();
+        }
         this.soundAndRepeatCoef = 2.6;
         this.soundAndRepeat(50);
     }
 
     write = () => {
+        const { automaticChange } = this.state;
+        if (automaticChange) {
+            this.sort();
+        }
         this.setLearnArr(10);
         this.setTranslInLearnArray();
         if (!this.learnArr) return;
@@ -264,6 +273,10 @@ class LearningClass extends Component {
     }
 
     firstLettersByText = () => {
+        const { automaticChange } = this.state;
+        if (automaticChange) {
+            this.sort();
+        }
         this.setLearnArr(50);
         this.setTranslInLearnArray();
         if (!this.learnArr) return;
@@ -404,28 +417,9 @@ class LearningClass extends Component {
         );
     }
 
-    stopButton = () => {
-        const {siteLang} = this.props.store;
-        const stop = get(content, `stop[${siteLang}]`) || '';
-
-        return (
-            <Row className="new-row">
-                <Col sm={4}/>
-                <Col>
-                    <Button
-                        variant="outline-info"
-                        block
-                        onClick={this.stop}
-                        children={stop}
-                    />
-                </Col>
-                <Col sm={4}/>
-            </Row>
-        );
-    }
-
-    stop = () => {
-        this.setState({...initialState})
+    onChangeCheck = () => {
+        localStorage.automaticChange = !this.state.automaticChange;
+        this.setState({automaticChange: !this.state.automaticChange});
     }
 
     changeToInput = () => {
@@ -440,15 +434,16 @@ class LearningClass extends Component {
             polish,
             rus,
             mistake,
-            changeToInput
+            changeToInput,
+            automaticChange
         } = this.state;
         const { siteLang, learnedLang } = this.props.store;
-        const write = get(content, `write[${siteLang}]`);
-        const sort = get(content, `sort[${siteLang}]`);
-        const speedRepeat = get(content, `speedRepeat[${siteLang}]`);
-        const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`);
-        const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`);
-        const games = get(content, `games[${siteLang}]`);
+        const write = get(content, `write[${siteLang}]`) || '';
+        const speedRepeat = get(content, `speedRepeat[${siteLang}]`) || '';
+        const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`) || '';
+        const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`) || '';
+        const games = get(content, `games[${siteLang}]`) || '';
+        const automaticSort = get(content, `automaticSort[${siteLang}]`) || '';
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
@@ -458,42 +453,42 @@ class LearningClass extends Component {
 
         return (
             <Container className='new-container'>
-                {!exampleLearning && !cycleLearning &&
-                <Fragment>
-                    <Row>
-                        <Col>
-                            <Button variant="info" block onClick={this.sort}>
-                                {sort}
-                            </Button>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <h3 className="new-row rows" children={games}/>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Button variant="info" block onClick={this.speedRepeat}>
-                                {`${speedRepeat} (50)`}
-                            </Button>
-                        </Col>
-                        <Col>
-                            <Button variant="info" block onClick={this.write}>
-                                {`${write} (max 10)`}
-                            </Button>
-                        </Col>
-                        <Col>
-                            <Button variant="info" block onClick={this.firstLettersByText}>
-                                {`${firstLettersByText} (50)`}
-                            </Button>
-                        </Col>
-                        <Col>
-                            <Button variant="info" block onClick={this.firstLettersBySound}>
-                                {`${firstLettersBySound} (70)`}
-                            </Button>
-                        </Col>
-                    </Row>
-                </Fragment>
-                }
+                {!exampleLearning && !cycleLearning && (
+                    <Fragment>
+                        <Row>
+                            <h3 className="new-row rows" children={games}/>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <Button variant="info" block onClick={this.speedRepeat} children={`${speedRepeat} (50)`}/>
+                            </Col>
+                            <Col>
+                                <Button variant="info" block onClick={this.write} children={`${write} (max 10)`}/>
+                            </Col>
+                            <Col>
+                                <Button variant="info" block onClick={this.firstLettersByText}>
+                                    {`${firstLettersByText} (50)`}
+                                </Button>
+                            </Col>
+                            <Col>
+                                <Button variant="info" block onClick={this.firstLettersBySound}>
+                                    {`${firstLettersBySound} (70)`}
+                                </Button>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <Form.Check
+                                    type="checkbox"
+                                    onChange={this.onChangeCheck}
+                                    checked={automaticChange}
+                                    label={automaticSort}
+                                    id='sort-checkbox'
+                                />
+                            </Col>
+                        </Row>
+                    </Fragment>
+                )}
                 <Row className="text-center new-row rows">
                     {exampleLearning &&
                         <Col>
@@ -525,7 +520,6 @@ class LearningClass extends Component {
                                     {this.record()}
                                 </>
                             )}
-                            {this.stopButton()}
                         </Col>
                     }
                 </Row>
