@@ -267,7 +267,7 @@ const courseItems =
         {
             "id": 1746,
             "unitId": 1039,
-            "pol": "moj kaloryfer nie działa",
+            "pol": "mój kaloryfer nie działa",
             "transl": "мій радіатор не працює"
         },
         {
@@ -1782,7 +1782,7 @@ const courseItems =
             "unitId": 1012,
             "eng": "Is there anything else we can help you with?",
             "pol": "Czy jest jeszcze coś, w czym możemy Ci pomóc?",
-            "transl": "Є ще щось, у чому ми можемо тобі допомогти?"
+            "transl": "Чи є ще щось, у чому ми можемо тобі допомогти?"
         },
         {
             "id": 10222,
@@ -2881,7 +2881,7 @@ const courseItems =
             "unitId": 1024,
             "eng": "Do you mind repeating that?",
             "pol": "Czy masz coś przeciwko powtórzeniu tego?",
-            "transl": "Ви не проти це повторити?"
+            "transl": "Чи ви маєте щось проти повторення цього?"
         },
         {
             "id": 10459,
@@ -4118,7 +4118,7 @@ const courseItems =
             "id": 2039,
             "unitId": 2001,
             "pol": "Przed chwilą byłem w pracy",
-            "transl": "деяку годину тому я був на роботі"
+            "transl": "тільки що я був на роботі"
         },
         {
             "id": 2040,
@@ -4934,7 +4934,7 @@ const courseItems =
             "id": 2223,
             "unitId": 2003,
             "pol": "Wie pani, gdzie jest jakieś centrum handlowe?",
-            "transl": "знаєте де є торговий центр? (Офіційно для жінки)"
+            "transl": "знаєте де є який-небудь торговий центр? (Офіційно для жінки)"
         },
         {
             "id": 2224,
@@ -5005,7 +5005,7 @@ const courseItems =
         {
             "id": 2237,
             "unitId": 2003,
-            "pol": "Jest tutaj tylko jedna dziewczyna",
+            "pol": "tutaj jest tylko jedna dziewczyna",
             "transl": "Тут лише одна дівчина"
         },
         {
@@ -8492,6 +8492,20 @@ const courseItems =
             "unitId": 2021,
             "pol": "Marsz, marsz Dąbrowski, Z ziemi włoskiej do Polski. Za twoim przewodem Złączym się z narodem",
             "transl": "Марш, марш Домбровський, З Італії до Польщі. За вашим прикладом Я буду єднатися з нацією"
+        },
+        {
+            "id": 11003,
+            "unitId": 2022,
+            "eng": "",
+            "pol": "Przydumaj zdanie ze słowem żółw",
+            "transl": "Придумайте речення зі словом черепаха"
+        },
+        {
+            "id": 11004,
+            "unitId": 2022,
+            "eng": "",
+            "pol": "Żółw śpi pod drzewem",
+            "transl": "Черепаха спить під деревом"
         },
     ]
 
