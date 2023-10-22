@@ -8496,14 +8496,12 @@ const courseItems =
         {
             "id": 11003,
             "unitId": 2022,
-            "eng": "",
             "pol": "Przydumaj zdanie ze słowem żółw",
             "transl": "Придумайте речення зі словом черепаха"
         },
         {
             "id": 11004,
             "unitId": 2022,
-            "eng": "",
             "pol": "Żółw śpi pod drzewem",
             "transl": "Черепаха спить під деревом"
         },
