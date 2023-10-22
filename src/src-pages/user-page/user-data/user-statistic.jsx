@@ -24,6 +24,14 @@ export const content = {
         ru: "количество тренировок",
         ukr: "кількість тренувань",
     },
+    effectiveTime: {
+        ru: "Эффективное время",
+        ukr: "Ефективний час",
+    },
+    nonEffectiveTime: {
+        ru: "Неэффективное время",
+        ukr: "Неефективний час",
+    },
 };
 
 export default class UserStatistic extends Component {
@@ -46,6 +54,10 @@ export default class UserStatistic extends Component {
         this.setState({statisticType: 'shortStatistic'})
     }
 
+    setEffectiveTimeStatistic = () => {
+        this.setState({statisticType: 'effectiveTime'})
+    }
+
     render() {
         const {siteLang = ''} = this.props.store;
         const {statisticType} = this.state;
@@ -53,6 +65,7 @@ export default class UserStatistic extends Component {
         const shortStatistic = get(content, `shortStatistic[${siteLang}]`);
         const rightWritten = get(content, `rightWritten[${siteLang}]`);
         const trainingQuantity = get(content, `trainingQuantity[${siteLang}]`);
+        const effectiveTime = get(content, `effectiveTime[${siteLang}]`);
         const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
         const fullStat = (
             <>
@@ -115,6 +128,56 @@ export default class UserStatistic extends Component {
                 ))}
             </>
         );
+        const effectiveTimeArr = [];
+        let effectiveQuantity = 0;
+        let time = '';
+        map(statistic, item => {
+            if (typeof item === 'object') {
+                effectiveQuantity++;
+            }
+            if (typeof item === 'string') {
+                if (effectiveQuantity >= 5 || effectiveQuantity <= 2) {
+                    time = item.split(', ')[1];
+                    effectiveTimeArr.push({time, effectiveQuantity});
+                }
+                effectiveQuantity = 0;
+            }
+        });
+        const effectiveHours = {};
+        const nonEffectiveHours = {};
+        [ ...Array(24) ].forEach((e, i) => {
+            map(effectiveTimeArr, (item, key) => {
+                if (i === Number(item.time.slice(0, 2))){
+                    if (item.effectiveQuantity >= 5) {
+                        effectiveHours[i] = effectiveHours[i]
+                            ? `${effectiveHours[i]}, ${item.effectiveQuantity}`
+                            : item.effectiveQuantity ;
+                    }
+                    if (item.effectiveQuantity <= 2) {
+                        nonEffectiveHours[i] = nonEffectiveHours[i]
+                            ? `${nonEffectiveHours[i]}, ${item.effectiveQuantity}`
+                            : item.effectiveQuantity ;
+                    }
+                }
+            });
+        });
+        const effectiveTimeStat  = (
+            <>
+                {map(effectiveHours, (item, key) => (
+                    <div
+                        key={key}
+                        children={`${key}, ${rightWritten} - ${item}`}
+                    >
+                        {`${key}, ${rightWritten} - ${item}`}
+                        {nonEffectiveHours[key] && (
+                            <div style={{backgroundColor: `rgb(64, 172, 98)`}}>
+                                {`${key}, ${rightWritten} - ${nonEffectiveHours[key]}`}
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </>
+        );
 
         return (
             <Container>
@@ -126,6 +189,9 @@ export default class UserStatistic extends Component {
                         {statisticType === 'shortStatistic' && (
                             shortStat
                         )}
+                        {statisticType === 'effectiveTime' && (
+                            effectiveTimeStat
+                        )}
                     </Col>
                     <Col md={2}>
                         <Button variant="info" block onClick={this.setFullStatistic}>
@@ -133,6 +199,9 @@ export default class UserStatistic extends Component {
                         </Button>
                         <Button variant="info" block onClick={this.setShortStatistic}>
                             {shortStatistic}
+                        </Button>
+                        <Button variant="info" block onClick={this.setEffectiveTimeStatistic}>
+                            {effectiveTime}
                         </Button>
                     </Col>
                 </Row>
