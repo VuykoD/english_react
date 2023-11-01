@@ -10,11 +10,12 @@ import {
     Button,
     FormControl
 } from "react-bootstrap";
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import getCourseItems, { getCourseUnits, getCourseNames } from '../../dict/getCourseItems';
+import setLearnCount from '../../src-core/helper/setLearnCount';
 
 import '../../scc/course.css';
-import PropTypes from 'prop-types';
 
 let courseItems = getCourseItems();
 let courseUnits = getCourseUnits();
@@ -69,7 +70,7 @@ export default class Course extends Component {
             map(items, it => {
                 this.localProgress.push({"entity_id": it.id})
             });
-            onChangeToLearnCount(this.localProgress.length);
+            setLearnCount(onChangeToLearnCount, this.localProgress.length);
             localStorage.progress = JSON.stringify(this.localProgress);
         } else {
             const courses = [];
@@ -87,7 +88,7 @@ export default class Course extends Component {
                 }
             })
             this.localProgress = progress;
-            onChangeToLearnCount(progress.length);
+            setLearnCount(onChangeToLearnCount, progress.length);
             localStorage.progress = JSON.stringify(progress);
         }
     };

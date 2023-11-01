@@ -12,6 +12,7 @@ import '@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css';
 import '../../../scc/user-data.css';
 import courseUnits from '../../../dict/courseUnits';
 import getCourseItems from '../../../dict/getCourseItems';
+import setLearnCount from '../../../src-core/helper/setLearnCount';
 
 let courseItems = getCourseItems();
 
@@ -84,7 +85,7 @@ export default class UserDictionary extends Component {
         localStorage.courseItems = JSON.stringify(courseItems);
         lP = this.setLocalProgress(lP);
         this.setState({localProgress: lP});
-        onChangeToLearnCount(lP.length);
+        setLearnCount(onChangeToLearnCount, lP.length);
     };
 
     sort = () => {

@@ -6,10 +6,11 @@ import map from 'lodash/map';
 import filter from 'lodash/filter';
 import findIndex from 'lodash/findIndex';
 import {Badge, Button, Col, Container, Form, ProgressBar, Row} from 'react-bootstrap';
-//
-import '../../scc/learning.css';
 import getCourseItems, { getCourseUnits } from '../../dict/getCourseItems';
 import { shuffle } from '../user-page/user-data/user-dictionary';
+import setLearnCount from '../../src-core/helper/setLearnCount';
+
+import '../../scc/learning.css';
 
 let courseItems = getCourseItems();
 let courseUnits = getCourseUnits();
@@ -866,7 +867,7 @@ function allIsCorrect() {
             map(localProgress, (item, key) => {
                 localProgress[key] = { entity_id: localProgress[key].entity_id };
             })
-            onChangeToLearnCount(localProgress.length);
+            setLearnCount(onChangeToLearnCount, localProgress.length);
             localStorage.progress = JSON.stringify(localProgress);
             localStorage.statistic = JSON.stringify(statistic);
         }

@@ -75,8 +75,13 @@ export default class Footer extends Component {
                             md="auto"
                             className="footer-item"
                             style={fontStyle}
-                            children={`${countRepeat} ${toLearnCount}/${courseItemsJson.length}`}
-                        />
+                        >
+                            {`${countRepeat} `}
+                            <div
+                                id="heartbeat"
+                                children={`${toLearnCount}/${courseItemsJson.length}`}
+                            />
+                        </Col>
                         <Col/>
                         <Col md="auto" className="footer-item" style={fontStyle} children={`${contacts}: +38 (093) 922-49-49`} />
                     </Row>

@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {Col, Container, Row, Button, ListGroup} from "react-bootstrap";
 import get from 'lodash/get';
 import map from 'lodash/map';
 import findIndex from 'lodash/findIndex';
 import filter from 'lodash/filter';
 import FormControl from "react-bootstrap/FormControl";
+import { uniqWords } from './uniqWords';
+import setLearnCount from '../../src-core/helper/setLearnCount';
+import getCourseItems, { getCourseUnits } from '../../dict/getCourseItems';
 
 import '../../scc/unit.css';
 import '../../scc/course.css'
-import { uniqWords } from './uniqWords';
-import getCourseItems, { getCourseUnits } from '../../dict/getCourseItems';
-import PropTypes from "prop-types";
 
 let courseItems = getCourseItems();
 let courseUnits = getCourseUnits();
@@ -113,7 +114,7 @@ export default class CourseItem extends Component {
             [...this.localProgress, ...addedProgress] :
             [...addedProgress];
         this.setState({isItemSelected: true});
-        onChangeToLearnCount(this.localProgress.length);
+        setLearnCount(onChangeToLearnCount, this.localProgress.length);
         localStorage.progress = JSON.stringify(this.localProgress);
     };
 
@@ -124,7 +125,7 @@ export default class CourseItem extends Component {
                 const index = findIndex(this.localProgress, {'entity_id': item.id});
                 this.localProgress.splice(index,1);
             });
-            onChangeToLearnCount(this.localProgress.length);
+            setLearnCount(onChangeToLearnCount, this.localProgress.length);
             localStorage.progress = JSON.stringify(this.localProgress);
             this.setState({isItemSelected: false});
         }
