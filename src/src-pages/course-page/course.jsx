@@ -157,10 +157,22 @@ export default class Course extends Component {
             const index = findIndex(courseUnits, {'id': unit.id});
             if (index > -1) {
                 courseUnits.splice(index, 1);
+                localStorage.courseUnits = JSON.stringify(courseUnits);
+                this.setState({courseUnits, currentUnitId: 0});
             }
         }
-        localStorage.courseUnits = JSON.stringify(courseUnits);
-        this.setState({courseUnits, currentUnitId: 0});
+    };
+
+    deleteCourse =(course)=> {
+        console.log(course, 'lolo');
+        if (course?.id) {
+            const index = findIndex(courseNames, {'id': course.id});
+            if (index > -1) {
+                courseNames.splice(index, 1);
+                localStorage.courseNames = JSON.stringify(courseNames);
+                this.setState({courseNames});
+            }
+        }
     };
 
     selectUnit = (unit)=> {
@@ -203,11 +215,33 @@ export default class Course extends Component {
                     <Col sm={10}>
                         {map(courseNames, (course, courseKey) => (
                             <Fragment key={courseKey}>
-                                <h1
-                                    onDoubleClick={() => this.putUnit(course)}
-                                >
-                                    {course.name}
-                                </h1>
+                                <Row>
+                                    <Col sm={1}>
+                                        <Button
+                                            className="button-style"
+                                            variant='light'
+                                            onClick={() => this.selectCourse(course)}
+                                        >
+                                            <Pen/>
+                                        </Button>
+                                    </Col>
+                                    <Col>
+                                        <h1
+                                            onDoubleClick={() => this.putUnit(course)}
+                                        >
+                                            {course.name}
+                                        </h1>
+                                    </Col>
+                                    <Col sm={1}>
+                                        <Button
+                                            className="button-style"
+                                            variant='danger'
+                                            onClick={() => this.deleteCourse(course)}
+                                        >
+                                            <Trash2Fill/>
+                                        </Button>
+                                    </Col>
+                                </Row>
                                 <Accordion
                                     // defaultActiveKey={courseKey === 1 ? courseKey : null}
                                 >
