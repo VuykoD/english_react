@@ -14,7 +14,8 @@ import {
     Pen,
     Trash2Fill,
     Save,
-    PlusCircle
+    PlusCircle,
+    Scissors
 } from 'react-bootstrap-icons';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
@@ -168,6 +169,22 @@ export default class Course extends Component {
         this.setState({ currentUnitId: unit.id})
     };
 
+    cutUnit = (unit)=> {
+        this.setState({ currentUnitId: unit.id})
+    };
+
+    putUnit = (course)=> {
+        const { currentUnitId } = this.state;
+        if (currentUnitId && course?.id) {
+            const index = findIndex(courseUnits, {'id': currentUnitId});
+            if (index > -1) {
+                courseUnits[index].courseId = course.id;
+                localStorage.courseUnits = JSON.stringify(courseUnits);
+                this.setState({courseUnits, currentUnitId: 0});
+            }
+        }
+    };
+
     collapse (courseKey) {
         // console.log(courseKey);
     }
@@ -186,7 +203,11 @@ export default class Course extends Component {
                     <Col sm={10}>
                         {map(courseNames, (course, courseKey) => (
                             <Fragment key={courseKey}>
-                                <h1>{course.name}</h1>
+                                <h1
+                                    onDoubleClick={() => this.putUnit(course)}
+                                >
+                                    {course.name}
+                                </h1>
                                 <Accordion
                                     // defaultActiveKey={courseKey === 1 ? courseKey : null}
                                 >
@@ -217,13 +238,20 @@ export default class Course extends Component {
                                                             key={key}
                                                             className={rowClassName}
                                                         >
-                                                            <Col sm={1}>
+                                                            <Col sm={2}>
                                                                 <Button
                                                                     className="button-style"
                                                                     variant='light'
                                                                     onClick={() => this.selectUnit(item)}
                                                                 >
                                                                     <Pen/>
+                                                                </Button>
+                                                                <Button
+                                                                    className="button-style scissors"
+                                                                    variant='outline-dark'
+                                                                    onClick={() => this.cutUnit(item)}
+                                                                >
+                                                                    <Scissors/>
                                                                 </Button>
                                                             </Col>
                                                             <Col sm={1}>
@@ -256,8 +284,7 @@ export default class Course extends Component {
                                                 >
                                                     <Col sm={1}>
                                                         <Button
-                                                            variant="info"
-                                                            block
+                                                            variant={currentUnitId ? "info" : "outline-info" }
                                                             onClick={() => this.addEditUnit(course.id)}
                                                         >
                                                             {currentUnitId

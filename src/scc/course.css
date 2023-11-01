@@ -24,6 +24,10 @@
     margin-top: 4px;
 }
 
+.scissors {
+    margin-left: 15px;
+}
+
 .card-body, .card-header {
     padding: 0.7rem 1.25rem;
     border-bottom: 1px solid rgba(0,0,0,.125);
@@ -32,7 +36,6 @@
 .main {
     display: flex;
     flex-direction: row;
-    padding-left: 10px;
 }
 
 .add-course {
