@@ -16,6 +16,14 @@
     z-index: -1;
 }
 
+.selected {
+    background-color: rgb(179, 246, 200);
+}
+
+.button-style {
+    margin-top: 4px;
+}
+
 .card-body, .card-header {
     padding: 0.7rem 1.25rem;
     border-bottom: 1px solid rgba(0,0,0,.125);

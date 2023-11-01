@@ -210,13 +210,16 @@ export default class Course extends Component {
                                                     map(selectedCourses, (course) => {
                                                         if (course === item.id) return checked = true;
                                                     });
+                                                    const rowClassName = currentUnitId === item.id
+                                                        ? "main selected" : "main"
                                                     return (
                                                         <Row
                                                             key={key}
-                                                            className="main"
+                                                            className={rowClassName}
                                                         >
                                                             <Col sm={1}>
                                                                 <Button
+                                                                    className="button-style"
                                                                     variant='light'
                                                                     onClick={() => this.selectUnit(item)}
                                                                 >
@@ -225,6 +228,7 @@ export default class Course extends Component {
                                                             </Col>
                                                             <Col sm={1}>
                                                                 <Form.Check
+                                                                    className="button-style"
                                                                     type="checkbox"
                                                                     onChange={() => this.onChangeCheck(item.id)}
                                                                     checked={checked}
@@ -237,7 +241,7 @@ export default class Course extends Component {
                                                             </Col>
                                                             <Col sm={1}>
                                                                 <Button
-
+                                                                    className="button-style"
                                                                     variant='danger'
                                                                     onClick={() => this.delete(item)}
                                                                 >
