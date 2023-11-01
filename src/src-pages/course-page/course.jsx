@@ -63,7 +63,8 @@ export default class Course extends Component {
         this.state = {
             selectedCourses,
             courseNames,
-            currentUnitId: 0
+            currentUnitId: 0,
+            currentCourseId: 0
         };
     }
 
@@ -164,13 +165,12 @@ export default class Course extends Component {
     };
 
     deleteCourse =(course)=> {
-        console.log(course, 'lolo');
         if (course?.id) {
             const index = findIndex(courseNames, {'id': course.id});
             if (index > -1) {
                 courseNames.splice(index, 1);
                 localStorage.courseNames = JSON.stringify(courseNames);
-                this.setState({courseNames});
+                this.setState({courseNames, currentCourseId: 0});
             }
         }
     };
@@ -185,7 +185,7 @@ export default class Course extends Component {
         this.setState({ currentUnitId: unit.id})
     };
 
-    putUnit = (course)=> {
+    putUnitOrSelectCourse = (course)=> {
         const { currentUnitId } = this.state;
         if (currentUnitId && course?.id) {
             const index = findIndex(courseUnits, {'id': currentUnitId});
@@ -194,6 +194,9 @@ export default class Course extends Component {
                 localStorage.courseUnits = JSON.stringify(courseUnits);
                 this.setState({courseUnits, currentUnitId: 0});
             }
+        }
+        if (!currentUnitId && course?.id) {
+            this.setState({currentCourseId: course?.id});
         }
     };
 
@@ -204,7 +207,7 @@ export default class Course extends Component {
     render() {
         const { siteLang } = this.props.store;
         const expandContent = get(content, `expandContent[${siteLang}]`);
-        const { selectedCourses, currentUnitId } = this.state;
+        const { selectedCourses, currentUnitId, currentCourseId } = this.state;
 
         return (
             <Container>
@@ -216,30 +219,24 @@ export default class Course extends Component {
                         {map(courseNames, (course, courseKey) => (
                             <Fragment key={courseKey}>
                                 <Row>
-                                    <Col sm={1}>
-                                        <Button
-                                            className="button-style"
-                                            variant='light'
-                                            onClick={() => this.selectCourse(course)}
-                                        >
-                                            <Pen/>
-                                        </Button>
-                                    </Col>
+                                    <Col sm={1}/>
                                     <Col>
                                         <h1
-                                            onDoubleClick={() => this.putUnit(course)}
+                                            onDoubleClick={() => this.putUnitOrSelectCourse(course)}
                                         >
                                             {course.name}
                                         </h1>
                                     </Col>
                                     <Col sm={1}>
-                                        <Button
-                                            className="button-style"
-                                            variant='danger'
-                                            onClick={() => this.deleteCourse(course)}
-                                        >
-                                            <Trash2Fill/>
-                                        </Button>
+                                        {currentCourseId === course.id && (
+                                            <Button
+                                                className="button-style course"
+                                                variant='danger'
+                                                onClick={() => this.deleteCourse(course)}
+                                            >
+                                                <Trash2Fill/>
+                                            </Button>
+                                        )}
                                     </Col>
                                 </Row>
                                 <Accordion
