@@ -10,6 +10,12 @@ import {
     Button,
     FormControl
 } from "react-bootstrap";
+import {
+    Pen,
+    Trash2Fill,
+    Save,
+    PlusCircle
+} from 'react-bootstrap-icons';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import getCourseItems, { getCourseUnits, getCourseNames } from '../../dict/getCourseItems';
@@ -55,7 +61,8 @@ export default class Course extends Component {
 
         this.state = {
             selectedCourses,
-            courseNames
+            courseNames,
+            currentUnitId: 0
         };
     }
 
@@ -112,7 +119,8 @@ export default class Course extends Component {
         this.setState({courseNames});
     };
 
-    addUnit =(courseId)=> {
+    addEditUnit =(courseId)=> {
+        const { currentUnitId } = this.state;
         const idsArr= [];
         map(courseUnits, it => idsArr.push(+it.id))
         const unitId = Math.max(...idsArr);
@@ -123,26 +131,40 @@ export default class Course extends Component {
             const notAllFieldsAreFilled = get(content, `notAllFieldsAreFilled[${siteLang}]`);
             return  alert(notAllFieldsAreFilled);
         }
-        courseUnits.push({
-            id: unitId + 1,
-            courseId,
-            url: unitUrl,
-            name: unitName
-        });
+        if (currentUnitId) {
+            const index = findIndex(courseUnits, {'id': currentUnitId});
+            if (index > -1) {
+                courseUnits[index].url = unitUrl;
+                courseUnits[index].name = unitName;
+            }
+        } else {
+            courseUnits.push({
+                id: unitId + 1,
+                courseId,
+                url: unitUrl,
+                name: unitName
+            });
+        }
         localStorage.courseUnits = JSON.stringify(courseUnits);
         document.getElementById(`unit_name_${courseId}`).value = '';
         document.getElementById(`unit_url_${courseId}`).value = '';
         this.setState({courseUnits});
     };
 
+    selectUnit = (unit)=> {
+        document.getElementById(`unit_name_${unit.courseId}`).value = unit.name;
+        document.getElementById(`unit_url_${unit.courseId}`).value = unit.url;
+        this.setState({ currentUnitId: unit.id})
+    };
+
     collapse (courseKey) {
-        console.log(courseKey);
+        // console.log(courseKey);
     }
 
     render() {
         const { siteLang } = this.props.store;
         const expandContent = get(content, `expandContent[${siteLang}]`);
-        const { selectedCourses } = this.state;
+        const { selectedCourses, currentUnitId } = this.state;
 
         return (
             <Container>
@@ -178,16 +200,40 @@ export default class Course extends Component {
                                                         if (course === item.id) return checked = true;
                                                     });
                                                     return (
-                                                        <div key={key} className="main">
-                                                            <Form.Check
-                                                                type="checkbox"
-                                                                onChange={() => this.onChangeCheck(item.id)}
-                                                                checked={checked}
-                                                            />
-                                                            <Link to={`/course${item.url}`}>
-                                                                <Card.Body children={item.name}/>
-                                                            </Link>
-                                                        </div>
+                                                        <Row
+                                                            key={key}
+                                                            className="main"
+                                                        >
+                                                            <Col sm={1}>
+                                                                <Button
+                                                                    variant='light'
+                                                                    onClick={() => this.selectUnit(item)}
+                                                                >
+                                                                    <Pen/>
+                                                                </Button>
+                                                            </Col>
+                                                            <Col sm={1}>
+                                                                <Form.Check
+                                                                    type="checkbox"
+                                                                    onChange={() => this.onChangeCheck(item.id)}
+                                                                    checked={checked}
+                                                                />
+                                                            </Col>
+                                                            <Col>
+                                                                <Link to={`/course${item.url}`}>
+                                                                    <Card.Body children={item.name}/>
+                                                                </Link>
+                                                            </Col>
+                                                            <Col sm={1}>
+                                                                <Button
+
+                                                                    variant='danger'
+                                                                    onClick={() => this.delete(item)}
+                                                                >
+                                                                    <Trash2Fill/>
+                                                                </Button>
+                                                            </Col>
+                                                        </Row>
                                                     )
                                                 })}
                                                 <Row
@@ -197,9 +243,12 @@ export default class Course extends Component {
                                                         <Button
                                                             variant="info"
                                                             block
-                                                            onClick={() => this.addUnit(course.id)}
+                                                            onClick={() => this.addEditUnit(course.id)}
                                                         >
-                                                            +
+                                                            {currentUnitId
+                                                                ? <Save/>
+                                                                : <PlusCircle/>
+                                                            }
                                                         </Button>
                                                     </Col>
                                                     <Col>
@@ -224,7 +273,7 @@ export default class Course extends Component {
                             </Fragment>
                         ))}
                     </Col>
-                    <Col sm={1}>
+                    <Col sm={1} className="behind">
                         <div><img src={require("../../images/paint.png")} alt="" className="paint-right"/></div>
                     </Col>
                 </Row>
