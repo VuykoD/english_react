@@ -175,6 +175,18 @@ export default class Course extends Component {
         }
     };
 
+    saveCourse = (courseId)=> {
+        if (courseId) {
+            const index = findIndex(courseNames, {'id': courseId});
+            if (index > -1) {
+                courseNames[index].name = document.getElementById(`course_name_${courseId}`).value;
+                localStorage.courseNames = JSON.stringify(courseNames);
+                this.setState({courseNames, currentCourseId: 0});
+                document.getElementById(`course_name_${courseId}`).value = "";
+            }
+        }
+    };
+
     selectUnit = (unit)=> {
         document.getElementById(`unit_name_${unit.courseId}`).value = unit.name;
         document.getElementById(`unit_url_${unit.courseId}`).value = unit.url;
@@ -197,6 +209,10 @@ export default class Course extends Component {
         }
         if (!currentUnitId && course?.id) {
             this.setState({currentCourseId: course?.id});
+            setTimeout(() => {
+                document.getElementById(`course_name_${course?.id}`).value = course.name;
+            }, 300);
+
         }
     };
 
@@ -218,27 +234,44 @@ export default class Course extends Component {
                     <Col sm={10}>
                         {map(courseNames, (course, courseKey) => (
                             <Fragment key={courseKey}>
-                                <Row>
-                                    <Col sm={1}/>
-                                    <Col>
-                                        <h1
-                                            onDoubleClick={() => this.putUnitOrSelectCourse(course)}
-                                        >
-                                            {course.name}
-                                        </h1>
-                                    </Col>
-                                    <Col sm={1}>
-                                        {currentCourseId === course.id && (
-                                            <Button
-                                                className="button-style course"
-                                                variant='danger'
-                                                onClick={() => this.deleteCourse(course)}
-                                            >
-                                                <Trash2Fill/>
-                                            </Button>
-                                        )}
-                                    </Col>
-                                </Row>
+                                {currentCourseId !== course.id && (
+                                    <h1
+                                        onDoubleClick={() => this.putUnitOrSelectCourse(course)}
+                                    >
+                                        {course.name}
+                                    </h1>
+                                )}
+                                {currentCourseId === course.id && (
+                                    <Row>
+                                        <>
+                                            <Col sm={1}>
+                                                <Button
+                                                    className="button-style course"
+                                                    variant={"info"}
+                                                    onClick={() => this.saveCourse(course.id)}
+                                                >
+                                                    <PlusCircle/>
+                                                </Button>
+                                            </Col>
+                                            <Col>
+                                                <FormControl
+                                                    className="course"
+                                                    type="text"
+                                                    id={`course_name_${course.id}`}
+                                                />
+                                            </Col>`
+                                            <Col sm={1}>
+                                                <Button
+                                                    className="button-style course"
+                                                    variant='danger'
+                                                    onClick={() => this.deleteCourse(course)}
+                                                >
+                                                    <Trash2Fill/>
+                                                </Button>
+                                            </Col>
+                                        </>
+                                    </Row>
+                                )}
                                 <Accordion
                                     // defaultActiveKey={courseKey === 1 ? courseKey : null}
                                 >
