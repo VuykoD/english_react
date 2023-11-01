@@ -2202,7 +2202,7 @@ const courseItems =
             "unitId": 1015,
             "eng": "Would you have this in another color?",
             "pol": "Czy masz to w innym kolorze?",
-            "transl": "У вас це в іншому кольорі?"
+            "transl": "чи у вас це в іншому кольорі?"
         },
         {
             "id": 10306,
@@ -2306,8 +2306,8 @@ const courseItems =
             "id": 10327,
             "unitId": 1017,
             "eng": "You certainly did well today",
-            "pol": "Z pewnością wykonałeś dzisiaj dobrą robotę",
-            "transl": "Ти, звичайно, добре сьогодні попрацював"
+            "pol": "Dziś na pewno świetnie sobie poradziłeś",
+            "transl": "сьогодні, безумовно, ви добре впоралися"
         },
         {
             "id": 10328,
@@ -2958,7 +2958,7 @@ const courseItems =
             "unitId": 1026,
             "eng": "good looking",
             "pol": "dobrze wyglądasz",
-            "transl": "ти виглядаєш добре"
+            "transl": "ти добре виглядаєш"
         },
         {
             "id": 10483,
@@ -3070,7 +3070,7 @@ const courseItems =
             "unitId": 1030,
             "eng": "Take it easy",
             "pol": "Spokojnie",
-            "transl": "Не приймайте близько до серця"
+            "transl": "Спокійно"
         },
         {
             "id": 10558,
@@ -3364,7 +3364,7 @@ const courseItems =
             "unitId": 1035,
             "eng": "Oh Jesus",
             "pol": "O Jezu",
-            "transl": "Про Ісуса"
+            "transl": "О Ісус"
         },
         {
             "id": 10644,
@@ -3574,7 +3574,7 @@ const courseItems =
             "unitId": 300,
             "eng": "seem and sound",
             "pol": "wydawać i brzmieć",
-            "transl": "здаватися і звучати"
+            "transl": "видавати і звучати"
         },
         {
             "id": 3019,
@@ -3700,7 +3700,7 @@ const courseItems =
             "unitId": 301,
             "eng": "follow for promises and spontaneous decisions",
             "pol": "podążaj za obietnicami i spontanicznymi decyzjami",
-            "transl": "слідувати обіцянкам та спонтанним рішенням"
+            "transl": "Дотримуйся обіцянок та спонтанних рішень"
         },
         {
             "id": 3039,
@@ -4424,7 +4424,7 @@ const courseItems =
             "id": 2107,
             "unitId": 2002,
             "pol": "Mysz to bardzo małe zwierzę",
-            "transl": "Мишко - дуже маленька тварина"
+            "transl": "миша це дуже маленька тварина"
         },
         {
             "id": 2108,
@@ -5336,7 +5336,7 @@ const courseItems =
             "id": 2302,
             "unitId": 2004,
             "pol": "Jestem szczupły, mam mały brzuch",
-            "transl": "Я стрункий, але маю маленький живіт"
+            "transl": "Я стрункий, маю маленький живіт"
         },
         {
             "id": 2303,
@@ -7087,7 +7087,8 @@ const courseItems =
         {
             "id": 2669,
             "unitId": 2008,
-            "pol": "Znazłam te buty w fajnym sklepie w centrum",
+            "eng": "",
+            "pol": "Znalazłam te buty w fajnym sklepie w centrum",
             "transl": "Я знайшла це взуття в класним магазинi в центрi"
         },
         {
@@ -7526,7 +7527,7 @@ const courseItems =
             "id": 2749,
             "unitId": 1042,
             "pol": "więc zaczynamy",
-            "transl": "Отже, починаємо"
+            "transl": "Отже починаємо"
         },
         {
             "id": 2750,
@@ -8271,8 +8272,8 @@ const courseItems =
             "id": 10904,
             "unitId": 1042,
             "eng": "",
-            "pol": "nic nie shkodzi",
-            "transl": "нічого, не шкодуйте"
+            "pol": "nic nie szkodzi",
+            "transl": "нічого страшного"
         },
         {
             "id": 10905,
@@ -8377,7 +8378,7 @@ const courseItems =
             "unitId": 1042,
             "eng": "",
             "pol": "szypszyna tu nie rośnie",
-            "transl": "тут не росте шипшина"
+            "transl": "шипшина тут не росте"
         },
         {
             "id": 10920,
@@ -8422,89 +8423,103 @@ const courseItems =
             "transl": "Я не можу відтворити цю помилку"
         },
         {
-            "id": 10991,
-            "unitId": 2021,
-            "pol": "Jeszcze Polska nie zginęła, Kiedy my żyjemy",
-            "transl": "Ще Польща не загинула, Коли ми живемо"
-        },
-        {
-            "id": 10992,
-            "unitId": 2021,
-            "pol": "Co nam obca przemoc wzięła, Szablą odbierzemy",
-            "transl": "Що в нас чужа сила взяла, Шаблею відберемо"
-        },
-        {
-            "id": 10993,
-            "unitId": 2021,
-            "pol": "Marsz, marsz Dąbrowski, Z ziemi włoskiej do Polski. Za twoim przewodem Złączym się z narodem",
-            "transl": "Марш, марш Домбровський, З Італії до Польщі. За вашим прикладом Я буду єднатися з нацією"
-        },
-        {
-            "id": 10994,
-            "unitId": 2021,
-            "pol": "Przejdziem Wisłę, przejdziem Wartę, Będziem Polakami",
-            "transl": "Пройдем Віслу, пройдем Варту, Будем поляками"
-        },
-        {
-            "id": 10995,
-            "unitId": 2021,
-            "pol": "Dał nam przykład Bonaparte, Jak zwyciężać mamy",
-            "transl": "Бонапарт дав нам приклад, Як ми маємо перемогти"
-        },
-        {
-            "id": 10996,
-            "unitId": 2021,
-            "pol": "Marsz, marsz Dąbrowski, Z ziemi włoskiej do Polski. Za twoim przewodem Złączym się z narodem",
-            "transl": "Марш, марш Домбровський, З Італії до Польщі. За вашим прикладом Я буду єднатися з нацією"
-        },
-        {
-            "id": 10997,
-            "unitId": 2021,
-            "pol": "Jak Czarniecki do Poznania Po szwedzkim zaborze,",
-            "transl": "Як Чарнецький до Познаня По шведській навалі"
-        },
-        {
-            "id": 10998,
-            "unitId": 2021,
-            "pol": "Dla ojczyzny ratowania Wrócim się przez morze",
-            "transl": "Для вітчизни порятунку Вернемось по морю"
-        },
-        {
-            "id": 10999,
-            "unitId": 2021,
-            "pol": "Marsz, marsz Dąbrowski, Z ziemi włoskiej do Polski. Za twoim przewodem Złączym się z narodem",
-            "transl": "Марш, марш Домбровський, З Італії до Польщі. За вашим прикладом Я буду єднатися з нацією"
-        },
-        {
-            "id": 11000,
-            "unitId": 2021,
-            "pol": "Już tam ojciec do swej Basi Mówi zapłakany",
-            "transl": "Вже там тато своїй Басі Каже заплаканий:"
-        },
-        {
-            "id": 11001,
-            "unitId": 2021,
-            "pol": "Słuchaj jeno, pono nasi Biją w tarabany",
-            "transl": "Слухай-но – то певно наші Б'ють у барабани"
-        },
-        {
-            "id": 11002,
-            "unitId": 2021,
-            "pol": "Marsz, marsz Dąbrowski, Z ziemi włoskiej do Polski. Za twoim przewodem Złączym się z narodem",
-            "transl": "Марш, марш Домбровський, З Італії до Польщі. За вашим прикладом Я буду єднатися з нацією"
-        },
-        {
-            "id": 11003,
+            "id": 10926,
             "unitId": 2022,
+            "eng": "",
             "pol": "Przydumaj zdanie ze słowem żółw",
             "transl": "Придумайте речення зі словом черепаха"
         },
         {
-            "id": 11004,
+            "id": 10927,
             "unitId": 2022,
+            "eng": "",
             "pol": "Żółw śpi pod drzewem",
             "transl": "Черепаха спить під деревом"
         },
+        {
+            "id": 10928,
+            "unitId": 2022,
+            "eng": "",
+            "pol": "Być wytrwałym, starannym i cierpliwym jest ważne, aby nauczyć się języka",
+            "transl": "Важливо бути впертим, старанним і терплячим, щоб вивчити мову"
+        },
+        {
+            "id": 10929,
+            "unitId": 2023,
+            "eng": "",
+            "pol": "Bez ciebie nie mogę zasnąć",
+            "transl": "Без тебе я не можу заснути"
+        },
+        {
+            "id": 10930,
+            "unitId": 2023,
+            "eng": "",
+            "pol": "kto dzisiaj u cię nocuje?",
+            "transl": "Хто сьогодні у тебе ночує?"
+        },
+        {
+            "id": 10931,
+            "unitId": 2023,
+            "eng": "",
+            "pol": "Dostałem od ciebie list",
+            "transl": "Я отримав від тебе листа"
+        },
+        {
+            "id": 10932,
+            "unitId": 2023,
+            "eng": "",
+            "pol": "Swiat się na tobie nie kończy",
+            "transl": "Світ на тобі не закінчується"
+        },
+        {
+            "id": 10933,
+            "unitId": 2023,
+            "eng": "",
+            "pol": "Dziś cię odwiedzę po pracy",
+            "transl": "Сьогодні я тебе відвідаю після роботи"
+        },
+        {
+            "id": 10934,
+            "unitId": 2023,
+            "eng": "",
+            "pol": "Nie martw się, ci się uda",
+            "transl": "Не хвилюйся, у тебе вийде"
+        },
+        {
+            "id": 10935,
+            "unitId": 2022,
+            "eng": "",
+            "pol": "o weekendzie będę miał wszystkie dokumenty podpisane",
+            "transl": "Після вихідних всі документи будуть підписані"
+        },
+        {
+            "id": 10936,
+            "unitId": 2022,
+            "eng": "",
+            "pol": "Poprawię to w następnym zadaniu",
+            "transl": "Виправлю це в наступному завданні"
+        },
+        {
+            "id": 10937,
+            "unitId": 2023,
+            "eng": "",
+            "pol": "uczę się nowego zawodu",
+            "transl": "Я вчуся новій професії"
+        },
+        {
+            "id": 10938,
+            "unitId": 2023,
+            "eng": "",
+            "pol": "mam wykształkcenie wyższe",
+            "transl": "У мене вища освіта"
+        },
+        {
+            "id": 10939,
+            "unitId": 2023,
+            "eng": "",
+            "pol": "Zajmuję się chorą babcią",
+            "transl": "Я доглядаю за хворою бабусею"
+        }
     ]
 
 const ukr = [];
