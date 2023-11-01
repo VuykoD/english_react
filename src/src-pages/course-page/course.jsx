@@ -148,7 +148,18 @@ export default class Course extends Component {
         localStorage.courseUnits = JSON.stringify(courseUnits);
         document.getElementById(`unit_name_${courseId}`).value = '';
         document.getElementById(`unit_url_${courseId}`).value = '';
-        this.setState({courseUnits});
+        this.setState({courseUnits, currentUnitId: 0});
+    };
+
+    delete =(unit)=> {
+        if (unit?.id) {
+            const index = findIndex(courseUnits, {'id': unit.id});
+            if (index > -1) {
+                courseUnits.splice(index, 1);
+            }
+        }
+        localStorage.courseUnits = JSON.stringify(courseUnits);
+        this.setState({courseUnits, currentUnitId: 0});
     };
 
     selectUnit = (unit)=> {
