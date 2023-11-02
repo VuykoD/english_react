@@ -188,7 +188,6 @@ export default class CourseItem extends Component {
     uniqPol = () => {
         const pol = get(document.getElementById(`row_new_pol`), 'value');
         const uniqArr = uniqWords(courseItems, pol, 'pol');
-        console.log(uniqArr);
         const div = this.clearUniq();
         map(uniqArr, it => {
             const p = document.createElement('p');
@@ -213,45 +212,48 @@ export default class CourseItem extends Component {
         const uniqEng = get(content, `uniqEng[${siteLang}]`);
         const {courseItems, isItemSelected} = this.state;
 
-        const row = (odd, item) => (
-            <ListGroup.Item variant={odd} key={item.id}>
-                <Row className="unit-row">
-                    <Col sm="1">
-                        <Button
-                            variant="info"
-                            block
-                            onClick={item.id !== '_new' ? () => this.edit(item.id) : this.add}
-                        >
-                            {item.id !== '_new' ? item.id : '+'}
-                        </Button>
-                    </Col>
-                    <Col>
-                        <FormControl
-                            type="text"
-                            className="mr-sm-2"
-                            id={`row${item.id}_eng`}
-                            defaultValue={item.eng}
-                        />
-                    </Col>
-                    <Col>
-                        <FormControl
-                            type="text"
-                            className="mr-sm-2"
-                            id={`row${item.id}_pol`}
-                            defaultValue={item.pol}
-                        />
-                    </Col>
-                    <Col>
-                        <FormControl
-                            type="text"
-                            className="mr-sm-2"
-                            id={`row${item.id}_transl`}
-                            defaultValue={item.transl}
-                        />
-                    </Col>
-                </Row>
-            </ListGroup.Item>
-        );
+        const row = (odd, item) => {
+            const inProgress = findIndex(this.localProgress, {'entity_id': item.id}) > -1;
+            return (
+                <ListGroup.Item variant={odd} key={item.id}>
+                    <Row className="unit-row">
+                        <Col sm="1">
+                            <Button
+                                variant={inProgress  ? "info" : "light"}
+                                block
+                                onClick={item.id !== '_new' ? () => this.edit(item.id) : this.add}
+                            >
+                                {item.id !== '_new' ? item.id : '+'}
+                            </Button>
+                        </Col>
+                        <Col>
+                            <FormControl
+                                type="text"
+                                className="mr-sm-2"
+                                id={`row${item.id}_eng`}
+                                defaultValue={item.eng}
+                            />
+                        </Col>
+                        <Col>
+                            <FormControl
+                                type="text"
+                                className="mr-sm-2"
+                                id={`row${item.id}_pol`}
+                                defaultValue={item.pol}
+                            />
+                        </Col>
+                        <Col>
+                            <FormControl
+                                type="text"
+                                className="mr-sm-2"
+                                id={`row${item.id}_transl`}
+                                defaultValue={item.transl}
+                            />
+                        </Col>
+                    </Row>
+                </ListGroup.Item>
+            );
+        }
         const rowWithButtons = (
             <ListGroup.Item variant='primary' key='rowWithButtons'>
                 <Row className="unit-row">
