@@ -576,6 +576,7 @@ export function getBadge(txt, variant, saveFunc, inputId) {
                     id={inputId}
                     type="text"
                     className="mainInput"
+                    defaultValue={txt}
                 />
             </Col>
             <Col sm={1}/>

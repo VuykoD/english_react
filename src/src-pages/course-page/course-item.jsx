@@ -204,7 +204,7 @@ export default class CourseItem extends Component {
     }
 
     render() {
-        const {siteLang = ''} = this.props.store;
+        const { siteLang = '', learnedLang } = this.props.store;
         const select = get(content, `select[${siteLang}]`);
         const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
         const clearLocalstorage = get(content, `clearLocalstorage[${siteLang}]`);
@@ -230,16 +230,8 @@ export default class CourseItem extends Component {
                             <FormControl
                                 type="text"
                                 className="mr-sm-2"
-                                id={`row${item.id}_eng`}
-                                defaultValue={item.eng}
-                            />
-                        </Col>
-                        <Col>
-                            <FormControl
-                                type="text"
-                                className="mr-sm-2"
-                                id={`row${item.id}_pol`}
-                                defaultValue={item.pol}
+                                id={`row${item.id}_${learnedLang}`}
+                                defaultValue={item[learnedLang]}
                             />
                         </Col>
                         <Col>

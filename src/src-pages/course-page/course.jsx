@@ -209,10 +209,6 @@ export default class Course extends Component {
         }
         if (!currentUnitId && course?.id) {
             this.setState({currentCourseId: course?.id});
-            setTimeout(() => {
-                document.getElementById(`course_name_${course?.id}`).value = course.name;
-            }, 300);
-
         }
     };
 
@@ -258,6 +254,7 @@ export default class Course extends Component {
                                                     className="course"
                                                     type="text"
                                                     id={`course_name_${course.id}`}
+                                                    defaultValue={course.name}
                                                 />
                                             </Col>`
                                             <Col sm={1}>
