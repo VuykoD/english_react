@@ -2,43 +2,27 @@ const courseNames =
     [
         {
             "id": 5,
-            "name": "Youtube"
-        },
-        {
-            "id": 7,
-            "name": "Grammar"
+            "name": "Пісні"
         },
         {
             "id": 6,
-            "name": "Lukasz Ruczyński"
+            "name": "Книги"
         },
         {
             "id": 4,
-            "name": "Common phrases"
-        },
-        {
-            "id": 3,
-            "name": "Polish school 8 class"
+            "name": "Загальні фрази"
         },
         {
             "id": 8,
-            "name": "Interesting"
+            "name": "Цікаве"
         },
         {
             "id": 9,
-            "name": "Молитви Modlitwy"
+            "name": "Молитви"
         },
         {
             "id": 10,
             "name": "Запитання на Карту поляка"
-        },
-        {
-            "id": 11,
-            "name": "Hymn polski"
-        },
-        {
-            "id": 12,
-            "name": "From life"
         }
     ]
 ;

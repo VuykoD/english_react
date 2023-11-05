@@ -2,87 +2,87 @@ const courseUnits =
     [
         {
             "id": 1037,
-            "courseId": 5,
+            "courseId": 8,
             "url": "/youtube-1",
             "name": "youtube-1"
         },
         {
             "id": 1038,
-            "courseId": 5,
+            "courseId": 8,
             "url": "/youtube-2",
             "name": "youtube-2"
         },
         {
             "id": 1039,
-            "courseId": 5,
+            "courseId": 8,
             "url": "/youtube-3",
             "name": "youtube-3"
         },
         {
             "id": 1040,
-            "courseId": 5,
+            "courseId": 8,
             "url": "/youtube-4",
             "name": "youtube-4"
         },
         {
             "id": 1041,
-            "courseId": 5,
+            "courseId": 8,
             "url": "/youtube-5",
             "name": "youtube-5"
         },
         {
             "id": 1042,
-            "courseId": 5,
+            "courseId": 8,
             "url": "/youtube-6",
             "name": "youtube-6"
         },
         {
             "id": 700,
-            "courseId": 7,
+            "courseId": 6,
             "url": "/grammar-1",
             "name": "Родовий відмінок"
         },
         {
             "id": 701,
-            "courseId": 7,
+            "courseId": 6,
             "url": "/grammar-2",
             "name": "Давальний відмінок"
         },
         {
             "id": 702,
-            "courseId": 7,
+            "courseId": 6,
             "url": "/grammar-3",
             "name": "Орудний відмінок"
         },
         {
             "id": 300,
-            "courseId": 3,
+            "courseId": 6,
             "url": "/school-8/welcome",
-            "name": "Welcome unit 1"
+            "name": "Szkoła podstawowa ósma klasa, wprowadzenie"
         },
         {
             "id": 301,
-            "courseId": 3,
+            "courseId": 6,
             "url": "/school-8/unit-1/lesson-1",
-            "name": "item 1 lesson 1"
+            "name": "Szkoła podstawowa ósma klasa, lekcja 1"
         },
         {
             "id": 302,
-            "courseId": 3,
+            "courseId": 6,
             "url": "/school-8/unit-1/lesson-4",
-            "name": "item 1 lesson 4"
+            "name": "Szkoła podstawowa ósma klasa, lekcja 4"
         },
         {
             "id": 303,
-            "courseId": 3,
+            "courseId": 6,
             "url": "/school-8/unit-1/lesson-5",
-            "name": "item 1 lesson 5"
+            "name": "Szkoła podstawowa ósma klasa, lekcja 5"
         },
         {
             "id": 304,
-            "courseId": 3,
+            "courseId": 6,
             "url": "/school-8/unit-1/lesson-6",
-            "name": "item 1 lesson 6"
+            "name": "Szkoła podstawowa ósma klasa, lekcja 6"
         },
         {
             "id": 1001,
@@ -291,56 +291,56 @@ const courseUnits =
         {
             "id": 2000,
             "courseId": 6,
-            "url": "/polish-1",
-            "name": "polish-1"
+            "url": "/lukasz-ruczyński-1",
+            "name": "Lukasz Ruczyński 1"
         },
         {
             "id": 2001,
             "courseId": 6,
-            "url": "/polish-2",
-            "name": "polish-2"
+            "url": "/lukasz-ruczyński-2",
+            "name": "Lukasz Ruczyński 2"
         },
         {
             "id": 2002,
             "courseId": 6,
-            "url": "/polish-3",
-            "name": "polish-3"
+            "url": "/lukasz-ruczyński-3",
+            "name": "Lukasz Ruczyński 3"
         },
         {
             "id": 2003,
             "courseId": 6,
-            "url": "/polish-4",
-            "name": "polish-4"
+            "url": "/lukasz-ruczyński-4",
+            "name": "Lukasz Ruczyński 4"
         },
         {
             "id": 2004,
             "courseId": 6,
-            "url": "/polish-5",
-            "name": "polish-5"
+            "url": "/lukasz-ruczyński-5",
+            "name": "Lukasz Ruczyński 5"
         },
         {
             "id": 2005,
             "courseId": 6,
-            "url": "/polish-6",
-            "name": "polish-6"
+            "url": "/lukasz-ruczyński-6",
+            "name": "Lukasz Ruczyński 6"
         },
         {
             "id": 2006,
             "courseId": 6,
-            "url": "/polish-7",
-            "name": "polish-7"
+            "url": "/lukasz-ruczyński-7",
+            "name": "Lukasz Ruczyński 7"
         },
         {
             "id": 2007,
             "courseId": 6,
-            "url": "/polish-8",
-            "name": "polish-8"
+            "url": "/lukasz-ruczyński-8",
+            "name": "Lukasz Ruczyński 8"
         },
         {
             "id": 2008,
             "courseId": 6,
-            "url": "/polish-9",
-            "name": "polish-9"
+            "url": "/lukasz-ruczyński-9",
+            "name": "Lukasz Ruczyński 9"
         },
         {
             "id": 2009,
@@ -350,7 +350,7 @@ const courseUnits =
         },
         {
             "id": 2010,
-            "courseId": 7,
+            "courseId": 6,
             "url": "/znahіdny-vіdminok",
             "name": "Знахідний відмінок"
         },
@@ -368,7 +368,7 @@ const courseUnits =
         },
         {
             "id": 2013,
-            "courseId": 7,
+            "courseId": 6,
             "url": "/grammar-5",
             "name": "Місцевий відмінок"
         },
@@ -416,15 +416,27 @@ const courseUnits =
         },
         {
             "id": 2021,
-            "courseId": 11,
+            "courseId": 10,
             "url": "/hymn-polski",
             "name": "hymn polski"
         },
         {
             "id": 2022,
-            "courseId": 12,
+            "courseId": 8,
             "url": "/from-life-1",
-            "name": "from life 1"
+            "name": "З життя"
+        },
+        {
+            "id": 2023,
+            "courseId": 8,
+            "url": "/youtube-7",
+            "name": "youtube-7"
+        },
+        {
+            "id": 2024,
+            "courseId": 5,
+            "url": "/kwiat-jabłoni-od-nowa",
+            "name": "Kwiat Jabłoni - Od nowa"
         }
     ]
 ;
