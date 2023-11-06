@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import { map, findIndex, filter, get } from 'lodash';
+import { map, findIndex, filter, get, indexOf, includes } from 'lodash';
 import {
     Col,
     Container,
@@ -29,9 +29,13 @@ let courseUnits = getCourseUnits();
 let courseNames = getCourseNames();
 
 const content = {
-    expandContent: {
+    unfoldContent: {
         ru: "Развернуть содержание",
         ukr: "Розгорнути зміст",
+    },
+    foldContent: {
+        ru: "Свернуть содержание",
+        ukr: "Згорнути зміст",
     },
     notAllFieldsAreFilled: {
         ru: "Заполнены не все поля",
@@ -64,7 +68,7 @@ export default class Course extends Component {
             selectedCourses,
             courseNames,
             currentUnitId: 0,
-            currentCourseId: 0
+            openedCourses: []
         };
     }
 
@@ -170,7 +174,7 @@ export default class Course extends Component {
             if (index > -1) {
                 courseNames.splice(index, 1);
                 localStorage.courseNames = JSON.stringify(courseNames);
-                this.setState({courseNames, currentCourseId: 0});
+                this.setState({courseNames});
             }
         }
     };
@@ -181,7 +185,7 @@ export default class Course extends Component {
             if (index > -1) {
                 courseNames[index].name = document.getElementById(`course_name_${courseId}`).value;
                 localStorage.courseNames = JSON.stringify(courseNames);
-                this.setState({courseNames, currentCourseId: 0});
+                this.setState({courseNames});
                 document.getElementById(`course_name_${courseId}`).value = "";
             }
         }
@@ -197,29 +201,23 @@ export default class Course extends Component {
         this.setState({ currentUnitId: unit.id})
     };
 
-    putUnitOrSelectCourse = (course)=> {
-        const { currentUnitId } = this.state;
-        if (currentUnitId && course?.id) {
-            const index = findIndex(courseUnits, {'id': currentUnitId});
-            if (index > -1) {
-                courseUnits[index].courseId = course.id;
-                localStorage.courseUnits = JSON.stringify(courseUnits);
-                this.setState({courseUnits, currentUnitId: 0});
-            }
+    collapse = (courseKey) => {
+        const { openedCourses } = this.state;
+        const index = indexOf(openedCourses, courseKey);
+        if (index > -1) {
+            openedCourses.splice(index, 1);
+            this.setState({openedCourses})
+        } else {
+            openedCourses.push(courseKey);
+            this.setState({openedCourses})
         }
-        if (!currentUnitId && course?.id) {
-            this.setState({currentCourseId: course?.id});
-        }
-    };
-
-    collapse (courseKey) {
-        // console.log(courseKey);
     }
 
     render() {
         const { siteLang, userData } = this.props.store;
-        const { selectedCourses, currentUnitId, currentCourseId } = this.state;
-        const expandContent = get(content, `expandContent[${siteLang}]`);
+        const { selectedCourses, currentUnitId, openedCourses } = this.state;
+        const unfoldContent = get(content, `unfoldContent[${siteLang}]`);
+        const foldContent = get(content, `foldContent[${siteLang}]`);
         const parsedUserData = userData ? JSON.parse(userData) : {};
         const isAdmin = get(parsedUserData, `isAdmin`);
 
@@ -232,43 +230,39 @@ export default class Course extends Component {
                     <Col sm={10}>
                         {map(courseNames, (course, courseKey) => (
                             <Fragment key={courseKey}>
-                                {currentCourseId !== course.id && (
-                                    <h1
-                                        onDoubleClick={() => this.putUnitOrSelectCourse(course)}
-                                    >
+                                {!isAdmin && (
+                                    <h1>
                                         {course.name}
                                     </h1>
                                 )}
-                                {currentCourseId === course.id && (
+                                {isAdmin && (
                                     <Row>
-                                        <>
-                                            <Col sm={1}>
-                                                <Button
-                                                    className="button-style course"
-                                                    variant={"info"}
-                                                    onClick={() => this.saveCourse(course.id)}
-                                                >
-                                                    <PlusCircle/>
-                                                </Button>
-                                            </Col>
-                                            <Col>
-                                                <FormControl
-                                                    className="course"
-                                                    type="text"
-                                                    id={`course_name_${course.id}`}
-                                                    defaultValue={course.name}
-                                                />
-                                            </Col>`
-                                            <Col sm={1}>
-                                                <Button
-                                                    className="button-style course"
-                                                    variant='danger'
-                                                    onClick={() => this.deleteCourse(course)}
-                                                >
-                                                    <Trash2Fill/>
-                                                </Button>
-                                            </Col>
-                                        </>
+                                        <Col sm={1}>
+                                            <Button
+                                                className="button-style course"
+                                                variant={"info"}
+                                                onClick={() => this.saveCourse(course.id)}
+                                            >
+                                                <PlusCircle/>
+                                            </Button>
+                                        </Col>
+                                        <Col>
+                                            <FormControl
+                                                className="course"
+                                                type="text"
+                                                id={`course_name_${course.id}`}
+                                                defaultValue={course.name}
+                                            />
+                                        </Col>`
+                                        <Col sm={1}>
+                                            <Button
+                                                className="button-style course"
+                                                variant='danger'
+                                                onClick={() => this.deleteCourse(course)}
+                                            >
+                                                <Trash2Fill/>
+                                            </Button>
+                                        </Col>
                                     </Row>
                                 )}
                                 <Accordion
@@ -281,7 +275,7 @@ export default class Course extends Component {
                                             variant="info"
                                             eventKey={courseKey}
                                         >
-                                            {expandContent}
+                                            {includes(openedCourses, courseKey) ? foldContent : unfoldContent}
                                         </Accordion.Toggle>
                                         <Accordion.Collapse
                                             eventKey={courseKey}
