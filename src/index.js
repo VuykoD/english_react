@@ -22,7 +22,8 @@ const initialState = {
     firstColor: localStorage.firstColor || defaultColor.firstColor,
     secondColor: localStorage.secondColor || defaultColor.secondColor,
     backColor: localStorage.backColor || defaultColor.backColor,
-    itemCount: localStorage.userData || '',
+    userData: localStorage.userData || '',
+    itemCount: localStorage.itemCount || '',
     toLearnCount: localStorage.progress ? JSON.parse(localStorage.progress)?.length : 0,
 };
 
