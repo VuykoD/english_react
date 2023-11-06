@@ -217,9 +217,11 @@ export default class Course extends Component {
     }
 
     render() {
-        const { siteLang } = this.props.store;
-        const expandContent = get(content, `expandContent[${siteLang}]`);
+        const { siteLang, userData } = this.props.store;
         const { selectedCourses, currentUnitId, currentCourseId } = this.state;
+        const expandContent = get(content, `expandContent[${siteLang}]`);
+        const parsedUserData = userData ? JSON.parse(userData) : {};
+        const isAdmin = get(parsedUserData, `isAdmin`);
 
         return (
             <Container>
@@ -299,22 +301,24 @@ export default class Course extends Component {
                                                             key={key}
                                                             className={rowClassName}
                                                         >
-                                                            <Col sm={2}>
-                                                                <Button
-                                                                    className="button-style"
-                                                                    variant='light'
-                                                                    onClick={() => this.selectUnit(item)}
-                                                                >
-                                                                    <Pen/>
-                                                                </Button>
-                                                                <Button
-                                                                    className="button-style scissors"
-                                                                    variant='outline-dark'
-                                                                    onClick={() => this.cutUnit(item)}
-                                                                >
-                                                                    <Scissors/>
-                                                                </Button>
-                                                            </Col>
+                                                            {isAdmin &&
+                                                                <Col sm={2}>
+                                                                    <Button
+                                                                        className="button-style"
+                                                                        variant='light'
+                                                                        onClick={() => this.selectUnit(item)}
+                                                                    >
+                                                                        <Pen/>
+                                                                    </Button>
+                                                                    <Button
+                                                                        className="button-style scissors"
+                                                                        variant='outline-dark'
+                                                                        onClick={() => this.cutUnit(item)}
+                                                                    >
+                                                                        <Scissors/>
+                                                                    </Button>
+                                                                </Col>
+                                                            }
                                                             <Col sm={1}>
                                                                 <Form.Check
                                                                     className="button-style"
@@ -328,47 +332,51 @@ export default class Course extends Component {
                                                                     <Card.Body children={item.name}/>
                                                                 </Link>
                                                             </Col>
-                                                            <Col sm={1}>
-                                                                <Button
-                                                                    className="button-style"
-                                                                    variant='danger'
-                                                                    onClick={() => this.delete(item)}
-                                                                >
-                                                                    <Trash2Fill/>
-                                                                </Button>
-                                                            </Col>
+                                                            {isAdmin &&
+                                                                <Col sm={1}>
+                                                                    <Button
+                                                                        className="button-style"
+                                                                        variant='danger'
+                                                                        onClick={() => this.delete(item)}
+                                                                    >
+                                                                        <Trash2Fill/>
+                                                                    </Button>
+                                                                </Col>
+                                                            }
                                                         </Row>
                                                     )
                                                 })}
-                                                <Row
-                                                    className="add-unit"
-                                                >
-                                                    <Col sm={1}>
-                                                        <Button
-                                                            variant={currentUnitId ? "info" : "outline-info" }
-                                                            onClick={() => this.addEditUnit(course.id)}
-                                                        >
-                                                            {currentUnitId
-                                                                ? <Save/>
-                                                                : <PlusCircle/>
-                                                            }
-                                                        </Button>
-                                                    </Col>
-                                                    <Col>
-                                                        <FormControl
-                                                            type="text"
-                                                            id={`unit_name_${course.id}`}
-                                                            placeholder="name"
-                                                        />
-                                                    </Col>
-                                                    <Col>
-                                                        <FormControl
-                                                            type="text"
-                                                            id={`unit_url_${course.id}`}
-                                                            placeholder="url"
-                                                        />
-                                                    </Col>
-                                                </Row>
+                                                {isAdmin &&
+                                                    <Row
+                                                        className="add-unit"
+                                                    >
+                                                        <Col sm={1}>
+                                                            <Button
+                                                                variant={currentUnitId ? "info" : "outline-info" }
+                                                                onClick={() => this.addEditUnit(course.id)}
+                                                            >
+                                                                {currentUnitId
+                                                                    ? <Save/>
+                                                                    : <PlusCircle/>
+                                                                }
+                                                            </Button>
+                                                        </Col>
+                                                        <Col>
+                                                            <FormControl
+                                                                type="text"
+                                                                id={`unit_name_${course.id}`}
+                                                                placeholder="name"
+                                                            />
+                                                        </Col>
+                                                        <Col>
+                                                            <FormControl
+                                                                type="text"
+                                                                id={`unit_url_${course.id}`}
+                                                                placeholder="url"
+                                                            />
+                                                        </Col>
+                                                    </Row>
+                                                }
                                             </Card.Body>
                                         </Accordion.Collapse>
                                     </Card>
