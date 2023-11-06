@@ -245,7 +245,7 @@ export default class Course extends Component {
                 const langIndex = indexOf(courseNames[index].learnedLang, lang);
 
                 if (langIndex > -1){
-                    courseNames[index].learnedLang.splice(index, 1);
+                    courseNames[index].learnedLang.splice(langIndex, 1);
                 } else {
                     courseNames[index].learnedLang.push(lang)
                 }
@@ -264,7 +264,7 @@ export default class Course extends Component {
                 const langIndex = indexOf(courseUnits[index].learnedLang, lang);
 
                 if (langIndex > -1){
-                    courseUnits[index].learnedLang.splice(index, 1);
+                    courseUnits[index].learnedLang.splice(langIndex, 1);
                 } else {
                     courseUnits[index].learnedLang.push(lang)
                 }
