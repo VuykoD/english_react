@@ -130,7 +130,6 @@ class LearningClass extends Component {
 
     updateLP = () => {
         this.getVoices();
-        this.repeatAll();
     }
 
     getVoices() {
@@ -255,7 +254,10 @@ class LearningClass extends Component {
     sort = () => {
         let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (!lP) return null;
-        lP = shuffle(lP);
+        const { learnedLang } = this.props.store;
+        if (lP[learnedLang]) {
+            lP[learnedLang] = shuffle(lP[learnedLang]);
+        }
 
         localStorage.progress = JSON.stringify(lP);
     };
@@ -286,8 +288,9 @@ class LearningClass extends Component {
     }
 
     setTranslInLearnArray = () => {
-        map(this.learnArr, (item, key) => {
-            const index = findIndex(courseItems, {'id': item.entity_id});
+        map(this.learnArr, (entityId, key) => {
+            const index = findIndex(courseItems, {'id': entityId});
+            this.learnArr[key] = { entity_id: entityId };
             this.learnArr[key].eng = get(courseItems, `[${index}].eng`);
             this.learnArr[key].pol = get(courseItems, `[${index}].pol`);
             this.learnArr[key].transl = get(courseItems, `[${index}].transl`);
@@ -305,7 +308,9 @@ class LearningClass extends Component {
     };
 
     setLearnArr = (sliceNumber) => {
-        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        const { learnedLang } = this.props.store;
+        let localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        if (localProgress[learnedLang]) localProgress = localProgress[learnedLang];
         this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
     }
 
@@ -367,17 +372,6 @@ class LearningClass extends Component {
             mistake: 0
         });
     };
-
-    repeatAll = () =>{
-        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-
-        if (this.localProgress && this.localProgress.length){
-            this.setState({
-                newLearnNumber: +localStorage.newLearnNumber || this.localProgress.length || 0,
-                learnNumber: this.localProgress.length || 0,
-            });
-        }
-    }
 
     getTopic = () => {
         const {siteLang} = this.props.store;
