@@ -265,9 +265,7 @@ export default class Course extends Component {
                                         </Col>
                                     </Row>
                                 )}
-                                <Accordion
-                                    // defaultActiveKey={courseKey === 1 ? courseKey : null}
-                                >
+                                <Accordion>
                                     <Card>
                                         <Accordion.Toggle
                                             as={Button}
