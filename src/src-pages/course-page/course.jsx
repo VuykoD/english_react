@@ -15,7 +15,8 @@ import {
     Trash2Fill,
     Save,
     PlusCircle,
-    Scissors
+    Scissors,
+    FlagFill
 } from 'react-bootstrap-icons';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
@@ -237,13 +238,20 @@ export default class Course extends Component {
                                 )}
                                 {isAdmin && (
                                     <Row>
-                                        <Col sm={1}>
+                                        <Col sm={2}>
                                             <Button
                                                 className="button-style course"
-                                                variant={"info"}
+                                                variant="light"
                                                 onClick={() => this.saveCourse(course.id)}
                                             >
-                                                <PlusCircle/>
+                                                <Save/>
+                                            </Button>
+                                            <Button
+                                                className="button-style course margin-left"
+                                                variant="outline-success"
+                                                onClick={this.addCourse}
+                                            >
+                                                <FlagFill/>
                                             </Button>
                                         </Col>
                                         <Col>
@@ -294,13 +302,20 @@ export default class Course extends Component {
                                                             className={rowClassName}
                                                         >
                                                             {isAdmin &&
-                                                                <Col sm={2}>
+                                                                <Col sm={3}>
                                                                     <Button
                                                                         className="button-style"
                                                                         variant='light'
                                                                         onClick={() => this.selectUnit(item)}
                                                                     >
                                                                         <Pen/>
+                                                                    </Button>
+                                                                    <Button
+                                                                        className="button-style scissors"
+                                                                        variant="outline-success"
+                                                                        onClick={this.addCourse}
+                                                                    >
+                                                                        <FlagFill/>
                                                                     </Button>
                                                                     <Button
                                                                         className="button-style scissors"
@@ -344,7 +359,7 @@ export default class Course extends Component {
                                                     >
                                                         <Col sm={1}>
                                                             <Button
-                                                                variant={currentUnitId ? "info" : "outline-info" }
+                                                                variant="light"
                                                                 onClick={() => this.addEditUnit(course.id)}
                                                             >
                                                                 {currentUnitId
@@ -384,13 +399,20 @@ export default class Course extends Component {
                     className="add-course"
                 >
                     <Col sm={1}/>
-                    <Col sm={1}>
+                    <Col sm={2}>
                         <Button
-                            variant="info"
-                            block
+                            className="button-style"
+                            variant="light"
                             onClick={this.addCourse}
                         >
-                            +
+                            <PlusCircle/>
+                        </Button>
+                        <Button
+                            className="button-style margin-left"
+                            variant="outline-success"
+                            onClick={this.addCourse}
+                        >
+                            <FlagFill/>
                         </Button>
                     </Col>
                     <Col>
