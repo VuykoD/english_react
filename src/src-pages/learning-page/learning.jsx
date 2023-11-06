@@ -839,30 +839,38 @@ export function changedInput() {
 function allIsCorrect() {
     const {
         polish,
+        english,
         mistake,
         learnNumber,
         exampleLearning
     } = this.state;
     const { onChangeToLearnCount } = this.props;
+    const { learnedLang } = this.props.store;
     const isInMistake = this.mistakeArr.indexOf(learnNumber) > -1
 
     if (!mistake && !isInMistake && exampleLearning === 'write'){
-        const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        console.log(12)
+        let localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
-        map(localProgress, (item, key) => {
-            const index = findIndex(courseItems, {'id': item.entity_id});
-            localProgress[key].pol = get(courseItems, `[${index}].pol`);
-        })
-        const index = findIndex(localProgress, {'pol': polish});
+        map(localProgress[learnedLang], (item, key) => {
+            const index = findIndex(courseItems, {'id': item});
+            localProgress[learnedLang][key] = { entity_id: item }
+            localProgress[learnedLang][key][learnedLang] = get(courseItems, `[${index}][${learnedLang}]`);
+        });
+
+        const index = findIndex(localProgress[learnedLang], {
+            [learnedLang]: learnedLang === 'pol' ? polish : english
+        });
+        console.log(index)
         if (index > -1) {
             statistic.push({
-                id: localProgress[index].entity_id
+                id: localProgress[learnedLang][index].entity_id
             })
-            localProgress.splice(index, 1);
-            map(localProgress, (item, key) => {
-                localProgress[key] = { entity_id: localProgress[key].entity_id };
+            localProgress[learnedLang].splice(index, 1);
+            map(localProgress[learnedLang], (item, key) => {
+                localProgress[learnedLang][key] = localProgress[learnedLang][key].entity_id;
             })
-            setLearnCount(onChangeToLearnCount, localProgress.length);
+            setLearnCount(onChangeToLearnCount, localProgress[learnedLang].length);
             localStorage.progress = JSON.stringify(localProgress);
             localStorage.statistic = JSON.stringify(statistic);
         }
