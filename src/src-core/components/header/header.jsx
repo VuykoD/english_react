@@ -130,7 +130,7 @@ class HeaderClass extends Component {
         const gradientStyle = {background: `linear-gradient(to bottom,${firstColor},${secondColor}`};
         const hover = {onMouseOver: this.onMouseOver, onMouseOut: this.onMouseOut};
         const url = get(this.props, 'location.pathname', '');
-        const hideHeader = url ? 'hide-header' : 'hide-header';
+        const hideHeader = url !== '/' ? 'hide-header' : 'null';
         const btnClassName = `headerButton ${hideHeader}`;
 
         return (
