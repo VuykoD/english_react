@@ -8,7 +8,8 @@ import {
     Card,
     Form,
     Button,
-    FormControl
+    FormControl,
+    Modal
 } from "react-bootstrap";
 import {
     Pen,
@@ -69,7 +70,8 @@ export default class Course extends Component {
             selectedCourses,
             courseNames,
             currentUnitId: 0,
-            openedCourses: []
+            openedCourses: [],
+            showModal: false
         };
     }
 
@@ -187,7 +189,6 @@ export default class Course extends Component {
                 courseNames[index].name = document.getElementById(`course_name_${courseId}`).value;
                 localStorage.courseNames = JSON.stringify(courseNames);
                 this.setState({courseNames});
-                document.getElementById(`course_name_${courseId}`).value = "";
             }
         }
     };
@@ -214,218 +215,249 @@ export default class Course extends Component {
         }
     }
 
+    handleClose = () => {
+        this.setState( { showModal: false})
+    }
+
+    handleShow = () => {
+        this.setState( { showModal: true})
+    }
+
     render() {
-        const { siteLang, userData } = this.props.store;
-        const { selectedCourses, currentUnitId, openedCourses } = this.state;
+        const { siteLang, userData, learnedLang } = this.props.store;
+        const { selectedCourses, currentUnitId, openedCourses, showModal } = this.state;
         const unfoldContent = get(content, `unfoldContent[${siteLang}]`);
         const foldContent = get(content, `foldContent[${siteLang}]`);
         const parsedUserData = userData ? JSON.parse(userData) : {};
         const isAdmin = get(parsedUserData, `isAdmin`);
 
         return (
-            <Container>
-                <Row>
-                    <Col sm={1}>
-                        <div><img src={require("../../images/paint.png")} alt="" className="paint-left"/></div>
-                    </Col>
-                    <Col sm={10}>
-                        {map(courseNames, (course, courseKey) => (
-                            <Fragment key={courseKey}>
-                                {!isAdmin && (
-                                    <h1>
-                                        {course.name}
-                                    </h1>
-                                )}
-                                {isAdmin && (
-                                    <Row>
-                                        <Col sm={2}>
-                                            <Button
-                                                className="button-style course"
-                                                variant="light"
-                                                onClick={() => this.saveCourse(course.id)}
-                                            >
-                                                <Save/>
-                                            </Button>
-                                            <Button
-                                                className="button-style course margin-left"
-                                                variant="outline-success"
-                                                onClick={this.addCourse}
-                                            >
-                                                <FlagFill/>
-                                            </Button>
-                                        </Col>
-                                        <Col>
-                                            <FormControl
-                                                className="course"
-                                                type="text"
-                                                id={`course_name_${course.id}`}
-                                                defaultValue={course.name}
-                                            />
-                                        </Col>`
-                                        <Col sm={1}>
-                                            <Button
-                                                className="button-style course"
-                                                variant='danger'
-                                                onClick={() => this.deleteCourse(course)}
-                                            >
-                                                <Trash2Fill/>
-                                            </Button>
-                                        </Col>
-                                    </Row>
-                                )}
-                                <Accordion>
-                                    <Card>
-                                        <Accordion.Toggle
-                                            as={Button}
-                                            onClick={() => this.collapse(courseKey)}
-                                            variant="info"
-                                            eventKey={courseKey}
-                                        >
-                                            {includes(openedCourses, courseKey) ? foldContent : unfoldContent}
-                                        </Accordion.Toggle>
-                                        <Accordion.Collapse
-                                            eventKey={courseKey}
-                                        >
-                                            <Card.Body>
-                                                {map(courseUnits, (item, key) => {
-                                                    if (item.courseId !== course.id) return null;
+            <>
+                <Container>
+                    <Row>
+                        <Col sm={1}>
+                            <div><img src={require("../../images/paint.png")} alt="" className="paint-left"/></div>
+                        </Col>
+                        <Col sm={10}>
+                            {map(courseNames, (course, courseKey) => {
+                                if (!isAdmin && !course[learnedLang]) {
+                                    return;
+                                }
+                                console.log(course);
+                                return (
+                                    <Fragment key={courseKey}>
+                                        {!isAdmin && (
+                                            <h1>
+                                                {course.name}
+                                            </h1>
+                                        )}
+                                        {isAdmin && (
+                                            <Row>
+                                                <Col sm={2}>
+                                                    <Button
+                                                        className="button-style course"
+                                                        variant="light"
+                                                        onClick={() => this.saveCourse(course.id)}
+                                                    >
+                                                        <Save/>
+                                                    </Button>
+                                                    <Button
+                                                        className="button-style course margin-left"
+                                                        variant="outline-success"
+                                                        onClick={this.handleShow}
+                                                    >
+                                                        <FlagFill/>
+                                                    </Button>
+                                                </Col>
+                                                <Col>
+                                                    <FormControl
+                                                        className="course"
+                                                        type="text"
+                                                        id={`course_name_${course.id}`}
+                                                        defaultValue={course.name}
+                                                    />
+                                                </Col>`
+                                                <Col sm={1}>
+                                                    <Button
+                                                        className="button-style course"
+                                                        variant='danger'
+                                                        onClick={() => this.deleteCourse(course)}
+                                                    >
+                                                        <Trash2Fill/>
+                                                    </Button>
+                                                </Col>
+                                            </Row>
+                                        )}
+                                        <Accordion>
+                                            <Card>
+                                                <Accordion.Toggle
+                                                    as={Button}
+                                                    onClick={() => this.collapse(courseKey)}
+                                                    variant="info"
+                                                    eventKey={courseKey}
+                                                >
+                                                    {includes(openedCourses, courseKey) ? foldContent : unfoldContent}
+                                                </Accordion.Toggle>
+                                                <Accordion.Collapse
+                                                    eventKey={courseKey}
+                                                >
+                                                    <Card.Body>
+                                                        {map(courseUnits, (item, key) => {
+                                                            if (item.courseId !== course.id) return null;
 
-                                                    let checked=false;
-                                                    map(selectedCourses, (course) => {
-                                                        if (course === item.id) return checked = true;
-                                                    });
-                                                    const rowClassName = currentUnitId === item.id
-                                                        ? "main selected" : "main"
-                                                    return (
-                                                        <Row
-                                                            key={key}
-                                                            className={rowClassName}
-                                                        >
-                                                            {isAdmin &&
-                                                                <Col sm={3}>
-                                                                    <Button
-                                                                        className="button-style"
-                                                                        variant='light'
-                                                                        onClick={() => this.selectUnit(item)}
-                                                                    >
-                                                                        <Pen/>
-                                                                    </Button>
-                                                                    <Button
-                                                                        className="button-style scissors"
-                                                                        variant="outline-success"
-                                                                        onClick={this.addCourse}
-                                                                    >
-                                                                        <FlagFill/>
-                                                                    </Button>
-                                                                    <Button
-                                                                        className="button-style scissors"
-                                                                        variant='outline-dark'
-                                                                        onClick={() => this.cutUnit(item)}
-                                                                    >
-                                                                        <Scissors/>
-                                                                    </Button>
-                                                                </Col>
-                                                            }
-                                                            <Col sm={1}>
-                                                                <Form.Check
-                                                                    className="button-style"
-                                                                    type="checkbox"
-                                                                    onChange={() => this.onChangeCheck(item.id)}
-                                                                    checked={checked}
-                                                                />
-                                                            </Col>
-                                                            <Col>
-                                                                <Link to={`/course${item.url}`}>
-                                                                    <Card.Body children={item.name}/>
-                                                                </Link>
-                                                            </Col>
-                                                            {isAdmin &&
+                                                            let checked = false;
+                                                            map(selectedCourses, (course) => {
+                                                                if (course === item.id) return checked = true;
+                                                            });
+                                                            const rowClassName = currentUnitId === item.id
+                                                                ? "main selected" : "main"
+                                                            return (
+                                                                <Row
+                                                                    key={key}
+                                                                    className={rowClassName}
+                                                                >
+                                                                    {isAdmin &&
+                                                                        <Col sm={3}>
+                                                                            <Button
+                                                                                className="button-style"
+                                                                                variant='light'
+                                                                                onClick={() => this.selectUnit(item)}
+                                                                            >
+                                                                                <Pen/>
+                                                                            </Button>
+                                                                            <Button
+                                                                                className="button-style scissors"
+                                                                                variant="outline-success"
+                                                                                onClick={this.handleShow}
+                                                                            >
+                                                                                <FlagFill/>
+                                                                            </Button>
+                                                                            <Button
+                                                                                className="button-style scissors"
+                                                                                variant='outline-dark'
+                                                                                onClick={() => this.cutUnit(item)}
+                                                                            >
+                                                                                <Scissors/>
+                                                                            </Button>
+                                                                        </Col>
+                                                                    }
+                                                                    <Col sm={1}>
+                                                                        <Form.Check
+                                                                            className="button-style"
+                                                                            type="checkbox"
+                                                                            onChange={() => this.onChangeCheck(item.id)}
+                                                                            checked={checked}
+                                                                        />
+                                                                    </Col>
+                                                                    <Col>
+                                                                        <Link to={`/course${item.url}`}>
+                                                                            <Card.Body children={item.name}/>
+                                                                        </Link>
+                                                                    </Col>
+                                                                    {isAdmin &&
+                                                                        <Col sm={1}>
+                                                                            <Button
+                                                                                className="button-style"
+                                                                                variant='danger'
+                                                                                onClick={() => this.delete(item)}
+                                                                            >
+                                                                                <Trash2Fill/>
+                                                                            </Button>
+                                                                        </Col>
+                                                                    }
+                                                                </Row>
+                                                            )
+                                                        })}
+                                                        {isAdmin &&
+                                                            <Row
+                                                                className="add-unit"
+                                                            >
                                                                 <Col sm={1}>
                                                                     <Button
-                                                                        className="button-style"
-                                                                        variant='danger'
-                                                                        onClick={() => this.delete(item)}
+                                                                        variant="light"
+                                                                        onClick={() => this.addEditUnit(course.id)}
                                                                     >
-                                                                        <Trash2Fill/>
+                                                                        {currentUnitId
+                                                                            ? <Save/>
+                                                                            : <PlusCircle/>
+                                                                        }
                                                                     </Button>
                                                                 </Col>
-                                                            }
-                                                        </Row>
-                                                    )
-                                                })}
-                                                {isAdmin &&
-                                                    <Row
-                                                        className="add-unit"
-                                                    >
-                                                        <Col sm={1}>
-                                                            <Button
-                                                                variant="light"
-                                                                onClick={() => this.addEditUnit(course.id)}
-                                                            >
-                                                                {currentUnitId
-                                                                    ? <Save/>
-                                                                    : <PlusCircle/>
-                                                                }
-                                                            </Button>
-                                                        </Col>
-                                                        <Col>
-                                                            <FormControl
-                                                                type="text"
-                                                                id={`unit_name_${course.id}`}
-                                                                placeholder="name"
-                                                            />
-                                                        </Col>
-                                                        <Col>
-                                                            <FormControl
-                                                                type="text"
-                                                                id={`unit_url_${course.id}`}
-                                                                placeholder="url"
-                                                            />
-                                                        </Col>
-                                                    </Row>
-                                                }
-                                            </Card.Body>
-                                        </Accordion.Collapse>
-                                    </Card>
-                                </Accordion>
-                            </Fragment>
-                        ))}
-                    </Col>
-                    <Col sm={1} className="behind">
-                        <div><img src={require("../../images/paint.png")} alt="" className="paint-right"/></div>
-                    </Col>
-                </Row>
-                {isAdmin && (
-                    <Row
-                        className="add-course"
-                    >
-                        <Col sm={1}/>
-                        <Col sm={2}>
-                            <Button
-                                className="button-style"
-                                variant="light"
-                                onClick={this.addCourse}
-                            >
-                                <PlusCircle/>
-                            </Button>
-                            <Button
-                                className="button-style margin-left"
-                                variant="outline-success"
-                                onClick={this.addCourse}
-                            >
-                                <FlagFill/>
-                            </Button>
+                                                                <Col>
+                                                                    <FormControl
+                                                                        type="text"
+                                                                        id={`unit_name_${course.id}`}
+                                                                        placeholder="name"
+                                                                    />
+                                                                </Col>
+                                                                <Col>
+                                                                    <FormControl
+                                                                        type="text"
+                                                                        id={`unit_url_${course.id}`}
+                                                                        placeholder="url"
+                                                                    />
+                                                                </Col>
+                                                            </Row>
+                                                        }
+                                                    </Card.Body>
+                                                </Accordion.Collapse>
+                                            </Card>
+                                        </Accordion>
+                                    </Fragment>
+                                )
+                            })}
                         </Col>
-                        <Col>
-                            <FormControl
-                                type="text"
-                                id="course_name"
-                            />
+                        <Col sm={1} className="behind">
+                            <div><img src={require("../../images/paint.png")} alt="" className="paint-right"/></div>
                         </Col>
-                        <Col sm={1}/>
                     </Row>
-                )}
-            </Container>
+                    {isAdmin && (
+                        <Row
+                            className="add-course"
+                        >
+                            <Col sm={1}/>
+                            <Col sm={2}>
+                                <Button
+                                    className="button-style"
+                                    variant="light"
+                                    onClick={this.addCourse}
+                                >
+                                    <PlusCircle/>
+                                </Button>
+                                <Button
+                                    className="button-style margin-left"
+                                    variant="outline-success"
+                                    onClick={this.handleShow}
+                                >
+                                    <FlagFill/>
+                                </Button>
+                            </Col>
+                            <Col>
+                                <FormControl
+                                    type="text"
+                                    id="course_name"
+                                />
+                            </Col>
+                            <Col sm={1}/>
+                        </Row>
+                    )}
+                </Container>
+
+                <Modal show={showModal} onHide={this.handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={this.handleClose}>
+                            Close
+                        </Button>
+                        <Button variant="primary" onClick={this.handleClose}>
+                            Save Changes
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+            </>
         );
     }
 };
