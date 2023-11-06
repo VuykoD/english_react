@@ -395,34 +395,36 @@ export default class Course extends Component {
                         <div><img src={require("../../images/paint.png")} alt="" className="paint-right"/></div>
                     </Col>
                 </Row>
-                <Row
-                    className="add-course"
-                >
-                    <Col sm={1}/>
-                    <Col sm={2}>
-                        <Button
-                            className="button-style"
-                            variant="light"
-                            onClick={this.addCourse}
-                        >
-                            <PlusCircle/>
-                        </Button>
-                        <Button
-                            className="button-style margin-left"
-                            variant="outline-success"
-                            onClick={this.addCourse}
-                        >
-                            <FlagFill/>
-                        </Button>
-                    </Col>
-                    <Col>
-                        <FormControl
-                            type="text"
-                            id="course_name"
-                        />
-                    </Col>
-                    <Col sm={1}/>
-                </Row>
+                {isAdmin && (
+                    <Row
+                        className="add-course"
+                    >
+                        <Col sm={1}/>
+                        <Col sm={2}>
+                            <Button
+                                className="button-style"
+                                variant="light"
+                                onClick={this.addCourse}
+                            >
+                                <PlusCircle/>
+                            </Button>
+                            <Button
+                                className="button-style margin-left"
+                                variant="outline-success"
+                                onClick={this.addCourse}
+                            >
+                                <FlagFill/>
+                            </Button>
+                        </Col>
+                        <Col>
+                            <FormControl
+                                type="text"
+                                id="course_name"
+                            />
+                        </Col>
+                        <Col sm={1}/>
+                    </Row>
+                )}
             </Container>
         );
     }
