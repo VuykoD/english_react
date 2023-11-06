@@ -110,6 +110,7 @@ export default class Course extends Component {
     };
 
     addCourse =()=> {
+        const { siteLang } = this.props.store;
         const idsArr= [];
         map(courseNames, it => idsArr.push(+it.id))
         const courseId = Math.max(...idsArr);
@@ -121,7 +122,7 @@ export default class Course extends Component {
         }
         courseNames.push({
             id: courseId + 1,
-            name: courseName
+            [siteLang]: { name: courseName }
         });
         localStorage.courseNames = JSON.stringify(courseNames);
         document.getElementById("course_name").value = '';
@@ -186,7 +187,10 @@ export default class Course extends Component {
         if (courseId) {
             const index = findIndex(courseNames, {'id': courseId});
             if (index > -1) {
-                courseNames[index].name = document.getElementById(`course_name_${courseId}`).value;
+                const { siteLang } = this.props.store;
+                courseNames[index][siteLang] = {
+                    name: document.getElementById(`course_name_${courseId}`).value
+                };
                 localStorage.courseNames = JSON.stringify(courseNames);
                 this.setState({courseNames});
             }
@@ -248,7 +252,7 @@ export default class Course extends Component {
                                     <Fragment key={courseKey}>
                                         {!isAdmin && (
                                             <h1>
-                                                {course.name}
+                                                {course[siteLang]?.name}
                                             </h1>
                                         )}
                                         {isAdmin && (
@@ -274,7 +278,7 @@ export default class Course extends Component {
                                                         className="course"
                                                         type="text"
                                                         id={`course_name_${course.id}`}
-                                                        defaultValue={course.name}
+                                                        defaultValue={course[siteLang]?.name}
                                                     />
                                                 </Col>`
                                                 <Col sm={1}>
