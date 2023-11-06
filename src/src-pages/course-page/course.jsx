@@ -23,6 +23,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import getCourseItems, { getCourseUnits, getCourseNames } from '../../dict/getCourseItems';
 import setLearnCount from '../../src-core/helper/setLearnCount';
+import langType from '../../dict/langType';
 
 import '../../scc/course.css';
 
@@ -69,7 +70,9 @@ export default class Course extends Component {
         this.state = {
             selectedCourses,
             courseNames,
+            courseUnits,
             currentUnitId: 0,
+            currentCourseId: 0,
             openedCourses: [],
             showModal: false
         };
@@ -220,16 +223,68 @@ export default class Course extends Component {
     }
 
     handleClose = () => {
-        this.setState( { showModal: false})
+        this.setState( { showModal: false, currentCourseId: 0, currentUnitId: 0 })
     }
 
-    handleShow = () => {
-        this.setState( { showModal: true})
+    handleShow = (currentCourseId = 0, currentUnitId = 0) => {
+        this.setState( { showModal: true, currentCourseId, currentUnitId})
+    }
+
+    setLearnedLang = (lang) => {
+        const {
+            currentUnitId,
+            currentCourseId
+        } = this.state;
+
+        if (currentCourseId) {
+            const index = findIndex(courseNames, {'id': currentCourseId});
+            if (index > -1) {
+                if (!courseNames[index].learnedLang) {
+                    courseNames[index].learnedLang = [];
+                }
+                const langIndex = indexOf(courseNames[index].learnedLang, lang);
+
+                if (langIndex > -1){
+                    courseNames[index].learnedLang.splice(index, 1);
+                } else {
+                    courseNames[index].learnedLang.push(lang)
+                }
+
+                localStorage.courseNames = JSON.stringify(courseNames);
+                this.setState({courseNames});
+            }
+        }
+
+        if (currentUnitId) {
+            const index = findIndex(courseUnits, {'id': currentUnitId});
+            if (index > -1) {
+                if (!courseUnits[index].learnedLang) {
+                    courseUnits[index].learnedLang = [];
+                }
+                const langIndex = indexOf(courseUnits[index].learnedLang, lang);
+
+                if (langIndex > -1){
+                    courseUnits[index].learnedLang.splice(index, 1);
+                } else {
+                    courseUnits[index].learnedLang.push(lang)
+                }
+
+                localStorage.courseUnits = JSON.stringify(courseUnits);
+                this.setState({courseUnits});
+            }
+        }
     }
 
     render() {
         const { siteLang, userData, learnedLang } = this.props.store;
-        const { selectedCourses, currentUnitId, openedCourses, showModal } = this.state;
+        const {
+            selectedCourses,
+            currentUnitId,
+            currentCourseId,
+            openedCourses,
+            showModal,
+            courseNames
+        } = this.state;
         const unfoldContent = get(content, `unfoldContent[${siteLang}]`);
         const foldContent = get(content, `foldContent[${siteLang}]`);
         const parsedUserData = userData ? JSON.parse(userData) : {};
@@ -244,10 +299,11 @@ export default class Course extends Component {
                         </Col>
                         <Col sm={10}>
                             {map(courseNames, (course, courseKey) => {
-                                if (!isAdmin && !course[learnedLang]) {
-                                    return;
+                                if (!isAdmin) {
+                                    if (!course.learnedLang || !includes(course.learnedLang, learnedLang)) {
+                                        return;
+                                    }
                                 }
-                                console.log(course);
                                 return (
                                     <Fragment key={courseKey}>
                                         {!isAdmin && (
@@ -268,7 +324,7 @@ export default class Course extends Component {
                                                     <Button
                                                         className="button-style course margin-left"
                                                         variant="outline-success"
-                                                        onClick={this.handleShow}
+                                                        onClick={() => this.handleShow(course.id)}
                                                     >
                                                         <FlagFill/>
                                                     </Button>
@@ -307,6 +363,11 @@ export default class Course extends Component {
                                                 >
                                                     <Card.Body>
                                                         {map(courseUnits, (item, key) => {
+                                                            if (!isAdmin) {
+                                                                if (!item.learnedLang || !includes(item.learnedLang, learnedLang)) {
+                                                                    return;
+                                                                }
+                                                            }
                                                             if (item.courseId !== course.id) return null;
 
                                                             let checked = false;
@@ -332,7 +393,7 @@ export default class Course extends Component {
                                                                             <Button
                                                                                 className="button-style scissors"
                                                                                 variant="outline-success"
-                                                                                onClick={this.handleShow}
+                                                                                onClick={() => this.handleShow(0, item.id)}
                                                                             >
                                                                                 <FlagFill/>
                                                                             </Button>
@@ -428,13 +489,6 @@ export default class Course extends Component {
                                 >
                                     <PlusCircle/>
                                 </Button>
-                                <Button
-                                    className="button-style margin-left"
-                                    variant="outline-success"
-                                    onClick={this.handleShow}
-                                >
-                                    <FlagFill/>
-                                </Button>
                             </Col>
                             <Col>
                                 <FormControl
@@ -451,13 +505,36 @@ export default class Course extends Component {
                     <Modal.Header closeButton>
                         <Modal.Title>Modal heading</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                    <Modal.Body>
+                        {map(langType, (item, key) => {
+                            let checked = false;
+                            if (currentCourseId) {
+                                const index = findIndex(courseNames, {'id': currentCourseId});
+                                if (index > -1) {
+                                    checked = includes(courseNames[index].learnedLang, key)
+                                }
+                            }
+                            if (currentUnitId) {
+                                const index = findIndex(courseUnits, {'id': currentUnitId});
+                                if (index > -1) {
+                                    checked = includes(courseUnits[index].learnedLang, key)
+                                }
+                            }
+                            return item.learnedLang
+                                ? <Form.Check
+                                    key={key}
+                                    className="button-style"
+                                    type="checkbox"
+                                    onChange={() => this.setLearnedLang(key)}
+                                    checked={checked}
+                                    label={key}
+                                />
+                                : null
+                        })}
+                    </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.handleClose}>
                             Close
-                        </Button>
-                        <Button variant="primary" onClick={this.handleClose}>
-                            Save Changes
                         </Button>
                     </Modal.Footer>
                 </Modal>
