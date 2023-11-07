@@ -5,14 +5,13 @@ import {AllCommunityModules} from '@ag-grid-community/all-modules';
 import map from "lodash/map";
 import findIndex from "lodash/findIndex";
 import get from "lodash/get";
-import {Container, Row, Col, Button} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 import '@ag-grid-community/all-modules/dist/styles/ag-grid.css';
 import '@ag-grid-community/all-modules/dist/styles/ag-theme-balham.css';
 import '../../../scc/user-data.css';
 import courseUnits from '../../../dict/courseUnits';
 import getCourseItems from '../../../dict/getCourseItems';
-import setLearnCount from '../../../src-core/helper/setLearnCount';
 
 let courseItems = getCourseItems();
 
@@ -51,9 +50,10 @@ export default class UserDictionary extends Component {
 
     constructor(props) {
         super(props);
+        const { learnedLang } = props.store;
 
         let lp = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        lp = lp? this.setLocalProgress(lp) : null;
+        lp = lp && lp[learnedLang] ? this.setLocalProgress(lp[learnedLang]) : null;
 
         this.state = ({
             localProgress: lp,
@@ -62,8 +62,9 @@ export default class UserDictionary extends Component {
     }
 
     setLocalProgress = (lp) => {
-        map(lp, (item, key) => {
-            const index = findIndex(courseItems, {'id': item.entity_id});
+        map(lp, (entityId, key) => {
+            const index = findIndex(courseItems, {'id': entityId});
+            lp[key] = { entity_id: entityId };
             lp[key].eng = get(courseItems, `[${index}].eng`);
             lp[key].pol = get(courseItems, `[${index}].pol`);
             lp[key].native = get(courseItems, `[${index}].transl`);
@@ -74,47 +75,23 @@ export default class UserDictionary extends Component {
         return lp;
     };
 
-    deleteRow = () => {
-        const { onChangeToLearnCount } = this.props;
-        let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        if (!lP) return null;
-        const { entityId } = this.state;
-        const index = findIndex(lP, {'entity_id': entityId});
-        lP.splice(index,1);
-        localStorage.progress = JSON.stringify(lP);
-        localStorage.courseItems = JSON.stringify(courseItems);
-        lP = this.setLocalProgress(lP);
-        this.setState({localProgress: lP});
-        setLearnCount(onChangeToLearnCount, lP.length);
-    };
-
-    sort = () => {
-        let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        if (!lP) return null;
-        lP = shuffle(lP);
-
-        localStorage.progress = JSON.stringify(lP);
-        lP = this.setLocalProgress(lP);
-        this.setState({localProgress: lP});
-    };
-
-    clear = () => {
-        let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-        if (!lP) return null;
-        let newLP = [];
-
-        map(lP, item => {
-            const index = findIndex(courseItems, {'id': item.entity_id});
-            if (index > -1) {
-                newLP.push(item);
-            }
-        });
-
-        localStorage.progress = JSON.stringify(newLP);
-        newLP = this.setLocalProgress(newLP);
-        this.setState({localProgress: newLP});
-        return newLP;
-    };
+    // clear = () => {
+    //     let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+    //     if (!lP) return null;
+    //     let newLP = [];
+    //
+    //     map(lP, item => {
+    //         const index = findIndex(courseItems, {'id': item.entity_id});
+    //         if (index > -1) {
+    //             newLP.push(item);
+    //         }
+    //     });
+    //
+    //     localStorage.progress = JSON.stringify(newLP);
+    //     newLP = this.setLocalProgress(newLP);
+    //     this.setState({localProgress: newLP});
+    //     return newLP;
+    // };
 
     selectRow =(data)=> {
         const entityId = get(data, 'data.entity_id')
@@ -125,23 +102,15 @@ export default class UserDictionary extends Component {
 
         return (
             <Container>
+                {/*
                 <Row>
-                    <Col>
-                        <Button variant="info" block onClick={this.deleteRow}>
-                            delete {this.state.entityId}
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button variant="info" block onClick={this.sort}>
-                            Sort
-                        </Button>
-                    </Col>
                     <Col>
                         <Button variant="info" block onClick={this.clear}>
                             Clear
                         </Button>
                     </Col>
                 </Row>
+                */}
                 <div
                     className="ag-theme-balham"
                     style={{

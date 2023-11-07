@@ -110,7 +110,7 @@ class LearningClass extends Component {
     }
 
     componentDidMount() {
-        this.updateLP();
+        this.getVoices();
         this.setInitialData();
     }
 
@@ -126,10 +126,6 @@ class LearningClass extends Component {
 
     handleKeyDown = (e) => {
         if (e.keyCode === 18) speak.call(this)
-    }
-
-    updateLP = () => {
-        this.getVoices();
     }
 
     getVoices() {
@@ -310,6 +306,11 @@ class LearningClass extends Component {
     setLearnArr = (sliceNumber) => {
         const { learnedLang } = this.props.store;
         let localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        // const newArr = { pol: [], eng: [] };
+        // map(localProgress, it => {
+        //     newArr.pol.push(it.entity_id)
+        // });
+        // localStorage.progress = JSON.stringify(newArr);
         if (localProgress[learnedLang]) localProgress = localProgress[learnedLang];
         this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
     }
@@ -849,7 +850,6 @@ function allIsCorrect() {
     const isInMistake = this.mistakeArr.indexOf(learnNumber) > -1
 
     if (!mistake && !isInMistake && exampleLearning === 'write'){
-        console.log(12)
         let localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
         map(localProgress[learnedLang], (item, key) => {
