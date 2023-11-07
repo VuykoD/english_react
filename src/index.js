@@ -24,7 +24,9 @@ const initialState = {
     backColor: localStorage.backColor || defaultColor.backColor,
     userData: localStorage.userData || '',
     itemCount: localStorage.itemCount || '',
-    toLearnCount: localStorage.progress ? JSON.parse(localStorage.progress)?.length : 0,
+    toLearnCount: localStorage.progress && JSON.parse(localStorage.progress) ?
+        JSON.parse(localStorage.progress)[localStorage.learnedLand || 'eng']?.length
+        : 0,
 };
 
 function playlist(state = initialState, action) {

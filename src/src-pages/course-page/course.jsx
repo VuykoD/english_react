@@ -55,17 +55,21 @@ export default class Course extends Component {
 
     constructor(props) {
         super(props);
-        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
+        const { learnedLang } = props.store;
+        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress)
+            : [];
         const selectedCourses = [];
-        map(this.localProgress, (itProgress) =>{
-            const unitIndex = findIndex(courseItems, {'id': itProgress.entity_id });
-            if (unitIndex !== -1) {
-                const unitId = courseItems[unitIndex].unitId;
-                const selectedCoursesIndex = findIndex(selectedCourses, it => it === unitId);
+        if(this.localProgress[learnedLang]){
+            map(this.localProgress[learnedLang], (itProgress) =>{
+                const unitIndex = findIndex(courseItems, {'id': itProgress });
+                if (unitIndex !== -1) {
+                    const unitId = courseItems[unitIndex].unitId;
+                    const selectedCoursesIndex = findIndex(selectedCourses, it => it === unitId);
 
-                if(selectedCoursesIndex === -1) selectedCourses.push(unitId);
-            }
-        });
+                    if(selectedCoursesIndex === -1) selectedCourses.push(unitId);
+                }
+            });
+        }
 
         this.state = {
             selectedCourses,
@@ -81,15 +85,16 @@ export default class Course extends Component {
     onChangeCheck = (unitId) => {
         const { selectedCourses } = this.state;
         const { onChangeToLearnCount } = this.props;
+        const { learnedLang } = this.props.store;
         const selectedCoursesIndex = findIndex(selectedCourses, course => course === unitId);
         if (selectedCoursesIndex === -1) {
             this.setState({selectedCourses: [...selectedCourses, unitId]});
 
             const items = filter(courseItems, { 'unitId': unitId });
             map(items, it => {
-                this.localProgress.push({"entity_id": it.id})
+                this.localProgress[learnedLang].push(it.id)
             });
-            setLearnCount(onChangeToLearnCount, this.localProgress.length);
+            setLearnCount(onChangeToLearnCount, this.localProgress[learnedLang].length);
             localStorage.progress = JSON.stringify(this.localProgress);
         } else {
             const courses = [];
@@ -100,15 +105,15 @@ export default class Course extends Component {
 
             const progress = [];
             const localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
-            map(localProgress, (item, key) => {
-                const index = findIndex(courseItems, {'id': item.entity_id});
+            map(localProgress[learnedLang], (item) => {
+                const index = findIndex(courseItems, {'id': item});
                 if (get(courseItems, `[${index}].unitId`) !== unitId) {
-                    progress.push({ entity_id: localProgress[key].entity_id });
+                    progress.push(item);
                 }
             })
-            this.localProgress = progress;
+            this.localProgress[learnedLang] = progress;
             setLearnCount(onChangeToLearnCount, progress.length);
-            localStorage.progress = JSON.stringify(progress);
+            localStorage.progress = JSON.stringify(this.localProgress);
         }
     };
 
