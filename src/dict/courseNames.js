@@ -2,27 +2,88 @@ const courseNames =
     [
         {
             "id": 5,
-            "name": "Пісні"
+            "ukr": {
+                "name": "Пісні"
+            },
+            "ru": {
+                "name": "Песни"
+            },
+            "learnedLang": [
+                "eng",
+                "pol"
+            ]
         },
         {
             "id": 6,
-            "name": "Книги"
+            "ukr": {
+                "name": "Книги"
+            },
+            "ru": {
+                "name": "Книги"
+            },
+            "learnedLang": [
+                "pol"
+            ]
         },
         {
             "id": 4,
-            "name": "Загальні фрази"
+            "ukr": {
+                "name": "Загальні фрази"
+            },
+            "ru": {
+                "name": "Общие фразы"
+            },
+            "learnedLang": [
+                "eng",
+                "pol"
+            ]
         },
         {
             "id": 8,
-            "name": "Цікаве"
+            "ukr": {
+                "name": "Цікаве"
+            },
+            "ru": {
+                "name": "Интересное"
+            },
+            "learnedLang": [
+                "eng",
+                "pol"
+            ]
         },
         {
             "id": 9,
-            "name": "Молитви"
+            "ukr": {
+                "name": "Молитви"
+            },
+            "ru": {
+                "name": "Молитвы"
+            },
+            "learnedLang": [
+                "eng",
+                "pol"
+            ]
         },
         {
             "id": 10,
-            "name": "Запитання на Карту поляка"
+            "ukr": {
+                "name": "Запитання на Карту поляка"
+            },
+            "ru": {
+                "name": "Вопросы на карту поляка"
+            },
+            "learnedLang": [
+                "pol"
+            ]
+        },
+        {
+            "id": 11,
+            "ukr": {
+                "name": "Уроки"
+            },
+            "learnedLang": [
+                "eng"
+            ]
         }
     ]
 ;
