@@ -1,11 +1,8 @@
 import React, {Component, Fragment} from 'react';
 import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import get from 'lodash/get';
-import map from 'lodash/map';
-import filter from 'lodash/filter';
-import findIndex from 'lodash/findIndex';
-import {Badge, Button, Col, Container, Form, ProgressBar, Row} from 'react-bootstrap';
+import { get, map, filter, findIndex } from 'lodash';
+import { Badge, Button, Col, Container, Form, ProgressBar, Row } from 'react-bootstrap';
 import getCourseItems, { getCourseUnits } from '../../dict/getCourseItems';
 import { shuffle } from '../user-page/user-data/user-dictionary';
 import setLearnCount from '../../src-core/helper/setLearnCount';
@@ -259,8 +256,10 @@ class LearningClass extends Component {
     };
 
     firstLettersBySound = () => {
+        const { learnedLang } = this.props.store;
         let learnArr = getCourseItems();
         learnArr = shuffle(learnArr);
+        learnArr = filter(learnArr, it => !!it[learnedLang]);
         this.learnArr = learnArr.slice(0, 70);
         this.setCourseNameInLearnArray();
         if (!this.learnArr) return;
@@ -486,8 +485,8 @@ class LearningClass extends Component {
                         </Row>
                     </Fragment>
                 )}
-                <Row className="text-center new-row rows">
-                    {exampleLearning &&
+                {exampleLearning &&
+                    <Row className="text-center new-row rows">
                         <Col>
                             {this.getTopic()}
                             {exampleLearning !== 'first_letters_by_text' && soundButton.call(this)}
@@ -518,8 +517,8 @@ class LearningClass extends Component {
                                 </>
                             )}
                         </Col>
-                    }
-                </Row>
+                    </Row>
+                }
             </Container>
         );
     }
@@ -617,6 +616,7 @@ export function getDotBadge(variant) {
             <Badge
                 variant={variant}
                 className="white-space"
+                id="firstLetters"
             >
                 {wordToLearn}
             </Badge>
@@ -826,7 +826,11 @@ export function changedInput() {
                 }
                 return slicedLength;
             })
-            document.getElementById("formInput").value = wordToLearn.slice(0, slicedLength);
+            const slicedPart = wordToLearn.slice(0, slicedLength);
+            document.getElementById("formInput").value = slicedPart;
+            const firstLetters = document.getElementById("firstLetters").textContent;
+            const remainedPart = firstLetters.slice(slicedLength, wordToLearn.length);
+            document.getElementById("firstLetters").textContent = slicedPart + remainedPart;
             if (slicedLength >= wordToLearn.length){
                 if (learnNumber === this.learnArr.length - 1) {
                     this.setInitialData();
