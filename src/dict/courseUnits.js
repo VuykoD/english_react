@@ -672,7 +672,8 @@ const courseUnits =
             "url": "/from-life-1",
             "name": "З життя",
             "learnedLang": [
-                "pol"
+                "pol",
+                "eng"
             ]
         },
         {

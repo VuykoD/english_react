@@ -8590,12 +8590,6 @@ const courseItems =
             "pol": "Unia w Krewie wyznacza nowy kierunek polityki polskiej",
             "transl": "Унія в Крево встановлює нову напрям польської політики"
         },
-//     {
-//         "id": 10844,
-//         "unitId": 2015,
-//         "pol": "Królestwo Polskie i Wielkie Księstwo Litewskie jednoczą się przeciw wspólnemu wrogowi - Zakonowi Krzyżackiemu",
-//         "transl": "Королівство Польщі та Великого князівства Литовського вони об'єднуються проти спільного ворог - Тевтонський орден"
-//     },
         {
             "id": 10845,
             "unitId": 2015,
@@ -8686,66 +8680,18 @@ const courseItems =
             "pol": "Kto wygrał bitwę pod Płowcami? W 1331r wojsko Władysława Łokietka zwyciężyło Krzyżaków",
             "transl": "Хто виграв битву під Пловцами"
         },
-//     {
-//         "id": 10860,
-//         "unitId": 2015,
-//         "pol": "to i kiedy założyw pierwszy uniwersytet w Polsce? Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364r. pierwszy w Polsce uniwersytet – Akademię Krakowską (Uniwersytet Jagelloński)",
-//         "transl": "Хто і коли заснував перший університет в Польщі (Університет Ягєлонський)"
-//     },
-//     {
-//         "id": 10861,
-//         "unitId": 2015,
-//         "pol": "Kiedy odbyła się bitwa pod Grunwaldem? Kto był zwycięzcą? W 1410r. wojsko polskie i litewskie pod dowództwem Króla Władysława Jagiełły pokonało pod Grunwaldem wojsko Krzyżaków. Potęga Krzyżaków zostaje ostatecznie złamana.",
-//         "transl": "Коли відбулась битва під Грунвальдом? Хто переміг?"
-//     },
         {
             "id": 10862,
             "unitId": 2015,
             "pol": "Gdzie i kiedy zginął Król Władysław Warneńczyk? Zginął w bitwie przeciw Turkow pod Warną w 1444",
             "transl": "Де коли загинув Король Владислав Варненьчик"
         },
-//     {
-//         "id": 10863,
-//         "unitId": 2015,
-//         "pol": "Kiedy miał miejsce Potop szwedzki? W ХVII wieku królowie z dynastii Wazów pretendowali do tronu Szwecji co prowadziło do konfliktów między Rzeczpospolitą a Szwecją. W 1655-1660 w okres panowania Jana - Rzeczpospolitą ogłoszono monarchią Kazimierza przypadają najazd konstytucyjną. szwedzki – „potop”.",
-//         "transl": "Коли відбувся Потом шведській?"
-//     },
-//     {
-//         "id": 10864,
-//         "unitId": 2015,
-//         "pol": "Postać Króla Jana III Sobieskiego? an III Sobieski - wybrany król (1629- 1696). W 1683r. rozgromił wojska tureckie i zahamował ekspansję Turków Otomańskich w Europie ",
-//         "transl": "Хто такий король ІІІ Собєский?"
-//     },
-//     {
-//         "id": 10865,
-//         "unitId": 2015,
-//         "pol": "Okres rozbiorów? 123 lata, aż do odzyskania niepodległości w 1918r. okres rozbiorów charakteryzował się podziałem Polski między Rosją, Austriją a Prusją, coraz głębszą rusyfikacją czy germanizacją",
-//         "transl": "Період поділів Польщі?"
-//     },
         {
             "id": 10866,
             "unitId": 2015,
             "pol": "Kiedy odbył się I rozbiór Polski? W 1772r. W tym rozbiórze brały udział Rosja, Prusy i Austria",
             "transl": "Коли відбувся І поділ Польщі?"
         },
-//     {
-//         "id": 10867,
-//         "unitId": 2015,
-//         "pol": "Konstytucja 3 Maja? 3 maja 1791r. sejm przyjął na Zamku Warszawskim Konstytucje 3 Maja. Była to pierwza w Europie, a druga w świecie Konstytucja. Postanowienia Konstytucji 3 Maja: - religia katolicka została utwierdzona jako panująca; - zagwarantowano prawa własności; - zapewniono nietykalność osobistą; - Rzeczpospolitą ogłoszono monarchią konstytucyjną",
-//         "transl": "Конституція 3 травня?"
-//     },
-//     {
-//         "id": 10868,
-//         "unitId": 2015,
-//         "pol": "Kiedy odbył się II rozbiór Polski? W 1793r. Brały udział Rosja i Prusy. Bezpośrednim pretekstem do II rozbióru Polski była Konfederacja Targowicka",
-//         "transl": "Коли відбувся ІІ поділ Польщі?"
-//     },
-//     {
-//         "id": 10869,
-//         "unitId": 2015,
-//         "pol": "Powstanie Kościuszkowskie? Tadeusz Kościuszko był wybitnym przywódcą. Powstanie Kościuszkowskie odbyło się w 1794r. i było pierwszym powstaniem narodowym przeciwko zaborcom przed III rozbiórem Polski",
-//         "transl": "Постання Костюшка?"
-//     },
         {
             "id": 10870,
             "unitId": 2015,
@@ -8758,36 +8704,6 @@ const courseItems =
             "pol": "Kiedy nie było Polski jako się w 1797 pieśń napisana przez państwa? Od 1795-1918r",
             "transl": "Коли не було Польщі як держави?"
         },
-//     {
-//         "id": 10872,
-//         "unitId": 2015,
-//         "pol": "Dlaczego doszło do rozbiorów i upadku Rzeczpospolitej? Rzeczpospolita upadła, bo w sąsiedztwie agresywnie nastawionych państw militarnych, z władzą absolutną (Prusy, Rosja i Austria) obywatele Rzeczpospolitej do końca bardziej cenili sobie wolność obywatelską niż przymus",
-//         "transl": "Чому дійшло до поділів та занепаду Речі Посполитої?"
-//     },
-//     {
-//         "id": 10873,
-//         "unitId": 2015,
-//         "pol": "Kiedy wybuchło Powstanie Listopadowe? Powstanie wybuchło w noc 29 listopada 1830r. w Warszawie. W 1831r. wojska rosyjski rozbiły wojska powstańców. Powstańcy musieli udać się na emigracje. Fala emigracji była taka duża, że w historii Polski nazywana się Wielką Emigracją",
-//         "transl": "Коли вибухнуло Повстаня Листопадове?"
-//     },
-//     {
-//         "id": 10874,
-//         "unitId": 2015,
-//         "pol": "Kiedy wybuchło Powstanie Styczniowe? Powstanie Styczniowe wybuchło 22 stycznia 1863r., trwało do 1864r. Drugi narodowy zryw przeciwko zaborcy Rosji. Powstańcom nie udało się przejąc władzy w Warszawie",
-//         "transl": "Коли вибухнуло повстання Січневе?"
-//     },
-//     {
-//         "id": 10875,
-//         "unitId": 2015,
-//         "pol": "Kiedy wybuchła I Wojna Światowa? 1 sierpnia 1914 – 11 listopada 1918. Brały w niej udział 33 państwa; w czasie jej trwania zmobilizowano 70 milionów ludzi, 10 milionów poniosło śmierć, a prawie 20 milionów zostało rannych. Upadły: Cesarstwo Niemieckie, Austro-Węgerskie, Imperium osmańskie, Imperium Rosyjskie",
-//         "transl": "Коли почалась ІІ Світова Війна?"
-//     },
-//     {
-//         "id": 10876,
-//         "unitId": 2015,
-//         "pol": "Kiedy Polska otrzymała niepodległość? 11 listopada 1918r. zakończyła się I Wojna Światowa. Józef Piłsudski zostaje Naczelnikiem Państwa. 11 listopada został ogłoszony Dniem Niepodległości Polski",
-//         "transl": "Коли Польща отримала незалежність?"
-//     },
         {
             "id": 10877,
             "unitId": 2015,
@@ -8806,60 +8722,18 @@ const courseItems =
             "pol": "Kto był ostatnim Prezydentem II Rzeczpospolitej? Ignacy Mościcki w 1926r",
             "transl": "Хто був останнім президентом ІІ Речі Посполитої"
         },
-//     {
-//         "id": 10880,
-//         "unitId": 2015,
-//         "pol": "Kiedy wybuchła II Wojna Światowa? 1 września 1939r. wojska niemieckie zaatakowały Polskę. Dnia 17 września 1939 wojska sowieckie wkroczyły na teren wschodniej II Rzeczpospolitej na mocy Paktu Ribbentrop-Mołotow. Teren II Rzeczpospolitej został podzielony: 49% Związek Sowiecki, 51% Niemcy",
-//         "transl": "Коли почалась ІІ Світова Війна?"
-//     },
-//     {
-//         "id": 10881,
-//         "unitId": 2015,
-//         "pol": "Głowne bitwy II Wojny Światowej w których uczestniczyli żołnierze Wojska Polskiego? Bitwa o Anglię - 1940 rok; Bitwa o Monte Cassino - 1944 rok Włochy (Armia Polska pod dowództwem Generała Władysława Andersa); Walki w północnych Włoszech - 1945 rok; Wyzwolenie miasta Bredy w Holandii - 1944 rok.",
-//         "transl": "Головні битви ІІ Світової війни в яких приймали участь солдати Війська Польського?"
-//     },
-//     {
-//         "id": 10882,
-//         "unitId": 2015,
-//         "pol": "Kiedy wybuchło Powstanie Warszawskie? Warszawie wybuchło powstanie zorganizowane przez Armię Krajową. Jego głównym celem jest wyzwolenie stolicy spod władzy Niemców i zdobycie suwerenności. Powstanie trwało 63 dni i zostało pokonane",
-//         "transl": "Коли вибухнуло повстання Варшавське?"
-//     },
         {
             "id": 10883,
             "unitId": 2015,
             "pol": "Data końcu II Wojny Światowej? 8 maja 1945r. - bezwarunkowa kapitulacja III Rzeszy",
             "transl": "Дата закінчення ІІ Світової війни?"
         },
-//     {
-//         "id": 10884,
-//         "unitId": 2015,
-//         "pol": "Polska po 1944 roku. Jałta 1945r. W Jałcie w lutym 1945 roku, Wielka Brytania i Stany Zjednoczone były zmuszone uznać roszczenia sowietów do terytorium na wschód od rzeki Bug. Armia Czerwona zajęłą już w tym czasie te tereny w pogoni za Niemcami. \"Jałta\" w Polsce jest synonimem zdrady aliantów i prawie pięćdziesięcioletniego podziału Europy na strefę wpływów sowieckich i wolny świat zachodni.",
-//         "transl": "Польща після 1944 року. Ялта 1945"
-//     },
-//     {
-//         "id": 10885,
-//         "unitId": 2015,
-//         "pol": "Rok założenia Związku Zawodowego \"Solidarność\" lub z czym kojarzy się Sierpień 1980? Związek Zawodowy \"Solidarność\" został założony na podstawie Porozumień w Gdańsku kończących 14 dni strajku w sierpniu 1980 roku w Stoczni Gdańskiej. Strajkujący wystąpili za uzyskania swobód politycznych i ekonomicznych. Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983 Pokojową Nagrodę Nobla.",
-//         "transl": "Рік заснування Союзу «Солідарність» або з чим асоціюється серпень 1980 року"
-//     },
         {
             "id": 10886,
             "unitId": 2015,
             "pol": "Z jakim wydarzeniem kojarzy się 13 grudzień?  13 grudzień 1981r. - wprowadzenie Stanu Wojennego przez generała Wojciecha Jaruzelskiego. Delegalizacja pierwszej Solidarności.",
             "transl": "Яка подія пов’язана з 13 грудня?"
         },
-//     {
-//         "id": 10887,
-//         "unitId": 2015,
-//         "pol": "Koniec rządów komunistycznych? W 1989 Partia komunistyczna zezwala na wolne wybory, które wygrywają kandydaci bloku solidarnościowego. Tadeusz Mazowiecki zostaje pierwszym niekomunistycznym premierem Polski. Rok później Lech Wałęsa wygrywa wybory prezydenckie. ",
-//         "transl": "Кінець комуністичної влади?"
-//     },
-//     {
-//         "id": 10888,
-//         "unitId": 2015,
-//         "pol": "Wymień nazwiska prezudentów Rzeczpospolitej Polski po 1989r.? 1989-1990r. – Wojciech Jaruzelski; 1990-1995r. – Lech Wałęsa; 1995-2005r. – Aleksander Kwaśniewski (był Prezydentem 2 kadencje); 2005-2010r. – Lech Kaczyński (10 kwietnia 2010r. wyleciał z Warszawy rządowym samolotem w Smoleńsk by udać się na obchody 70-rocznicy zbrodni katyńskiej. Zginął wraz z żoną i wszystkimi członkami delegacji); 2010r. – po 2015r – Bronisław Maria Komorowski. 2015r. – po dzisiaj – Andrzej Duda.",
-//         "transl": "Назвіть президентів Речі Посполитої Польщі після 1989 року"
-//     },
         {
             "id": 10889,
             "unitId": 2015,
@@ -9400,6 +9274,72 @@ const courseItems =
             "pol": "Hala Stulecia we Wrocławiu",
             "transl": "Зал Століття у Вроцлаві ЮНЕСКО"
         },
+        {
+            "id": 11955,
+            "unitId": 2025,
+            "eng": "come across",
+            "transl": "здатися, бути схожим"
+        },
+        {
+            "id": 11956,
+            "unitId": 2025,
+            "eng": "Starting a conversation with a stranger can come across as awkward",
+            "transl": "Початок розмови з незнайомцем може здатися незручним"
+        },
+        {
+            "id": 11957,
+            "unitId": 2025,
+            "eng": "pair up",
+            "transl": "об'єднатися"
+        },
+        {
+            "id": 11958,
+            "unitId": 2025,
+            "eng": "Weddings are a great opportunity for single people to pair up to dance, rather than dance alone",
+            "transl": "Весілля - відмінна нагода для одиноких людей об'єднатися в пари для танців, а не танцювати самотньо"
+        },
+        {
+            "id": 11959,
+            "unitId": 2025,
+            "eng": "reach out",
+            "transl": "звертатися (у контексті спілкування з людьми)"
+        },
+        {
+            "id": 11960,
+            "unitId": 2025,
+            "eng": "At business events, it’s good to reach out to people you don’t know",
+            "transl": "На бізнес-подіях корисно заводити контакти з людьми, яких ви не знаєте"
+        },
+        {
+            "id": 11961,
+            "unitId": 2025,
+            "eng": "Staying engaged in",
+            "transl": "залишатися зацікавленим у"
+        },
+        {
+            "id": 11962,
+            "unitId": 2025,
+            "eng": "Staying engaged in a conversation with a stranger can sometimes be difficult",
+            "transl": "Залишитися залученим у розмову з незнайомцем іноді може бути складно"
+        },
+        {
+            "id": 11963,
+            "unitId": 2025,
+            "eng": "put their phones away",
+            "transl": "прибрати свої телефони"
+        },
+        {
+            "id": 11964,
+            "unitId": 2025,
+            "eng": "People should put their phones away during small talk",
+            "transl": "Людям слід приховати свої телефони під час невеликих бесід"
+        },
+        {
+            "id": 11965,
+            "unitId": 2022,
+            "eng": "Don't hesitate to engage in new opportunities",
+            "transl": "Не сумнівайтеся залучатися до нових можливостей"
+        }
     ]
 
 const ukr = [];

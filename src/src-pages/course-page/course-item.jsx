@@ -204,14 +204,18 @@ export default class CourseItem extends Component {
     }
 
     render() {
-        const { siteLang = '', learnedLang } = this.props.store;
+        const { siteLang = '', learnedLang, userData } = this.props.store;
+        const { courseItems, isItemSelected } = this.state;
         const select = get(content, `select[${siteLang}]`);
         const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
         const clearLocalstorage = get(content, `clearLocalstorage[${siteLang}]`);
         const uniq = get(content, `uniq[${siteLang}]`);
-        const {courseItems, isItemSelected} = this.state;
+        const parsedUserData = userData ? JSON.parse(userData) : {};
+        const isAdmin = get(parsedUserData, `isAdmin`);
 
         const row = (odd, item) => {
+            if (!item[learnedLang] && !isAdmin) return;
+
             const inProgress = includes(this.localProgress[learnedLang], item.id);
             return (
                 <ListGroup.Item variant={inProgress  ? "info"  : odd} key={item.id}>
