@@ -159,9 +159,12 @@ export default class CourseItem extends Component {
         localStorage.courseItems = JSON.stringify(courseItems);
         this.items.push(item);
         this.setState({ courseItems: this.items });
-        document.getElementById("row_new_eng").value = '';
-        document.getElementById("row_new_pol").value = '';
-        document.getElementById("row_new_transl").value = '';
+        const engElement = document.getElementById("row_new_eng");
+        const polElement = document.getElementById("row_new_pol");
+        const translElement = document.getElementById("row_new_transl");
+        if (engElement) engElement.value = '';
+        if (polElement) polElement.value = '';
+        if (translElement) translElement.value = '';
         this.clearUniq();
     }
 

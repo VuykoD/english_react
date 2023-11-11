@@ -93,7 +93,6 @@ export default class Course extends Component {
         const selectedCoursesIndex = findIndex(selectedCourses, course => course === unitId);
         if (selectedCoursesIndex === -1) {
             this.setState({selectedCourses: [...selectedCourses, unitId]});
-            console.log(this.localProgress, learnedLang);
             const items = filter(courseItems, { 'unitId': unitId });
             map(items, it => {
                 this.localProgress[learnedLang].push(it.id)
