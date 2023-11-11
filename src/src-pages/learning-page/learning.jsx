@@ -214,7 +214,7 @@ class LearningClass extends Component {
         this.setLearnArr(arrayLength);
         this.setTranslInLearnArray();
         if (!this.learnArr) return;
-        this.setEngAndTransl(this.state.learnNumber);
+        this.setWordAndTransl(this.state.learnNumber);
         this.setState({cycleLearning: 'new', exampleLearning: 'example_sound_repeat'});
         this.nextSoundAndRepeatItem();
     };
@@ -244,7 +244,7 @@ class LearningClass extends Component {
         this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'write'});
-        this.setEngAndTransl(this.state.learnNumber, MAX_WORD_LENGTH);
+        this.setWordAndTransl(this.state.learnNumber, MAX_WORD_LENGTH);
     };
 
     sort = () => {
@@ -268,7 +268,7 @@ class LearningClass extends Component {
             cycleLearning: 'new',
             exampleLearning: 'first_letters_by_sound'
         });
-        this.setEngAndTransl(this.state.learnNumber);
+        this.setWordAndTransl(this.state.learnNumber);
     }
 
     firstLettersByText = () => {
@@ -280,7 +280,7 @@ class LearningClass extends Component {
         this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'first_letters_by_text'});
-        this.setEngAndTransl(this.state.learnNumber);
+        this.setWordAndTransl(this.state.learnNumber);
     }
 
     setTranslInLearnArray = () => {
@@ -315,8 +315,9 @@ class LearningClass extends Component {
         this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
     }
 
-    setTimeoutTime =(learnNumber)=>{
-        const word = get(this.learnArr, `[${learnNumber}].pol`, '');
+    setTimeoutTime =(learnNumber)=> {
+        const { learnedLang } = this.props.store;
+        const word = get(this.learnArr, `[${learnNumber}].${learnedLang}`, '');
         const wordLength = Math.round(word.length / this.soundAndRepeatCoef);
         const minTime = 13 / this.soundAndRepeatCoef;
         let timeoutTime = wordLength > minTime ? wordLength : minTime;
@@ -333,7 +334,7 @@ class LearningClass extends Component {
         if (learnNumber < this.learnArr.length - 1) {
             this.timeoutNextItem = setTimeout(() => {
                 const nextNumber = learnNumber + 1;
-                this.setEngAndTransl(nextNumber);
+                this.setWordAndTransl(nextNumber);
                 this.nextSoundAndRepeatItem();
             }, timeoutTime * 1000);
         } else {
@@ -343,7 +344,7 @@ class LearningClass extends Component {
         }
     };
 
-    setEngAndTransl = (learnNumber, maxLength) => {
+    setWordAndTransl = (learnNumber, maxLength) => {
         const {learnPol} = this.state;
         let english = get(this.learnArr, `${learnNumber}.eng`, '');
         english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\s+/g, ' ').trim();
@@ -360,7 +361,7 @@ class LearningClass extends Component {
 
             if (wordToLearn.length > maxLength){
                 const nextNumber = learnNumber + 1;
-                this.setEngAndTransl(nextNumber, MAX_WORD_LENGTH);
+                this.setWordAndTransl(nextNumber, MAX_WORD_LENGTH);
                 return;
             }
         }
@@ -778,7 +779,7 @@ export function changedInput() {
             if(mistakeRewrite < this.mistakeArr.length) {
                 const nextNumber = this.mistakeArr[mistakeRewrite];
                 this.setState({mistakeRewrite: mistakeRewrite + 1});
-                this.setEngAndTransl(nextNumber);
+                this.setWordAndTransl(nextNumber);
             }
 
             if (mistakeRewrite >= this.mistakeArr.length) {
@@ -876,7 +877,7 @@ function allIsCorrect() {
         }
     }
     document.getElementById("formInput").value = '';
-    this.setEngAndTransl(learnNumber + 1, MAX_WORD_LENGTH);
+    this.setWordAndTransl(learnNumber + 1, MAX_WORD_LENGTH);
 }
 
 function onlyUnique(value, index, self) {
