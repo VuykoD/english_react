@@ -95,7 +95,9 @@ export default class Course extends Component {
             this.setState({selectedCourses: [...selectedCourses, unitId]});
             const items = filter(courseItems, { 'unitId': unitId });
             map(items, it => {
-                this.localProgress[learnedLang].push(it.id)
+                if (it[learnedLang]) {
+                    this.localProgress[learnedLang].push(it.id);
+                }
             });
             setLearnCount(onChangeToLearnCount, this.localProgress[learnedLang].length);
             localStorage.progress = JSON.stringify(this.localProgress);

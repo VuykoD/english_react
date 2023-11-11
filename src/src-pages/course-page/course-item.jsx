@@ -110,10 +110,12 @@ export default class CourseItem extends Component {
 
         }
         map(this.items, (item) => {
-            this.localProgress[learnedLang].push(+item.id);
-            this.setState({isItemSelected: true});
-            setLearnCount(onChangeToLearnCount, this.localProgress[learnedLang].length);
-            localStorage.progress = JSON.stringify(this.localProgress);
+            if (item[learnedLang]){
+                this.localProgress[learnedLang].push(+item.id);
+                this.setState({isItemSelected: true});
+                setLearnCount(onChangeToLearnCount, this.localProgress[learnedLang].length);
+                localStorage.progress = JSON.stringify(this.localProgress);
+            }
         });
     };
 
