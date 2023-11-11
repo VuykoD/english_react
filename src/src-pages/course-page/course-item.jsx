@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Col, Container, Row, Button, ListGroup} from "react-bootstrap";
-import { map, findIndex, filter, get, indexOf } from 'lodash';
+import { map, findIndex, filter, get, indexOf, includes } from 'lodash';
 import FormControl from "react-bootstrap/FormControl";
 import { uniqWords } from './uniqWords';
 import setLearnCount from '../../src-core/helper/setLearnCount';
@@ -212,9 +212,9 @@ export default class CourseItem extends Component {
         const {courseItems, isItemSelected} = this.state;
 
         const row = (odd, item) => {
-            const inProgress = findIndex(this.localProgress, {'entity_id': item.id}) > -1;
+            const inProgress = includes(this.localProgress[learnedLang], item.id);
             return (
-                <ListGroup.Item variant={odd} key={item.id}>
+                <ListGroup.Item variant={inProgress  ? "info"  : odd} key={item.id}>
                     <Row className="unit-row">
                         <Col sm="1">
                             <Button
