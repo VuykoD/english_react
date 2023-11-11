@@ -43,6 +43,7 @@ function uniqWords(courseItems, phrase, lang){
     for(const word of words) {
         let wordUnique = true;
         for(const it of courseItems) {
+            if (!it[lang]) continue ;
             const itCleared = it[lang].replace(/[.,%?!1-9"]/g, '').trim().toLowerCase();
             const itArr = itCleared.split(' ');
             const isWordExist = itArr.find(element => element === word);

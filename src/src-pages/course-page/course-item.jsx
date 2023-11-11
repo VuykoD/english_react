@@ -49,13 +49,9 @@ export const content = {
         ru: "Убрать всё из изучения",
         ukr: "Видалити все з вивчення",
     },
-    uniqPol: {
-        ru: "Уникальность в польськом",
-        ukr: "Унікальність в польському",
-    },
-    uniqEng: {
-        ru: "Уникальность в английском",
-        ukr: "Унікальність на англійському",
+    uniq: {
+        ru: "Уникальность",
+        ukr: "Унікальність",
     },
     notAllFieldsAreFilled: {
         ru: "Заполнены не все поля",
@@ -188,9 +184,10 @@ export default class CourseItem extends Component {
         return div
     }
 
-    uniqPol = () => {
-        const pol = get(document.getElementById(`row_new_pol`), 'value');
-        const uniqArr = uniqWords(courseItems, pol, 'pol');
+    uniq = () => {
+        const { learnedLang } = this.props.store;
+        const word = get(document.getElementById(`row_new_${learnedLang}`), 'value');
+        const uniqArr = uniqWords(courseItems, word, learnedLang);
         const div = this.clearUniq();
         map(uniqArr, it => {
             const p = document.createElement('p');
@@ -202,17 +199,12 @@ export default class CourseItem extends Component {
         })
     }
 
-    uniqEng = () => {
-        console.log(courseItems);
-    }
-
     render() {
         const { siteLang = '', learnedLang } = this.props.store;
         const select = get(content, `select[${siteLang}]`);
         const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
         const clearLocalstorage = get(content, `clearLocalstorage[${siteLang}]`);
-        const uniqPol = get(content, `uniqPol[${siteLang}]`);
-        const uniqEng = get(content, `uniqEng[${siteLang}]`);
+        const uniq = get(content, `uniq[${siteLang}]`);
         const {courseItems, isItemSelected} = this.state;
 
         const row = (odd, item) => {
@@ -257,18 +249,9 @@ export default class CourseItem extends Component {
                         <Button
                             variant="light"
                             block
-                            onClick={this.uniqEng}
+                            onClick={this.uniq}
                         >
-                            {uniqEng}
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button
-                            variant="light"
-                            block
-                            onClick={this.uniqPol}
-                        >
-                            {uniqPol}
+                            {uniq}
                         </Button>
                     </Col>
                     <Col/>
