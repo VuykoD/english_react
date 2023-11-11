@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Col, Container, Row, Button, ListGroup} from "react-bootstrap";
-import get from 'lodash/get';
-import map from 'lodash/map';
-import findIndex from 'lodash/findIndex';
-import filter from 'lodash/filter';
+import { map, findIndex, filter, get, indexOf } from 'lodash';
 import FormControl from "react-bootstrap/FormControl";
 import { uniqWords } from './uniqWords';
 import setLearnCount from '../../src-core/helper/setLearnCount';
-import getCourseItems, { getCourseUnits } from '../../dict/getCourseItems';
+import getCourseItems, {
+    getCourseUnits,
+    getDefaultProgress
+} from '../../dict/getCourseItems';
 
 import '../../scc/unit.css';
 import '../../scc/course.css'
@@ -68,19 +68,22 @@ export default class CourseItem extends Component {
     constructor(props) {
         super(props);
 
+        const { learnedLang } = props.store;
         let url = get(props, `match.url`);
         url = url.replace('/course', '');
         this.unitIndex = findIndex(courseUnits, {'url': url});
         this.unitId = get(courseUnits, `[${this.unitIndex}].id`);
         this.unitName = get(courseUnits, `[${this.unitIndex}].name`);
         this.localItems = localStorage.course ? JSON.parse(localStorage.course) : [];
-        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : [];
+        this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : getDefaultProgress();
         let isItemSelected = false;
-        for (let i = this.localProgress.length; i > 0; i--) {
-            const index = findIndex(courseItems, {'id': get(this.localProgress, `[${i - 1}].entity_id`)});
-            if (+get(courseItems, `[${index}].unitId`) === +this.unitId) {
-                isItemSelected = true;
-                break;
+        if (this.localProgress[learnedLang] && this.localProgress[learnedLang].length) {
+            for (let i = this.localProgress[learnedLang].length; i > 0; i--) {
+                const index = findIndex(courseItems, {'id': get(this.localProgress[learnedLang], `[${i - 1}]`)});
+                if (+get(courseItems, `[${index}].unitId`) === +this.unitId) {
+                    isItemSelected = true;
+                    break;
+                }
             }
         }
 
@@ -97,31 +100,32 @@ export default class CourseItem extends Component {
 
     select = () => {
         const { onChangeToLearnCount } = this.props;
+        const { learnedLang, siteLang } = this.props.store;
         if (this.state.isItemSelected) {
-            const {siteLang} = this.props.store;
             const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
             return alert(alreadySelected);
         }
 
-        const addedProgress = map(this.items, (item) => {
-            return { entity_id: +item.id }
+        if (this.localProgress[learnedLang]){
+
+        }
+        map(this.items, (item) => {
+            this.localProgress[learnedLang].push(+item.id);
+            this.setState({isItemSelected: true});
+            setLearnCount(onChangeToLearnCount, this.localProgress[learnedLang].length);
+            localStorage.progress = JSON.stringify(this.localProgress);
         });
-        this.localProgress = this.localProgress ?
-            [...this.localProgress, ...addedProgress] :
-            [...addedProgress];
-        this.setState({isItemSelected: true});
-        setLearnCount(onChangeToLearnCount, this.localProgress.length);
-        localStorage.progress = JSON.stringify(this.localProgress);
     };
 
     clearLocalstorage = () => {
         const { onChangeToLearnCount } = this.props;
+        const { learnedLang } = this.props.store;
         if (this.state.isItemSelected) {
             map(this.items, item => {
-                const index = findIndex(this.localProgress, {'entity_id': item.id});
-                this.localProgress.splice(index,1);
+                const index = indexOf(this.localProgress[learnedLang], item.id);
+                this.localProgress[learnedLang].splice(index,1);
             });
-            setLearnCount(onChangeToLearnCount, this.localProgress.length);
+            setLearnCount(onChangeToLearnCount, this.localProgress[learnedLang].length);
             localStorage.progress = JSON.stringify(this.localProgress);
             this.setState({isItemSelected: false});
         }
