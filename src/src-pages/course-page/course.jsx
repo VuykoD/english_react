@@ -21,7 +21,11 @@ import {
 } from 'react-bootstrap-icons';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import getCourseItems, { getCourseUnits, getCourseNames } from '../../dict/getCourseItems';
+import getCourseItems, {
+    getCourseUnits,
+    getCourseNames,
+    getDefaultProgress
+} from '../../dict/getCourseItems';
 import setLearnCount from '../../src-core/helper/setLearnCount';
 import langType from '../../dict/langType';
 
@@ -57,7 +61,7 @@ export default class Course extends Component {
         super(props);
         const { learnedLang } = props.store;
         this.localProgress = localStorage.progress ? JSON.parse(localStorage.progress)
-            : [];
+            : getDefaultProgress();
         const selectedCourses = [];
         if(this.localProgress[learnedLang]){
             map(this.localProgress[learnedLang], (itProgress) =>{
@@ -89,7 +93,7 @@ export default class Course extends Component {
         const selectedCoursesIndex = findIndex(selectedCourses, course => course === unitId);
         if (selectedCoursesIndex === -1) {
             this.setState({selectedCourses: [...selectedCourses, unitId]});
-
+            console.log(this.localProgress, learnedLang);
             const items = filter(courseItems, { 'unitId': unitId });
             map(items, it => {
                 this.localProgress[learnedLang].push(it.id)
