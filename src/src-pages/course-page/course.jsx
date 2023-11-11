@@ -199,9 +199,10 @@ export default class Course extends Component {
             const index = findIndex(courseNames, {'id': courseId});
             if (index > -1) {
                 const { siteLang } = this.props.store;
-                courseNames[index][siteLang] = {
-                    name: document.getElementById(`course_name_${courseId}`).value
-                };
+                if (!courseNames[index].name) courseNames[index].name = {};
+                courseNames[index].name[siteLang] = document.getElementById(`course_name_${courseId}`).value;
+                delete courseNames[index][siteLang];
+
                 localStorage.courseNames = JSON.stringify(courseNames);
                 this.setState({courseNames});
             }
@@ -316,7 +317,7 @@ export default class Course extends Component {
                                     <Fragment key={courseKey}>
                                         {!isAdmin && (
                                             <h1>
-                                                {course[siteLang]?.name}
+                                                {course.name[siteLang]}
                                             </h1>
                                         )}
                                         {isAdmin && (
@@ -342,7 +343,7 @@ export default class Course extends Component {
                                                         className="course"
                                                         type="text"
                                                         id={`course_name_${course.id}`}
-                                                        defaultValue={course[siteLang]?.name}
+                                                        defaultValue={course.name[siteLang]}
                                                     />
                                                 </Col>`
                                                 <Col sm={1}>
