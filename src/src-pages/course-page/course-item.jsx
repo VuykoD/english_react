@@ -222,7 +222,7 @@ export default class CourseItem extends Component {
             return (
                 <ListGroup.Item variant={inProgress  ? "info"  : odd} key={item.id}>
                     <Row className="unit-row">
-                        <Col sm="1">
+                        <Col sm="1" className="editButton">
                             <Button
                                 variant={inProgress  ? "info" : "light"}
                                 block
@@ -231,10 +231,9 @@ export default class CourseItem extends Component {
                                 {item.id !== '_new' ? item.id : '+'}
                             </Button>
                         </Col>
-                        <Col>
+                        <Col md="5">
                             <FormControl
                                 type="text"
-                                className="mr-sm-2"
                                 id={`row${item.id}_${learnedLang}`}
                                 defaultValue={item[learnedLang]}
                             />
@@ -242,7 +241,6 @@ export default class CourseItem extends Component {
                         <Col>
                             <FormControl
                                 type="text"
-                                className="mr-sm-2"
                                 id={`row${item.id}_transl`}
                                 defaultValue={item.transl}
                             />

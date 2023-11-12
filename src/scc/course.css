@@ -67,4 +67,6 @@ input[type="checkbox"]{
 }
 
 @media only screen
-and (max-device-width : 768px){ .paint-left, .paint-right { display: none; }}
+and (max-device-width : 768px){
+    .paint-left, .paint-right, .editButton { display: none; }
+}
