@@ -6,6 +6,7 @@ import { Badge, Button, Col, Container, Form, ProgressBar, Row } from 'react-boo
 import getCourseItems, { getCourseUnits } from '../../dict/getCourseItems';
 import { shuffle } from '../user-page/user-data/user-dictionary';
 import setLearnCount from '../../src-core/helper/setLearnCount';
+import { fullStatisticFunction } from '../user-page/user-data/user-statistic';
 
 import '../../scc/learning.css';
 
@@ -65,6 +66,10 @@ const content = {
         ru: "Сортировать автоматически",
         ukr: "Сортувати автоматично",
     },
+    rightWritten: {
+        ru: "Правильно написано",
+        ukr: "Правильно написано",
+    },
 };
 
 const MAX_WORD_LENGTH = 100;
@@ -85,7 +90,8 @@ const initialState = {
     mistakeRewrite: 0,
     record: 0,
     changeToInput: false,
-    automaticChange: localStorage.automaticChange ? JSON.parse(localStorage.automaticChange) : false
+    automaticChange: localStorage.automaticChange ? JSON.parse(localStorage.automaticChange) : false,
+    showStatistic: false
 }
 
 class LearningClass extends Component {
@@ -431,15 +437,31 @@ class LearningClass extends Component {
             rus,
             mistake,
             changeToInput,
-            automaticChange
+            automaticChange,
+            showStatistic
         } = this.state;
         const { siteLang, learnedLang } = this.props.store;
         const write = get(content, `write[${siteLang}]`) || '';
         const speedRepeat = get(content, `speedRepeat[${siteLang}]`) || '';
         const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`) || '';
         const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`) || '';
+        const rightWritten = get(content, `rightWritten[${siteLang}]`) || '';
         const games = get(content, `games[${siteLang}]`) || '';
         const automaticSort = get(content, `automaticSort[${siteLang}]`) || '';
+        let statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
+
+        if (statistic.length) {
+            statistic = statistic.reverse();
+            let lastTraining = [];
+            let key = 0
+            for(const item of statistic) {
+                if (key > 0 && typeof item === 'string') break;
+                lastTraining.push(item)
+                key++;
+            }
+            statistic = lastTraining.reverse();
+        }
+        const fullStat = fullStatisticFunction(statistic, learnedLang);
 
         const isSound = checkIsSound.call(this);
         if (isSound) speak.call(this);
@@ -483,6 +505,14 @@ class LearningClass extends Component {
                                 />
                             </Col>
                         </Row>
+                        {showStatistic && (
+                            <Row className="margin-top">
+                                <Col>
+                                    <h3 children={rightWritten} />
+                                    {fullStat}
+                                </Col>
+                            </Row>
+                        )}
                     </Fragment>
                 )}
                 {exampleLearning &&
@@ -793,6 +823,7 @@ export function changedInput() {
                 statistic.push(date);
                 localStorage.statistic = JSON.stringify(statistic);
                 this.setInitialData();
+                this.setState({ showStatistic: true })
             }
         }
     }

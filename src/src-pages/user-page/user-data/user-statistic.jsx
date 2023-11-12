@@ -59,7 +59,7 @@ export default class UserStatistic extends Component {
     }
 
     render() {
-        const {siteLang = ''} = this.props.store;
+        const { siteLang = '', learnedLang } = this.props.store;
         const {statisticType} = this.state;
         const fullStatistic = get(content, `fullStatistic[${siteLang}]`);
         const shortStatistic = get(content, `shortStatistic[${siteLang}]`);
@@ -67,24 +67,7 @@ export default class UserStatistic extends Component {
         const trainingQuantity = get(content, `trainingQuantity[${siteLang}]`);
         const effectiveTime = get(content, `effectiveTime[${siteLang}]`);
         const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
-        const fullStat = (
-            <>
-                {map(statistic, (item, key) => {
-                        if (item?.id) {
-                            const unitIndex = findIndex(courseItems, { id: item.id });
-                            const phrase = unitIndex > -1 ? courseItems[unitIndex].pol : '';
-                            return <div key={key} children={phrase}/>
-                        } else {
-                            return <div
-                                className='underline'
-                                key={key}
-                                children={item}
-                            />
-                        }
-                    }
-                )}
-            </>
-        );
+        const fullStat = fullStatisticFunction(statistic, learnedLang);
         const shortArr = [];
         let quantity = 0;
         let date = '';
@@ -146,7 +129,7 @@ export default class UserStatistic extends Component {
         const effectiveHours = {};
         const nonEffectiveHours = {};
         [ ...Array(24) ].forEach((e, i) => {
-            map(effectiveTimeArr, (item, key) => {
+            map(effectiveTimeArr, (item) => {
                 if (i === Number(item.time.slice(0, 2))){
                     if (item.effectiveQuantity >= 5) {
                         effectiveHours[i] = effectiveHours[i]
@@ -209,3 +192,24 @@ export default class UserStatistic extends Component {
         );
     }
 };
+
+export function fullStatisticFunction(statistic, learnedLang) {
+    return (
+        <>
+            {map(statistic, (item, key) => {
+                    if (item?.id) {
+                        const unitIndex = findIndex(courseItems, { id: item.id });
+                        const phrase = unitIndex > -1 ? courseItems[unitIndex][learnedLang] : '';
+                        return <div key={key} children={phrase}/>
+                    } else {
+                        return <div
+                            className='underline'
+                            key={key}
+                            children={item}
+                        />
+                    }
+                }
+            )}
+        </>
+    );
+}

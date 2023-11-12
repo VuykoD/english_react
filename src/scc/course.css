@@ -47,16 +47,12 @@
     flex-direction: row;
 }
 
-.add-course {
+.margin-top {
     margin-top: 10px;
 }
 
 .above-footer {
     margin-bottom: 70px;
-}
-
-.add-unit {
-    margin-top: 10px;
 }
 
 input[type="checkbox"]{

@@ -446,7 +446,7 @@ export default class Course extends Component {
                                                         })}
                                                         {isAdmin &&
                                                             <Row
-                                                                className="add-unit"
+                                                                className="margin-top"
                                                             >
                                                                 <Col sm={1}>
                                                                     <Button
@@ -488,7 +488,7 @@ export default class Course extends Component {
                         </Col>
                     </Row>
                     {isAdmin && (
-                        <Row className="add-course">
+                        <Row className="margin-top">
                             <Col sm={1}/>
                             <Col sm={2}>
                                 <Button
