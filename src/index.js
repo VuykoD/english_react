@@ -15,9 +15,12 @@ export const defaultColor = {
     backColor: 'white',
 };
 
+const defaultLearnedLang = 'pol';
+const defaultSiteLang = 'ukr';
+
 const initialState = {
-    siteLang: localStorage.siteLand || 'ru',
-    learnedLang: localStorage.learnedLand || 'eng',
+    siteLang: localStorage.siteLand || defaultSiteLang,
+    learnedLang: localStorage.learnedLand || defaultLearnedLang,
     fontColor: localStorage.fontColor || defaultColor.fontColor,
     firstColor: localStorage.firstColor || defaultColor.firstColor,
     secondColor: localStorage.secondColor || defaultColor.secondColor,
@@ -25,7 +28,7 @@ const initialState = {
     userData: localStorage.userData || '',
     itemCount: localStorage.itemCount || '',
     toLearnCount: localStorage.progress && JSON.parse(localStorage.progress) ?
-        JSON.parse(localStorage.progress)[localStorage.learnedLand || 'eng']?.length
+        JSON.parse(localStorage.progress)[localStorage.learnedLand || defaultLearnedLang]?.length
         : 0,
 };
 
