@@ -8874,403 +8874,403 @@ const courseItems =
         },
         {
             "id": 10924,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Polskie miasta położone nad Bałtykiem?",
             "transl": "Польські міста розташовані над Балтійським морем"
         },
         {
             "id": 10925,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Trójmiasto - Gdańsk, Gdynia, Sopot. W środkowej części miasto Kołobrzeg. W zachodniej - Świnoujście",
             "transl": "Троймісто - Гданськ, Гдиня, Сопот. У центральній частині місто Колобжег. На заході - Свіноуйсьце"
         },
         {
             "id": 10926,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Parki Narodowe w Polsce?",
             "transl": "Народні парки Польщі"
         },
         {
             "id": 10927,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "23 razem: najbardziej znane: Białowieski, Tatrzański, Pieniński,  Bieszczadzki Parki Narodowe",
             "transl": "Всього 23: найвідоміші: Біловезький, Татранський, Пенінський, Бещадський національні парки"
         },
         {
             "id": 10928,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Białowieski Park Narodowy jest najstarszym parkiem narodowym w Polsce. Został utworzony w 1932 r.",
             "transl": "Біловезький національний парк є найстаріший національний парк в Польща. Він був створений в 1932 році."
         },
         {
             "id": 10929,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "W 1977r. UNESCO włączyło Białowieski Park Narodowy w poczet światowych rezerwatów biosfery",
             "transl": "в 1977 році включено ЮНЕСКО Біловезький національний парк в групі світові біосферні заповідники"
         },
         {
             "id": 10930,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "a dwa lata później uznano go za pierwszy i jedyny w Polsce przyrodniczy Obiekt Dziedzictwa Światowego",
             "transl": "а через два роки його визнали першим і єдиним в Польщі об'єкт природної світової спадщини"
         },
         {
             "id": 10931,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Tatrzański Park Narodowy został powołany w 1954 roku, w celu ochrony zasobów przyrodniczych Tatr Polskich",
             "transl": "Татранський національний парк залишився призначений у 1954 р., упоряд захист природних ресурсів польськихТатр"
         },
         {
             "id": 10932,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Park obejmuje prawie cale Tatry polskie i sąsiaduje z Parkiem Narodowym na słowackiej stronie",
             "transl": "Парк займає майже цілі Польські Татри та прилеглий до нього парк Національний зі словацького боку"
         },
         {
             "id": 10933,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Pieniński Park Narodowy założony w 1932 roku, jeszcze przed II wojną światową jest bardzo lubianym i często odwiedzanym Parkiem Narodowym",
             "transl": "Національний парк П'єніни: Заснований 1932 р., ще до Друга світова війна – це дуже багато популярний і часто відвідуваний Національний парк"
         },
         {
             "id": 10934,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Najważniejsze rzeki w Polsce?",
             "transl": "Головні річки Польщі?"
         },
         {
             "id": 10935,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Bug - rzeka na granicy wschodniej (na terenie Polski 587 km)",
             "transl": "Буг - річка на східному кордоні (587 км у Польщі)"
         },
         {
             "id": 10936,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Narew - wpadająca do Bugu",
             "transl": "Нарев - впадає в Буг"
         },
         {
             "id": 10937,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Wisła - najważniejsza, najdłuższa polska rzeka (1047 km)",
             "transl": "Вісла - найважливіша, найдовша польська річка (1047 км)"
         },
         {
             "id": 10938,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Warta (808 km)",
             "transl": "Варта (808 км)"
         },
         {
             "id": 10939,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Odra (na terenie Polski 742 km). Na swoim odcinku centralnym rzeka graniczna z Niemcami. Odra wypływa z Czech",
             "transl": "Одра (742 км у Польщі). Увімкнено річка в її центральній частині кордон з Німеччиною. Одра витікає з Чехії"
         },
         {
             "id": 10940,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Najważniejsze jeziora w Polsce?",
             "transl": "Головні озера Польщі"
         },
         {
             "id": 10941,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Śniardwy (na Pojezierzu Mazurskim) największe w Polsce jezioro (114 km2)",
             "transl": "Снярдви (в Мазурському поозер'ї) найбільше озеро в Польщі (114 км2)"
         },
         {
             "id": 10942,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Mamry (104 km2)",
             "transl": "Мамри (104 км2)"
         },
         {
             "id": 10943,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Hańcza (najgłębsze, 108 m głębokości), w samym północno- wschodnim skrawku Polski",
             "transl": "Ганьча (найглибша, 108 м глибина), на самій півночі- східна частина Польщі"
         },
         {
             "id": 10944,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Morskie Oko w Tatrach, przykład jeziora wysokogórskiego",
             "transl": "Морське Око в Татрах, приклад високогірного озера"
         },
         {
             "id": 10945,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Przez jakie miasta przepływa rzeka Wisła?",
             "transl": "Через які міста протікає річка Вісла?"
         },
         {
             "id": 10946,
-            "unitId": 2016,
+            "unitId": 2026,
             "pol": "Wisła wypływa z Beskidów Sląskich. Przepływa przez Kraków, Sandomierz, Warszawa, Toruń",
             "transl": "Вісла витікає з Сілезьких Бескидів. Протікає через Краків, Сандомир, Варшаву та Торунь"
         },
         {
             "id": 10947,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Góry w Polsce?",
             "transl": "Гори в Польщі?"
         },
         {
             "id": 10948,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Karpaty: to pasmo gór w środkowej Europie",
             "transl": "Карпати: гірський масив у серед Європа"
         },
         {
             "id": 10949,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Karpaty ciągną się od polskiego Śląska poprzez Ukrainę aż do Rumunii",
             "transl": "Карпати простягаються від польської Сілезії через Україну до Румунії"
         },
         {
             "id": 10950,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Polska część Karpat to Beskidy: Śląski, Beskidy Zachodnie, Beskid Niski, Beskidy Wschodnie",
             "transl": "Польська частина Карпат – це Бескиди: Сілезькі, Західні Бескиди, Низькі Бескиди, Східні Бескиди."
         },
         {
             "id": 10951,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "W pasmie Karpat są Tatry, Pieniny i Bieszczady",
             "transl": "Карпатський хребет включає Татри, Пеніни та Бещади"
         },
         {
             "id": 10952,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Bieszczady nalezą do Karpat Wschodnich i odróżniają się Beskidów Zachodnich",
             "transl": "Бещади належать до Східних Карпат і виділяються Західні Бескиди"
         },
         {
             "id": 10953,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Tatry – najwyższe góry w pasmie Karpat",
             "transl": "Татри - найвищі гори Карпатського хребта"
         },
         {
             "id": 10954,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Na granicy ze Słowacja, najwyższy polski szczyt Tatr Rysy 2499 metrów nad poziomem morza",
             "transl": "Увімкнено кордон зі Словаччиною, найвищий польськ вершина Риси Татри 2499 метрів вище рівень моря"
         },
         {
             "id": 10955,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Na granicy ze Słowacja, najwyższy polski szczyt Tatr Rysy 2499 metrów nad poziomem morza",
             "transl": "На кордоні зі Словаччиною найвища польс вершина Риси Татри 2499 метрів вище рівень моря"
         },
         {
             "id": 10956,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Jedyne w Polsce góry o charakterze alpejskim",
             "transl": "Єдині альпійські гори в Польщі"
         },
         {
             "id": 10957,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Niestety w Polsce pasmo Tatr ciągnie się zaledwie około 30 kilometrów",
             "transl": "На жаль, у Польщі хребет Татр розтягується лише близько 30 кілометрів"
         },
         {
             "id": 10958,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Sudety: na Dolnym Śląsku, na granicy z Czechami. Góry Stołowe, góra Śnieżka",
             "transl": "Судети: у Нижній Сілезії, на кордоні з Чехією. Столові гори, Гора Білосніжка"
         },
         {
             "id": 10959,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Góry Świętokrzyskie: jedno z najstarszych pasm górskich",
             "transl": "Свєнтокшиські гори: один із найдавніших гірських масивів"
         },
         {
             "id": 10960,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Najwyższy szczyt Łysica 612 metrów nad poziomem morza",
             "transl": "Найвища вершина Лисиця 612 метрів над рівнем моря"
         },
         {
             "id": 10961,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Najważniejsze miasta Polski?",
             "transl": "Найголовніші міста Польщі?"
         },
         {
             "id": 10962,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Warszawa - (stolica) 1,7 milionów mieszkańców",
             "transl": "Варшава - (столиця) 1,7 млн ​​жителів"
         },
         {
             "id": 10963,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Największe lotnisko w Polsce imienia Fryderyka Chopina",
             "transl": "Найбільший аеропорт Польщі імені Фридерика Шопена"
         },
         {
             "id": 10964,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Największy Uniwersytet, Politechnika",
             "transl": "Найбільший університет Політехнічний"
         },
         {
             "id": 10965,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Stare Miasto zniszczone w czasie Powstania Warszawskiego zostało odbudowane wraz z Zamkiem Królewskim",
             "transl": "Старе місто, зруйноване під час Варшавського повстання, було відбудовано разом із Королівським замком"
         },
         {
             "id": 10966,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Łódź - wielkie miasto przemysłowe, znane do niedawna z przemysłu włókienniczego",
             "transl": "Лодзь - велике промислове місто, до недавнього часу відоме своєю текстильною промисловістю"
         },
         {
             "id": 10967,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Kraków - była stolica Polski, Uniwersytet Jagielloński, miasto Papieża Jana Pawła II",
             "transl": "Краків - колишня столиця Польщі, Ягеллонський університет, місто Папи Івана Павла ІІ"
         },
         {
             "id": 10968,
-            "unitId": 2016,
+            "unitId": 2027,
             "pol": "Kraków, nie zniszczony w czasie II wojny, z historycznym Rynkiem, zamkiem na Wawelu, w samym centrum miasta",
             "transl": "Краків, не зруйнований під час Другої світової війни, з історичною площею Ринок, Вавельським замком у самому центрі міста"
         },
         {
             "id": 10969,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Wrocław - wielkie miasto na Ziemiach Odzyskanych po II wojnie Światowej",
             "transl": "Вроцлав - велике місто на відновлених територіях після Другої світової війни"
         },
         {
             "id": 10970,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Katowice - stolica polskiego Sląska",
             "transl": "Катовіце - столиця польської Сілезії"
         },
         {
             "id": 10971,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Przemysłowe centrum hutniczo – górnicze (kopalnie węgla kamiennego)",
             "transl": "Промисловий металургійно-гірничий центр (вугільні шахти камінь)"
         },
         {
             "id": 10972,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Gdańsk – główne miasto na polskim wybrzeżu Bałtyku. Lotnisko imienia Lecha Wałęsy",
             "transl": "Гданськ - головне місто польського узбережжя Балтійського моря. Назвіть аеропорт Лех Валенса."
         },
         {
             "id": 10973,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Poznań - stolica Wielkopolski. Pod zaborami należał do Prus",
             "transl": "Познань - столиця Великопольщі. За розділами належав Пруссії"
         },
         {
             "id": 10974,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Najważniejsze budowle średniowieczne w miastach Polski?",
             "transl": "Найважливіші середньовічні споруди в містах Польщі"
         },
         {
             "id": 10975,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Wawel (Zamek Królewski) w Krakowie, był siedzibą Królów przez wieki",
             "transl": "Вавель (королівський замок) у Кракові протягом століть був резиденцією королів"
         },
         {
             "id": 10976,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Sukiennice na Rynku w Krakowie budynek kopców sukien (materiałów) na Rynku krakowskim",
             "transl": "Суконниці на Ринковій площі в Кракові будівля курганів суконь (тканин) на Краківській Ринковій площі"
         },
         {
             "id": 10977,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Zamek krzyżacki w Malborku: najwspanialszy zamek gotycki, o charakterze wczesnego średniowiecza",
             "transl": "Тевтонський замок у Мальборку: найвеличніший готичний замок раннього середньовіччя"
         },
         {
             "id": 10978,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Lista zabytków UNESCO w Polsce",
             "transl": "Список пам'яток ЮНЕСКО в Польщі"
         },
         {
             "id": 10979,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Stare Miasto w Warszawie",
             "transl": "Старе місто у Варшаві ЮНЕСКО"
         },
         {
             "id": 10980,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Puszcza Białowieska",
             "transl": "Біловезька пуща ЮНЕСКО"
         },
         {
             "id": 10981,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Kopalnia soli w Wieliczce",
             "transl": "Соляні копальні у Величці ЮНЕСКО"
         },
         {
             "id": 10982,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Zamek krzyżacki w Malborku",
             "transl": "Тевтонський замок у Мальборку ЮНЕСКО"
         },
         {
             "id": 10983,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Stare Miasto w Zamościu",
             "transl": "Старе місто в Замості ЮНЕСКО"
         },
         {
             "id": 10984,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Obóz Koncentracyjny Auschwitz-Birkenau",
             "transl": "Концтабір Аушвіц-Біркенау ЮНЕСКО"
         },
         {
             "id": 10985,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Kalwaria Zebrzydowska",
             "transl": "Кальварія Зебжидовська ЮНЕСКО"
         },
         {
             "id": 10986,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Średniowieczny zespół miejski w Toruniu",
             "transl": "Середньовічний міський комплекс у Торуні ЮНЕСКО"
         },
         {
             "id": 10987,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Drewniane Kościoły południowej Małopolski",
             "transl": "Дерев'яні церкви південної Малопольщі ЮНЕСКО "
         },
         {
             "id": 10988,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Kościoły Pokoju w Jaworze i Świdnicy",
             "transl": "Церкви миру в Яворі та Свідниці ЮНЕСКО"
         },
         {
             "id": 10989,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Park Mużakowski",
             "transl": "Мужаківський парк ЮНЕСКО"
         },
         {
             "id": 10990,
-            "unitId": 2016,
+            "unitId": 2028,
             "pol": "Hala Stulecia we Wrocławiu",
             "transl": "Зал Століття у Вроцлаві ЮНЕСКО"
         },

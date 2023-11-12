@@ -615,8 +615,35 @@ const courseUnits =
         {
             "id": 2016,
             "courseId": 10,
-            "url": "/geografia-polski",
-            "name": "Geografia Polski",
+            "url": "/geografia-polski-1",
+            "name": "Geografia Polski 1",
+            "learnedLang": [
+                "pol"
+            ]
+        },
+        {
+            "id": 2026,
+            "courseId": 10,
+            "url": "/geografia-polski-2",
+            "name": "Geografia Polski 2",
+            "learnedLang": [
+                "pol"
+            ]
+        },
+        {
+            "id": 2027,
+            "courseId": 10,
+            "url": "/geografia-polski-3",
+            "name": "Geografia Polski 3",
+            "learnedLang": [
+                "pol"
+            ]
+        },
+        {
+            "id": 2028,
+            "courseId": 10,
+            "url": "/geografia-polski-4",
+            "name": "Geografia Polski 4",
             "learnedLang": [
                 "pol"
             ]
