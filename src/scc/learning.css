@@ -111,3 +111,8 @@ button.title_sound {
         width: 100%;
     }
 }
+
+@media only screen
+and (max-device-width : 768px){
+    .hide-in-mobile { display: none; }
+}

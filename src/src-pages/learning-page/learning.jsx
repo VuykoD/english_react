@@ -477,7 +477,7 @@ class LearningClass extends Component {
                             <h3 className="new-row rows" children={games}/>
                         </Row>
                         <Row>
-                            <Col>
+                            <Col className={learnedLang === 'pol' ? 'hide-in-mobile' : null}>
                                 <Button variant="info" block onClick={this.speedRepeat} children={`${speedRepeat} (50)`}/>
                             </Col>
                             <Col>
@@ -488,7 +488,7 @@ class LearningClass extends Component {
                                     {`${firstLettersByText} (50)`}
                                 </Button>
                             </Col>
-                            <Col>
+                            <Col className={learnedLang === 'pol' ? 'hide-in-mobile' : null}>
                                 <Button variant="info" block onClick={this.firstLettersBySound}>
                                     {`${firstLettersBySound} (70)`}
                                 </Button>
