@@ -9339,6 +9339,90 @@ const courseItems =
             "unitId": 2022,
             "eng": "Don't hesitate to engage in new opportunities",
             "transl": "Не сумнівайтеся залучатися до нових можливостей"
+        },
+        {
+            "id": 11966,
+            "unitId": 2029,
+            "eng": "First things first",
+            "transl": "Перша річ, по-перше"
+        },
+        {
+            "id": 11967,
+            "unitId": 2029,
+            "eng": "I'ma say all the words inside my head",
+            "transl": "Я хочу сказати всі слова, що в голові"
+        },
+        {
+            "id": 11968,
+            "unitId": 2029,
+            "eng": "I’m fired up and tired of the way things that have been",
+            "transl": " Я розлючений, я втомився від того, як все було"
+        },
+        {
+            "id": 11969,
+            "unitId": 2029,
+            "eng": "Second thing second",
+            "transl": "По-друге"
+        },
+        {
+            "id": 11970,
+            "unitId": 2029,
+            "eng": "Don’t you tell me what you think that I can be",
+            "transl": "Не кажи мені, ким би я по-твоєму міг бути"
+        },
+        {
+            "id": 11971,
+            "unitId": 2029,
+            "eng": "I’m the one at the sail, i’m the master of my sea",
+            "transl": "Я капітан свого корабля, я господар свого моря"
+        },
+        {
+            "id": 11972,
+            "unitId": 2029,
+            "eng": "I was broken from a young age",
+            "transl": "Я був зломлений з юних років"
+        },
+        {
+            "id": 11973,
+            "unitId": 2029,
+            "eng": "Taken my sulking to the masses",
+            "transl": "Ніс свою нудьгу в маси"
+        },
+        {
+            "id": 11974,
+            "unitId": 2029,
+            "eng": "Writing my poems for the few",
+            "transl": "Писав вірші для небагатьох"
+        },
+        {
+            "id": 11975,
+            "unitId": 2029,
+            "eng": "That look to me, took to me, shook to me, feeling me",
+            "transl": "Хто дивився на мене, брав мене, підштовхував мене, розумів мене"
+        },
+        {
+            "id": 11976,
+            "unitId": 2029,
+            "eng": "Singing from heartache from the pain",
+            "transl": "Співаю завдяки страждань і болю"
+        },
+        {
+            "id": 11977,
+            "unitId": 2029,
+            "eng": "Taking my message from the veins",
+            "transl": "Слухаю послання з вен"
+        },
+        {
+            "id": 11978,
+            "unitId": 2029,
+            "eng": "Speaking my lesson from the brain",
+            "transl": "Даю урок від розуму"
+        },
+        {
+            "id": 11979,
+            "unitId": 2029,
+            "eng": "Seeing the beauty through the",
+            "transl": "Бачу красу через"
         }
     ]
 

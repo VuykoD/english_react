@@ -20,7 +20,7 @@ const langType = {
     pol:{
         short: 'Pol',
         full: 'Język Polsky',
-        siteLang: false,
+        siteLang: true,
         learnedLang: true,
     },
 };
