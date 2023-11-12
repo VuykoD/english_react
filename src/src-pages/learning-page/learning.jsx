@@ -802,7 +802,7 @@ export function changedInput() {
         speak.call(this);
     }
 
-    if (wordToLearn === word || wordToLearn.length > MAX_WORD_LENGTH || !wordToLearn) {
+    if (wordToLearn === word || !wordToLearn) {
         allIsCorrect.call(this);
         if (learnNumber >= this.learnArr.length || this.repeatMistakes) {
             this.repeatMistakes = true;
