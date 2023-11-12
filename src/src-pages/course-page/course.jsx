@@ -303,7 +303,7 @@ export default class Course extends Component {
 
         return (
             <>
-                <Container>
+                <Container className="above-footer">
                     <Row>
                         <Col sm={1}>
                             <div><img src={require("../../images/paint.png")} alt="" className="paint-left"/></div>
@@ -488,9 +488,7 @@ export default class Course extends Component {
                         </Col>
                     </Row>
                     {isAdmin && (
-                        <Row
-                            className="add-course"
-                        >
+                        <Row className="add-course">
                             <Col sm={1}/>
                             <Col sm={2}>
                                 <Button
