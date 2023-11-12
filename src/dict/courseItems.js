@@ -9423,6 +9423,78 @@ const courseItems =
             "unitId": 2029,
             "eng": "Seeing the beauty through the",
             "transl": "Бачу красу через"
+        },
+        {
+            "id": 10991,
+            "unitId": 2021,
+            "pol": "Jeszcze Polska nie zginęła, Kiedy my żyjemy",
+            "transl": "Ще Польща не загинула, Коли ми живемо"
+        },
+        {
+            "id": 10992,
+            "unitId": 2021,
+            "pol": "Co nam obca przemoc wzięła, Szablą odbierzemy",
+            "transl": "Що в нас чужа сила взяла, Шаблею відберемо"
+        },
+        {
+            "id": 10993,
+            "unitId": 2021,
+            "pol": "Marsz, marsz Dąbrowski, Z ziemi włoskiej do Polski. Za twoim przewodem Złączym się z narodem",
+            "transl": "Марш, марш Домбровський, З Італії до Польщі. За вашим прикладом Я буду єднатися з нацією"
+        },
+        {
+            "id": 10994,
+            "unitId": 2021,
+            "pol": "Przejdziem Wisłę, przejdziem Wartę, Będziem Polakami",
+            "transl": "Пройдем Віслу, пройдем Варту, Будем поляками"
+        },
+        {
+            "id": 10995,
+            "unitId": 2021,
+            "pol": "Dał nam przykład Bonaparte, Jak zwyciężać mamy",
+            "transl": "Бонапарт дав нам приклад, Як ми маємо перемогти"
+        },
+        {
+            "id": 10996,
+            "unitId": 2021,
+            "pol": "Marsz, marsz Dąbrowski, Z ziemi włoskiej do Polski. Za twoim przewodem Złączym się z narodem",
+            "transl": "Марш, марш Домбровський, З Італії до Польщі. За вашим прикладом Я буду єднатися з нацією"
+        },
+        {
+            "id": 10997,
+            "unitId": 2021,
+            "pol": "Jak Czarniecki do Poznania Po szwedzkim zaborze,",
+            "transl": "Як Чарнецький до Познаня По шведській навалі"
+        },
+        {
+            "id": 10998,
+            "unitId": 2021,
+            "pol": "Dla ojczyzny ratowania Wrócim się przez morze",
+            "transl": "Для вітчизни порятунку Вернемось по морю"
+        },
+        {
+            "id": 10999,
+            "unitId": 2021,
+            "pol": "Marsz, marsz Dąbrowski, Z ziemi włoskiej do Polski. Za twoim przewodem Złączym się z narodem",
+            "transl": "Марш, марш Домбровський, З Італії до Польщі. За вашим прикладом Я буду єднатися з нацією"
+        },
+        {
+            "id": 11000,
+            "unitId": 2021,
+            "pol": "Już tam ojciec do swej Basi Mówi zapłakany",
+            "transl": "Вже там тато своїй Басі Каже заплаканий:"
+        },
+        {
+            "id": 11001,
+            "unitId": 2021,
+            "pol": "Słuchaj jeno, pono nasi Biją w tarabany",
+            "transl": "Слухай-но – то певно наші Б'ють у барабани"
+        },
+        {
+            "id": 11002,
+            "unitId": 2021,
+            "pol": "Marsz, marsz Dąbrowski, Z ziemi włoskiej do Polski. Za twoim przewodem Złączym się z narodem",
+            "transl": "Марш, марш Домбровський, З Італії до Польщі. За вашим прикладом Я буду єднатися з нацією"
         }
     ]
 
