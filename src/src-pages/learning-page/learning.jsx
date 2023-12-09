@@ -841,7 +841,7 @@ export function changedInput() {
             this.mistakeArr.push(learnNumber);
         }
         this.mistakeArr = this.mistakeArr.filter(onlyUnique);
-    }else{
+    } else {
         const words = wordToLearn.split(' ');
         if (
             isFirstLetters
@@ -871,6 +871,16 @@ export function changedInput() {
         }
         this.setState({record: record + 1});
     }
+
+    const newWord = document.getElementById("formInput").value.toUpperCase();
+    if (wordToLearn.slice(0, newWord.length) === newWord) {
+        let nextSymbol = wordToLearn[newWord.length] ?? '';
+        nextSymbol = nextSymbol.replace(/[A-ZŚĄŻŹÓŁĆĘŃ0-9]/gi, "");
+        if (nextSymbol) {
+            document.getElementById("formInput").value =
+                document.getElementById("formInput").value + nextSymbol;
+        }
+    }
 }
 
 function allIsCorrect() {
@@ -890,14 +900,13 @@ function allIsCorrect() {
         const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
         map(localProgress[learnedLang], (item, key) => {
             const index = findIndex(courseItems, {'id': item});
-            localProgress[learnedLang][key] = { entity_id: item }
+            localProgress[learnedLang][key] = { entity_id: item };
             localProgress[learnedLang][key][learnedLang] = get(courseItems, `[${index}][${learnedLang}]`);
         });
 
         const index = findIndex(localProgress[learnedLang], {
             [learnedLang]: learnedLang === 'pol' ? polish : english
         });
-        console.log(index)
         if (index > -1) {
             statistic.push({
                 id: localProgress[learnedLang][index].entity_id
