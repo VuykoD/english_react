@@ -877,7 +877,7 @@ export function changedInput() {
         const newWord = document.getElementById("formInput").value.toUpperCase();
         if (wordToLearn.slice(0, newWord.length) === newWord) {
             let nextSymbol = wordToLearn[newWord.length] ?? '';
-            nextSymbol = nextSymbol.replace(/[A-ZŚĄŻŹÓŁĆĘŃ0-9?!]/gi, "");
+            nextSymbol = nextSymbol.replace(/[A-ZŚĄŻŹÓŁĆĘŃ0-9?!.]/gi, "");
             if (nextSymbol) {
                 if (nextSymbol === ' ' && exampleLearning === 'write') break;
                 document.getElementById("formInput").value =
