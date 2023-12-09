@@ -872,14 +872,20 @@ export function changedInput() {
         this.setState({record: record + 1});
     }
 
-    const newWord = document.getElementById("formInput").value.toUpperCase();
-    if (wordToLearn.slice(0, newWord.length) === newWord) {
-        let nextSymbol = wordToLearn[newWord.length] ?? '';
-        nextSymbol = nextSymbol.replace(/[A-ZŚĄŻŹÓŁĆĘŃ0-9]/gi, "");
-        if (nextSymbol) {
-            document.getElementById("formInput").value =
-                document.getElementById("formInput").value + nextSymbol;
+    let i = 0;
+    while (i < 10) {
+        const newWord = document.getElementById("formInput").value.toUpperCase();
+        if (wordToLearn.slice(0, newWord.length) === newWord) {
+            let nextSymbol = wordToLearn[newWord.length] ?? '';
+            nextSymbol = nextSymbol.replace(/[A-ZŚĄŻŹÓŁĆĘŃ0-9]/gi, "");
+            if (nextSymbol) {
+                document.getElementById("formInput").value =
+                    document.getElementById("formInput").value + nextSymbol;
+            } else {
+                break;
+            }
         }
+        i++;
     }
 }
 
