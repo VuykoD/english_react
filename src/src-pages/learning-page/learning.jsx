@@ -879,6 +879,7 @@ export function changedInput() {
             let nextSymbol = wordToLearn[newWord.length] ?? '';
             nextSymbol = nextSymbol.replace(/[A-ZŚĄŻŹÓŁĆĘŃ0-9]/gi, "");
             if (nextSymbol) {
+                if (nextSymbol === ' ' && exampleLearning === 'write') break;
                 document.getElementById("formInput").value =
                     document.getElementById("formInput").value + nextSymbol;
             } else {
