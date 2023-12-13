@@ -316,8 +316,8 @@ class LearningClass extends Component {
         //     newArr.pol.push(it.entity_id)
         // });
         // localStorage.progress = JSON.stringify(newArr);
-        if (localProgress[learnedLang]) localProgress = localProgress[learnedLang];
-        this.learnArr = localProgress ? localProgress.slice(0, sliceNumber) : null;
+        if (localProgress && localProgress[learnedLang]) localProgress = localProgress[learnedLang];
+        this.learnArr = localProgress && localProgress.length ? localProgress.slice(0, sliceNumber) : null;
     }
 
     setTimeoutTime =(learnNumber)=> {
