@@ -520,7 +520,7 @@ class LearningClass extends Component {
                         <Col>
                             {this.getTopic()}
                             {exampleLearning !== 'first_letters_by_text' && soundButton.call(this)}
-                            {exampleLearning !== 'first_letters_by_sound' &&  getBadge.call(
+                            {getBadge.call(
                                 this,
                                 rus,
                                 "light",
