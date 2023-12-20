@@ -636,7 +636,7 @@ export function getBadge(txt, variant, saveFunc, inputId) {
 }
 
 export function getDotBadge(variant) {
-    const { english, polish } = this.state;
+    const { english, polish, rus } = this.state;
     const { learnedLang } = this.props.store;
     let wordToLearn = getWordToLearn(english, polish, learnedLang === 'pol');
     wordToLearn = wordToLearn.replace(/[A-ZŚĄŻŹÓŁĆĘŃ0-9]/gi, ".");
@@ -647,6 +647,7 @@ export function getDotBadge(variant) {
                 variant={variant}
                 className="white-space"
                 id="firstLetters"
+                title={rus}
             >
                 {wordToLearn}
             </Badge>
