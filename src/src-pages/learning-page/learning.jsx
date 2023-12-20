@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { get, map, filter, findIndex } from 'lodash';
+import { get, map, filter, findIndex, includes } from 'lodash';
 import { Badge, Button, Col, Container, Form, ProgressBar, Row } from 'react-bootstrap';
 import getCourseItems, { getCourseUnits } from '../../dict/getCourseItems';
 import { shuffle } from '../user-page/user-data/user-dictionary';
@@ -710,12 +710,12 @@ export function speak() {
 }
 
 export function checkIsSound() {
-    const {exampleLearning} = this.state;
+    const { exampleLearning, learnNumber } = this.state;
     const formInput = document.getElementById('formInput');
     const word = get(formInput, 'value');
 
     return exampleLearning === 'example_sound_repeat'
-        || (exampleLearning === 'first_letters_by_sound' && !word);
+        || (exampleLearning === 'first_letters_by_sound' && !word && !includes(this.mistakeArr, learnNumber));
 }
 
 export function getInput() {
