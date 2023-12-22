@@ -1480,8 +1480,8 @@ const courseItems =
             "id": 10162,
             "unitId": 1008,
             "eng": "Could you direct me to?",
-            "pol": "Czy mógłbyś skierować mnie do?",
-            "transl": "Не могли б ви направити мене?"
+            "pol": "Czy mógłbyś skierować mnie?",
+            "transl": "Чи могли б ви направити мене?"
         },
         {
             "id": 10163,
@@ -2153,7 +2153,7 @@ const courseItems =
             "unitId": 1015,
             "eng": "Do you have a refund policy?",
             "pol": "Czy masz politykę zwrotów?",
-            "transl": "Ви маєте політику повернення?"
+            "transl": "Чи у вас є політика повернення товару?"
         },
         {
             "id": 10298,
@@ -2209,7 +2209,7 @@ const courseItems =
             "unitId": 1015,
             "eng": "Do you have something less pricey?",
             "pol": "Czy masz coś tańszego?",
-            "transl": "У вас є щось частіше?"
+            "transl": "Чи у вас є щось дешевше?"
         },
         {
             "id": 10307,
@@ -3434,7 +3434,7 @@ const courseItems =
             "unitId": 1036,
             "eng": "I’m exhausted",
             "pol": "Jestem wykończony",
-            "transl": "Я виснажень"
+            "transl": "Я виснажений"
         },
         {
             "id": 10668,
@@ -4064,7 +4064,7 @@ const courseItems =
             "id": 2029,
             "unitId": 2001,
             "pol": "Coś rozumiem, ale nie wszystko",
-            "transl": "Я розумію щось, але не все"
+            "transl": "Я щось розумію, але не все"
         },
         {
             "id": 2030,
@@ -6104,7 +6104,7 @@ const courseItems =
             "id": 2468,
             "unitId": 2006,
             "pol": "Jeśli chodzi o pieniądze, to jestem spokojna",
-            "transl": "Що стосується грошей, я спокiйна"
+            "transl": "Якщо стосується грошей, то я спокiйна"
         },
         {
             "id": 2470,
@@ -6368,7 +6368,7 @@ const courseItems =
             "id": 2523,
             "unitId": 2006,
             "pol": "Moja mama zajmuje się moim dzieckiem od poniedziałku do środy",
-            "transl": "Мама доглядає за дитиною з понедiлка по середу"
+            "transl": "Моя мама доглядає за моєю дитиною з понедiлка по середу"
         },
         {
             "id": 2524,
@@ -7388,7 +7388,7 @@ const courseItems =
             "id": 2726,
             "unitId": 2008,
             "pol": "Poleciałam samolotem na wakacje",
-            "transl": "Я полетiв у вiдпустку лiтаком"
+            "transl": "Я полетiла лiтаком у вiдпустку"
         },
         {
             "id": 2727,
@@ -7813,7 +7813,7 @@ const courseItems =
         {
             "id": 10894,
             "unitId": 2011,
-            "pol": "I nie wódź nas na pokuszenie, ale nas zbaw ode złego.",
+            "pol": "I nie wódź nas na pokuszenie, ale nas zbaw ode złego",
             "transl": "І не введи нас у спокусу, але визволи нас від лукавого"
         },
         {
@@ -8558,7 +8558,7 @@ const courseItems =
             "id": 11952,
             "unitId": 2024,
             "pol": "Podalibyśmy sobie dłonie bez żalu Bez powrotu koszmarów",
-            "transl": "Ми без жалю потиснули б руки, без повернення кошмарів"
+            "transl": "Ми потиснули б руки без жалю, без повернення кошмарів"
         },
         {
             "id": 11953,
@@ -8575,7 +8575,7 @@ const courseItems =
         {
             "id": 10841,
             "unitId": 2015,
-            "pol": "W jakim wieku powstała Polska? Polska powstała w X wieku",
+            "pol": "W jakim wieku powstała Polska? Polska powstała w Х wieku",
             "transl": "В якому році повстала Польща?"
         },
         {
@@ -8749,13 +8749,13 @@ const courseItems =
         {
             "id": 10903,
             "unitId": 2016,
-            "pol": "P, -P,?",
+            "pol": "Powierzchnia Polski?",
             "transl": "Площа Польщі?"
         },
         {
             "id": 10904,
             "unitId": 2016,
-            "pol": "P, p?",
+            "pol": "Powierzchnia Polski wynosi 312 685 km2 i pod względem powierzchni Polska jest dziewiątym krajem w Europie",
             "transl": "Площа Польщі становить 312 685 км2 і за площею Польща є дев'ятою країною в Європа"
         },
         {
@@ -8797,8 +8797,8 @@ const courseItems =
         {
             "id": 10911,
             "unitId": 2016,
-            "pol": "Dolnośląskie, Łódzkie, Podkarpackie Świętokrzyskie, Kujawsko-pomorskie, Małopolskie, Podlaskie, Warmińsko- mazurskie, Lubelskie, Mazowieckie Pomorskie, Wielkopolskie, Lubuskie Opolskie, Śląskie, Zachodniopomorskie",
-            "transl": "Дольношльонське, Лодзінське, Підкарпатське Свентокшиське, Куявсько-Поморське, Малопольське, Підляське, Вармінсько- Мазурське, Любельське, Мазовецьке Поморське, Великопольське, Любуське Опольське, Сілезьке, Західнопоморське"
+            "pol": "Dolnośląskie, Łódzkie, Podkarpackie, Świętokrzyskie, Kujawsko-pomorskie, Małopolskie, Podlaskie, Warmińsko-Mazurskie, Lubelskie, Mazowieckie, Pomorskie, Wielkopolskie, Lubuskie, Opolskie, Śląskie, Zachodniopomorskie",
+            "transl": "Дольношльонське, Лодзінське, Підкарпатське, Свентокшиське, Куявсько-Поморське, Малопольське, Підляське, Вармінсько-Мазурське, Любельське, Мазовецьке, Поморське, Великопольське, Любуське, Опольське, Сілезьке, Західнопоморське"
         },
         {
             "id": 10912,
@@ -8815,8 +8815,8 @@ const courseItems =
         {
             "id": 10914,
             "unitId": 2016,
-            "pol": "Średnia temperatura w lecie waha się pomiędzy 16 °C a 20 °C, w zimie – między -6 °C a 0 °C",
-            "transl": "Середня температура влітку коливається від 16 °C до 20 °C, взимку - від -6 °C до 0 °C"
+            "pol": "Średnia temperatura w lecie waha się pomiędzy 16 a 20 °C, w zimie - między -6 a 0 °C",
+            "transl": "Середня температура влітку коливається від 16 до 20 °C, взимку - від -6 до 0 °C"
         },
         {
             "id": 10915,
@@ -8893,44 +8893,44 @@ const courseItems =
         {
             "id": 10927,
             "unitId": 2026,
-            "pol": "23 razem: najbardziej znane: Białowieski, Tatrzański, Pieniński,  Bieszczadzki Parki Narodowe",
+            "pol": "23 razem: najbardziej znane: Białowieski, Tatrzański, Pieniński, Bieszczadzki Parki Narodowe",
             "transl": "Всього 23: найвідоміші: Біловезький, Татранський, Пенінський, Бещадський національні парки"
         },
         {
             "id": 10928,
             "unitId": 2026,
-            "pol": "Białowieski Park Narodowy jest najstarszym parkiem narodowym w Polsce. Został utworzony w 1932 r.",
+            "pol": "Białowieski Park Narodowy jest najstarszym parkiem narodowym w Polsce. Został utworzony w 1932 r",
             "transl": "Біловезький національний парк є найстаріший національний парк в Польща. Він був створений в 1932 році."
         },
         {
             "id": 10929,
             "unitId": 2026,
             "pol": "W 1977r. UNESCO włączyło Białowieski Park Narodowy w poczet światowych rezerwatów biosfery",
-            "transl": "в 1977 році включено ЮНЕСКО Біловезький національний парк в групі світові біосферні заповідники"
+            "transl": "в 1977 році ЮНЕСКО включило Біловезький національний парк в групу світових біосферних заповідників"
         },
         {
             "id": 10930,
             "unitId": 2026,
             "pol": "a dwa lata później uznano go za pierwszy i jedyny w Polsce przyrodniczy Obiekt Dziedzictwa Światowego",
-            "transl": "а через два роки його визнали першим і єдиним в Польщі об'єкт природної світової спадщини"
+            "transl": "а через два роки його визнали першим і єдиним в Польщі об'єктом природної світової спадщини"
         },
         {
             "id": 10931,
             "unitId": 2026,
             "pol": "Tatrzański Park Narodowy został powołany w 1954 roku, w celu ochrony zasobów przyrodniczych Tatr Polskich",
-            "transl": "Татранський національний парк залишився призначений у 1954 р., упоряд захист природних ресурсів польськихТатр"
+            "transl": "Національний парк Татра був заснований у 1954 році з метою захисту природних резервів Татр в Польщі"
         },
         {
             "id": 10932,
             "unitId": 2026,
             "pol": "Park obejmuje prawie cale Tatry polskie i sąsiaduje z Parkiem Narodowym na słowackiej stronie",
-            "transl": "Парк займає майже цілі Польські Татри та прилеглий до нього парк Національний зі словацького боку"
+            "transl": "Парк охоплює майже всі польські Татри і має спільний кордон з Національним парком на словацькому боці"
         },
         {
             "id": 10933,
             "unitId": 2026,
             "pol": "Pieniński Park Narodowy założony w 1932 roku, jeszcze przed II wojną światową jest bardzo lubianym i często odwiedzanym Parkiem Narodowym",
-            "transl": "Національний парк П'єніни: Заснований 1932 р., ще до Друга світова війна – це дуже багато популярний і часто відвідуваний Національний парк"
+            "transl": "Піненський національний парк був заснований у 1932 році, ще до Другої світової війни, і є дуже улюбленим та часто відвідуваним національним парком"
         },
         {
             "id": 10934,
@@ -8966,7 +8966,7 @@ const courseItems =
             "id": 10939,
             "unitId": 2026,
             "pol": "Odra (na terenie Polski 742 km). Na swoim odcinku centralnym rzeka graniczna z Niemcami. Odra wypływa z Czech",
-            "transl": "Одра (742 км у Польщі). Увімкнено річка в її центральній частині кордон з Німеччиною. Одра витікає з Чехії"
+            "transl": "Одра (на території Польщі - 742 км) є прикордонною річкою з Німеччиною на своєму центральному відрізку. Одра витікає з Чехії"
         },
         {
             "id": 10940,
@@ -8989,8 +8989,8 @@ const courseItems =
         {
             "id": 10943,
             "unitId": 2026,
-            "pol": "Hańcza (najgłębsze, 108 m głębokości), w samym północno- wschodnim skrawku Polski",
-            "transl": "Ганьча (найглибша, 108 м глибина), на самій півночі- східна частина Польщі"
+            "pol": "Hańcza (najgłębsze, 108 m głębokości), w samym północno-wschodnim skrawku Polski",
+            "transl": "Ганча (найглибше, 108 м глибини) розташована в самому північно-східному куточку Польщі"
         },
         {
             "id": 10944,
@@ -9020,7 +9020,7 @@ const courseItems =
             "id": 10948,
             "unitId": 2027,
             "pol": "Karpaty: to pasmo gór w środkowej Europie",
-            "transl": "Карпати: гірський масив у серед Європа"
+            "transl": "Карпати: це гірський хребет в центральній Європі."
         },
         {
             "id": 10949,
@@ -9032,7 +9032,7 @@ const courseItems =
             "id": 10950,
             "unitId": 2027,
             "pol": "Polska część Karpat to Beskidy: Śląski, Beskidy Zachodnie, Beskid Niski, Beskidy Wschodnie",
-            "transl": "Польська частина Карпат – це Бескиди: Сілезькі, Західні Бескиди, Низькі Бескиди, Східні Бескиди."
+            "transl": "Польська частина Карпат – це Бескиди: Сілезькі, Західні Бескиди, Низькі Бескиди, Східні Бескиди"
         },
         {
             "id": 10951,
@@ -9056,13 +9056,7 @@ const courseItems =
             "id": 10954,
             "unitId": 2027,
             "pol": "Na granicy ze Słowacja, najwyższy polski szczyt Tatr Rysy 2499 metrów nad poziomem morza",
-            "transl": "Увімкнено кордон зі Словаччиною, найвищий польськ вершина Риси Татри 2499 метрів вище рівень моря"
-        },
-        {
-            "id": 10955,
-            "unitId": 2027,
-            "pol": "Na granicy ze Słowacja, najwyższy polski szczyt Tatr Rysy 2499 metrów nad poziomem morza",
-            "transl": "На кордоні зі Словаччиною найвища польс вершина Риси Татри 2499 метрів вище рівень моря"
+            "transl": "На кордоні зі Словаччиною розташований найвищий польський вершину Татр - Риси, висота якої становить 2499 метрів над рівнем моря."
         },
         {
             "id": 10956,
@@ -9104,7 +9098,7 @@ const courseItems =
             "id": 10962,
             "unitId": 2027,
             "pol": "Warszawa - (stolica) 1,7 milionów mieszkańców",
-            "transl": "Варшава - (столиця) 1,7 млн ​​жителів"
+            "transl": "Варшава - (столиця) 1,7 млн жителів"
         },
         {
             "id": 10963,
@@ -9140,7 +9134,7 @@ const courseItems =
             "id": 10968,
             "unitId": 2027,
             "pol": "Kraków, nie zniszczony w czasie II wojny, z historycznym Rynkiem, zamkiem na Wawelu, w samym centrum miasta",
-            "transl": "Краків, не зруйнований під час Другої світової війни, з історичною площею Ринок, Вавельським замком у самому центрі міста"
+            "transl": "Краків, не зруйнований під час Другої світової війни, із історичним ринком, замком на Вавелі, в самому центрі міста"
         },
         {
             "id": 10969,
@@ -9164,13 +9158,13 @@ const courseItems =
             "id": 10972,
             "unitId": 2028,
             "pol": "Gdańsk – główne miasto na polskim wybrzeżu Bałtyku. Lotnisko imienia Lecha Wałęsy",
-            "transl": "Гданськ - головне місто польського узбережжя Балтійського моря. Назвіть аеропорт Лех Валенса."
+            "transl": "Ґданськ - головне місто на польському узбережжі Балтійського моря. Аеропорт імені Леха Валенси"
         },
         {
             "id": 10973,
             "unitId": 2028,
             "pol": "Poznań - stolica Wielkopolski. Pod zaborami należał do Prus",
-            "transl": "Познань - столиця Великопольщі. За розділами належав Пруссії"
+            "transl": "Познань - столиця Великопольщі. Під час розділів він належав до Прус"
         },
         {
             "id": 10974,
@@ -9495,6 +9489,78 @@ const courseItems =
             "unitId": 2021,
             "pol": "Marsz, marsz Dąbrowski, Z ziemi włoskiej do Polski. Za twoim przewodem Złączym się z narodem",
             "transl": "Марш, марш Домбровський, З Італії до Польщі. За вашим прикладом Я буду єднатися з нацією"
+        },
+        {
+            "id": 11980,
+            "unitId": 2023,
+            "pol": "przestawić budzik",
+            "transl": "Переналаштувати будильник"
+        },
+        {
+            "id": 11981,
+            "unitId": 2023,
+            "pol": "zaparzyć filiżankę kawy",
+            "transl": "заварити чашку кави"
+        },
+        {
+            "id": 11982,
+            "unitId": 2023,
+            "pol": "Dajcie ognia",
+            "transl": "Дайте вогню"
+        },
+        {
+            "id": 11983,
+            "unitId": 2023,
+            "pol": "mam gorączkę",
+            "transl": "у мене висока температура"
+        },
+        {
+            "id": 11984,
+            "unitId": 2023,
+            "pol": "wezwać karetkę",
+            "transl": "викликати швидку"
+        },
+        {
+            "id": 11985,
+            "unitId": 2023,
+            "pol": "udzielić pierwszej pomocy",
+            "transl": "надати першу допомогу"
+        },
+        {
+            "id": 11986,
+            "unitId": 2023,
+            "pol": "wystawić receptę",
+            "transl": "виписати рецепт"
+        },
+        {
+            "id": 11987,
+            "unitId": 2023,
+            "pol": "włożyć w pracę swoje serce",
+            "transl": "вкласти душу в роботу"
+        },
+        {
+            "id": 11988,
+            "unitId": 2023,
+            "pol": "doprowadzić do ideału",
+            "transl": "довести до ідеалу"
+        },
+        {
+            "id": 11989,
+            "unitId": 2030,
+            "pol": "Kwiaty zdobią nasze przytulne mieszkanie",
+            "transl": "Квіти прикрашають наше затишне житло"
+        },
+        {
+            "id": 11990,
+            "unitId": 2030,
+            "pol": "Ubrałem choinkę, powiesiłem girlandę, święta nadeszły",
+            "transl": "Вдягнув ялинку, повісив гірлянду, свята настали"
+        },
+        {
+            "id": 11991,
+            "unitId": 2030,
+            "pol": "Pomyśl życzenie, i spełni się marzenie",
+            "transl": "Загадай бажання, і мрія здійсниться"
         }
     ]
 
