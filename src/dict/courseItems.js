@@ -8966,7 +8966,7 @@ const courseItems =
             "id": 10939,
             "unitId": 2026,
             "pol": "Odra (na terenie Polski 742 km). Na swoim odcinku centralnym rzeka graniczna z Niemcami. Odra wypływa z Czech",
-            "transl": "Одра (на території Польщі - 742 км) є прикордонною річкою з Німеччиною на своєму центральному відрізку. Одра витікає з Чехії"
+            "transl": "Одра (на території Польщі - 742 км). На своєму центральному відрізку річка межує з Німеччиною . Одра витікає з Чехії"
         },
         {
             "id": 10940,
