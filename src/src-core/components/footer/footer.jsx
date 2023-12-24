@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import {Container, Row, Col} from 'react-bootstrap';
 
-import courseItemsJson from '../../../dict/courseItems';
+import courseItemsJson, { kartaPol } from '../../../dict/courseItems';
 import warn from '../../helper/warn/warn';
 import '../../../scc/footer.css';
 
@@ -79,7 +79,7 @@ export default class Footer extends Component {
                             {`${countRepeat} `}
                             <div
                                 id="heartbeat"
-                                children={`${toLearnCount}/${courseItemsJson.length}`}
+                                children={`${toLearnCount}/${courseItemsJson.length + kartaPol.length}`}
                             />
                         </Col>
                         <Col/>
