@@ -273,7 +273,7 @@ class LearningClass extends Component {
             cycleLearning: 'new',
             exampleLearning: 'first_letters_by_sound'
         });
-        this.setWordAndTransl(this.state.learnNumber);
+        this.setWordAndTransl(this.state.learnNumber, MAX_SOUND_LENGTH);
     }
 
     firstLettersByText = () => {
@@ -350,7 +350,7 @@ class LearningClass extends Component {
     };
 
     setWordAndTransl = (learnNumber, maxLength) => {
-        const {learnPol} = this.state;
+        const { learnedLang } = this.props.store;
         let english = get(this.learnArr, `${learnNumber}.eng`, '');
         english = english.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\s+/g, ' ').trim();
         let polish = get(this.learnArr, `${learnNumber}.pol`, '');
@@ -361,7 +361,8 @@ class LearningClass extends Component {
         }
         if (maxLength){
             let wordToLearn = english;
-            if (learnPol) wordToLearn = polish;
+            if (learnedLang === 'pol') wordToLearn = polish;
+            console.log('lolo length', wordToLearn.length, english, polish, wordToLearn);
             wordToLearn = wordToLearn.toUpperCase();
 
             if (wordToLearn.length > maxLength){
