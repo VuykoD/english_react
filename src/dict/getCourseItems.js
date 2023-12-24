@@ -1,11 +1,11 @@
-import courseItemsJson from './courseItems';
+import courseItemsJson, { kartaPol } from './courseItems';
 import courseNamesJson from './courseNames';
 import courseUnitsJson from './courseUnits';
 import { map } from 'lodash';
 import langType from './langType';
 
 function getCourseItems(){
-    return localStorage.courseItems ? JSON.parse(localStorage.courseItems) : courseItemsJson;
+    return localStorage.courseItems ? JSON.parse(localStorage.courseItems) : [...courseItemsJson, ...kartaPol];
 }
 
 function getCourseNames(){
