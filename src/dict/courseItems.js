@@ -9460,12 +9460,6 @@ const kartaPol = [
         "transl": "На кордоні зі Словаччиною розташований найвищий польський вершину Татр - Риси, висота якої становить 2499 метрів над рівнем моря."
     },
     {
-        "id": 10954,
-        "unitId": 2016,
-        "pol": "Na granicy ze Słowacja, najwyższy polski szczyt Tatr Rysy 2499 metrów nad poziomem morza",
-        "transl": "Увімкнено кордон зі Словаччиною, найвищий польськ вершина Риси Татри 2499 метрів вище рівень моря"
-    },
-    {
         "id": 10956,
         "unitId": 2027,
         "pol": "Jedyne w Polsce góry o charakterze alpejskim",
