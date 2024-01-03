@@ -447,7 +447,7 @@ const courseItems =
         {
             "id": 1776,
             "unitId": 1040,
-            "pol": "niestety, skonczyl się papier toaletowy",
+            "pol": "niestety, skonczył się papier toaletowy",
             "transl": "На жаль, у нас закінчився туалетний папір"
         },
         {
@@ -3896,7 +3896,7 @@ const courseItems =
             "unitId": 304,
             "eng": "have you ever subscribed to an England magazine?",
             "pol": "Czy kiedykolwiek prenumerował angielskie czasopismo?",
-            "transl": "Ви колись підписувалися на англійський журнал?"
+            "transl": "Чи коли-небудь ти підписувався на англійський журнал?"
         },
         {
             "id": 2000,
@@ -4298,7 +4298,7 @@ const courseItems =
             "id": 2078,
             "unitId": 2002,
             "pol": "A dlaczego nie samolotem?",
-            "transl": "Чому не літаком?"
+            "transl": "А чому не літаком?"
         },
         {
             "id": 2079,
@@ -6662,7 +6662,7 @@ const courseItems =
             "id": 2584,
             "unitId": 2007,
             "pol": "Proszę wejść, zapraszam pana",
-            "transl": "Заходьте, будь ласка, запрошую вас"
+            "transl": "будь ласка заходьте, запрошую вас"
         },
         {
             "id": 2585,
@@ -8005,7 +8005,7 @@ const courseItems =
         {
             "id": 10797,
             "unitId": 2013,
-            "pol": "Jabłko potoczyło się ро podłodze",
+            "pol": "Jabłko potoczyło się po podłodze",
             "transl": "Яблуко покотилось по підлозі"
         },
         {
@@ -8865,6 +8865,36 @@ const courseItems =
             "unitId": 2030,
             "pol": "Pomyśl życzenie, i spełni się marzenie",
             "transl": "Загадай бажання, і мрія здійсниться"
+        },
+        {
+            "id": 11992,
+            "unitId": 2030,
+            "pol": "Wigilia nadejmuje, pierwsza gwiazda błyszczy, modlimy się razem",
+            "transl": "святвечір наближається, перша зірка сяє, ми молимося разом"
+        },
+        {
+            "id": 11993,
+            "unitId": 2030,
+            "pol": "pajda chleba ze smalcem",
+            "transl": "скибочка хліба зі смальцем"
+        },
+        {
+            "id": 11994,
+            "unitId": 2030,
+            "pol": "Latem dzieci mają wakacje, a zimą ferie",
+            "transl": "Літом діти мають канікули, а взимку – зимові канікули"
+        },
+        {
+            "id": 11995,
+            "unitId": 2030,
+            "pol": "Podczas Sylwestra żołnierz strzeże pokoju",
+            "transl": "Під час новорічного святкування солдат охороняє спокій"
+        },
+        {
+            "id": 11996,
+            "unitId": 2030,
+            "pol": "Mi to obojętne, czy jednakowo",
+            "transl": "мені все одно, або однаково"
         }
     ]
 
