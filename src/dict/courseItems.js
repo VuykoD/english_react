@@ -4381,7 +4381,7 @@ const courseItems =
         {
             "id": 2096,
             "unitId": 2002,
-            "pol": "Jestem na dworze, bo świeci słońce, jest ladna pogoda",
+            "pol": "Jestem na dworze, bo świeci słońce, jest ładna pogoda",
             "transl": "Я на вулиці, бо світить сонце, гарна погода"
         },
         {
