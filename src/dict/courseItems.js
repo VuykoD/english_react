@@ -7669,7 +7669,7 @@ const courseItems =
         {
             "id": 10740,
             "unitId": 2010,
-            "pol": "Monika pyta się о godzinę",
+            "pol": "Monika pyta się o godzinę",
             "transl": "Моніка питає котра година"
         },
         {
@@ -7711,7 +7711,7 @@ const courseItems =
         {
             "id": 10747,
             "unitId": 700,
-            "pol": "То jest kapelusz mojego brata",
+            "pol": "To jest kapelusz mojego brata",
             "transl": "Це капелюх мого брата"
         },
         {
@@ -7993,8 +7993,8 @@ const courseItems =
         {
             "id": 10795,
             "unitId": 2013,
-            "pol": "О czym żeście dyskutowali?",
-            "transl": "Що ви обговорювали?"
+            "pol": "O czym żeście dyskutowali?",
+            "transl": "Що ви всі обговорювали?"
         },
         {
             "id": 10796,
@@ -8455,7 +8455,7 @@ const courseItems =
         {
             "id": 11935,
             "unitId": 2022,
-            "pol": "o weekendzie będę miał wszystkie dokumenty podpisane",
+            "pol": "Po weekendzie będę miał wszystkie dokumenty podpisane",
             "transl": "Після вихідних всі документи будуть підписані"
         },
         {
@@ -8895,6 +8895,42 @@ const courseItems =
             "unitId": 2030,
             "pol": "Mi to obojętne, czy jednakowo",
             "transl": "мені все одно, або однаково"
+        },
+        {
+            "id": 11997,
+            "unitId": 2030,
+            "pol": "Widzieć wszystko na czarno",
+            "transl": "бути песимістом"
+        },
+        {
+            "id": 11998,
+            "unitId": 2030,
+            "pol": "napiłem się ze źródła",
+            "transl": "напився із джерела"
+        },
+        {
+            "id": 11999,
+            "unitId": 2030,
+            "pol": "Znów ja odwrotnie",
+            "transl": "Знову я навпаки"
+        },
+        {
+            "id": 12000,
+            "unitId": 2030,
+            "pol": "Mam słaby wzrok",
+            "transl": "маю поганий зір"
+        },
+        {
+            "id": 12001,
+            "unitId": 2030,
+            "pol": "Dziękuję za troskę",
+            "transl": "Дякую за турботу"
+        },
+        {
+            "id": 12002,
+            "unitId": 2030,
+            "pol": "Tam idą tłumy",
+            "transl": "Туди йдуть толпи"
         }
     ]
 
