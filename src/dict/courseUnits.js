@@ -634,19 +634,28 @@ const courseUnits =
             "id": 2031,
             "courseId": 10,
             "url": "/pytania-z-historii-polski-2",
-            "name": "Pytania z historii Polski 2"
+            "name": "Pytania z historii Polski 2",
+            "learnedLang": [
+                "pol"
+            ]
         },
         {
             "id": 2032,
             "courseId": 10,
             "url": "/pytania-z-historii-polski-3",
-            "name": "Pytania z historii Polski 3"
+            "name": "Pytania z historii Polski 3",
+            "learnedLang": [
+                "pol"
+            ]
         },
         {
             "id": 2033,
             "courseId": 10,
             "url": "/pytania-z-historii-polski-4",
-            "name": "Pytania z historii Polski 4"
+            "name": "Pytania z historii Polski 4",
+            "learnedLang": [
+                "pol"
+            ]
         },
         {
             "id": 2016,
