@@ -55,6 +55,24 @@ const courseUnits =
             ]
         },
         {
+            "id": 2023,
+            "courseId": 8,
+            "url": "/youtube-7",
+            "name": "youtube-7",
+            "learnedLang": [
+                "pol"
+            ]
+        },
+        {
+            "id": 2030,
+            "courseId": 8,
+            "url": "/youtube-8",
+            "name": "youtube-8",
+            "learnedLang": [
+                "pol"
+            ]
+        },
+        {
             "id": 700,
             "courseId": 6,
             "url": "/grammar-1",
@@ -606,11 +624,29 @@ const courseUnits =
         {
             "id": 2015,
             "courseId": 10,
-            "url": "/pytania-z-historii-polski",
-            "name": "Pytania z historii Polski",
+            "url": "/pytania-z-historii-polski-1",
+            "name": "Pytania z historii Polski 1",
             "learnedLang": [
                 "pol"
             ]
+        },
+        {
+            "id": 2031,
+            "courseId": 10,
+            "url": "/pytania-z-historii-polski-2",
+            "name": "Pytania z historii Polski 2"
+        },
+        {
+            "id": 2032,
+            "courseId": 10,
+            "url": "/pytania-z-historii-polski-3",
+            "name": "Pytania z historii Polski 3"
+        },
+        {
+            "id": 2033,
+            "courseId": 10,
+            "url": "/pytania-z-historii-polski-4",
+            "name": "Pytania z historii Polski 4"
         },
         {
             "id": 2016,
@@ -701,15 +737,6 @@ const courseUnits =
             "learnedLang": [
                 "pol",
                 "eng"
-            ]
-        },
-        {
-            "id": 2023,
-            "courseId": 8,
-            "url": "/youtube-7",
-            "name": "youtube-7",
-            "learnedLang": [
-                "pol"
             ]
         },
         {

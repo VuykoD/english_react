@@ -9059,157 +9059,361 @@ const kartaPol = [
     },
     {
         "id": 10862,
-        "unitId": 2015,
+        "unitId": 2031,
         "pol": "Gdzie i kiedy zginął Król Władysław Warneńczyk? Zginął w bitwie przeciw Turkow pod Warną w 1444",
         "transl": "Де коли загинув Король Владислав Варненьчик"
     },
     {
         "id": 10863,
-        "unitId": 2015,
-        "pol": "Kiedy miał miejsce Potop szwedzki? W ХVII wieku królowie z dynastii Wazów pretendowali do tronu Szwecji co prowadziło do konfliktów między Rzeczpospolitą a Szwecją. W 1655-1660 w okres panowania Jana - Rzeczpospolitą ogłoszono monarchią Kazimierza przypadają najazd konstytucyjną. szwedzki – „potop”.",
-        "transl": "Коли відбувся Потом шведській?"
+        "unitId": 2031,
+        "pol": "Kiedy miał miejsce Potop szwedzki?",
+        "transl": "Коли відбувся Потоп шведській?"
+    },
+    {
+        "id": 12003,
+        "unitId": 2031,
+        "pol": "W ХVII wieku królowie z dynastii Wazów pretendowali do tronu Szwecji co prowadziło do konfliktów między Rzeczpospolitą a Szwecją.",
+        "transl": "У XVII столітті королі з династії Ваза претендували на трон Швеції, що призводило до конфліктів між Речію Посполитою та Швецією"
+    },
+    {
+        "id": 12004,
+        "unitId": 2031,
+        "pol": "W 1655-1660 w okres panowania Jana - Rzeczpospolitą ogłoszono monarchią Kazimierza przypadają najazd konstytucyjną szwedzki – „potop”",
+        "transl": "У 1655-1660 роках, за панування Яна, в Речі Посполитій оголошено монархію Казимира, що припало на період конституційного нападу шведського - потоп"
     },
     {
         "id": 10864,
-        "unitId": 2015,
-        "pol": "Postać Króla Jana III Sobieskiego? an III Sobieski - wybrany król (1629- 1696). W 1683r. rozgromił wojska tureckie i zahamował ekspansję Turków Otomańskich w Europie ",
+        "unitId": 2031,
+        "pol": "Postać Króla Jana III Sobieskiego?",
         "transl": "Хто такий король ІІІ Собєский?"
     },
     {
+        "id": 12005,
+        "unitId": 2031,
+        "pol": "wybrany król (1629- 1696). W 1683r. rozgromił wojska tureckie i zahamował ekspansję Turków Otomańskich w Europie",
+        "transl": "Обраний король (1629-1696). У 1683 році розгромив війська турецькі та зупинив експансію Османських турків в Європі"
+    },
+    {
         "id": 10865,
-        "unitId": 2015,
-        "pol": "Okres rozbiorów? 123 lata, aż do odzyskania niepodległości w 1918r. okres rozbiorów charakteryzował się podziałem Polski między Rosją, Austriją a Prusją, coraz głębszą rusyfikacją czy germanizacją",
+        "unitId": 2031,
+        "pol": "Okres rozbiorów?",
         "transl": "Період поділів Польщі?"
     },
     {
+        "id": 12006,
+        "unitId": 2031,
+        "pol": "123 lata, aż do odzyskania niepodległości w 1918r",
+        "transl": "23 роки, аж до відновлення незалежності у 1918 році"
+    },
+    {
+        "id": 12007,
+        "unitId": 2031,
+        "pol": "okres rozbiorów charakteryzował się podziałem Polski między Rosją, Austriją a Prusją, coraz głębszą rusyfikacją czy germanizacją",
+        "transl": "Період розділів характеризувався поділом Польщі між Росією, Австрією та Прусією, все більш глибокою русифікацією та германізацією"
+    },
+    {
         "id": 10866,
-        "unitId": 2015,
+        "unitId": 2031,
         "pol": "Kiedy odbył się I rozbiór Polski? W 1772r. W tym rozbiórze brały udział Rosja, Prusy i Austria",
         "transl": "Коли відбувся І поділ Польщі?"
     },
     {
         "id": 10870,
-        "unitId": 2015,
-        "pol": "Kiedy odbył się III rozbiór General Jan Henryk Dąbrowski (twórca Polski? W 1795r. Brały udział Rosja, Prusy i Lombardii Legionów Polskich. Austria",
+        "unitId": 2031,
+        "pol": "Kiedy odbył się III rozbiór?",
         "transl": "Коли відбувся ІІІ поділ Польщі?"
     },
     {
+        "id": 12008,
+        "unitId": 2031,
+        "pol": "General Jan Henryk Dąbrowski (twórca Polski) W 1795r. Brały udział Rosja, Prusy i Lombardii Legionów Polskich. Austria",
+        "transl": "Генерал Ян Генрих Домбровський (творець Польщі) У 1795 році взяли участь Росія, Прусія та Ломбардійські легіони польські. Австрія."
+    },
+    {
         "id": 10871,
-        "unitId": 2015,
+        "unitId": 2031,
         "pol": "Kiedy nie było Polski jako się w 1797 pieśń napisana przez państwa? Od 1795-1918r",
         "transl": "Коли не було Польщі як держави?"
     },
     {
         "id": 10872,
-        "unitId": 2015,
-        "pol": "Dlaczego doszło do rozbiorów i upadku Rzeczpospolitej? Rzeczpospolita upadła, bo w sąsiedztwie agresywnie nastawionych państw militarnych, z władzą absolutną (Prusy, Rosja i Austria) obywatele Rzeczpospolitej do końca bardziej cenili sobie wolność obywatelską niż przymus",
+        "unitId": 2031,
+        "pol": "Dlaczego doszło do rozbiorów i upadku Rzeczpospolitej?",
         "transl": "Чому дійшло до поділів та занепаду Речі Посполитої?"
     },
     {
+        "id": 12009,
+        "unitId": 2031,
+        "pol": "Rzeczpospolita upadła, bo w sąsiedztwie agresywnie nastawionych państw militarnych, z władzą absolutną (Prusy, Rosja i Austria) obywatele Rzeczpospolitej do końca bardziej cenili sobie wolność obywatelską",
+        "transl": "Реч Посполита впала через те, що в сусідніх агресивно налаштованих військових державах з абсолютною владою (Прусії, Росії та Австрії) громадяни Речі Посполитої до кінця більше цінили свободу громадянську"
+    },
+    {
         "id": 10873,
-        "unitId": 2015,
-        "pol": "Kiedy wybuchło Powstanie Listopadowe? Powstanie wybuchło w noc 29 listopada 1830r. w Warszawie. W 1831r. wojska rosyjski rozbiły wojska powstańców. Powstańcy musieli udać się na emigracje. Fala emigracji była taka duża, że w historii Polski nazywana się Wielką Emigracją",
+        "unitId": 2031,
+        "pol": "Kiedy wybuchło Powstanie Listopadowe?",
         "transl": "Коли вибухнуло Повстаня Листопадове?"
     },
     {
+        "id": 12010,
+        "unitId": 2031,
+        "pol": "Powstanie wybuchło w noc 29 listopada 1830r. w Warszawie. W 1831r. wojska rosyjski rozbiły wojska powstańców",
+        "transl": "Повстання вибухло у ніч на 29 листопада 1830 року у Варшаві. У 1831 році російські війська розгромили повстанські війська"
+    },
+    {
+        "id": 12011,
+        "unitId": 2031,
+        "pol": "Powstańcy musieli udać się na emigracje. Fala emigracji była taka duża, że w historii Polski nazywana się Wielką Emigracją",
+        "transl": "Повстанці змушені були вирушити у еміграцію. Хвиля еміграції була настільки великою, що в історії Польщі вона відома як Велика Еміграція"
+    },
+    {
         "id": 10874,
-        "unitId": 2015,
-        "pol": "Kiedy wybuchło Powstanie Styczniowe? Powstanie Styczniowe wybuchło 22 stycznia 1863r., trwało do 1864r. Drugi narodowy zryw przeciwko zaborcy Rosji. Powstańcom nie udało się przejąc władzy w Warszawie",
+        "unitId": 2031,
+        "pol": "Kiedy wybuchło Powstanie Styczniowe?",
         "transl": "Коли вибухнуло повстання Січневе?"
     },
     {
+        "id": 12012,
+        "unitId": 2031,
+        "pol": "Powstanie Styczniowe wybuchło 22 stycznia 1863r, trwało do 1864r",
+        "transl": "Польське Січневе повстання вибухло 22 січня 1863 року і тривало до 1864 року"
+    },
+    {
+        "id": 12013,
+        "unitId": 2031,
+        "pol": "Drugi narodowy zryw przeciwko zaborcy Rosji. Powstańcom nie udało się przejąc władzy w Warszawie",
+        "transl": "Другий національний збройний виступ проти російського загарбника. Повстанцям не вдалося захопити владу в Варшаві"
+    },
+    {
         "id": 10875,
-        "unitId": 2015,
-        "pol": "Kiedy wybuchła I Wojna Światowa? 1 sierpnia 1914 – 11 listopada 1918. Brały w niej udział 33 państwa; w czasie jej trwania zmobilizowano 70 milionów ludzi, 10 milionów poniosło śmierć, a prawie 20 milionów zostało rannych. Upadły: Cesarstwo Niemieckie, Austro-Węgerskie, Imperium osmańskie, Imperium Rosyjskie",
+        "unitId": 2032,
+        "pol": "Kiedy wybuchła I Wojna Światowa?",
         "transl": "Коли почалась ІІ Світова Війна?"
     },
     {
+        "id": 12014,
+        "unitId": 2032,
+        "pol": "1 sierpnia 1914 – 11 listopada 1918. Brały w niej udział 33 państwa",
+        "transl": "1 серпня 1914 року - 11 листопада 1918 року. У неї брали участь 33 країни"
+    },
+    {
+        "id": 12015,
+        "unitId": 2032,
+        "pol": "w czasie jej trwania zmobilizowano 70 milionów ludzi, 10 milionów poniosło śmierć, a prawie 20 milionów zostało rannych. Upadły: Cesarstwo Niemieckie, Austro-Węgerskie, Imperium osmańskie, Imperium Rosyjskie",
+        "transl": "Протягом її тривання мобілізували 70 мільйонів людей, 10 мільйонів загинули, а майже 20 мільйонів були поранені"
+    },
+    {
+        "id": 12016,
+        "unitId": 2032,
+        "pol": "Upadły: Cesarstwo Niemieckie, Austro-Węgerskie, Imperium osmańskie, Imperium Rosyjskie",
+        "transl": "Впали: Німецька імперія, Австро-Угорська імперія, Османська імперія, Російська імперія"
+    },
+    {
         "id": 10876,
-        "unitId": 2015,
-        "pol": "Kiedy Polska otrzymała niepodległość? 11 listopada 1918r. zakończyła się I Wojna Światowa. Józef Piłsudski zostaje Naczelnikiem Państwa. 11 listopada został ogłoszony Dniem Niepodległości Polski",
+        "unitId": 2032,
+        "pol": "Kiedy Polska otrzymała niepodległość?",
         "transl": "Коли Польща отримала незалежність?"
     },
     {
+        "id": 12017,
+        "unitId": 2032,
+        "pol": "11 listopada 1918r. zakończyła się I Wojna Światowa. Józef Piłsudski zostaje Naczelnikiem Państwa. 11 listopada został ogłoszony Dniem Niepodległości Polski",
+        "transl": "11 листопада 1918 року завершилася Перша світова війна. Йозеф Пілсудський стає Головнокомандувачем країни. 11 листопада оголошено Днем Незалежності Польщі"
+    },
+    {
         "id": 10877,
-        "unitId": 2015,
+        "unitId": 2032,
         "pol": "Cud nad Wisłą? W sierpniu 1920 odbyła się zwycięska bitwa wojsk polskich z armią bolszewicką. 15 sierpnia w Polsce jest dniem zwycięstwa Wojska Polskiego.",
         "transl": "Чудо над Віслою"
     },
     {
         "id": 10878,
-        "unitId": 2015,
+        "unitId": 2032,
         "pol": "Kto był pierwszym Prezydentem II Rzeczpospolitej? Profesor Gabriel Narutowicz w 1922r.",
         "transl": "Хто був першим президентом ІІ Речі Посполитої?"
     },
     {
         "id": 10879,
-        "unitId": 2015,
+        "unitId": 2032,
         "pol": "Kto był ostatnim Prezydentem II Rzeczpospolitej? Ignacy Mościcki w 1926r",
         "transl": "Хто був останнім президентом ІІ Речі Посполитої"
     },
     {
         "id": 10880,
-        "unitId": 2015,
-        "pol": "Kiedy wybuchła II Wojna Światowa? 1 września 1939r. wojska niemieckie zaatakowały Polskę. Dnia 17 września 1939 wojska sowieckie wkroczyły na teren wschodniej II Rzeczpospolitej na mocy Paktu Ribbentrop-Mołotow. Teren II Rzeczpospolitej został podzielony: 49% Związek Sowiecki, 51% Niemcy",
+        "unitId": 2032,
+        "pol": "Kiedy wybuchła II Wojna Światowa?",
         "transl": "Коли почалась ІІ Світова Війна?"
     },
     {
+        "id": 12018,
+        "unitId": 2032,
+        "pol": "1 września 1939r. wojska niemieckie zaatakowały Polskę",
+        "transl": "1 вересня 1939 року німецькі війська напали на Польщу"
+    },
+    {
+        "id": 12019,
+        "unitId": 2032,
+        "pol": "Dnia 17 września 1939 wojska sowieckie wkroczyły na teren wschodniej II Rzeczpospolitej na mocy Paktu Ribbentrop-Mołotow",
+        "transl": "7 вересня 1939 року радянські війська ввійшли на територію східної частини Другої Речі Посполитої відповідно до Пакту Риббентропа-Молотова"
+    },
+    {
+        "id": 12020,
+        "unitId": 2032,
+        "pol": "Teren II Rzeczpospolitej został podzielony: 49% Związek Sowiecki, 51% Niemcy",
+        "transl": "Територія Другої Речі Посполитої була розділена: 49% - Союз Радянський, 51% - Німеччина"
+    },
+    {
         "id": 10881,
-        "unitId": 2015,
-        "pol": "Głowne bitwy II Wojny Światowej w których uczestniczyli żołnierze Wojska Polskiego? Bitwa o Anglię - 1940 rok; Bitwa o Monte Cassino - 1944 rok Włochy (Armia Polska pod dowództwem Generała Władysława Andersa); Walki w północnych Włoszech - 1945 rok; Wyzwolenie miasta Bredy w Holandii - 1944 rok.",
+        "unitId": 2032,
+        "pol": "Głowne bitwy II Wojny Światowej w których uczestniczyli żołnierze Wojska Polskiego?",
         "transl": "Головні битви ІІ Світової війни в яких приймали участь солдати Війська Польського?"
     },
     {
+        "id": 12021,
+        "unitId": 2032,
+        "pol": "Bitwa o Anglię - 1940 rok; Bitwa o Monte Cassino - 1944 rok Włochy (Armia Polska pod dowództwem Generała Władysława Andersa)",
+        "transl": "Битва за Англію - 1940 рік; Битва під Монте-Кассіно - 1944 рік, Італія (Польська армія під командуванням генерала Владислава Андерса)"
+    },
+    {
+        "id": 12022,
+        "unitId": 2032,
+        "pol": "Walki w północnych Włoszech - 1945 rok; Wyzwolenie miasta Bredy w Holandii - 1944 rok",
+        "transl": "Бої на півночі Італії - 1945 рік; Звільнення міста Бреда в Нідерландах - 1944 рік"
+    },
+    {
         "id": 10882,
-        "unitId": 2015,
-        "pol": "Kiedy wybuchło Powstanie Warszawskie? Warszawie wybuchło powstanie zorganizowane przez Armię Krajową. Jego głównym celem jest wyzwolenie stolicy spod władzy Niemców i zdobycie suwerenności. Powstanie trwało 63 dni i zostało pokonane",
+        "unitId": 2032,
+        "pol": "Kiedy wybuchło Powstanie Warszawskie?",
         "transl": "Коли вибухнуло повстання Варшавське?"
     },
     {
+        "id": 12023,
+        "unitId": 2032,
+        "pol": "Warszawie wybuchło powstanie zorganizowane przez Armię Krajową",
+        "transl": "У Варшаві спалахнуло повстання, організоване Армією Крайовою"
+    },
+    {
+        "id": 12024,
+        "unitId": 2032,
+        "pol": "Jego głównym celem jest wyzwolenie stolicy spod władzy Niemców i zdobycie suwerenności. Powstanie trwało 63 dni i zostało pokonane",
+        "transl": "Його основною метою було звільнення столиці від німецького владарювання та досягнення суверенітету. Повстання тривало 63 дні та було придушене"
+    },
+    {
         "id": 10883,
-        "unitId": 2015,
+        "unitId": 2032,
         "pol": "Data końcu II Wojny Światowej? 8 maja 1945r. - bezwarunkowa kapitulacja III Rzeszy",
         "transl": "Дата закінчення ІІ Світової війни?"
     },
     {
         "id": 10884,
-        "unitId": 2015,
-        "pol": "Polska po 1944 roku. Jałta 1945r. W Jałcie w lutym 1945 roku, Wielka Brytania i Stany Zjednoczone były zmuszone uznać roszczenia sowietów do terytorium na wschód od rzeki Bug. Armia Czerwona zajęłą już w tym czasie te tereny w pogoni za Niemcami. \"Jałta\" w Polsce jest synonimem zdrady aliantów i prawie pięćdziesięcioletniego podziału Europy na strefę wpływów sowieckich i wolny świat zachodni.",
+        "unitId": 2033,
+        "pol": "Polska po 1944 roku. Jałta 1945r.",
         "transl": "Польща після 1944 року. Ялта 1945"
     },
     {
+        "id": 12025,
+        "unitId": 2033,
+        "pol": "W Jałcie w lutym 1945 roku, Wielka Brytania i Stany Zjednoczone były zmuszone uznać roszczenia sowietów do terytorium na wschód od rzeki Bug",
+        "transl": "На Ялтинській конференції в лютому 1945 року Велика Британія та Сполучені Штати були змушені визнати претензії Радянського Союзу до території на сході від річки Буг"
+    },
+    {
+        "id": 12026,
+        "unitId": 2033,
+        "pol": "Armia Czerwona zajęłą już w tym czasie te tereny w pogoni za Niemcami",
+        "transl": "Червона Армія вже на той момент захопила ці території в погоні за Німеччиною"
+    },
+    {
+        "id": 12027,
+        "unitId": 2033,
+        "pol": "Jałta w Polsce jest synonimem zdrady aliantów i prawie pięćdziesięcioletniego podziału Europy na strefę wpływów sowieckich i wolny świat zachodni",
+        "transl": "Ялта в Польщі є синонімом зради союзників та майже п'ятдесятирічного поділу Європи на сферу впливу Радянського Союзу та вільний західний світ"
+    },
+    {
         "id": 10885,
-        "unitId": 2015,
-        "pol": "Rok założenia Związku Zawodowego \"Solidarność\" lub z czym kojarzy się Sierpień 1980? Związek Zawodowy \"Solidarność\" został założony na podstawie Porozumień w Gdańsku kończących 14 dni strajku w sierpniu 1980 roku w Stoczni Gdańskiej. Strajkujący wystąpili za uzyskania swobód politycznych i ekonomicznych. Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983 Pokojową Nagrodę Nobla.",
+        "unitId": 2033,
+        "pol": "Rok założenia Związku Zawodowego Solidarność lub z czym kojarzy się Sierpień 1980?",
         "transl": "Рік заснування Союзу «Солідарність» або з чим асоціюється серпень 1980 року"
     },
     {
+        "id": 12028,
+        "unitId": 2033,
+        "pol": "Związek Zawodowy Solidarność został założony na podstawie Porozumień w Gdańsku kończących 14 dni strajku w sierpniu 1980 roku w Stoczni Gdańskiej",
+        "transl": "Профспілка Солідарність була заснована на основі угод у Гданську, які завершили 14-денний страйк у серпні 1980 року на Гданському суднобудівному заводі"
+    },
+    {
+        "id": 12029,
+        "unitId": 2033,
+        "pol": "Strajkujący wystąpili za uzyskania swobód politycznych i ekonomicznych",
+        "transl": "Страйкуючі виступали за отримання політичних і економічних свобод"
+    },
+    {
+        "id": 12030,
+        "unitId": 2033,
+        "pol": "Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983 Pokojową Nagrodę Nobla",
+        "transl": "Їхній лідер Лех Валенса, за фахом електрик, отримав у 1983 році Нобелівську премію миру"
+    },
+    {
         "id": 10886,
-        "unitId": 2015,
-        "pol": "Z jakim wydarzeniem kojarzy się 13 grudzień?  13 grudzień 1981r. - wprowadzenie Stanu Wojennego przez generała Wojciecha Jaruzelskiego. Delegalizacja pierwszej Solidarności.",
+        "unitId": 2033,
+        "pol": "Z jakim wydarzeniem kojarzy się 13 grudzień?",
         "transl": "Яка подія пов’язана з 13 грудня?"
     },
     {
+        "id": 12031,
+        "unitId": 2033,
+        "pol": "13 grudzień 1981r. - wprowadzenie Stanu Wojennego przez generała Wojciecha Jaruzelskiego. Delegalizacja pierwszej Solidarności",
+        "transl": "13 грудня 1981 року - введення воєнного стану генералом Войцехом Ярузельським. Дезактивація першої Солідарності"
+    },
+    {
         "id": 10887,
-        "unitId": 2015,
-        "pol": "Koniec rządów komunistycznych? W 1989 Partia komunistyczna zezwala na wolne wybory, które wygrywają kandydaci bloku solidarnościowego. Tadeusz Mazowiecki zostaje pierwszym niekomunistycznym premierem Polski. Rok później Lech Wałęsa wygrywa wybory prezydenckie. ",
+        "unitId": 2033,
+        "pol": "Koniec rządów komunistycznych?",
         "transl": "Кінець комуністичної влади?"
     },
     {
+        "id": 12032,
+        "unitId": 2033,
+        "pol": "W 1989 Partia komunistyczna zezwala na wolne wybory, które wygrywają kandydaci bloku solidarnościowego",
+        "transl": "У 1989 році Комуністична партія дозволяє проведення вільних виборів, які виграли кандидати блоку Солідарності"
+    },
+    {
+        "id": 12033,
+        "unitId": 2033,
+        "pol": "Tadeusz Mazowiecki zostaje pierwszym niekomunistycznym premierem Polski. Rok później Lech Wałęsa wygrywa wybory prezydenckie",
+        "transl": "Тадеуш Мазовецький стає першим некомуністичним прем'єр-міністром Польщі. Рік потому Лех Валенса виграє президентські вибори"
+    },
+    {
         "id": 10888,
-        "unitId": 2015,
-        "pol": "Wymień nazwiska prezudentów Rzeczpospolitej Polski po 1989r.? 1989-1990r. – Wojciech Jaruzelski; 1990-1995r. – Lech Wałęsa; 1995-2005r. – Aleksander Kwaśniewski (był Prezydentem 2 kadencje); 2005-2010r. – Lech Kaczyński (10 kwietnia 2010r. wyleciał z Warszawy rządowym samolotem w Smoleńsk by udać się na obchody 70-rocznicy zbrodni katyńskiej. Zginął wraz z żoną i wszystkimi członkami delegacji); 2010r. – po 2015r – Bronisław Maria Komorowski. 2015r. – po dzisiaj – Andrzej Duda.",
-        "transl": "Назвіть президентів Речі Посполитої Польщі після 1989 року"
+        "unitId": 2033,
+        "pol": "Wymień nazwiska prezudentów Rzeczpospolitej Polski po 1989r?",
+        "transl": "Назвіть президентів Речі Посполитої Польщі після 1989 року?"
+    },
+    {
+        "id": 12034,
+        "unitId": 2033,
+        "pol": "1989-1990r. – Wojciech Jaruzelski; 1990-1995r. – Lech Wałęsa; 1995-2005r. – Aleksander Kwaśniewski (był Prezydentem 2 kadencje)",
+        "transl": "1989-1990 рр. - Войцех Ярузельський; 1990-1995 рр. - Лех Валенса; 1995-2005 рр. - Олександр Квашневський (був Президентом дві каденції)"
+    },
+    {
+        "id": 12035,
+        "unitId": 2033,
+        "pol": "2005-2010r. – Lech Kaczyński (10 kwietnia 2010r. wyleciał z Warszawy rządowym samolotem w Smoleńsk by udać się na obchody 70-rocznicy zbrodni katyńskiej. Zginął wraz z żoną i wszystkimi członkami delegacji)",
+        "transl": "2005-2010 рр. - Лех Качинський (10 квітня 2010 р. вилетів із Варшави на урядовому літаку до Смоленська для участі в урочистостях з нагоди 70-річчя Катинської розстрілянки. Загинув разом з дружиною та всіма членами делегації)"
+    },
+    {
+        "id": 12036,
+        "unitId": 2033,
+        "pol": "2010r. – po 2015r – Bronisław Maria Komorowski. 2015r. – po dzisiaj – Andrzej Duda",
+        "transl": "2010 р. – після 2015 р. – Броніслав Марія Коморовський. 2015 р. – по сьогодні – Анджей Дуда"
     },
     {
         "id": 10889,
-        "unitId": 2015,
+        "unitId": 2033,
         "pol": "Data wstąpienia Polski do NATO? 12 marca 1999r. Polska stała członkiem NATO",
         "transl": "Дата вступу Польщі до НАТО?"
     },
     {
         "id": 10890,
-        "unitId": 2015,
+        "unitId": 2033,
         "pol": "Data wstąpienia Polski do Unii Europejskiej? Od 1 maja 2004 r. Polska jest pełnoprawnym członkiem Unii Europejskiej",
         "transl": "Дата вступу Польщі в Євросоюз?"
     },
