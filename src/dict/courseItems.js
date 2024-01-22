@@ -7999,7 +7999,7 @@ const courseItems =
         {
             "id": 10796,
             "unitId": 2013,
-            "pol": "Ро zebraniu pójdziemy nа kawę",
+            "pol": "Po zebraniu pójdziemy na kawę",
             "transl": "Після зустрічі підемо на каву"
         },
         {
@@ -8982,20 +8982,20 @@ const kartaPol = [
     {
         "id": 10849,
         "unitId": 2015,
-        "pol": "Miasta – stolice Polski? Gniezno 966 – 1041r. Kraków 1041 – 1596r. Kraków 1041 – 1596r.",
+        "pol": "Miasta – stolice Polski? Gniezno 966 – 1041r. Kraków 1041 – 1596r. Kraków 1041 – 1596r. Warszawa 1596 – po dzisiaj",
         "transl": "Міста – столиці Польщі?"
     },
     {
         "id": 10850,
         "unitId": 2015,
         "pol": "Kim był Piast Kołodziej? Piast Kołodziej był legendarnym protoplastą, założycielem dynastii Piastów - pierwszej dynastii Królów Polski",
-        "transl": "Ким був Пяст Колоджєй?"
+        "transl": "Ким був Пяст Колоджєй? Пяст Колодзей був легендарним праотцем, засновником династії Пястів - першої династії королів Польщі"
     },
     {
         "id": 10851,
         "unitId": 2015,
         "pol": "Co się stało z Popielem? Króla Popiela zjadły myszy za jego zbrodnie i udrękę ludu",
-        "transl": "Що сталось з Попєлєм?"
+        "transl": "Що сталось з Попєлєм? Короля Попеля з'їли миші за його злочини та муки народу"
     },
     {
         "id": 10852,
@@ -9048,14 +9048,32 @@ const kartaPol = [
     {
         "id": 10860,
         "unitId": 2015,
-        "pol": "to i kiedy założyw pierwszy uniwersytet w Polsce? Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364r. pierwszy w Polsce uniwersytet – Akademię Krakowską (Uniwersytet Jagelloński)",
+        "pol": "Kto i kiedy założyw pierwszy uniwersytet w Polsce?",
         "transl": "Хто і коли заснував перший університет в Польщі (Університет Ягєлонський)"
+    },
+    {
+        "id": 13000,
+        "unitId": 2015,
+        "pol": "Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364r. pierwszy w Polsce uniwersytet – Akademię Krakowską (Uniwersytet Jagelloński)",
+        "transl": "Казимир Великий з династії Пястів заснував у Кракові у 1364 році перший у Польщі університет – Краківську Академію (Ягеллонський університет)"
     },
     {
         "id": 10861,
         "unitId": 2015,
-        "pol": "Kiedy odbyła się bitwa pod Grunwaldem? Kto był zwycięzcą? W 1410r. wojsko polskie i litewskie pod dowództwem Króla Władysława Jagiełły pokonało pod Grunwaldem wojsko Krzyżaków. Potęga Krzyżaków zostaje ostatecznie złamana.",
+        "pol": "Kiedy odbyła się bitwa pod Grunwaldem? Kto był zwycięzcą?",
         "transl": "Коли відбулась битва під Грунвальдом? Хто переміг?"
+    },
+    {
+        "id": 13001,
+        "unitId": 2015,
+        "pol": "W 1410r. wojsko polskie i litewskie pod dowództwem Króla Władysława Jagiełły pokonało pod Grunwaldem wojsko Krzyżaków",
+        "transl": "У 1410 році польсько-литовська армія під командуванням короля Владислава Яґайли перемогла під Ґрунвальдом армію хрестоносців."
+    },
+    {
+        "id": 13002,
+        "unitId": 2015,
+        "pol": "Potęga Krzyżaków zostaje ostatecznie złamana",
+        "transl": "Сила ордену крестоносців була остаточно зламана"
     },
     {
         "id": 10862,
