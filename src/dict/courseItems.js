@@ -9133,7 +9133,7 @@ const kartaPol = [
         "id": 10866,
         "unitId": 2031,
         "pol": "Kiedy odbył się I rozbiór Polski? W 1772r. W tym rozbiórze brały udział Rosja, Prusy i Austria",
-        "transl": "Коли відбувся І поділ Польщі?"
+        "transl": "Коли відбувся І поділ Польщі? У 1772 році у цьому розбиранні брали участь Росія, Пруссія та Австрія"
     },
     {
         "id": 10870,
