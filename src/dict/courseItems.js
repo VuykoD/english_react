@@ -9148,12 +9148,6 @@ const kartaPol = [
         "transl": "Генерал Ян Генрих Домбровський (творець Польщі) У 1795 році взяли участь Росія, Прусія та Ломбардійські легіони польські. Австрія."
     },
     {
-        "id": 10871,
-        "unitId": 2031,
-        "pol": "Kiedy nie było Polski jako się w 1797 pieśń napisana przez państwa? Od 1795-1918r",
-        "transl": "Коли не було Польщі як держави?"
-    },
-    {
         "id": 10872,
         "unitId": 2031,
         "pol": "Dlaczego doszło do rozbiorów i upadku Rzeczpospolitej?",
