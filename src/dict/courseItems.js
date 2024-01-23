@@ -8982,7 +8982,7 @@ const kartaPol = [
     {
         "id": 10849,
         "unitId": 2015,
-        "pol": "Miasta – stolice Polski? Gniezno 966 – 1041r. Kraków 1041 – 1596r. Kraków 1041 – 1596r. Warszawa 1596 – po dzisiaj",
+        "pol": "Miasta – stolice Polski? Gniezno 966 – 1041r. Kraków 1041 – 1596r. Warszawa 1596 – po dzisiaj",
         "transl": "Міста – столиці Польщі?"
     },
     {
