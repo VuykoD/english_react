@@ -8589,60 +8589,70 @@ const courseItems =
             "id": 11955,
             "unitId": 2025,
             "eng": "come across",
+            "pol": "sprawiać wrażenie",
             "transl": "здатися, бути схожим"
         },
         {
             "id": 11956,
             "unitId": 2025,
             "eng": "Starting a conversation with a stranger can come across as awkward",
+            "pol": "Rozpoczęcie rozmowy z nieznajomym może wydawać się niezręczne",
             "transl": "Початок розмови з незнайомцем може здатися незручним"
         },
         {
             "id": 11957,
             "unitId": 2025,
             "eng": "pair up",
+            "pol": "łączyć w pary",
             "transl": "об'єднатися"
         },
         {
             "id": 11958,
             "unitId": 2025,
             "eng": "Weddings are a great opportunity for single people to pair up to dance, rather than dance alone",
+            "pol": "Śluby to doskonała okazja dla singli, aby łączyć się w pary i tańczyć razem, zamiast tańczyć samemu",
             "transl": "Весілля - відмінна нагода для одиноких людей об'єднатися в пари для танців, а не танцювати самотньо"
         },
         {
             "id": 11959,
             "unitId": 2025,
             "eng": "reach out",
+            "pol": "nawiązywać kontakt",
             "transl": "звертатися (у контексті спілкування з людьми)"
         },
         {
             "id": 11960,
             "unitId": 2025,
             "eng": "At business events, it’s good to reach out to people you don’t know",
+            "pol": "Na wydarzeniach biznesowych dobrze jest nawiązywać kontakt z nieznajomymi",
             "transl": "На бізнес-подіях корисно заводити контакти з людьми, яких ви не знаєте"
         },
         {
             "id": 11961,
             "unitId": 2025,
             "eng": "Staying engaged in",
+            "pol": "zachowywać zainteresowanie",
             "transl": "залишатися зацікавленим у"
         },
         {
             "id": 11962,
             "unitId": 2025,
             "eng": "Staying engaged in a conversation with a stranger can sometimes be difficult",
+            "pol": "Zachowanie zainteresowania rozmową z nieznajomym może być czasami trudne",
             "transl": "Залишитися залученим у розмову з незнайомцем іноді може бути складно"
         },
         {
             "id": 11963,
             "unitId": 2025,
             "eng": "put their phones away",
+            "pol": "odłożyć telefony",
             "transl": "прибрати свої телефони"
         },
         {
             "id": 11964,
             "unitId": 2025,
             "eng": "People should put their phones away during small talk",
+            "pol": "Podczas drobnej rozmowy ludzie powinni odłożyć swoje telefony",
             "transl": "Людям слід приховати свої телефони під час невеликих бесід"
         },
         {
