@@ -7786,82 +7786,95 @@ const courseItems =
             "pol": "Spotykamy się u koleżanki i idziemy kupić prezent dla profesora",
             "transl": "Ми зустрічаємось у подруги і йдемо купувати"
         },
-        {
+    {
             "id": 10760,
             "unitId": 2011,
             "pol": "Ojcze nasz, któryś jest w niebie, święć się imię Twoje,",
+            "eng": "Our Father, who art in heaven, hallowed be Thy name",
             "transl": "Отче наш, що єси на небесах, нехай святиться ім'я Твоє!"
         },
         {
             "id": 10891,
             "unitId": 2011,
             "pol": "przyjdź Królestwo Twoje, bądź wola Twoja jako w niebie, tak i na ziemi",
+            "eng": "Thy kingdom come, Thy will be done, on earth as it is in heaven",
             "transl": "нехай прийде Царство Твоє, нехай буде воля Твоя, як на небі, так і на землі"
         },
         {
             "id": 10892,
             "unitId": 2011,
             "pol": "Chleba naszego powszedniego daj nam dzisiaj",
+            "eng": "Give us this day our daily bread",
             "transl": "Хліб наш насущний дай нам сьогодні"
         },
         {
             "id": 10893,
             "unitId": 2011,
             "pol": "I odpuść nam nasze winy, jako i my odpuszczamy naszym winowajcom",
+            "eng": "And forgive us our trespasses, as we forgive those who trespass against us",
             "transl": "І прости нам провини наші, як і ми прощаємо винуватцям нашим"
         },
         {
             "id": 10894,
             "unitId": 2011,
             "pol": "I nie wódź nas na pokuszenie, ale nas zbaw ode złego",
+            "eng": "And lead us not into temptation, but deliver us from evil",
             "transl": "І не введи нас у спокусу, але визволи нас від лукавого"
         },
         {
             "id": 10895,
             "unitId": 2011,
             "pol": "Amen",
-            "transl": " Амінь"
+            "eng": "Amen",
+            "transl": "Амінь"
         },
         {
             "id": 10767,
             "unitId": 2012,
             "pol": "Zdrowaś Maryjo, łaski pełna, Pan z Tobą",
+            "eng": "Hail Mary, full of grace, the Lord is with thee",
             "transl": "Радуйся, Маріє, благодаті повна! Господь з Тобою!"
         },
         {
             "id": 10896,
             "unitId": 2012,
             "pol": "Błogosławionaś Ty między niewiastami",
+            "eng": "blessed art thou among women",
             "transl": "Благословенна Ти між жінками"
         },
         {
             "id": 10897,
             "unitId": 2012,
             "pol": "I błogosławiony owoc żywota Twojego, Jezus",
+            "eng": "and blessed is the fruit of thy womb, Jesus",
             "transl": "і благословенний плід лона Твого, Ісус"
         },
         {
             "id": 10898,
             "unitId": 2012,
             "pol": "Święta Maryjo, Matko Boża",
+            "eng": "Holy Mary, Mother of God",
             "transl": "Свята Маріє, Мати Божа"
         },
         {
             "id": 10899,
             "unitId": 2012,
             "pol": "módl się za nami grzesznymi",
+            "eng": "pray for us sinners",
             "transl": "молися за нас, грішних"
         },
         {
             "id": 10900,
             "unitId": 2012,
             "pol": "teraz i w godzinę śmierci naszej",
+            "eng": "now and at the hour of our death",
             "transl": "нині і в годину смерті нашої"
         },
         {
             "id": 10902,
             "unitId": 2012,
             "pol": "Amen",
+            "eng": "Amen",
             "transl": "Амінь"
         },
         {
