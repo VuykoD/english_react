@@ -16,49 +16,61 @@ import '../../../scc/header.css';
 const content = {
     logo: {
         ru: 'Это будет легко',
-        ukr: 'Це буде легко'
+        ukr: 'Це буде легко',
+        pol: 'Będzie łatwo'
     },
     course: {
         ru: 'Курсы',
-        ukr: 'Курси'
+        ukr: 'Курси',
+        pol: 'Kursy'
     },
     learning: {
         ru: 'Изучение',
-        ukr: 'Вивчення'
+        ukr: 'Вивчення',
+        pol: 'Nauka'
     },
     dictionary: {
         ru: 'Мой словарь',
-        ukr: 'Мій словник'
+        ukr: 'Мій словник',
+        pol: 'Mój słownik'
     },
     progress: {
         ru: 'Прогресс',
-        ukr: 'Прогрес'
+        ukr: 'Прогрес',
+        pol: 'Postęp'
     },
     myData: {
         ru: 'Мои данные',
-        ukr: 'Мої данні'
+        ukr: 'Мої данні',
+        pol: 'Moje dane'
     },
     btnSiteLang: {
         ru: 'Язык сайта',
-        ukr: 'Мова сайту'
+        ukr: 'Мова сайту',
+        pol: 'Język strony'
     },
     btnLearnedLand: {
         ru: 'Изучаемый язык',
-        ukr: 'Мова, яку вивчаємо'
+        ukr: 'Мова, яку вивчаємо',
+        pol: 'Język do nauki'
     },
     setting: {
         ru: 'Настройки',
-        ukr: 'Налаштування'
+        ukr: 'Налаштування',
+        pol: 'Ustawienia'
     },
     search: {
         ru: 'Напишите слово, или фразу',
-        ukr: 'Напишіть слово, або фразу'
+        ukr: 'Напишіть слово, або фразу',
+        pol: 'Wpisz słowo lub frazę'
     },
     statistic: {
         ru: 'Статистика',
-        ukr: 'Статистика'
+        ukr: 'Статистика',
+        pol: 'Statystyka'
     },
 };
+
 
 class HeaderClass extends Component {
     static propTypes = {
