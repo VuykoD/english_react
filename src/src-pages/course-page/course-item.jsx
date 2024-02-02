@@ -317,7 +317,7 @@ export default class CourseItem extends Component {
                                 return row(odd, item);
                             })}
                             {row('light', {id: '_new'})}
-                            {rowWithButtons}
+                            {isAdmin && rowWithButtons}
                             <div id='uniqueArr'/>
                         </ListGroup>
                     </Col>
