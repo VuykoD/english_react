@@ -116,9 +116,6 @@ export default class CourseItem extends Component {
             return alert(alreadySelected);
         }
 
-        if (this.localProgress[learnedLang]){
-
-        }
         map(this.items, (item) => {
             if (item[learnedLang]){
                 this.localProgress[learnedLang].push(+item.id);

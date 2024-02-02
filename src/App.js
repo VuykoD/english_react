@@ -11,9 +11,28 @@ import UserDictionary from './src-pages/user-page/user-data/user-dictionary';
 import Learning from './src-pages/learning-page/learning';
 import Course from "./src-pages/course-page/course";
 import CourseItem from "./src-pages/course-page/course-item";
+import { map } from 'lodash';
+import { getDefaultProgress } from './dict/getCourseItems';
+import getCourseItems from './dict/getCourseItems';
+
+let courseItems = getCourseItems();
+const defaultUnitId = 1001;
 
 class App extends Component {
-
+    constructor(props) {
+        super(props);
+        let localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
+        if (!localProgress) {
+            const { learnedLang } = props.store;
+            localProgress = getDefaultProgress();
+            map(courseItems, (item) => {
+                if (item[learnedLang] && item.unitId === defaultUnitId){
+                    localProgress[learnedLang].push(+item.id);
+                }
+            });
+            localStorage.progress = JSON.stringify(localProgress);
+        }
+    }
     render() {
         const {
             store = {},
