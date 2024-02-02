@@ -39,14 +39,17 @@ const content = {
     unfoldContent: {
         ru: "Развернуть содержание",
         ukr: "Розгорнути зміст",
+        pol: "Rozwiń zawartość",
     },
     foldContent: {
         ru: "Свернуть содержание",
         ukr: "Згорнути зміст",
+        pol: "Zwiń zawartość",
     },
     notAllFieldsAreFilled: {
         ru: "Заполнены не все поля",
         ukr: "Заповнені не всі поля",
+        pol: "Nie wszystkie pola są wypełnione",
     },
 };
 
