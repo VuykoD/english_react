@@ -8,19 +8,23 @@ import '../../../scc/user-data.css';
 const content = {
     name: {
         ru: 'Имя',
-        ukr: "Ім'я"
+        ukr: "Ім'я",
+        pol: 'Imię'
     },
     surname: {
         ru: 'Фамилия',
-        ukr: 'Прізвище'
+        ukr: 'Прізвище',
+        pol: 'Nazwisko'
     },
     admin: {
         ru: 'Админ',
-        ukr: 'Адмін'
+        ukr: 'Адмін',
+        pol: 'Administrator'
     },
     save: {
         ru: 'Сохранить',
-        ukr: 'Зберегти'
+        ukr: 'Зберегти',
+        pol: 'Zapisz'
     },
 };
 

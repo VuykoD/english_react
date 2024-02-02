@@ -13,27 +13,33 @@ import '../../../scc/settings.css';
 const content = {
     fontColor: {
         ru: 'Цвет шрифта',
-        ukr: 'Колір шрифту'
+        ukr: 'Колір шрифту',
+        pol: 'Kolor czcionki'
     },
     colorPlaceHolder: {
         ru: 'Напишите цвет',
-        ukr: 'Напишіть колір'
+        ukr: 'Напишіть колір',
+        pol: 'Wpisz kolor'
     },
     firstColor: {
         ru: 'Первый цвет',
-        ukr: 'Перший колір'
+        ukr: 'Перший колір',
+        pol: 'Pierwszy kolor'
     },
     secondColor: {
         ru: 'Второй цвет',
-        ukr: 'Другий колір'
+        ukr: 'Другий колір',
+        pol: 'Drugi kolor'
     },
     backColor: {
         ru: 'Цвет фона',
-        ukr: 'Колір фону'
+        ukr: 'Колір фону',
+        pol: 'Kolor tła'
     },
     recover: {
-        ru: 'Востановить',
-        ukr: 'Відновити'
+        ru: 'Восстановить',
+        ukr: 'Відновити',
+        pol: 'Przywróć'
     },
 };
 
