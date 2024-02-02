@@ -224,6 +224,8 @@ export default class CourseItem extends Component {
         const uniq = get(content, `uniq[${siteLang}]`);
         const parsedUserData = userData ? JSON.parse(userData) : {};
         const isAdmin = get(parsedUserData, `isAdmin`);
+        let translation = siteLang;
+        if (translation === 'ukr' || translation === 'ru') translation = 'transl';
 
         const row = (odd, item) => {
             if (!item[learnedLang] && !isAdmin) return;
@@ -252,7 +254,7 @@ export default class CourseItem extends Component {
                             <FormControl
                                 type="text"
                                 id={`row${item.id}_transl`}
-                                defaultValue={item.transl}
+                                defaultValue={item[translation]}
                             />
                         </Col>
                     </Row>
