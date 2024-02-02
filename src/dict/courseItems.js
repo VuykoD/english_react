@@ -8642,85 +8642,99 @@ const courseItems =
             "id": 11966,
             "unitId": 2029,
             "eng": "First things first",
-            "transl": "Перша річ, по-перше"
+            "transl": "Перша річ, по-перше",
+            "pol": "Najpierw rzeczy pierwsze"
         },
         {
             "id": 11967,
             "unitId": 2029,
             "eng": "I'ma say all the words inside my head",
-            "transl": "Я хочу сказати всі слова, що в голові"
+            "transl": "Я хочу сказати всі слова, що в голові",
+            "pol": "Powiedzę wszystkie słowa we własnej głowie"
         },
         {
             "id": 11968,
             "unitId": 2029,
             "eng": "I’m fired up and tired of the way things that have been",
-            "transl": " Я розлючений, я втомився від того, як все було"
+            "transl": " Я розлючений, я втомився від того, як все було",
+            "pol": "Jestem podjarany i zmęczony tym, jakie rzeczy były"
         },
         {
             "id": 11969,
             "unitId": 2029,
             "eng": "Second thing second",
-            "transl": "По-друге"
+            "transl": "По-друге",
+            "pol": "Druga sprawa, druga"
         },
         {
             "id": 11970,
             "unitId": 2029,
             "eng": "Don’t you tell me what you think that I can be",
-            "transl": "Не кажи мені, ким би я по-твоєму міг бути"
+            "transl": "Не кажи мені, ким би я по-твоєму міг бути",
+            "pol": "Nie mów mi, co myślisz, że mogę być"
         },
         {
             "id": 11971,
             "unitId": 2029,
             "eng": "I’m the one at the sail, i’m the master of my sea",
-            "transl": "Я капітан свого корабля, я господар свого моря"
+            "transl": "Я капітан свого корабля, я господар свого моря",
+            "pol": "Jestem tym przy żaglu, jestem władcą mojego morza"
         },
         {
             "id": 11972,
             "unitId": 2029,
             "eng": "I was broken from a young age",
-            "transl": "Я був зломлений з юних років"
+            "transl": "Я був зломлений з юних років",
+            "pol": "Złamałem się w młodym wieku"
         },
         {
             "id": 11973,
             "unitId": 2029,
             "eng": "Taken my sulking to the masses",
-            "transl": "Ніс свою нудьгу в маси"
+            "transl": "Ніс свою нудьгу в маси",
+            "pol": "Zaniosłem moje zmulone na masową skalę"
         },
         {
             "id": 11974,
             "unitId": 2029,
             "eng": "Writing my poems for the few",
-            "transl": "Писав вірші для небагатьох"
+            "transl": "Писав вірші для небагатьох",
+            "pol": "Piszę moje wiersze dla niewielu"
         },
         {
             "id": 11975,
             "unitId": 2029,
             "eng": "That look to me, took to me, shook to me, feeling me",
-            "transl": "Хто дивився на мене, брав мене, підштовхував мене, розумів мене"
+            "transl": "Хто дивився на мене, брав мене, підштовхував мене, розумів мене",
+            "pol": "Ci, którzy na mnie patrzą, biorą mnie, wstrząsają mnie, czują mnie"
         },
         {
             "id": 11976,
             "unitId": 2029,
             "eng": "Singing from heartache from the pain",
-            "transl": "Співаю завдяки страждань і болю"
+            "transl": "Співаю завдяки страждань і болю",
+            "pol": "Śpiewając z bólu i cierpienia"
         },
         {
             "id": 11977,
             "unitId": 2029,
             "eng": "Taking my message from the veins",
-            "transl": "Слухаю послання з вен"
+            "transl": "Слухаю послання з вен",
+            "pol": "Zabierając moją wiadomość z żył"
         },
         {
             "id": 11978,
             "unitId": 2029,
             "eng": "Speaking my lesson from the brain",
-            "transl": "Даю урок від розуму"
+            "transl": "Даю урок від розуму",
+            "pol": "Mówiąc moją lekcję z mózgu"
         },
         {
             "id": 11979,
             "unitId": 2029,
             "eng": "Seeing the beauty through the",
-            "transl": "Бачу красу через"
+            "transl": "Бачу красу через",
+            "pol": "Widząc piękno przez"
         },
         {
             "id": 10991,

@@ -17,7 +17,7 @@ const content = {
     logo: {
         ru: 'Это будет легко',
         ukr: 'Це буде легко',
-        pol: 'Będzie łatwo'
+        pol: 'To będzie łatwo'
     },
     course: {
         ru: 'Курсы',
