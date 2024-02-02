@@ -20,42 +20,52 @@ export const content = {
     hideTranslate: {
         ru: "Скрыть перевод",
         ukr: "Скрити переклад",
+        pol: "Ukryj tłumaczenie",
     },
     firstPhrase: {
         ru: "Составить по словам",
         ukr: "Скласти по словам",
+        pol: "Ułożyć według słów",
     },
     thirdPhrase: {
         ru: "Написать первые буквы",
         ukr: "Написати перші літери",
+        pol: "Napisać pierwsze litery",
     },
     fifthPhrase: {
         ru: "Повторить по озвученному",
         ukr: "Повторити по озвученому",
+        pol: "Powtórz według wymowy",
     },
     train: {
         ru: "Тренировать",
         ukr: "Тренувати",
+        pol: "Ćwiczyć",
     },
     select: {
         ru: "Отобрать для изучения",
         ukr: "Відібрати для вивчення",
+        pol: "Wybierz do nauki",
     },
     alreadySelected: {
         ru: "Уже отобрано для изучения",
         ukr: "Вже відібрано для вивчення",
+        pol: "Już wybrane do nauki",
     },
     clearLocalstorage: {
         ru: "Убрать всё из изучения",
         ukr: "Видалити все з вивчення",
+        pol: "Usuń wszystko z nauki",
     },
     uniq: {
         ru: "Уникальность",
         ukr: "Унікальність",
+        pol: "Unikalność",
     },
     notAllFieldsAreFilled: {
         ru: "Заполнены не все поля",
         ukr: "Заповнені не всі поля",
+        pol: "Nie wszystkie pola są wypełnione",
     },
 };
 
