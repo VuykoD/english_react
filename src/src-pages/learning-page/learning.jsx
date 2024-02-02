@@ -537,10 +537,10 @@ class LearningClass extends Component {
                             {exampleLearning !== 'first_letters_by_text' && soundButton.call(this)}
                             {getBadge.call(
                                 this,
-                                rus,
+                                siteLang === 'pol' ? polish : rus,
                                 "light",
-                                this.onSaveRus,
-                                'changeRus'
+                                siteLang === 'pol' ? this.onSavePol : this.onSaveRus,
+                                siteLang === 'pol' ? 'changePol' : 'changeRus'
                             )}
                             {getProgressBar.call(this)}
                             {(exampleLearning === 'example_sound_repeat' || (mistake > 2 || changeToInput)) && getBadge.call(
