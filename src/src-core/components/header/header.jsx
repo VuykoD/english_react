@@ -47,12 +47,14 @@ const content = {
     btnSiteLang: {
         ru: 'Язык сайта',
         ukr: 'Мова сайту',
-        pol: 'Język strony'
+        pol: 'Język strony',
+        eng: 'Site language'
     },
     btnLearnedLand: {
         ru: 'Изучаемый язык',
         ukr: 'Мова, яку вивчаємо',
-        pol: 'Język do nauki'
+        pol: 'Język do nauki',
+        eng: 'Language to learn'
     },
     setting: {
         ru: 'Настройки',
@@ -135,6 +137,8 @@ class HeaderClass extends Component {
         const myData = get(content, `myData[${siteLang}]`);
         const btnSiteLang = get(content, `btnSiteLang[${siteLang}]`);
         const btnLearnedLand = get(content, `btnLearnedLand[${siteLang}]`);
+        const btnSiteLangEng = get(content, `btnSiteLang.eng`);
+        const btnLearnedLandEng = get(content, `btnLearnedLand.eng`);
         const setting = get(content, `setting[${siteLang}]`);
         const search = get(content, `search[${siteLang}]`);
         const statistic = get(content, `statistic[${siteLang}]`);
@@ -178,7 +182,7 @@ class HeaderClass extends Component {
                                 <DropdownButton
                                     id="dropdown-site-lang"
                                     drop={direction}
-                                    title={btnSiteLang}
+                                    title={`${btnSiteLang} (${btnSiteLangEng})`}
                                     bsPrefix='dropdown-inner no-arrow'
                                     variant={'header'}
                                 >
@@ -201,7 +205,7 @@ class HeaderClass extends Component {
                                 <DropdownButton
                                     id="dropdown-learned-lang"
                                     drop={direction}
-                                    title={btnLearnedLand}
+                                    title={`${btnLearnedLand} (${btnLearnedLandEng})`}
                                     bsPrefix='dropdown-inner no-arrow'
                                     variant={'header'}
                                 >
