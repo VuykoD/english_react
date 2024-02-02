@@ -10,27 +10,33 @@ import '../../../scc/footer.css';
 const content = {
     premium: {
         ru: 'Приобрести премиум',
-        ukr: 'Придбати преміум'
+        ukr: 'Придбати преміум',
+        pol: 'Zakup premium'
     },
     beta: {
         ru: 'beta версия',
-        ukr: 'beta версія'
+        ukr: 'beta версія',
+        pol: 'Wersja beta'
     },
     contacts: {
         ru: 'Контакты',
-        ukr: 'Контакти'
+        ukr: 'Контакти',
+        pol: 'Kontakty'
     },
     hint: {
         ru: 'На стадии разработки',
-        ukr: 'На стадії розробки'
+        ukr: 'На стадії розробки',
+        pol: 'W fazie rozwoju'
     },
     learned: {
         ru: 'Изучено',
-        ukr: 'Вивчено'
+        ukr: 'Вивчено',
+        pol: 'Nauczone'
     },
     countRepeat: {
         ru: "На изучении",
         ukr: "На вивченні",
+        pol: "W trakcie powtórek",
     },
 };
 
