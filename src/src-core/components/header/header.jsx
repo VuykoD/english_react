@@ -34,11 +34,11 @@ const content = {
         ukr: 'Мій словник',
         pol: 'Mój słownik'
     },
-    progress: {
-        ru: 'Прогресс',
-        ukr: 'Прогрес',
-        pol: 'Postęp'
-    },
+    // progress: {
+    //     ru: 'Прогресс',
+    //     ukr: 'Прогрес',
+    //     pol: 'Postęp'
+    // },
     myData: {
         ru: 'Мои данные',
         ukr: 'Мої данні',

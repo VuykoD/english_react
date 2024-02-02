@@ -17,58 +17,72 @@ const content = {
     repeat: {
         ru: "Слушать и повторять",
         ukr: "Слухати і повторювати",
+        pol: "Słuchaj i powtarzaj",
     },
     write: {
         ru: "Писать",
         ukr: "Писати",
+        pol: "Pisać",
     },
     sort: {
         ru: "Сортировать",
         ukr: "Сортувати",
+        pol: "Sortować",
     },
     source: {
         ru: "Источник",
         ukr: "Джерело",
+        pol: "Źródło",
     },
     selectAll: {
         ru: "Выбрать все",
         ukr: "Вибрати все",
+        pol: "Zaznacz wszystko",
     },
     recordWithoutHints: {
         ru: "рекорд без подсказок",
         ukr: "рекорд без підказок",
+        pol: "rekord bez podpowiedzi",
     },
     speedRepeat: {
         ru: "Ускоренное повторение",
         ukr: "Прискорене повторення",
+        pol: "Szybkie powtarzanie",
     },
     firstLettersByText: {
         ru: "Первые буквы по тексту",
         ukr: "Перші букви по тексту",
+        pol: "Pierwsze litery po tekstu",
     },
     firstLettersBySound: {
         ru: "Первые буквы по звуку",
         ukr: "Перші букви по звуку",
+        pol: "Pierwsze litery po dźwięku",
     },
     resetRecord: {
         ru: "Обнулить рекорд",
         ukr: "Обнулити рекорд",
+        pol: "Zresetuj rekord",
     },
     saveTranslation: {
         ru: "Сохранить перевод",
         ukr: "Зберегти переклад",
+        pol: "Zapisz tłumaczenie",
     },
     games: {
         ru: "Тренажеры",
         ukr: "Тренажери",
+        pol: "Gry edukacyjne",
     },
     automaticSort: {
         ru: "Сортировать автоматически",
         ukr: "Сортувати автоматично",
+        pol: "Sortuj automatycznie",
     },
     rightWritten: {
         ru: "Правильно написано",
         ukr: "Правильно написано",
+        pol: "Poprawnie napisane",
     },
 };
 
