@@ -742,7 +742,7 @@ const courseUnits =
             "id": 2022,
             "courseId": 8,
             "url": "/from-life-1",
-            "name": "З життя",
+            "name": "from the life",
             "learnedLang": [
                 "pol",
                 "eng"

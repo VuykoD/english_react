@@ -8649,6 +8649,7 @@ const courseItems =
             "id": 11965,
             "unitId": 2022,
             "eng": "Don't hesitate to engage in new opportunities",
+            "pol": "Nie wahaj się angażować w nowe możliwości",
             "transl": "Не сумнівайтеся залучатися до нових можливостей"
         },
         {
