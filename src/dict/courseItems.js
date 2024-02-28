@@ -7786,7 +7786,7 @@ const courseItems =
             "pol": "Spotykamy się u koleżanki i idziemy kupić prezent dla profesora",
             "transl": "Ми зустрічаємось у подруги і йдемо купувати"
         },
-    {
+        {
             "id": 10760,
             "unitId": 2011,
             "pol": "Ojcze nasz, któryś jest w niebie, święć się imię Twoje,",
@@ -8414,7 +8414,7 @@ const courseItems =
         {
             "id": 11926,
             "unitId": 2022,
-            "pol": "Przydumaj zdanie ze słowem żółw",
+            "pol": "wymyśli zdanie ze słowem żółw",
             "transl": "Придумайте речення зі словом черепаха"
         },
         {
@@ -8969,6 +8969,1170 @@ const courseItems =
             "unitId": 2030,
             "pol": "Tam idą tłumy",
             "transl": "Туди йдуть толпи"
+        },
+        {
+            "id": 10841,
+            "unitId": 2015,
+            "pol": "W jakim wieku powstała Polska? Polska powstała w Х wieku",
+            "transl": "В якому році повстала Польща?"
+        },
+        {
+            "id": 10842,
+            "unitId": 2015,
+            "pol": "Kiedy odbyła się Unia Krewska? Unia Krewska odbyła się w 1385r. w Krewie",
+            "transl": "Коли відбулась Унія Кревська?"
+        },
+        {
+            "id": 10843,
+            "unitId": 2015,
+            "pol": "Unia w Krewie wyznacza nowy kierunek polityki polskiej",
+            "transl": "Унія в Крево встановлює нову напрям польської політики"
+        },
+        {
+            "id": 10845,
+            "unitId": 2015,
+            "pol": "Kiedy odbyła się Unia Lubelska? Unia Lubelska odbyła się w 1569r",
+            "transl": "Коли відбулась Унія Любельська?"
+        },
+        {
+            "id": 10846,
+            "unitId": 2015,
+            "pol": "Kiedy odbyła się I Rzeczpospolita Polska? W 1569 – 1795r",
+            "transl": "Коли повстала І Річ Посполита Польська?"
+        },
+        {
+            "id": 10847,
+            "unitId": 2015,
+            "pol": "Kiedy odbyła się II Rzeczpospolita Polska? W 1918 – 1939 (między I a II wojną światową)",
+            "transl": "Коли повстала ІІ Річ Посполита Польська?"
+        },
+        {
+            "id": 10848,
+            "unitId": 2015,
+            "pol": "Kiedy odbyła się III Rzeczpospolita Polska? Od 1989 – po dzisiaj",
+            "transl": "Коли повстала ІІІ Річ Посполита Польська?"
+        },
+        {
+            "id": 10849,
+            "unitId": 2015,
+            "pol": "Miasta – stolice Polski? Gniezno 966 – 1041r. Kraków 1041 – 1596r. Warszawa 1596 – po dzisiaj",
+            "transl": "Міста – столиці Польщі?"
+        },
+        {
+            "id": 10850,
+            "unitId": 2015,
+            "pol": "Kim był Piast Kołodziej? Piast Kołodziej był legendarnym protoplastą, założycielem dynastii Piastów - pierwszej dynastii Królów Polski",
+            "transl": "Ким був Пяст Колоджєй? Пяст Колодзей був легендарним праотцем, засновником династії Пястів - першої династії королів Польщі"
+        },
+        {
+            "id": 10851,
+            "unitId": 2015,
+            "pol": "Co się stało z Popielem? Króla Popiela zjadły myszy za jego zbrodnie i udrękę ludu",
+            "transl": "Що сталось з Попєлєм? Короля Попеля з'їли миші за його злочини та муки народу"
+        },
+        {
+            "id": 10852,
+            "unitId": 2015,
+            "pol": "Kto był ostatnim królem Polski? August Poniatowski (1764-1795)",
+            "transl": "Хто був останнім королем Польщі?"
+        },
+        {
+            "id": 10853,
+            "unitId": 2015,
+            "pol": "Kim była Jadwiga? Królową Polski od 1384-1399r",
+            "transl": "Ким була Ядвіга?"
+        },
+        {
+            "id": 10854,
+            "unitId": 2015,
+            "pol": "Co to jest Miecz Szczerbiec? Miecz koronacyjny Królów Polski",
+            "transl": "Що таке Меч Щербєц?"
+        },
+        {
+            "id": 10855,
+            "unitId": 2015,
+            "pol": "Kto był pierwszym królem z dynastii Jagellonów? Władysław Jagełło. Wstąpił na tron po ślubie z Królową Jadwigą",
+            "transl": "Хто був першим королем династії Ягелонів?"
+        },
+        {
+            "id": 10856,
+            "unitId": 2015,
+            "pol": "Kto był ostatnim królem z dynastii Jagellonów? Zygmunt August II. Zrealizował Unię Lubelską 1569r",
+            "transl": "Хто був останнім королем династії Ягелонів?"
+        },
+        {
+            "id": 10857,
+            "unitId": 2015,
+            "pol": "Kto był pierwszym królem Polski? Bolesław Chrobry, koronowany w 1025r",
+            "transl": "Хто був першим королем Польщі?"
+        },
+        {
+            "id": 10858,
+            "unitId": 2015,
+            "pol": "Kto był pierwszym władcą Polski? Mieszko I (922-992) – pierwszy historycznie udokumentowany władca Polski z dynastii Piastów",
+            "transl": "Хто був першим правителем Польщі?"
+        },
+        {
+            "id": 10859,
+            "unitId": 2015,
+            "pol": "Kto wygrał bitwę pod Płowcami? W 1331r wojsko Władysława Łokietka zwyciężyło Krzyżaków",
+            "transl": "Хто виграв битву під Пловцами"
+        },
+        {
+            "id": 10860,
+            "unitId": 2015,
+            "pol": "Kto i kiedy założyw pierwszy uniwersytet w Polsce?",
+            "transl": "Хто і коли заснував перший університет в Польщі (Університет Ягєлонський)"
+        },
+        {
+            "id": 13000,
+            "unitId": 2015,
+            "pol": "Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364r. pierwszy w Polsce uniwersytet – Akademię Krakowską (Uniwersytet Jagelloński)",
+            "transl": "Казимир Великий з династії Пястів заснував у Кракові у 1364 році перший у Польщі університет – Краківську Академію (Ягеллонський університет)"
+        },
+        {
+            "id": 10861,
+            "unitId": 2015,
+            "pol": "Kiedy odbyła się bitwa pod Grunwaldem? Kto był zwycięzcą?",
+            "transl": "Коли відбулась битва під Грунвальдом? Хто переміг?"
+        },
+        {
+            "id": 13001,
+            "unitId": 2015,
+            "pol": "W 1410r. wojsko polskie i litewskie pod dowództwem Króla Władysława Jagiełły pokonało pod Grunwaldem wojsko Krzyżaków",
+            "transl": "У 1410 році польсько-литовська армія під командуванням короля Владислава Яґайли перемогла під Ґрунвальдом армію хрестоносців."
+        },
+        {
+            "id": 13002,
+            "unitId": 2015,
+            "pol": "Potęga Krzyżaków zostaje ostatecznie złamana",
+            "transl": "Сила ордену крестоносців була остаточно зламана"
+        },
+        {
+            "id": 10862,
+            "unitId": 2031,
+            "pol": "Gdzie i kiedy zginął Król Władysław Warneńczyk? Zginął w bitwie przeciw Turkow pod Warną w 1444",
+            "transl": "Де коли загинув Король Владислав Варненьчик"
+        },
+        {
+            "id": 10863,
+            "unitId": 2031,
+            "pol": "Kiedy miał miejsce Potop szwedzki?",
+            "transl": "Коли відбувся Потоп шведській?"
+        },
+        {
+            "id": 12003,
+            "unitId": 2031,
+            "pol": "W ХVII wieku królowie z dynastii Wazów pretendowali do tronu Szwecji co prowadziło do konfliktów między Rzeczpospolitą a Szwecją.",
+            "transl": "У XVII столітті королі з династії Ваза претендували на трон Швеції, що призводило до конфліктів між Речію Посполитою та Швецією"
+        },
+        {
+            "id": 12004,
+            "unitId": 2031,
+            "pol": "W 1655-1660 w okres panowania Jana - Rzeczpospolitą ogłoszono monarchią Kazimierza przypadają najazd konstytucyjną szwedzki – „potop”",
+            "transl": "У 1655-1660 роках, за панування Яна, в Речі Посполитій оголошено монархію Казимира, що припало на період конституційного нападу шведського - потоп"
+        },
+        {
+            "id": 10864,
+            "unitId": 2031,
+            "pol": "Postać Króla Jana III Sobieskiego?",
+            "transl": "Хто такий король ІІІ Собєский?"
+        },
+        {
+            "id": 12005,
+            "unitId": 2031,
+            "pol": "wybrany król (1629- 1696). W 1683r. rozgromił wojska tureckie i zahamował ekspansję Turków Otomańskich w Europie",
+            "transl": "Обраний король (1629-1696). У 1683 році розгромив війська турецькі та зупинив експансію Османських турків в Європі"
+        },
+        {
+            "id": 10865,
+            "unitId": 2031,
+            "pol": "Okres rozbiorów?",
+            "transl": "Період поділів Польщі?"
+        },
+        {
+            "id": 12006,
+            "unitId": 2031,
+            "pol": "123 lata, aż do odzyskania niepodległości w 1918r",
+            "transl": "123 роки, аж до відновлення незалежності у 1918 році"
+        },
+        {
+            "id": 12007,
+            "unitId": 2031,
+            "pol": "okres rozbiorów charakteryzował się podziałem Polski między Rosją, Austriją a Prusją, coraz głębszą rusyfikacją czy germanizacją",
+            "transl": "Період розділів характеризувався поділом Польщі між Росією, Австрією та Прусією, все більш глибокою русифікацією та германізацією"
+        },
+        {
+            "id": 10866,
+            "unitId": 2031,
+            "pol": "Kiedy odbył się I rozbiór Polski? W 1772r. W tym rozbiórze brały udział Rosja, Prusy i Austria",
+            "transl": "Коли відбувся І поділ Польщі? У 1772 році у цьому розбиранні брали участь Росія, Пруссія та Австрія"
+        },
+        {
+            "id": 10870,
+            "unitId": 2031,
+            "pol": "Kiedy odbył się III rozbiór?",
+            "transl": "Коли відбувся ІІІ поділ Польщі?"
+        },
+        {
+            "id": 12008,
+            "unitId": 2031,
+            "pol": "General Jan Henryk Dąbrowski (twórca Polski) W 1795r. Brały udział Rosja, Prusy i Lombardii Legionów Polskich. Austria",
+            "transl": "Генерал Ян Генрих Домбровський (творець Польщі) У 1795 році взяли участь Росія, Прусія та Ломбардійські легіони польські. Австрія."
+        },
+        {
+            "id": 10872,
+            "unitId": 2031,
+            "pol": "Dlaczego doszło do rozbiorów i upadku Rzeczpospolitej?",
+            "transl": "Чому дійшло до поділів та занепаду Речі Посполитої?"
+        },
+        {
+            "id": 12009,
+            "unitId": 2031,
+            "pol": "Rzeczpospolita upadła, bo w sąsiedztwie agresywnie nastawionych państw militarnych, z władzą absolutną (Prusy, Rosja i Austria) obywatele Rzeczpospolitej do końca bardziej cenili sobie wolność obywatelską",
+            "transl": "Реч Посполита впала через те, що в сусідніх агресивно налаштованих військових державах з абсолютною владою (Прусії, Росії та Австрії) громадяни Речі Посполитої до кінця більше цінили свободу громадянську"
+        },
+        {
+            "id": 10873,
+            "unitId": 2031,
+            "pol": "Kiedy wybuchło Powstanie Listopadowe?",
+            "transl": "Коли вибухнуло Повстаня Листопадове?"
+        },
+        {
+            "id": 12010,
+            "unitId": 2031,
+            "pol": "Powstanie wybuchło w noc 29 listopada 1830r. w Warszawie. W 1831r. wojska rosyjski rozbiły wojska powstańców",
+            "transl": "Повстання вибухло у ніч на 29 листопада 1830 року у Варшаві. У 1831 році російські війська розгромили повстанські війська"
+        },
+        {
+            "id": 12011,
+            "unitId": 2031,
+            "pol": "Powstańcy musieli udać się na emigracje. Fala emigracji była taka duża, że w historii Polski nazywana się Wielką Emigracją",
+            "transl": "Повстанці змушені були вирушити у еміграцію. Хвиля еміграції була настільки великою, що в історії Польщі вона відома як Велика Еміграція"
+        },
+        {
+            "id": 10874,
+            "unitId": 2031,
+            "pol": "Kiedy wybuchło Powstanie Styczniowe?",
+            "transl": "Коли вибухнуло повстання Січневе?"
+        },
+        {
+            "id": 12012,
+            "unitId": 2031,
+            "pol": "Powstanie Styczniowe wybuchło 22 stycznia 1863r, trwało do 1864r",
+            "transl": "Польське Січневе повстання вибухло 22 січня 1863 року і тривало до 1864 року"
+        },
+        {
+            "id": 12013,
+            "unitId": 2031,
+            "pol": "Drugi narodowy zryw przeciwko zaborcy Rosji. Powstańcom nie udało się przejąc władzy w Warszawie",
+            "transl": "Другий національний збройний виступ проти російського загарбника. Повстанцям не вдалося захопити владу в Варшаві"
+        },
+        {
+            "id": 10875,
+            "unitId": 2032,
+            "pol": "Kiedy wybuchła I Wojna Światowa?",
+            "transl": "Коли почалась ІІ Світова Війна?"
+        },
+        {
+            "id": 12014,
+            "unitId": 2032,
+            "pol": "1 sierpnia 1914 – 11 listopada 1918. Brały w niej udział 33 państwa",
+            "transl": "1 серпня 1914 року - 11 листопада 1918 року. У неї брали участь 33 країни"
+        },
+        {
+            "id": 12015,
+            "unitId": 2032,
+            "pol": "w czasie jej trwania zmobilizowano 70 milionów ludzi, 10 milionów poniosło śmierć, a prawie 20 milionów zostało rannych. Upadły: Cesarstwo Niemieckie, Austro-Węgerskie, Imperium osmańskie, Imperium Rosyjskie",
+            "transl": "Протягом її тривання мобілізували 70 мільйонів людей, 10 мільйонів загинули, а майже 20 мільйонів були поранені"
+        },
+        {
+            "id": 12016,
+            "unitId": 2032,
+            "pol": "Upadły: Cesarstwo Niemieckie, Austro-Węgerskie, Imperium osmańskie, Imperium Rosyjskie",
+            "transl": "Впали: Німецька імперія, Австро-Угорська імперія, Османська імперія, Російська імперія"
+        },
+        {
+            "id": 10876,
+            "unitId": 2032,
+            "pol": "Kiedy Polska otrzymała niepodległość?",
+            "transl": "Коли Польща отримала незалежність?"
+        },
+        {
+            "id": 12017,
+            "unitId": 2032,
+            "pol": "11 listopada 1918r. zakończyła się I Wojna Światowa. Józef Piłsudski zostaje Naczelnikiem Państwa. 11 listopada został ogłoszony Dniem Niepodległości Polski",
+            "transl": "11 листопада 1918 року завершилася Перша світова війна. Йозеф Пілсудський стає Головнокомандувачем країни. 11 листопада оголошено Днем Незалежності Польщі"
+        },
+        {
+            "id": 10877,
+            "unitId": 2032,
+            "pol": "Cud nad Wisłą? W sierpniu 1920 odbyła się zwycięska bitwa wojsk polskich z armią bolszewicką. 15 sierpnia w Polsce jest dniem zwycięstwa Wojska Polskiego.",
+            "transl": "Чудо над Віслою"
+        },
+        {
+            "id": 10878,
+            "unitId": 2032,
+            "pol": "Kto był pierwszym Prezydentem II Rzeczpospolitej? Profesor Gabriel Narutowicz w 1922r.",
+            "transl": "Хто був першим президентом ІІ Речі Посполитої?"
+        },
+        {
+            "id": 10879,
+            "unitId": 2032,
+            "pol": "Kto był ostatnim Prezydentem II Rzeczpospolitej? Ignacy Mościcki w 1926r",
+            "transl": "Хто був останнім президентом ІІ Речі Посполитої"
+        },
+        {
+            "id": 10880,
+            "unitId": 2032,
+            "pol": "Kiedy wybuchła II Wojna Światowa?",
+            "transl": "Коли почалась ІІ Світова Війна?"
+        },
+        {
+            "id": 12018,
+            "unitId": 2032,
+            "pol": "1 września 1939r. wojska niemieckie zaatakowały Polskę",
+            "transl": "1 вересня 1939 року німецькі війська напали на Польщу"
+        },
+        {
+            "id": 12019,
+            "unitId": 2032,
+            "pol": "Dnia 17 września 1939 wojska sowieckie wkroczyły na teren wschodniej II Rzeczpospolitej na mocy Paktu Ribbentrop-Mołotow",
+            "transl": "7 вересня 1939 року радянські війська ввійшли на територію східної частини Другої Речі Посполитої відповідно до Пакту Риббентропа-Молотова"
+        },
+        {
+            "id": 12020,
+            "unitId": 2032,
+            "pol": "Teren II Rzeczpospolitej został podzielony: 49% Związek Sowiecki, 51% Niemcy",
+            "transl": "Територія Другої Речі Посполитої була розділена: 49% - Союз Радянський, 51% - Німеччина"
+        },
+        {
+            "id": 10881,
+            "unitId": 2032,
+            "pol": "Głowne bitwy II Wojny Światowej w których uczestniczyli żołnierze Wojska Polskiego?",
+            "transl": "Головні битви ІІ Світової війни в яких приймали участь солдати Війська Польського?"
+        },
+        {
+            "id": 12021,
+            "unitId": 2032,
+            "pol": "Bitwa o Anglię - 1940 rok; Bitwa o Monte Cassino - 1944 rok Włochy (Armia Polska pod dowództwem Generała Władysława Andersa)",
+            "transl": "Битва за Англію - 1940 рік; Битва під Монте-Кассіно - 1944 рік, Італія (Польська армія під командуванням генерала Владислава Андерса)"
+        },
+        {
+            "id": 12022,
+            "unitId": 2032,
+            "pol": "Walki w północnych Włoszech - 1945 rok; Wyzwolenie miasta Bredy w Holandii - 1944 rok",
+            "transl": "Бої на півночі Італії - 1945 рік; Звільнення міста Бреда в Нідерландах - 1944 рік"
+        },
+        {
+            "id": 10882,
+            "unitId": 2032,
+            "pol": "Kiedy wybuchło Powstanie Warszawskie?",
+            "transl": "Коли вибухнуло повстання Варшавське?"
+        },
+        {
+            "id": 12023,
+            "unitId": 2032,
+            "pol": "Warszawie wybuchło powstanie zorganizowane przez Armię Krajową",
+            "transl": "У Варшаві спалахнуло повстання, організоване Армією Крайовою"
+        },
+        {
+            "id": 12024,
+            "unitId": 2032,
+            "pol": "Jego głównym celem jest wyzwolenie stolicy spod władzy Niemców i zdobycie suwerenności. Powstanie trwało 63 dni i zostało pokonane",
+            "transl": "Його основною метою було звільнення столиці від німецького владарювання та досягнення суверенітету. Повстання тривало 63 дні та було придушене"
+        },
+        {
+            "id": 10883,
+            "unitId": 2032,
+            "pol": "Data końcu II Wojny Światowej? 8 maja 1945r. - bezwarunkowa kapitulacja III Rzeszy",
+            "transl": "Дата закінчення ІІ Світової війни?"
+        },
+        {
+            "id": 10884,
+            "unitId": 2033,
+            "pol": "Polska po 1944 roku. Jałta 1945r.",
+            "transl": "Польща після 1944 року. Ялта 1945"
+        },
+        {
+            "id": 12025,
+            "unitId": 2033,
+            "pol": "W Jałcie w lutym 1945 roku, Wielka Brytania i Stany Zjednoczone były zmuszone uznać roszczenia sowietów do terytorium na wschód od rzeki Bug",
+            "transl": "На Ялтинській конференції в лютому 1945 року Велика Британія та Сполучені Штати були змушені визнати претензії Радянського Союзу до території на сході від річки Буг"
+        },
+        {
+            "id": 12026,
+            "unitId": 2033,
+            "pol": "Armia Czerwona zajęłą już w tym czasie te tereny w pogoni za Niemcami",
+            "transl": "Червона Армія вже на той момент захопила ці території в погоні за Німеччиною"
+        },
+        {
+            "id": 12027,
+            "unitId": 2033,
+            "pol": "Jałta w Polsce jest synonimem zdrady aliantów i prawie pięćdziesięcioletniego podziału Europy na strefę wpływów sowieckich i wolny świat zachodni",
+            "transl": "Ялта в Польщі є синонімом зради союзників та майже п'ятдесятирічного поділу Європи на сферу впливу Радянського Союзу та вільний західний світ"
+        },
+        {
+            "id": 10885,
+            "unitId": 2033,
+            "pol": "Rok założenia Związku Zawodowego Solidarność lub z czym kojarzy się Sierpień 1980?",
+            "transl": "Рік заснування Союзу «Солідарність» або з чим асоціюється серпень 1980 року"
+        },
+        {
+            "id": 12028,
+            "unitId": 2033,
+            "pol": "Związek Zawodowy Solidarność został założony na podstawie Porozumień w Gdańsku kończących 14 dni strajku w sierpniu 1980 roku w Stoczni Gdańskiej",
+            "transl": "Профспілка Солідарність була заснована на основі угод у Гданську, які завершили 14-денний страйк у серпні 1980 року на Гданському суднобудівному заводі"
+        },
+        {
+            "id": 12029,
+            "unitId": 2033,
+            "pol": "Strajkujący wystąpili za uzyskania swobód politycznych i ekonomicznych",
+            "transl": "Страйкуючі виступали за отримання політичних і економічних свобод"
+        },
+        {
+            "id": 12030,
+            "unitId": 2033,
+            "pol": "Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983 Pokojową Nagrodę Nobla",
+            "transl": "Їхній лідер Лех Валенса, за фахом електрик, отримав у 1983 році Нобелівську премію миру"
+        },
+        {
+            "id": 10886,
+            "unitId": 2033,
+            "pol": "Z jakim wydarzeniem kojarzy się 13 grudzień?",
+            "transl": "Яка подія пов’язана з 13 грудня?"
+        },
+        {
+            "id": 12031,
+            "unitId": 2033,
+            "pol": "13 grudzień 1981r. - wprowadzenie Stanu Wojennego przez generała Wojciecha Jaruzelskiego. Delegalizacja pierwszej Solidarności",
+            "transl": "13 грудня 1981 року - введення воєнного стану генералом Войцехом Ярузельським. Дезактивація першої Солідарності"
+        },
+        {
+            "id": 10887,
+            "unitId": 2033,
+            "pol": "Koniec rządów komunistycznych?",
+            "transl": "Кінець комуністичної влади?"
+        },
+        {
+            "id": 12032,
+            "unitId": 2033,
+            "pol": "W 1989 Partia komunistyczna zezwala na wolne wybory, które wygrywają kandydaci bloku solidarnościowego",
+            "transl": "У 1989 році Комуністична партія дозволяє проведення вільних виборів, які виграли кандидати блоку Солідарності"
+        },
+        {
+            "id": 12033,
+            "unitId": 2033,
+            "pol": "Tadeusz Mazowiecki zostaje pierwszym niekomunistycznym premierem Polski. Rok później Lech Wałęsa wygrywa wybory prezydenckie",
+            "transl": "Тадеуш Мазовецький стає першим некомуністичним прем'єр-міністром Польщі. Рік потому Лех Валенса виграє президентські вибори"
+        },
+        {
+            "id": 10888,
+            "unitId": 2033,
+            "pol": "Wymień nazwiska prezudentów Rzeczpospolitej Polski po 1989r?",
+            "transl": "Назвіть президентів Речі Посполитої Польщі після 1989 року?"
+        },
+        {
+            "id": 12034,
+            "unitId": 2033,
+            "pol": "1989-1990r. – Wojciech Jaruzelski; 1990-1995r. – Lech Wałęsa; 1995-2005r. – Aleksander Kwaśniewski (był Prezydentem 2 kadencje)",
+            "transl": "1989-1990 рр. - Войцех Ярузельський; 1990-1995 рр. - Лех Валенса; 1995-2005 рр. - Олександр Квашневський (був Президентом дві каденції)"
+        },
+        {
+            "id": 12035,
+            "unitId": 2033,
+            "pol": "2005-2010r. – Lech Kaczyński (10 kwietnia 2010r. wyleciał z Warszawy rządowym samolotem w Smoleńsk by udać się na obchody 70-rocznicy zbrodni katyńskiej. Zginął wraz z żoną i wszystkimi członkami delegacji)",
+            "transl": "2005-2010 рр. - Лех Качинський (10 квітня 2010 р. вилетів із Варшави на урядовому літаку до Смоленська для участі в урочистостях з нагоди 70-річчя Катинської розстрілянки. Загинув разом з дружиною та всіма членами делегації)"
+        },
+        {
+            "id": 12036,
+            "unitId": 2033,
+            "pol": "2010r. – po 2015r – Bronisław Maria Komorowski. 2015r. – po dzisiaj – Andrzej Duda",
+            "transl": "2010 р. – після 2015 р. – Броніслав Марія Коморовський. 2015 р. – по сьогодні – Анджей Дуда"
+        },
+        {
+            "id": 10889,
+            "unitId": 2033,
+            "pol": "Data wstąpienia Polski do NATO? 12 marca 1999r. Polska stała członkiem NATO",
+            "transl": "Дата вступу Польщі до НАТО?"
+        },
+        {
+            "id": 10890,
+            "unitId": 2033,
+            "pol": "Data wstąpienia Polski do Unii Europejskiej? Od 1 maja 2004 r. Polska jest pełnoprawnym członkiem Unii Europejskiej",
+            "transl": "Дата вступу Польщі в Євросоюз?"
+        },
+        {
+            "id": 10903,
+            "unitId": 2016,
+            "pol": "Powierzchnia Polski?",
+            "transl": "Площа Польщі?"
+        },
+        {
+            "id": 10904,
+            "unitId": 2016,
+            "pol": "Powierzchnia Polski wynosi 312 685 km2 i pod względem powierzchni Polska jest dziewiątym krajem w Europie",
+            "transl": "Площа Польщі становить 312 685 км2 і за площею Польща є дев'ятою країною в Європа"
+        },
+        {
+            "id": 10905,
+            "unitId": 2016,
+            "pol": "Polska jest krajem nizinnym",
+            "transl": "Польща – рівнинна країна"
+        },
+        {
+            "id": 10906,
+            "unitId": 2016,
+            "pol": "trzy czwarte terytorium Polski są na nizinach, poniżej 200 metrów nad poziomem morza",
+            "transl": "три чверті території Польщі знаходяться на низовини, нижче 200 метрів над рівень моря"
+        },
+        {
+            "id": 10907,
+            "unitId": 2016,
+            "pol": "Góry ciągną się na południu wzdłuż południowych granic Polski",
+            "transl": "Гори тягнуться на південь уздовж південних кордонів польський"
+        },
+        {
+            "id": 10908,
+            "unitId": 2016,
+            "pol": "Podział administracyjny?",
+            "transl": "Адміністративний поділ"
+        },
+        {
+            "id": 10909,
+            "unitId": 2016,
+            "pol": "Administracyjnie Polska podzielona jest na 16 wojewodów, województwa dzielą się na 314 powiatów, a powiaty na 2479 gminy",
+            "transl": "В адміністративному відношенні Польща поділена на 16 воєводств, воєводства поділяються на 314 повітів і повітм на 2479 комун"
+        },
+        {
+            "id": 10910,
+            "unitId": 2016,
+            "pol": "Nazwy województw?",
+            "transl": "Назви воєводств"
+        },
+        {
+            "id": 10911,
+            "unitId": 2016,
+            "pol": "Dolnośląskie, Łódzkie, Podkarpackie, Świętokrzyskie, Kujawsko-pomorskie, Małopolskie, Podlaskie, Warmińsko-Mazurskie, Lubelskie, Mazowieckie, Pomorskie, Wielkopolskie, Lubuskie, Opolskie, Śląskie, Zachodniopomorskie",
+            "transl": "Дольношльонське, Лодзінське, Підкарпатське, Свентокшиське, Куявсько-Поморське, Малопольське, Підляське, Вармінсько-Мазурське, Любельське, Мазовецьке, Поморське, Великопольське, Любуське, Опольське, Сілезьке, Західнопоморське"
+        },
+        {
+            "id": 10912,
+            "unitId": 2016,
+            "pol": "Klimat Polski?",
+            "transl": "Клімат Польщі"
+        },
+        {
+            "id": 10913,
+            "unitId": 2016,
+            "pol": "Polska leży w strefie klimatu przejściowego, pomiędzy klimatem umiarkowanym oceanicznym na zachodzie a klimatem umiarkowanym kontynentalnym na wschodzie",
+            "transl": "Польща розташована в кліматичній зоні перехідний між кліматами помірний океанічнийна західі і помірний клімат континентальний на сході"
+        },
+        {
+            "id": 10914,
+            "unitId": 2016,
+            "pol": "Średnia temperatura w lecie waha się pomiędzy 16 a 20 °C, w zimie - między -6 a 0 °C",
+            "transl": "Середня температура влітку коливається від 16 до 20 °C, взимку - від -6 до 0 °C"
+        },
+        {
+            "id": 10915,
+            "unitId": 2016,
+            "pol": "Z jakimi państwami graniczy Rzeczpospolita Polska?",
+            "transl": "З якими державами межує Польща"
+        },
+        {
+            "id": 10916,
+            "unitId": 2016,
+            "pol": "Rzeczpospolita Polska graniczy z Niemcami na zachodzie",
+            "transl": "Республіка Польща межує з Німеччиною на заході "
+        },
+        {
+            "id": 10917,
+            "unitId": 2016,
+            "pol": "Rzeczpospolita Polska graniczy z Czechami i Słowacją na południu",
+            "transl": "Республіка Польща межує з Чехією та Словаччиною на півдні "
+        },
+        {
+            "id": 10918,
+            "unitId": 2016,
+            "pol": "Rzeczpospolita Polska graniczy z Ukrainą i Białorusią na wschodzie",
+            "transl": "Республіка Польща межує з Україною та Білоруссю на сході"
+        },
+        {
+            "id": 10919,
+            "unitId": 2016,
+            "pol": "Rzeczpospolita Polska graniczy z Litwą i Federacją Rosyjską (Okręg Kaliningradzki) na północy",
+            "transl": "Республіка Польща межує з Литвою та Російською Федерацією (Калінінградський район) на півночі"
+        },
+        {
+            "id": 10920,
+            "unitId": 2016,
+            "pol": "Czy Polska leży nad morzem?",
+            "transl": "Чи Польща знаходиться над морем"
+        },
+        {
+            "id": 10921,
+            "unitId": 2016,
+            "pol": "Tak, na północy nad morzem Bałtyckim",
+            "transl": "Так, на півночі біля моря Балтійського"
+        },
+        {
+            "id": 10922,
+            "unitId": 2016,
+            "pol": "Długość wybrzeża 775 km",
+            "transl": "Довжина узбережжя 775 км"
+        },
+        {
+            "id": 10923,
+            "unitId": 2016,
+            "pol": "Główne handlowe polskie porty: Gdańsk, Gdynia, Szczecin nad Zalewem Szczecińskim i Świnoujście",
+            "transl": "Основні комерційні порти Польщі: Гданськ, Гдиня, Щецин над Щецинською лагуною та Свіноуйсьце"
+        },
+        {
+            "id": 10924,
+            "unitId": 2026,
+            "pol": "Polskie miasta położone nad Bałtykiem?",
+            "transl": "Польські міста розташовані над Балтійським морем"
+        },
+        {
+            "id": 10925,
+            "unitId": 2026,
+            "pol": "Trójmiasto - Gdańsk, Gdynia, Sopot. W środkowej części miasto Kołobrzeg. W zachodniej - Świnoujście",
+            "transl": "Троймісто - Гданськ, Гдиня, Сопот. У центральній частині місто Колобжег. На заході - Свіноуйсьце"
+        },
+        {
+            "id": 10926,
+            "unitId": 2026,
+            "pol": "Parki Narodowe w Polsce?",
+            "transl": "Народні парки Польщі"
+        },
+        {
+            "id": 10927,
+            "unitId": 2026,
+            "pol": "23 razem: najbardziej znane: Białowieski, Tatrzański, Pieniński, Bieszczadzki Parki Narodowe",
+            "transl": "Всього 23: найвідоміші: Біловезький, Татранський, Пенінський, Бещадський національні парки"
+        },
+        {
+            "id": 10928,
+            "unitId": 2026,
+            "pol": "Białowieski Park Narodowy jest najstarszym parkiem narodowym w Polsce. Został utworzony w 1932 r",
+            "transl": "Біловезький національний парк є найстаріший національний парк в Польща. Він був створений в 1932 році."
+        },
+        {
+            "id": 10929,
+            "unitId": 2026,
+            "pol": "W 1977r. UNESCO włączyło Białowieski Park Narodowy w poczet światowych rezerwatów biosfery",
+            "transl": "в 1977 році ЮНЕСКО включило Біловезький національний парк в групу світових біосферних заповідників"
+        },
+        {
+            "id": 10930,
+            "unitId": 2026,
+            "pol": "a dwa lata później uznano go za pierwszy i jedyny w Polsce przyrodniczy Obiekt Dziedzictwa Światowego",
+            "transl": "а через два роки його визнали першим і єдиним в Польщі об'єктом природної світової спадщини"
+        },
+        {
+            "id": 10931,
+            "unitId": 2026,
+            "pol": "Tatrzański Park Narodowy został powołany w 1954 roku, w celu ochrony zasobów przyrodniczych Tatr Polskich",
+            "transl": "Національний парк Татра був заснований у 1954 році з метою захисту природних резервів Татр в Польщі"
+        },
+        {
+            "id": 10932,
+            "unitId": 2026,
+            "pol": "Park obejmuje prawie cale Tatry polskie i sąsiaduje z Parkiem Narodowym na słowackiej stronie",
+            "transl": "Парк охоплює майже всі польські Татри і має спільний кордон з Національним парком на словацькому боці"
+        },
+        {
+            "id": 10933,
+            "unitId": 2026,
+            "pol": "Pieniński Park Narodowy założony w 1932 roku, jeszcze przed II wojną światową jest bardzo lubianym i często odwiedzanym Parkiem Narodowym",
+            "transl": "Піненський національний парк був заснований у 1932 році, ще до Другої світової війни, і є дуже улюбленим та часто відвідуваним національним парком"
+        },
+        {
+            "id": 10934,
+            "unitId": 2026,
+            "pol": "Najważniejsze rzeki w Polsce?",
+            "transl": "Головні річки Польщі?"
+        },
+        {
+            "id": 10935,
+            "unitId": 2026,
+            "pol": "Bug - rzeka na granicy wschodniej (na terenie Polski 587 km)",
+            "transl": "Буг - річка на східному кордоні (587 км у Польщі)"
+        },
+        {
+            "id": 10936,
+            "unitId": 2026,
+            "pol": "Narew - wpadająca do Bugu",
+            "transl": "Нарев - впадає в Буг"
+        },
+        {
+            "id": 10937,
+            "unitId": 2026,
+            "pol": "Wisła - najważniejsza, najdłuższa polska rzeka (1047 km)",
+            "transl": "Вісла - найважливіша, найдовша польська річка (1047 км)"
+        },
+        {
+            "id": 10938,
+            "unitId": 2026,
+            "pol": "Warta (808 km)",
+            "transl": "Варта (808 км)"
+        },
+        {
+            "id": 10939,
+            "unitId": 2026,
+            "pol": "Odra (na terenie Polski 742 km). Na swoim odcinku centralnym rzeka graniczna z Niemcami. Odra wypływa z Czech",
+            "transl": "Одра (на території Польщі - 742 км). На своєму центральному відрізку річка межує з Німеччиною. Одра витікає з Чехії"
+        },
+        {
+            "id": 10940,
+            "unitId": 2026,
+            "pol": "Najważniejsze jeziora w Polsce?",
+            "transl": "Головні озера Польщі"
+        },
+        {
+            "id": 10941,
+            "unitId": 2026,
+            "pol": "Śniardwy (na Pojezierzu Mazurskim) największe w Polsce jezioro (114 km2)",
+            "transl": "Снярдви (в Мазурському поозер'ї) найбільше озеро в Польщі (114 км2)"
+        },
+        {
+            "id": 10942,
+            "unitId": 2026,
+            "pol": "Mamry (104 km2)",
+            "transl": "Мамри (104 км2)"
+        },
+        {
+            "id": 10943,
+            "unitId": 2026,
+            "pol": "Hańcza (najgłębsze, 108 m głębokości), w samym północno-wschodnim skrawku Polski",
+            "transl": "Ганча (найглибше, 108 м глибини) розташована в самому північно-східному куточку Польщі"
+        },
+        {
+            "id": 10944,
+            "unitId": 2026,
+            "pol": "Morskie Oko w Tatrach, przykład jeziora wysokogórskiego",
+            "transl": "Морське Око в Татрах, приклад високогірного озера"
+        },
+        {
+            "id": 10945,
+            "unitId": 2026,
+            "pol": "Przez jakie miasta przepływa rzeka Wisła?",
+            "transl": "Через які міста протікає річка Вісла?"
+        },
+        {
+            "id": 10946,
+            "unitId": 2026,
+            "pol": "Wisła wypływa z Beskidów Sląskich. Przepływa przez Kraków, Sandomierz, Warszawa, Toruń",
+            "transl": "Вісла витікає з Сілезьких Бескидів. Протікає через Краків, Сандомир, Варшаву та Торунь"
+        },
+        {
+            "id": 10947,
+            "unitId": 2027,
+            "pol": "Góry w Polsce?",
+            "transl": "Гори в Польщі?"
+        },
+        {
+            "id": 10948,
+            "unitId": 2027,
+            "pol": "Karpaty: to pasmo gór w środkowej Europie",
+            "transl": "Карпати: це гірський хребет в центральній Європі."
+        },
+        {
+            "id": 10949,
+            "unitId": 2027,
+            "pol": "Karpaty ciągną się od polskiego Śląska poprzez Ukrainę aż do Rumunii",
+            "transl": "Карпати простягаються від польської Сілезії через Україну до Румунії"
+        },
+        {
+            "id": 10950,
+            "unitId": 2027,
+            "pol": "Polska część Karpat to Beskidy: Śląski, Beskidy Zachodnie, Beskid Niski, Beskidy Wschodnie",
+            "transl": "Польська частина Карпат – це Бескиди: Сілезькі, Західні Бескиди, Низькі Бескиди, Східні Бескиди"
+        },
+        {
+            "id": 10951,
+            "unitId": 2027,
+            "pol": "W pasmie Karpat są Tatry, Pieniny i Bieszczady",
+            "transl": "Карпатський хребет включає Татри, Пеніни та Бещади"
+        },
+        {
+            "id": 10952,
+            "unitId": 2027,
+            "pol": "Bieszczady nalezą do Karpat Wschodnich i odróżniają się Beskidów Zachodnich",
+            "transl": "Бещади належать до Східних Карпат і виділяються Західні Бескиди"
+        },
+        {
+            "id": 10953,
+            "unitId": 2027,
+            "pol": "Tatry – najwyższe góry w pasmie Karpat",
+            "transl": "Татри - найвищі гори Карпатського хребта"
+        },
+        {
+            "id": 10954,
+            "unitId": 2027,
+            "pol": "Na granicy ze Słowacja, najwyższy polski szczyt Tatr Rysy 2499 metrów nad poziomem morza",
+            "transl": "На кордоні зі Словаччиною розташований найвищий польський вершину Татр - Риси, висота якої становить 2499 метрів над рівнем моря."
+        },
+        {
+            "id": 10956,
+            "unitId": 2027,
+            "pol": "Jedyne w Polsce góry o charakterze alpejskim",
+            "transl": "Єдині альпійські гори в Польщі"
+        },
+        {
+            "id": 10957,
+            "unitId": 2027,
+            "pol": "Niestety w Polsce pasmo Tatr ciągnie się zaledwie około 30 kilometrów",
+            "transl": "На жаль, у Польщі хребет Татр розтягується лише близько 30 кілометрів"
+        },
+        {
+            "id": 10958,
+            "unitId": 2027,
+            "pol": "Sudety: na Dolnym Śląsku, na granicy z Czechami. Góry Stołowe, góra Śnieżka",
+            "transl": "Судети: у Нижній Сілезії, на кордоні з Чехією. Столові гори, Гора Білосніжка"
+        },
+        {
+            "id": 10959,
+            "unitId": 2027,
+            "pol": "Góry Świętokrzyskie: jedno z najstarszych pasm górskich",
+            "transl": "Свєнтокшиські гори: один із найдавніших гірських масивів"
+        },
+        {
+            "id": 10960,
+            "unitId": 2027,
+            "pol": "Najwyższy szczyt Łysica 612 metrów nad poziomem morza",
+            "transl": "Найвища вершина Лисиця 612 метрів над рівнем моря"
+        },
+        {
+            "id": 10961,
+            "unitId": 2027,
+            "pol": "Najważniejsze miasta Polski?",
+            "transl": "Найголовніші міста Польщі?"
+        },
+        {
+            "id": 10962,
+            "unitId": 2027,
+            "pol": "Warszawa - (stolica) 1,7 milionów mieszkańców",
+            "transl": "Варшава - (столиця) 1,7 млн жителів"
+        },
+        {
+            "id": 10963,
+            "unitId": 2027,
+            "pol": "Największe lotnisko w Polsce imienia Fryderyka Chopina",
+            "transl": "Найбільший аеропорт Польщі імені Фридерика Шопена"
+        },
+        {
+            "id": 10964,
+            "unitId": 2027,
+            "pol": "Największy Uniwersytet, Politechnika",
+            "transl": "Найбільший університет Політехнічний"
+        },
+        {
+            "id": 10965,
+            "unitId": 2027,
+            "pol": "Stare Miasto zniszczone w czasie Powstania Warszawskiego zostało odbudowane wraz z Zamkiem Królewskim",
+            "transl": "Старе місто, зруйноване під час Варшавського повстання, було відбудовано разом із Королівським замком"
+        },
+        {
+            "id": 10966,
+            "unitId": 2027,
+            "pol": "Łódź - wielkie miasto przemysłowe, znane do niedawna z przemysłu włókienniczego",
+            "transl": "Лодзь - велике промислове місто, до недавнього часу відоме своєю текстильною промисловістю"
+        },
+        {
+            "id": 10967,
+            "unitId": 2027,
+            "pol": "Kraków - była stolica Polski, Uniwersytet Jagielloński, miasto Papieża Jana Pawła II",
+            "transl": "Краків - колишня столиця Польщі, Ягеллонський університет, місто Папи Івана Павла ІІ"
+        },
+        {
+            "id": 10968,
+            "unitId": 2027,
+            "pol": "Kraków, nie zniszczony w czasie II wojny, z historycznym Rynkiem, zamkiem na Wawelu, w samym centrum miasta",
+            "transl": "Краків, не зруйнований під час Другої світової війни, із історичним ринком, замком на Вавелі, в самому центрі міста"
+        },
+        {
+            "id": 10969,
+            "unitId": 2028,
+            "pol": "Wrocław - wielkie miasto na Ziemiach Odzyskanych po II wojnie Światowej",
+            "transl": "Вроцлав - велике місто на відновлених територіях після Другої світової війни"
+        },
+        {
+            "id": 10970,
+            "unitId": 2028,
+            "pol": "Katowice - stolica polskiego Sląska",
+            "transl": "Катовіце - столиця польської Сілезії"
+        },
+        {
+            "id": 10971,
+            "unitId": 2028,
+            "pol": "Przemysłowe centrum hutniczo – górnicze (kopalnie węgla kamiennego)",
+            "transl": "Промисловий металургійно-гірничий центр (вугільні шахти камінь)"
+        },
+        {
+            "id": 10972,
+            "unitId": 2028,
+            "pol": "Gdańsk – główne miasto na polskim wybrzeżu Bałtyku. Lotnisko imienia Lecha Wałęsy",
+            "transl": "Ґданськ - головне місто на польському узбережжі Балтійського моря. Аеропорт імені Леха Валенси"
+        },
+        {
+            "id": 10973,
+            "unitId": 2028,
+            "pol": "Poznań - stolica Wielkopolski. Pod zaborami należał do Prus",
+            "transl": "Познань - столиця Великопольщі. Під час розділів він належав до Прус"
+        },
+        {
+            "id": 10974,
+            "unitId": 2028,
+            "pol": "Najważniejsze budowle średniowieczne w miastach Polski?",
+            "transl": "Найважливіші середньовічні споруди в містах Польщі"
+        },
+        {
+            "id": 10975,
+            "unitId": 2028,
+            "pol": "Wawel (Zamek Królewski) w Krakowie, był siedzibą Królów przez wieki",
+            "transl": "Вавель (королівський замок) у Кракові протягом століть був резиденцією королів"
+        },
+        {
+            "id": 10976,
+            "unitId": 2028,
+            "pol": "Sukiennice na Rynku w Krakowie budynek kopców sukien (materiałów) na Rynku krakowskim",
+            "transl": "Суконниці на Ринковій площі в Кракові будівля курганів суконь (тканин) на Краківській Ринковій площі"
+        },
+        {
+            "id": 10977,
+            "unitId": 2028,
+            "pol": "Zamek krzyżacki w Malborku: najwspanialszy zamek gotycki, o charakterze wczesnego średniowiecza",
+            "transl": "Тевтонський замок у Мальборку: найвеличніший готичний замок раннього середньовіччя"
+        },
+        {
+            "id": 10978,
+            "unitId": 2028,
+            "pol": "Lista zabytków UNESCO w Polsce",
+            "transl": "Список пам'яток ЮНЕСКО в Польщі"
+        },
+        {
+            "id": 10979,
+            "unitId": 2028,
+            "pol": "Stare Miasto w Warszawie",
+            "transl": "Старе місто у Варшаві ЮНЕСКО"
+        },
+        {
+            "id": 10980,
+            "unitId": 2028,
+            "pol": "Puszcza Białowieska",
+            "transl": "Біловезька пуща ЮНЕСКО"
+        },
+        {
+            "id": 10981,
+            "unitId": 2028,
+            "pol": "Kopalnia soli w Wieliczce",
+            "transl": "Соляні копальні у Величці ЮНЕСКО"
+        },
+        {
+            "id": 10982,
+            "unitId": 2028,
+            "pol": "Zamek krzyżacki w Malborku",
+            "transl": "Тевтонський замок у Мальборку ЮНЕСКО"
+        },
+        {
+            "id": 10983,
+            "unitId": 2028,
+            "pol": "Stare Miasto w Zamościu",
+            "transl": "Старе місто в Замості ЮНЕСКО"
+        },
+        {
+            "id": 10984,
+            "unitId": 2028,
+            "pol": "Obóz Koncentracyjny Auschwitz-Birkenau",
+            "transl": "Концтабір Аушвіц-Біркенау ЮНЕСКО"
+        },
+        {
+            "id": 10985,
+            "unitId": 2028,
+            "pol": "Kalwaria Zebrzydowska",
+            "transl": "Кальварія Зебжидовська ЮНЕСКО"
+        },
+        {
+            "id": 10986,
+            "unitId": 2028,
+            "pol": "Średniowieczny zespół miejski w Toruniu",
+            "transl": "Середньовічний міський комплекс у Торуні ЮНЕСКО"
+        },
+        {
+            "id": 10987,
+            "unitId": 2028,
+            "pol": "Drewniane Kościoły południowej Małopolski",
+            "transl": "Дерев'яні церкви південної Малопольщі ЮНЕСКО "
+        },
+        {
+            "id": 10988,
+            "unitId": 2028,
+            "pol": "Kościoły Pokoju w Jaworze i Świdnicy",
+            "transl": "Церкви миру в Яворі та Свідниці ЮНЕСКО"
+        },
+        {
+            "id": 10989,
+            "unitId": 2028,
+            "pol": "Park Mużakowski",
+            "transl": "Мужаківський парк ЮНЕСКО"
+        },
+        {
+            "id": 10990,
+            "unitId": 2028,
+            "pol": "Hala Stulecia we Wrocławiu",
+            "transl": "Зал Століття у Вроцлаві ЮНЕСКО"
+        },
+        {
+            "id": 13003,
+            "unitId": 2022,
+            "pol": "Zazdrosny zwłaszcza o jej sukcesy zawodowe",
+            "transl": "Заздрісний особливо за її професійні успіхи"
+        },
+        {
+            "id": 13004,
+            "unitId": 2022,
+            "pol": "Mam szczęście, że poznałem taką osobę jak Ty",
+            "transl": "Я щасливий, що познайомився з такою особою, як ти"
+        },
+        {
+            "id": 13005,
+            "unitId": 2022,
+            "pol": "U nas jest chłodniej niż w Poznaniu",
+            "transl": "У нас холодніше, ніж у Познані"
+        },
+        {
+            "id": 13006,
+            "unitId": 2022,
+            "pol": "U nas, tutaj jest o wiele chłodniej niż w Poznaniu",
+            "transl": "У нас тут значно прохолодніше, ніж у Познані"
+        },
+        {
+            "id": 13007,
+            "unitId": 2022,
+            "pol": "Na pewno pragnienie spełnię",
+            "transl": "Обов'язково виконаю своє бажання"
+        },
+        {
+            "id": 13008,
+            "unitId": 2022,
+            "pol": "Naprawdę marzenie może stać się rzeczywistością",
+            "transl": "Справжня мрія може здійснитися"
+        },
+        {
+            "id": 13009,
+            "unitId": 2022,
+            "pol": "Szarmancki, staroświecki dżentelmen zawsze wzbudza podziw",
+            "transl": "Галантний, старомодний джентельмен завжди викликає захват"
+        },
+        {
+            "id": 13010,
+            "unitId": 2022,
+            "pol": "Podekscytowany dotykiem łechtaczki, osiągnął szczyt rozkoszy",
+            "transl": "Збуджений дотиком клітора, досяг вершини насолоди"
+        },
+        {
+            "id": 13011,
+            "unitId": 2022,
+            "pol": "W podwórzu kuzynki biegają wiewiórki i skunksy",
+            "transl": "У двоюрідної сестри на подвір'ї бігають білки і скунси"
+        },
+        {
+            "id": 13012,
+            "unitId": 2022,
+            "pol": "jazda po ciemku jest o wiele trudniejsza",
+            "transl": "їзда в темряві набагато складніша"
+        },
+        {
+            "id": 13013,
+            "unitId": 2022,
+            "pol": "kelner",
+            "transl": "офіціант"
+        },
+        {
+            "id": 13014,
+            "unitId": 2022,
+            "pol": "Ząb musi się zagoić",
+            "transl": "Зуб повинен зажити"
+        },
+        {
+            "id": 13015,
+            "unitId": 2022,
+            "pol": "Naprzeciwko schroniska rosła bujna zieleń",
+            "transl": "Напроти притулку росла густа зелень"
+        },
+        {
+            "id": 13016,
+            "unitId": 2022,
+            "pol": "Doświadczenie zmienia przyzwyczajenia",
+            "transl": "Досвід змінює звички"
+        },
+        {
+            "id": 13017,
+            "unitId": 2022,
+            "pol": "Padła mi bateria, muszę naładować telefon",
+            "transl": "розрядилася батарея, мені потрібно зарядити телефон"
+        },
+        {
+            "id": 13018,
+            "unitId": 2022,
+            "pol": "Patrz, to jest śmieszne",
+            "transl": "Глянь, це смішно"
+        },
+        {
+            "id": 13019,
+            "unitId": 2022,
+            "pol": "opinie",
+            "transl": "відгуки"
+        },
+        {
+            "id": 13020,
+            "unitId": 2022,
+            "pol": "Tarczyca i wątroba to ważne narządy",
+            "transl": "Щитовидна залоза та печінка - важливі органи"
+        },
+        {
+            "id": 13021,
+            "unitId": 2022,
+            "pol": "Na polu naprzeciwko stało 5 saren",
+            "transl": "На полі напроти стояло 5 оленів"
+        },
+        {
+            "id": 13022,
+            "unitId": 2022,
+            "pol": "opcja",
+            "transl": "варіант"
+        },
+        {
+            "id": 13023,
+            "unitId": 2022,
+            "pol": "moja opiniа, albo moja perspektywa",
+            "transl": "моя точка зору"
+        },
+        {
+            "id": 13024,
+            "unitId": 2022,
+            "pol": "smok",
+            "transl": "дракон"
+        },
+        {
+            "id": 13025,
+            "unitId": 2022,
+            "pol": "Mgła pochłonęła spadochrony w bezgranicznej przestrzeni",
+            "transl": "Туман поглинув парашути в безмежному просторі"
+        },
+        {
+            "id": 13026,
+            "unitId": 2022,
+            "pol": "Na razie smog się utrzymuje",
+            "transl": "Наразі смог тримається"
+        },
+        {
+            "id": 13027,
+            "unitId": 2022,
+            "pol": "Pod bziozą stoi opustoszały pomost",
+            "transl": "Під березою стоїть порожній пірс"
         }
     ]
 
