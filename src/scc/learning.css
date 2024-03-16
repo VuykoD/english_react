@@ -103,6 +103,28 @@ button.title_sound {
     font-weight: 500;
 }
 
+.error {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: #ffffff;
+    }
+    50% {
+        background-color: #516e79;
+    }
+    100% {
+        background-color: #ffffff;
+    }
+}
+
 @keyframes move_eye {
     from {
         width: 1%;

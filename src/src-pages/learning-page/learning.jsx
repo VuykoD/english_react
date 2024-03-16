@@ -443,6 +443,14 @@ class LearningClass extends Component {
         this.setState({changeToInput: true});
     }
 
+    errorEffect = () => {
+        const errorEl = document.getElementById('error');
+        errorEl.classList.add('error');
+        setTimeout(() => {
+            errorEl.classList.remove('error')
+        }, 1000);
+    }
+
     render() {
         const {
             exampleLearning,
@@ -493,7 +501,10 @@ class LearningClass extends Component {
                         </Row>
                         <Row>
                             <Col className={learnedLang === 'pol' ? 'hide-in-mobile' : null}>
-                                <Button variant="info" block onClick={this.speedRepeat} children={`${speedRepeat} (50)`}/>
+                                <Button
+                                    variant="info" block onClick={this.speedRepeat}
+                                    children={`${speedRepeat} (50)`}
+                                />
                             </Col>
                             <Col>
                                 <Button variant="info" block onClick={this.write} children={`${write} (max 10)`}/>
@@ -550,7 +561,7 @@ class LearningClass extends Component {
                                 learnedLang === 'pol' ? this.onSavePol : null,
                                 learnedLang === 'pol' ? 'changePol' : null
                             )}
-                            {isFirstLetters && getDotBadge.call(this,"secondary")}
+                            {isFirstLetters && getDotBadge.call(this, "secondary")}
                             {(
                                 exampleLearning === 'write'
                                 || exampleLearning === 'first_letters_by_text'
@@ -564,6 +575,7 @@ class LearningClass extends Component {
                         </Col>
                     </Row>
                 }
+                <div id="error" />
             </Container>
         );
     }
@@ -853,6 +865,7 @@ export function changedInput() {
             speak.call(this);
         }
         this.setState({mistake: mistake + 1});
+        this.errorEffect();
         if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
             this.mistakeArr.push(learnNumber);
         }

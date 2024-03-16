@@ -8427,7 +8427,7 @@ const courseItems =
             "id": 11928,
             "unitId": 2022,
             "pol": "Być wytrwałym, starannym i cierpliwym jest ważne, aby nauczyć się języka",
-            "transl": "Важливо бути впертим, старанним і терплячим, щоб вивчити мову"
+            "transl": "бути впертим, старанним і терплячим, то важливо, щоб вивчити мову"
         },
         {
             "id": 11929,
@@ -9232,7 +9232,7 @@ const courseItems =
             "id": 10875,
             "unitId": 2032,
             "pol": "Kiedy wybuchła I Wojna Światowa?",
-            "transl": "Коли почалась ІІ Світова Війна?"
+            "transl": "Коли почалась І Світова Війна?"
         },
         {
             "id": 12014,
@@ -10036,7 +10036,7 @@ const courseItems =
             "id": 13011,
             "unitId": 2022,
             "pol": "W podwórzu kuzynki biegają wiewiórki i skunksy",
-            "transl": "У двоюрідної сестри на подвір'ї бігають білки і скунси"
+            "transl": "на подвір'ї у двоюрідної сестри бігають білки і скунси"
         },
         {
             "id": 13012,
@@ -10047,8 +10047,8 @@ const courseItems =
         {
             "id": 13013,
             "unitId": 2022,
-            "pol": "kelner",
-            "transl": "офіціант"
+            "pol": "Kelner dba o dobre opinie klientów",
+            "transl": "Офіціант дбає про хороші відгуки клієнтів"
         },
         {
             "id": 13014,
@@ -10083,8 +10083,8 @@ const courseItems =
         {
             "id": 13019,
             "unitId": 2022,
-            "pol": "opinie",
-            "transl": "відгуки"
+            "pol": " A co ma piernik do wiatraka?",
+            "transl": "Яке то має відношення одне до іншого? (дословно - а що має пряник до вітряка?)"
         },
         {
             "id": 13020,
@@ -10101,20 +10101,20 @@ const courseItems =
         {
             "id": 13022,
             "unitId": 2022,
-            "pol": "opcja",
-            "transl": "варіант"
+            "pol": "Smok to opcja dla odważnych",
+            "transl": "Дракон - це вибір для сміливих"
         },
         {
             "id": 13023,
             "unitId": 2022,
-            "pol": "moja opiniа, albo moja perspektywa",
+            "pol": "moja opinia, albo moja perspektywa",
             "transl": "моя точка зору"
         },
         {
             "id": 13024,
             "unitId": 2022,
-            "pol": "smok",
-            "transl": "дракон"
+            "pol": "Kawałek księżyca tańczy na wodzie",
+            "transl": "Шматок місяця танцює на воді"
         },
         {
             "id": 13025,
