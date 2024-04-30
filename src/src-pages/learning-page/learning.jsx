@@ -466,7 +466,7 @@ class LearningClass extends Component {
         const { siteLang, learnedLang } = this.props.store;
         const write = get(content, `write[${siteLang}]`) || '';
         const speedRepeat = get(content, `speedRepeat[${siteLang}]`) || '';
-        const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`) || '';
+        // const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`) || '';
         const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`) || '';
         const rightWritten = get(content, `rightWritten[${siteLang}]`) || '';
         const games = get(content, `games[${siteLang}]`) || '';
@@ -509,11 +509,13 @@ class LearningClass extends Component {
                             <Col>
                                 <Button variant="info" block onClick={this.write} children={`${write} (max 10)`}/>
                             </Col>
+                            {/*
                             <Col>
                                 <Button variant="info" block onClick={this.firstLettersByText}>
                                     {`${firstLettersByText} (50)`}
                                 </Button>
                             </Col>
+                            */}
                             <Col className={learnedLang === 'pol' ? 'hide-in-mobile' : null}>
                                 <Button variant="info" block onClick={this.firstLettersBySound}>
                                     {`${firstLettersBySound} (70)`}
