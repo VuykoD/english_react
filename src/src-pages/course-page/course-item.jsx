@@ -191,6 +191,25 @@ export default class CourseItem extends Component {
         }
     }
 
+    addItem = (id) => {
+        const { onChangeToLearnCount } = this.props;
+        const { learnedLang } = this.props.store;
+        this.localProgress[learnedLang].push(id);
+        setLearnCount(onChangeToLearnCount, this.localProgress[learnedLang].length);
+        localStorage.progress = JSON.stringify(this.localProgress);
+    }
+
+    removeItem = (id) => {
+        const { onChangeToLearnCount } = this.props;
+        const { learnedLang } = this.props.store;
+        const index = indexOf(get(this.localProgress,`[${learnedLang}]`, []), id);
+        if (index > -1) {
+            this.localProgress[learnedLang].splice(index, 1);
+            setLearnCount(onChangeToLearnCount, this.localProgress[learnedLang].length);
+            localStorage.progress = JSON.stringify(this.localProgress);
+        }
+    }
+
     clearUniq() {
         const div = document.getElementById('uniqueArr');
         div.innerHTML = '';
@@ -234,6 +253,7 @@ export default class CourseItem extends Component {
                         <Col sm="1" className="editButton">
                             <Button
                                 variant={inProgress  ? "info" : "light"}
+                                title="save"
                                 block
                                 onClick={item.id !== '_new' ? () => this.edit(item.id) : this.add}
                             >
@@ -253,6 +273,17 @@ export default class CourseItem extends Component {
                                 id={`row${item.id}_transl`}
                                 defaultValue={item[translation]}
                             />
+                        </Col>
+                        <Col sm="1" className="editButton">
+                            {item.id !== '_new' && (
+                                <Button
+                                    variant="light"
+                                    block
+                                    onClick={() => inProgress ? this.removeItem(item.id) : this.addItem(item.id)}
+                                >
+                                    {inProgress ? "-" : "+"}
+                                </Button>
+                            )}
                         </Col>
                     </Row>
                 </ListGroup.Item>
