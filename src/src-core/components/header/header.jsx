@@ -161,7 +161,7 @@ class HeaderClass extends Component {
                                 {logo && <div className="lowerLogo" style={fontStyle}>{logo}</div>}
                             </Link>
                         </Col>
-                        <Col className="hidden">
+                        <Col className="search_block">
                             <FormControl type="text" placeholder={search} className="mr-sm-2 search" onChange={this.warn}/>
                         </Col>
                             <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >

@@ -135,4 +135,6 @@ h1 {
     visibility: hidden;
 }
 @media only screen
-and (max-device-width : 768px){ .hide-header, .hidden { display: none; }}
+and (max-device-width : 768px) {
+    .hide-header, .hidden, .search_block { display: none; }
+}
