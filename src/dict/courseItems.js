@@ -9317,6 +9317,72 @@ const courseItems =
             "unitId": 2034,
             "pol": "Zauważyłem, że po schudnięciu moja twarz wygląda lepiej",
             "transl": "Я помітив, що після схуднення моє обличчя виглядає краще"
+        },
+        {
+            "id": 13061,
+            "unitId": 2034,
+            "pol": "Skoro wypredza, musi mieć ważny powód",
+            "transl": "Якщо випереджає, значить, має важливу причину"
+        },
+        {
+            "id": 13062,
+            "unitId": 2034,
+            "pol": "W niedługim czasie potrzebne będą nowe kąpielówki",
+            "transl": "Скоро знадобляться нові плавки"
+        },
+        {
+            "id": 13063,
+            "unitId": 2034,
+            "pol": "Niedługo będziemy robić grilla w ogrodzie",
+            "transl": "Незабаром ми будемо робити шашлик в саду"
+        },
+        {
+            "id": 13064,
+            "unitId": 2034,
+            "pol": "Przez przypadek zostawiłem czapkę na klamce",
+            "transl": "Випадково я залишив свою шапку на ручці."
+        },
+        {
+            "id": 13065,
+            "unitId": 2035,
+            "pol": "Koło młyńskie za cztery ryńskie, koło nam się połamało, żyto nam się wysypało, a my wszyscy bęc na ziemie",
+            "transl": "Млинове колесо на чотири млини, у нас колесо зламалося, жито розсипалось, а ми всі на землю повалились"
+        },
+        {
+            "id": 13066,
+            "unitId": 2034,
+            "pol": "Na pielgrzymce zawsze mam przy sobie modlitewnik i różaniec",
+            "transl": "Під час паломництва завжди маю при собі молитовник і вервицю"
+        },
+        {
+            "id": 13067,
+            "unitId": 2034,
+            "pol": "Mosiężny uchwyt na antycznym kredensie",
+            "transl": "Мідна тримач на античному комоді"
+        },
+        {
+            "id": 13068,
+            "unitId": 2034,
+            "pol": "Popraw mój polski",
+            "transl": "Покращи мій польський"
+        },
+        {
+            "id": 13069,
+            "unitId": 2034,
+            "pol": "Ta gorzka prawda była dla mnie rewelacją",
+            "transl": "Ця гірка правда була для мене одкровенням"
+        },
+        {
+            "id": 13070,
+            "unitId": 2034,
+            "pol": "Mylisz mnie, ten długopis jest zepsuty",
+            "transl": "Ви помиляєтеся, ця ручка зламана"
+        },
+        {
+            "id": 13071,
+            "unitId": 2034,
+            "pol": "Sytuacja opanowana?",
+            "transl": "Ситуація під контролем?"
         }
     ]
 
@@ -9329,24 +9395,24 @@ const kartaPol = [
         "pol": "W jakim wieku powstała Polska? Polska powstała w Х wieku",
         "transl": "В якому році повстала Польща?"
     },
-    {
-        "id": 10842,
-        "unitId": 2015,
-        "pol": "Kiedy odbyła się Unia Krewska? Unia Krewska odbyła się w 1385r. w Krewie",
-        "transl": "Коли відбулась Унія Кревська?"
-    },
-    {
-        "id": 10843,
-        "unitId": 2015,
-        "pol": "Unia w Krewie wyznacza nowy kierunek polityki polskiej",
-        "transl": "Унія в Крево встановлює нову напрям польської політики"
-    },
-    {
-        "id": 10845,
-        "unitId": 2015,
-        "pol": "Kiedy odbyła się Unia Lubelska? Unia Lubelska odbyła się w 1569r",
-        "transl": "Коли відбулась Унія Любельська?"
-    },
+    // {
+    //     "id": 10842,
+    //     "unitId": 2015,
+    //     "pol": "Kiedy odbyła się Unia Krewska? Unia Krewska odbyła się w 1385r. w Krewie",
+    //     "transl": "Коли відбулась Унія Кревська?"
+    // },
+    // {
+    //     "id": 10843,
+    //     "unitId": 2015,
+    //     "pol": "Unia w Krewie wyznacza nowy kierunek polityki polskiej",
+    //     "transl": "Унія в Крево встановлює нову напрям польської політики"
+    // },
+    // {
+    //     "id": 10845,
+    //     "unitId": 2015,
+    //     "pol": "Kiedy odbyła się Unia Lubelska? Unia Lubelska odbyła się w 1569r",
+    //     "transl": "Коли відбулась Унія Любельська?"
+    // },
     {
         "id": 10846,
         "unitId": 2015,
@@ -9371,48 +9437,48 @@ const kartaPol = [
         "pol": "Miasta – stolice Polski? Gniezno 966 – 1041r. Kraków 1041 – 1596r. Warszawa 1596 – po dzisiaj",
         "transl": "Міста – столиці Польщі?"
     },
-    {
-        "id": 10850,
-        "unitId": 2015,
-        "pol": "Kim był Piast Kołodziej? Piast Kołodziej był legendarnym protoplastą, założycielem dynastii Piastów - pierwszej dynastii Królów Polski",
-        "transl": "Ким був Пяст Колоджєй? Пяст Колодзей був легендарним праотцем, засновником династії Пястів - першої династії королів Польщі"
-    },
-    {
-        "id": 10851,
-        "unitId": 2015,
-        "pol": "Co się stało z Popielem? Króla Popiela zjadły myszy za jego zbrodnie i udrękę ludu",
-        "transl": "Що сталось з Попєлєм? Короля Попеля з'їли миші за його злочини та муки народу"
-    },
+    // {
+    //     "id": 10850,
+    //     "unitId": 2015,
+    //     "pol": "Kim był Piast Kołodziej? Piast Kołodziej był legendarnym protoplastą, założycielem dynastii Piastów - pierwszej dynastii Królów Polski",
+    //     "transl": "Ким був Пяст Колоджєй? Пяст Колодзей був легендарним праотцем, засновником династії Пястів - першої династії королів Польщі"
+    // },
+    // {
+    //     "id": 10851,
+    //     "unitId": 2015,
+    //     "pol": "Co się stało z Popielem? Króla Popiela zjadły myszy za jego zbrodnie i udrękę ludu",
+    //     "transl": "Що сталось з Попєлєм? Короля Попеля з'їли миші за його злочини та муки народу"
+    // },
     {
         "id": 10852,
         "unitId": 2015,
         "pol": "Kto był ostatnim królem Polski? August Poniatowski (1764-1795)",
         "transl": "Хто був останнім королем Польщі?"
     },
-    {
-        "id": 10853,
-        "unitId": 2015,
-        "pol": "Kim była Jadwiga? Królową Polski od 1384-1399r",
-        "transl": "Ким була Ядвіга?"
-    },
+    // {
+    //     "id": 10853,
+    //     "unitId": 2015,
+    //     "pol": "Kim była Jadwiga? Królową Polski od 1384-1399r",
+    //     "transl": "Ким була Ядвіга?"
+    // },
     {
         "id": 10854,
         "unitId": 2015,
         "pol": "Co to jest Miecz Szczerbiec? Miecz koronacyjny Królów Polski",
         "transl": "Що таке Меч Щербєц?"
     },
-    {
-        "id": 10855,
-        "unitId": 2015,
-        "pol": "Kto był pierwszym królem z dynastii Jagellonów? Władysław Jagełło. Wstąpił na tron po ślubie z Królową Jadwigą",
-        "transl": "Хто був першим королем династії Ягелонів?"
-    },
-    {
-        "id": 10856,
-        "unitId": 2015,
-        "pol": "Kto był ostatnim królem z dynastii Jagellonów? Zygmunt August II. Zrealizował Unię Lubelską 1569r",
-        "transl": "Хто був останнім королем династії Ягелонів?"
-    },
+    // {
+    //     "id": 10855,
+    //     "unitId": 2015,
+    //     "pol": "Kto był pierwszym królem z dynastii Jagellonów? Władysław Jagełło. Wstąpił na tron po ślubie z Królową Jadwigą",
+    //     "transl": "Хто був першим королем династії Ягелонів?"
+    // },
+    // {
+    //     "id": 10856,
+    //     "unitId": 2015,
+    //     "pol": "Kto był ostatnim królem z dynastii Jagellonów? Zygmunt August II. Zrealizował Unię Lubelską 1569r",
+    //     "transl": "Хто був останнім королем династії Ягелонів?"
+    // },
     {
         "id": 10857,
         "unitId": 2015,
@@ -9425,12 +9491,12 @@ const kartaPol = [
         "pol": "Kto był pierwszym władcą Polski? Mieszko I (922-992) – pierwszy historycznie udokumentowany władca Polski z dynastii Piastów",
         "transl": "Хто був першим правителем Польщі?"
     },
-    {
-        "id": 10859,
-        "unitId": 2015,
-        "pol": "Kto wygrał bitwę pod Płowcami? W 1331r wojsko Władysława Łokietka zwyciężyło Krzyżaków",
-        "transl": "Хто виграв битву під Пловцами"
-    },
+    // {
+    //     "id": 10859,
+    //     "unitId": 2015,
+    //     "pol": "Kto wygrał bitwę pod Płowcami? W 1331r wojsko Władysława Łokietka zwyciężyło Krzyżaków",
+    //     "transl": "Хто виграв битву під Пловцами"
+    // },
     {
         "id": 10860,
         "unitId": 2015,
@@ -9443,60 +9509,60 @@ const kartaPol = [
         "pol": "Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364r. pierwszy w Polsce uniwersytet – Akademię Krakowską (Uniwersytet Jagelloński)",
         "transl": "Казимир Великий з династії Пястів заснував у Кракові у 1364 році перший у Польщі університет – Краківську Академію (Ягеллонський університет)"
     },
-    {
-        "id": 10861,
-        "unitId": 2015,
-        "pol": "Kiedy odbyła się bitwa pod Grunwaldem? Kto był zwycięzcą?",
-        "transl": "Коли відбулась битва під Грунвальдом? Хто переміг?"
-    },
-    {
-        "id": 13001,
-        "unitId": 2015,
-        "pol": "W 1410r. wojsko polskie i litewskie pod dowództwem Króla Władysława Jagiełły pokonało pod Grunwaldem wojsko Krzyżaków",
-        "transl": "У 1410 році польсько-литовська армія під командуванням короля Владислава Яґайли перемогла під Ґрунвальдом армію хрестоносців."
-    },
-    {
-        "id": 13002,
-        "unitId": 2015,
-        "pol": "Potęga Krzyżaków zostaje ostatecznie złamana",
-        "transl": "Сила ордену крестоносців була остаточно зламана"
-    },
-    {
-        "id": 10862,
-        "unitId": 2031,
-        "pol": "Gdzie i kiedy zginął Król Władysław Warneńczyk? Zginął w bitwie przeciw Turkow pod Warną w 1444",
-        "transl": "Де коли загинув Король Владислав Варненьчик"
-    },
-    {
-        "id": 10863,
-        "unitId": 2031,
-        "pol": "Kiedy miał miejsce Potop szwedzki?",
-        "transl": "Коли відбувся Потоп шведській?"
-    },
-    {
-        "id": 12003,
-        "unitId": 2031,
-        "pol": "W ХVII wieku królowie z dynastii Wazów pretendowali do tronu Szwecji co prowadziło do konfliktów między Rzeczpospolitą a Szwecją.",
-        "transl": "У XVII столітті королі з династії Ваза претендували на трон Швеції, що призводило до конфліктів між Речію Посполитою та Швецією"
-    },
-    {
-        "id": 12004,
-        "unitId": 2031,
-        "pol": "W 1655-1660 w okres panowania Jana - Rzeczpospolitą ogłoszono monarchią Kazimierza przypadają najazd konstytucyjną szwedzki – „potop”",
-        "transl": "У 1655-1660 роках, за панування Яна, в Речі Посполитій оголошено монархію Казимира, що припало на період конституційного нападу шведського - потоп"
-    },
-    {
-        "id": 10864,
-        "unitId": 2031,
-        "pol": "Postać Króla Jana III Sobieskiego?",
-        "transl": "Хто такий король ІІІ Собєский?"
-    },
-    {
-        "id": 12005,
-        "unitId": 2031,
-        "pol": "wybrany król (1629- 1696). W 1683r. rozgromił wojska tureckie i zahamował ekspansję Turków Otomańskich w Europie",
-        "transl": "Обраний король (1629-1696). У 1683 році розгромив війська турецькі та зупинив експансію Османських турків в Європі"
-    },
+    // {
+    //     "id": 10861,
+    //     "unitId": 2015,
+    //     "pol": "Kiedy odbyła się bitwa pod Grunwaldem? Kto był zwycięzcą?",
+    //     "transl": "Коли відбулась битва під Грунвальдом? Хто переміг?"
+    // },
+    // {
+    //     "id": 13001,
+    //     "unitId": 2015,
+    //     "pol": "W 1410r. wojsko polskie i litewskie pod dowództwem Króla Władysława Jagiełły pokonało pod Grunwaldem wojsko Krzyżaków",
+    //     "transl": "У 1410 році польсько-литовська армія під командуванням короля Владислава Яґайли перемогла під Ґрунвальдом армію хрестоносців."
+    // },
+    // {
+    //     "id": 13002,
+    //     "unitId": 2015,
+    //     "pol": "Potęga Krzyżaków zostaje ostatecznie złamana",
+    //     "transl": "Сила ордену крестоносців була остаточно зламана"
+    // },
+    // {
+    //     "id": 10862,
+    //     "unitId": 2031,
+    //     "pol": "Gdzie i kiedy zginął Król Władysław Warneńczyk? Zginął w bitwie przeciw Turkow pod Warną w 1444",
+    //     "transl": "Де коли загинув Король Владислав Варненьчик"
+    // },
+    // {
+    //     "id": 10863,
+    //     "unitId": 2031,
+    //     "pol": "Kiedy miał miejsce Potop szwedzki?",
+    //     "transl": "Коли відбувся Потоп шведській?"
+    // },
+    // {
+    //     "id": 12003,
+    //     "unitId": 2031,
+    //     "pol": "W ХVII wieku królowie z dynastii Wazów pretendowali do tronu Szwecji co prowadziło do konfliktów między Rzeczpospolitą a Szwecją.",
+    //     "transl": "У XVII столітті королі з династії Ваза претендували на трон Швеції, що призводило до конфліктів між Речію Посполитою та Швецією"
+    // },
+    // {
+    //     "id": 12004,
+    //     "unitId": 2031,
+    //     "pol": "W 1655-1660 w okres panowania Jana - Rzeczpospolitą ogłoszono monarchią Kazimierza przypadają najazd konstytucyjną szwedzki – „potop”",
+    //     "transl": "У 1655-1660 роках, за панування Яна, в Речі Посполитій оголошено монархію Казимира, що припало на період конституційного нападу шведського - потоп"
+    // },
+    // {
+    //     "id": 10864,
+    //     "unitId": 2031,
+    //     "pol": "Postać Króla Jana III Sobieskiego?",
+    //     "transl": "Хто такий король ІІІ Собєский?"
+    // },
+    // {
+    //     "id": 12005,
+    //     "unitId": 2031,
+    //     "pol": "wybrany król (1629- 1696). W 1683r. rozgromił wojska tureckie i zahamował ekspansję Turków Otomańskich w Europie",
+    //     "transl": "Обраний король (1629-1696). У 1683 році розгромив війська турецькі та зупинив експансію Османських турків в Європі"
+    // },
     {
         "id": 10865,
         "unitId": 2031,
@@ -9545,42 +9611,42 @@ const kartaPol = [
         "pol": "Rzeczpospolita upadła, bo w sąsiedztwie agresywnie nastawionych państw militarnych, z władzą absolutną (Prusy, Rosja i Austria) obywatele Rzeczpospolitej do końca bardziej cenili sobie wolność obywatelską",
         "transl": "Реч Посполита впала через те, що в сусідніх агресивно налаштованих військових державах з абсолютною владою (Прусії, Росії та Австрії) громадяни Речі Посполитої до кінця більше цінили свободу громадянську"
     },
-    {
-        "id": 10873,
-        "unitId": 2031,
-        "pol": "Kiedy wybuchło Powstanie Listopadowe?",
-        "transl": "Коли вибухнуло Повстаня Листопадове?"
-    },
-    {
-        "id": 12010,
-        "unitId": 2031,
-        "pol": "Powstanie wybuchło w noc 29 listopada 1830r. w Warszawie. W 1831r. wojska rosyjski rozbiły wojska powstańców",
-        "transl": "Повстання вибухло у ніч на 29 листопада 1830 року у Варшаві. У 1831 році російські війська розгромили повстанські війська"
-    },
-    {
-        "id": 12011,
-        "unitId": 2031,
-        "pol": "Powstańcy musieli udać się na emigracje. Fala emigracji była taka duża, że w historii Polski nazywana się Wielką Emigracją",
-        "transl": "Повстанці змушені були вирушити у еміграцію. Хвиля еміграції була настільки великою, що в історії Польщі вона відома як Велика Еміграція"
-    },
-    {
-        "id": 10874,
-        "unitId": 2031,
-        "pol": "Kiedy wybuchło Powstanie Styczniowe?",
-        "transl": "Коли вибухнуло повстання Січневе?"
-    },
-    {
-        "id": 12012,
-        "unitId": 2031,
-        "pol": "Powstanie Styczniowe wybuchło 22 stycznia 1863r, trwało do 1864r",
-        "transl": "Польське Січневе повстання вибухло 22 січня 1863 року і тривало до 1864 року"
-    },
-    {
-        "id": 12013,
-        "unitId": 2031,
-        "pol": "Drugi narodowy zryw przeciwko zaborcy Rosji. Powstańcom nie udało się przejąc władzy w Warszawie",
-        "transl": "Другий національний збройний виступ проти російського загарбника. Повстанцям не вдалося захопити владу в Варшаві"
-    },
+    // {
+    //     "id": 10873,
+    //     "unitId": 2031,
+    //     "pol": "Kiedy wybuchło Powstanie Listopadowe?",
+    //     "transl": "Коли вибухнуло Повстаня Листопадове?"
+    // },
+    // {
+    //     "id": 12010,
+    //     "unitId": 2031,
+    //     "pol": "Powstanie wybuchło w noc 29 listopada 1830r. w Warszawie. W 1831r. wojska rosyjski rozbiły wojska powstańców",
+    //     "transl": "Повстання вибухло у ніч на 29 листопада 1830 року у Варшаві. У 1831 році російські війська розгромили повстанські війська"
+    // },
+    // {
+    //     "id": 12011,
+    //     "unitId": 2031,
+    //     "pol": "Powstańcy musieli udać się na emigracje. Fala emigracji była taka duża, że w historii Polski nazywana się Wielką Emigracją",
+    //     "transl": "Повстанці змушені були вирушити у еміграцію. Хвиля еміграції була настільки великою, що в історії Польщі вона відома як Велика Еміграція"
+    // },
+    // {
+    //     "id": 10874,
+    //     "unitId": 2031,
+    //     "pol": "Kiedy wybuchło Powstanie Styczniowe?",
+    //     "transl": "Коли вибухнуло повстання Січневе?"
+    // },
+    // {
+    //     "id": 12012,
+    //     "unitId": 2031,
+    //     "pol": "Powstanie Styczniowe wybuchło 22 stycznia 1863r, trwało do 1864r",
+    //     "transl": "Польське Січневе повстання вибухло 22 січня 1863 року і тривало до 1864 року"
+    // },
+    // {
+    //     "id": 12013,
+    //     "unitId": 2031,
+    //     "pol": "Drugi narodowy zryw przeciwko zaborcy Rosji. Powstańcom nie udało się przejąc władzy w Warszawie",
+    //     "transl": "Другий національний збройний виступ проти російського загарбника. Повстанцям не вдалося захопити владу в Варшаві"
+    // },
     {
         "id": 10875,
         "unitId": 2032,
@@ -9659,42 +9725,42 @@ const kartaPol = [
         "pol": "Teren II Rzeczpospolitej został podzielony: 49% Związek Sowiecki, 51% Niemcy",
         "transl": "Територія Другої Речі Посполитої була розділена: 49% - Союз Радянський, 51% - Німеччина"
     },
-    {
-        "id": 10881,
-        "unitId": 2032,
-        "pol": "Głowne bitwy II Wojny Światowej w których uczestniczyli żołnierze Wojska Polskiego?",
-        "transl": "Головні битви ІІ Світової війни в яких приймали участь солдати Війська Польського?"
-    },
-    {
-        "id": 12021,
-        "unitId": 2032,
-        "pol": "Bitwa o Anglię - 1940 rok; Bitwa o Monte Cassino - 1944 rok Włochy (Armia Polska pod dowództwem Generała Władysława Andersa)",
-        "transl": "Битва за Англію - 1940 рік; Битва під Монте-Кассіно - 1944 рік, Італія (Польська армія під командуванням генерала Владислава Андерса)"
-    },
-    {
-        "id": 12022,
-        "unitId": 2032,
-        "pol": "Walki w północnych Włoszech - 1945 rok; Wyzwolenie miasta Bredy w Holandii - 1944 rok",
-        "transl": "Бої на півночі Італії - 1945 рік; Звільнення міста Бреда в Нідерландах - 1944 рік"
-    },
-    {
-        "id": 10882,
-        "unitId": 2032,
-        "pol": "Kiedy wybuchło Powstanie Warszawskie?",
-        "transl": "Коли вибухнуло повстання Варшавське?"
-    },
-    {
-        "id": 12023,
-        "unitId": 2032,
-        "pol": "Warszawie wybuchło powstanie zorganizowane przez Armię Krajową",
-        "transl": "У Варшаві спалахнуло повстання, організоване Армією Крайовою"
-    },
-    {
-        "id": 12024,
-        "unitId": 2032,
-        "pol": "Jego głównym celem jest wyzwolenie stolicy spod władzy Niemców i zdobycie suwerenności. Powstanie trwało 63 dni i zostało pokonane",
-        "transl": "Його основною метою було звільнення столиці від німецького владарювання та досягнення суверенітету. Повстання тривало 63 дні та було придушене"
-    },
+    // {
+    //     "id": 10881,
+    //     "unitId": 2032,
+    //     "pol": "Głowne bitwy II Wojny Światowej w których uczestniczyli żołnierze Wojska Polskiego?",
+    //     "transl": "Головні битви ІІ Світової війни в яких приймали участь солдати Війська Польського?"
+    // },
+    // {
+    //     "id": 12021,
+    //     "unitId": 2032,
+    //     "pol": "Bitwa o Anglię - 1940 rok; Bitwa o Monte Cassino - 1944 rok Włochy (Armia Polska pod dowództwem Generała Władysława Andersa)",
+    //     "transl": "Битва за Англію - 1940 рік; Битва під Монте-Кассіно - 1944 рік, Італія (Польська армія під командуванням генерала Владислава Андерса)"
+    // },
+    // {
+    //     "id": 12022,
+    //     "unitId": 2032,
+    //     "pol": "Walki w północnych Włoszech - 1945 rok; Wyzwolenie miasta Bredy w Holandii - 1944 rok",
+    //     "transl": "Бої на півночі Італії - 1945 рік; Звільнення міста Бреда в Нідерландах - 1944 рік"
+    // },
+    // {
+    //     "id": 10882,
+    //     "unitId": 2032,
+    //     "pol": "Kiedy wybuchło Powstanie Warszawskie?",
+    //     "transl": "Коли вибухнуло повстання Варшавське?"
+    // },
+    // {
+    //     "id": 12023,
+    //     "unitId": 2032,
+    //     "pol": "Warszawie wybuchło powstanie zorganizowane przez Armię Krajową",
+    //     "transl": "У Варшаві спалахнуло повстання, організоване Армією Крайовою"
+    // },
+    // {
+    //     "id": 12024,
+    //     "unitId": 2032,
+    //     "pol": "Jego głównym celem jest wyzwolenie stolicy spod władzy Niemców i zdobycie suwerenności. Powstanie trwało 63 dni i zostało pokonane",
+    //     "transl": "Його основною метою було звільнення столиці від німецького владарювання та досягнення суверенітету. Повстання тривало 63 дні та було придушене"
+    // },
     {
         "id": 10883,
         "unitId": 2032,
@@ -9707,66 +9773,66 @@ const kartaPol = [
         "pol": "Polska po 1944 roku. Jałta 1945r.",
         "transl": "Польща після 1944 року. Ялта 1945"
     },
-    {
-        "id": 12025,
-        "unitId": 2033,
-        "pol": "W Jałcie w lutym 1945 roku, Wielka Brytania i Stany Zjednoczone były zmuszone uznać roszczenia sowietów do terytorium na wschód od rzeki Bug",
-        "transl": "На Ялтинській конференції в лютому 1945 року Велика Британія та Сполучені Штати були змушені визнати претензії Радянського Союзу до території на сході від річки Буг"
-    },
-    {
-        "id": 12026,
-        "unitId": 2033,
-        "pol": "Armia Czerwona zajęłą już w tym czasie te tereny w pogoni za Niemcami",
-        "transl": "Червона Армія вже на той момент захопила ці території в погоні за Німеччиною"
-    },
-    {
-        "id": 12027,
-        "unitId": 2033,
-        "pol": "Jałta w Polsce jest synonimem zdrady aliantów i prawie pięćdziesięcioletniego podziału Europy na strefę wpływów sowieckich i wolny świat zachodni",
-        "transl": "Ялта в Польщі є синонімом зради союзників та майже п'ятдесятирічного поділу Європи на сферу впливу Радянського Союзу та вільний західний світ"
-    },
+    // {
+    //     "id": 12025,
+    //     "unitId": 2033,
+    //     "pol": "W Jałcie w lutym 1945 roku, Wielka Brytania i Stany Zjednoczone były zmuszone uznać roszczenia sowietów do terytorium na wschód od rzeki Bug",
+    //     "transl": "На Ялтинській конференції в лютому 1945 року Велика Британія та Сполучені Штати були змушені визнати претензії Радянського Союзу до території на сході від річки Буг"
+    // },
+    // {
+    //     "id": 12026,
+    //     "unitId": 2033,
+    //     "pol": "Armia Czerwona zajęłą już w tym czasie te tereny w pogoni za Niemcami",
+    //     "transl": "Червона Армія вже на той момент захопила ці території в погоні за Німеччиною"
+    // },
+    // {
+    //     "id": 12027,
+    //     "unitId": 2033,
+    //     "pol": "Jałta w Polsce jest synonimem zdrady aliantów i prawie pięćdziesięcioletniego podziału Europy na strefę wpływów sowieckich i wolny świat zachodni",
+    //     "transl": "Ялта в Польщі є синонімом зради союзників та майже п'ятдесятирічного поділу Європи на сферу впливу Радянського Союзу та вільний західний світ"
+    // },
     {
         "id": 10885,
         "unitId": 2033,
         "pol": "Rok założenia Związku Zawodowego Solidarność lub z czym kojarzy się Sierpień 1980?",
         "transl": "Рік заснування Союзу «Солідарність» або з чим асоціюється серпень 1980 року"
     },
-    {
-        "id": 12028,
-        "unitId": 2033,
-        "pol": "Związek Zawodowy Solidarność został założony na podstawie Porozumień w Gdańsku kończących 14 dni strajku w sierpniu 1980 roku w Stoczni Gdańskiej",
-        "transl": "Профспілка Солідарність була заснована на основі угод у Гданську, які завершили 14-денний страйк у серпні 1980 року на Гданському суднобудівному заводі"
-    },
-    {
-        "id": 12029,
-        "unitId": 2033,
-        "pol": "Strajkujący wystąpili za uzyskania swobód politycznych i ekonomicznych",
-        "transl": "Страйкуючі виступали за отримання політичних і економічних свобод"
-    },
+    // {
+    //     "id": 12028,
+    //     "unitId": 2033,
+    //     "pol": "Związek Zawodowy Solidarność został założony na podstawie Porozumień w Gdańsku kończących 14 dni strajku w sierpniu 1980 roku w Stoczni Gdańskiej",
+    //     "transl": "Профспілка Солідарність була заснована на основі угод у Гданську, які завершили 14-денний страйк у серпні 1980 року на Гданському суднобудівному заводі"
+    // },
+    // {
+    //     "id": 12029,
+    //     "unitId": 2033,
+    //     "pol": "Strajkujący wystąpili za uzyskania swobód politycznych i ekonomicznych",
+    //     "transl": "Страйкуючі виступали за отримання політичних і економічних свобод"
+    // },
     {
         "id": 12030,
         "unitId": 2033,
         "pol": "Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983 Pokojową Nagrodę Nobla",
         "transl": "Їхній лідер Лех Валенса, за фахом електрик, отримав у 1983 році Нобелівську премію миру"
     },
-    {
-        "id": 10886,
-        "unitId": 2033,
-        "pol": "Z jakim wydarzeniem kojarzy się 13 grudzień?",
-        "transl": "Яка подія пов’язана з 13 грудня?"
-    },
+    // {
+    //     "id": 10886,
+    //     "unitId": 2033,
+    //     "pol": "Z jakim wydarzeniem kojarzy się 13 grudzień?",
+    //     "transl": "Яка подія пов’язана з 13 грудня?"
+    // },
     {
         "id": 12031,
         "unitId": 2033,
         "pol": "13 grudzień 1981r. - wprowadzenie Stanu Wojennego przez generała Wojciecha Jaruzelskiego. Delegalizacja pierwszej Solidarności",
         "transl": "13 грудня 1981 року - введення воєнного стану генералом Войцехом Ярузельським. Дезактивація першої Солідарності"
     },
-    {
-        "id": 10887,
-        "unitId": 2033,
-        "pol": "Koniec rządów komunistycznych?",
-        "transl": "Кінець комуністичної влади?"
-    },
+    // {
+    //     "id": 10887,
+    //     "unitId": 2033,
+    //     "pol": "Koniec rządów komunistycznych?",
+    //     "transl": "Кінець комуністичної влади?"
+    // },
     {
         "id": 12032,
         "unitId": 2033,
@@ -9779,12 +9845,12 @@ const kartaPol = [
         "pol": "Tadeusz Mazowiecki zostaje pierwszym niekomunistycznym premierem Polski. Rok później Lech Wałęsa wygrywa wybory prezydenckie",
         "transl": "Тадеуш Мазовецький стає першим некомуністичним прем'єр-міністром Польщі. Рік потому Лех Валенса виграє президентські вибори"
     },
-    {
-        "id": 10888,
-        "unitId": 2033,
-        "pol": "Wymień nazwiska prezudentów Rzeczpospolitej Polski po 1989r?",
-        "transl": "Назвіть президентів Речі Посполитої Польщі після 1989 року?"
-    },
+    // {
+    //     "id": 10888,
+    //     "unitId": 2033,
+    //     "pol": "Wymień nazwiska prezudentów Rzeczpospolitej Polski po 1989r?",
+    //     "transl": "Назвіть президентів Речі Посполитої Польщі після 1989 року?"
+    // },
     {
         "id": 12034,
         "unitId": 2033,
@@ -9935,12 +10001,12 @@ const kartaPol = [
         "pol": "Długość wybrzeża 775 km",
         "transl": "Довжина узбережжя 775 км"
     },
-    {
-        "id": 10923,
-        "unitId": 2016,
-        "pol": "Główne handlowe polskie porty: Gdańsk, Gdynia, Szczecin nad Zalewem Szczecińskim i Świnoujście",
-        "transl": "Основні комерційні порти Польщі: Гданськ, Гдиня, Щецин над Щецинською лагуною та Свіноуйсьце"
-    },
+    // {
+    //     "id": 10923,
+    //     "unitId": 2016,
+    //     "pol": "Główne handlowe polskie porty: Gdańsk, Gdynia, Szczecin nad Zalewem Szczecińskim i Świnoujście",
+    //     "transl": "Основні комерційні порти Польщі: Гданськ, Гдиня, Щецин над Щецинською лагуною та Свіноуйсьце"
+    // },
     {
         "id": 10924,
         "unitId": 2026,
@@ -9977,30 +10043,30 @@ const kartaPol = [
         "pol": "W 1977r. UNESCO włączyło Białowieski Park Narodowy w poczet światowych rezerwatów biosfery",
         "transl": "в 1977 році ЮНЕСКО включило Біловезький національний парк в групу світових біосферних заповідників"
     },
-    {
-        "id": 10930,
-        "unitId": 2026,
-        "pol": "a dwa lata później uznano go za pierwszy i jedyny w Polsce przyrodniczy Obiekt Dziedzictwa Światowego",
-        "transl": "а через два роки його визнали першим і єдиним в Польщі об'єктом природної світової спадщини"
-    },
-    {
-        "id": 10931,
-        "unitId": 2026,
-        "pol": "Tatrzański Park Narodowy został powołany w 1954 roku, w celu ochrony zasobów przyrodniczych Tatr Polskich",
-        "transl": "Національний парк Татра був заснований у 1954 році з метою захисту природних резервів Татр в Польщі"
-    },
-    {
-        "id": 10932,
-        "unitId": 2026,
-        "pol": "Park obejmuje prawie cale Tatry polskie i sąsiaduje z Parkiem Narodowym na słowackiej stronie",
-        "transl": "Парк охоплює майже всі польські Татри і має спільний кордон з Національним парком на словацькому боці"
-    },
-    {
-        "id": 10933,
-        "unitId": 2026,
-        "pol": "Pieniński Park Narodowy założony w 1932 roku, jeszcze przed II wojną światową jest bardzo lubianym i często odwiedzanym Parkiem Narodowym",
-        "transl": "Піненський національний парк був заснований у 1932 році, ще до Другої світової війни, і є дуже улюбленим та часто відвідуваним національним парком"
-    },
+    // {
+    //     "id": 10930,
+    //     "unitId": 2026,
+    //     "pol": "a dwa lata później uznano go za pierwszy i jedyny w Polsce przyrodniczy Obiekt Dziedzictwa Światowego",
+    //     "transl": "а через два роки його визнали першим і єдиним в Польщі об'єктом природної світової спадщини"
+    // },
+    // {
+    //     "id": 10931,
+    //     "unitId": 2026,
+    //     "pol": "Tatrzański Park Narodowy został powołany w 1954 roku, w celu ochrony zasobów przyrodniczych Tatr Polskich",
+    //     "transl": "Національний парк Татра був заснований у 1954 році з метою захисту природних резервів Татр в Польщі"
+    // },
+    // {
+    //     "id": 10932,
+    //     "unitId": 2026,
+    //     "pol": "Park obejmuje prawie cale Tatry polskie i sąsiaduje z Parkiem Narodowym na słowackiej stronie",
+    //     "transl": "Парк охоплює майже всі польські Татри і має спільний кордон з Національним парком на словацькому боці"
+    // },
+    // {
+    //     "id": 10933,
+    //     "unitId": 2026,
+    //     "pol": "Pieniński Park Narodowy założony w 1932 roku, jeszcze przed II wojną światową jest bardzo lubianym i często odwiedzanym Parkiem Narodowym",
+    //     "transl": "Піненський національний парк був заснований у 1932 році, ще до Другої світової війни, і є дуже улюбленим та часто відвідуваним національним парком"
+    // },
     {
         "id": 10934,
         "unitId": 2026,
@@ -10097,24 +10163,24 @@ const kartaPol = [
         "pol": "Karpaty ciągną się od polskiego Śląska poprzez Ukrainę aż do Rumunii",
         "transl": "Карпати простягаються від польської Сілезії через Україну до Румунії"
     },
-    {
-        "id": 10950,
-        "unitId": 2027,
-        "pol": "Polska część Karpat to Beskidy: Śląski, Beskidy Zachodnie, Beskid Niski, Beskidy Wschodnie",
-        "transl": "Польська частина Карпат – це Бескиди: Сілезькі, Західні Бескиди, Низькі Бескиди, Східні Бескиди"
-    },
-    {
-        "id": 10951,
-        "unitId": 2027,
-        "pol": "W pasmie Karpat są Tatry, Pieniny i Bieszczady",
-        "transl": "Карпатський хребет включає Татри, Пеніни та Бещади"
-    },
-    {
-        "id": 10952,
-        "unitId": 2027,
-        "pol": "Bieszczady nalezą do Karpat Wschodnich i odróżniają się Beskidów Zachodnich",
-        "transl": "Бещади належать до Східних Карпат і виділяються Західні Бескиди"
-    },
+    // {
+    //     "id": 10950,
+    //     "unitId": 2027,
+    //     "pol": "Polska część Karpat to Beskidy: Śląski, Beskidy Zachodnie, Beskid Niski, Beskidy Wschodnie",
+    //     "transl": "Польська частина Карпат – це Бескиди: Сілезькі, Західні Бескиди, Низькі Бескиди, Східні Бескиди"
+    // },
+    // {
+    //     "id": 10951,
+    //     "unitId": 2027,
+    //     "pol": "W pasmie Karpat są Tatry, Pieniny i Bieszczady",
+    //     "transl": "Карпатський хребет включає Татри, Пеніни та Бещади"
+    // },
+    // {
+    //     "id": 10952,
+    //     "unitId": 2027,
+    //     "pol": "Bieszczady nalezą do Karpat Wschodnich i odróżniają się Beskidów Zachodnich",
+    //     "transl": "Бещади належать до Східних Карпат і виділяються Західні Бескиди"
+    // },
     {
         "id": 10953,
         "unitId": 2027,
@@ -10336,7 +10402,186 @@ const kartaPol = [
         "unitId": 2028,
         "pol": "Hala Stulecia we Wrocławiu",
         "transl": "Зал Століття у Вроцлаві ЮНЕСКО"
+    },{
+        "id": 14001,
+        "unitId": 2017,
+        "pol": "Mikołaj Kopernik to jeden z największych astronomów w historii, zmienił on światopogląd ludzkości na sprawy świata",
+        "transl": "Микола Коперник - один з найбільших астрономів в історії, змінив світогляд людства щодо справ світу"
     },
+    {
+        "id": 14004,
+        "unitId": 2017,
+        "pol": "Fryderyk Franciszek Chopin - polski kompozytor i pianista",
+        "transl": "Фредерік Шопен - польський композитор і піаніст"
+    },
+    {
+        "id": 14012,
+        "unitId": 2017,
+        "pol": "Adam Mickiewicz - największy poeta polski, autor 'Pana Tadeusza'",
+        "transl": "Адам Міцкевич - найвидатніший польський поет, автор 'Пана Тадеуша'"
+    },
+    {
+        "id": 14018,
+        "unitId": 2017,
+        "pol": "Maria Skłodowska-Curie - odkrywczyni dwóch pierwiastków i jedyna kobieta dwukrotnie uhonorowana Nagrodą Nobla",
+        "transl": "Марія Склодовська-Кюрі - відкривачка двох хімічних елементів і єдина жінка, удостоєна Нобелівської премії двічі"
+    },
+    {
+        "id": 14022,
+        "unitId": 2017,
+        "pol": "Lech Wałęsa - polski polityk, laureat Pokojowej Nagrody Nobla",
+        "transl": "Лех Валенса - польський політик, лауреат Нобелівської премії миру"
+    },
+    {
+        "id": 14024,
+        "unitId": 2017,
+        "pol": "Jan Paweł II - polski papież, najbardziej rozpoznawalny Polak na świecie",
+        "transl": "Іван Павло II - польський Папа, найбільш впізнаваний поляк у світі"
+    },
+    {
+        "id": 14026,
+        "unitId": 2017,
+        "pol": "Generał Władysław Sikorski - premier rządu RP w latach 1939–1943",
+        "transl": "Генерал Владислав Сікорський - прем'єр-міністр уряду РП у 1939–1943 роках"
+    },
+    {
+        "id": 14027,
+        "unitId": 2018,
+        "pol": "Sylwester (31 grudzień) / Nowy Rok (1 stycznia) - czas bali i zabaw w Polsce, spędzany z rodziną lub przyjaciółmi",
+        "transl": "Сильвестра (31 грудня) / Новий Рік (1 січня) - час вечірок і розваг у Польщі, проведений з родиною або друзями"
+    },
+    {
+        "id": 14028,
+        "unitId": 2018,
+        "pol": "Trzech Kroli, Objawienie Pańskie (6 stycznia) - święto upamiętniające przybycie Trzech Mędrców do Betlejemskiej stajenki",
+        "transl": "Трьох королів (6 січня) - свято, яке вшановує прибуття Трьох Мудреців до Вифлеємської стайні"
+    },
+    {
+        "id": 14031,
+        "unitId": 2018,
+        "pol": "Środa Popielcowa - pierwszy dzień Wielkiego Postu, dzień pokutny kończący karnawał",
+        "transl": "Середа Попельцьова - перший день Великого Посту, день покутний, що завершує карнавал"
+    },
+    {
+        "id": 14032,
+        "unitId": 2018,
+        "pol": "Niedziela Palmowa - rozpoczyna Wielki Tydzień, upamiętniająca tryumfalny wjazd Chrystusa do Jerozolimy",
+        "transl": "Вербна неділя - розпочинає Великий Тиждень, вшановує триумфальний в’їзд Христа до Єрусалиму"
+    },
+    {
+        "id": 14033,
+        "unitId": 2018,
+        "pol": "Wielki Piątek - dzień upamiętniający Mękę i Śmierć Jezusa Chrystusa",
+        "transl": "Велика пятниця - день, що вшановує Страсті та Смерть Ісуса Христа"
+    },
+    {
+        "id": 14034,
+        "unitId": 2018,
+        "pol": "Wielkanoc - najważniejsze święto chrześcijańskie, obchodzone na pamiątkę Zmartwychwstania Chrystusa",
+        "transl": "Пасха - найголовніше християнське свято, що вшановує Воскресіння Христа"
+    },
+    {
+        "id": 14038,
+        "unitId": 2018,
+        "pol": "Wszystkich Świętych, Dzień Zaduszny (1-2 listopada) - dni poświęcone pamięci zmarłych",
+        "transl": "День всіх святих - дні, приурочені до вшанування пам’яті померлих"
+    },
+    {
+        "id": 14041,
+        "unitId": 2018,
+        "pol": "Adwent - okres oczekiwania na przyjście Chrystusa",
+        "transl": "Піст перед Різдвом - період очікування приходу Христа"
+    },
+    {
+        "id": 14042,
+        "unitId": 2018,
+        "pol": "Mikołajki (6 grudnia) - dzień obchodzony na cześć Świętego Mikołaja",
+        "transl": "Св. Миколая (6 грудня) - свято, присвячене Святому Миколаю"
+    },
+    {
+        "id": 14043,
+        "unitId": 2018,
+        "pol": "Wigilia (24 grudnia) - najbardziej uroczysty wieczór roku, rozpoczynający Święta Bożego Narodzenia",
+        "transl": "Свята вечеря (24 грудня) - найурочистіший вечір року, що відкриває Різдвяні свята"
+    },
+    {
+        "id": 14046,
+        "unitId": 2018,
+        "pol": "Boże Narodzenie (25 grudnia) - dzień świętowania narodzin Jezusa Chrystusa",
+        "transl": "Різдво (25 грудня) - день святкування народження Ісуса Христа"
+    },
+    {
+        "id": 14049,
+        "unitId": 2019,
+        "pol": "Jak wygląda flaga Polski? biały na górze, czerwony na dole. Zatwierdzona w 1831r. Po odzyskaniu niepodległości uchwalił sejm w 1919r",
+        "transl": "Як виглядає прапор Польщі? білий зверху, червоний знизу. Затверджений у 1831р. Після відновлення незалежності прийняв сейм у 1919р"
+    },
+    {
+        "id": 14050,
+        "unitId": 2019,
+        "pol": "Jak wygląda godło Polski? Orzeł biały w czerwonym polu, w złotej koronie, ze złotymi szponami i dziobem, zwrócony wprawo",
+        "transl": "Як виглядає герб Польщі? Зображення білого орла на червоному полі, в золотій короні, з золотими кігтями та дзьобом, повернений вправо"
+    },
+    {
+        "id": 14051,
+        "unitId": 2019,
+        "pol": "Hymn Polski? Mazurek Dąbrowskiego – polska pieśń patriotyczna. Od 1927 roku oficjalny Hymn państwowy Rzeczpospolitej Polski",
+        "transl": "Гімн Польщі? Мазурка Домбровського – польська патріотична пісня. З 1927 року офіційний Гімн державний Республіки Польської"
+    },
+    {
+        "id": 14052,
+        "unitId": 2019,
+        "pol": "Jaki Hymn był w średniowieczu? W średniowieczu rolę hymnu pełniła pieśń Bogurodzica",
+        "transl": "Який гімн був в середньовіччі? У середньовіччі роль гімну виконувала пісня Bogurodzica"
+    },
+    {
+        "id": 14054,
+        "unitId": 2020,
+        "pol": "Rzeczpospolita Polska? To polskie tłumaczenie słowa - republika",
+        "transl": "Що таке Річ Посполита? Це польський переклад слова - республіка"
+    },
+    {
+        "id": 14055,
+        "unitId": 2020,
+        "pol": "Stolica Polski? Warszawa. Godło – Syrenka",
+        "transl": "Столиця Польщі? Варшава. Герб – Сирена"
+    },
+    {
+        "id": 14056,
+        "unitId": 2020,
+        "pol": "Liczba ludności? W Polsce mieszka około 38,5 mln.osób",
+        "transl": "Населення? В Польщі проживає близько 38,5 мільйонів осіб"
+    },
+    {
+        "id": 14058,
+        "unitId": 2020,
+        "pol": "Organ władzy w Polsce? W sejmie zasiadają posłowie (460), w senacie zasiadają senatorowie (100)",
+        "transl": "Орган влади в Польщі? У сеймі засідають депутати (460), у сенаті засідають сенатори (100)"
+    },
+    {
+        "id": 14059,
+        "unitId": 2020,
+        "pol": "Dzień Niepodległości? 11 listopada (od 1918 roku).",
+        "transl": "День Незалежності? 11 листопада (з 1918 року)."
+    },
+    {
+        "id": 14060,
+        "unitId": 2020,
+        "pol": "Dzień Konstytucji? 3 maja (uchwalona 1791 roku).",
+        "transl": "День Конституції? 3 травня (прийнята 1791 року)."
+    },
+    {
+        "id": 14061,
+        "unitId": 2020,
+        "pol": "Jakie święto obchodzi się w Polsce 1 listopada? Dzień Wszystkich Świętych. Polacy udają się na cmentarze by pomodlić się na grobach bliskich zmarłych, zapalają świeczki, składają kwiaty (chryzantemy).",
+        "transl": "Яке свято в Польщі припадає на 1 листопада? День Всіх Святих. Поляки відвідують кладовища, щоб помолитися на могилах рідних, запалюють свічки, кладуть квіти (хризантеми)."
+    },
+    {
+        "id": 14062,
+        "unitId": 2020,
+        "pol": "Kiedy na godle Polski nie było korony? W latach 1956-1989.",
+        "transl": "Коли на гербі Польщі не було корони? У роки 1956-1989."
+    }
 ];
 
 export {

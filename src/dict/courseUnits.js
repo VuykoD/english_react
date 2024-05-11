@@ -705,7 +705,7 @@ const courseUnits =
         {
             "id": 2018,
             "courseId": 10,
-            "url": "tradycje",
+            "url": "/tradycje",
             "name": "Tradycje",
             "learnedLang": [
                 "pol"
