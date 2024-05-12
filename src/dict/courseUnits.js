@@ -783,6 +783,24 @@ const courseUnits =
             "learnedLang": [
                 "pol"
             ]
+        },
+        {
+            "id": 2035,
+            "courseId": 5,
+            "url": "/kolo-młynskie",
+            "name": "Млинове колесо",
+            "learnedLang": [
+                "pol"
+            ]
+        },
+        {
+            "id": 2036,
+            "courseId": 5,
+            "url": "/ja-pod-twoim-oknem",
+            "name": "Ja pod twoim oknem",
+            "learnedLang": [
+                "pol"
+            ]
         }
     ]
 ;
