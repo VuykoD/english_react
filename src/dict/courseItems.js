@@ -9918,18 +9918,18 @@ const kartaPol = [
         "pol": "Powierzchnia Polski wynosi 312 685 km2 i pod względem powierzchni Polska jest dziewiątym krajem w Europie",
         "transl": "Площа Польщі становить 312 685 км2 і за площею Польща є дев'ятою країною в Європа"
     },
-    {
-        "id": 10905,
-        "unitId": 2016,
-        "pol": "Polska jest krajem nizinnym",
-        "transl": "Польща – рівнинна країна"
-    },
-    {
-        "id": 10906,
-        "unitId": 2016,
-        "pol": "trzy czwarte terytorium Polski są na nizinach, poniżej 200 metrów nad poziomem morza",
-        "transl": "три чверті території Польщі знаходяться на низовини, нижче 200 метрів над рівень моря"
-    },
+    // {
+    //     "id": 10905,
+    //     "unitId": 2016,
+    //     "pol": "Polska jest krajem nizinnym",
+    //     "transl": "Польща – рівнинна країна"
+    // },
+    // {
+    //     "id": 10906,
+    //     "unitId": 2016,
+    //     "pol": "trzy czwarte terytorium Polski są na nizinach, poniżej 200 metrów nad poziomem morza",
+    //     "transl": "три чверті території Польщі знаходяться на низовини, нижче 200 метрів над рівень моря"
+    // },
     {
         "id": 10907,
         "unitId": 2016,
@@ -9948,30 +9948,30 @@ const kartaPol = [
         "pol": "Administracyjnie Polska podzielona jest na 16 wojewodów, województwa dzielą się na 314 powiatów, a powiaty na 2479 gminy",
         "transl": "В адміністративному відношенні Польща поділена на 16 воєводств, воєводства поділяються на 314 повітів і повітм на 2479 комун"
     },
-    {
-        "id": 10910,
-        "unitId": 2016,
-        "pol": "Nazwy województw?",
-        "transl": "Назви воєводств"
-    },
-    {
-        "id": 10911,
-        "unitId": 2016,
-        "pol": "Dolnośląskie, Łódzkie, Podkarpackie, Świętokrzyskie, Kujawsko-pomorskie, Małopolskie, Podlaskie, Warmińsko-Mazurskie, Lubelskie, Mazowieckie, Pomorskie, Wielkopolskie, Lubuskie, Opolskie, Śląskie, Zachodniopomorskie",
-        "transl": "Дольношльонське, Лодзінське, Підкарпатське, Свентокшиське, Куявсько-Поморське, Малопольське, Підляське, Вармінсько-Мазурське, Любельське, Мазовецьке, Поморське, Великопольське, Любуське, Опольське, Сілезьке, Західнопоморське"
-    },
+    // {
+    //     "id": 10910,
+    //     "unitId": 2016,
+    //     "pol": "Nazwy województw?",
+    //     "transl": "Назви воєводств"
+    // },
+    // {
+    //     "id": 10911,
+    //     "unitId": 2016,
+    //     "pol": "Dolnośląskie, Łódzkie, Podkarpackie, Świętokrzyskie, Kujawsko-pomorskie, Małopolskie, Podlaskie, Warmińsko-Mazurskie, Lubelskie, Mazowieckie, Pomorskie, Wielkopolskie, Lubuskie, Opolskie, Śląskie, Zachodniopomorskie",
+    //     "transl": "Дольношльонське, Лодзінське, Підкарпатське, Свентокшиське, Куявсько-Поморське, Малопольське, Підляське, Вармінсько-Мазурське, Любельське, Мазовецьке, Поморське, Великопольське, Любуське, Опольське, Сілезьке, Західнопоморське"
+    // },
     {
         "id": 10912,
         "unitId": 2016,
         "pol": "Klimat Polski?",
         "transl": "Клімат Польщі"
     },
-    {
-        "id": 10913,
-        "unitId": 2016,
-        "pol": "Polska leży w strefie klimatu przejściowego, pomiędzy klimatem umiarkowanym oceanicznym na zachodzie a klimatem umiarkowanym kontynentalnym na wschodzie",
-        "transl": "Польща розташована в кліматичній зоні перехідний між кліматами помірний океанічнийна західі і помірний клімат континентальний на сході"
-    },
+    // {
+    //     "id": 10913,
+    //     "unitId": 2016,
+    //     "pol": "Polska leży w strefie klimatu przejściowego, pomiędzy klimatem umiarkowanym oceanicznym na zachodzie a klimatem umiarkowanym kontynentalnym na wschodzie",
+    //     "transl": "Польща розташована в кліматичній зоні перехідний між кліматами помірний океанічнийна західі і помірний клімат континентальний на сході"
+    // },
     {
         "id": 10914,
         "unitId": 2016,
@@ -10212,42 +10212,42 @@ const kartaPol = [
         "pol": "Tatry – najwyższe góry w pasmie Karpat",
         "transl": "Татри - найвищі гори Карпатського хребта"
     },
-    {
-        "id": 10954,
-        "unitId": 2027,
-        "pol": "Na granicy ze Słowacja, najwyższy polski szczyt Tatr Rysy 2499 metrów nad poziomem morza",
-        "transl": "На кордоні зі Словаччиною розташований найвищий польський вершину Татр - Риси, висота якої становить 2499 метрів над рівнем моря."
-    },
-    {
-        "id": 10956,
-        "unitId": 2027,
-        "pol": "Jedyne w Polsce góry o charakterze alpejskim",
-        "transl": "Єдині альпійські гори в Польщі"
-    },
-    {
-        "id": 10957,
-        "unitId": 2027,
-        "pol": "Niestety w Polsce pasmo Tatr ciągnie się zaledwie około 30 kilometrów",
-        "transl": "На жаль, у Польщі хребет Татр розтягується лише близько 30 кілометрів"
-    },
-    {
-        "id": 10958,
-        "unitId": 2027,
-        "pol": "Sudety: na Dolnym Śląsku, na granicy z Czechami. Góry Stołowe, góra Śnieżka",
-        "transl": "Судети: у Нижній Сілезії, на кордоні з Чехією. Столові гори, Гора Білосніжка"
-    },
-    {
-        "id": 10959,
-        "unitId": 2027,
-        "pol": "Góry Świętokrzyskie: jedno z najstarszych pasm górskich",
-        "transl": "Свєнтокшиські гори: один із найдавніших гірських масивів"
-    },
-    {
-        "id": 10960,
-        "unitId": 2027,
-        "pol": "Najwyższy szczyt Łysica 612 metrów nad poziomem morza",
-        "transl": "Найвища вершина Лисиця 612 метрів над рівнем моря"
-    },
+    // {
+    //     "id": 10954,
+    //     "unitId": 2027,
+    //     "pol": "Na granicy ze Słowacja, najwyższy polski szczyt Tatr Rysy 2499 metrów nad poziomem morza",
+    //     "transl": "На кордоні зі Словаччиною розташований найвищий польський вершину Татр - Риси, висота якої становить 2499 метрів над рівнем моря."
+    // },
+    // {
+    //     "id": 10956,
+    //     "unitId": 2027,
+    //     "pol": "Jedyne w Polsce góry o charakterze alpejskim",
+    //     "transl": "Єдині альпійські гори в Польщі"
+    // },
+    // {
+    //     "id": 10957,
+    //     "unitId": 2027,
+    //     "pol": "Niestety w Polsce pasmo Tatr ciągnie się zaledwie około 30 kilometrów",
+    //     "transl": "На жаль, у Польщі хребет Татр розтягується лише близько 30 кілометрів"
+    // },
+    // {
+    //     "id": 10958,
+    //     "unitId": 2027,
+    //     "pol": "Sudety: na Dolnym Śląsku, na granicy z Czechami. Góry Stołowe, góra Śnieżka",
+    //     "transl": "Судети: у Нижній Сілезії, на кордоні з Чехією. Столові гори, Гора Білосніжка"
+    // },
+    // {
+    //     "id": 10959,
+    //     "unitId": 2027,
+    //     "pol": "Góry Świętokrzyskie: jedno z najstarszych pasm górskich",
+    //     "transl": "Свєнтокшиські гори: один із найдавніших гірських масивів"
+    // },
+    // {
+    //     "id": 10960,
+    //     "unitId": 2027,
+    //     "pol": "Najwyższy szczyt Łysica 612 metrów nad poziomem morza",
+    //     "transl": "Найвища вершина Лисиця 612 метрів над рівнем моря"
+    // },
     {
         "id": 10961,
         "unitId": 2027,
@@ -10338,12 +10338,12 @@ const kartaPol = [
         "pol": "Wawel (Zamek Królewski) w Krakowie, był siedzibą Królów przez wieki",
         "transl": "Вавель (королівський замок) у Кракові протягом століть був резиденцією королів"
     },
-    {
-        "id": 10976,
-        "unitId": 2028,
-        "pol": "Sukiennice na Rynku w Krakowie budynek kopców sukien (materiałów) na Rynku krakowskim",
-        "transl": "Суконниці на Ринковій площі в Кракові будівля курганів суконь (тканин) на Краківській Ринковій площі"
-    },
+    // {
+    //     "id": 10976,
+    //     "unitId": 2028,
+    //     "pol": "Sukiennice na Rynku w Krakowie budynek kopców sukien (materiałów) na Rynku krakowskim",
+    //     "transl": "Суконниці на Ринковій площі в Кракові будівля курганів суконь (тканин) на Краківській Ринковій площі"
+    // },
     {
         "id": 10977,
         "unitId": 2028,
@@ -10427,7 +10427,8 @@ const kartaPol = [
         "unitId": 2028,
         "pol": "Hala Stulecia we Wrocławiu",
         "transl": "Зал Століття у Вроцлаві ЮНЕСКО"
-    },{
+    },
+    {
         "id": 14001,
         "unitId": 2017,
         "pol": "Mikołaj Kopernik to jeden z największych astronomów w historii, zmienił on światopogląd ludzkości na sprawy świata",
