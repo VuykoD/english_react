@@ -86,8 +86,8 @@ const content = {
     },
 };
 
-const MAX_WORD_LENGTH = 100;
-const MAX_SOUND_LENGTH = 121;
+const MAX_WORD_LENGTH = 400;
+const MAX_SOUND_LENGTH = 421;
 
 const initialState = {
     exampleLearning: null,

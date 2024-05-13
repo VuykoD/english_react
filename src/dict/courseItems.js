@@ -9618,29 +9618,36 @@ const kartaPol = [
         "transl": "Коли відбувся І поділ Польщі? У 1772 році у цьому розбиранні брали участь Росія, Пруссія та Австрія"
     },
     {
-        "id": 10870,
+        "id": 10869,
         "unitId": 2031,
-        "pol": "Kiedy odbył się III rozbiór?",
+        "pol": "Kiedy odbył się II rozbiór? W 1793r. Brały udział Rosja i Prusy",
         "transl": "Коли відбувся ІІІ поділ Польщі?"
     },
     {
-        "id": 12008,
+        "id": 10870,
         "unitId": 2031,
-        "pol": "General Jan Henryk Dąbrowski (twórca Polski) W 1795r. Brały udział Rosja, Prusy i Lombardii Legionów Polskich. Austria",
-        "transl": "Генерал Ян Генрих Домбровський (творець Польщі) У 1795 році взяли участь Росія, Прусія та Ломбардійські легіони польські. Австрія."
+        "pol": "Kiedy odbył się III rozbiór? W 1795r. Brały udział Rosja, Prusy i\n" +
+            "Austria",
+        "transl": "Коли відбувся ІІІ поділ Польщі?"
     },
-    {
-        "id": 10872,
-        "unitId": 2031,
-        "pol": "Dlaczego doszło do rozbiorów i upadku Rzeczpospolitej?",
-        "transl": "Чому дійшло до поділів та занепаду Речі Посполитої?"
-    },
-    {
-        "id": 12009,
-        "unitId": 2031,
-        "pol": "Rzeczpospolita upadła, bo w sąsiedztwie agresywnie nastawionych państw militarnych, z władzą absolutną (Prusy, Rosja i Austria) obywatele Rzeczpospolitej do końca bardziej cenili sobie wolność obywatelską",
-        "transl": "Реч Посполита впала через те, що в сусідніх агресивно налаштованих військових державах з абсолютною владою (Прусії, Росії та Австрії) громадяни Речі Посполитої до кінця більше цінили свободу громадянську"
-    },
+    // {
+    //     "id": 12008,
+    //     "unitId": 2031,
+    //     "pol": "General Jan Henryk Dąbrowski (twórca Polski) W 1795r. Brały udział Rosja, Prusy i Lombardii Legionów Polskich. Austria",
+    //     "transl": "Генерал Ян Генрих Домбровський (творець Польщі) У 1795 році взяли участь Росія, Прусія та Ломбардійські легіони польські. Австрія."
+    // },
+    // {
+    //     "id": 10872,
+    //     "unitId": 2031,
+    //     "pol": "Dlaczego doszło do rozbiorów i upadku Rzeczpospolitej?",
+    //     "transl": "Чому дійшло до поділів та занепаду Речі Посполитої?"
+    // },
+    // {
+    //     "id": 12009,
+    //     "unitId": 2031,
+    //     "pol": "Rzeczpospolita upadła, bo w sąsiedztwie agresywnie nastawionych państw militarnych, z władzą absolutną (Prusy, Rosja i Austria) obywatele Rzeczpospolitej do końca bardziej cenili sobie wolność obywatelską",
+    //     "transl": "Реч Посполита впала через те, що в сусідніх агресивно налаштованих військових державах з абсолютною владою (Прусії, Росії та Австрії) громадяни Речі Посполитої до кінця більше цінили свободу громадянську"
+    // },
     // {
     //     "id": 10873,
     //     "unitId": 2031,
@@ -9692,7 +9699,7 @@ const kartaPol = [
     {
         "id": 12015,
         "unitId": 2032,
-        "pol": "w czasie jej trwania zmobilizowano 70 milionów ludzi, 10 milionów poniosło śmierć, a prawie 20 milionów zostało rannych. Upadły: Cesarstwo Niemieckie, Austro-Węgerskie, Imperium osmańskie, Imperium Rosyjskie",
+        "pol": "w czasie jej trwania zmobilizowano 70 milionów ludzi, 10 milionów poniosło śmierć, a prawie 20 milionów zostało rannych",
         "transl": "Протягом її тривання мобілізували 70 мільйонів людей, 10 мільйонів загинули, а майже 20 мільйонів були поранені"
     },
     {
@@ -9794,15 +9801,15 @@ const kartaPol = [
     {
         "id": 10883,
         "unitId": 2032,
-        "pol": "Data końcu II Wojny Światowej? 8 maja 1945r. - bezwarunkowa kapitulacja III Rzeszy",
+        "pol": "Data końcu II Wojny Światowej? 8 maja 1945r. - bezwarunkowa kapitulacja II Rzeszy",
         "transl": "Дата закінчення ІІ Світової війни?"
     },
-    {
-        "id": 10884,
-        "unitId": 2033,
-        "pol": "Polska po 1944 roku. Jałta 1945r.",
-        "transl": "Польща після 1944 року. Ялта 1945"
-    },
+    // {
+    //     "id": 10884,
+    //     "unitId": 2033,
+    //     "pol": "Polska po 1944 roku. Jałta 1945r.",
+    //     "transl": "Польща після 1944 року. Ялта 1945"
+    // },
     // {
     //     "id": 12025,
     //     "unitId": 2033,
@@ -9965,12 +9972,12 @@ const kartaPol = [
     //     "pol": "Dolnośląskie, Łódzkie, Podkarpackie, Świętokrzyskie, Kujawsko-pomorskie, Małopolskie, Podlaskie, Warmińsko-Mazurskie, Lubelskie, Mazowieckie, Pomorskie, Wielkopolskie, Lubuskie, Opolskie, Śląskie, Zachodniopomorskie",
     //     "transl": "Дольношльонське, Лодзінське, Підкарпатське, Свентокшиське, Куявсько-Поморське, Малопольське, Підляське, Вармінсько-Мазурське, Любельське, Мазовецьке, Поморське, Великопольське, Любуське, Опольське, Сілезьке, Західнопоморське"
     // },
-    {
-        "id": 10912,
-        "unitId": 2016,
-        "pol": "Klimat Polski?",
-        "transl": "Клімат Польщі"
-    },
+    // {
+    //     "id": 10912,
+    //     "unitId": 2016,
+    //     "pol": "Klimat Polski?",
+    //     "transl": "Клімат Польщі"
+    // },
     // {
     //     "id": 10913,
     //     "unitId": 2016,
@@ -10277,12 +10284,12 @@ const kartaPol = [
         "pol": "Największy Uniwersytet, Politechnika",
         "transl": "Найбільший університет Політехнічний"
     },
-    {
-        "id": 10965,
-        "unitId": 2027,
-        "pol": "Stare Miasto zniszczone w czasie Powstania Warszawskiego zostało odbudowane wraz z Zamkiem Królewskim",
-        "transl": "Старе місто, зруйноване під час Варшавського повстання, було відбудовано разом із Королівським замком"
-    },
+    // {
+    //     "id": 10965,
+    //     "unitId": 2027,
+    //     "pol": "Stare Miasto zniszczone w czasie Powstania Warszawskiego zostało odbudowane wraz z Zamkiem Królewskim",
+    //     "transl": "Старе місто, зруйноване під час Варшавського повстання, було відбудовано разом із Королівським замком"
+    // },
     {
         "id": 10966,
         "unitId": 2027,
@@ -10295,12 +10302,12 @@ const kartaPol = [
         "pol": "Kraków - była stolica Polski, Uniwersytet Jagielloński, miasto Papieża Jana Pawła II",
         "transl": "Краків - колишня столиця Польщі, Ягеллонський університет, місто Папи Івана Павла ІІ"
     },
-    {
-        "id": 10968,
-        "unitId": 2027,
-        "pol": "Kraków, nie zniszczony w czasie II wojny, z historycznym Rynkiem, zamkiem na Wawelu, w samym centrum miasta",
-        "transl": "Краків, не зруйнований під час Другої світової війни, із історичним ринком, замком на Вавелі, в самому центрі міста"
-    },
+    // {
+    //     "id": 10968,
+    //     "unitId": 2027,
+    //     "pol": "Kraków, nie zniszczony w czasie II wojny, z historycznym Rynkiem, zamkiem na Wawelu, w samym centrum miasta",
+    //     "transl": "Краків, не зруйнований під час Другої світової війни, із історичним ринком, замком на Вавелі, в самому центрі міста"
+    // },
     {
         "id": 10969,
         "unitId": 2028,
@@ -10607,12 +10614,12 @@ const kartaPol = [
         "pol": "Jakie święto obchodzi się w Polsce 1 listopada? Dzień Wszystkich Świętych. Polacy udają się na cmentarze by pomodlić się na grobach bliskich zmarłych, zapalają świeczki, składają kwiaty (chryzantemy).",
         "transl": "Яке свято в Польщі припадає на 1 листопада? День Всіх Святих. Поляки відвідують кладовища, щоб помолитися на могилах рідних, запалюють свічки, кладуть квіти (хризантеми)."
     },
-    {
-        "id": 14062,
-        "unitId": 2020,
-        "pol": "Kiedy na godle Polski nie było korony? W latach 1956-1989.",
-        "transl": "Коли на гербі Польщі не було корони? У роки 1956-1989."
-    }
+    // {
+    //     "id": 14062,
+    //     "unitId": 2020,
+    //     "pol": "Kiedy na godle Polski nie było korony? W latach 1956-1989.",
+    //     "transl": "Коли на гербі Польщі не було корони? У роки 1956-1989."
+    // }
 ];
 
 export {
