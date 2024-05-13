@@ -9386,26 +9386,31 @@ const courseItems =
         },
         {
             "id": 13072,
+            "unitId": 2036,
             "pol": "Ja pod twoim oknem,",
             "transl": "Я під твоїм вікном,"
         },
         {
             "id": 13073,
+            "unitId": 2036,
             "pol": "Trzy godziny mokne,",
             "transl": "Три години мокрий"
         },
         {
             "id": 13074,
+            "unitId": 2036,
             "pol": "Z góry na mnie pada deszcz",
             "transl": "Згори на мене дощить"
         },
         {
             "id": 13075,
+            "unitId": 2036,
             "pol": "Buty przemoknięte i ubranie zmięte",
             "transl": "Взуття промокло, а одяг зім’ятий"
         },
         {
             "id": 13076,
+            "unitId": 2036,
             "pol": "Czy ty luba o tym wiesz",
             "transl": "Чи ти люба про це знаєш?"
         }
