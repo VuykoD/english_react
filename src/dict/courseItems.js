@@ -9858,12 +9858,12 @@ const kartaPol = [
     //     "pol": "Z jakim wydarzeniem kojarzy się 13 grudzień?",
     //     "transl": "Яка подія пов’язана з 13 грудня?"
     // },
-    {
-        "id": 12031,
-        "unitId": 2033,
-        "pol": "13 grudzień 1981r. - wprowadzenie Stanu Wojennego przez generała Wojciecha Jaruzelskiego. Delegalizacja pierwszej Solidarności",
-        "transl": "13 грудня 1981 року - введення воєнного стану генералом Войцехом Ярузельським. Дезактивація першої Солідарності"
-    },
+    // {
+    //     "id": 12031,
+    //     "unitId": 2033,
+    //     "pol": "13 grudzień 1981r. - wprowadzenie Stanu Wojennego przez generała Wojciecha Jaruzelskiego. Delegalizacja pierwszej Solidarności",
+    //     "transl": "13 грудня 1981 року - введення воєнного стану генералом Войцехом Ярузельським. Дезактивація першої Солідарності"
+    // },
     // {
     //     "id": 10887,
     //     "unitId": 2033,
