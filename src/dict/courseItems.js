@@ -9340,7 +9340,7 @@ const courseItems =
             "id": 13064,
             "unitId": 2034,
             "pol": "Przez przypadek zostawiłem czapkę na klamce",
-            "transl": "Випадково я залишив свою шапку на ручці."
+            "transl": "Випадково я залишив шапку на ручці"
         },
         {
             "id": 13065,
@@ -9393,7 +9393,7 @@ const courseItems =
         {
             "id": 13073,
             "unitId": 2036,
-            "pol": "Trzy godziny mokne,",
+            "pol": "Trzy godziny mokne",
             "transl": "Три години мокрий"
         },
         {
@@ -9413,6 +9413,42 @@ const courseItems =
             "unitId": 2036,
             "pol": "Czy ty luba o tym wiesz",
             "transl": "Чи ти люба про це знаєш?"
+        },
+        {
+            "id": 14062,
+            "unitId": 2034,
+            "pol": "Wszystko w swoim czasie",
+            "transl": "все в свій час"
+        },
+        {
+            "id": 14063,
+            "unitId": 2034,
+            "pol": "Niektóre kobiety w wieku czterdziestu lat mogą zawstydzić wiele trzydziestolatek",
+            "transl": "Деякі сорокарічні жінки можуть дати фору багатьом тридцятирічним"
+        },
+        {
+            "id": 14064,
+            "unitId": 2034,
+            "pol": "Tobie dziękuję za cierpliwość, którą nadal mi okazujesz",
+            "transl": "Дякую тобі за терпіння, яке досі мені виявляєш"
+        },
+        {
+            "id": 14065,
+            "unitId": 2034,
+            "pol": "czy można to jakoś inaczej napisać?",
+            "transl": "Чи є інший спосіб це написати?"
+        },
+        {
+            "id": 14066,
+            "unitId": 2034,
+            "pol": "Fajnie Ci Zazdroszczę",
+            "transl": "Я тобі заздрю по былому"
+        },
+        {
+            "id": 14067,
+            "unitId": 2034,
+            "pol": "Mam dwóch synów, najbardziej mi się podobało ich wspólne zabawy",
+            "transl": "У мене двоє синів, мені найбільше сподобалися їхні спільні ігри"
         }
     ]
 
@@ -9425,24 +9461,30 @@ const kartaPol = [
         "pol": "W jakim wieku powstała Polska? Polska powstała w Х wieku",
         "transl": "В якому році повстала Польща?"
     },
-    // {
-    //     "id": 10842,
-    //     "unitId": 2015,
-    //     "pol": "Kiedy odbyła się Unia Krewska? Unia Krewska odbyła się w 1385r. w Krewie",
-    //     "transl": "Коли відбулась Унія Кревська?"
-    // },
-    // {
-    //     "id": 10843,
-    //     "unitId": 2015,
-    //     "pol": "Unia w Krewie wyznacza nowy kierunek polityki polskiej",
-    //     "transl": "Унія в Крево встановлює нову напрям польської політики"
-    // },
-    // {
-    //     "id": 10845,
-    //     "unitId": 2015,
-    //     "pol": "Kiedy odbyła się Unia Lubelska? Unia Lubelska odbyła się w 1569r",
-    //     "transl": "Коли відбулась Унія Любельська?"
-    // },
+    {
+        "id": 10842,
+        "unitId": 2015,
+        "pol": "Kiedy odbyła się Unia Krewska? Unia Krewska odbyła się w 1385r. w Krewie",
+        "transl": "Коли відбулась Унія Кревська?"
+    },
+    {
+        "id": 10843,
+        "unitId": 2015,
+        "pol": "Królestwo Polskie i Wielkie Księstwo Litewskie jednoczą się przeciw wspólnemu wrogowi - Zakonowi Krzyżackiemu",
+        "transl": "Королівство Польське та Велике князівство Литовське об’єднуються проти спільного ворога – Тевтонського ордену"
+    },
+    {
+        "id": 10844,
+        "unitId": 2015,
+        "pol": "Kiedy odbyła się Unia Lubelska? Unia Lubelska odbyła się w 1569r",
+        "transl": "Коли відбулась Унія Любельська?"
+    },
+    {
+        "id": 10845,
+        "unitId": 2015,
+        "pol": "Z połączenia ziem Królestwa Polskiego i Wielkiego Księstwa Litewskiego powstaje największe mocarstwo Europie",
+        "transl": "Найбільша держава в Європі утворюється внаслідок злиття земель Польського королівства та Великого князівства Литовського"
+    },
     {
         "id": 10846,
         "unitId": 2015,
@@ -9485,12 +9527,12 @@ const kartaPol = [
         "pol": "Kto był ostatnim królem Polski? August Poniatowski (1764-1795)",
         "transl": "Хто був останнім королем Польщі?"
     },
-    // {
-    //     "id": 10853,
-    //     "unitId": 2015,
-    //     "pol": "Kim była Jadwiga? Królową Polski od 1384-1399r",
-    //     "transl": "Ким була Ядвіга?"
-    // },
+    {
+        "id": 10853,
+        "unitId": 2015,
+        "pol": "Kim była Jadwiga? Królową Polski od 1384-1399r",
+        "transl": "Ким була Ядвіга?"
+    },
     {
         "id": 10854,
         "unitId": 2015,
@@ -9626,8 +9668,7 @@ const kartaPol = [
     {
         "id": 10870,
         "unitId": 2031,
-        "pol": "Kiedy odbył się III rozbiór? W 1795r. Brały udział Rosja, Prusy i\n" +
-            "Austria",
+        "pol": "Kiedy odbył się III rozbiór? W 1795r. Brały udział Rosja, Prusy i Austria",
         "transl": "Коли відбувся ІІІ поділ Польщі?"
     },
     // {
