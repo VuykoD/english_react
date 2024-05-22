@@ -9458,7 +9458,7 @@ const kartaPol = [
     {
         "id": 10841,
         "unitId": 2015,
-        "pol": "W jakim wieku powstała Polska? Polska powstała w Х wieku",
+        "pol": "W jakim wieku powstała Polska? Polska powstała w 10 wieku",
         "transl": "В якому році повстала Польща?"
     },
     {
