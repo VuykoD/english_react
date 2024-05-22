@@ -9959,12 +9959,12 @@ const kartaPol = [
         "pol": "Data wstąpienia Polski do Unii Europejskiej? Od 1 maja 2004 r. Polska jest pełnoprawnym członkiem Unii Europejskiej",
         "transl": "Дата вступу Польщі в Євросоюз?"
     },
-    {
-        "id": 10903,
-        "unitId": 2016,
-        "pol": "Powierzchnia Polski?",
-        "transl": "Площа Польщі?"
-    },
+    // {
+    //     "id": 10903,
+    //     "unitId": 2016,
+    //     "pol": "Powierzchnia Polski?",
+    //     "transl": "Площа Польщі?"
+    // },
     {
         "id": 10904,
         "unitId": 2016,
@@ -9989,12 +9989,12 @@ const kartaPol = [
         "pol": "Góry ciągną się na południu wzdłuż południowych granic Polski",
         "transl": "Гори тягнуться на південь уздовж південних кордонів польський"
     },
-    {
-        "id": 10908,
-        "unitId": 2016,
-        "pol": "Podział administracyjny?",
-        "transl": "Адміністративний поділ"
-    },
+    // {
+    //     "id": 10908,
+    //     "unitId": 2016,
+    //     "pol": "Podział administracyjny?",
+    //     "transl": "Адміністративний поділ"
+    // },
     {
         "id": 10909,
         "unitId": 2016,
@@ -10031,12 +10031,12 @@ const kartaPol = [
         "pol": "Średnia temperatura w lecie waha się pomiędzy 16 a 20 °C, w zimie - między -6 a 0 °C",
         "transl": "Середня температура влітку коливається від 16 до 20 °C, взимку - від -6 до 0 °C"
     },
-    {
-        "id": 10915,
-        "unitId": 2016,
-        "pol": "Z jakimi państwami graniczy Rzeczpospolita Polska?",
-        "transl": "З якими державами межує Польща"
-    },
+    // {
+    //     "id": 10915,
+    //     "unitId": 2016,
+    //     "pol": "Z jakimi państwami graniczy Rzeczpospolita Polska?",
+    //     "transl": "З якими державами межує Польща"
+    // },
     {
         "id": 10916,
         "unitId": 2016,
@@ -10061,12 +10061,12 @@ const kartaPol = [
         "pol": "Rzeczpospolita Polska graniczy z Litwą i Federacją Rosyjską (Okręg Kaliningradzki) na północy",
         "transl": "Республіка Польща межує з Литвою та Російською Федерацією (Калінінградський район) на півночі"
     },
-    {
-        "id": 10920,
-        "unitId": 2016,
-        "pol": "Czy Polska leży nad morzem?",
-        "transl": "Чи Польща знаходиться над морем"
-    },
+    // {
+    //     "id": 10920,
+    //     "unitId": 2016,
+    //     "pol": "Czy Polska leży nad morzem?",
+    //     "transl": "Чи Польща знаходиться над морем"
+    // },
     {
         "id": 10921,
         "unitId": 2016,

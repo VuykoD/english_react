@@ -59,6 +59,11 @@ const content = {
         ukr: "Перші букви по звуку",
         pol: "Pierwsze litery po dźwięku",
     },
+    firstLettersBySoundSorted: {
+        ru: "Первые буквы по звуку отсортированные",
+        ukr: "Перші літери за звуком відсортовані",
+        pol: "Pierwsze litery posortowane według dźwięku",
+    },
     resetRecord: {
         ru: "Обнулить рекорд",
         ukr: "Обнулити рекорд",
@@ -275,13 +280,28 @@ class LearningClass extends Component {
         localStorage.progress = JSON.stringify(lP);
     };
 
-    firstLettersBySound = () => {
+    firstLettersBySoundSorted = () => {
         const { learnedLang } = this.props.store;
         let learnArr = getCourseItems();
         learnArr = shuffle(learnArr);
         learnArr = filter(learnArr, it => !!it[learnedLang]);
         this.learnArr = learnArr.slice(0, 70);
         this.setCourseNameInLearnArray();
+        if (!this.learnArr) return;
+        this.setState({
+            cycleLearning: 'new',
+            exampleLearning: 'first_letters_by_sound'
+        });
+        this.setWordAndTransl(this.state.learnNumber, MAX_SOUND_LENGTH);
+    }
+
+    firstLettersBySound = () => {
+        const { automaticChange } = this.state;
+        if (automaticChange) {
+            this.sort();
+        }
+        this.setLearnArr(50);
+        this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setState({
             cycleLearning: 'new',
@@ -467,6 +487,7 @@ class LearningClass extends Component {
         const write = get(content, `write[${siteLang}]`) || '';
         const speedRepeat = get(content, `speedRepeat[${siteLang}]`) || '';
         const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`) || '';
+        const firstLettersBySoundSorted = get(content, `firstLettersBySoundSorted[${siteLang}]`) || '';
         const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`) || '';
         const rightWritten = get(content, `rightWritten[${siteLang}]`) || '';
         const games = get(content, `games[${siteLang}]`) || '';
@@ -516,7 +537,7 @@ class LearningClass extends Component {
                             </Col>
                             <Col className={learnedLang === 'pol' ? 'hide-in-mobile' : null}>
                                 <Button variant="info" block onClick={this.firstLettersBySound}>
-                                    {`${firstLettersBySound} (70)`}
+                                    {`${firstLettersBySound} (50)`}
                                 </Button>
                             </Col>
                         </Row>
@@ -539,6 +560,13 @@ class LearningClass extends Component {
                                 </Col>
                             </Row>
                         )}
+                        <Row>
+                            <Col className={learnedLang === 'pol' ? 'hide-in-mobile' : null}>
+                                <Button variant="info" block onClick={this.firstLettersBySoundSorted}>
+                                    {`${firstLettersBySoundSorted} (70)`}
+                                </Button>
+                            </Col>
+                        </Row>
                     </Fragment>
                 )}
                 {exampleLearning &&
