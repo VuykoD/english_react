@@ -9476,7 +9476,7 @@ const kartaPol = [
     {
         "id": 10844,
         "unitId": 2015,
-        "pol": "Kiedy odbyła się Unia Lubelska? Unia Lubelska odbyła się w 1569r",
+        "pol": "Kiedy odbyła się Unia Lubelska? Unia Lubelska odbyła się w 1569 r",
         "transl": "Коли відбулась Унія Любельська?"
     },
     {
@@ -9488,7 +9488,7 @@ const kartaPol = [
     {
         "id": 10846,
         "unitId": 2015,
-        "pol": "Kiedy odbyła się I Rzeczpospolita Polska? W 1569 – 1795r",
+        "pol": "Kiedy odbyła się I Rzeczpospolita Polska? W 1569 – 1795 r",
         "transl": "Коли повстала І Річ Посполита Польська?"
     },
     {
@@ -9530,7 +9530,7 @@ const kartaPol = [
     {
         "id": 10853,
         "unitId": 2015,
-        "pol": "Kim była Jadwiga? Królową Polski od 1384-1399r",
+        "pol": "Kim była Jadwiga? Królową Polski od 1384 - 1399 r",
         "transl": "Ким була Ядвіга?"
     },
     {
@@ -9539,28 +9539,28 @@ const kartaPol = [
         "pol": "Co to jest Miecz Szczerbiec? Miecz koronacyjny Królów Polski",
         "transl": "Що таке Меч Щербєц?"
     },
-    // {
-    //     "id": 10855,
-    //     "unitId": 2015,
-    //     "pol": "Kto był pierwszym królem z dynastii Jagellonów? Władysław Jagełło. Wstąpił na tron po ślubie z Królową Jadwigą",
-    //     "transl": "Хто був першим королем династії Ягелонів?"
-    // },
-    // {
-    //     "id": 10856,
-    //     "unitId": 2015,
-    //     "pol": "Kto był ostatnim królem z dynastii Jagellonów? Zygmunt August II. Zrealizował Unię Lubelską 1569r",
-    //     "transl": "Хто був останнім королем династії Ягелонів?"
-    // },
+    {
+        "id": 10855,
+        "unitId": 2015,
+        "pol": "Kto był pierwszym królem z dynastii Jagellonów? Władysław Jagełło. Wstąpił na tron po ślubie z Królową Jadwigą",
+        "transl": "Хто був першим королем династії Ягелонів?"
+    },
+    {
+        "id": 10856,
+        "unitId": 2015,
+        "pol": "Kto był ostatnim królem z dynastii Jagellonów? Zygmunt August II. Zrealizował Unię Lubelską 1569 r",
+        "transl": "Хто був останнім королем династії Ягелонів?"
+    },
     {
         "id": 10857,
         "unitId": 2015,
-        "pol": "Kto był pierwszym królem Polski? Bolesław Chrobry, koronowany w 1025r",
+        "pol": "Kto był pierwszym królem Polski? Bolesław Chrobry, koronowany w 1025 r",
         "transl": "Хто був першим королем Польщі?"
     },
     {
         "id": 10858,
         "unitId": 2015,
-        "pol": "Kto był pierwszym władcą Polski? Mieszko I (922-992) – pierwszy historycznie udokumentowany władca Polski z dynastii Piastów",
+        "pol": "Kto był pierwszym władcą Polski? Mieszko I (922 - 992) – pierwszy historycznie udokumentowany władca Polski z dynastii Piastów",
         "transl": "Хто був першим правителем Польщі?"
     },
     // {
@@ -9578,63 +9578,9 @@ const kartaPol = [
     {
         "id": 13000,
         "unitId": 2015,
-        "pol": "Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364r. pierwszy w Polsce uniwersytet – Akademię Krakowską (Uniwersytet Jagelloński)",
+        "pol": "Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364r uniwersytet Jagelloński",
         "transl": "Казимир Великий з династії Пястів заснував у Кракові у 1364 році перший у Польщі університет – Краківську Академію (Ягеллонський університет)"
     },
-    // {
-    //     "id": 10861,
-    //     "unitId": 2015,
-    //     "pol": "Kiedy odbyła się bitwa pod Grunwaldem? Kto był zwycięzcą?",
-    //     "transl": "Коли відбулась битва під Грунвальдом? Хто переміг?"
-    // },
-    // {
-    //     "id": 13001,
-    //     "unitId": 2015,
-    //     "pol": "W 1410r. wojsko polskie i litewskie pod dowództwem Króla Władysława Jagiełły pokonało pod Grunwaldem wojsko Krzyżaków",
-    //     "transl": "У 1410 році польсько-литовська армія під командуванням короля Владислава Яґайли перемогла під Ґрунвальдом армію хрестоносців."
-    // },
-    // {
-    //     "id": 13002,
-    //     "unitId": 2015,
-    //     "pol": "Potęga Krzyżaków zostaje ostatecznie złamana",
-    //     "transl": "Сила ордену крестоносців була остаточно зламана"
-    // },
-    // {
-    //     "id": 10862,
-    //     "unitId": 2031,
-    //     "pol": "Gdzie i kiedy zginął Król Władysław Warneńczyk? Zginął w bitwie przeciw Turkow pod Warną w 1444",
-    //     "transl": "Де коли загинув Король Владислав Варненьчик"
-    // },
-    // {
-    //     "id": 10863,
-    //     "unitId": 2031,
-    //     "pol": "Kiedy miał miejsce Potop szwedzki?",
-    //     "transl": "Коли відбувся Потоп шведській?"
-    // },
-    // {
-    //     "id": 12003,
-    //     "unitId": 2031,
-    //     "pol": "W ХVII wieku królowie z dynastii Wazów pretendowali do tronu Szwecji co prowadziło do konfliktów między Rzeczpospolitą a Szwecją.",
-    //     "transl": "У XVII столітті королі з династії Ваза претендували на трон Швеції, що призводило до конфліктів між Речію Посполитою та Швецією"
-    // },
-    // {
-    //     "id": 12004,
-    //     "unitId": 2031,
-    //     "pol": "W 1655-1660 w okres panowania Jana - Rzeczpospolitą ogłoszono monarchią Kazimierza przypadają najazd konstytucyjną szwedzki – „potop”",
-    //     "transl": "У 1655-1660 роках, за панування Яна, в Речі Посполитій оголошено монархію Казимира, що припало на період конституційного нападу шведського - потоп"
-    // },
-    // {
-    //     "id": 10864,
-    //     "unitId": 2031,
-    //     "pol": "Postać Króla Jana III Sobieskiego?",
-    //     "transl": "Хто такий король ІІІ Собєский?"
-    // },
-    // {
-    //     "id": 12005,
-    //     "unitId": 2031,
-    //     "pol": "wybrany król (1629- 1696). W 1683r. rozgromił wojska tureckie i zahamował ekspansję Turków Otomańskich w Europie",
-    //     "transl": "Обраний король (1629-1696). У 1683 році розгромив війська турецькі та зупинив експансію Османських турків в Європі"
-    // },
     {
         "id": 10865,
         "unitId": 2031,
@@ -9644,7 +9590,7 @@ const kartaPol = [
     {
         "id": 12006,
         "unitId": 2031,
-        "pol": "123 lata, aż do odzyskania niepodległości w 1918r",
+        "pol": "123 lata, aż do odzyskania niepodległości w 1918 r",
         "transl": "123 роки, аж до відновлення незалежності у 1918 році"
     },
     {
@@ -9770,13 +9716,13 @@ const kartaPol = [
     {
         "id": 10878,
         "unitId": 2032,
-        "pol": "Kto był pierwszym Prezydentem II Rzeczpospolitej? Profesor Gabriel Narutowicz w 1922r.",
+        "pol": "Kto był pierwszym Prezydentem II Rzeczpospolitej? Profesor Gabriel Narutowicz w 1922 r",
         "transl": "Хто був першим президентом ІІ Речі Посполитої?"
     },
     {
         "id": 10879,
         "unitId": 2032,
-        "pol": "Kto był ostatnim Prezydentem II Rzeczpospolitej? Ignacy Mościcki w 1926r",
+        "pol": "Kto był ostatnim Prezydentem II Rzeczpospolitej? Ignacy Mościcki w 1926 r",
         "transl": "Хто був останнім президентом ІІ Речі Посполитої"
     },
     {
@@ -9803,114 +9749,24 @@ const kartaPol = [
         "pol": "Teren II Rzeczpospolitej został podzielony: 49% Związek Sowiecki, 51% Niemcy",
         "transl": "Територія Другої Речі Посполитої була розділена: 49% - Союз Радянський, 51% - Німеччина"
     },
-    // {
-    //     "id": 10881,
-    //     "unitId": 2032,
-    //     "pol": "Głowne bitwy II Wojny Światowej w których uczestniczyli żołnierze Wojska Polskiego?",
-    //     "transl": "Головні битви ІІ Світової війни в яких приймали участь солдати Війська Польського?"
-    // },
-    // {
-    //     "id": 12021,
-    //     "unitId": 2032,
-    //     "pol": "Bitwa o Anglię - 1940 rok; Bitwa o Monte Cassino - 1944 rok Włochy (Armia Polska pod dowództwem Generała Władysława Andersa)",
-    //     "transl": "Битва за Англію - 1940 рік; Битва під Монте-Кассіно - 1944 рік, Італія (Польська армія під командуванням генерала Владислава Андерса)"
-    // },
-    // {
-    //     "id": 12022,
-    //     "unitId": 2032,
-    //     "pol": "Walki w północnych Włoszech - 1945 rok; Wyzwolenie miasta Bredy w Holandii - 1944 rok",
-    //     "transl": "Бої на півночі Італії - 1945 рік; Звільнення міста Бреда в Нідерландах - 1944 рік"
-    // },
-    // {
-    //     "id": 10882,
-    //     "unitId": 2032,
-    //     "pol": "Kiedy wybuchło Powstanie Warszawskie?",
-    //     "transl": "Коли вибухнуло повстання Варшавське?"
-    // },
-    // {
-    //     "id": 12023,
-    //     "unitId": 2032,
-    //     "pol": "Warszawie wybuchło powstanie zorganizowane przez Armię Krajową",
-    //     "transl": "У Варшаві спалахнуло повстання, організоване Армією Крайовою"
-    // },
-    // {
-    //     "id": 12024,
-    //     "unitId": 2032,
-    //     "pol": "Jego głównym celem jest wyzwolenie stolicy spod władzy Niemców i zdobycie suwerenności. Powstanie trwało 63 dni i zostało pokonane",
-    //     "transl": "Його основною метою було звільнення столиці від німецького владарювання та досягнення суверенітету. Повстання тривало 63 дні та було придушене"
-    // },
     {
         "id": 10883,
         "unitId": 2032,
         "pol": "Data końcu II Wojny Światowej? 8 maja 1945r. - bezwarunkowa kapitulacja II Rzeszy",
         "transl": "Дата закінчення ІІ Світової війни?"
     },
-    // {
-    //     "id": 10884,
-    //     "unitId": 2033,
-    //     "pol": "Polska po 1944 roku. Jałta 1945r.",
-    //     "transl": "Польща після 1944 року. Ялта 1945"
-    // },
-    // {
-    //     "id": 12025,
-    //     "unitId": 2033,
-    //     "pol": "W Jałcie w lutym 1945 roku, Wielka Brytania i Stany Zjednoczone były zmuszone uznać roszczenia sowietów do terytorium na wschód od rzeki Bug",
-    //     "transl": "На Ялтинській конференції в лютому 1945 року Велика Британія та Сполучені Штати були змушені визнати претензії Радянського Союзу до території на сході від річки Буг"
-    // },
-    // {
-    //     "id": 12026,
-    //     "unitId": 2033,
-    //     "pol": "Armia Czerwona zajęłą już w tym czasie te tereny w pogoni za Niemcami",
-    //     "transl": "Червона Армія вже на той момент захопила ці території в погоні за Німеччиною"
-    // },
-    // {
-    //     "id": 12027,
-    //     "unitId": 2033,
-    //     "pol": "Jałta w Polsce jest synonimem zdrady aliantów i prawie pięćdziesięcioletniego podziału Europy na strefę wpływów sowieckich i wolny świat zachodni",
-    //     "transl": "Ялта в Польщі є синонімом зради союзників та майже п'ятдесятирічного поділу Європи на сферу впливу Радянського Союзу та вільний західний світ"
-    // },
     {
         "id": 10885,
         "unitId": 2033,
         "pol": "Rok założenia Związku Zawodowego Solidarność lub z czym kojarzy się Sierpień 1980?",
         "transl": "Рік заснування Союзу «Солідарність» або з чим асоціюється серпень 1980 року"
     },
-    // {
-    //     "id": 12028,
-    //     "unitId": 2033,
-    //     "pol": "Związek Zawodowy Solidarność został założony na podstawie Porozumień w Gdańsku kończących 14 dni strajku w sierpniu 1980 roku w Stoczni Gdańskiej",
-    //     "transl": "Профспілка Солідарність була заснована на основі угод у Гданську, які завершили 14-денний страйк у серпні 1980 року на Гданському суднобудівному заводі"
-    // },
-    // {
-    //     "id": 12029,
-    //     "unitId": 2033,
-    //     "pol": "Strajkujący wystąpili za uzyskania swobód politycznych i ekonomicznych",
-    //     "transl": "Страйкуючі виступали за отримання політичних і економічних свобод"
-    // },
     {
         "id": 12030,
         "unitId": 2033,
         "pol": "Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983 Pokojową Nagrodę Nobla",
         "transl": "Їхній лідер Лех Валенса, за фахом електрик, отримав у 1983 році Нобелівську премію миру"
     },
-    // {
-    //     "id": 10886,
-    //     "unitId": 2033,
-    //     "pol": "Z jakim wydarzeniem kojarzy się 13 grudzień?",
-    //     "transl": "Яка подія пов’язана з 13 грудня?"
-    // },
-    // {
-    //     "id": 12031,
-    //     "unitId": 2033,
-    //     "pol": "13 grudzień 1981r. - wprowadzenie Stanu Wojennego przez generała Wojciecha Jaruzelskiego. Delegalizacja pierwszej Solidarności",
-    //     "transl": "13 грудня 1981 року - введення воєнного стану генералом Войцехом Ярузельським. Дезактивація першої Солідарності"
-    // },
-    // {
-    //     "id": 10887,
-    //     "unitId": 2033,
-    //     "pol": "Koniec rządów komunistycznych?",
-    //     "transl": "Кінець комуністичної влади?"
-    // },
     {
         "id": 12032,
         "unitId": 2033,
@@ -9932,20 +9788,38 @@ const kartaPol = [
     {
         "id": 12034,
         "unitId": 2033,
-        "pol": "1989-1990r. – Wojciech Jaruzelski; 1990-1995r. – Lech Wałęsa; 1995-2005r. – Aleksander Kwaśniewski (był Prezydentem 2 kadencje)",
-        "transl": "1989-1990 рр. - Войцех Ярузельський; 1990-1995 рр. - Лех Валенса; 1995-2005 рр. - Олександр Квашневський (був Президентом дві каденції)"
+        "pol": "1989 - 1990 r Wojciech Jaruzelski",
+        "transl": "1989-1990 рр. - Войцех Ярузельський"
+    },
+    {
+        "id": 10881,
+        "unitId": 2033,
+        "pol": "1990 - 1995 r Lech Wałęsa",
+        "transl": "1990-1995 рр. - Лех Валенса"
+    },
+    {
+        "id": 10882,
+        "unitId": 2033,
+        "pol": "1995 - 2005 r Aleksander Kwaśniewski (był Prezydentem 2 kadencje)",
+        "transl": "1995-2005 рр. - Олександр Квашневський (був Президентом дві каденції)"
     },
     {
         "id": 12035,
         "unitId": 2033,
-        "pol": "2005-2010r. – Lech Kaczyński (10 kwietnia 2010r. wyleciał z Warszawy rządowym samolotem w Smoleńsk by udać się na obchody 70-rocznicy zbrodni katyńskiej. Zginął wraz z żoną i wszystkimi członkami delegacji)",
+        "pol": "2005 - 2010 r Lech Kaczyński 10 kwietnia 2010 r zginął wraz z żoną i wszystkimi członkami delegacji",
         "transl": "2005-2010 рр. - Лех Качинський (10 квітня 2010 р. вилетів із Варшави на урядовому літаку до Смоленська для участі в урочистостях з нагоди 70-річчя Катинської розстрілянки. Загинув разом з дружиною та всіма членами делегації)"
     },
     {
         "id": 12036,
         "unitId": 2033,
-        "pol": "2010r. – po 2015r – Bronisław Maria Komorowski. 2015r. – po dzisiaj – Andrzej Duda",
-        "transl": "2010 р. – після 2015 р. – Броніслав Марія Коморовський. 2015 р. – по сьогодні – Анджей Дуда"
+        "pol": "2010 – 2015r Bronisław Maria Komorowski",
+        "transl": "2010 р. – о 2015 р. – Броніслав Марія Коморовський"
+    },
+    {
+        "id": 12036,
+        "unitId": 2033,
+        "pol": "2015r – po dzisiaj – Andrzej Duda",
+        "transl": "2015 р. – по сьогодні – Анджей Дуда"
     },
     {
         "id": 10889,
@@ -10496,7 +10370,7 @@ const kartaPol = [
     {
         "id": 14012,
         "unitId": 2017,
-        "pol": "Adam Mickiewicz - największy poeta polski, autor 'Pana Tadeusza'",
+        "pol": "Adam Mickiewicz - największy poeta polski, autor Pana Tadeusza",
         "transl": "Адам Міцкевич - найвидатніший польський поет, автор 'Пана Тадеуша'"
     },
     {
@@ -10652,7 +10526,7 @@ const kartaPol = [
     {
         "id": 14061,
         "unitId": 2020,
-        "pol": "Jakie święto obchodzi się w Polsce 1 listopada? Dzień Wszystkich Świętych. Polacy udają się na cmentarze by pomodlić się na grobach bliskich zmarłych, zapalają świeczki, składają kwiaty (chryzantemy).",
+        "pol": "Jakie święto obchodzi się w Polsce 1 listopada? Dzień Wszystkich Świętych. Polacy udają się na cmentarze by pomodlić się na grobach bliskich zmarłych, zapalają świeczki, składają chryzantemy",
         "transl": "Яке свято в Польщі припадає на 1 листопада? День Всіх Святих. Поляки відвідують кладовища, щоб помолитися на могилах рідних, запалюють свічки, кладуть квіти (хризантеми)."
     },
     // {
