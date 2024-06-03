@@ -9321,7 +9321,7 @@ const courseItems =
         {
             "id": 13061,
             "unitId": 2034,
-            "pol": "Skoro wypredza, musi mieć ważny powód",
+            "pol": "Skoro wyprzedza, musi mieć ważny powód",
             "transl": "Якщо випереджає, значить, має важливу причину"
         },
         {
@@ -9442,13 +9442,133 @@ const courseItems =
             "id": 14066,
             "unitId": 2034,
             "pol": "Fajnie Ci Zazdroszczę",
-            "transl": "Я тобі заздрю по былому"
+            "transl": "по білому тобі заздрю"
         },
         {
             "id": 14067,
             "unitId": 2034,
             "pol": "Mam dwóch synów, najbardziej mi się podobało ich wspólne zabawy",
             "transl": "У мене двоє синів, мені найбільше сподобалися їхні спільні ігри"
+        },
+        {
+            "id": 14068,
+            "unitId": 2034,
+            "pol": "Chcę zdjąć krótki filmik",
+            "transl": "Я хочу зняти коротке відео"
+        },
+        {
+            "id": 14069,
+            "unitId": 2034,
+            "pol": "Nie zgadnę, tym bardziej teraz",
+            "transl": "Я не вгадаю, тим більше зараз"
+        },
+        {
+            "id": 14070,
+            "unitId": 2034,
+            "pol": "Majtki pełne piasku po plaży",
+            "transl": "Труси повні піску після пляжу"
+        },
+        {
+            "id": 14071,
+            "unitId": 2034,
+            "pol": "Wśród pojazdów wojskowych są ciężarówki i czołgi",
+            "transl": "Серед військових транспортних засобів є вантажівки та танки"
+        },
+        {
+            "id": 14072,
+            "unitId": 2034,
+            "pol": "Chrzan potrafi wzmocnić organizm w czasie kataru",
+            "transl": "Хрін може зміцнити організм під час нежиті"
+        },
+        {
+            "id": 14073,
+            "unitId": 2034,
+            "pol": "Warto mieć dobrego przewodnika, by efektywnie spędzać czas",
+            "transl": "Корисно мати доброго провідника, щоб ефективно проводити час"
+        },
+        {
+            "id": 14074,
+            "unitId": 2034,
+            "pol": "Próba numer 2, czyli drugie podejście do filmu",
+            "transl": "Проба номер 2, або другий підхід до фільму"
+        },
+        {
+            "id": 14075,
+            "unitId": 2034,
+            "pol": "Wielbłąd to symbol przetrwania w surowych warunkach",
+            "transl": "Верблюд - символ виживання в суворих умовах"
+        },
+        {
+            "id": 14076,
+            "unitId": 2034,
+            "pol": "Wiele w otoczeniu uległo zmianie, ale zachowało się kilka historycznych miejsc",
+            "transl": "Багато в оточені зазнало змін, але збереглося кілька історичних місць"
+        },
+        {
+            "id": 14077,
+            "unitId": 2034,
+            "pol": "Stań spokojnie, żeby motylek nie odleciał.",
+            "transl": "Стій спокійно, щоб метелик не полетів"
+        },
+        {
+            "id": 14078,
+            "unitId": 2034,
+            "pol": "Polskie przypadki mają skomplikowaną odmianę",
+            "transl": "Польські відмінки мають складне відмінювання"
+        },
+        {
+            "id": 14079,
+            "unitId": 2034,
+            "pol": "Trzeba oszczędzać, aby się rozwijać",
+            "transl": "Потрібно заощаджувати, щоб розвиватися"
+        },
+        {
+            "id": 14080,
+            "unitId": 2034,
+            "pol": "Mścić się z zemsty to błędne koło",
+            "transl": "Мститися заради помсти – це замкнене коло"
+        },
+        {
+            "id": 14081,
+            "unitId": 2034,
+            "pol": "Uściski wyrażają troskę i miłość",
+            "transl": "Обійми виражають турботу та любов"
+        },
+        {
+            "id": 14082,
+            "unitId": 2034,
+            "pol": "Wyrozumiałość i wsparcie są nieocenione",
+            "transl": "Порозуміння і підтримка є неоціненними"
+        },
+        {
+            "id": 14083,
+            "unitId": 2034,
+            "pol": "Przed uruchomieniem silnika zapnij pas",
+            "transl": "Перед запуском двигуна пристебни ремінь"
+        },
+        {
+            "id": 14084,
+            "unitId": 2034,
+            "pol": "Wąchając kwiaty, widziałem kolorowe motylki",
+            "transl": "Нюхаючи квіти, я бачив кольорових метеликів"
+        },
+        {
+            "id": 14085,
+            "unitId": 2034,
+            "pol": "Czy warto kłócić się o oddzielne drobiazgi?",
+            "transl": "Чи варто сваритися через окремі мелочі?"
+        },
+        {
+            "id": 14086,
+            "unitId": 2034,
+            "pol": "Pomniki przypominają o bohaterach, których opiewają piosenki",
+            "transl": "Пам'ятники нагадують про героїв, яких згадують у піснях"
+        },
+        {
+            "id": 14087,
+            "unitId": 2034,
+            "pol": "Nowy sprzęt pozwoli na lepsze łowienie węgorza",
+            "transl": "Нове обладнання дозволить краще ловити вугра."
         }
     ]
 
@@ -9464,7 +9584,7 @@ const kartaPol = [
     {
         "id": 10842,
         "unitId": 2015,
-        "pol": "Kiedy odbyła się Unia Krewska? Unia Krewska odbyła się w 1385r. w Krewie",
+        "pol": "Kiedy odbyła się Unia Krewska? Unia Krewska odbyła się w 1385 r w Krewie",
         "transl": "Коли відбулась Унія Кревська?"
     },
     {
@@ -9506,7 +9626,7 @@ const kartaPol = [
     {
         "id": 10849,
         "unitId": 2015,
-        "pol": "Miasta – stolice Polski? Gniezno 966 – 1041r. Kraków 1041 – 1596r. Warszawa 1596 – po dzisiaj",
+        "pol": "Miasta – stolice Polski? Gniezno 966 – 1041 r, Kraków 1041 – 1596 r, Warszawa 1596 – po dzisiaj",
         "transl": "Міста – столиці Польщі?"
     },
     // {
@@ -9524,7 +9644,7 @@ const kartaPol = [
     {
         "id": 10852,
         "unitId": 2015,
-        "pol": "Kto był ostatnim królem Polski? August Poniatowski (1764-1795)",
+        "pol": "Kto był ostatnim królem Polski? August Poniatowski (1764 - 1795 r)",
         "transl": "Хто був останнім королем Польщі?"
     },
     {
@@ -9573,12 +9693,12 @@ const kartaPol = [
         "id": 10860,
         "unitId": 2015,
         "pol": "Kto i kiedy założyw pierwszy uniwersytet w Polsce?",
-        "transl": "Хто і коли заснував перший університет в Польщі (Університет Ягєлонський)"
+        "transl": "Хто і коли заснував перший університет в Польщі"
     },
     {
         "id": 13000,
         "unitId": 2015,
-        "pol": "Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364r uniwersytet Jagelloński",
+        "pol": "Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364 r uniwersytet Jagelloński",
         "transl": "Казимир Великий з династії Пястів заснував у Кракові у 1364 році перший у Польщі університет – Краківську Академію (Ягеллонський університет)"
     },
     {
@@ -9675,12 +9795,12 @@ const kartaPol = [
         "id": 10875,
         "unitId": 2032,
         "pol": "Kiedy wybuchła I Wojna Światowa?",
-        "transl": "Коли почалась ІІ Світова Війна?"
+        "transl": "Коли почалась І Світова Війна?"
     },
     {
         "id": 12014,
         "unitId": 2032,
-        "pol": "1 sierpnia 1914 – 11 listopada 1918. Brały w niej udział 33 państwa",
+        "pol": "1 sierpnia 1914 – 11 listopada 1918 r. Brały w niej udział 33 państwa",
         "transl": "1 серпня 1914 року - 11 листопада 1918 року. У неї брали участь 33 країни"
     },
     {
@@ -9704,7 +9824,7 @@ const kartaPol = [
     {
         "id": 12017,
         "unitId": 2032,
-        "pol": "11 listopada 1918r. zakończyła się I Wojna Światowa. Józef Piłsudski zostaje Naczelnikiem Państwa. 11 listopada został ogłoszony Dniem Niepodległości Polski",
+        "pol": "11 listopada 1918 r. zakończyła się I Wojna Światowa. Józef Piłsudski zostaje Naczelnikiem Państwa. 11 listopada został ogłoszony Dniem Niepodległości Polski",
         "transl": "11 листопада 1918 року завершилася Перша світова війна. Йозеф Пілсудський стає Головнокомандувачем країни. 11 листопада оголошено Днем Незалежності Польщі"
     },
     {
@@ -9734,13 +9854,13 @@ const kartaPol = [
     {
         "id": 12018,
         "unitId": 2032,
-        "pol": "1 września 1939r. wojska niemieckie zaatakowały Polskę",
+        "pol": "1 września 1939 r wojska niemieckie zaatakowały Polskę",
         "transl": "1 вересня 1939 року німецькі війська напали на Польщу"
     },
     {
         "id": 12019,
         "unitId": 2032,
-        "pol": "Dnia 17 września 1939 wojska sowieckie wkroczyły na teren wschodniej II Rzeczpospolitej na mocy Paktu Ribbentrop-Mołotow",
+        "pol": "Dnia 17 września 1939 r wojska sowieckie wkroczyły na teren wschodniej II Rzeczpospolitej na mocy Paktu Ribbentrop-Mołotow",
         "transl": "7 вересня 1939 року радянські війська ввійшли на територію східної частини Другої Речі Посполитої відповідно до Пакту Риббентропа-Молотова"
     },
     {
@@ -9752,25 +9872,25 @@ const kartaPol = [
     {
         "id": 10883,
         "unitId": 2032,
-        "pol": "Data końcu II Wojny Światowej? 8 maja 1945r. - bezwarunkowa kapitulacja II Rzeszy",
+        "pol": "Data końcu II Wojny Światowej? 8 maja 1945 r bezwarunkowa kapitulacja II Rzeszy",
         "transl": "Дата закінчення ІІ Світової війни?"
     },
     {
         "id": 10885,
         "unitId": 2033,
-        "pol": "Rok założenia Związku Zawodowego Solidarność lub z czym kojarzy się Sierpień 1980?",
+        "pol": "Rok założenia Związku Zawodowego Solidarność lub z czym kojarzy się Sierpień 1980 r?",
         "transl": "Рік заснування Союзу «Солідарність» або з чим асоціюється серпень 1980 року"
     },
     {
         "id": 12030,
         "unitId": 2033,
-        "pol": "Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983 Pokojową Nagrodę Nobla",
+        "pol": "Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983 r Pokojową Nagrodę Nobla",
         "transl": "Їхній лідер Лех Валенса, за фахом електрик, отримав у 1983 році Нобелівську премію миру"
     },
     {
         "id": 12032,
         "unitId": 2033,
-        "pol": "W 1989 Partia komunistyczna zezwala na wolne wybory, które wygrywają kandydaci bloku solidarnościowego",
+        "pol": "W 1989 r Partia komunistyczna zezwala na wolne wybory, które wygrywają kandydaci bloku solidarnościowego",
         "transl": "У 1989 році Комуністична партія дозволяє проведення вільних виборів, які виграли кандидати блоку Солідарності"
     },
     {
@@ -9812,25 +9932,25 @@ const kartaPol = [
     {
         "id": 12036,
         "unitId": 2033,
-        "pol": "2010 – 2015r Bronisław Maria Komorowski",
+        "pol": "2010 – 2015 r Bronisław Maria Komorowski",
         "transl": "2010 р. – о 2015 р. – Броніслав Марія Коморовський"
     },
     {
-        "id": 12036,
+        "id": 12037,
         "unitId": 2033,
-        "pol": "2015r – po dzisiaj – Andrzej Duda",
+        "pol": "2015 r – po dzisiaj – Andrzej Duda",
         "transl": "2015 р. – по сьогодні – Анджей Дуда"
     },
     {
         "id": 10889,
         "unitId": 2033,
-        "pol": "Data wstąpienia Polski do NATO? 12 marca 1999r. Polska stała członkiem NATO",
+        "pol": "Data wstąpienia Polski do NATO? 12 marca 1999 r Polska stała członkiem NATO",
         "transl": "Дата вступу Польщі до НАТО?"
     },
     {
         "id": 10890,
         "unitId": 2033,
-        "pol": "Data wstąpienia Polski do Unii Europejskiej? Od 1 maja 2004 r. Polska jest pełnoprawnym członkiem Unii Europejskiej",
+        "pol": "Data wstąpienia Polski do Unii Europejskiej? Od 1 maja 2004 r Polska jest pełnoprawnym członkiem Unii Europejskiej",
         "transl": "Дата вступу Польщі в Євросоюз?"
     },
     // {
@@ -9842,7 +9962,7 @@ const kartaPol = [
     {
         "id": 10904,
         "unitId": 2016,
-        "pol": "Powierzchnia Polski wynosi 312 685 km2 i pod względem powierzchni Polska jest dziewiątym krajem w Europie",
+        "pol": "Powierzchnia Polski wynosi 312685 km2 i pod względem powierzchni Polska jest dziewiątym krajem w Europie",
         "transl": "Площа Польщі становить 312 685 км2 і за площею Польща є дев'ятою країною в Європа"
     },
     // {
@@ -9992,7 +10112,7 @@ const kartaPol = [
     {
         "id": 10929,
         "unitId": 2026,
-        "pol": "W 1977r. UNESCO włączyło Białowieski Park Narodowy w poczet światowych rezerwatów biosfery",
+        "pol": "W 1977 r UNESCO włączyło Białowieski Park Narodowy w poczet światowych rezerwatów biosfery",
         "transl": "в 1977 році ЮНЕСКО включило Біловезький національний парк в групу світових біосферних заповідників"
     },
     // {
@@ -10316,7 +10436,7 @@ const kartaPol = [
     {
         "id": 10984,
         "unitId": 2028,
-        "pol": "Obóz Koncentracyjny Auschwitz-Birkenau",
+        "pol": "Obóz Koncentracyjny Auschwitz - Birkenau",
         "transl": "Концтабір Аушвіц-Біркенау ЮНЕСКО"
     },
     {
@@ -10394,7 +10514,7 @@ const kartaPol = [
     {
         "id": 14026,
         "unitId": 2017,
-        "pol": "Generał Władysław Sikorski - premier rządu RP w latach 1939–1943",
+        "pol": "Generał Władysław Sikorski - premier rządu RP w latach 1939 – 1943 r",
         "transl": "Генерал Владислав Сікорський - прем'єр-міністр уряду РП у 1939–1943 роках"
     },
     {
@@ -10436,7 +10556,7 @@ const kartaPol = [
     {
         "id": 14038,
         "unitId": 2018,
-        "pol": "Wszystkich Świętych, Dzień Zaduszny (1-2 listopada) - dni poświęcone pamięci zmarłych",
+        "pol": "Wszystkich Świętych, Dzień Zaduszny (1 listopada) - dni poświęcone pamięci zmarłych",
         "transl": "День всіх святих - дні, приурочені до вшанування пам’яті померлих"
     },
     {
