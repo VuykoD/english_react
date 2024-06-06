@@ -959,7 +959,11 @@ function allIsCorrect() {
     const { learnedLang } = this.props.store;
     const isInMistake = this.mistakeArr.indexOf(learnNumber) > -1
 
-    if (!mistake && !isInMistake && exampleLearning === 'write'){
+    if (
+        !mistake &&
+        !isInMistake &&
+        (exampleLearning === 'write' || exampleLearning === 'first_letters_by_text')
+    ){
         let localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         const statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
         map(localProgress[learnedLang], (item, key) => {
