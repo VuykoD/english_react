@@ -9584,7 +9584,7 @@ const kartaPol = [
     {
         "id": 10842,
         "unitId": 2015,
-        "pol": "Kiedy odbyła się Unia Krewska? Unia Krewska odbyła się w 1385 r w Krewie",
+        "pol": "Kiedy odbyła się Unia Krewska? Unia Krewska odbyła się w 1385r w Krewie",
         "transl": "Коли відбулась Унія Кревська?"
     },
     {
@@ -9596,7 +9596,7 @@ const kartaPol = [
     {
         "id": 10844,
         "unitId": 2015,
-        "pol": "Kiedy odbyła się Unia Lubelska? Unia Lubelska odbyła się w 1569 r",
+        "pol": "Kiedy odbyła się Unia Lubelska? Unia Lubelska odbyła się w 1569r",
         "transl": "Коли відбулась Унія Любельська?"
     },
     {
@@ -9608,7 +9608,7 @@ const kartaPol = [
     {
         "id": 10846,
         "unitId": 2015,
-        "pol": "Kiedy odbyła się I Rzeczpospolita Polska? W 1569 – 1795 r",
+        "pol": "Kiedy odbyła się I Rzeczpospolita Polska? W 1569 – 1795r",
         "transl": "Коли повстала І Річ Посполита Польська?"
     },
     {
@@ -9626,7 +9626,7 @@ const kartaPol = [
     {
         "id": 10849,
         "unitId": 2015,
-        "pol": "Miasta – stolice Polski? Gniezno 966 – 1041 r, Kraków 1041 – 1596 r, Warszawa 1596 – po dzisiaj",
+        "pol": "Miasta – stolice Polski? Gniezno 966 – 1041r, Kraków 1041 – 1596r, Warszawa 1596 – po dzisiaj",
         "transl": "Міста – столиці Польщі?"
     },
     // {
@@ -9644,13 +9644,13 @@ const kartaPol = [
     {
         "id": 10852,
         "unitId": 2015,
-        "pol": "Kto był ostatnim królem Polski? August Poniatowski (1764 - 1795 r)",
+        "pol": "Kto był ostatnim królem Polski? August Poniatowski (1764 - 1795r)",
         "transl": "Хто був останнім королем Польщі?"
     },
     {
         "id": 10853,
         "unitId": 2015,
-        "pol": "Kim była Jadwiga? Królową Polski od 1384 - 1399 r",
+        "pol": "Kim była Jadwiga? Królową Polski od 1384 - 1399r",
         "transl": "Ким була Ядвіга?"
     },
     {
@@ -9668,13 +9668,13 @@ const kartaPol = [
     {
         "id": 10856,
         "unitId": 2015,
-        "pol": "Kto był ostatnim królem z dynastii Jagellonów? Zygmunt August II. Zrealizował Unię Lubelską 1569 r",
+        "pol": "Kto był ostatnim królem z dynastii Jagellonów? Zygmunt August II. Zrealizował Unię Lubelską 1569r",
         "transl": "Хто був останнім королем династії Ягелонів?"
     },
     {
         "id": 10857,
         "unitId": 2015,
-        "pol": "Kto był pierwszym królem Polski? Bolesław Chrobry, koronowany w 1025 r",
+        "pol": "Kto był pierwszym królem Polski? Bolesław Chrobry, koronowany w 1025r",
         "transl": "Хто був першим королем Польщі?"
     },
     {
@@ -9698,7 +9698,7 @@ const kartaPol = [
     {
         "id": 13000,
         "unitId": 2015,
-        "pol": "Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364 r uniwersytet Jagelloński",
+        "pol": "Kazimierz Wielki z dynastii Piastów założyw w Krakowie w 1364r uniwersytet Jagelloński",
         "transl": "Казимир Великий з династії Пястів заснував у Кракові у 1364 році перший у Польщі університет – Краківську Академію (Ягеллонський університет)"
     },
     {
@@ -9710,7 +9710,7 @@ const kartaPol = [
     {
         "id": 12006,
         "unitId": 2031,
-        "pol": "123 lata, aż do odzyskania niepodległości w 1918 r",
+        "pol": "123 lata, aż do odzyskania niepodległości w 1918r",
         "transl": "123 роки, аж до відновлення незалежності у 1918 році"
     },
     {
@@ -9800,7 +9800,7 @@ const kartaPol = [
     {
         "id": 12014,
         "unitId": 2032,
-        "pol": "1 sierpnia 1914 – 11 listopada 1918 r. Brały w niej udział 33 państwa",
+        "pol": "1 sierpnia 1914 – 11 listopada 1918r. Brały w niej udział 33 państwa",
         "transl": "1 серпня 1914 року - 11 листопада 1918 року. У неї брали участь 33 країни"
     },
     {
@@ -9824,7 +9824,7 @@ const kartaPol = [
     {
         "id": 12017,
         "unitId": 2032,
-        "pol": "11 listopada 1918 r. zakończyła się I Wojna Światowa. Józef Piłsudski zostaje Naczelnikiem Państwa. 11 listopada został ogłoszony Dniem Niepodległości Polski",
+        "pol": "11 listopada 1918r. zakończyła się I Wojna Światowa. Józef Piłsudski zostaje Naczelnikiem Państwa. 11 listopada został ogłoszony Dniem Niepodległości Polski",
         "transl": "11 листопада 1918 року завершилася Перша світова війна. Йозеф Пілсудський стає Головнокомандувачем країни. 11 листопада оголошено Днем Незалежності Польщі"
     },
     {
@@ -9836,13 +9836,13 @@ const kartaPol = [
     {
         "id": 10878,
         "unitId": 2032,
-        "pol": "Kto był pierwszym Prezydentem II Rzeczpospolitej? Profesor Gabriel Narutowicz w 1922 r",
+        "pol": "Kto był pierwszym Prezydentem II Rzeczpospolitej? Profesor Gabriel Narutowicz w 1922r",
         "transl": "Хто був першим президентом ІІ Речі Посполитої?"
     },
     {
         "id": 10879,
         "unitId": 2032,
-        "pol": "Kto był ostatnim Prezydentem II Rzeczpospolitej? Ignacy Mościcki w 1926 r",
+        "pol": "Kto był ostatnim Prezydentem II Rzeczpospolitej? Ignacy Mościcki w 1926r",
         "transl": "Хто був останнім президентом ІІ Речі Посполитої"
     },
     {
@@ -9854,13 +9854,13 @@ const kartaPol = [
     {
         "id": 12018,
         "unitId": 2032,
-        "pol": "1 września 1939 r wojska niemieckie zaatakowały Polskę",
+        "pol": "1 września 1939r wojska niemieckie zaatakowały Polskę",
         "transl": "1 вересня 1939 року німецькі війська напали на Польщу"
     },
     {
         "id": 12019,
         "unitId": 2032,
-        "pol": "Dnia 17 września 1939 r wojska sowieckie wkroczyły na teren wschodniej II Rzeczpospolitej na mocy Paktu Ribbentrop-Mołotow",
+        "pol": "Dnia 17 września 1939r wojska sowieckie wkroczyły na teren wschodniej II Rzeczpospolitej na mocy Paktu Ribbentrop-Mołotow",
         "transl": "7 вересня 1939 року радянські війська ввійшли на територію східної частини Другої Речі Посполитої відповідно до Пакту Риббентропа-Молотова"
     },
     {
@@ -9872,25 +9872,25 @@ const kartaPol = [
     {
         "id": 10883,
         "unitId": 2032,
-        "pol": "Data końcu II Wojny Światowej? 8 maja 1945 r bezwarunkowa kapitulacja II Rzeszy",
+        "pol": "Data końcu II Wojny Światowej? 8 maja 1945r bezwarunkowa kapitulacja II Rzeszy",
         "transl": "Дата закінчення ІІ Світової війни?"
     },
     {
         "id": 10885,
         "unitId": 2033,
-        "pol": "Rok założenia Związku Zawodowego Solidarność lub z czym kojarzy się Sierpień 1980 r?",
+        "pol": "Rok założenia Związku Zawodowego Solidarność lub z czym kojarzy się Sierpień 1980r?",
         "transl": "Рік заснування Союзу «Солідарність» або з чим асоціюється серпень 1980 року"
     },
     {
         "id": 12030,
         "unitId": 2033,
-        "pol": "Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983 r Pokojową Nagrodę Nobla",
+        "pol": "Jej przywódca, Lech Wałęsa, z zawodu elektryk, otrzymuje w 1983r Pokojową Nagrodę Nobla",
         "transl": "Їхній лідер Лех Валенса, за фахом електрик, отримав у 1983 році Нобелівську премію миру"
     },
     {
         "id": 12032,
         "unitId": 2033,
-        "pol": "W 1989 r Partia komunistyczna zezwala na wolne wybory, które wygrywają kandydaci bloku solidarnościowego",
+        "pol": "W 1989r Partia komunistyczna zezwala na wolne wybory, które wygrywają kandydaci bloku solidarnościowego",
         "transl": "У 1989 році Комуністична партія дозволяє проведення вільних виборів, які виграли кандидати блоку Солідарності"
     },
     {
@@ -9908,49 +9908,49 @@ const kartaPol = [
     {
         "id": 12034,
         "unitId": 2033,
-        "pol": "1989 - 1990 r Wojciech Jaruzelski",
+        "pol": "1989 - 1990r Wojciech Jaruzelski",
         "transl": "1989-1990 рр. - Войцех Ярузельський"
     },
     {
         "id": 10881,
         "unitId": 2033,
-        "pol": "1990 - 1995 r Lech Wałęsa",
+        "pol": "1990 - 1995r Lech Wałęsa",
         "transl": "1990-1995 рр. - Лех Валенса"
     },
     {
         "id": 10882,
         "unitId": 2033,
-        "pol": "1995 - 2005 r Aleksander Kwaśniewski (był Prezydentem 2 kadencje)",
+        "pol": "1995 - 2005r Aleksander Kwaśniewski (był Prezydentem 2 kadencje)",
         "transl": "1995-2005 рр. - Олександр Квашневський (був Президентом дві каденції)"
     },
     {
         "id": 12035,
         "unitId": 2033,
-        "pol": "2005 - 2010 r Lech Kaczyński 10 kwietnia 2010 r zginął wraz z żoną i wszystkimi członkami delegacji",
+        "pol": "2005 - 2010r Lech Kaczyński 10 kwietnia 2010r zginął wraz z żoną i wszystkimi członkami delegacji",
         "transl": "2005-2010 рр. - Лех Качинський (10 квітня 2010 р. вилетів із Варшави на урядовому літаку до Смоленська для участі в урочистостях з нагоди 70-річчя Катинської розстрілянки. Загинув разом з дружиною та всіма членами делегації)"
     },
     {
         "id": 12036,
         "unitId": 2033,
-        "pol": "2010 – 2015 r Bronisław Maria Komorowski",
+        "pol": "2010 – 2015r Bronisław Maria Komorowski",
         "transl": "2010 р. – о 2015 р. – Броніслав Марія Коморовський"
     },
     {
         "id": 12037,
         "unitId": 2033,
-        "pol": "2015 r – po dzisiaj – Andrzej Duda",
+        "pol": "2015r – po dzisiaj – Andrzej Duda",
         "transl": "2015 р. – по сьогодні – Анджей Дуда"
     },
     {
         "id": 10889,
         "unitId": 2033,
-        "pol": "Data wstąpienia Polski do NATO? 12 marca 1999 r Polska stała członkiem NATO",
+        "pol": "Data wstąpienia Polski do NATO? 12 marca 1999r Polska stała członkiem NATO",
         "transl": "Дата вступу Польщі до НАТО?"
     },
     {
         "id": 10890,
         "unitId": 2033,
-        "pol": "Data wstąpienia Polski do Unii Europejskiej? Od 1 maja 2004 r Polska jest pełnoprawnym członkiem Unii Europejskiej",
+        "pol": "Data wstąpienia Polski do Unii Europejskiej? Od 1 maja 2004r Polska jest pełnoprawnym członkiem Unii Europejskiej",
         "transl": "Дата вступу Польщі в Євросоюз?"
     },
     // {
@@ -10106,13 +10106,13 @@ const kartaPol = [
     {
         "id": 10928,
         "unitId": 2026,
-        "pol": "Białowieski Park Narodowy jest najstarszym parkiem narodowym w Polsce. Został utworzony w 1932 r",
+        "pol": "Białowieski Park Narodowy jest najstarszym parkiem narodowym w Polsce. Został utworzony w 1932r",
         "transl": "Біловезький національний парк є найстаріший національний парк в Польща. Він був створений в 1932 році."
     },
     {
         "id": 10929,
         "unitId": 2026,
-        "pol": "W 1977 r UNESCO włączyło Białowieski Park Narodowy w poczet światowych rezerwatów biosfery",
+        "pol": "W 1977r UNESCO włączyło Białowieski Park Narodowy w poczet światowych rezerwatów biosfery",
         "transl": "в 1977 році ЮНЕСКО включило Біловезький національний парк в групу світових біосферних заповідників"
     },
     // {
@@ -10514,7 +10514,7 @@ const kartaPol = [
     {
         "id": 14026,
         "unitId": 2017,
-        "pol": "Generał Władysław Sikorski - premier rządu RP w latach 1939 – 1943 r",
+        "pol": "Generał Władysław Sikorski - premier rządu RP w latach 1939 – 1943r",
         "transl": "Генерал Владислав Сікорський - прем'єр-міністр уряду РП у 1939–1943 роках"
     },
     {
