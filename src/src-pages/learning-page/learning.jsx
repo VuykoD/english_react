@@ -900,9 +900,9 @@ export function changedInput() {
         this.mistakeArr = this.mistakeArr.filter(onlyUnique);
     } else {
         const words = wordToLearn.split(' ');
-        if (
-            isFirstLetters
-        ) {
+        const nextLetter = wordToLearn.slice(word.length, word.length + 1);
+        const isNextLetterNumber = nextLetter >= '0' && nextLetter <= '9';
+        if (isFirstLetters && !isNextLetterNumber) {
             let wordsLength = 0;
             let slicedLength = 0;
             let isNewWord = false;
