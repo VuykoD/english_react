@@ -315,7 +315,7 @@ class LearningClass extends Component {
         if (automaticChange) {
             this.sort();
         }
-        this.setLearnArr(50);
+        this.setLearnArr(150);
         this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'first_letters_by_text'});
@@ -532,7 +532,7 @@ class LearningClass extends Component {
                             </Col>
                             <Col>
                                 <Button variant="info" block onClick={this.firstLettersByText}>
-                                    {`${firstLettersByText} (50)`}
+                                    {`${firstLettersByText} (150)`}
                                 </Button>
                             </Col>
                             <Col className={learnedLang === 'pol' ? 'hide-in-mobile' : null}>
