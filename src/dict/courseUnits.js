@@ -801,6 +801,15 @@ const courseUnits =
             "learnedLang": [
                 "pol"
             ]
+        },
+        {
+            "id": 2037,
+            "courseId": 8,
+            "url": "/from-the-life-3",
+            "name": "from the life 3",
+            "learnedLang": [
+                "pol"
+            ]
         }
     ]
 ;

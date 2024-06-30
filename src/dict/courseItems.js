@@ -9429,7 +9429,7 @@ const courseItems =
         {
             "id": 14064,
             "unitId": 2034,
-            "pol": "Tobie dziękuję za cierpliwość, którą nadal mi okazujesz",
+            "pol": "dziękuję Tobie  za cierpliwość, którą nadal mi okazujesz",
             "transl": "Дякую тобі за терпіння, яке досі мені виявляєш"
         },
         {
@@ -9569,6 +9569,90 @@ const courseItems =
             "unitId": 2034,
             "pol": "Nowy sprzęt pozwoli na lepsze łowienie węgorza",
             "transl": "Нове обладнання дозволить краще ловити вугра."
+        },
+        {
+            "id": 14088,
+            "unitId": 2034,
+            "pol": "Życzę miłego odpoczynku",
+            "transl": "Бажаю приємно відпочити"
+        },
+        {
+            "id": 14089,
+            "unitId": 2034,
+            "pol": "Kontemplacji neurotyka nie należy przerywać",
+            "transl": "Споглядання невротика не слід переривати"
+        },
+        {
+            "id": 14090,
+            "unitId": 2034,
+            "pol": "Zdążył założyć marynarkę przed wyjściem",
+            "transl": "Він встиг одягти піджак перед виходом"
+        },
+        {
+            "id": 14091,
+            "unitId": 2037,
+            "pol": "Gdybym miał pieniądze, kupiłbym samochód",
+            "transl": "Якби я мав гроші, я б купив автомобіль"
+        },
+        {
+            "id": 14092,
+            "unitId": 2037,
+            "pol": "Gdybym mogł cofnąć czas",
+            "transl": "Якби я міг повернути час назад"
+        },
+        {
+            "id": 14093,
+            "unitId": 2037,
+            "pol": "Gdybym był na twoim miejscu",
+            "transl": "Я б твоєму місці"
+        },
+        {
+            "id": 14094,
+            "unitId": 2037,
+            "pol": "Zapinaj pas, aczkolwiek jedziemy powoli",
+            "transl": "Пристібни ремінь безпеки, хоча ми їдемо повільно"
+        },
+        {
+            "id": 14095,
+            "unitId": 2037,
+            "pol": "Translacja, krótko mówiąc, wymaga precyzji",
+            "transl": "Переклад, коротко кажучи, вимагає точності"
+        },
+        {
+            "id": 14096,
+            "unitId": 2037,
+            "pol": "Gwóźdź i tym podobnie znajdziesz w garażu",
+            "transl": "Gwóźdź i tym podobnie znajdziesz w garażu"
+        },
+        {
+            "id": 14097,
+            "unitId": 2037,
+            "pol": "Wbrew obawom, nie zawiodłem nikogo",
+            "transl": "Всупереч побоюванням, я нікого не підвів"
+        },
+        {
+            "id": 14098,
+            "unitId": 2037,
+            "pol": "Podnieca mnie według jej słów",
+            "transl": "Збуджує мене за її словами"
+        },
+        {
+            "id": 14099,
+            "unitId": 2037,
+            "pol": "Sędzia przerwał mecz ze względu na deszcz",
+            "transl": "Суддя припинив матч через дощ"
+        },
+        {
+            "id": 14100,
+            "unitId": 2037,
+            "pol": "Kibice wspierają zawodników podczas meczu",
+            "transl": "Вболівальники підтримують гравців під час матчу"
+        },
+        {
+            "id": 14101,
+            "unitId": 2037,
+            "pol": "W finale decydowała dogrywka i rzut karny",
+            "transl": "У фіналі вирішальними стали додатковий час і розстріл пенальті"
         }
     ]
 
