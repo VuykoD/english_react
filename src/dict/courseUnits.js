@@ -810,6 +810,24 @@ const courseUnits =
             "learnedLang": [
                 "pol"
             ]
+        },
+        {
+            "id": 2038,
+            "courseId": 8,
+            "url": "/from-the-life-4",
+            "name": "from the life 4",
+            "learnedLang": [
+                "pol"
+            ]
+        },
+        {
+            "id": 2039,
+            "courseId": 8,
+            "url": "/ai",
+            "name": "AI",
+            "learnedLang": [
+                "pol"
+            ]
         }
     ]
 ;

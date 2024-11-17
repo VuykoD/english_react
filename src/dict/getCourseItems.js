@@ -5,6 +5,8 @@ import { map } from 'lodash';
 import langType from './langType';
 
 function getCourseItems(){
+    let AI = localStorage.AI ? JSON.parse(localStorage.AI) : null;
+    if (AI) return AI;
     return localStorage.courseItems ? JSON.parse(localStorage.courseItems) : [...courseItemsJson];
 }
 

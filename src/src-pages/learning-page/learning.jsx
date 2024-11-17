@@ -134,6 +134,14 @@ class LearningClass extends Component {
     componentDidMount() {
         this.getVoices();
         this.setInitialData();
+        if (localStorage.AI) {
+            const { learnedLang } = this.props.store;
+            const newArr = { pol: [], eng: [] };
+            map(courseItems, it => {
+                newArr[learnedLang].push(it.id)
+            });
+            localStorage.progress = JSON.stringify(newArr);
+        }
     }
 
     componentWillUnmount() {
@@ -273,7 +281,7 @@ class LearningClass extends Component {
         let lP = localStorage.progress ? JSON.parse(localStorage.progress) : null;
         if (!lP) return null;
         const { learnedLang } = this.props.store;
-        if (lP[learnedLang]) {
+        if (lP[learnedLang] && !localStorage.AI) {
             lP[learnedLang] = shuffle(lP[learnedLang]);
         }
 
@@ -283,7 +291,9 @@ class LearningClass extends Component {
     firstLettersBySoundSorted = () => {
         const { learnedLang } = this.props.store;
         let learnArr = getCourseItems();
-        learnArr = shuffle(learnArr);
+        if (!localStorage.AI) {
+            learnArr = shuffle(learnArr);
+        }
         learnArr = filter(learnArr, it => !!it[learnedLang]);
         this.learnArr = learnArr.slice(0, 70);
         this.setCourseNameInLearnArray();
