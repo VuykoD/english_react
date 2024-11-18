@@ -336,8 +336,8 @@ class LearningClass extends Component {
         map(this.learnArr, (entityId, key) => {
             const index = findIndex(courseItems, {'id': entityId});
             this.learnArr[key] = { entity_id: entityId };
-            this.learnArr[key].eng = get(courseItems, `[${index}].eng`);
-            this.learnArr[key].pol = get(courseItems, `[${index}].pol`);
+            this.learnArr[key].eng = get(courseItems, `[${index}].eng`, '').replace(/[„”]/gi, "");
+            this.learnArr[key].pol = get(courseItems, `[${index}].pol`, '').replace(/[„”]/gi, "");
             this.learnArr[key].transl = get(courseItems, `[${index}].transl`);
             this.learnArr[key].courseId = get(courseItems, `[${index}].unitId`);
             const courseIndex = findIndex(courseUnits, {'id': this.learnArr[key].courseId});
@@ -937,23 +937,6 @@ export function changedInput() {
             }
         }
         this.setState({record: record + 1});
-    }
-
-    let i = 0;
-    while (i < 10) {
-        const newWord = document.getElementById("formInput").value.toUpperCase();
-        if (wordToLearn.slice(0, newWord.length) === newWord) {
-            let nextSymbol = wordToLearn[newWord.length] ?? '';
-            nextSymbol = nextSymbol.replace(/[A-ZŚĄŻŹÓŁĆĘŃ0-9?!.]/gi, "");
-            if (nextSymbol) {
-                if (nextSymbol === ' ' && exampleLearning === 'write') break;
-                document.getElementById("formInput").value =
-                    document.getElementById("formInput").value + nextSymbol;
-            } else {
-                break;
-            }
-        }
-        i++;
     }
 }
 
