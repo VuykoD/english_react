@@ -336,8 +336,8 @@ class LearningClass extends Component {
         map(this.learnArr, (entityId, key) => {
             const index = findIndex(courseItems, {'id': entityId});
             this.learnArr[key] = { entity_id: entityId };
-            this.learnArr[key].eng = get(courseItems, `[${index}].eng`, '').replace(/[„”]/gi, "");
-            this.learnArr[key].pol = get(courseItems, `[${index}].pol`, '').replace(/[„”]/gi, "");
+            this.learnArr[key].eng = get(courseItems, `[${index}].eng`, '').replace(/[„”]/gi, "").replace(/–\s/g, "");
+            this.learnArr[key].pol = get(courseItems, `[${index}].pol`, '').replace(/[„”]/gi, "").replace(/–\s/g, "");
             this.learnArr[key].transl = get(courseItems, `[${index}].transl`);
             this.learnArr[key].courseId = get(courseItems, `[${index}].unitId`);
             const courseIndex = findIndex(courseUnits, {'id': this.learnArr[key].courseId});
