@@ -311,7 +311,7 @@ class LearningClass extends Component {
         }
         learnArr = filter(learnArr, it => !!it[learnedLang]);
         this.learnArr = learnArr.slice(0, 70);
-        this.setCourseNameInLearnArray();
+        this.setTranslInLearnArray();
         if (!this.learnArr) return;
         this.setState({
             cycleLearning: 'new',
