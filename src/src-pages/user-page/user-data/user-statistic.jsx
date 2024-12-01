@@ -12,31 +12,37 @@ export const content = {
         ru: "Полная статистика",
         ukr: "Повна статистика",
         pol: "Pełna statystyka",
+        eng: "Full statistics",
     },
     shortStatistic: {
         ru: "Краткая статистика",
         ukr: "Коротка статистика",
         pol: "Krótka statystyka",
+        eng: "Short statistics",
     },
     rightWritten: {
         ru: "правильно написано",
         ukr: "правильно написано",
         pol: "poprawnie napisane",
+        eng: "Correctly written",
     },
     trainingQuantity: {
         ru: "количество тренировок",
         ukr: "кількість тренувань",
         pol: "ilość treningów",
+        eng: "Number of trainings",
     },
     effectiveTime: {
         ru: "Эффективное время",
         ukr: "Ефективний час",
         pol: "Czas efektywny",
+        eng: "Effective time",
     },
     nonEffectiveTime: {
         ru: "Неэффективное время",
         ukr: "Неефективний час",
         pol: "Czas nieefektywny",
+        eng: "Non-effective time",
     },
 };
 

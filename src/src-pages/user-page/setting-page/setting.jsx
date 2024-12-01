@@ -14,32 +14,38 @@ const content = {
     fontColor: {
         ru: 'Цвет шрифта',
         ukr: 'Колір шрифту',
-        pol: 'Kolor czcionki'
+        pol: 'Kolor czcionki',
+        eng: 'Font color'
     },
     colorPlaceHolder: {
         ru: 'Напишите цвет',
         ukr: 'Напишіть колір',
-        pol: 'Wpisz kolor'
+        pol: 'Wpisz kolor',
+        eng: 'Enter color'
     },
     firstColor: {
         ru: 'Первый цвет',
         ukr: 'Перший колір',
-        pol: 'Pierwszy kolor'
+        pol: 'Pierwszy kolor',
+        eng: 'First color'
     },
     secondColor: {
         ru: 'Второй цвет',
         ukr: 'Другий колір',
-        pol: 'Drugi kolor'
+        pol: 'Drugi kolor',
+        eng: 'Second color'
     },
     backColor: {
         ru: 'Цвет фона',
         ukr: 'Колір фону',
-        pol: 'Kolor tła'
+        pol: 'Kolor tła',
+        eng: 'Background color'
     },
     recover: {
         ru: 'Восстановить',
         ukr: 'Відновити',
-        pol: 'Przywróć'
+        pol: 'Przywróć',
+        eng: 'Restore'
     },
 };
 

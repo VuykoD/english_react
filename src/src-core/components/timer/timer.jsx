@@ -6,8 +6,11 @@ const content = {
     left: {
         ru: "Осталось",
         ukr: "Залишилось",
+        pol: "Pozostało",
+        eng: "Left"
     },
 };
+
 
 export default class Timer extends Component {
     constructor(props) {

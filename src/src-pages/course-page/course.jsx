@@ -40,16 +40,19 @@ const content = {
         ru: "Развернуть содержание",
         ukr: "Розгорнути зміст",
         pol: "Rozwiń zawartość",
+        eng: "Unfold content"
     },
     foldContent: {
         ru: "Свернуть содержание",
         ukr: "Згорнути зміст",
         pol: "Zwiń zawartość",
+        eng: "Fold content"
     },
     notAllFieldsAreFilled: {
         ru: "Заполнены не все поля",
         ukr: "Заповнені не всі поля",
         pol: "Nie wszystkie pola są wypełnione",
+        eng: "Not all fields are filled"
     },
 };
 

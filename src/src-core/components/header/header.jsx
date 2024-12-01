@@ -17,32 +17,32 @@ const content = {
     logo: {
         ru: 'Это будет легко',
         ukr: 'Це буде легко',
-        pol: 'To będzie łatwo'
+        pol: 'To będzie łatwo',
+        eng: 'It will be easy'
     },
     course: {
         ru: 'Курсы',
         ukr: 'Курси',
-        pol: 'Kursy'
+        pol: 'Kursy',
+        eng: 'Courses'
     },
     learning: {
         ru: 'Изучение',
         ukr: 'Вивчення',
-        pol: 'Nauka'
+        pol: 'Nauka',
+        eng: 'Learning'
     },
     dictionary: {
         ru: 'Мой словарь',
         ukr: 'Мій словник',
-        pol: 'Mój słownik'
+        pol: 'Mój słownik',
+        eng: 'My dictionary'
     },
-    // progress: {
-    //     ru: 'Прогресс',
-    //     ukr: 'Прогрес',
-    //     pol: 'Postęp'
-    // },
     myData: {
         ru: 'Мои данные',
         ukr: 'Мої данні',
-        pol: 'Moje dane'
+        pol: 'Moje dane',
+        eng: 'My data'
     },
     btnSiteLang: {
         ru: 'Язык сайта',
@@ -59,19 +59,23 @@ const content = {
     setting: {
         ru: 'Настройки',
         ukr: 'Налаштування',
-        pol: 'Ustawienia'
+        pol: 'Ustawienia',
+        eng: 'Settings'
     },
     search: {
         ru: 'Напишите слово, или фразу',
         ukr: 'Напишіть слово, або фразу',
-        pol: 'Wpisz słowo lub frazę'
+        pol: 'Wpisz słowo lub frazę',
+        eng: 'Type a word or phrase'
     },
     statistic: {
         ru: 'Статистика',
         ukr: 'Статистика',
-        pol: 'Statystyka'
+        pol: 'Statystyka',
+        eng: 'Statistics'
     },
 };
+
 
 
 class HeaderClass extends Component {

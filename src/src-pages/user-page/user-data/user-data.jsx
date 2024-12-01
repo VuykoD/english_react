@@ -9,22 +9,26 @@ const content = {
     name: {
         ru: 'Имя',
         ukr: "Ім'я",
-        pol: 'Imię'
+        pol: 'Imię',
+        eng: 'Name'
     },
     surname: {
         ru: 'Фамилия',
         ukr: 'Прізвище',
-        pol: 'Nazwisko'
+        pol: 'Nazwisko',
+        eng: 'Surname'
     },
     admin: {
         ru: 'Админ',
         ukr: 'Адмін',
-        pol: 'Administrator'
+        pol: 'Administrator',
+        eng: 'Admin'
     },
     save: {
         ru: 'Сохранить',
         ukr: 'Зберегти',
-        pol: 'Zapisz'
+        pol: 'Zapisz',
+        eng: 'Save'
     },
 };
 

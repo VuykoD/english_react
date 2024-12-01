@@ -18,76 +18,91 @@ const content = {
         ru: "Слушать и повторять",
         ukr: "Слухати і повторювати",
         pol: "Słuchaj i powtarzaj",
+        eng: "Listen and repeat"
     },
     write: {
         ru: "Писать",
         ukr: "Писати",
         pol: "Pisać",
+        eng: "Write"
     },
     sort: {
         ru: "Сортировать",
         ukr: "Сортувати",
         pol: "Sortować",
+        eng: "Sort"
     },
     source: {
         ru: "Источник",
         ukr: "Джерело",
         pol: "Źródło",
+        eng: "Source"
     },
     selectAll: {
         ru: "Выбрать все",
         ukr: "Вибрати все",
         pol: "Zaznacz wszystko",
+        eng: "Select all"
     },
     recordWithoutHints: {
         ru: "рекорд без подсказок",
         ukr: "рекорд без підказок",
         pol: "rekord bez podpowiedzi",
+        eng: "Record without hints"
     },
     speedRepeat: {
         ru: "Ускоренное повторение",
         ukr: "Прискорене повторення",
         pol: "Szybkie powtarzanie",
+        eng: "Speed repeat"
     },
     firstLettersByText: {
         ru: "Первые буквы по тексту",
         ukr: "Перші букви по тексту",
         pol: "Pierwsze litery po tekstu",
+        eng: "First letters by text"
     },
     firstLettersBySound: {
         ru: "Первые буквы по звуку",
         ukr: "Перші букви по звуку",
         pol: "Pierwsze litery po dźwięku",
+        eng: "First letters by sound"
     },
     firstLettersBySoundSorted: {
         ru: "Первые буквы по звуку отсортированные",
         ukr: "Перші літери за звуком відсортовані",
         pol: "Pierwsze litery posortowane według dźwięku",
+        eng: "First letters by sound sorted"
     },
     resetRecord: {
         ru: "Обнулить рекорд",
         ukr: "Обнулити рекорд",
         pol: "Zresetuj rekord",
+        eng: "Reset record"
     },
     saveTranslation: {
         ru: "Сохранить перевод",
         ukr: "Зберегти переклад",
         pol: "Zapisz tłumaczenie",
+        eng: "Save translation"
     },
     games: {
         ru: "Тренажеры",
         ukr: "Тренажери",
         pol: "Gry edukacyjne",
+        eng: "Games"
     },
     automaticSort: {
         ru: "Сортировать автоматически",
         ukr: "Сортувати автоматично",
         pol: "Sortuj automatycznie",
+        eng: "Automatic sort"
     },
     rightWritten: {
         ru: "Правильно написано",
         ukr: "Правильно написано",
         pol: "Poprawnie napisane",
+        eng: "Correctly written"
     },
 };
 
@@ -336,8 +351,8 @@ class LearningClass extends Component {
         map(this.learnArr, (entityId, key) => {
             const index = findIndex(courseItems, {'id': entityId});
             this.learnArr[key] = { entity_id: entityId };
-            this.learnArr[key].eng = get(courseItems, `[${index}].eng`, '').replace(/[„”]/gi, "").replace(/–\s/g, "");
-            this.learnArr[key].pol = get(courseItems, `[${index}].pol`, '').replace(/[„”]/gi, "").replace(/–\s/g, "");
+            this.learnArr[key].eng = get(courseItems, `[${index}].eng`, '').replace(/[„”]/gi, "");
+            this.learnArr[key].pol = get(courseItems, `[${index}].pol`, '').replace(/[„”]/gi, "");
             this.learnArr[key].transl = get(courseItems, `[${index}].transl`);
             this.learnArr[key].courseId = get(courseItems, `[${index}].unitId`);
             const courseIndex = findIndex(courseUnits, {'id': this.learnArr[key].courseId});

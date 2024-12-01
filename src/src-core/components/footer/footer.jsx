@@ -11,32 +11,38 @@ const content = {
     premium: {
         ru: 'Приобрести премиум',
         ukr: 'Придбати преміум',
-        pol: 'Zakup premium'
+        pol: 'Zakup premium',
+        eng: 'Get premium'
     },
     beta: {
         ru: 'beta версия',
         ukr: 'beta версія',
-        pol: 'Wersja beta'
+        pol: 'Wersja beta',
+        eng: 'beta version'
     },
     contacts: {
         ru: 'Контакты',
         ukr: 'Контакти',
-        pol: 'Kontakty'
+        pol: 'Kontakty',
+        eng: 'Contacts'
     },
     hint: {
         ru: 'На стадии разработки',
         ukr: 'На стадії розробки',
-        pol: 'W fazie rozwoju'
+        pol: 'W fazie rozwoju',
+        eng: 'Under development'
     },
     learned: {
         ru: 'Изучено',
         ukr: 'Вивчено',
-        pol: 'Nauczone'
+        pol: 'Nauczone',
+        eng: 'Learned'
     },
     countRepeat: {
         ru: "На изучении",
         ukr: "На вивченні",
         pol: "W trakcie powtórek",
+        eng: "In progress"
     },
 };
 

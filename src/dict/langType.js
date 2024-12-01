@@ -2,20 +2,20 @@ const langType = {
     eng:{
         short: 'Eng',
         full: 'English language',
-        siteLang: false,
+        siteLang: true,
         learnedLang: true,
     },
     ru:{
         short: 'Рус',
         full: 'Русский язык',
         siteLang: true,
-        learnedLang: false,
+        learnedLang: true,
     },
     ukr:{
         short: 'Укр',
         full: 'Українська мова',
         siteLang: true,
-        learnedLang: false,
+        learnedLang: true,
     },
     pol:{
         short: 'Pol',
