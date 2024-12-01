@@ -873,8 +873,23 @@ export function changedInput() {
     word = word.toUpperCase();
     const wordToLearn = getWordToLearn(english, polish, learnedLang === 'pol');
     if (!wordToLearn) this.repeatMistakes = true;
-    if (
-        word.length === 1
+
+    // Automatically handle non-letter, non-space characters (like numbers and punctuation)
+    let updatedWord = '';
+    for (let i = word.length; i < wordToLearn.length; i++) {
+        const char = wordToLearn[i];
+        if (/[a-zA-ZąąćęłńóśźżĄĘŁŃÓŚŹŻ\s]/.test(char)) {  // Check if the character is a letter or space
+            if (word[i] !== char) {
+                break;  // Stop if the character does not match (word is incomplete)
+            }
+        } else {
+            updatedWord += char;  // Append non-letter, non-space characters directly
+            word += updatedWord;
+        }
+    }
+    document.getElementById("formInput").value = word;  // Append non-letter characters
+
+    if (word.length === 1
         && !mistake
         && wordToLearn.slice(0, word.length) === word
         && !mistakeRewrite
@@ -887,7 +902,7 @@ export function changedInput() {
         allIsCorrect.call(this);
         if (learnNumber >= this.learnArr.length || this.repeatMistakes) {
             this.repeatMistakes = true;
-            if(mistakeRewrite < this.mistakeArr.length) {
+            if (mistakeRewrite < this.mistakeArr.length) {
                 const nextNumber = this.mistakeArr[mistakeRewrite];
                 this.setState({mistakeRewrite: mistakeRewrite + 1});
                 this.setWordAndTransl(nextNumber);
@@ -904,22 +919,23 @@ export function changedInput() {
                 statistic.push(date);
                 localStorage.statistic = JSON.stringify(statistic);
                 this.setInitialData();
-                this.setState({ showStatistic: true })
+                this.setState({ showStatistic: true });
             }
         }
     }
+
     if (wordToLearn.slice(0, word.length) !== word) {
-        word = (word.slice(0, word.length - 1));
+        word = word.slice(0, word.length - 1);
         document.getElementById("formInput").value = word;
         if (mistake >= 2) {
-            this.setState({record: 0});
+            this.setState({ record: 0 });
         }
         if (!mistake && !mistakeRewrite && exampleLearning === 'write') {
             speak.call(this);
         }
-        this.setState({mistake: mistake + 1});
+        this.setState({ mistake: mistake + 1 });
         this.errorEffect();
-        if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber){
+        if (this.mistakeArr[this.mistakeArr.length - 1] !== learnNumber) {
             this.mistakeArr.push(learnNumber);
         }
         this.mistakeArr = this.mistakeArr.filter(onlyUnique);
@@ -931,27 +947,27 @@ export function changedInput() {
             let wordsLength = 0;
             let slicedLength = 0;
             let isNewWord = false;
-            words.map( item => {
-                wordsLength = wordsLength + item.length + 1
+            words.map(item => {
+                wordsLength = wordsLength + item.length + 1;
                 if (word.length < wordsLength && !isNewWord) {
                     isNewWord = true;
                     slicedLength = wordsLength;
                 }
                 return slicedLength;
-            })
+            });
             const slicedPart = wordToLearn.slice(0, slicedLength);
             document.getElementById("formInput").value = slicedPart;
             const firstLetters = document.getElementById("firstLetters").textContent;
             const remainedPart = firstLetters.slice(slicedLength, wordToLearn.length);
             document.getElementById("firstLetters").textContent = slicedPart + remainedPart;
-            if (slicedLength >= wordToLearn.length){
+            if (slicedLength >= wordToLearn.length) {
                 if (learnNumber === this.learnArr.length - 1) {
                     this.setInitialData();
                 }
                 allIsCorrect.call(this);
             }
         }
-        this.setState({record: record + 1});
+        this.setState({ record: record + 1 });
     }
 }
 
