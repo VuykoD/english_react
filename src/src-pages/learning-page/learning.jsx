@@ -360,13 +360,6 @@ class LearningClass extends Component {
         })
     };
 
-    setCourseNameInLearnArray = () => {
-        map(this.learnArr, (item, key) => {
-            const courseIndex = findIndex(courseUnits, {'id': this.learnArr[key].unitId});
-            this.learnArr[key].topicName = get(courseUnits, `[${courseIndex}].name`);
-        })
-    };
-
     setLearnArr = (sliceNumber) => {
         const { learnedLang } = this.props.store;
         let localProgress = localStorage.progress ? JSON.parse(localStorage.progress) : null;
@@ -538,6 +531,14 @@ class LearningClass extends Component {
         const isFirstLetters = exampleLearning === 'first_letters_by_text'
             || exampleLearning === 'first_letters_by_sound';
 
+        const languageSettings = {
+            pol: { badge: polish, onSave: this.onSavePol, change: 'changePol' },
+            ru: { badge: rus, onSave: this.onSaveRus, change: 'changeRus' },
+            eng: { badge: english, onSave: null, change: null }
+        };
+
+        const { badge, onSave, change } = languageSettings[siteLang] || languageSettings['eng']; // fallback to 'eng' if siteLang is invalid
+
         return (
             <Container className='new-container'>
                 {!exampleLearning && !cycleLearning && (
@@ -601,10 +602,10 @@ class LearningClass extends Component {
                             {exampleLearning !== 'first_letters_by_text' && soundButton.call(this)}
                             {getBadge.call(
                                 this,
-                                siteLang === 'pol' ? polish : rus,
+                                badge,
                                 "light",
-                                siteLang === 'pol' ? this.onSavePol : this.onSaveRus,
-                                siteLang === 'pol' ? 'changePol' : 'changeRus'
+                                onSave,
+                                change
                             )}
                             {getProgressBar.call(this)}
                             {(exampleLearning === 'example_sound_repeat' || (mistake > 2 || changeToInput)) && getBadge.call(
