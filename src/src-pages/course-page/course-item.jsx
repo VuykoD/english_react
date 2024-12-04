@@ -270,13 +270,15 @@ export default class CourseItem extends Component {
                                 {item.id !== '_new' ? item.id : '+'}
                             </Button>
                         </Col>
-                        <Col md="5">
+                        <Col>
                             <FormControl
                                 type="text"
                                 id={`row${item.id}_${learnedLang}`}
                                 defaultValue={item[learnedLang]}
                             />
                         </Col>
+                    </Row>
+                    <Row className="unit-row">
                         <Col>
                             <FormControl
                                 type="text"
@@ -353,7 +355,7 @@ export default class CourseItem extends Component {
                         </Row>
                         <ListGroup>
                             {map(courseItems, (item, key) => {
-                                const odd = key & 1 ? 'light' : 'primary';
+                                const odd = key && 1 ? 'light' : 'primary';
                                 return row(odd, item);
                             })}
                             {row('light', {id: '_new'})}

@@ -498,18 +498,18 @@ class LearningClass extends Component {
             rus,
             mistake,
             changeToInput,
-            automaticChange,
+            // automaticChange,
             showStatistic
         } = this.state;
         const { siteLang, learnedLang } = this.props.store;
         const write = get(content, `write[${siteLang}]`) || '';
         const speedRepeat = get(content, `speedRepeat[${siteLang}]`) || '';
-        const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`) || '';
-        const firstLettersBySoundSorted = get(content, `firstLettersBySoundSorted[${siteLang}]`) || '';
-        const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`) || '';
+        // const firstLettersByText = get(content, `firstLettersByText[${siteLang}]`) || '';
+        // const firstLettersBySoundSorted = get(content, `firstLettersBySoundSorted[${siteLang}]`) || '';
+        // const firstLettersBySound = get(content, `firstLettersBySound[${siteLang}]`) || '';
         const rightWritten = get(content, `rightWritten[${siteLang}]`) || '';
         const games = get(content, `games[${siteLang}]`) || '';
-        const automaticSort = get(content, `automaticSort[${siteLang}]`) || '';
+        // const automaticSort = get(content, `automaticSort[${siteLang}]`) || '';
         let statistic = localStorage.statistic ? JSON.parse(localStorage.statistic) : [];
 
         if (statistic.length) {
@@ -556,6 +556,7 @@ class LearningClass extends Component {
                             <Col>
                                 <Button variant="info" block onClick={this.write} children={`${write} (max 10)`}/>
                             </Col>
+                            {/*
                             <Col>
                                 <Button variant="info" block onClick={this.firstLettersByText}>
                                     {`${firstLettersByText} (150)`}
@@ -566,7 +567,9 @@ class LearningClass extends Component {
                                     {`${firstLettersBySound} (50)`}
                                 </Button>
                             </Col>
+                            */}
                         </Row>
+                        {/*
                         <Row>
                             <Col>
                                 <Form.Check
@@ -578,6 +581,7 @@ class LearningClass extends Component {
                                 />
                             </Col>
                         </Row>
+                        */}
                         {showStatistic && (
                             <Row className="margin-top">
                                 <Col>
@@ -586,6 +590,7 @@ class LearningClass extends Component {
                                 </Col>
                             </Row>
                         )}
+                        {/*
                         <Row>
                             <Col className={learnedLang === 'pol' ? 'hide-in-mobile' : null}>
                                 <Button variant="info" block onClick={this.firstLettersBySoundSorted}>
@@ -593,6 +598,7 @@ class LearningClass extends Component {
                                 </Button>
                             </Col>
                         </Row>
+                        */}
                     </Fragment>
                 )}
                 {exampleLearning &&
@@ -879,7 +885,7 @@ export function changedInput() {
     let updatedWord = '';
     for (let i = word.length; i < wordToLearn.length; i++) {
         const char = wordToLearn[i];
-        if (/[a-zA-ZąąćęłńóśźżĄĘŁŃÓŚŹŻ\s]/.test(char)) {  // Check if the character is a letter or space
+        if (/[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ\s]/.test(char)) {  // Check if the character is a letter or space
             if (word[i] !== char) {
                 break;  // Stop if the character does not match (word is incomplete)
             }
