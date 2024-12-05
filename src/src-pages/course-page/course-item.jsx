@@ -131,6 +131,9 @@ export default class CourseItem extends Component {
                 this.localProgress[learnedLang].push(+item.id);
                 this.setState({isItemSelected: true});
                 setLearnCount(onChangeToLearnCount, this.localProgress[learnedLang].length);
+                if (item[siteLang]){
+                    this.localProgress[siteLang].push(+item.id);
+                }
                 localStorage.progress = JSON.stringify(this.localProgress);
             }
         });

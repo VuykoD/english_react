@@ -95,7 +95,7 @@ export default class Course extends Component {
     onChangeCheck = (unitId) => {
         const { selectedCourses } = this.state;
         const { onChangeToLearnCount } = this.props;
-        const { learnedLang } = this.props.store;
+        const { learnedLang, siteLang } = this.props.store;
         const selectedCoursesIndex = findIndex(selectedCourses, course => course === unitId);
         if (selectedCoursesIndex === -1) {
             this.setState({selectedCourses: [...selectedCourses, unitId]});
@@ -103,6 +103,9 @@ export default class Course extends Component {
             map(items, it => {
                 if (it[learnedLang]) {
                     this.localProgress[learnedLang].push(it.id);
+                }
+                if (it[siteLang]) {
+                    this.localProgress[siteLang].push(it.id);
                 }
             });
             setLearnCount(onChangeToLearnCount, this.localProgress[learnedLang].length);
@@ -121,8 +124,18 @@ export default class Course extends Component {
                 if (get(courseItems, `[${index}].unitId`) !== unitId) {
                     progress.push(item);
                 }
-            })
+            });
             this.localProgress[learnedLang] = progress;
+
+            const progressSiteLang = [];
+            map(localProgress[siteLang], (item) => {
+                const index = findIndex(courseItems, {'id': item});
+                if (get(courseItems, `[${index}].unitId`) !== unitId) {
+                    progressSiteLang.push(item);
+                }
+            });
+            this.localProgress[learnedLang] = progress;
+            this.localProgress[siteLang] = progressSiteLang;
             setLearnCount(onChangeToLearnCount, progress.length);
             localStorage.progress = JSON.stringify(this.localProgress);
         }
