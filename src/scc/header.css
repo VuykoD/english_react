@@ -39,6 +39,12 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
+.centered-item {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100%;
+}
 
 .no-arrow:focus, .no-arrow:active {
     box-shadow: none;

@@ -214,6 +214,13 @@ class HeaderClass extends Component {
                                         }
                                     })}
                                 </DropdownButton>
+                                <Dropdown.Item
+                                    id="exchange-lang"
+                                    className="centered-item"
+                                    onClick={this.exchangeLang}
+                                >
+                                    {'<->'}
+                                </Dropdown.Item>
                                 <DropdownButton
                                     id="dropdown-learned-lang"
                                     drop={direction}
@@ -236,12 +243,6 @@ class HeaderClass extends Component {
                                         }
                                     })}
                                 </DropdownButton>
-                                <Dropdown.Item
-                                    id="exchange-lang"
-                                    onClick={this.exchangeLang}
-                                >
-                                    {'<->'}
-                                </Dropdown.Item>
                             </DropdownButton>
                         </Col>
                         <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
