@@ -106,6 +106,14 @@ class HeaderClass extends Component {
         }
     };
 
+    exchangeLang = () => {
+        const { siteLang, learnedLang } = this.props.store;
+        localStorage.learnedLand = siteLang;
+        localStorage.siteLand = learnedLang;
+        this.props.onChangeLearnedLang(siteLang);
+        this.props.onChangeSiteLang(learnedLang);
+    };
+
     onMouseOver = (e) => {
         const elem = e.currentTarget;
         elem.style.background = this.props.store.secondColor
@@ -228,6 +236,12 @@ class HeaderClass extends Component {
                                         }
                                     })}
                                 </DropdownButton>
+                                <Dropdown.Item
+                                    id="exchange-lang"
+                                    onClick={this.exchangeLang}
+                                >
+                                    {'<->'}
+                                </Dropdown.Item>
                             </DropdownButton>
                         </Col>
                         <Col md="auto" className={btnClassName} style={gradientStyle} {...hover} >
