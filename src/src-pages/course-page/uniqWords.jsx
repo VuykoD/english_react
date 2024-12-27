@@ -39,28 +39,22 @@ function uniqWords(courseItems, phrase, lang){
     const phraseCleared = phrase.replace(/[.,%?!1-9"]/g, '').trim().toLowerCase();
     const words = phraseCleared.split(' ');
     const uniqArr = [];
+    const ignoreList = JSON.parse(localStorage.getItem('ignore')) || [];
 
-    for(const word of words) {
-        let wordUnique = true;
-        for(const it of courseItems) {
-            if (!it[lang]) continue ;
-            const itCleared = it[lang].replace(/[.,%?!1-9"]/g, '').trim().toLowerCase();
-            const itArr = itCleared.split(' ');
-            const isWordExist = itArr.find(element => element === word);
-            if (isWordExist) {
-                wordUnique = false;
+    for(const courseItem of courseItems) {
+        if (!courseItem[lang]) continue ;
+        const itCleared = courseItem[lang].replace(/[.,%?!1-9"]/g, '').trim().toLowerCase();
+        const itArr = itCleared.split(' ');
+        for(const it of itArr) {
+            const isWordExist = words.includes(it);
+            const isWordIgnore = ignoreList.includes(it);
+            if (!isWordExist && !isWordIgnore) {
                 uniqArr.push({
-                    word,
-                    source: it[lang]
+                    it,
+                    source: itCleared,
+                    transl: courseItem.transl
                 });
-                break;
             }
-        }
-        if (wordUnique){
-            uniqArr.push({
-                word,
-                source: 'unique'
-            });
         }
     }
     return uniqArr;

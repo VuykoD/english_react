@@ -231,17 +231,40 @@ export default class CourseItem extends Component {
 
     uniq = () => {
         const { learnedLang } = this.props.store;
-        const word = get(document.getElementById(`row_new_${learnedLang}`), 'value');
-        const uniqArr = uniqWords(courseItems, word, learnedLang);
+        const { courseItems } = this.state;
+        const difficultWords = get(document.getElementById(`row_new_${learnedLang}`), 'value');
+        const uniqArr = uniqWords(courseItems, difficultWords, learnedLang);
         const div = this.clearUniq();
         map(uniqArr, it => {
             const p = document.createElement('p');
             if (it.source === 'unique') {
                 p.style.background = '#4696c7';
             }
-            p.textContent = `${it.word} => ${it.source}`;
+
+            const button = document.createElement('button');
+            button.textContent = 'Ignore';
+            button.addEventListener('click', () => {
+                this.handleIgnore(it.it);
+            });
+
+            const span = document.createElement('span');
+            span.textContent = `${it.it} => ${it.source}, ${it.transl}`;
+
+            p.appendChild(button);
+            p.appendChild(span);
+
             div.appendChild(p);
         })
+    }
+
+    handleIgnore(item) {
+        let ignoreList = JSON.parse(localStorage.getItem('ignore')) || [];
+
+        if (!ignoreList.includes(item)) {
+            ignoreList.push(item);
+
+            localStorage.setItem('ignore', JSON.stringify(ignoreList));
+        }
     }
 
     render() {
@@ -264,30 +287,42 @@ export default class CourseItem extends Component {
                 <ListGroup.Item variant={inProgress  ? "info"  : odd} key={item.id}>
                     <Row className="unit-row">
                         <Col sm="1" className="editButton">
-                            <Button
-                                variant={inProgress  ? "info" : "light"}
-                                title="save"
-                                block
-                                onClick={item.id !== '_new' ? () => this.edit(item.id) : this.add}
-                            >
-                                {item.id !== '_new' ? item.id : '+'}
-                            </Button>
+                            {item.id !== '_new' && (
+                                <Button
+                                    variant={inProgress  ? "info" : "light"}
+                                    title="save"
+                                    block
+                                    onClick={item.id !== '_new' ? () => this.edit(item.id) : this.add}
+                                >
+                                    {item.id !== '_new' ? item.id : '+'}
+                                </Button>
+                            )}
                         </Col>
                         <Col>
-                            <FormControl
-                                type="text"
-                                id={`row${item.id}_${learnedLang}`}
-                                defaultValue={item[learnedLang]}
-                            />
+                            {item.id !== '_new' && (
+                                <FormControl
+                                    type="text"
+                                    id={`row${item.id}_${learnedLang}`}
+                                    defaultValue={item[learnedLang]}
+                                />
+                            )}
+                            {item.id === '_new' && (
+                                <textarea
+                                    id={`row${item.id}_${learnedLang}`}
+                                    style={{ width: '100%' }}
+                                />
+                            )}
                         </Col>
                     </Row>
                     <Row className="unit-row">
                         <Col>
-                            <FormControl
-                                type="text"
-                                id={`row${item.id}_transl`}
-                                defaultValue={item[translation]}
-                            />
+                            {item.id !== '_new' && (
+                                <FormControl
+                                    type="text"
+                                    id={`row${item.id}_transl`}
+                                    defaultValue={item[translation]}
+                                />
+                            )}
                         </Col>
                         <Col sm="1" className="editButton">
                             {item.id !== '_new' && (
