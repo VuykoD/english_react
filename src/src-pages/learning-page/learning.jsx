@@ -408,13 +408,9 @@ class LearningClass extends Component {
         let polish = get(this.learnArr, `${learnNumber}.pol`, '');
         polish = polish.replace(/^\s*/, '').replace(/\s*$/, '').replace(/\s+/g, ' ').trim();
         const rus = get(this.learnArr, `${learnNumber}.transl`);
-        if (!rus){
-            this.repeatMistakes = true;
-        }
         if (maxLength){
             let wordToLearn = english;
             if (learnedLang === 'pol') wordToLearn = polish;
-            console.log('lolo length', wordToLearn.length, english, polish, wordToLearn);
             wordToLearn = wordToLearn.toUpperCase();
 
             if (wordToLearn.length > maxLength){
@@ -907,7 +903,7 @@ export function changedInput() {
 
     if (wordToLearn === word || !wordToLearn) {
         allIsCorrect.call(this);
-        if (learnNumber >= this.learnArr.length || this.repeatMistakes) {
+        if (learnNumber >= this.learnArr.length - 1 || this.repeatMistakes) {
             this.repeatMistakes = true;
             if (mistakeRewrite < this.mistakeArr.length) {
                 const nextNumber = this.mistakeArr[mistakeRewrite];
