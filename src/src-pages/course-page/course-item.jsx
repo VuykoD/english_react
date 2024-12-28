@@ -258,12 +258,12 @@ export default class CourseItem extends Component {
     }
 
     handleIgnore(item) {
-        let ignoreList = JSON.parse(localStorage.getItem('ignore')) || [];
+        const { learnedLang } = this.props.store;
+        let ignoreList = JSON.parse(localStorage.getItem(`ignore_${learnedLang}`)) || [];
 
         if (!ignoreList.includes(item)) {
             ignoreList.push(item);
-
-            localStorage.setItem('ignore', JSON.stringify(ignoreList));
+            localStorage.setItem(`ignore_${learnedLang}`, JSON.stringify(ignoreList));
         }
     }
 

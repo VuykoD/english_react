@@ -39,7 +39,7 @@ function uniqWords(courseItems, phrase, lang){
     const phraseCleared = phrase.replace(/[.,%?!1-9"]/g, '').trim().toLowerCase();
     const words = phraseCleared.split(' ');
     const uniqArr = [];
-    const ignoreList = JSON.parse(localStorage.getItem('ignore')) || [];
+    const ignoreList = JSON.parse(localStorage.getItem(`ignore_${lang}`)) || [];
 
     for(const courseItem of courseItems) {
         if (!courseItem[lang]) continue ;
