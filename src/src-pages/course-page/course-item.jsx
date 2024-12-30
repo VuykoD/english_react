@@ -251,6 +251,8 @@ export default class CourseItem extends Component {
             span.textContent = `${it.it} => ${it.source}, ${it.transl}`;
 
             p.appendChild(button);
+            const space = document.createTextNode(' ');
+            p.appendChild(space);
             p.appendChild(span);
 
             div.appendChild(p);
