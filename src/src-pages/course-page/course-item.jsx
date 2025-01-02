@@ -279,6 +279,9 @@ export default class CourseItem extends Component {
 
         const div = this.clearUniq();
         div.textContent = wordList.join(', ');
+        const p = document.createElement('p');
+        p.textContent = wordList.length;
+        div.appendChild(p);
     }
 
     handleIgnore(item) {
