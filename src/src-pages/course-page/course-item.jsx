@@ -13,6 +13,8 @@ import getCourseItems, {
 import '../../scc/unit.css';
 import '../../scc/course.css'
 
+const NUMBER_OF_RANDOM_WORDS = 70;
+
 let courseItems = getCourseItems();
 let courseUnits = getCourseUnits();
 
@@ -70,6 +72,12 @@ export const content = {
         ukr: "Унікальність",
         pol: "Unikalność",
         eng: "Uniqueness"
+    },
+    random: {
+        ru: "рандомных слов",
+        ukr: "випадкових слів",
+        pol: "losowych słów",
+        eng: "random words"
     },
     notAllFieldsAreFilled: {
         ru: "Заполнены не все поля",
@@ -259,6 +267,20 @@ export default class CourseItem extends Component {
         })
     }
 
+    getRandomWords = () => {
+        const { learnedLang } = this.props.store;
+        const words = get(document.getElementById(`row_new_${learnedLang}`), 'value');
+        const wordList = words.split(", ").map(word => word.trim());
+
+        for (let i = wordList.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [wordList[i], wordList[j]] = [wordList[j], wordList[i]];
+        }
+
+        const div = this.clearUniq();
+        div.textContent = wordList.join(', ');
+    }
+
     handleIgnore(item) {
         const { learnedLang } = this.props.store;
         let ignoreList = JSON.parse(localStorage.getItem(`ignore_${learnedLang}`)) || [];
@@ -276,6 +298,7 @@ export default class CourseItem extends Component {
         const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
         const clearLocalstorage = get(content, `clearLocalstorage[${siteLang}]`);
         const uniq = get(content, `uniq[${siteLang}]`);
+        const random = get(content, `random[${siteLang}]`);
         const parsedUserData = userData ? JSON.parse(userData) : {};
         const isAdmin = get(parsedUserData, `isAdmin`);
         let translation = siteLang;
@@ -354,7 +377,15 @@ export default class CourseItem extends Component {
                             {uniq}
                         </Button>
                     </Col>
-                    <Col/>
+                    <Col>
+                        <Button
+                            variant="light"
+                            block
+                            onClick={this.getRandomWords}
+                        >
+                            {`${NUMBER_OF_RANDOM_WORDS} ${random}`}
+                        </Button>
+                    </Col>
                 </Row>
             </ListGroup.Item>
         );
