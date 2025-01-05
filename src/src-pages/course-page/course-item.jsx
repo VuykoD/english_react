@@ -122,8 +122,19 @@ export default class CourseItem extends Component {
 
         this.state = {
             courseItems: this.items,
+            difficultEng: '',
             isItemSelected
         };
+    }
+
+    componentDidMount() {
+        this.setState({ difficultEng: this.getDifficultEng() })
+    }
+
+    getDifficultEng() {
+        return localStorage.getItem('difficult_eng')
+            ? JSON.parse(localStorage.getItem('difficult_eng')).join(', ')
+            : ''
     }
 
     select = () => {
@@ -255,6 +266,12 @@ export default class CourseItem extends Component {
                 this.handleIgnore(it.it);
             });
 
+            const difficult_button = document.createElement('button');
+            difficult_button.textContent = 'Add';
+            difficult_button.addEventListener('click', () => {
+                this.handleDifficult(it.it);
+            });
+
             const span = document.createElement('span');
             span.textContent = `${it.it} => ${it.source}, ${it.transl}`;
 
@@ -262,6 +279,7 @@ export default class CourseItem extends Component {
             const space = document.createTextNode(' ');
             p.appendChild(space);
             p.appendChild(span);
+            p.appendChild(difficult_button);
 
             div.appendChild(p);
         })
@@ -291,12 +309,25 @@ export default class CourseItem extends Component {
         if (!ignoreList.includes(item)) {
             ignoreList.push(item);
             localStorage.setItem(`ignore_${learnedLang}`, JSON.stringify(ignoreList));
+            this.uniq();
+        }
+    }
+
+    handleDifficult(item) {
+        const { learnedLang } = this.props.store;
+        let difficultList = JSON.parse(localStorage.getItem(`difficult_${learnedLang}`)) || [];
+
+        if (!difficultList.includes(item)) {
+            difficultList.push(item);
+            localStorage.setItem(`difficult_${learnedLang}`, JSON.stringify(difficultList));
+            this.setState({ difficultEng: this.getDifficultEng() });
+            this.uniq();
         }
     }
 
     render() {
         const { siteLang = '', learnedLang, userData } = this.props.store;
-        const { courseItems, isItemSelected } = this.state;
+        const { courseItems, isItemSelected, difficultEng } = this.state;
         const select = get(content, `select[${siteLang}]`);
         const alreadySelected = get(content, `alreadySelected[${siteLang}]`);
         const clearLocalstorage = get(content, `clearLocalstorage[${siteLang}]`);
@@ -337,7 +368,8 @@ export default class CourseItem extends Component {
                             {item.id === '_new' && (
                                 <textarea
                                     id={`row${item.id}_${learnedLang}`}
-                                    style={{ width: '100%' }}
+                                    style={{ width: '100%', height: '400px' }}
+                                    defaultValue={difficultEng}
                                 />
                             )}
                         </Col>
