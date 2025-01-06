@@ -285,8 +285,7 @@ class LearningClass extends Component {
         if (automaticChange) {
             this.sort();
         }
-        this.setLearnArr(10);
-        this.setTranslInLearnArray();
+        this.setDifficultWordsArr(15);
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'write'});
         this.setWordAndTransl(this.state.learnNumber, MAX_WORD_LENGTH);
@@ -370,6 +369,18 @@ class LearningClass extends Component {
         // localStorage.progress = JSON.stringify(newArr);
         if (localProgress && localProgress[learnedLang]) localProgress = localProgress[learnedLang];
         this.learnArr = localProgress && localProgress.length ? localProgress.slice(0, sliceNumber) : null;
+    }
+    setDifficultWordsArr = (sliceNumber) => {
+        let difficultList = JSON.parse(localStorage.getItem('difficult_array')) || [];
+        this.learnArr = this.shuffleArray(difficultList).slice(0, sliceNumber);
+    }
+
+    shuffleArray(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
     }
 
     setTimeoutTime =(learnNumber)=> {
@@ -892,14 +903,14 @@ export function changedInput() {
     }
     document.getElementById("formInput").value = word;  // Append non-letter characters
 
-    if (word.length === 1
-        && !mistake
-        && wordToLearn.slice(0, word.length) === word
-        && !mistakeRewrite
-        && exampleLearning === 'write'
-    ) {
-        speak.call(this);
-    }
+    // if (word.length === 1
+    //     && !mistake
+    //     && wordToLearn.slice(0, word.length) === word
+    //     && !mistakeRewrite
+    //     && exampleLearning === 'write'
+    // ) {
+    //     speak.call(this);
+    // }
 
     if (wordToLearn === word || !wordToLearn) {
         allIsCorrect.call(this);
