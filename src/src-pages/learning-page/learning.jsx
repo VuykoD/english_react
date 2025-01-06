@@ -561,7 +561,7 @@ class LearningClass extends Component {
                                 />
                             </Col>
                             <Col>
-                                <Button variant="info" block onClick={this.write} children={`${write} (max 10)`}/>
+                                <Button variant="info" block onClick={this.write} children={`${write} (max 15)`}/>
                             </Col>
                             {/*
                             <Col>
