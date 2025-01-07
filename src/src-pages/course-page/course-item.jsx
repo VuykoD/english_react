@@ -79,6 +79,12 @@ export const content = {
         pol: "losowych słów",
         eng: "random words"
     },
+    saveToDifficult: {
+        ru: "сохранить в сложные",
+        ukr: "зберегти у складні",
+        pol: "zapisz do trudnych",
+        eng: "save to difficult"
+    },
     notAllFieldsAreFilled: {
         ru: "Заполнены не все поля",
         ukr: "Заповнені не всі поля",
@@ -302,6 +308,15 @@ export default class CourseItem extends Component {
         div.appendChild(p);
     }
 
+    saveToDifficult = () => {
+        const { learnedLang } = this.props.store;
+        const words = get(document.getElementById(`row_new_${learnedLang}`), 'value');
+        const difficultList = words.split(", ").map(word => word.trim());
+        localStorage.setItem(`difficult_${learnedLang}`, JSON.stringify(difficultList));
+        this.setState({ difficultEng: this.getDifficultEng() });
+        this.uniq();
+    }
+
     handleIgnore(item) {
         const { learnedLang } = this.props.store;
         let ignoreList = JSON.parse(localStorage.getItem(`ignore_${learnedLang}`)) || [];
@@ -333,6 +348,7 @@ export default class CourseItem extends Component {
         const clearLocalstorage = get(content, `clearLocalstorage[${siteLang}]`);
         const uniq = get(content, `uniq[${siteLang}]`);
         const random = get(content, `random[${siteLang}]`);
+        const saveToDifficult = get(content, `saveToDifficult[${siteLang}]`);
         const parsedUserData = userData ? JSON.parse(userData) : {};
         const isAdmin = get(parsedUserData, `isAdmin`);
         let translation = siteLang;
@@ -419,6 +435,15 @@ export default class CourseItem extends Component {
                             onClick={this.getRandomWords}
                         >
                             {`${NUMBER_OF_RANDOM_WORDS} ${random}`}
+                        </Button>
+                    </Col>
+                    <Col>
+                        <Button
+                            variant="light"
+                            block
+                            onClick={this.saveToDifficult}
+                        >
+                            {saveToDifficult}
                         </Button>
                     </Col>
                 </Row>
