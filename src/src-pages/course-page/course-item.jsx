@@ -300,11 +300,12 @@ export default class CourseItem extends Component {
             const j = Math.floor(Math.random() * (i + 1));
             [wordList[i], wordList[j]] = [wordList[j], wordList[i]];
         }
+        const randomWords = wordList.slice(0, NUMBER_OF_RANDOM_WORDS);
 
         const div = this.clearUniq();
-        div.textContent = wordList.join(', ');
+        div.textContent = randomWords.join(', ');
         const p = document.createElement('p');
-        p.textContent = wordList.length;
+        p.textContent = randomWords.length;
         div.appendChild(p);
     }
 
