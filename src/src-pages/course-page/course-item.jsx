@@ -305,7 +305,7 @@ export default class CourseItem extends Component {
         const div = this.clearUniq();
         div.textContent = randomWords.join(', ');
         const p = document.createElement('p');
-        p.textContent = randomWords.length;
+        p.textContent = wordList.length;
         div.appendChild(p);
     }
 
