@@ -375,11 +375,9 @@ class LearningClass extends Component {
         this.learnArr = this.shuffleArray(difficultList).slice(0, sliceNumber);
     }
     shuffleArray(arr) {
-        // Get current time in seconds
-        const currentTime = Math.floor(Date.now() / 1000);
+        const currentTime = Math.floor(Date.now() / 1000) % 100;
         for (let i = arr.length - 1; i > 0; i--) {
-            const randomFactor = Math.random() + (currentTime % (i + 1)) / 1000;
-            const j = Math.floor(randomFactor * (i + 1));
+            const j = (Math.floor(Math.random() * (arr.length)) + currentTime) % arr.length;
             [arr[i], arr[j]] = [arr[j], arr[i]];
         }
         return arr;
