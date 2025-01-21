@@ -108,6 +108,7 @@ const content = {
 
 const MAX_WORD_LENGTH = 400;
 const MAX_SOUND_LENGTH = 421;
+const WRITING_LENGTH = 30;
 
 const initialState = {
     exampleLearning: null,
@@ -285,7 +286,7 @@ class LearningClass extends Component {
         if (automaticChange) {
             this.sort();
         }
-        this.setDifficultWordsArr(25);
+        this.setDifficultWordsArr(WRITING_LENGTH);
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'write'});
         this.setWordAndTransl(this.state.learnNumber, MAX_WORD_LENGTH);
@@ -567,7 +568,7 @@ class LearningClass extends Component {
                                 />
                             </Col>
                             <Col>
-                                <Button variant="info" block onClick={this.write} children={`${write} (max 25)`}/>
+                                <Button variant="info" block onClick={this.write} children={`${write} (max ${WRITING_LENGTH})`}/>
                             </Col>
                             {/*
                             <Col>
