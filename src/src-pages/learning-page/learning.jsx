@@ -372,7 +372,13 @@ class LearningClass extends Component {
     }
     setDifficultWordsArr = (sliceNumber) => {
         let difficultList = JSON.parse(localStorage.getItem('difficult_array')) || [];
-        this.learnArr = this.shuffleArray(difficultList).slice(0, sliceNumber);
+
+        if (difficultList.length < sliceNumber) {
+            this.learnArr = this.shuffleArray(difficultList);
+        } else {
+            const j = Math.floor(Math.random() * (difficultList.length - sliceNumber));
+            this.learnArr = this.shuffleArray(difficultList).slice(j, j + sliceNumber);
+        }
     }
     shuffleArray(arr) {
         const currentTime = Math.floor(Date.now() / 1000) % 100;
