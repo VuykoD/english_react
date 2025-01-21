@@ -299,8 +299,7 @@ export default class CourseItem extends Component {
         // Get current time in seconds
         const currentTime = Math.floor(Date.now() / 1000);
         for (let i = wordList.length - 1; i > 0; i--) {
-            const randomFactor = Math.random() + (currentTime % (i + 1)) / 1000;
-            const j = Math.floor(randomFactor * (i + 1));
+            const j = (Math.floor(Math.random() * (wordList.length)) + currentTime) % wordList.length;
             [wordList[i], wordList[j]] = [wordList[j], wordList[i]];
         }
         const randomWords = wordList.slice(0, NUMBER_OF_RANDOM_WORDS);
