@@ -285,7 +285,7 @@ class LearningClass extends Component {
         if (automaticChange) {
             this.sort();
         }
-        this.setDifficultWordsArr(15);
+        this.setDifficultWordsArr(25);
         if (!this.learnArr) return;
         this.setState({cycleLearning: 'new', exampleLearning: 'write'});
         this.setWordAndTransl(this.state.learnNumber, MAX_WORD_LENGTH);
