@@ -108,7 +108,7 @@ const content = {
 
 const MAX_WORD_LENGTH = 400;
 const MAX_SOUND_LENGTH = 421;
-const WRITING_LENGTH = 30;
+const WRITING_LENGTH = 25;
 
 const initialState = {
     exampleLearning: null,
@@ -377,8 +377,9 @@ class LearningClass extends Component {
         if (difficultList.length < sliceNumber) {
             this.learnArr = this.shuffleArray(difficultList);
         } else {
-            const j = Math.floor(Math.random() * (difficultList.length - sliceNumber));
-            this.learnArr = this.shuffleArray(difficultList).slice(j, j + sliceNumber);
+            const shuffledList = this.shuffleArray(difficultList);
+            const j = Math.floor(Math.random() * (shuffledList.length - sliceNumber));
+            this.learnArr = shuffledList.slice(j, j + sliceNumber);
         }
     }
     shuffleArray(arr) {
