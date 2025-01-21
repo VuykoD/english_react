@@ -374,10 +374,12 @@ class LearningClass extends Component {
         let difficultList = JSON.parse(localStorage.getItem('difficult_array')) || [];
         this.learnArr = this.shuffleArray(difficultList).slice(0, sliceNumber);
     }
-
     shuffleArray(arr) {
+        // Get current time in seconds
+        const currentTime = Math.floor(Date.now() / 1000);
         for (let i = arr.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
+            const randomFactor = Math.random() + (currentTime % (i + 1)) / 1000;
+            const j = Math.floor(randomFactor * (i + 1));
             [arr[i], arr[j]] = [arr[j], arr[i]];
         }
         return arr;

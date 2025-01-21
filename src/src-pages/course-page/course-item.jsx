@@ -296,8 +296,11 @@ export default class CourseItem extends Component {
         const words = get(document.getElementById(`row_new_${learnedLang}`), 'value');
         const wordList = words.split(", ").map(word => word.trim());
 
+        // Get current time in seconds
+        const currentTime = Math.floor(Date.now() / 1000);
         for (let i = wordList.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
+            const randomFactor = Math.random() + (currentTime % (i + 1)) / 1000;
+            const j = Math.floor(randomFactor * (i + 1));
             [wordList[i], wordList[j]] = [wordList[j], wordList[i]];
         }
         const randomWords = wordList.slice(0, NUMBER_OF_RANDOM_WORDS);
